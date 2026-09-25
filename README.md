@@ -70,6 +70,13 @@ The script runs on every push. It checks:
 
 Add the folio's tables to `datapackage.json`, then run the validator.
 
+## Acknowledgements
+
+- **Nathan Buchar's [audubon-bird-plates](https://github.com/nathanbuchar/audubon-bird-plates):** the Havell plate list (titles and image links in `havell/plates.csv`) comes from it, and it is the other public mirror of Audubon's plates.
+- **The [Biodiversity Heritage Library](https://www.biodiversitylibrary.org/) and Smithsonian Libraries and Archives:** they scanned Gould's *Birds of Europe* and publish it openly.
+- **The University of Kansas Spencer Library:** its [Gould catalogue](https://digital.lib.ku.edu/ku-gould/11233) was the cross-check for the Gould identifications.
+- **Wikimedia Commons, the University of Pittsburgh's Darlington Library and the New-York Historical Society:** their catalogues settled the hard Havell plates.
+
 ## Where this comes from
 
 This dataset was made for [Featherframe](https://github.com/wr/featherframe), an e-paper frame that shows the birds a [BirdNET](https://birdnet.cornell.edu/) station hears as plates from these folios. Featherframe's folio files are exported here (`server/scripts/export_dataset.py`). This repo is the public record of every plate, and Featherframe uses only the plates it needs.

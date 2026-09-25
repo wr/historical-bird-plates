@@ -11,7 +11,7 @@ This folio has **identifications only**. Complete sets of the plates are already
 
 ## Files
 
-- **`plates.csv`**: plate, title and legend.
+- **`plates.csv`**: plate, title and legend. The titles and image links come from Nathan Buchar's [`data.json`](https://github.com/nathanbuchar/audubon-bird-plates/blob/master/data.json).
   - `title` is Audubon's title as audubon.org gives it. That is the plate's *first-state* lettering, which some plates later changed. Plate 50 reads "Black & Yellow Warbler" there, while the later state is lettered "Swainson's Warbler".
   - `legend` is the lines engraved under the title and Latin name: the figure key and the plant or setting, in Audubon's spelling, transcribed from the scans' caption bands.
 - **`species.csv`**: one row per plate and modern species. On a sheet with several species, `figure` is that species' own key.
