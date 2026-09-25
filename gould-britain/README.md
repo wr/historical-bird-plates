@@ -10,7 +10,41 @@ Five volumes and 367 plates. Drawn by John Gould with H. C. Richter, W. Hart and
 
 Every plate as its art crop, by volume and number. The full-size images are in the [`gould-britain-v1`](https://github.com/wr/historical-bird-plates/releases/tag/gould-britain-v1) release.
 
-<!-- contact sheets -->
+**Volume I, plates 1–37**
+
+![Volume I, plates 1–37](img/plates-i-001-037.jpg)
+
+**Volume II, plates 1–39**
+
+![Volume II, plates 1–39](img/plates-ii-001-039.jpg)
+
+**Volume II, plates 40–78**
+
+![Volume II, plates 40–78](img/plates-ii-040-078.jpg)
+
+**Volume III, plates 1–38**
+
+![Volume III, plates 1–38](img/plates-iii-001-038.jpg)
+
+**Volume III, plates 39–76**
+
+![Volume III, plates 39–76](img/plates-iii-039-076.jpg)
+
+**Volume IV, plates 1–45**
+
+![Volume IV, plates 1–45](img/plates-iv-001-045.jpg)
+
+**Volume IV, plates 46–90**
+
+![Volume IV, plates 46–90](img/plates-iv-046-090.jpg)
+
+**Volume V, plates 1–43**
+
+![Volume V, plates 1–43](img/plates-v-001-043.jpg)
+
+**Volume V, plates 44–86**
+
+![Volume V, plates 44–86](img/plates-v-044-086.jpg)
 
 ## Files
 
@@ -46,6 +80,6 @@ Two images per plate, 367 plates, made as for *The Birds of Europe*. `manifest.j
   - The JPEG 2000 master, stood upright. Half the plates are bound sideways, and they are turned so the caption runs along the bottom.
   - The paper is evened, and anything within 6 % of its tone becomes pure white.
   - The later volumes' painted backgrounds are kept.
-- **`crop-<barcode>-<leaf>.jpg`, the art crop:** cut above the caption and cropped to the art's own box. Only the seven checked plates' crops have been reviewed.
+- **`crop-<barcode>-<leaf>.jpg`, the art crop:** cut above the caption and cropped to the art's own box. Only the seven checked plates' crops have been reviewed. On some upright plates the crop keeps a thin grey line from the binding along its right edge.
 
 These scans are about 265 ppi, and BHL's masters are lossy: the lowest resolution of Gould's folios here. For the sheet as it is, follow the row's `scan_url` to BHL's original.
