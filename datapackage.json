@@ -47,6 +47,16 @@
             "description": "The plate's image on audubon.org (not open-licensed; see havell/README.md)."
           },
           {
+            "name": "sheet_asset",
+            "type": "string",
+            "description": "The full plate in the havell-v1 release."
+          },
+          {
+            "name": "crop_asset",
+            "type": "string",
+            "description": "The plate with its lettering trimmed, in the havell-v1 release."
+          },
+          {
             "name": "notes",
             "type": "string",
             "description": "Anything about the plate."

@@ -4,14 +4,59 @@
 
 ## Images
 
-This folio has **identifications only**. Complete sets of the plates are already public:
+Release [`havell-v1`](https://github.com/wr/historical-bird-plates/releases/tag/havell-v1) has two images of every plate. `manifest.json` and `SHA256SUMS` give each file's sha256.
 
-- [nathanbuchar/audubon-bird-plates](https://github.com/nathanbuchar/audubon-bird-plates) mirrors all 435 at full resolution from [audubon.org](https://www.audubon.org/birds-of-america). `image_url` in `plates.csv` is audubon.org's file. Those images are offered under the National Audubon Society's [terms of use](https://www.audubon.org/terms-use), with the credit "Courtesy of the John James Audubon Center at Mill Grove, Montgomery County Audubon Collection, and Zebra Publishing". That repository carries no licence.
-- Public-domain scans of other copies are on [Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:The_Birds_of_America) and at the University of Pittsburgh's [Darlington Library](https://digital.library.pitt.edu/collection/audubon-birds-america).
+- **`sheet-NNN.jpg`**: the full plate, as audubon.org publishes it, unaltered. About 2.7 GB.
+- **`crop-NNN.jpg`**: the same plate with its lettering trimmed away: the plate number along the top and the engraved caption along the bottom. It is the whole engraving, never one bird of a sheet. About 250 MB.
+
+Credit the scans: *Courtesy of the John James Audubon Center at Mill Grove, Montgomery County Audubon Collection, and Zebra Publishing.*
+
+- **Rights:** the plates are public domain, and a faithful photograph of a public-domain plate carries no copyright of its own in the US. The images are marked with the [Public Domain Mark](https://creativecommons.org/publicdomain/mark/1.0/). audubon.org offers them under its [terms of use](https://www.audubon.org/terms-use); please follow its credit line.
+- **Other mirrors:** Nathan Buchar's [audubon-bird-plates](https://github.com/nathanbuchar/audubon-bird-plates) holds the same files. Public-domain scans of other copies are on [Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:The_Birds_of_America) and at the University of Pittsburgh's [Darlington Library](https://digital.library.pitt.edu/collection/audubon-birds-america).
+
+## The plates
+
+Every plate with its lettering trimmed, by Havell number.
+
+**Plates 1–50**
+
+![Plates 1–50](img/plates-001-050.jpg)
+
+**Plates 51–100**
+
+![Plates 51–100](img/plates-051-100.jpg)
+
+**Plates 101–150**
+
+![Plates 101–150](img/plates-101-150.jpg)
+
+**Plates 151–200**
+
+![Plates 151–200](img/plates-151-200.jpg)
+
+**Plates 201–250**
+
+![Plates 201–250](img/plates-201-250.jpg)
+
+**Plates 251–300**
+
+![Plates 251–300](img/plates-251-300.jpg)
+
+**Plates 301–350**
+
+![Plates 301–350](img/plates-301-350.jpg)
+
+**Plates 351–400**
+
+![Plates 351–400](img/plates-351-400.jpg)
+
+**Plates 401–435**
+
+![Plates 401–435](img/plates-401-435.jpg)
 
 ## Files
 
-- **`plates.csv`**: plate, title and legend. The titles and image links come from Nathan Buchar's [`data.json`](https://github.com/nathanbuchar/audubon-bird-plates/blob/master/data.json).
+- **`plates.csv`**: plate, title and legend. The titles and image links come from Nathan Buchar's [`data.json`](https://github.com/nathanbuchar/audubon-bird-plates/blob/master/data.json). Its titles run one plate late from 361 to 399, though its file names and images are right, so those titles are corrected here.
   - `title` is Audubon's title as audubon.org gives it. That is the plate's *first-state* lettering, which some plates later changed. Plate 50 reads "Black & Yellow Warbler" there, while the later state is lettered "Swainson's Warbler".
   - `legend` is the lines engraved under the title and Latin name: the figure key and the plant or setting, in Audubon's spelling, transcribed from the scans' caption bands.
 - **`species.csv`**: one row per plate and modern species. On a sheet with several species, `figure` is that species' own key.
