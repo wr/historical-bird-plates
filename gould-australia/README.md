@@ -91,7 +91,8 @@ Every plate as its art crop, by volume and number. The full-size images are in t
   - `crosswalk.csv`: each plate mapped to a modern species and to BirdNET V2.4's label, with confidence and reason.
   - `ku-catalogue.csv`: the Kansas record for each plate.
   - `ku-check.csv`: the disagreements with Kansas and how each was settled.
-  - `review.csv`: the 38 plates Featherframe does not show, and why.
+  - `review.csv`: the 23 plates Featherframe does not show, and why.
+  - `doubtful-decisions.csv`: how 24 doubtful plates were settled.
 
 ## How the plates were identified
 
@@ -143,6 +144,6 @@ Two images per plate, 681 plates: the sheets as files, and the crops in `crops.z
   - An upright plate is cut just above its engraved caption, and at 95.5 % of its width, clear of the binding line every volume shows.
   - The art is then cropped to its own box, with a band of fresh white paper added.
   - This is Featherframe's cut for e-paper, and more opinionated than the sheet.
-  - The 386 plates Featherframe shows had their crops reviewed on contact sheets, and each sideways one has margins of its own, set to the box of its ink. The other 295 are cut by the same rules but not reviewed (`notes`).
+  - The 401 plates Featherframe shows had their crops reviewed on contact sheets, and each sideways one has margins of its own, set to the box of its ink. The other 280 are cut by the same rules but not reviewed (`notes`).
 
 For the sheet as it is, with its paper and its age, follow the row's `scan_url` to BHL's original.
