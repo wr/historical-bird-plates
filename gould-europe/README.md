@@ -75,6 +75,7 @@ These are the plates a careful reader would still get wrong.
 
 - **The gulls:** Gould's "Black-headed Gull" (*Xema melanocephala*, 427) is today's Mediterranean Gull. The modern Black-headed Gull is his "Laughing Gull" (*Xema ridibunda*, 425), and today's American Laughing Gull is his "Black-winged Gull" (*Xema atricilla*, 426). Match on the modern binomial, never the common name.
 - **Pencil numbers:** this copy's pencil moves Bulwer's Petrel to 448 and puts both storm-petrels on 447's sheet. It also swaps the pencil numbers of 132 and 133. Where the pencil and the caption disagree, the caption decides.
+- **Plate 138**, "Rock or Shore Pipit, *Anthus aquaticus*", is left unidentified. The Rock and Water Pipits were one species then, and it could show either. Both are identified in [*The Birds of Great Britain*](../gould-britain/) instead.
 - **The Dalmatian Regulus** (149) is Pallas's Leaf Warbler.
 - **The Imperial Eagle** (5) is the eastern bird.
 - **A plate drawn before a split** stands for the species as it was then understood (`form: pre-split`).
