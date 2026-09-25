@@ -10,8 +10,9 @@ Old plates name their birds the way their authors did, and many of those names n
 | [`havell/`](havell/): John James Audubon, *The Birds of America*, Havell edition (1827–38) | 435 | 430 | full plates and lettering-free crops in the [`havell-v1`](https://github.com/wr/historical-bird-plates/releases/tag/havell-v1) release |
 | [`gould-australia/`](gould-australia/): John Gould, *The Birds of Australia* and its *Supplement* (1840–69) | 681 | 678, 660 checked against the engraved caption | cleaned sheets and art crops in the [`gould-australia-v1`](https://github.com/wr/historical-bird-plates/releases/tag/gould-australia-v1) release |
 | [`gould-britain/`](gould-britain/): John Gould, *The Birds of Great Britain* (1862–73) | 367 | 367 drafts, 7 checked against the engraved caption | cleaned sheets and art crops in the [`gould-britain-v1`](https://github.com/wr/historical-bird-plates/releases/tag/gould-britain-v1) release |
+| [`gould-asia/`](gould-asia/): John Gould, *The Birds of Asia* (1850–83) | 530 | 354, 526 plates checked against the engraved caption | cleaned sheets and art crops in the [`gould-asia-v1`](https://github.com/wr/historical-bird-plates/releases/tag/gould-asia-v1) release |
 
-Gould's *Birds of Asia* is next, in the same shape. *Great Britain* is a first pass: its drafts are the open questions.
+*Great Britain* is a first pass: its drafts are the open questions. *Asia*'s 176 unidentified plates are the same kind of question.
 
 ![Gould, The Birds of Europe, plates 402–449](gould-europe/img/plates-402-449.jpg)
 

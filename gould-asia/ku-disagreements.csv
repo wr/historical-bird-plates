@@ -1,0 +1,119 @@
+volume,plate,kind,ku_id,ku_name,ku_scientific,scientific,common,note
+I,4,lumped,ku-gould:17718,Barbary Falcon,Falco pelegrinoides,Falco peregrinus,Peregrine Falcon,eBird 2025 keeps the Barbary Falcon within the Peregrine
+I,9,open,ku-gould:17698,Sulawesi Serpent Eagle,Spilornis rufipectus,Spilornis cheela,Crested Serpent-Eagle,"a form the survey assigned; KU assigns it elsewhere, so the row is low"
+I,15,old name,ku-gould:17674,Collared Owlet,Glaucidium brodiei,Taenioptynx brodiei,Collared Owlet,an older genus or spelling for the same species
+I,17,subspecies,ku-gould:17666,Spotted Owlet,Athene brama indica,Tyto alba,Western Barn Owl,KU names the race; the row gives its species
+I,20,open,ku-gould:17654,African Palm Swift,Cypsiurus parvus,Cypsiurus balasiensis,Asian Palm Swift,"a form the survey assigned; KU assigns it elsewhere, so the row is low"
+I,27,subspecies,ku-gould:17626,European Striated Swallow,Hirundo (Cecropis) daurica rufula,Cecropis daurica,Eastern Red-rumped Swallow,KU names the race; the row gives its species
+I,28,subspecies,ku-gould:17622,European Striated Swallow,Hirundo (Cecropis) daurica,Cecropis daurica,Eastern Red-rumped Swallow,KU names the race; the row gives its species
+I,29,subspecies,ku-gould:17618,Indian Striated Swallow,Hirundo (Cecropis) daurica erythropygia,Cecropis daurica,Eastern Red-rumped Swallow,KU names the race; the row gives its species
+I,33,old name,ku-gould:17602,"Streak-throated Swallow, Indian Cliff Swallow",Hirundo fluvicola,Petrochelidon fluvicola,Streak-throated Swallow,an older genus or spelling for the same species
+I,35,printed name,ku-gould:17594,Blue-throated Bee-eater,Merops viridis,Merops orientalis,Asian Green Bee-eater,KU follows the printed Merops viridis; the plate shows the Green Bee-eater
+I,38,error,ku-gould:17582,Blue-bearded Bee-eater,Nyctyornis athertoni,Nyctyornis amictus,Red-bearded Bee-eater,"KU names another species; the caption, the text and the bird agree with the row"
+I,44,subspecies,ku-gould:17558,White-throated Kingfisher,Halcyon smyrnensis gularis,Halcyon gularis,Brown-breasted Kingfisher,KU names the race; the row gives its species
+I,47,open,ku-gould:17546,Javan Kingfisher,Halcyon cyanoventris,Todiramphus chloris,Collared Kingfisher,"a form the survey assigned; KU assigns it elsewhere, so the row is low"
+I,67,error,ku-gould:17466,Masked Trogon,Trogon personatus,Harpactes duvaucelii,Scarlet-rumped Trogon,KU names a New World trogon of the same epithet
+I,68,subspecies,ku-gould:17462,"Collared Trogon, Trogón de collar",Trogon collaris puella,Harpactes duvaucelii,Scarlet-rumped Trogon,KU names the race; the row gives its species
+I,69,subspecies,ku-gould:17458,"Violaceous Trogon, Trogón violáceo",Trogon violaceus ramonianus,Harpactes erythrocephalus,Red-headed Trogon,KU names the race; the row gives its species
+I,70,error,ku-gould:17454,"Black-headed Trogon, Trogón cabeza negra",Trogon melanocephalus,Harpactes diardii,Diard's Trogon,KU names a New World trogon of the same epithet
+I,71,error,ku-gould:17450,"Amazonian White-tailed Trogon, White-tailed Trogon",Trogon viridis,Harpactes oreskios,Orange-breasted Trogon,KU names a New World trogon of the same epithet
+I,74,error,ku-gould:17438,Black-tailed Trogon,Trogon melanurus,Harpactes kasumba,Red-naped Trogon,KU names a New World trogon of the same epithet
+I,75,error,ku-gould:17434,"Violaceous Trogon, Trogón violáceo",Trogon violaceus,Harpactes fasciatus,Malabar Trogon,KU names a New World trogon of the same epithet
+I,76,error,ku-gould:17430,"Mountain Trogon, Trogón mexicano",Trogon mexicanus,Harpactes ardens,Philippine Trogon,KU names a New World trogon of the same epithet
+II,7,pre-split,ku-gould:17356,Scarlet Minivet,Pericrocotus flammeus,Pericrocotus speciosus,Scarlet Minivet,KU gives the parent species before the split
+II,13,pre-split,ku-gould:17332,White-browed Shrike-Babbler,Pteruthius flaviscapis,Pteruthius aeralatus,White-browed Shrike-Babbler,KU gives the parent species before the split
+II,14,open,ku-gould:17328,White-browed Shrike-Babbler,Pteruthius flaviscapis,Pteruthius aeralatus,White-browed Shrike-Babbler,"a form the survey assigned; KU assigns it elsewhere, so the row is low"
+II,19,pre-split,ku-gould:17308,Asian Paradise Flycatcher,Terpsiphone paradisi,Terpsiphone incei,Amur Paradise-Flycatcher,KU gives the parent species before the split
+II,23,old name,ku-gould:17292,Nectarinia osea,Nectarinia osea,Cinnyris osea,Palestine Sunbird,an older genus or spelling for the same species
+II,24,old name,ku-gould:17288,Nectarinia zeylonica,Nectarinia zeylonica,Leptocoma zeylonica,Purple-rumped Sunbird,an older genus or spelling for the same species
+II,25,open,ku-gould:17284,Nectarinia calcostetha,Nectarinia calcostetha,Aethopyga siparaja,Crimson Sunbird,"a form the survey assigned; KU assigns it elsewhere, so the row is low"
+II,30,pre-split,ku-gould:17264,Crimson Sunbird,Aethopyga siparaja,Aethopyga vigorsii,Vigors's Sunbird,KU gives the parent species before the split
+II,32,old name,ku-gould:17256,Nectarinia asiatica,Nectarinia asiatica,Cinnyris asiaticus,Purple Sunbird,an older genus or spelling for the same species
+II,33,old name,ku-gould:17252,Nectarinia lotenia,Nectarinia lotenia,Cinnyris lotenius,Loten's Sunbird,an older genus or spelling for the same species
+II,34,subspecies,ku-gould:17248,Japanese White-eye,Zosterops japonicus  simplex,Zosterops simplex,Swinhoe's White-eye,KU names the race; the row gives its species
+II,44,pre-split,ku-gould:17208,Chestnut-bellied Nuthatch,Sitta castanea,Sitta cinnamoventris,Chestnut-bellied Nuthatch,KU gives the parent species before the split
+II,49,error,ku-gould:17188,Chestnut-bellied Nuthatch,Sitta castanea,Sittiparus castaneoventris,Chestnut-bellied Tit,"KU names another species; the caption, the text and the bird agree with the row"
+II,52,old name,ku-gould:17176,Black-lored Tit,Parus xanthogenys,Machlolophus xanthogenys,Himalayan Black-lored Tit,an older genus or spelling for the same species
+II,53,old name,ku-gould:17172,Yellow-cheeked Tit,Parus spilonotus,Machlolophus spilonotus,Yellow-cheeked Tit,an older genus or spelling for the same species
+II,54,old name,ku-gould:17168,Black-lored Tit,Parus xanthogenys,Machlolophus xanthogenys,Himalayan Black-lored Tit,an older genus or spelling for the same species
+II,55,pre-split,ku-gould:17164,Great Tit,Parus major,Parus cinereus,Asian Tit,KU gives the parent species before the split
+II,56,pre-split,ku-gould:17160,Great Tit,Parus major,Parus cinereus,Asian Tit,KU gives the parent species before the split
+II,58,subspecies,ku-gould:17152,Grey Crested Tit,Lophophanes s dichrou,Lophophanes dichrous,Gray-crested Tit,KU names the race; the row gives its species
+II,61,open,ku-gould:17140,Spot-winged Ti,Periparus melanolophus,Periparus ater,Coal Tit,"a form the survey assigned; KU assigns it elsewhere, so the row is low"
+II,69,pre-split,ku-gould:17108,Long-tailed Bushtit,Aegithalos caudatus,Aegithalos glaucogularis,Silver-throated Tit,KU gives the parent species before the split
+III,1,error,ku-gould:17065,Great Thrush,Turdus fuscater,Turdus eunomus,Dusky Thrush,"KU names another species; the caption, the text and the bird agree with the row"
+III,12,error,ku-gould:17021,Malagasy Bulbul,Hypsipetes madagascariensis,Hypsipetes leucocephalus,Black Bulbul,"KU names another species; the caption, the text and the bird agree with the row"
+III,17,pre-split,ku-gould:17001,Blue-winged Leafbird,Chloropsis cochinchinensis,Chloropsis jerdoni,Jerdon's Leafbird,KU gives the parent species before the split
+III,22,old name,ku-gould:16981,Irena cyanogaster,Irena cyanogaster,Irena cyanogastra,Philippine Fairy-bluebird,an older genus or spelling for the same species
+III,25,pre-split,ku-gould:16969,Oriental Magpie-Robin,Copsychus saularis,Copsychus mindanensis,Philippine Magpie-Robin,KU gives the parent species before the split
+III,28,old name,ku-gould:16957,Myiophonus insularis,Myiophonus insularis,Myophonus insularis,Taiwan Whistling-Thrush,an older genus or spelling for the same species
+III,29,old name,ku-gould:16953,White-bellied Shortwing,Brachypteryx major,Sholicola albiventris,White-bellied Sholakili,an older genus for the same species
+III,30,old name,ku-gould:16949,Rufous-backed Sibia,Heterophasia annectens,Leioptila annectens,Rufous-backed Sibia,an older genus or spelling for the same species
+III,31,old name,ku-gould:16945,Great Parrotbill,Conostoma oemodium,Paradoxornis aemodius,Great Parrotbill,an older genus or spelling for the same species
+III,33,old name,ku-gould:16937,Spot-breasted Scimitar Babbler,Pomatorhinus erythrocnemis,Erythrogenys erythrocnemis,Black-necklaced Scimitar-Babbler,an older genus or spelling for the same species
+III,34,old name,ku-gould:16933,Slender-billed Scimitar Babbler,Xiphirhynchus superciliaris,Pomatorhinus superciliaris,Slender-billed Scimitar-Babbler,an older genus or spelling for the same species
+III,37,old name,ku-gould:16921,Black-faced Laughingthrush,Garrulax affinis,Trochalopteron affine,Black-faced Laughingthrush,an older genus or spelling for the same species
+III,38,error,ku-gould:16917,Chestnut-crowned Laughingthrush,Garrulax erythrocephalus,Trochalopteron variegatum,Variegated Laughingthrush,"KU names another species; the caption, the text and the bird agree with the row"
+III,40,old name,ku-gould:16909,Striped Laughingthrush,Garrulax virgatus,Trochalopteron virgatum,Striped Laughingthrush,an older genus or spelling for the same species
+III,42,old name,ku-gould:16901,Elliot's Laughingthrush,Garrulax elliotii,Trochalopteron elliotii,Elliot's Laughingthrush,an older genus or spelling for the same species
+III,43,pre-split,ku-gould:16897,Chestnut-crowned Laughingthrush,Garrulax erythrocephalus,Trochalopteron melanostigma,Silver-eared Laughingthrush,KU gives the parent species before the split
+III,44,old name,ku-gould:16893,Spotted Laughingthrush,Garrulax ocellatus,Ianthocincla ocellata,Spotted Laughingthrush,an older genus or spelling for the same species
+III,48,old name,ku-gould:16877,Wynaad Laughingthrush,Garrulax delesserti,Pterorhinus delesserti,Wayanad Laughingthrush,an older genus or spelling for the same species
+III,51,error,ku-gould:16865,Grey-sided Laughingthrush,Garrulax caerulatus,Pterorhinus poecilorhynchus,Rusty Laughingthrush,"KU names another species; the caption, the text and the bird agree with the row"
+III,53,old name,ku-gould:16857,"Greater Necklaced Laughing Thrush, Greater Necklaced Laughingthrush",Garrulax pectoralis,Pterorhinus pectoralis,Greater Necklaced Laughingthrush,an older genus or spelling for the same species
+III,54,old name,ku-gould:16853,Black-throated Laughingthrush,Garrulax chinensis,Pterorhinus chinensis,Black-throated Laughingthrush,an older genus or spelling for the same species
+III,55,old name,ku-gould:16849,Plain Laughingthrush,Garrulax davidi,Pterorhinus davidi,Pere David's Laughingthrush,an older genus or spelling for the same species
+III,60,old name,ku-gould:16829,Long-billed Wren-Babbler,Rimator malacoptilus,Napothera malacoptila,Long-billed Wren-Babbler,an older genus for the same species
+III,66,old name,ku-gould:16805,Dusky Fulvetta,Alcippe brunnea,Schoeniparus brunneus,Dusky Fulvetta,an older genus or spelling for the same species
+III,70,old name,ku-gould:16789,Black-throated Parrotbill,Paradoxornis nipalensis,Suthora nipalensis,Black-throated Parrotbill,an older genus or spelling for the same species
+III,72,old name,ku-gould:16781,Vinous-throated Parrotbill,Paradoxornis webbianus,Suthora webbiana,Vinous-throated Parrotbill,an older genus or spelling for the same species
+IV,2,old name,ku-gould:16732,Tesia castaneocoronata,Tesia castaneocoronata,Cettia castaneocoronata,Chestnut-headed Tesia,an older genus or spelling for the same species
+IV,8,pre-split,ku-gould:16708,Striated Yuhina,Yuhina castaniceps,Staphida torqueola,Indochinese Yuhina,KU gives the parent species before the split
+IV,9,old name,ku-gould:16704,Black-chinned Babbler,Stachyris pyrrhops,Cyanoderma pyrrhops,Black-chinned Babbler,an older genus or spelling for the same species
+IV,10,old name,ku-gould:16700,Rufous-capped Babbler,Stachyris ruficeps,Cyanoderma ruficeps,Rufous-capped Babbler,an older genus or spelling for the same species
+IV,18,old name,ku-gould:16668,Chestnut-tailed Minla,Minla strigula,Actinodura strigula,Chestnut-tailed Minla,an older genus or spelling for the same species
+IV,19,old name,ku-gould:16664,Blue-winged Minla,Minla cyanouroptera,Actinodura cyanouroptera,Blue-winged Minla,an older genus or spelling for the same species
+IV,36,old name,ku-gould:16596,White-capped Redstart,Chaimarrornis leucocephalus,Phoenicurus leucocephalus,White-capped Redstart,an older genus or spelling for the same species
+IV,38,old name,ku-gould:16588,Siberian Rubythroat,Luscinia calliope,Calliope calliope,Siberian Rubythroat,an older genus or spelling for the same species
+IV,39,old name,ku-gould:16584,White-tailed Rubythroat,Luscinia pectoralis,Calliope pectoralis,Himalayan Rubythroat,an older genus or spelling for the same species
+IV,40,subspecies,ku-gould:16580,White-tailed Rubythroat,Luscinia pectoralis tschebaiewi,Calliope tschebaiewi,Chinese Rubythroat,KU names the race; the row gives its species
+IV,52,old name,ku-gould:16532,Spotted Wren-Babbler,Spelaeornis formosus,Elachura formosa,Spotted Elachura,an older genus or spelling for the same species
+IV,61,old name,ku-gould:16496,White-browed Wagtail,Motacilla madaraspatensis,Motacilla maderaspatensis,White-browed Wagtail,a spelling of the same epithet
+IV,64,old name,ku-gould:16484,Citrine Wagtail,Motacill citreola ,Motacilla citreola,Citrine Wagtail,an older genus or spelling for the same species
+V,27,old name,ku-gould:16327,Long-tailed Rosefinch,Uragus sibiricus,Carpodacus sibiricus,Long-tailed Rosefinch,an older genus or spelling for the same species
+V,30,old name,ku-gould:16315,Mongolian Finch,Eremopsaltria mongolica,Bucanetes mongolicus,Mongolian Finch,an older genus for the same species
+V,47,old name,ku-gould:16247,Red-billed Blue Magpie,Urocissa erythrorhyncha,Urocissa erythroryncha,Red-billed Blue-Magpie,an older genus or spelling for the same species
+V,48,old name,ku-gould:16243,Red-billed Blue Magpie,Urocissa erythrorhyncha,Urocissa erythroryncha,Red-billed Blue-Magpie,an older genus or spelling for the same species
+V,49,old name,ku-gould:16239,Red-billed Blue Magpie,Urocissa erythrorhyncha,Urocissa erythroryncha,Red-billed Blue-Magpie,an older genus or spelling for the same species
+V,57,pre-split,ku-gould:16207,"Black-billed Magpie, Eurasian Magpie, pie bavarde",Pica pica,Pica bottanensis,Black-rumped Magpie,KU gives the parent species before the split
+V,66,old name,ku-gould:16171,Bar-bellied Pitta,Pitta elliotii,Hydrornis elliotii,Bar-bellied Pitta,an older genus or spelling for the same species
+V,67,old name,ku-gould:16167,Garnet Pitta,Pitta granatina,Erythropitta granatina,Garnet Pitta,an older genus or spelling for the same species
+V,69,old name,ku-gould:16159,Blue-banded Pitta,Pitta arquata,Erythropitta arquata,Blue-banded Pitta,an older genus or spelling for the same species
+V,72,old name,ku-gould:16147,Blue-headed Pitta,Pitta baudii,Hydrornis baudii,Blue-headed Pitta,an older genus or spelling for the same species
+V,75,error,ku-gould:16135,Graceful Pitta,Pitta venusta,Erythropitta ussheri,Black-crowned Pitta,"KU names another species; the caption, the text and the bird agree with the row"
+V,78,subspecies,ku-gould:16123,Banded Pitta,Pitta guajana schwaneri,Hydrornis schwaneri,Bornean Banded-Pitta,KU names the race; the row gives its species
+V,79,old name,ku-gould:16119,Blue-naped Pitta,Pitta nipalensis,Hydrornis nipalensis,Blue-naped Pitta,an older genus or spelling for the same species
+V,80,old name,ku-gould:16115,Blue Pitta,Pitta cyanea,Hydrornis cyaneus,Blue Pitta,an older genus or spelling for the same species
+V,81,old name,ku-gould:16111,Giant Pitta,Pitta caerulea,Hydrornis caeruleus,Giant Pitta,an older genus or spelling for the same species
+VI,4,open,ku-gould:16069,Long-tailed Parakeet,Psittacula longicauda,Psittacula alexandri,Red-breasted Parakeet,"a form the survey assigned; KU assigns it elsewhere, so the row is low"
+VI,11,open,ku-gould:16041,Long-tailed Parakeet,Psittacula longicauda,Psittacula eupatria,Alexandrine Parakeet,"a form the survey assigned; KU assigns it elsewhere, so the row is low"
+VI,16,subspecies,ku-gould:16021,White-backed Woodpecker,Dendrocopos leucotos insularis,Dendrocopos major,Great Spotted Woodpecker,KU names the race; the row gives its species
+VI,21,old name,ku-gould:16001,Grey-capped Pygmy Woodpecker,Dendrocopos canicapillus scintilliceps,Yungipicus canicapillus,Gray-capped Pygmy Woodpecker,an older genus or spelling for the same species
+VI,22,old name,ku-gould:15997,Grey-capped Pygmy Woodpecker,Dendrocopos canicapillus doerriesi,Yungipicus canicapillus,Gray-capped Pygmy Woodpecker,an older genus or spelling for the same species
+VI,26,old name,ku-gould:15981,Grey-capped Pygmy Woodpecker,Dendrocopos canicapillus semicoronatus,Yungipicus canicapillus,Gray-capped Pygmy Woodpecker,an older genus or spelling for the same species
+VI,27,old name,ku-gould:15977,Grey-capped Pygmy Woodpecker,Dendrocopos canicapillus canicapillus,Yungipicus canicapillus,Gray-capped Pygmy Woodpecker,an older genus or spelling for the same species
+VI,28,subspecies,ku-gould:15973,Sunda Pygmy Woodpecker,Dendrocopos moluccensis hardwickii,Yungipicus nanus,Brown-capped Pygmy Woodpecker,KU names the race; the row gives its species
+VI,34,subspecies,ku-gould:15949,Sunda Pygmy Woodpecker,Dendrocopos moluccensis nanus,Yungipicus nanus,Brown-capped Pygmy Woodpecker,KU names the race; the row gives its species
+VI,36,old name,ku-gould:15941,Greater Yellownape,Picus flavinucha,Chrysophlegma flavinucha,Greater Yellownape,an older genus or spelling for the same species
+VI,42,old name,ku-gould:15917,Cuculus sparverioides,Cuculus sparverioides,Hierococcyx sparverioides,Large Hawk-Cuckoo,an older genus or spelling for the same species
+VI,43,old name,ku-gould:15913,Cuculus hyperythrus,Cuculus hyperythrus,Hierococcyx hyperythrus,Northern Hawk-Cuckoo,an older genus or spelling for the same species
+VI,45,old name,ku-gould:15905,Scale-feathered Malkoha,Lepidogrammus cumingi,Dasylophus cumingi,Scale-feathered Malkoha,an older genus or spelling for the same species
+VI,49,subspecies,ku-gould:15889,Black-browed Barbet,Megalaima oorti nuchalis,Psilopogon nuchalis,Taiwan Barbet,KU names the race; the row gives its species
+VI,50,old name,ku-gould:15885,Golden-throated Barbet,Megalaima franklinii,Psilopogon franklinii,Golden-throated Barbet,an older genus or spelling for the same species
+VI,62,printed name,ku-gould:15837,Yellow-throated Sandgrouse,Pterocles gutturalis,Pterocles senegallus,Spotted Sandgrouse,KU follows the printed guttatus; the plate shows the Spotted Sandgrouse
+VI,72,subspecies,ku-gould:15797,Bambusicola thoracicus sonorivox,Bambusicola thoracicus sonorivox,Bambusicola sonorivox,Taiwan Bamboo-Partridge,KU names the race; the row gives its species
+VII,6,old name,ku-gould:15743,"Blue-breasted Quail, King Quail",Coturnix chinensis,Synoicus chinensis,Blue-breasted Quail,an older genus or spelling for the same species
+VII,7,old name,ku-gould:15739,"Blue-breasted Quail, King Quail",Coturnix chinensis,Synoicus chinensis,Blue-breasted Quail,an older genus or spelling for the same species
+VII,14,subspecies,ku-gould:15711,Silver Pheasant,Lophura nycthemera lineata,Lophura leucomelanos,Kalij Pheasant,KU names the race; the row gives its species
+VII,60,printed name,ku-gould:15527,Eurasian Curlew,Numenius arquata,Numenius madagascariensis,Far Eastern Curlew,KU matched rufescens to the Eurasian Curlew; Gould's rufescens is the Far Eastern
+VII,66,error,ku-gould:15503,Lady Amherst's Pheasant,Chrysolophus amherstiae,Calidris pygmaea,Spoon-billed Sandpiper,"KU names another species; the caption, the text and the bird agree with the row"
