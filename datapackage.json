@@ -454,6 +454,499 @@
           }
         ]
       }
+    },
+    {
+      "name": "gould-australia-plates",
+      "path": "gould-australia/plates.csv",
+      "title": "Gould, The Birds of Australia: plates",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "volume",
+            "type": "string",
+            "description": "Gould's volume, I–VII, or Supp for the Supplement; the plates are numbered per volume."
+          },
+          {
+            "name": "plate",
+            "type": "integer",
+            "description": "The plate's number in its volume's List of Plates (the sheets carry no number)."
+          },
+          {
+            "name": "list_name",
+            "type": "string",
+            "description": "English name in the volume's List of Plates."
+          },
+          {
+            "name": "list_latin",
+            "type": "string",
+            "description": "Latin name in the volume's List of Plates."
+          },
+          {
+            "name": "caption_latin",
+            "type": "string",
+            "description": "Latin name engraved on the plate, as read from the scan (empty where it was not read)."
+          },
+          {
+            "name": "bhl_barcode",
+            "type": "string",
+            "description": "BHL / Internet Archive identifier of that volume."
+          },
+          {
+            "name": "bhl_item",
+            "type": "integer",
+            "description": "BHL ItemID of that volume."
+          },
+          {
+            "name": "leaf",
+            "type": "integer",
+            "description": "Sequence number of the plate's page image in that volume (from 1)."
+          },
+          {
+            "name": "bhl_page",
+            "type": "integer",
+            "description": "BHL PageID of the plate."
+          },
+          {
+            "name": "orientation",
+            "type": "string",
+            "description": "portrait or landscape, as bound."
+          },
+          {
+            "name": "rotate",
+            "type": "integer",
+            "description": "Degrees counter-clockwise that stand the scan upright (caption along the bottom)."
+          },
+          {
+            "name": "scan_url",
+            "type": "string",
+            "description": "The unaltered full-resolution JPEG 2000 on BHL's open-data bucket."
+          },
+          {
+            "name": "page_url",
+            "type": "string",
+            "description": "The plate's page on biodiversitylibrary.org."
+          },
+          {
+            "name": "sheet_asset",
+            "type": "string",
+            "description": "The cleaned full sheet in this folio's release."
+          },
+          {
+            "name": "crop_asset",
+            "type": "string",
+            "description": "The art crop in this folio's release."
+          },
+          {
+            "name": "notes",
+            "type": "string",
+            "description": "Anything about the plate or this copy of it."
+          }
+        ]
+      }
+    },
+    {
+      "name": "gould-australia-species",
+      "path": "gould-australia/species.csv",
+      "title": "Gould, The Birds of Australia: modern species",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "volume",
+            "type": "string",
+            "description": "Gould's volume, I–VII, or Supp for the Supplement; the plates are numbered per volume."
+          },
+          {
+            "name": "plate",
+            "type": "integer",
+            "description": "The plate's number in its volume's List of Plates (the sheets carry no number)."
+          },
+          {
+            "name": "figure",
+            "type": "string",
+            "description": "On a sheet with several species, this species' figure key as printed (e.g. '2. Tree Sparrow.')."
+          },
+          {
+            "name": "printed_name",
+            "type": "string",
+            "description": "The name the folio prints for this bird."
+          },
+          {
+            "name": "printed_latin",
+            "type": "string",
+            "description": "The Latin name the folio prints, as printed."
+          },
+          {
+            "name": "scientific",
+            "type": "string",
+            "description": "Modern scientific name, in the taxonomy named in `taxonomy`. Empty when unresolved."
+          },
+          {
+            "name": "common",
+            "type": "string",
+            "description": "Modern English name, in the taxonomy named in `taxonomy`."
+          },
+          {
+            "name": "ebird_code",
+            "type": "string",
+            "description": "eBird species code in that taxonomy version."
+          },
+          {
+            "name": "taxonomy",
+            "type": "string",
+            "description": "The taxonomy `scientific`, `common` and `ebird_code` come from, e.g. 'eBird/Clements 2025'."
+          },
+          {
+            "name": "wikidata",
+            "type": "string",
+            "description": "Wikidata item of the species (by its eBird taxon ID, P3444). Empty when Wikidata has none or several."
+          },
+          {
+            "name": "gbif",
+            "type": "string",
+            "description": "GBIF backbone taxon key, from that Wikidata item (P846)."
+          },
+          {
+            "name": "avibase",
+            "type": "string",
+            "description": "Avibase concept ID, from that Wikidata item (P2026)."
+          },
+          {
+            "name": "birdnet_label",
+            "type": "string",
+            "description": "The species' label in BirdNET GLOBAL 6K V2.4, verbatim (Sci_Common). Empty when BirdNET has no such class."
+          },
+          {
+            "name": "form",
+            "type": "string",
+            "description": "Blank for the species itself; subspecies, variant, or pre-split (the plate predates a split and stands for a parent species).",
+            "constraints": {
+              "enum": [
+                "",
+                "subspecies",
+                "variant",
+                "pre-split"
+              ]
+            }
+          },
+          {
+            "name": "confidence",
+            "type": "string",
+            "description": "high: certain. judged: a considered call, reason given. medium/low: open. none: not identified.",
+            "constraints": {
+              "enum": [
+                "high",
+                "judged",
+                "medium",
+                "low",
+                "none"
+              ]
+            }
+          },
+          {
+            "name": "caption_checked",
+            "type": "string",
+            "description": "yes: the identification was checked by eye against the engraved caption on the scanned leaf.",
+            "constraints": {
+              "enum": [
+                "",
+                "yes",
+                "no"
+              ]
+            }
+          },
+          {
+            "name": "reason",
+            "type": "string",
+            "description": "Why this identification, or why none."
+          },
+          {
+            "name": "sources",
+            "type": "string",
+            "description": "Where the identification comes from."
+          }
+        ]
+      }
+    },
+    {
+      "name": "gould-australia-ku-disagreements",
+      "path": "gould-australia/ku-disagreements.csv",
+      "title": "Gould, The Birds of Australia: where the University of Kansas catalogue differs",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "volume",
+            "type": "string",
+            "description": "Gould's volume, I–VII, or Supp for the Supplement; the plates are numbered per volume."
+          },
+          {
+            "name": "plate",
+            "type": "integer",
+            "description": "The plate's number in its volume's List of Plates (the sheets carry no number)."
+          },
+          {
+            "name": "kind",
+            "type": "string",
+            "description": "same (the same bird under an older name or a lump), ku-error, crosswalk-error or doubtful."
+          },
+          {
+            "name": "ku_id",
+            "type": "string",
+            "description": "The Kansas record."
+          },
+          {
+            "name": "ku_name",
+            "type": "string",
+            "description": "KU's English name(s)."
+          },
+          {
+            "name": "ku_scientific",
+            "type": "string",
+            "description": "KU's scientific name."
+          },
+          {
+            "name": "scientific",
+            "type": "string",
+            "description": "This dataset's identification."
+          },
+          {
+            "name": "common",
+            "type": "string",
+            "description": "Its English name."
+          },
+          {
+            "name": "note",
+            "type": "string",
+            "description": "How the disagreement was settled."
+          }
+        ]
+      }
+    },
+    {
+      "name": "gould-britain-plates",
+      "path": "gould-britain/plates.csv",
+      "title": "Gould, The Birds of Great Britain: plates",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "volume",
+            "type": "string",
+            "description": "Gould's volume, I–V; the plates are numbered per volume."
+          },
+          {
+            "name": "plate",
+            "type": "integer",
+            "description": "The plate's number in its volume's List of Plates (the sheets carry no number)."
+          },
+          {
+            "name": "list_name",
+            "type": "string",
+            "description": "English name in the volume's List of Plates."
+          },
+          {
+            "name": "list_latin",
+            "type": "string",
+            "description": "Latin name in the volume's List of Plates."
+          },
+          {
+            "name": "caption_latin",
+            "type": "string",
+            "description": "Latin name engraved on the plate, as read from the scan (empty where it was not read)."
+          },
+          {
+            "name": "bhl_barcode",
+            "type": "string",
+            "description": "BHL / Internet Archive identifier of that volume."
+          },
+          {
+            "name": "bhl_item",
+            "type": "integer",
+            "description": "BHL ItemID of that volume."
+          },
+          {
+            "name": "leaf",
+            "type": "integer",
+            "description": "Sequence number of the plate's page image in that volume (from 1)."
+          },
+          {
+            "name": "bhl_page",
+            "type": "integer",
+            "description": "BHL PageID of the plate."
+          },
+          {
+            "name": "orientation",
+            "type": "string",
+            "description": "portrait or landscape, as bound."
+          },
+          {
+            "name": "rotate",
+            "type": "integer",
+            "description": "Degrees counter-clockwise that stand the scan upright (caption along the bottom)."
+          },
+          {
+            "name": "scan_url",
+            "type": "string",
+            "description": "The unaltered full-resolution JPEG 2000 on BHL's open-data bucket."
+          },
+          {
+            "name": "page_url",
+            "type": "string",
+            "description": "The plate's page on biodiversitylibrary.org."
+          },
+          {
+            "name": "sheet_asset",
+            "type": "string",
+            "description": "The cleaned full sheet in this folio's release."
+          },
+          {
+            "name": "crop_asset",
+            "type": "string",
+            "description": "The art crop in this folio's release."
+          },
+          {
+            "name": "notes",
+            "type": "string",
+            "description": "Anything about the plate or this copy of it."
+          }
+        ]
+      }
+    },
+    {
+      "name": "gould-britain-species",
+      "path": "gould-britain/species.csv",
+      "title": "Gould, The Birds of Great Britain: modern species",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "volume",
+            "type": "string",
+            "description": "Gould's volume, I–V; the plates are numbered per volume."
+          },
+          {
+            "name": "plate",
+            "type": "integer",
+            "description": "The plate's number in its volume's List of Plates (the sheets carry no number)."
+          },
+          {
+            "name": "figure",
+            "type": "string",
+            "description": "On a sheet with several species, this species' figure key as printed (e.g. '2. Tree Sparrow.')."
+          },
+          {
+            "name": "printed_name",
+            "type": "string",
+            "description": "The name the folio prints for this bird."
+          },
+          {
+            "name": "printed_latin",
+            "type": "string",
+            "description": "The Latin name the folio prints, as printed."
+          },
+          {
+            "name": "scientific",
+            "type": "string",
+            "description": "Modern scientific name, in the taxonomy named in `taxonomy`. Empty when unresolved."
+          },
+          {
+            "name": "common",
+            "type": "string",
+            "description": "Modern English name, in the taxonomy named in `taxonomy`."
+          },
+          {
+            "name": "ebird_code",
+            "type": "string",
+            "description": "eBird species code in that taxonomy version."
+          },
+          {
+            "name": "taxonomy",
+            "type": "string",
+            "description": "The taxonomy `scientific`, `common` and `ebird_code` come from, e.g. 'eBird/Clements 2025'."
+          },
+          {
+            "name": "wikidata",
+            "type": "string",
+            "description": "Wikidata item of the species (by its eBird taxon ID, P3444). Empty when Wikidata has none or several."
+          },
+          {
+            "name": "gbif",
+            "type": "string",
+            "description": "GBIF backbone taxon key, from that Wikidata item (P846)."
+          },
+          {
+            "name": "avibase",
+            "type": "string",
+            "description": "Avibase concept ID, from that Wikidata item (P2026)."
+          },
+          {
+            "name": "birdnet_label",
+            "type": "string",
+            "description": "The species' label in BirdNET GLOBAL 6K V2.4, verbatim (Sci_Common). Empty when BirdNET has no such class."
+          },
+          {
+            "name": "form",
+            "type": "string",
+            "description": "Blank for the species itself; subspecies, variant, or pre-split (the plate predates a split and stands for a parent species).",
+            "constraints": {
+              "enum": [
+                "",
+                "subspecies",
+                "variant",
+                "pre-split"
+              ]
+            }
+          },
+          {
+            "name": "confidence",
+            "type": "string",
+            "description": "high: certain. judged: a considered call, reason given. medium/low: open. none: not identified.",
+            "constraints": {
+              "enum": [
+                "high",
+                "judged",
+                "medium",
+                "low",
+                "none"
+              ]
+            }
+          },
+          {
+            "name": "caption_checked",
+            "type": "string",
+            "description": "yes: the identification was checked by eye against the engraved caption on the scanned leaf.",
+            "constraints": {
+              "enum": [
+                "",
+                "yes",
+                "no"
+              ]
+            }
+          },
+          {
+            "name": "reason",
+            "type": "string",
+            "description": "Why this identification, or why none."
+          },
+          {
+            "name": "sources",
+            "type": "string",
+            "description": "Where the identification comes from."
+          }
+        ]
+      }
     }
   ]
 }

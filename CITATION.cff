@@ -4,7 +4,8 @@ type: dataset
 title: "Historical bird plates: modern identifications"
 abstract: >-
   Plate-by-plate modern identifications of historical bird folios (John Gould's
-  The Birds of Europe; Audubon's The Birds of America, Havell edition), with eBird,
+  The Birds of Europe, The Birds of Australia and The Birds of Great Britain;
+  Audubon's The Birds of America, Havell edition), with eBird,
   Wikidata, GBIF, Avibase and BirdNET identifiers, and cleaned public-domain images
   of the Gould plates.
 authors:

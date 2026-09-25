@@ -5,7 +5,7 @@
 
 Checks, per folio folder (any folder holding a species.csv):
   - both tables have exactly the columns datapackage.json declares
-  - plates.csv has one row per plate and leaf; every species row names a plate in it
+  - plates.csv has one row per plate (volume and plate, where numbered per volume) and leaf; every species row names a plate in it
   - confidence, form and caption_checked hold only the declared values
   - a row with a species has an eBird code and a taxonomy; a row without one has a reason
   - every ebird_code is a species or group code in the eBird taxonomy named in `taxonomy`
@@ -78,14 +78,17 @@ def validate(offline: bool) -> list[str]:
             if cols != fields[rel]:
                 errors.append(f"{rel}: columns {cols} != datapackage.json {fields[rel]}")
         _, plates = read(folder / "plates.csv")
-        keys = [(r["plate"], r.get("leaf", "")) for r in plates]
+        species_cols, species = read(folder / "species.csv")
+        # A folio numbered per volume keys a plate by its volume and number.
+        per_volume = "volume" in species_cols
+        keys = [(r.get("volume", ""), r["plate"], r.get("leaf", "")) for r in plates]
         if len(keys) != len(set(keys)):
             errors.append(f"{name}/plates.csv: a plate and leaf appear twice")
-        plate_ids = {r["plate"] for r in plates}
-        _, species = read(folder / "species.csv")
+        plate_ids = {(r["volume"] if per_volume else "", r["plate"]) for r in plates}
         for i, r in enumerate(species, start=2):
-            where = f"{name}/species.csv:{i} (plate {r['plate']})"
-            if r["plate"] not in plate_ids:
+            plate = (r["volume"], r["plate"]) if per_volume else ("", r["plate"])
+            where = f"{name}/species.csv:{i} (plate {'.'.join(x for x in plate if x)})"
+            if plate not in plate_ids:
                 errors.append(f"{where}: plate not in plates.csv")
             for col, allowed in (("confidence", CONFIDENCE), ("form", FORM), ("caption_checked", CAPTION_CHECKED)):
                 if r[col] not in allowed:
