@@ -1,0 +1,28 @@
+plate,kind,ku_id,ku_name,ku_scientific,scientific,common,note
+14,error,ku-gould:11387,"Swainson's Hawk, Aguililla de Swainson, Buse de Swainson",Buteo swainsoni,Buteo buteo,Common Buzzard,KU names another species; the caption and the bird agree with ours
+50,error,ku-gould:11243,Little Owl,Athene noctua,Glaucidium passerinum,Eurasian Pygmy-Owl,KU names another species; the caption and the bird agree with ours
+63,error,ku-gould:11173,Pied Monarch,Arses kaupi,Ficedula hypoleuca / Ficedula albicollis,European Pied Flycatcher / Collared Flycatcher,KU names an Australian monarch
+65,error,ku-gould:11165,"Gray-spotted Flycatcher, Gray-streaked Flycatcher, Grey-streaked Flycatcher",Muscicapa griseisticta,Muscicapa striata,Spotted Flycatcher,KU names another species; the caption and the bird agree with ours
+67,error,ku-gould:11157,"Great Grey Shrike, Northern Shrike, pie-grièche grise",Lanius excubitor,Lanius meridionalis,Iberian Gray Shrike,KU names another species; the caption and the bird agree with ours
+75,error,ku-gould:11125,Red-throated Thrush,Turdus ruficollis,Turdus atrogularis,Black-throated Thrush,KU names another species; the caption and the bird agree with ours
+86,error,ku-gould:11081,Chestnut-bellied Rock Thrush,Monticola rufiventris,Monticola saxatilis,Rufous-tailed Rock-Thrush,KU names another species; the caption and the bird agree with ours
+108,error,ku-gould:10993,Great Reed Warbler,Acrocephalus arundinaceus,Acrocephalus scirpaceus,Common Reed Warbler,KU names another species; the caption and the bird agree with ours
+130,error,ku-gould:10905,"Dunlin, Bécasseau variable, Playero dorso rojo",Calidris alpina,Troglodytes troglodytes,Eurasian Wren,KU names the Dunlin on the Wren's plate
+137,error,ku-gould:10877,Nilgiri Pipit,Anthus nilghiriensis,Anthus campestris,Tawny Pipit,KU names another species; the caption and the bird agree with ours
+149,error,ku-gould:10829,Goldcrest,Regulus regulus,Phylloscopus proregulus,Pallas's Leaf Warbler,KU names another species; the caption and the bird agree with ours
+151,composite,ku-gould:10803,Sombre Tit,Poecile cincta,Poecile lugubris / Poecile cinctus,Sombre Tit / Gray-headed Chickadee,KU's English and Latin name different figures; the sheet shows both
+194,old name,ku-gould:10631,"Common Redpoll, sizerin flammé",Carduelis flammea,Acanthis flammea,Redpoll,an older binomial for the same species
+205,error,ku-gould:10587,"Two-barred Crossbill, White-winged Crossbill",Loxia leucoptera,Carpodacus sibiricus,Long-tailed Rosefinch,KU names another species; the caption and the bird agree with ours
+217,pre-split,ku-gould:10539,Azure-winged Magpie,Cyanopica cyana,Cyanopica cooki / Cyanopica cyanus,Iberian Magpie / Azure-winged Magpie,KU gives the parent species before the split
+219,crossed,ku-gould:10531,Alpine Chough,Pyrrhocorax graculus,Pyrrhocorax pyrrhocorax,Red-billed Chough,Gould's Latin has since moved to the other chough; the plate shows the long red bill
+247,typo,ku-gould:10401,"Common Pheasant, faisan de chasse, Faisán de collar, Ring-necked Pheasant",Phasianus colch icus,Phasianus colchicus,Ring-necked Pheasant,a space inside KU's binomial; same species
+259,old name,ku-gould:10353,Francolinus vulgaris,Francolinus vulgaris,Francolinus francolinus,Black Francolin,Gould's own binomial for the same species
+273,typo,ku-gould:10297,"Gray Heron, Grey Heron, Héron cendré",Aquila cinerea,Ardea cinerea,Gray Heron,KU's genus Aquila for Ardea; same species
+274,typo,ku-gould:10293,"Purple Heron, Héron pourpré",Aquila purpurea,Ardea purpurea,Purple Heron,KU's genus Aquila for Ardea; same species
+276,typo,ku-gould:10285,"Great Egret, Grande Aigrette",Aquila alba,Ardea alba,Great Egret,KU's genus Aquila for Ardea; same species
+287,pre-split,ku-gould:10241,"American Flamingo, Flamant des Caraïbes, flamant rose, Flamenco americano, Greater Flamingo",Phoenicopterus ruber,Phoenicopterus roseus,Greater Flamingo,KU gives the parent species before the split
+321,old name,ku-gould:10105,Sabine's snipe,Scolopax sabini,Gallinago gallinago / Gallinago gallinago,Common Snipe / Common Snipe,Gould's name for the dark morph of the Common Snipe
+360,error,ku-gould:9931,Yellow-browed Warbler,Phylloscopus inornatus,Spatula clypeata,Northern Shoveler,KU names another species; the caption and the bird agree with ours
+371,typo,ku-gould:9887,"Greater Scaup, fuligule milouinan, Pato boludo-mayor",Aythya m arila,Aythya marila,Greater Scaup,a space inside KU's binomial; same species
+391,crossed,ku-gould:9807,"Horned Grebe, Grèbe esclavon, Zambullidor cornudo",Podiceps auritus,Podiceps nigricollis,Eared Grebe,Gould's Latin has since moved to the other grebe; the plate shows the black neck and fanned ear plumes
+442,error,ku-gould:9604,"Parasitic Jaeger, Labbe parasite, Salteador parásito",Stercorarius parasiticus,Stercorarius longicaudus,Long-tailed Jaeger,KU names another species; the caption and the bird agree with ours
