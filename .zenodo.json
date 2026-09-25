@@ -1,0 +1,13 @@
+{
+  "upload_type": "dataset",
+  "title": "Historical bird plates: modern identifications",
+  "description": "<p>Plate-by-plate modern identifications of historical bird folios: John Gould's <i>The Birds of Europe</i>, <i>The Birds of Australia</i>, <i>The Birds of Great Britain</i> and <i>The Birds of Asia</i>, and John James Audubon's <i>The Birds of America</i> (Havell edition). Each identification carries eBird/Clements, Wikidata, GBIF, Avibase and BirdNET identifiers, with its confidence, reason and sources; unresolved plates are kept with the reason. Cleaned public-domain images of every plate are published as GitHub releases of the same repository.</p>",
+  "creators": [{"name": "Riley, Wells"}],
+  "license": "cc-zero",
+  "access_right": "open",
+  "keywords": ["ornithology", "natural history illustration", "John Gould", "John James Audubon",
+               "Biodiversity Heritage Library", "taxonomy crosswalk", "BirdNET", "eBird", "Wikidata"],
+  "related_identifiers": [
+    {"identifier": "https://github.com/wr/historical-bird-plates", "relation": "isSupplementTo", "scheme": "url"}
+  ]
+}
