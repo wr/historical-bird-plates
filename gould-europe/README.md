@@ -4,6 +4,46 @@ Five volumes and 449 plates: 448 in this copy, as one was never found. Drawn and
 
 **Copy:** Smithsonian Libraries, scanned for the Biodiversity Heritage Library (BHL): [title 65989](https://www.biodiversitylibrary.org/bibliography/65989), items 132863, 132861, 133913, 132862 and 133915, i.e. volumes I–V, BHL barcodes `birdsEurope{I..V}Goul`. Public domain. Credit: *Smithsonian Libraries and Archives, via the Biodiversity Heritage Library.*
 
+## The plates
+
+Every plate as its art crop, by General List number. The full-size images are in the [`gould-europe-v1`](https://github.com/wr/historical-bird-plates/releases/tag/gould-europe-v1) release.
+
+**Plates 1–50**
+
+![Plates 1–50](img/plates-001-050.jpg)
+
+**Plates 51–100**
+
+![Plates 51–100](img/plates-051-100.jpg)
+
+**Plates 101–151**
+
+![Plates 101–151](img/plates-101-151.jpg)
+
+**Plates 152–201**
+
+![Plates 152–201](img/plates-152-201.jpg)
+
+**Plates 202–251**
+
+![Plates 202–251](img/plates-202-251.jpg)
+
+**Plates 252–301**
+
+![Plates 252–301](img/plates-252-301.jpg)
+
+**Plates 302–351**
+
+![Plates 302–351](img/plates-302-351.jpg)
+
+**Plates 352–401**
+
+![Plates 352–401](img/plates-352-401.jpg)
+
+**Plates 402–449**
+
+![Plates 402–449](img/plates-402-449.jpg)
+
 ## Files
 
 - **`plates.csv`**: one row per plate. It holds:

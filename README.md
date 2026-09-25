@@ -11,6 +11,10 @@ Old plates name their birds the way their authors did, and many of those names n
 
 Gould's *Birds of Great Britain*, *Birds of Asia* and *Birds of Australia* are next, in the same shape.
 
+![Gould, The Birds of Europe, plates 402–449](gould-europe/img/plates-402-449.jpg)
+
+*Gould's* Birds of Europe, *plates 402–449. Every plate is in [`gould-europe/`](gould-europe/#the-plates).*
+
 ## What is in a folio
 
 Every folio folder has the same two tables. [`datapackage.json`](datapackage.json) describes each column ([Frictionless Data](https://specs.frictionlessdata.io/data-package/)).
