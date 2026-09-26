@@ -1,5 +1,7 @@
 # Historical bird plates
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22964828.svg)](https://doi.org/10.5281/zenodo.22964828)
+
 This dataset gives the modern species on every plate of the great nineteenth-century bird folios, plate by plate. Each identification carries identifiers other tools can join on: eBird, Wikidata, GBIF, Avibase and BirdNET.
 
 Old plates name their birds the way their authors did, and many of those names now belong to different species. Gould's "Black-headed Gull" is today's Mediterranean Gull. Audubon's "Hudsonian Curlew" is the Hudsonian Whimbrel, now split from the Eurasian bird. A plate is worth little to a birder, a cataloguer or an app until someone has worked out which bird it shows. This repo is that work, with its reasoning, released CC0 so anyone can build on it.
@@ -43,7 +45,7 @@ Every folio folder has the same two tables. [`datapackage.json`](datapackage.jso
 
 ## Licence and credit
 
-- **The tables** (identifications, crosswalks, notes): original work, dedicated to the public domain under [CC0 1.0](LICENSE). No permission is needed and no attribution is required. A citation is appreciated (see [`CITATION.cff`](CITATION.cff)).
+- **The tables** (identifications, crosswalks, notes): original work, dedicated to the public domain under [CC0 1.0](LICENSE). No permission is needed and no attribution is required. A citation is appreciated: Riley, W. *Historical bird plates: modern identifications*. Zenodo. [doi:10.5281/zenodo.22964828](https://doi.org/10.5281/zenodo.22964828) (all versions; see [`CITATION.cff`](CITATION.cff)).
 - **The plates:** public domain works of the 1820s–70s.
 - **The cleaned images** in the releases carry no new copyright: a faithful reproduction of a public-domain work is not an original work. They are marked [Public Domain Mark 1.0](https://creativecommons.org/publicdomain/mark/1.0/), not licensed. The Gould scans come from the Smithsonian Libraries' copy, via the Biodiversity Heritage Library. BHL marks them public domain and asks for the credit line "Smithsonian Libraries and Archives, via the Biodiversity Heritage Library". The Havell scans are audubon.org's. Credit them "Courtesy of the John James Audubon Center at Mill Grove, Montgomery County Audubon Collection, and Zebra Publishing" (see [`havell/README.md`](havell/README.md)).
 - **Names:** the eBird codes, Wikidata, GBIF and Avibase ids, and BirdNET's label strings are used only as names for joining. BirdNET's labels file is CC BY-NC-SA 4.0, so it is not included here. `tools/validate.py` downloads it to check against.

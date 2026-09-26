@@ -8,11 +8,16 @@ abstract: >-
   The Birds of Asia;
   Audubon's The Birds of America, Havell edition), with eBird,
   Wikidata, GBIF, Avibase and BirdNET identifiers, and cleaned public-domain images
-  of the Gould plates.
+  of the Gould and Havell plates.
 authors:
   - family-names: Riley
     given-names: Wells
 license: CC0-1.0
+doi: 10.5281/zenodo.22964828
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.22964828
+    description: All versions (concept DOI) on Zenodo
 repository-code: "https://github.com/wr/historical-bird-plates"
 keywords:
   - ornithology
