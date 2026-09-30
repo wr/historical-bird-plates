@@ -85,9 +85,11 @@ def fold(s: str) -> str:
     return " ".join(s.split()).casefold()
 
 
-def existing(work: str) -> tuple[set, set, dict]:
+def existing(work: str, kind: str, artist: str) -> tuple[set, set, dict]:
     """What Wikidata already has for the work: (volume, number) pairs, BHL page ids,
-    and items with no plate number, by label."""
+    and items with no plate number, by label. Only a print of the plate itself (same
+    print type and artist, in no collection) counts as unnumbered; a museum's
+    impression is a different thing."""
     qids, offset = [], 0
     while offset is not None:
         d = api(action="query", list="search", srsearch=f"haswbstatement:P361={work}",
@@ -113,7 +115,9 @@ def existing(work: str) -> tuple[set, set, dict]:
                     if value(x):
                         nums.add((volume_key(vol), value(x)))
                         numbered = True
-            if not numbered and "en" in e.get("labels", {}):
+            ids = lambda p: {(value(s["mainsnak"]) or {}).get("id") for s in claims.get(p, [])}
+            if (not numbered and "en" in e.get("labels", {}) and kind in ids("P31")
+                    and artist in ids("P170") and not claims.get("P195")):
                 unnumbered[fold(e["labels"]["en"]["value"])] = qid
     return nums, pages, unnumbered
 
@@ -126,10 +130,12 @@ def clean(s: str) -> str:
     return " ".join(s.split())
 
 
-def listing(parts: list[str]) -> str:
-    """"A, B and C". A last part that already has its "and" is left alone."""
+def listing(parts: list[str], figures: int = 0) -> str:
+    """"A, B and C". When there are more birds than parts, the last part already
+    joins two of them ("Blackburnian and Mourning Warbler") and is left alone;
+    otherwise an "and" in it is part of a name ("Black and White Kingfisher")."""
     parts = [re.sub(r"^and\s+", "", p.strip(" .,")) for p in parts if p.strip(" .,")]
-    if len(parts) < 2 or " and " in parts[-1]:
+    if len(parts) < 2 or (" and " in parts[-1] and figures > len(parts)):
         return ", ".join(parts)
     return ", ".join(parts[:-1]) + " and " + parts[-1]
 
@@ -142,9 +148,10 @@ def label(printed: str, figures: int) -> str:
     parts = re.split(r"\s*\b\d+\.\s+", printed)
     if len([p for p in parts if p.strip(" .,")]) < 2 and " / " in printed:
         parts = printed.split(" / ")
-    if len([p for p in parts if p.strip(" .,")]) < 2 and figures > 1 and not re.search(r",\s*or\b", printed):
+    if (len([p for p in parts if p.strip(" .,")]) < 2 and (figures > 1 or printed.count(",") > 1)
+            and not re.search(r",\s*or\b", printed)):
         parts = printed.split(",")
-    name = listing(parts)
+    name = listing(parts, figures)
     return re.sub(r"(?<=\s)(And|Or)(?=\s)", lambda m: m.group(1).lower(), name)
 
 
@@ -165,7 +172,7 @@ def batch(folder: str, only: set | None, limit: int | None, check_existing: bool
         if p.get("bhl_page"):
             sheets[p["bhl_page"]].append(key(p))
     works = {work} | {w for (f, _), (w, _) in SEPARATE.items() if f == folder}
-    have = {w: existing(w) if check_existing else (set(), set(), {}) for w in works}
+    have = {w: existing(w, kind, artist) if check_existing else (set(), set(), {}) for w in works}
     readme = f"{REPO}/tree/main/{folder}"
     blocks, skipped, adopted, seen = [], 0, 0, set()
     for p in plates:
@@ -194,6 +201,10 @@ def batch(folder: str, only: set | None, limit: int | None, check_existing: bool
         if (volume_key(vol) if on == work else "", n) in nums or (p.get("bhl_page") and p["bhl_page"] in pages):
             skipped += 1
             continue
+        if vol and on == work and ("", n) in nums:
+            print(f"plate {tag}: Wikidata has a plate {n} with no volume; skipped, check it by hand", file=sys.stderr)
+            skipped += 1
+            continue
         printed, lang = clean(p.get("caption_name") or p.get("list_name") or p.get("title") or ""), "en"
         if re.fullmatch(r"\(.*\)", printed):   # "(no English name printed)": the title is the Latin
             printed, lang = clean(p.get("list_latin") or p.get("caption_latin") or "").strip(" ."), "la"
@@ -207,7 +218,7 @@ def batch(folder: str, only: set | None, limit: int | None, check_existing: bool
             desc += " (printed on one sheet with plate " + ", ".join(
                 f"{o[1]}, volume {o[0]}" if o[0] else o[1] for o in others) + ")"
         part = f"\t{on}\tP1545\t{q(n)}" + (f"\tP478\t{q(vol)}" if vol and on == work else "")
-        target = unnumbered.get(fold(name))
+        target = unnumbered.pop(fold(name), None)
         if target:
             # The plate is already on Wikidata without its number: add to that item.
             adopted += 1
