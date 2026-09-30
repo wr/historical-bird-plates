@@ -488,7 +488,7 @@ VI,53,Ardea Novae-Hollandiae,White-fronted Heron,Egretta novaehollandiae,Egretta
 VI,54,Ardea rectirostris,Great-billed Heron,Ardea sumatrana,Ardea sumatrana,Great-billed Heron,high,rectirostris = Great-billed Heron
 VI,55,Ardea leucophaea,Great Grey Heron,Ardea cinerea,Ardea cinerea,Gray Heron,medium,leucophaea Gould: a Grey Heron (Gould compares it to the Common Heron and cites Indian birds); an Australian vagrant at most
 VI,56,Herodias syrmatophorus,Australian Egret,Ardea alba,Ardea alba,Great Egret,high,"syrmatophorus = Great Egret (modesta), lumped in BirdNET"
-VI,57,Herodias plumiferus,Plumed Egret,Ardea intermedia,Ardea intermedia,Intermediate Egret,high,"plumiferus = Intermediate (Plumed) Egret, lumped in BirdNET"
+VI,57,Herodias plumiferus,Plumed Egret,Ardea plumifera,Ardea intermedia,Intermediate Egret,high,plumiferus = Plumed Egret (Clements splits Intermediate Egret; BirdNET lumps)
 VI,58,Herodias immaculata,Spotless Egret,Egretta garzetta,Egretta garzetta,Little Egret,high,immaculata = Little Egret (nigripes)
 VI,59,Herodias pannosus,Sombre Egret,Egretta sacra,Egretta sacra,Pacific Reef-Heron,medium,pannosus Gould: slaty-black egret with white chin from Port Stephens = dark Pacific Reef-Heron
 VI,60,Herodias jugularis,Blue Reef Heron,Egretta sacra,Egretta sacra,Pacific Reef-Heron,high,jugularis = dark morph Pacific Reef-Heron

@@ -85,7 +85,7 @@ Every plate as its art crop, by volume and number. The full-size images are in t
   - `scan_url`, the unaltered JPEG 2000 on BHL's open-data bucket;
   - the two release images.
 - **`species.csv`**: one row per plate, including the three that name no species.
-- **`ku-disagreements.csv`**: the 72 plates where the Kansas catalogue names a different bird than this dataset, beyond a subspecies, an ending or a genus change. Each one is settled (see below).
+- **`ku-disagreements.csv`**: the 73 plates where the Kansas catalogue names a different bird than this dataset, beyond a subspecies, an ending or a genus change. Each one is settled (see below).
 - **`sources/`**: the working record.
   - `plate-leaves.csv`: every plate's leaf, its engraved caption as read, whether it agrees with the List, its orientation and where its caption starts.
   - `crosswalk.csv`: each plate mapped to a modern species and to BirdNET V2.4's label, with confidence and reason.
@@ -118,17 +118,17 @@ These are the plates a careful reader would still get wrong. Gould's binomial no
 - **Rails:** his *Rallus pectoralis* (VI.76) is the Buff-banded Rail. Lewin's Rail is VI.77.
 - **Bassian Thrush:** his *Oreocincla lunulata* (IV.7) is the Bassian Thrush, not the Mountain Thrush of Central America.
 - **Thornbills:** his *Acanthiza diemenensis* (III.54) is the Brown Thornbill. The Tasmanian Thornbill is III.55.
-- **Splits:** a lumped name now belongs to another population. His Delicate Owl (I.31) is the Eastern Barn Owl, *Tyto javanica*, not *T. alba*; his White-bellied Shrike-Tit (II.80) is the Western Shrike-tit, *Falcunculus leucogaster*; his White Tern (VII.30) is the Blue-billed White-Tern, *Gygis candida*, not the Atlantic *G. alba*.
+- **Splits:** a lumped name now belongs to another population. His Delicate Owl (I.31) is the Eastern Barn Owl, *Tyto javanica*, not *T. alba*; his White-bellied Shrike-Tit (II.80) is the Western Shrike-tit, *Falcunculus leucogaster*; his White Tern (VII.30) is the Blue-billed White-Tern, *Gygis candida*, not the Atlantic *G. alba*; his Plumed Egret (VI.57) is the Plumed Egret, *Ardea plumifera*, not the Medium Egret of Asia.
 
 ## The Kansas catalogue
 
 The University of Kansas Spencer Library's Ellis Collection copy gives each plate a modern scientific name (books `ku-gould:15183` for volume I to `ku-gould:12471` for the Supplement). Its names were matched from the printed Latin, not from the birds.
 
-`ku-disagreements.csv` lists the 72 plates where the two differ, by kind:
+`ku-disagreements.csv` lists the 73 plates where the two differ, by kind:
 
 | kind | plates | what it is |
 |---|---|---|
-| same | 37 | the same bird under an older name, a lump, or a split since |
+| same | 38 | the same bird under an older name, a lump, or a split since |
 | ku-error | 31 | Kansas matched the printed Latin, not the bird. It swaps V.15 with V.16 and IV.93 with IV.98 |
 | crosswalk-error | 1 | III.41: the crosswalk's guess was wrong. The row now names no species |
 | doubtful | VI.2, VI.19, VII.21 | open: the kiwi, the sand-plover and the skua, each argued in `note` |

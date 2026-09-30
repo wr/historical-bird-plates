@@ -263,7 +263,7 @@ IV,32,136,Black-and-White Bush-Chat,Rhodophila melanoleuca,yes,probable,Saxicola
 IV,33,140,White-tailed Bush-Chat,Pratincola leucura,yes,not_in_birdnet,,,none,,,ku-gould:16608,Saxicola leucura,Saxicola leucura,left out (not in BirdNET),
 IV,34,144,Indian Furze-Chat,Pratincola Indica,yes,none,,,none,,,ku-gould:16604,Saxicola torquatus,Saxicola torquatus,left out (no modern name),
 IV,35,148,Celestial Grandala,Grandala coelicolor,yes,not_in_birdnet,,,none,,,ku-gould:16600,Grandala coelicolor,Grandala,left out (not in BirdNET),
-IV,36,152,Great White-capped Redstart,Ruticilla erythrogastra,yes,probable,Phoenicurus leucocephalus,,high,Phoenicurus leucocephalus,White-capped Redstart,ku-gould:16596,Chaimarrornis leucocephalus,White-capped Redstart,pinned,
+IV,36,152,Great White-capped Redstart,Ruticilla erythrogastra,yes,probable,Phoenicurus erythrogastrus,,high,,,ku-gould:16596,Chaimarrornis leucocephalus,White-capped Redstart,pinned,
 IV,37,156,Coal-black Redstart,Ruticilla erythroprocta,yes,not_in_birdnet,,,none,,,ku-gould:16592,Phoenicurus ochruros,Black Redstart,left out (not in BirdNET),
 IV,38,160,Siberian Ruby-throat,Calliope camtschatkensis,yes,probable,Calliope calliope,,high,Calliope calliope,Siberian Rubythroat,ku-gould:16588,Luscinia calliope,Siberian Rubythroat,pinned,
 IV,39,164,Himalayan Ruby-throat,Calliope pectoralis,yes,exact,Calliope pectoralis,,high,Calliope pectoralis,Himalayan Rubythroat,ku-gould:16584,Luscinia pectoralis,White-tailed Rubythroat,pinned,

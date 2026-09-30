@@ -102,6 +102,7 @@ These are the plates a careful reader would still get wrong.
 - **V.6** *Emberiza caniceps* is the White-capped Bunting, and **V.11** *Glycyspina huttoni* the Gray-necked Bunting. They are easily swapped.
 - **VI.62** *Pterocles guttatus* is the Spotted Sandgrouse.
 - **VII.60** *Numenius rufescens* Gould is the Far Eastern Curlew, not the Eurasian.
+- **IV.36** *Ruticilla erythrogastra*, Gould's "Great White-capped Redstart", is the White-winged (Güldenstädt's) Redstart: white wing patch, brown female. The White-capped Redstart has neither.
 - **I.17** *Strix indica* Blyth is the Eastern Barn Owl (*Tyto javanica*, race *stertens*), not the Western; Kansas matched *indica* to the Spotted Owlet.
 - **V.17** *Carduelis orientalis* is the grey-headed *caniceps* goldfinch, a form of the European Goldfinch that looks nothing like the European bird.
 - **VII.39** *Phasianus torquatus* is the ringed Chinese stock of the Ring-necked Pheasant, the bird introduced to North America; VII.34 is the nominate, ringless.
@@ -113,12 +114,12 @@ The University of Kansas Spencer Library's Ellis Collection copy (Ellis Aves H12
 
 | kind | plates | what it is |
 |---|---|---|
-| old name | 62 | the same species under an older genus or spelling (*Garrulax* for *Trochalopteron*, *Pitta* for *Hydrornis*) |
+| old name | 61 | the same species under an older genus or spelling (*Garrulax* for *Trochalopteron*, *Pitta* for *Hydrornis*) |
 | subspecies | 16 | KU names the race |
 | pre-split | 13 | KU gives the parent species before a split (Great Tit for the Asian Tit, Asian Paradise-Flycatcher for the Amur) |
 | lumped | 1 | I.4: eBird keeps the Barbary Falcon within the Peregrine |
 | printed name | 3 | KU follows the printed Latin where the bird says otherwise (I.35, VI.62, VII.60) |
-| error | 15 | KU names another species: six Asian trogons sent to New World ones, the Spoon-billed Sandpiper to Lady Amherst's Pheasant, the Indian barn owl to the Spotted Owlet |
+| error | 16 | KU names another species: six Asian trogons sent to New World ones, the Spoon-billed Sandpiper to Lady Amherst's Pheasant, the Indian barn owl to the Spotted Owlet, Güldenstädt's Redstart to the White-capped |
 | open | 8 | a form the survey assigned and KU assigns elsewhere; the row is `low` |
 
 ## The images: release `gould-asia-v1`

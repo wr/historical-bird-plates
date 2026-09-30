@@ -73,7 +73,7 @@ IV,9,old name,ku-gould:16704,Black-chinned Babbler,Stachyris pyrrhops,Cyanoderma
 IV,10,old name,ku-gould:16700,Rufous-capped Babbler,Stachyris ruficeps,Cyanoderma ruficeps,Rufous-capped Babbler,an older genus or spelling for the same species
 IV,18,old name,ku-gould:16668,Chestnut-tailed Minla,Minla strigula,Actinodura strigula,Chestnut-tailed Minla,an older genus or spelling for the same species
 IV,19,old name,ku-gould:16664,Blue-winged Minla,Minla cyanouroptera,Actinodura cyanouroptera,Blue-winged Minla,an older genus or spelling for the same species
-IV,36,old name,ku-gould:16596,White-capped Redstart,Chaimarrornis leucocephalus,Phoenicurus leucocephalus,White-capped Redstart,an older genus or spelling for the same species
+IV,36,error,ku-gould:16596,White-capped Redstart,Chaimarrornis leucocephalus,Phoenicurus erythrogastrus,White-winged Redstart,"KU followed Gould's English name; his Ruticilla erythrogastra, with its white wing patch and brown female, is Güldenstädt's (White-winged) Redstart"
 IV,38,old name,ku-gould:16588,Siberian Rubythroat,Luscinia calliope,Calliope calliope,Siberian Rubythroat,an older genus or spelling for the same species
 IV,39,old name,ku-gould:16584,White-tailed Rubythroat,Luscinia pectoralis,Calliope pectoralis,Himalayan Rubythroat,an older genus or spelling for the same species
 IV,40,subspecies,ku-gould:16580,White-tailed Rubythroat,Luscinia pectoralis tschebaiewi,Calliope tschebaiewi,Chinese Rubythroat,KU names the race; the row gives its species
