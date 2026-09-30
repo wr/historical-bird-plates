@@ -90,12 +90,18 @@ def existing(work: str, kind: str, artist: str, volumes: bool) -> tuple[set, set
     and items with no plate number, by label. Only a print of the plate itself (same
     print type and artist, in no collection) counts as unnumbered; a museum's
     impression is a different thing."""
-    qids, offset = [], 0
+    # Pages sorted by relevance shift under an index that is still updating, so an
+    # item can come twice and another not at all; creation order holds still.
+    qids, offset, total = [], 0, 0
     while offset is not None:
-        d = api(action="query", list="search", srsearch=f"haswbstatement:P361={work}",
-                srnamespace=0, srlimit=500, sroffset=offset, srprop="")
+        d = api(action="query", list="search", srsearch=f"haswbstatement:P361={work}", srnamespace=0,
+                srlimit=500, sroffset=offset, srprop="", srsort="create_timestamp_asc", srinfo="totalhits")
         qids += [r["title"] for r in d["query"]["search"]]
+        total = d["query"]["searchinfo"]["totalhits"]
         offset = d.get("continue", {}).get("sroffset")
+    qids = list(dict.fromkeys(qids))
+    if len(qids) != total:
+        sys.exit(f"search for part of {work} gave {len(qids)} distinct items of {total}; try again in a minute")
     value = lambda snak: snak.get("datavalue", {}).get("value")
     nums, pages, unnumbered = set(), set(), collections.defaultdict(list)
     for i in range(0, len(qids), 50):
