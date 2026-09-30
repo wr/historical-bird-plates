@@ -3,20 +3,33 @@
     python3 tools/quickstatements.py gould-europe                 # every eligible plate
     python3 tools/quickstatements.py gould-europe --limit 5       # a test batch
     python3 tools/quickstatements.py gould-europe --plates 1,12,425
+    python3 tools/quickstatements.py gould-asia --plates IV.59    # VOL.N for per-volume folios
+    python3 tools/quickstatements.py havell --chunk 80 -o havell  # havell-1.qs, havell-2.qs, ...
 
 Each item: instance of (print type), part of the work with the plate's number
 (and volume) as qualifiers, creator, title, BHL page ID where the folio is
 scanned on BHL, and `depicts` for every species identified with confidence
-high or judged, referenced to this dataset. A plate is eligible when one of
-its identifications was checked against the engraved caption (Havell: when it
-is identified at all). Plates Wikidata already has an item for (same work and
-number, or same BHL page) are skipped, so a batch can be rerun safely.
+high or judged, referenced to this dataset. A plate is eligible when it is
+identified and that identification was checked against the engraved caption
+(Havell: when it is identified at all). The Supplement to The Birds of
+Australia is its own work on Wikidata, so its plates are part of that.
+
+Plates Wikidata already has are skipped: same work and number, or same BHL
+page. An item that is part of the work, has no plate number and has the
+plate's name gets the plate's statements instead of a new item being made.
+The check reads Wikidata's search index and API, not the query service, which
+can lag by hours; wait a few minutes after a batch ends before rerunning.
+
+Wikidata lets an account make about 90 edits a minute, and QuickStatements'
+background runner goes faster, so the excess fails. Split a batch with
+--chunk 80 and run the files one after another.
 
 Standard library only. Paste the output into https://quickstatements.toolforge.org/.
 """
 from __future__ import annotations
 
 import argparse
+import collections
 import csv
 import json
 import re
@@ -27,11 +40,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 UA = {"User-Agent": "historical-bird-plates quickstatements (+https://github.com/wr/historical-bird-plates)"}
-SPARQL = "https://query.wikidata.org/sparql"
+API = "https://www.wikidata.org/w/api.php"
 REPO = "https://github.com/wr/historical-bird-plates"
 
 GOULD, AUDUBON = "Q313787", "Q182882"
 LITHOGRAPH, ENGRAVING = "Q15123870", "Q11835431"
+LIST_ARTICLE = "Q13406463"
 FOLIOS = {
     "gould-europe":    ("Q51448070", "The Birds of Europe", GOULD, LITHOGRAPH, "hand-coloured lithograph"),
     "gould-australia": ("Q967304", "The Birds of Australia", GOULD, LITHOGRAPH, "hand-coloured lithograph"),
@@ -39,7 +53,10 @@ FOLIOS = {
     "gould-asia":      ("Q51448002", "The Birds of Asia", GOULD, LITHOGRAPH, "hand-coloured lithograph"),
     "havell":          ("Q377817", "The Birds of America", AUDUBON, ENGRAVING, "hand-coloured engraving and aquatint"),
 }
+# A "volume" that is really a separate publication: (folio, volume) -> (work, how the description names it).
+SEPARATE = {("gould-australia", "Supp"): ("Q51382318", "the Supplement to John Gould's The Birds of Australia")}
 ARTIST = {GOULD: "John Gould", AUDUBON: "John James Audubon"}
+ROMAN = dict(I=1, V=5, X=10, L=50)
 
 
 def read(path: Path) -> list[dict]:
@@ -47,28 +64,92 @@ def read(path: Path) -> list[dict]:
         return list(csv.DictReader(f))
 
 
-def sparql(query: str) -> list[dict]:
-    url = SPARQL + "?" + urllib.parse.urlencode({"query": query, "format": "json"})
+def api(**params) -> dict:
+    url = API + "?" + urllib.parse.urlencode({**params, "format": "json"})
     with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=120) as r:
-        return json.load(r)["results"]["bindings"]
+        return json.load(r)
 
 
-def existing(work: str) -> tuple[set, set]:
-    """(volume, number) pairs and BHL page ids Wikidata already has for the work."""
-    rows = sparql(f"""SELECT ?n ?v ?bhl WHERE {{
-      ?item p:P361 ?st . ?st ps:P361 wd:{work} .
-      OPTIONAL {{ ?st pq:P1545 ?n }} OPTIONAL {{ ?st pq:P478 ?v }}
-      OPTIONAL {{ ?item wdt:P687 ?bhl }} }}""")
-    nums = {(r.get("v", {}).get("value", ""), r["n"]["value"]) for r in rows if "n" in r}
-    pages = {r["bhl"]["value"] for r in rows if "bhl" in r}
-    return nums, pages
+def volume_key(v: str) -> str:
+    """"III", "iii" and "3" compare equal."""
+    v = v.strip().upper()
+    if v and set(v) <= set(ROMAN):
+        total = 0
+        for a, b in zip(v, v[1:] + " "):
+            total += -ROMAN[a] if ROMAN.get(b, 0) > ROMAN[a] else ROMAN[a]
+        return str(total)
+    return v
+
+
+def fold(s: str) -> str:
+    return " ".join(s.split()).casefold()
+
+
+def existing(work: str) -> tuple[set, set, dict]:
+    """What Wikidata already has for the work: (volume, number) pairs, BHL page ids,
+    and items with no plate number, by label."""
+    qids, offset = [], 0
+    while offset is not None:
+        d = api(action="query", list="search", srsearch=f"haswbstatement:P361={work}",
+                srnamespace=0, srlimit=500, sroffset=offset, srprop="")
+        qids += [r["title"] for r in d["query"]["search"]]
+        offset = d.get("continue", {}).get("sroffset")
+    value = lambda snak: snak.get("datavalue", {}).get("value")
+    nums, pages, unnumbered = set(), set(), {}
+    for i in range(0, len(qids), 50):
+        for qid, e in api(action="wbgetentities", ids="|".join(qids[i:i + 50]),
+                          props="claims|labels", languages="en")["entities"].items():
+            claims = e.get("claims", {})
+            if any((value(s["mainsnak"]) or {}).get("id") == LIST_ARTICLE for s in claims.get("P31", [])):
+                continue
+            pages |= {value(s["mainsnak"]) for s in claims.get("P687", []) if value(s["mainsnak"])}
+            numbered = False
+            for s in claims.get("P361", []):
+                if (value(s["mainsnak"]) or {}).get("id") != work:
+                    continue
+                qual = s.get("qualifiers", {})
+                vol = next((value(x) for x in qual.get("P478", []) if value(x)), "")
+                for x in qual.get("P1545", []):
+                    if value(x):
+                        nums.add((volume_key(vol), value(x)))
+                        numbered = True
+            if not numbered and "en" in e.get("labels", {}):
+                unnumbered[fold(e["labels"]["en"]["value"])] = qid
+    return nums, pages, unnumbered
 
 
 def q(s: str) -> str:
     return '"' + s.replace('"', "'").strip() + '"'
 
 
-def batch(folder: str, only: set | None, limit: int | None, check_existing: bool) -> tuple[list[str], int]:
+def clean(s: str) -> str:
+    return " ".join(s.split())
+
+
+def listing(parts: list[str]) -> str:
+    """"A, B and C". A last part that already has its "and" is left alone."""
+    parts = [re.sub(r"^and\s+", "", p.strip(" .,")) for p in parts if p.strip(" .,")]
+    if len(parts) < 2 or " and " in parts[-1]:
+        return ", ".join(parts)
+    return ", ".join(parts[:-1]) + " and " + parts[-1]
+
+
+def label(printed: str, figures: int) -> str:
+    """The item's label, from the printed name. A composite sheet's figures are joined
+    as a list: "1. House Sparrow. 2. Tree Sparrow." is "House Sparrow and Tree Sparrow".
+    Figure notes such as "(whole figure)" are left to the title."""
+    printed = re.sub(r"\s*\([^)]*\)", "", printed).strip() or printed
+    parts = re.split(r"\s*\b\d+\.\s+", printed)
+    if len([p for p in parts if p.strip(" .,")]) < 2 and " / " in printed:
+        parts = printed.split(" / ")
+    if len([p for p in parts if p.strip(" .,")]) < 2 and figures > 1 and not re.search(r",\s*or\b", printed):
+        parts = printed.split(",")
+    name = listing(parts)
+    return re.sub(r"(?<=\s)(And|Or)(?=\s)", lambda m: m.group(1).lower(), name)
+
+
+def batch(folder: str, only: set | None, limit: int | None, check_existing: bool) -> tuple[list[list[str]], int, int]:
+    """One block of commands per plate; and how many plates were skipped or adopted."""
     work, title, artist, kind, medium = FOLIOS[folder]
     plates = read(ROOT / folder / "plates.csv")
     species = read(ROOT / folder / "species.csv")
@@ -79,62 +160,104 @@ def batch(folder: str, only: set | None, limit: int | None, check_existing: bool
     by_plate: dict = {}
     for s in species:
         by_plate.setdefault(key(s), []).append(s)
-    nums, pages = existing(work) if check_existing else (set(), set())
+    sheets = collections.defaultdict(list)
+    for p in plates:
+        if p.get("bhl_page"):
+            sheets[p["bhl_page"]].append(key(p))
+    works = {work} | {w for (f, _), (w, _) in SEPARATE.items() if f == folder}
+    have = {w: existing(w) if check_existing else (set(), set(), {}) for w in works}
     readme = f"{REPO}/tree/main/{folder}"
-    lines, skipped, seen = [], 0, set()
+    blocks, skipped, adopted, seen = [], 0, 0, set()
     for p in plates:
         k = key(p)
         if k in seen:
             continue
         seen.add(k)
         vol, n = k
-        if only and n not in only and f"{vol}.{n}" not in only:
+        tag = f"{vol}.{n}" if vol else n
+        if only and tag not in only:
             continue
         rows = by_plate.get(k, [])
         ids = [s for s in rows if s["scientific"]]
-        eligible = any(s["caption_checked"] == "yes" for s in rows) if folder != "havell" else bool(ids)
+        if folder == "havell":
+            eligible = bool(ids)
+        else:
+            eligible = any(s["caption_checked"] == "yes" and s["scientific"] for s in rows)
         if not eligible:
             continue
-        if k in nums or (p.get("bhl_page") and p["bhl_page"] in pages):
+        on, where = work, f"plate {n}" + (f", volume {vol}," if vol else "")
+        of = f"{ARTIST[artist]}'s {title}"
+        if (folder, vol) in SEPARATE:
+            on, of = SEPARATE[(folder, vol)]
+            where = f"plate {n}"
+        nums, pages, unnumbered = have[on]
+        if (volume_key(vol) if on == work else "", n) in nums or (p.get("bhl_page") and p["bhl_page"] in pages):
             skipped += 1
             continue
-        printed = (p.get("caption_name") or p.get("list_name") or p.get("title") or "").strip()
-        # The label drops a composite sheet's figure numbers: "1. House Sparrow. 2. Tree
-        # Sparrow." is labelled "House Sparrow and Tree Sparrow"; the title keeps them.
-        parts = [x.strip(" .") for x in re.split(r"\s*\b\d+\.\s+", printed) if x.strip(" .")]
-        name = " and ".join(parts) if len(parts) > 1 else printed
-        if not printed:
-            printed = name = " / ".join(s["common"] for s in ids)
-        where = f"plate {n}" + (f", volume {vol}," if vol else "")
-        desc = f"{medium}, {where} of {ARTIST[artist]}'s {title}"
-        lines += ["CREATE",
-                  f"LAST\tLen\t{q(name)}",
-                  f"LAST\tDen\t{q(desc)}",
-                  f"LAST\tP31\t{kind}",
-                  f"LAST\tP361\t{work}\tP1545\t{q(n)}" + (f"\tP478\t{q(vol)}" if vol else ""),
-                  f"LAST\tP170\t{artist}",
-                  f"LAST\tP1476\ten:{q(printed)}"]
+        printed, lang = clean(p.get("caption_name") or p.get("list_name") or p.get("title") or ""), "en"
+        if re.fullmatch(r"\(.*\)", printed):   # "(no English name printed)": the title is the Latin
+            printed, lang = clean(p.get("list_latin") or p.get("caption_latin") or "").strip(" ."), "la"
+        name = label(printed, len(rows)) if printed else " / ".join(s["common"] for s in ids)
+        desc = f"{medium}, {where} of {of}"
+        others = [o for o in sheets.get(p.get("bhl_page", ""), []) if o != k] if p.get("bhl_page") else []
+        if others:
+            # Two plate numbers printed on one sheet: each item is named for its own bird.
+            own = [clean(s["printed_name"]) for s in rows if s.get("printed_name")]
+            name = listing(list(dict.fromkeys(own))) or name
+            desc += " (printed on one sheet with plate " + ", ".join(
+                f"{o[1]}, volume {o[0]}" if o[0] else o[1] for o in others) + ")"
+        part = f"\t{on}\tP1545\t{q(n)}" + (f"\tP478\t{q(vol)}" if vol and on == work else "")
+        target = unnumbered.get(fold(name))
+        if target:
+            # The plate is already on Wikidata without its number: add to that item.
+            adopted += 1
+            print(f"plate {tag}: adding its statements to {target}, which has no plate number", file=sys.stderr)
+            block = [f"{target}\tP361{part}"]
+            subject = target
+        else:
+            block = ["CREATE",
+                     f"LAST\tLen\t{q(name)}",
+                     f"LAST\tDen\t{q(desc)}",
+                     f"LAST\tP31\t{kind}",
+                     f"LAST\tP361{part}",
+                     f"LAST\tP170\t{artist}"]
+            subject = "LAST"
+        if printed:
+            block.append(f"{subject}\tP1476\t{lang}:{q(printed)}")
         if p.get("bhl_page"):
-            lines.append(f"LAST\tP687\t{q(p['bhl_page'])}")
+            block.append(f"{subject}\tP687\t{q(p['bhl_page'])}")
         for qid in dict.fromkeys(s["wikidata"] for s in ids
                                  if s["wikidata"] and s["confidence"] in ("high", "judged")):
-            lines.append(f"LAST\tP180\t{qid}\tS854\t{q(readme)}")
-        if limit and lines.count("CREATE") >= limit:
+            block.append(f"{subject}\tP180\t{qid}\tS854\t{q(readme)}")
+        blocks.append(block)
+        if limit and len(blocks) >= limit:
             break
-    return lines, skipped
+    return blocks, skipped, adopted
 
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("folio", choices=sorted(FOLIOS))
     ap.add_argument("--limit", type=int, help="at most this many items (a test batch)")
-    ap.add_argument("--plates", help="only these plate numbers, comma-separated (VOL.N for per-volume folios)")
+    ap.add_argument("--plates", help="only these plates, comma-separated: N, or VOL.N for per-volume folios")
     ap.add_argument("--no-check", action="store_true", help="don't ask Wikidata which plates already have items")
+    ap.add_argument("--chunk", type=int, help="split into files of this many items (needs -o)")
+    ap.add_argument("-o", "--out", help="with --chunk: write OUT-1.qs, OUT-2.qs, ...")
     args = ap.parse_args()
+    if bool(args.chunk) != bool(args.out):
+        ap.error("--chunk and --out go together")
     only = set(args.plates.split(",")) if args.plates else None
-    lines, skipped = batch(args.folio, only, args.limit, not args.no_check)
-    print("\n".join(lines))
-    print(f"{lines.count('CREATE')} items, {skipped} skipped as already on Wikidata", file=sys.stderr)
+    blocks, skipped, adopted = batch(args.folio, only, args.limit, not args.no_check)
+    if args.chunk:
+        for i in range(0, len(blocks), args.chunk):
+            path = Path(f"{args.out}-{i // args.chunk + 1}.qs")
+            path.write_text("\n".join(line for b in blocks[i:i + args.chunk] for line in b) + "\n", encoding="utf-8")
+            print(f"{path}: {len(blocks[i:i + args.chunk])} items", file=sys.stderr)
+    else:
+        print("\n".join(line for b in blocks for line in b))
+    created = len(blocks) - adopted
+    print(f"{created} new items, {adopted} existing items given their plate, "
+          f"{skipped} skipped as already on Wikidata", file=sys.stderr)
     return 0
 
 

@@ -67,7 +67,7 @@ Every plate as its art crop, by General List number. The full-size images are in
 4. **Checking.** An identification is `caption_checked: yes` only when its leaf's engraved caption names that bird, by Latin epithet or the whole English name, never a shared family word. It was checked by eye on the scan. 411 identifications on 392 plates meet that bar.
    - **High but unchecked:** 35 more `high` rows are secondary plates of species checked elsewhere, and are not caption-checked.
    - **Open:** 20 plates are `low`: the open questions.
-5. **Modern names.** Each identification was first made to BirdNET V2.4's labels (Featherframe's use), then carried to eBird/Clements 2025. Where the two taxonomies differ, `reason` says so. The Wikidata, GBIF and Avibase ids come from the species' Wikidata item, found by its eBird code.
+5. **Modern names.** Each identification was first made to BirdNET V2.4's labels (Featherframe's use), then carried to eBird/Clements 2025. Where the two taxonomies differ, `reason` says so. The Wikidata, GBIF and Avibase ids come from the species' Wikidata item, found by its eBird code. Where that found no item, several, or only a subspecies, the item is the one taxon at species rank whose name is the row's `scientific`, and GBIF's key is its accepted species.
 
 ## Traps
 

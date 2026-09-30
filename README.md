@@ -59,11 +59,11 @@ Old plates name their birds the way their authors did, and many of those names n
 
 | Folio | Plates | Plates identified | Caption-checked | Species | Rows: `high` / `judged` / `medium` / `low` / `none` | BirdNET-labelled | Wikidata-linked | Kansas disagreements |
 |---|---:|---:|---:|---:|---|---:|---:|---:|
-| `havell` | 435 | 399 | – | 430 | 430 / 0 / 0 / 0 / 36 | 408 / 430 | 418 / 430 | – |
-| `gould-europe` | 449 | 403 | 392 | 410 | 430 / 18 / 0 / 20 / 0 | 422 / 422 | 406 / 422 | 27 |
-| `gould-australia` | 681 | 678 | 660 | 583 | 654 / 0 / 21 / 6 / 0 | 498 / 678 | 659 / 678 | 69 |
-| `gould-asia` | 530 | 354 | 526 | 310 | 259 / 9 / 78 / 8 / 176 | 342 / 354 | 333 / 354 | 118 |
-| `gould-britain` | 367 | 367 | 7 | 338 | 7 / 0 / 357 / 3 / 0 | 356 / 367 | 352 / 367 | – |
+| `havell` | 435 | 399 | – | 430 | 430 / 0 / 0 / 0 / 36 | 408 / 430 | 429 / 430 | – |
+| `gould-europe` | 449 | 403 | 392 | 410 | 430 / 18 / 0 / 20 / 0 | 422 / 422 | 422 / 422 | 27 |
+| `gould-australia` | 681 | 678 | 660 | 583 | 654 / 0 / 21 / 6 / 0 | 498 / 678 | 678 / 678 | 69 |
+| `gould-asia` | 530 | 354 | 526 | 310 | 259 / 9 / 78 / 8 / 176 | 342 / 354 | 354 / 354 | 118 |
+| `gould-britain` | 367 | 367 | 7 | 338 | 7 / 0 / 357 / 3 / 0 | 356 / 367 | 367 / 367 | – |
 
 *Great Britain* is a first pass, and its `medium` drafts are open questions. So are *Asia*'s 176 unidentified plates.
 
