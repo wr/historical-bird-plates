@@ -102,6 +102,7 @@ These are the plates a careful reader would still get wrong.
 - **V.6** *Emberiza caniceps* is the White-capped Bunting, and **V.11** *Glycyspina huttoni* the Gray-necked Bunting. They are easily swapped.
 - **VI.62** *Pterocles guttatus* is the Spotted Sandgrouse.
 - **VII.60** *Numenius rufescens* Gould is the Far Eastern Curlew, not the Eurasian.
+- **I.17** *Strix indica* Blyth is the Eastern Barn Owl (*Tyto javanica*, race *stertens*), not the Western; Kansas matched *indica* to the Spotted Owlet.
 - **V.17** *Carduelis orientalis* is the grey-headed *caniceps* goldfinch, a form of the European Goldfinch that looks nothing like the European bird.
 - **VII.39** *Phasianus torquatus* is the ringed Chinese stock of the Ring-necked Pheasant, the bird introduced to North America; VII.34 is the nominate, ringless.
 - **IV.28** *Saxicola capistrata* and **IV.31** *S. atrogularis* are forms of the Variable and Desert Wheatears, not of the Pied and Black-eared.
@@ -113,11 +114,11 @@ The University of Kansas Spencer Library's Ellis Collection copy (Ellis Aves H12
 | kind | plates | what it is |
 |---|---|---|
 | old name | 62 | the same species under an older genus or spelling (*Garrulax* for *Trochalopteron*, *Pitta* for *Hydrornis*) |
-| subspecies | 17 | KU names the race |
+| subspecies | 16 | KU names the race |
 | pre-split | 13 | KU gives the parent species before a split (Great Tit for the Asian Tit, Asian Paradise-Flycatcher for the Amur) |
 | lumped | 1 | I.4: eBird keeps the Barbary Falcon within the Peregrine |
 | printed name | 3 | KU follows the printed Latin where the bird says otherwise (I.35, VI.62, VII.60) |
-| error | 14 | KU names another species: six Asian trogons sent to New World ones, the Spoon-billed Sandpiper to Lady Amherst's Pheasant |
+| error | 15 | KU names another species: six Asian trogons sent to New World ones, the Spoon-billed Sandpiper to Lady Amherst's Pheasant, the Indian barn owl to the Spotted Owlet |
 | open | 8 | a form the survey assigned and KU assigns elsewhere; the row is `low` |
 
 ## The images: release `gould-asia-v1`

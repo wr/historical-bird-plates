@@ -59,10 +59,10 @@ Old plates name their birds the way their authors did, and many of those names n
 
 | Folio | Plates | Plates identified | Caption-checked | Species | Rows: `high` / `judged` / `medium` / `low` / `none` | BirdNET-labelled | Wikidata-linked | Kansas disagreements |
 |---|---:|---:|---:|---:|---|---:|---:|---:|
-| `havell` | 435 | 399 | – | 430 | 430 / 0 / 0 / 0 / 36 | 408 / 430 | 430 / 430 | – |
+| `havell` | 435 | 399 | – | 431 | 431 / 0 / 0 / 0 / 36 | 409 / 431 | 431 / 431 | – |
 | `gould-europe` | 449 | 403 | 392 | 410 | 430 / 18 / 0 / 20 / 0 | 422 / 422 | 422 / 422 | 27 |
-| `gould-australia` | 681 | 678 | 660 | 583 | 654 / 0 / 21 / 6 / 0 | 498 / 678 | 678 / 678 | 69 |
-| `gould-asia` | 530 | 354 | 526 | 310 | 259 / 9 / 78 / 8 / 176 | 342 / 354 | 354 / 354 | 118 |
+| `gould-australia` | 681 | 678 | 660 | 584 | 653 / 0 / 22 / 6 / 0 | 498 / 678 | 678 / 678 | 72 |
+| `gould-asia` | 530 | 354 | 526 | 310 | 260 / 9 / 77 / 8 / 176 | 342 / 354 | 354 / 354 | 118 |
 | `gould-britain` | 367 | 367 | 7 | 338 | 7 / 0 / 357 / 3 / 0 | 356 / 367 | 367 / 367 | – |
 
 *Great Britain* is a first pass, and its `medium` drafts are open questions. So are *Asia*'s 176 unidentified plates.
@@ -81,7 +81,7 @@ Every folio folder has `plates.csv` and `species.csv`. Some also have `ku-disagr
 - **`caption_checked`:** `yes` only where someone read the engraved caption on the scan and checked the identification against it.
 - **`form`:** blank for the species itself; otherwise `subspecies`, `variant`, or `pre-split` (a plate drawn before a split stands for the parent species).
 - **Unresolved plates keep their rows,** with an empty species and the reason, so the open questions are in the data.
-- **Taxonomy:** names and codes follow eBird/Clements 2025. Where BirdNET's older taxonomy differs, `birdnet_label` keeps BirdNET's name. A species split since then is resolved per folio: Audubon's Barn Owl is the American Barn Owl, Gould's the Western.
+- **Taxonomy:** names and codes follow eBird/Clements 2025. Where BirdNET's older taxonomy differs, `birdnet_label` keeps BirdNET's name. A species split since then is resolved by where the bird came from: Audubon's Barn Owl is the American Barn Owl; Gould's is the Western in *Europe* and *Great Britain*, and the Eastern in *Australia* (I.31) and *Asia* (I.17).
 
 ### Images
 

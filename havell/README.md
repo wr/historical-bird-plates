@@ -82,6 +82,7 @@ Every plate with its lettering trimmed, by Havell number.
   - Barn Owl (171): American Barn Owl, *Tyto furcata*.
   - Hudsonian Curlew (237): Hudsonian Whimbrel, *Numenius hudsonicus*.
   - Herring Gull (291): American Herring Gull, *Larus smithsonianus*.
+- **Trudeau's Tern (409, fig. 2)** is the Snowy-crowned Tern, *Sterna trudeaui*: the plate is its type. Audubon's New Jersey locality is doubted, not the bird. Figure 1, Havell's Tern, is Forster's.
 - **Redpoll (375):** eBird 2025 lumps the redpolls; the plate's Common Redpoll is now "Redpoll".
 
 ## Not identified

@@ -29,7 +29,7 @@ I,27,Circus Jardinii,Jardine’s Harrier,Circus assimilis,,,high,jardinii Gould 
 I,28,Strix castanops,Chestnut-faced Owl,Tyto novaehollandiae,Tyto novaehollandiae,Australian Masked-Owl,high,castanops = Tasmanian race of Australian Masked-Owl (lumped)
 I,29,Strix personata,Masked Barn Owl,Tyto novaehollandiae,Tyto novaehollandiae,Australian Masked-Owl,high,personata = Australian Masked-Owl
 I,30,Strix tenebricosus,Sooty Owl,Tyto tenebricosa,Tyto tenebricosa,Sooty Owl,high,Sooty Owl
-I,31,Strix delicatulus,Delicate Owl,Tyto alba,Tyto alba,Barn Owl,high,delicatula = Eastern Barn Owl; BirdNET lumps in Tyto alba
+I,31,Strix delicatulus,Delicate Owl,Tyto javanica,Tyto alba,Barn Owl,high,delicatula = Eastern Barn Owl; BirdNET lumps in Tyto alba
 I,32,Athene Boobook,Boobook Owl,Ninox boobook,Ninox boobook,Southern Boobook,high,Southern Boobook (Clements: Australian Boobook)
 I,33,Athene maculata,Spotted Owl,Ninox leucopsis,Ninox novaeseelandiae,Morepork,low,"drawn from live Hobart birds = Tasmanian Boobook; Clements 2021 kept it in Morepork, IOC splits; BirdNET Morepork is NZ-trained"
 I,34,Athene connivens,Winking Owl,Ninox connivens,Ninox connivens,Barking Owl,high,Barking Owl
@@ -114,7 +114,7 @@ II,76,Colluricincla brunnea,Brown Colluricincla,Colluricincla harmonica,Colluric
 II,77,Colluricincla Selbii,Selby’s Colluricincla,Colluricincla harmonica,Colluricincla harmonica,Gray Shrikethrush,high,selbii = Tasmanian Grey Shrikethrush (Gould's text)
 II,78,Colluricincla parvula,Little Colluricincla,Colluricincla megarhyncha,Colluricincla megarhyncha,Arafura Shrikethrush,high,"parvula = NT race; BirdNET's megarhyncha is Arafura Shrikethrush, which holds parvula"
 II,79,Falcunculus frontatus,Frontal Shrike-Tit,Falcunculus frontatus,Falcunculus frontatus,Crested Shrike-tit,high,Crested Shrike-tit
-II,80,Falcunculus leucogaster,White-bellied Shrike-Tit,Falcunculus frontatus,Falcunculus frontatus,Crested Shrike-tit,high,leucogaster = W race (IOC splits; BirdNET lumps)
+II,80,Falcunculus leucogaster,White-bellied Shrike-Tit,Falcunculus leucogaster,Falcunculus frontatus,Crested Shrike-tit,high,leucogaster = Western Shrike-tit (Clements splits; BirdNET lumps)
 II,81,Oreoica gutturalis,Crested Oreoïca,Oreoica gutturalis,Oreoica gutturalis,Crested Bellbird,high,Crested Bellbird
 II,82,Dicrurus bracteatus,Spangled Drongo,Dicrurus bracteatus,Dicrurus bracteatus,Spangled Drongo,high,Spangled Drongo
 II,83,Rhipidura albiscapa,White-shafted Fantail,Rhipidura albiscapa,Rhipidura albiscapa,Gray Fantail,high,Grey Fantail
@@ -543,7 +543,7 @@ VII,26,Sterna melanorhyncha,Black-billed Tern,Sterna striata,Sterna striata,Whit
 VII,27,Sterna gracilis,Graceful Tern,Sterna dougallii,Sterna dougallii,Roseate Tern,high,gracilis = Roseate Tern
 VII,28,Sterna melanauchen,Black-naped Tern,Sterna sumatrana,Sterna sumatrana,Black-naped Tern,high,melanauchen = Black-naped Tern
 VII,29,Sternula nereis,Australian Little Tern,Sternula nereis,,,high,Australian Fairy Tern; not in BirdNET
-VII,30,Gygis candida,White Tern,Gygis alba,Gygis alba,White Tern,high,candida = White Tern
+VII,30,Gygis candida,White Tern,Gygis candida,Gygis alba,White Tern,high,candida = Blue-billed White-Tern (eBird splits White Tern)
 VII,31,Hydrochelidon fluviatilis,Marsh Tern,Chlidonias hybrida,Chlidonias hybrida,Whiskered Tern,high,Hydrochelidon fluviatilis Gould = Whiskered Tern
 VII,32,Onychoprion fuliginosus,Sooty Tern,Onychoprion fuscatus,Onychoprion fuscatus,Sooty Tern,high,Sooty Tern
 VII,33,Onychoprion panaya,Panayan Tern,Onychoprion anaethetus,Onychoprion anaethetus,Bridled Tern,high,panaya = Bridled Tern
@@ -555,7 +555,7 @@ VII,38,Diomedea exulans,Wandering Albatros,Diomedea exulans,Diomedea exulans,Wan
 VII,39,Diomedea brachyura,Short-tailed Albatros,Phoebastria albatrus,,,high,brachyura = Short-tailed Albatross; not in BirdNET
 VII,40,Diomedea cauta,Cautious Albatros,Thalassarche cauta,,,high,Shy Albatross; not in BirdNET
 VII,41,Diomedea culminata,Culminated Albatros,Thalassarche chrysostoma,,,high,culminata Gould = Grey-headed Albatross; not in BirdNET
-VII,42,Diomedea chlororhynchos,Yellow-billed Albatros,Thalassarche chlororhynchos,,,high,Yellow-nosed Albatross (Atlantic or Indian); neither in BirdNET
+VII,42,Diomedea chlororhynchos,Yellow-billed Albatros,Thalassarche chlororhynchos,,,medium,Yellow-nosed Albatross (Atlantic or Indian); neither in BirdNET
 VII,43,Diomedea melanophrys,Black-eyebrowed Albatros,Thalassarche melanophris,Thalassarche melanophris,Black-browed Albatross,high,Black-browed Albatross
 VII,44,Diomedea fuliginosa,Sooty Albatros,Phoebetria palpebrata,,,high,fuliginosa = Light-mantled Albatross; not in BirdNET
 VII,45,Procellaria gigantea,Giant Petrel,Macronectes giganteus,,,high,Southern Giant-Petrel; not in BirdNET

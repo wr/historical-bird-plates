@@ -2,7 +2,7 @@ volume,plate,kind,ku_id,ku_name,ku_scientific,scientific,common,note
 I,4,lumped,ku-gould:17718,Barbary Falcon,Falco pelegrinoides,Falco peregrinus,Peregrine Falcon,eBird 2025 keeps the Barbary Falcon within the Peregrine
 I,9,open,ku-gould:17698,Sulawesi Serpent Eagle,Spilornis rufipectus,Spilornis cheela,Crested Serpent-Eagle,"a form the survey assigned; KU assigns it elsewhere, so the row is low"
 I,15,old name,ku-gould:17674,Collared Owlet,Glaucidium brodiei,Taenioptynx brodiei,Collared Owlet,an older genus or spelling for the same species
-I,17,subspecies,ku-gould:17666,Spotted Owlet,Athene brama indica,Tyto alba,Western Barn Owl,KU names the race; the row gives its species
+I,17,error,ku-gould:17666,Spotted Owlet,Athene brama indica,Tyto javanica,Eastern Barn Owl,"KU matched the epithet to Athene brama indica; the caption, the text and the bird are a barn owl"
 I,20,open,ku-gould:17654,African Palm Swift,Cypsiurus parvus,Cypsiurus balasiensis,Asian Palm Swift,"a form the survey assigned; KU assigns it elsewhere, so the row is low"
 I,27,subspecies,ku-gould:17626,European Striated Swallow,Hirundo (Cecropis) daurica rufula,Cecropis daurica,Eastern Red-rumped Swallow,KU names the race; the row gives its species
 I,28,subspecies,ku-gould:17622,European Striated Swallow,Hirundo (Cecropis) daurica,Cecropis daurica,Eastern Red-rumped Swallow,KU names the race; the row gives its species

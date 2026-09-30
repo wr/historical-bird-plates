@@ -15,7 +15,7 @@ I,13,76,Indian Scops Owl,Scops pennatus,yes,form,Otus sunia,subspecies,medium,Ot
 I,14,80,Bay Owl,Phodilus badius,yes,exact,Phodilus badius,,high,Phodilus badius,Oriental Bay-Owl,ku-gould:17678,Phodilus badius,Oriental Bay Owl,pinned,
 I,15,84,Brodie's Owlet,Athene Brodiei,yes,probable,Taenioptynx brodiei,,high,Taenioptynx brodiei,Collared Owlet,ku-gould:17674,Glaucidium brodiei,Collared Owlet,pinned,
 I,16,88,Speckled Wood-Owl,Syrnium ocellatum,yes,probable,Strix ocellata,,high,Strix ocellata,Mottled Wood-Owl,ku-gould:17670,Strix ocellata,Mottled Wood Owl,pinned,
-I,17,92,Indian Screech Owl,Strix indica,yes,form,Tyto alba,subspecies,medium,Tyto alba,Barn Owl,ku-gould:17666,Athene brama indica,Spotted Owlet,left out (form),
+I,17,92,Indian Screech Owl,Strix indica,yes,form,Tyto javanica,subspecies,high,Tyto alba,Barn Owl,ku-gould:17666,Athene brama indica,Spotted Owlet,left out (form),
 I,18,96,Grass-Owl,Strix candida,yes,not_in_birdnet,,,none,,,ku-gould:17662,Tyto capensis,Grass Owl,left out (not in BirdNET),
 I,19,100,Mahratta Nightjar,Caprimulgus Mahrattensis,yes,not_in_birdnet,,,none,,,ku-gould:17658,Caprimulgus mahrattensis,Sykes's Nightjar,left out (not in BirdNET),
 I,20,104,Palm Roof-Swift,Cypselus infumatus,yes,form,Cypsiurus balasiensis,subspecies,low,Cypsiurus balasiensis,Asian Palm-Swift,ku-gould:17654,Cypsiurus parvus,African Palm Swift,left out (form),the survey's form assignment; the Kansas catalogue reads Cypsiurus parvus (African Palm Swift)
@@ -518,7 +518,7 @@ VII,57,236,Lesser Florikin,Sypheotides auritus,genus only,not_in_birdnet,,,none,
 VII,58,240,MacQueen's Bustard,Otis MacQueeni,yes,not_in_birdnet,,,none,,,ku-gould:15535,Chlamydotis macqueenii,Macqueen's Bustard,left out (not in BirdNET),
 VII,59,244,Rosy Tantalus,Tantalus leucocephalus,yes,probable,Mycteria leucocephala,,high,Mycteria leucocephala,Painted Stork,ku-gould:15531,Mycteria leucocephala,Painted Stork,pinned,
 VII,60,248,Rufescent Curlew,Numenius rufescens,yes,unsure,Numenius madagascariensis,,judged,Numenius madagascariensis,Far Eastern Curlew,ku-gould:15527,Numenius arquata,Eurasian Curlew,pinned (review),rufescens Gould is the Far Eastern Curlew; the survey read Eurasian
-VII,61,252,Red-billed Erolia (Ibisbill),Ibidorhynchus Struthersi,yes,probable,Ibidorhyncha struthersii,,high,Ibidorhyncha struthersii,Ibisbill,ku-gould:15523,Ibidorhyncha struthersii,Ibisbill,pinned,
+VII,61,252,Red-billed Erolia,Ibidorhynchus Struthersi,yes,probable,Ibidorhyncha struthersii,,high,Ibidorhyncha struthersii,Ibisbill,ku-gould:15523,Ibidorhyncha struthersii,Ibisbill,pinned,
 VII,62,256,Zic-zac,Pluvianus Aegyptius,yes,not_in_birdnet,,,none,,,ku-gould:15519,Pluvianus a egyptius,Egyptian Plover,left out (not in BirdNET),
 VII,63,260,Black-winged Pratincole,Glareola melanoptera,yes,unsure,Glareola nordmanni,,high,,,ku-gould:15515,"Glareola nordmanni Fischer, 1842","Glareola nordmanni Fischer, 1842",left out,"Black-winged Pratincole (Glareola nordmanni, KU), not in BirdNET; the survey's Oriental Pratincole is wrong"
 VII,64,264,Cinereous Pratincole,Glareola lactea,yes,exact,Glareola lactea,,high,Glareola lactea,Small Pratincole,ku-gould:15511,Glareola lactea,Small Pratincole,pinned,
