@@ -73,7 +73,7 @@ Every plate as its art crop, by volume and number. The full-size images are in t
   - `scan_url`, the unaltered JPEG 2000 on BHL's open-data bucket;
   - the two release images.
 - **`species.csv`**: one row per plate, including the 176 that name no modern species yet.
-- **`ku-disagreements.csv`**: the 119 identified plates where the Kansas catalogue gives a different name, each with its kind (see below).
+- **`ku-disagreements.csv`**: the 120 identified plates where the Kansas catalogue gives a different name, each with its kind (see below).
 - **`sources/`**: the working record.
   - `plate-leaves.csv`: every plate's leaf, its orientation, its engraved caption as read and how it was read, where the caption starts, and the heading of the text leaf bound after it.
   - `crosswalk.csv`: each plate's modern species, form, confidence and reason, the survey's first reading, and what Featherframe does with it.
@@ -104,19 +104,19 @@ These are the plates a careful reader would still get wrong.
 - **VII.60** *Numenius rufescens* Gould is the Far Eastern Curlew, not the Eurasian.
 - **IV.36** *Ruticilla erythrogastra*, Gould's "Great White-capped Redstart", is the White-winged (Güldenstädt's) Redstart: white wing patch, brown female. The White-capped Redstart has neither.
 - **I.17** *Strix indica* Blyth is the Eastern Barn Owl (*Tyto javanica*, race *stertens*), not the Western; Kansas matched *indica* to the Spotted Owlet.
-- **V.17** *Carduelis orientalis* is the grey-headed *caniceps* goldfinch, a form of the European Goldfinch that looks nothing like the European bird.
+- **V.17** *Carduelis orientalis* is the grey-headed *caniceps* goldfinch, which looks nothing like the European bird. eBird 2025 splits it as the Gray-crowned Goldfinch, *Carduelis caniceps*.
 - **VII.39** *Phasianus torquatus* is the ringed Chinese stock of the Ring-necked Pheasant, the bird introduced to North America; VII.34 is the nominate, ringless.
 - **IV.28** *Saxicola capistrata* and **IV.31** *S. atrogularis* are forms of the Variable and Desert Wheatears, not of the Pied and Black-eared.
 
 ## The Kansas catalogue
 
-The University of Kansas Spencer Library's Ellis Collection copy (Ellis Aves H120, records around `ku-gould:15300`–`17700`) gives each plate a modern scientific name, matched from the printed Latin. `ku-disagreements.csv` lists the 119 identified plates where it differs, by kind:
+The University of Kansas Spencer Library's Ellis Collection copy (Ellis Aves H120, records around `ku-gould:15300`–`17700`) gives each plate a modern scientific name, matched from the printed Latin. `ku-disagreements.csv` lists the 120 identified plates where it differs, by kind:
 
 | kind | plates | what it is |
 |---|---|---|
 | old name | 61 | the same species under an older genus or spelling (*Garrulax* for *Trochalopteron*, *Pitta* for *Hydrornis*) |
 | subspecies | 17 | KU names the race |
-| pre-split | 13 | KU gives the parent species before a split (Great Tit for the Asian Tit, Asian Paradise-Flycatcher for the Amur) |
+| pre-split | 14 | KU gives the parent species before a split (Great Tit for the Asian Tit, Asian Paradise-Flycatcher for the Amur) |
 | lumped | 1 | I.4: eBird keeps the Barbary Falcon within the Peregrine |
 | printed name | 3 | KU follows the printed Latin where the bird says otherwise (I.35, VI.62, VII.60) |
 | error | 16 | KU names another species: six Asian trogons sent to New World ones, the Spoon-billed Sandpiper to Lady Amherst's Pheasant, the Indian barn owl to the Spotted Owlet, Güldenstädt's Redstart to the White-capped |
