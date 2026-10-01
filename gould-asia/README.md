@@ -73,7 +73,7 @@ Every plate as its art crop, by volume and number. The full-size images are in t
   - `scan_url`, the unaltered JPEG 2000 on BHL's open-data bucket;
   - the two release images.
 - **`species.csv`**: one row per plate, including the 176 that name no modern species yet.
-- **`ku-disagreements.csv`**: the 118 identified plates where the Kansas catalogue gives a different name, each with its kind (see below).
+- **`ku-disagreements.csv`**: the 119 identified plates where the Kansas catalogue gives a different name, each with its kind (see below).
 - **`sources/`**: the working record.
   - `plate-leaves.csv`: every plate's leaf, its orientation, its engraved caption as read and how it was read, where the caption starts, and the heading of the text leaf bound after it.
   - `crosswalk.csv`: each plate's modern species, form, confidence and reason, the survey's first reading, and what Featherframe does with it.
@@ -110,12 +110,12 @@ These are the plates a careful reader would still get wrong.
 
 ## The Kansas catalogue
 
-The University of Kansas Spencer Library's Ellis Collection copy (Ellis Aves H120, records around `ku-gould:15300`–`17700`) gives each plate a modern scientific name, matched from the printed Latin. `ku-disagreements.csv` lists the 118 identified plates where it differs, by kind:
+The University of Kansas Spencer Library's Ellis Collection copy (Ellis Aves H120, records around `ku-gould:15300`–`17700`) gives each plate a modern scientific name, matched from the printed Latin. `ku-disagreements.csv` lists the 119 identified plates where it differs, by kind:
 
 | kind | plates | what it is |
 |---|---|---|
 | old name | 61 | the same species under an older genus or spelling (*Garrulax* for *Trochalopteron*, *Pitta* for *Hydrornis*) |
-| subspecies | 16 | KU names the race |
+| subspecies | 17 | KU names the race |
 | pre-split | 13 | KU gives the parent species before a split (Great Tit for the Asian Tit, Asian Paradise-Flycatcher for the Amur) |
 | lumped | 1 | I.4: eBird keeps the Barbary Falcon within the Peregrine |
 | printed name | 3 | KU follows the printed Latin where the bird says otherwise (I.35, VI.62, VII.60) |
