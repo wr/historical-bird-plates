@@ -6,7 +6,7 @@
 
 Every plate of five great nineteenth-century bird folios, identified to modern species. Each identification carries the IDs other tools join on: eBird, Wikidata, GBIF, Avibase and BirdNET. The plate images are cleaned and cut two ways.
 
-Old plates name their birds the way their authors did, and many of those names now belong to other species. Gould's "Black-headed Gull" is today's Mediterranean Gull. This dataset matches each plate to the bird it actually shows, gives the reasoning, and is released CC0.
+Old plates name their birds the way their authors did, and many of those names now belong to other species. Gould's "Black-headed Gull" is today's Mediterranean Gull. This dataset matches each plate to the bird it actually shows, gives the reasoning, and is released CC0. [62 plates](#names-that-now-mean-another-bird) carry a printed name that eBird now gives to a different species.
 
 ## The folios
 
@@ -20,25 +20,25 @@ Old plates name their birds the way their authors did, and many of those names n
 
 [![Osprey, Hoopoe, European Roller, Atlantic Puffin, Snowy Owl](img/preview-gould-europe.jpg)](gould-europe/#the-plates)
 
-449 plates · 403 identified, 392 checked against the engraved caption · [browse all plates](gould-europe/#the-plates) · [tables](gould-europe/) · [images](https://github.com/wr/historical-bird-plates/releases/tag/gould-europe-v1)
+449 plates · 447 identified, 392 checked against the engraved caption · [browse all plates](gould-europe/#the-plates) · [tables](gould-europe/) · [images](https://github.com/wr/historical-bird-plates/releases/tag/gould-europe-v1)
 
 ### Gould, *The Birds of Australia* and *Supplement* (1840–69)
 
 [![Superb Lyrebird, Laughing Kookaburra, Gouldian Finch, Sulphur-crested Cockatoo, Rainbow Lorikeet](img/preview-gould-australia.jpg)](gould-australia/#the-plates)
 
-681 plates · 678 identified, 660 checked · [browse all plates](gould-australia/#the-plates) · [tables](gould-australia/) · [images](https://github.com/wr/historical-bird-plates/releases/tag/gould-australia-v1)
+681 plates · 676 identified, 660 checked · [browse all plates](gould-australia/#the-plates) · [tables](gould-australia/) · [images](https://github.com/wr/historical-bird-plates/releases/tag/gould-australia-v1)
 
 ### Gould, *The Birds of Asia* (1850–83)
 
 [![Himalayan Monal, Red-billed Blue-Magpie, Lady Amherst's Pheasant, Fire-tailed Sunbird, Golden Pheasant](img/preview-gould-asia.jpg)](gould-asia/#the-plates)
 
-530 plates · 354 identified · 526 captions read · [browse all plates](gould-asia/#the-plates) · [tables](gould-asia/) · [images](https://github.com/wr/historical-bird-plates/releases/tag/gould-asia-v1)
+530 plates · 530 identified, every caption read · [browse all plates](gould-asia/#the-plates) · [tables](gould-asia/) · [images](https://github.com/wr/historical-bird-plates/releases/tag/gould-asia-v1)
 
 ### Gould, *The Birds of Great Britain* (1862–73)
 
 [![Common Kingfisher, Barn Owl, Atlantic Puffin, Golden Oriole, Hoopoe](img/preview-gould-britain.jpg)](gould-britain/#the-plates)
 
-367 plates · 367 drafts, 7 checked · [browse all plates](gould-britain/#the-plates) · [tables](gould-britain/) · [images](https://github.com/wr/historical-bird-plates/releases/tag/gould-britain-v1)
+367 plates · 367 identified, 366 checked against the engraved caption · [browse all plates](gould-britain/#the-plates) · [tables](gould-britain/) · [images](https://github.com/wr/historical-bird-plates/releases/tag/gould-britain-v2)
 
 ## Get the data
 
@@ -59,13 +59,99 @@ Old plates name their birds the way their authors did, and many of those names n
 
 | Folio | Plates | Plates identified | Caption-checked | Species | Rows: `high` / `judged` / `medium` / `low` / `none` | BirdNET-labelled | Wikidata-linked | Kansas disagreements |
 |---|---:|---:|---:|---:|---|---:|---:|---:|
-| `havell` | 435 | 428 | – | 431 | 460 / 1 / 0 / 0 / 7 | 439 / 461 | 461 / 461 | – |
-| `gould-europe` | 449 | 403 | 392 | 411 | 430 / 18 / 0 / 20 / 0 | 422 / 422 | 422 / 422 | 28 |
-| `gould-australia` | 681 | 678 | 660 | 585 | 653 / 0 / 22 / 6 / 0 | 498 / 678 | 677 / 678 | 75 |
-| `gould-asia` | 530 | 354 | 526 | 311 | 261 / 10 / 75 / 8 / 176 | 341 / 354 | 354 / 354 | 120 |
-| `gould-britain` | 367 | 367 | 7 | 338 | 7 / 0 / 357 / 3 / 0 | 356 / 367 | 367 / 367 | – |
+| `havell` | 435 | 428 | – | 442 | 488 / 3 / 2 / 0 / 7 | 470 / 493 | 493 / 493 | – |
+| `gould-europe` | 449 | 447 | 392 | 451 | 438 / 26 / 3 / 1 / 1 | 435 / 467 | 467 / 467 | 48 |
+| `gould-australia` | 681 | 676 | 660 | 584 | 674 / 1 / 3 / 4 / 0 | 496 / 677 | 676 / 677 | 84 |
+| `gould-asia` | 530 | 530 | 530 | 465 | 518 / 14 / 0 / 0 / 0 | 379 / 532 | 532 / 532 | 184 |
+| `gould-britain` | 367 | 367 | 366 | 338 | 365 / 4 / 0 / 0 / 0 | 358 / 369 | 369 / 369 | 74 |
 
-*Great Britain* is a first pass, and its `medium` drafts are open questions. So are *Asia*'s 176 unidentified plates.
+The 21 open rows (`medium`, `low` and `none`) are the questions the sources haven't settled. Each one's `reason` asks what would decide it: the candidates, and what on the plate or in the text would tell them apart.
+
+### Names that now mean another bird
+
+These plates are printed with an English name that eBird/Clements 2025 now gives to a different species. Look one up by its printed name and you get the wrong bird. `python3 tools/misnamed.py` regenerates the list.
+
+<details>
+<summary>62 plates</summary>
+
+**Audubon, *The Birds of America***
+
+- 23: "Yellow-breasted Warbler" → Common Yellowthroat
+- 199: "Little Owl" → Northern Saw-whet Owl
+- 223: "Pied oyster-catcher" → American Oystercatcher
+- 234: "Tufted Duck" → Ring-necked Duck
+- 256: "Purple Heron" → Reddish Egret
+- 314: "Black-headed Gull" → Laughing Gull
+- 372: "Common Buzzard" → Swainson's Hawk
+- 399: "Mourning Warbler" → MacGillivray's Warbler
+
+**Gould, *The Birds of Europe***
+
+- 20: "Lanner Falcon" → Saker Falcon
+- 67: "Great Grey Shrike" → Iberian Gray Shrike
+- 173: "Yellow Bunting" → Yellowhammer
+- 179: "Meadow Bunting" → Rock Bunting
+- 311: "Semipalmated Sandpiper" → Willet
+- 342: "Common Gallinule" → Eurasian Moorhen
+- 378: "Black Scoter" → Common Scoter
+- 409: "Little Cormorant" → Pygmy Cormorant
+- 425: "Laughing Gull" → Black-headed Gull
+- 427: "Black-headed Gull" → Mediterranean Gull
+- 447: "Fork-tailed Storm Petrel" → Leach's Storm-Petrel
+
+**Gould, *The Birds of Australia***
+
+- I.33: "Spotted Owl" → Tasmanian Boobook
+- II.91: "Shining Flycatcher" → Satin Flycatcher
+- III.21: "Banded Wren" → Splendid Fairywren
+- IV.4: "Spotted Ground-Thrush" → Spotted Quail-thrush
+- IV.7: "Mountain Thrush" → Bassian Thrush
+- IV.24: "Long-billed Honey-eater" → New Holland Honeyeater
+- IV.32: "Yellow-eared Honey-eater" → Lewin's Honeyeater
+- IV.39: "Graceful Honey-eater" → Yellow-plumed Honeyeater
+- IV.51: "White-throated Honey-eater" → Rufous-banded Honeyeater
+- IV.67: "Obscure Honey-eater" → Dusky Myzomela
+- IV.71: "Black-throated Honey-eater" → Black-chinned Honeyeater
+- IV.92: "Pheasant Cuckoo" → Pheasant Coucal
+- V.33: "Crimson-bellied Parrakeet" → Greater Bluebonnet
+- V.62: "Little Green Pigeon" → Pacific Emerald Dove
+- VI.46: "White Ibis" → Australian Ibis
+- VII.51: "Cook's Petrel" → Gould's Petrel
+- VII.70: "Pied Cormorant" → Little Pied Cormorant
+- Supp.18: "White-tailed Robin" → Mangrove Robin
+- Supp.56: "Little Cuckoo" → Little Bronze-Cuckoo
+
+**Gould, *The Birds of Asia***
+
+- I.1: "Black Vulture" → Red-headed Vulture
+- I.13: "Indian Scops Owl" → Oriental Scops-Owl
+- I.46: "Blue-and-white Kingfisher" → White-rumped Kingfisher
+- I.71: "Mountain Trogon" → Orange-breasted Trogon
+- II.45: "Chestnut-bellied Nuthatch" → Indian Nuthatch
+- II.48: "White-naped Tit" → Yellow-bellied Tit
+- II.52: "Yellow-cheeked Tit" → Himalayan Black-lored Tit
+- II.58: "Grey Tit" → Gray-crested Tit
+- II.59: "Rufous-bellied Tit" → Rufous-vented Tit
+- II.65: "Elegant Tit" → Black-throated Tit
+- II.72: "Philippine Oriole" → Black-naped Oriole
+- III.60: "Long-billed Wren" → Long-billed Wren-Babbler
+- III.64: "White-naped Yuhina" → White-collared Yuhina
+- IV.27: "White-tailed Stone-Chat" → Variable Wheatear
+- IV.52: "Spotted Wren" → Spotted Elachura
+- V.9: "Painted Bunting" → Chestnut-eared Bunting
+- V.20: "Black-and-Yellow Grosbeak" → Spot-winged Grosbeak
+- V.55: "White-winged Magpie" → Eurasian Magpie
+- VI.2: "Blossom-headed Parrakeet" → Plum-headed Parakeet
+- VI.4: "Bonaparte's Parrakeet" → Long-tailed Parakeet
+- VI.5: "Grey-headed Parrakeet" → Nicobar Parakeet
+- VI.6: "Nicobar Parrakeet" → Long-tailed Parakeet
+- VI.40: "Rufous Piculet" → White-browed Piculet
+
+**Gould, *The Birds of Great Britain***
+
+- II.71: "Melodious Warbler" → Icterine Warbler
+
+</details>
 
 ### Tables
 

@@ -93,6 +93,7 @@ Every plate as its art crop, by volume and number. The full-size images are in t
   - `ku-check.csv`: the disagreements with Kansas and how each was settled.
   - `review.csv`: the 23 plates Featherframe does not show, and why.
   - `doubtful-decisions.csv`: how 24 doubtful plates were settled.
+  - `decisions.csv`: every identification made or changed since, as `tools/identify.py` logged it.
 
 ## How the plates were identified
 
@@ -103,8 +104,8 @@ Every plate as its art crop, by volume and number. The full-size images are in t
    - IV.80 is engraved *Myzantha viridis*, Gould's plate name for the Bell-bird. The facing text is the Bell-bird's.
 3. **Names.** Each plate was mapped to a modern species from Gould's own text and synonymy, with a confidence and a written reason (`sources/crosswalk.csv`).
 4. **Checking.** `caption_checked` is `yes` for the 660 plates whose engraved caption was read and names the plate as listed. The identification is carried from that name through Gould's text.
-   - **Open:** 21 identifications are `medium` and 6 `low`.
-   - **No species:** III.41 (one specimen of unknown origin, probably not Australian), V.30 (an aberrant or hybrid rosella) and Supp. 34 (Rawnsley's Bower-bird, an intergeneric hybrid).
+   - **Open:** seven rows, each asking what would settle it: IV.18 and VII.21 and VII.42 are `medium`; V.13, V.30, VI.2 and VII.83 are `low` and name no species. The other 21 doubtful rows were researched on 1 Oct (W-931) and are settled.
+   - **No species:** Supp. 34, Rawnsley's Bower-bird, an intergeneric hybrid, besides the four open rows above.
 5. **Modern names.** 498 of the birds are in BirdNET V2.4. `birdnet_label` gives the label, and it can be broader than the species. For example, III.73's Australian Pipit falls under BirdNET's Australasian Pipit. `scientific` and `common` are eBird/Clements 2025's names for the species. Where eBird has since moved a name (the goshawks to *Tachyspiza*, the dotterels to *Anarhynchus*, the bronze-cuckoos to *Chalcites*), the row carries eBird's.
 
 ## Traps
@@ -118,20 +119,23 @@ These are the plates a careful reader would still get wrong. Gould's binomial no
 - **Rails:** his *Rallus pectoralis* (VI.76) is the Buff-banded Rail. Lewin's Rail is VI.77.
 - **Bassian Thrush:** his *Oreocincla lunulata* (IV.7) is the Bassian Thrush, not the Mountain Thrush of Central America.
 - **Thornbills:** his *Acanthiza diemenensis* (III.54) is the Brown Thornbill. The Tasmanian Thornbill is III.55.
+- **III.41** *Cysticola magna* is not Australian: Gould's own synonymy makes it his *C. campestris*, the Rattling Cisticola of Natal.
+- **The raven (IV.18)** is open. Its long throat hackle is the Australian Raven's, but Gould writes that the figure is a male killed in Van Diemen's Land, where only the Forest Raven lives.
+- **VII.51**, "Cook's Petrel", is Gould's Petrel: birds from Cabbage Tree Island, and Gould synonymises his own *P. leucoptera*.
+- **IV.2** is the Banda Sea Pitta, *Pitta vigorsii*, a species of its own in eBird 2025.
 - **Splits:** a lumped name now belongs to another population. His Delicate Owl (I.31) is the Eastern Barn Owl, *Tyto javanica*, not *T. alba*; his White-bellied Shrike-Tit (II.80) is the Western Shrike-tit, *Falcunculus leucogaster*; his White Tern (VII.30) is the Blue-billed White-Tern, *Gygis candida*, not the Atlantic *G. alba*; his Plumed Egret (VI.57) is the Plumed Egret, *Ardea plumifera*, not the Medium Egret of Asia; his Australian Sun-bird (Supp.45) is the Sahul Sunbird, *Cinnyris frenatus*, not the Garden Sunbird that keeps *C. jugularis*; his Spotted Sericornis (III.51) is the Spotted Scrubwren, *Sericornis maculatus*.
 
 ## The Kansas catalogue
 
 The University of Kansas Spencer Library's Ellis Collection copy gives each plate a modern scientific name (books `ku-gould:15183` for volume I to `ku-gould:12471` for the Supplement). Its names were matched from the printed Latin, not from the birds.
 
-`ku-disagreements.csv` lists the 75 plates where the two differ, by kind:
+`ku-disagreements.csv` lists the 84 rows where the two differ, by kind:
 
 | kind | plates | what it is |
 |---|---|---|
-| same | 40 | the same bird under an older name, a lump, or a split since |
-| ku-error | 31 | Kansas matched the printed Latin, not the bird. It swaps V.15 with V.16 and IV.93 with IV.98 |
-| crosswalk-error | 1 | III.41: the crosswalk's guess was wrong. The row now names no species |
-| doubtful | VI.2, VI.19, VII.21 | open: the kiwi, the sand-plover and the skua, each argued in `note` |
+| same | 45 | the same bird under an older name, a lump, or a split since |
+| ku-error | 34 | Kansas matched the printed Latin, not the bird. It swaps V.15 with V.16 and IV.93 with IV.98 |
+| doubtful | V.13, V.30, VI.2, VII.21, VII.83 | open: the black cockatoo, the rosella, the kiwi, the skua and the rockhopper, each argued in `note` |
 
 ## The images: release `gould-australia-v1`
 

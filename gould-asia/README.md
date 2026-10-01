@@ -72,11 +72,12 @@ Every plate as its art crop, by volume and number. The full-size images are in t
   - where the plate is: BHL item, leaf, BHL PageID, and a link to the page;
   - `scan_url`, the unaltered JPEG 2000 on BHL's open-data bucket;
   - the two release images.
-- **`species.csv`**: one row per plate, including the 176 that name no modern species yet.
-- **`ku-disagreements.csv`**: the 120 identified plates where the Kansas catalogue gives a different name, each with its kind (see below).
+- **`species.csv`**: one row per plate and species. Two plates show two species (II.36, IV.57).
+- **`ku-disagreements.csv`**: the 184 rows where the Kansas catalogue gives a different name, each with its kind (see below).
 - **`sources/`**: the working record.
   - `plate-leaves.csv`: every plate's leaf, its orientation, its engraved caption as read and how it was read, where the caption starts, and the heading of the text leaf bound after it.
-  - `crosswalk.csv`: each plate's modern species, form, confidence and reason, the survey's first reading, and what Featherframe does with it.
+  - `crosswalk.csv`: the first pass (W-871): each plate's modern species, form, confidence and reason as first settled, the survey's reading, and what Featherframe does with it.
+  - `decisions.csv`: every identification made or changed since, as `tools/identify.py` logged it.
   - `ku-catalogue.csv`: the Kansas record for each plate.
 
 ## How the plates were identified
@@ -84,12 +85,12 @@ Every plate as its art crop, by volume and number. The full-size images are in t
 1. **Numbering.** The Smithsonian copy is bound in List order, one plate every four leaves: plate n is at leaf `28 + 4(n−1)` in volume I and `12 + 4(n−1)` in the others. The per-volume counts are 76, 75, 78, 72, 83, 75 and 71.
 2. **Leaves.** Every pairing was checked twice:
    - against the text leaf bound right after the plate, which opens with the species' name (all 530 carry the plate's genus there);
-   - against the plate's own engraved caption, read on the scan with OCR. 498 captions read cleanly, 21 more read with a garbled letter or two that still names the plate, and seven were read by eye. All agree with the List. Four vol. VII captions (29, 30, 31, 47) could not be read.
+   - against the plate's own engraved caption, read on the scan with OCR. 498 captions read cleanly, 21 more read with a garbled letter or two that still names the plate, and seven were read by eye. All agree with the List. Four vol. VII captions (29, 30, 31, 47), engraved in outline letters, were read by eye too.
    The OCR also gave each plate's orientation, since a sideways plate's caption runs down its right edge: 95 plates are bound sideways.
 3. **Names.** Each plate's Latin was carried to a modern species, then checked against the Kansas catalogue. Where the two named different birds, the plate decided.
-4. **Checking.** `caption_checked` is `yes` for the 526 plates whose caption was read and names the plate as listed.
-5. **Forms.** A sixth of the folio shows a race Gould named as a species, now a subspecies. Those rows give the species with `form: subspecies`. The survey's form assignments not confirmed by the Kansas catalogue are `medium`, and eight it contradicts are `low`.
-6. **Not identified.** 176 plates name no species here: birds BirdNET does not know and no modern name was settled for. Each row gives the Kansas catalogue's reading in `reason`. These are the open questions.
+4. **Checking.** `caption_checked` is `yes` for all 530 plates: each caption was read and names the plate as listed.
+5. **Forms.** A fifth of the folio shows a race Gould named as a species, now a subspecies: 102 rows give the species with `form: subspecies`, and three a colour `variant`.
+6. **The rest.** The first pass identified only the birds BirdNET knows. On 1 Oct the other 176 plates were identified from caption, text, synonymy and plate, and the 71 survey drafts and 12 doubtful rows were reviewed (W-929, W-930, W-931). Every plate is now identified: 518 rows `high`, 14 `judged`, none open.
 7. **Modern names.** `scientific` and `common` are eBird/Clements 2025's. Where eBird has moved a name since BirdNET V2.4 (the parrotbills to *Paradoxornis* and *Suthora*; the Japanese Tit into Asian Tit), the row carries eBird's and `birdnet_label` keeps BirdNET's.
 
 ## Traps
@@ -107,20 +108,27 @@ These are the plates a careful reader would still get wrong.
 - **V.17** *Carduelis orientalis* is the grey-headed *caniceps* goldfinch, which looks nothing like the European bird. eBird 2025 splits it as the Gray-crowned Goldfinch, *Carduelis caniceps*.
 - **VII.39** *Phasianus torquatus* is the ringed Chinese stock of the Ring-necked Pheasant, the bird introduced to North America; VII.34 is the nominate, ringless.
 - **IV.28** *Saxicola capistrata* and **IV.31** *S. atrogularis* are forms of the Variable and Desert Wheatears, not of the Pied and Black-eared.
+- **VI.2 and VI.3 carry each other's names**, as Gould's VI.2 text says: Blyth named the plates before the synonymy was settled. VI.2, printed *Paleornis rosa* "Blossom-headed Parrakeet", is the Plum-headed Parakeet (emerald ring under the collar, white tail tip, yellow-collared female). VI.3, printed *P. cyanocephala*, is the Blossom-headed.
+- **VI.5 and VI.6 cross too:** the "Grey-headed Parrakeet" is the Nicobar Parakeet, and the "Nicobar Parrakeet" is the Nicobar race of the Long-tailed Parakeet.
+- **VII.51**, printed *Polyplectron bicalcaratum* "Malayan Peacock Pheasant", is the Malayan Peacock-Pheasant, *P. malacense*: Gould describes "the Malayan bird", browner, with larger ocelli. His Gray Peacock-Pheasant is VII.50, printed *chinquis*.
+- **I.68** *Harpactes rutilus* is the Cinnamon-rumped Trogon. Gould applies Vieillot's name to a Malayan trogon that "never has the scarlet mark on the rump".
+- **III.15** *Phyllornis hodgsoni* is the Golden-fronted Leafbird, not the Orange-bellied (III.14).
+- **IV.23** *Cinclus sordidus* is the dark morph of the White-throated Dipper, not the Brown Dipper.
+- **Two-species plates:** II.36's lowest bird, figured as the female Scarlet-collared Flowerpecker, is the Red-keeled, as Gould says in the II.37 text. IV.57 shows the Rusty-flanked Treecreeper above and the Sikkim Treecreeper below.
+- **I.27** *Hirundo rufula* is the European Red-rumped Swallow, split from the Eastern (I.29).
 
 ## The Kansas catalogue
 
-The University of Kansas Spencer Library's Ellis Collection copy (Ellis Aves H120, records around `ku-gould:15300`–`17700`) gives each plate a modern scientific name, matched from the printed Latin. `ku-disagreements.csv` lists the 120 identified plates where it differs, by kind:
+The University of Kansas Spencer Library's Ellis Collection copy (Ellis Aves H120, records around `ku-gould:15300`–`17700`) gives each plate a modern scientific name, matched from the printed Latin. `ku-disagreements.csv` lists the 184 rows where it differs, by kind:
 
-| kind | plates | what it is |
+| kind | rows | what it is |
 |---|---|---|
-| old name | 61 | the same species under an older genus or spelling (*Garrulax* for *Trochalopteron*, *Pitta* for *Hydrornis*) |
-| subspecies | 17 | KU names the race |
-| pre-split | 14 | KU gives the parent species before a split (Great Tit for the Asian Tit, Asian Paradise-Flycatcher for the Amur) |
-| lumped | 1 | I.4: eBird keeps the Barbary Falcon within the Peregrine |
-| printed name | 3 | KU follows the printed Latin where the bird says otherwise (I.35, VI.62, VII.60) |
-| error | 16 | KU names another species: six Asian trogons sent to New World ones, the Spoon-billed Sandpiper to Lady Amherst's Pheasant, the Indian barn owl to the Spotted Owlet, Güldenstädt's Redstart to the White-capped |
-| open | 8 | a form the survey assigned and KU assigns elsewhere; the row is `low` |
+| old name | 91 | the same species under an older genus or spelling (*Garrulax* for *Trochalopteron*, *Pitta* for *Hydrornis*) |
+| pre-split | 33 | KU gives the parent species before a split (Great Tit for the Asian Tit, Asian Paradise-Flycatcher for the Amur) |
+| subspecies | 20 | KU names the race |
+| lumped | 2 | eBird keeps KU's species within ours (I.4: the Barbary Falcon within the Peregrine) |
+| printed name | 11 | KU follows the printed name where the bird says otherwise: I.35, II.36, IV.57, VI.2, VI.3, VI.29, VI.38, VI.62, VII.22, VII.51, VII.60 |
+| error | 27 | KU names another species: Asian trogons sent to New World ones, the Spoon-billed Sandpiper to Lady Amherst's Pheasant, the Indian barn owl to the Spotted Owlet, Güldenstädt's Redstart to the White-capped, the Daurian Partridge to a Mexican quail |
 
 ## The images: release `gould-asia-v1`
 

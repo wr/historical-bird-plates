@@ -52,11 +52,12 @@ Every plate as its art crop, by General List number. The full-size images are in
   - `scan_url`, the unaltered JPEG 2000 on BHL's open-data bucket;
   - the two release images.
 - **`species.csv`**: one row per plate and bird on the General List, including every row that isn't identified.
-- **`ku-disagreements.csv`**: every caption-checked plate where the Kansas catalogue names a different species, and what the disagreement is (see below).
+- **`ku-disagreements.csv`**: every plate where the Kansas catalogue names a different species, and what the disagreement is (see below).
 - **`sources/`**: the working record.
   - `general-list.csv`: the General List of Plates, transcribed from volume I.
   - `plate-leaves.csv`: every plate leaf in the five volumes, with its pencilled number, engraved caption and orientation.
-  - `crosswalk.csv`: each List row mapped to a modern name, with confidence and reason.
+  - `crosswalk.csv`: each List row mapped to a modern name, with confidence and reason, as first settled.
+  - `decisions.csv`: every identification made or changed since, as `tools/identify.py` logged it.
   - `ku-catalogue.csv`: the Kansas record for each plate.
 
 ## How the plates were identified
@@ -65,8 +66,8 @@ Every plate as its art crop, by General List number. The full-size images are in
 2. **Leaves.** Every leaf of all five volumes was walked. Each plate leaf's pencilled number, its engraved caption and whether it is bound sideways were written down (`sources/plate-leaves.csv`).
 3. **Names.** Each List row was mapped to a modern species through its Latin name, its English name and the literature. Each mapping got a confidence and a written reason (`sources/crosswalk.csv`).
 4. **Checking.** An identification is `caption_checked: yes` only when its leaf's engraved caption names that bird, by Latin epithet or the whole English name, never a shared family word. It was checked by eye on the scan. 411 identifications on 392 plates meet that bar.
-   - **High but unchecked:** 35 more `high` rows are secondary plates of species checked elsewhere, and are not caption-checked.
-   - **Open:** 20 plates are `low`: the open questions.
+   - **High but unchecked:** 43 more `high` rows are not caption-checked: secondary plates of species checked elsewhere, and 26 birds BirdNET has no class for. Until 1 Oct those 26 had their species left blank; they carry it now.
+   - **Open:** four rows ask a specific question (132, 256, 348, 444), and 249 is the Capercaillie × Black Grouse hybrid, with no species. The 20 `low` rows of the first pass were researched on 1 Oct (W-931): the rest are settled, most of them `judged`.
 5. **Modern names.** Each identification was first made to BirdNET V2.4's labels (Featherframe's use), then carried to eBird/Clements 2025. Where the two taxonomies differ, `reason` says so. The Wikidata, GBIF and Avibase ids come from the species' Wikidata item. Wikidata often has two items for one species, one under an older genus; the item used is the one Wikipedia links to (the most sitelinks) among those at species rank that carry the row's `scientific` name or eBird code, or are listed as their synonym with the same species epithet. Where GBIF doesn't accept that item's key as a species, GBIF's accepted species for the name is used.
 
 ## Traps
@@ -75,7 +76,11 @@ These are the plates a careful reader would still get wrong.
 
 - **The gulls:** Gould's "Black-headed Gull" (*Xema melanocephala*, 427) is today's Mediterranean Gull. The modern Black-headed Gull is his "Laughing Gull" (*Xema ridibunda*, 425), and today's American Laughing Gull is his "Black-winged Gull" (*Xema atricilla*, 426). Match on the modern binomial, never the common name.
 - **Pencil numbers:** this copy's pencil moves Bulwer's Petrel to 448 and puts both storm-petrels on 447's sheet. It also swaps the pencil numbers of 132 and 133. Where the pencil and the caption disagree, the caption decides.
-- **Plate 138**, "Rock or Shore Pipit, *Anthus aquaticus*", is left unidentified. The Rock and Water Pipits were one species then, and it could show either. Both are identified in [*The Birds of Great Britain*](../gould-britain/) instead.
+- **Plate 138**, "Rock or Shore Pipit, *Anthus aquaticus*", is the Rock Pipit (`judged`). The two were one species then, but Gould describes the resident British coastal bird, and Dresser cites this plate under *A. obscurus*.
+- **The Lanner** (20) is the Saker. Gould himself lists this plate under *F. sacer* (*Birds of Asia* I.5), as Dresser and Sharpe do, and the figure has no grey on the back.
+- **The Grey-headed Wagtail** (146) is the Blue-headed nominate *flava*: the male has a bold white eyebrow.
+- **Plate 445** shows two shearwaters: the Great above and the Sooty (Strickland's *fuliginosus*) below.
+- **Plate 408**'s orange gular pouch edged white is the Neotropic Cormorant's, a South American bird.
 - **The Dalmatian Regulus** (149) is Pallas's Leaf Warbler.
 - **The Imperial Eagle** (5) is the eastern bird.
 - **A plate drawn before a split** stands for the species as it was then understood (`form: pre-split`).
@@ -87,24 +92,26 @@ These are the plates a careful reader would still get wrong.
 - **Red-rumped Swallow** (55): eBird 2025 splits it, and *Cecropis daurica* now names the eastern bird. Gould's European bird is *Cecropis rufula*, European Red-rumped Swallow.
 - **Goshawk** (17): BirdNET's Northern Goshawk is split in eBird. Gould's is the Eurasian Goshawk, *Astur gentilis*.
 - **Red Grouse** (252): eBird 2025 splits it from Willow Ptarmigan as *Lagopus scotica*. BirdNET still lumps it, so its label is Willow Ptarmigan's.
-- **Redpoll** (194): eBird 2025 lumps the redpolls. Gould's plate is the Lesser Redpoll form.
+- **Redpolls** (193, 194): eBird 2025 lumps the redpolls. 193, *Linaria canescens*, is the Mealy form by Gould's own later synonymy (*Great Britain* III.51); 194 is the Lesser.
 
 ## The Kansas catalogue
 
 The University of Kansas Spencer Library's Ellis Collection copy (volume I: [ku-gould:11233](https://digital.lib.ku.edu/ku-gould/11233)) gives each plate a modern scientific name. It is the one other public identification of this folio. Its names were matched from the printed Latin, not from the birds.
 
-Of the 410 caption-checked species, 409 match a KU plate. `ku-disagreements.csv` lists the 28 plates where KU names something else, by kind:
+Of the 410 caption-checked species, 409 match a KU plate. `ku-disagreements.csv` lists the 48 rows where KU names something else, by kind:
 
 | kind | plates | what it is |
 |---|---|---|
-| error | 14, 50, 63, 65, 67, 75, 86, 108, 130, 137, 149, 205, 360, 442 | KU names another species. Some are unrelated: 360, the Shoveler, is labelled a warbler; 63 is labelled an Australian monarch. Others are Latin look-alikes. |
+| error | 14, 20, 50, 63, 65, 67, 75, 86, 108, 130, 137, 149, 193, 205, 207, 249, 360, 408, 442 | KU names another species. Some are unrelated: 360, the Shoveler, is labelled a warbler; 63 is labelled an Australian monarch. Others are Latin look-alikes. |
 | crossed | 219, 391 | Gould's Latin has since moved to the other species (see Traps) |
 | typo | 247, 273, 274, 276, 371 | same species, KU's spelling (*Aquila* for *Ardea*, a space in a name) |
-| old name | 194, 259, 321 | an older binomial for the same bird |
-| pre-split | 217, 252, 287 | KU gives the parent species before the split |
-| composite | 151 | KU's English and Latin name different figures on the same sheet |
+| old name | 122, 127, 194, 259, 321, 363, 409, 410 | an older binomial for the same bird |
+| subspecies | 411 | KU names the race |
+| pre-split | 8, 124, 138, 217, 252, 287, 299, 348, 444 | KU gives the parent species before the split |
+| composite | 151, 445 | KU's record names a different figure on the same sheet |
+| open | 132, 256 | KU names a bird the row leaves open |
 
-That is 16 misidentified plates out of about 410, roughly one in 26. On the brace plates, KU's record names only one figure.
+That is 19 misidentified plates out of about 445, roughly one in 23. On the brace plates, KU's record names only one figure.
 
 ## The images: release `gould-europe-v1`
 
