@@ -38,7 +38,7 @@ Old plates name their birds the way their authors did, and many of those names n
 
 [![Common Kingfisher, Barn Owl, Atlantic Puffin, Golden Oriole, Hoopoe](img/preview-gould-britain.jpg)](gould-britain/#the-plates)
 
-367 plates · 367 identified, 366 checked against the engraved caption · [browse all plates](gould-britain/#the-plates) · [tables](gould-britain/) · [images](https://github.com/wr/historical-bird-plates/releases/tag/gould-britain-v1)
+367 plates · 367 identified, 366 checked against the engraved caption · [browse all plates](gould-britain/#the-plates) · [tables](gould-britain/) · [images](https://github.com/wr/historical-bird-plates/releases/tag/gould-britain-v2)
 
 ## Get the data
 
