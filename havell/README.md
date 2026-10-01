@@ -75,6 +75,7 @@ Every plate with its lettering trimmed, by Havell number.
 ## Traps
 
 - **Plate 50 is a young Magnolia Warbler.** These scans carry its 1828 lettering, "Swainson's Warbler, *Sylvicola swainsonia*". Audubon wrote in 1831 that one drawing had been engraved in place of another while he was away from London, and the plate was re-lettered "Black and yellow warbler, *Sylvia maculosa*, young male". It is not the Swainson's Warbler of plate 198, which Audubon described in 1834. The adult Magnolia pair is plate 123.
+- **Plate 399's "Mourning Warbler" (figs. 4–5) is MacGillivray's Warbler.** Audubon wrote in 1839 that these Columbia River birds were misnamed on the plate, and named them *Sylvia macgillivrayi*. He has no plate of the true Mourning Warbler.
 - **Nelson's Sparrow is not on 149.** Wilson's "Sharp-tailed Finch" there is the Saltmarsh Sparrow.
 - **Black-throated Diver (346)** is the Pacific Loon on audubon.org and at NYHS. Pitt still says Arctic Loon.
 - **Splits since BirdNET's taxonomy:** the old binomial stays with the Old World bird, so Audubon's plates go to the American daughter:
@@ -99,4 +100,9 @@ Every plate with its lettering trimmed, by Havell number.
 - 338, Bemaculated Duck: a hybrid;
 - 407, Dusky Albatros: Light-mantled or Sooty, unsettled.
 
-The fifth "species" on 402 (Kittlitz's Murrelet) is also left out: curatorial sources list four birds there.
+Some figures on composite plates are left out for the same reason:
+- 400 fig. 4, Townsend's Bunting;
+- 434 fig. 2, Small-headed Flycatcher, fig. 3, Blue Mountain Warbler, and fig. 4, Bartram's Vireo (yellow-throated and brown-eyed, so not plainly the Red-eyed Vireo that NYHS and the Boston Public Library give);
+- 402's fifth "species" (Kittlitz's Murrelet): curatorial sources list four birds there.
+
+**Composite plates** carry one row per species, with its figure key from the legend. Until 1 Oct only the species Featherframe needed had rows; 21 plates gained 32 birds.
