@@ -486,9 +486,9 @@ VII,25,BirdsAsiaJohnGoVIIGoul,108,landscape,Pucrasia Darwini,"PUCRASIA DARWINI, 
 VII,26,BirdsAsiaJohnGoVIIGoul,112,landscape,Pucrasia macrolopha,PUCRASIA MACROLOPHA.,ocr,,"PUCRASIA Himalayan Pucras Satyra macrolopha, Less. Dict. Sci. Nat. tom. lix. p. ",yes,
 VII,27,BirdsAsiaJohnGoVIIGoul,116,landscape,Pucrasia castanea,"PUCRASIA CASTANEA, Gould",ocr,,"PUCRASIA CASTANEA, Kafiristan Pucras Pucrasia castanea, Gould in Proc. of Zool. ",yes,
 VII,28,BirdsAsiaJohnGoVIIGoul,120,landscape,Pucrasia Nipalensis,"PUCRASIA NIPAIENSIS, Goulá",ocr,,"PUCRASIA NIPALENSIS, Nepaul Pucras",yes,
-VII,29,BirdsAsiaJohnGoVIIGoul,124,landscape,Tetraogallus Caspius,TETRAOGALLTS,ocr (unreadable),,"TETRAOGALLUS | | Caspian Snow Tetrao Caspius, Gmel. Edit. of Linn. Syst. Nat., t",unread,
-VII,30,BirdsAsiaJohnGoVIIGoul,128,landscape,Tetraogallus Himalayensis,JDETR AALD S,ocr (unreadable),,"TETRAOGALLUS HIMALAYENSIS, G. R. Himalayan Snow Tetraogallus Himalayensis, G. R.",unread,
-VII,31,BirdsAsiaJohnGoVIIGoul,132,landscape,Tetraogallus Altaicus,ARRTR AOEATTTYS ATNATTYS,ocr (unreadable),,"TETRAOGALLUS Altaic Snow Perdie Altaica, Gebler, Bull. de Acad. Imp. de St. Péte",unread,
+VII,29,BirdsAsiaJohnGoVIIGoul,124,landscape,Tetraogallus Caspius,TETRAOGALLUS CASPIUS.,eye,,"TETRAOGALLUS | | Caspian Snow Tetrao Caspius, Gmel. Edit. of Linn. Syst. Nat., t",yes,"outline letters, read by eye (1 Oct)"
+VII,30,BirdsAsiaJohnGoVIIGoul,128,landscape,Tetraogallus Himalayensis,"TETRAOGALLUS HIMALAYENSIS, G.R. Gray",eye,,"TETRAOGALLUS HIMALAYENSIS, G. R. Himalayan Snow Tetraogallus Himalayensis, G. R.",yes,"outline letters, read by eye (1 Oct)"
+VII,31,BirdsAsiaJohnGoVIIGoul,132,landscape,Tetraogallus Altaicus,TETRAOGALLUS ALTAICUS.,eye,,"TETRAOGALLUS Altaic Snow Perdie Altaica, Gebler, Bull. de Acad. Imp. de St. Péte",yes,"outline letters, read by eye (1 Oct)"
 VII,32,BirdsAsiaJohnGoVIIGoul,136,landscape,Tetraogallus Tibetanus,TETRAOGALUS TIBETANUS Coud,ocr,,"TETRAOGALLUS TIBETANUS, Tibetan Snow Tetraogallus Tibetanus, Gould, in Proc. of ",yes,
 VII,33,BirdsAsiaJohnGoVIIGoul,140,landscape,Phasianus Reevesii,"PHASIANUS REEVESII, JEGray",ocr,,"PHASIANUS REEVESIL v. EF. Reeyes’s Phasianus Reevesti, J. E. Gray in Griff. Anim",yes,
 VII,34,BirdsAsiaJohnGoVIIGoul,144,landscape,Phasianus colchicus,"PHASIANUS COLCHICUS, Linn.",ocr,,"PHASIANUS COLCHICUS, Common Phasianus Colchicus, Linneus et Tue generic term Pha",yes,
@@ -504,7 +504,7 @@ VII,43,BirdsAsiaJohnGoVIIGoul,180,landscape,Ithaginis cruentus,ITHAGINIS CRUENTU
 VII,44,BirdsAsiaJohnGoVIIGoul,184,landscape,Tetraophasis obscurus,TETRAOPHASIS OBSCURUS.,ocr,,"TETRAOPHASIS Mou-Pin Lophophorus obscurus, J. Verreaux, N. Arch. Mus. v. Bull. p",yes,
 VII,45,BirdsAsiaJohnGoVIIGoul,188,landscape,Ceriornis melanocephala,CERIORNIS METANOCEPHAIA.,ocr,,"CERIORNIS a “ Western Horned Satyra melanocephala, Gray in Griff. Anim. King., v",yes,
 VII,46,BirdsAsiaJohnGoVIIGoul,192,landscape,Ceriornis Temmincki,CERIORNIS TE MMÜON CKU,ocr (garbled),,"CERIORNIS Temmuinck’s Horned Satyra Temmincku, J. E. Gray in Hardw. Ill. Ind. Zo",yes,
-VII,47,BirdsAsiaJohnGoVIIGoul,196,landscape,Ceriornis Blythi,"CERIORNIS BIXTDO, Jerd.",ocr (unreadable),,"CERIORNIS BLYTHII, Blyth’s Horned Ceriorms Temminchi, Jerd. Ibis, 1870, p. ——— B",unread,
+VII,47,BirdsAsiaJohnGoVIIGoul,196,landscape,Ceriornis Blythi,"CERIORNIS BLYTHI, Jerd.",eye,,"CERIORNIS BLYTHII, Blyth’s Horned Ceriorms Temminchi, Jerd. Ibis, 1870, p. ——— B",yes,"outline letters, read by eye (1 Oct)"
 VII,48,BirdsAsiaJohnGoVIIGoul,200,landscape,Ceriornis Caboti,"CERIORNIS CABOTI, Goud",ocr,,"CERIORNIS CABOTI, Dr. Cabot’s Horned Ceriornis Caboti, Gould in Proc. of Zool. S",yes,
 VII,49,BirdsAsiaJohnGoVIIGoul,204,landscape,Ceriornis Satyra,CERIORNIS SATYRA.,ocr,,"CERIORNIS Nepaulese Horned Meleagris Satyra, Linn. Syst. Nat., tom. i. p. 269.—L",yes,
 VII,50,BirdsAsiaJohnGoVIIGoul,208,landscape,Polyplectron chinquis,POLYPECTRON CHNOUIS .,ocr (garbled),,"POLYPLECTRON Assam Pavo tibetanus, Briss. Orn., tom. i. p. 294, pl. xxviii. A. f",yes,
