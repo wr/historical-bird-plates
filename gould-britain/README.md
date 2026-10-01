@@ -6,7 +6,7 @@ Five volumes and 367 plates. Drawn by John Gould with H. C. Richter, W. Hart and
 
 ## The plates
 
-Every plate as its art crop, by volume and number. The full-size images are in the [`gould-britain-v2`](https://github.com/wr/historical-bird-plates/releases/tag/gould-britain-v2) release.
+Every plate as its art crop, by volume and number. The full-size images are in the [`gould-britain-v1`](https://github.com/wr/historical-bird-plates/releases/tag/gould-britain-v1) release. Ten of its sheets are turned the wrong way; a corrected `gould-britain-v2` is built and will replace it. The contact sheets here already show v2's crops.
 
 **Volume I, plates 1–37**
 
@@ -91,14 +91,14 @@ These are the plates a careful reader would still get wrong.
 - **Great Shearwater (V.83):** the range in Gould's text is Cory's Shearwater's; the bird figured is a Great Shearwater.
 - **Rock and Water Pipits (III.10, III.11):** *The Birds of Europe* has the two on one plate, as one species. This folio gives each its own plate.
 
-## The images: release `gould-britain-v2`
+## The images: release `gould-britain-v1`, and v2 to come
 
 Two images per plate, 367 plates, made as for *The Birds of Europe*. `manifest.json` and `SHA256SUMS` give each file's sha256.
 
 - **`sheet-<barcode>-<leaf>.jpg`, the cleaned full sheet:**
-  - The JPEG 2000 master, stood upright. Half the plates are bound sideways, and they are turned so the caption runs along the bottom. In `gould-britain-v1` ten were turned wrong: I.25, II.8, III.7, IV.62, IV.70 and IV.82 upside down, and IV.9, IV.37, IV.39 and V.57 on their side. v2 checks every one by reading its caption.
+  - The JPEG 2000 master, stood upright. Half the plates are bound sideways, and they are turned so the caption runs along the bottom. In `gould-britain-v1` ten are turned wrong: I.25, II.8, III.7, IV.62, IV.70 and IV.82 upside down, and IV.9, IV.37, IV.39 and V.57 on their side. v2 checks every one by reading its caption.
   - The paper is evened, and anything within 6 % of its tone becomes pure white.
   - The later volumes' painted backgrounds are kept.
-- **`crop-<barcode>-<leaf>.jpg`, the art crop:** cut just above the read caption (`caption_top` in `sources/plate-leaves.csv`), with the right edge of upright plates trimmed clear of the binding line, then cropped to the art's own box. Every crop was reviewed on contact sheets. A few keep the hairline of the painted ground's lower edge, which is part of the print.
+- **`crop-<barcode>-<leaf>.jpg`, the art crop:** in v2, cut just above the read caption (`caption_top` in `sources/plate-leaves.csv`), with the right edge of upright plates trimmed clear of the binding line, then cropped to the art's own box. Every crop was reviewed on contact sheets. A few keep the hairline of the painted ground's lower edge, which is part of the print.
 
 These scans are about 265 ppi, and BHL's masters are lossy: the lowest resolution of Gould's folios here. For the sheet as it is, follow the row's `scan_url` to BHL's original.
