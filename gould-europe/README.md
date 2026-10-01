@@ -86,13 +86,14 @@ These are the plates a careful reader would still get wrong.
   - 391 has the Eared Grebe's black neck and fanned ear plumes.
 - **Red-rumped Swallow** (55): eBird 2025 splits it, and *Cecropis daurica* now names the eastern bird. Gould's European bird is *Cecropis rufula*, European Red-rumped Swallow.
 - **Goshawk** (17): BirdNET's Northern Goshawk is split in eBird. Gould's is the Eurasian Goshawk, *Astur gentilis*.
+- **Red Grouse** (252): eBird 2025 splits it from Willow Ptarmigan as *Lagopus scotica*. BirdNET still lumps it, so its label is Willow Ptarmigan's.
 - **Redpoll** (194): eBird 2025 lumps the redpolls. Gould's plate is the Lesser Redpoll form.
 
 ## The Kansas catalogue
 
 The University of Kansas Spencer Library's Ellis Collection copy (volume I: [ku-gould:11233](https://digital.lib.ku.edu/ku-gould/11233)) gives each plate a modern scientific name. It is the one other public identification of this folio. Its names were matched from the printed Latin, not from the birds.
 
-Of the 410 caption-checked species, 409 match a KU plate. `ku-disagreements.csv` lists the 27 plates where KU names something else, by kind:
+Of the 410 caption-checked species, 409 match a KU plate. `ku-disagreements.csv` lists the 28 plates where KU names something else, by kind:
 
 | kind | plates | what it is |
 |---|---|---|
@@ -100,7 +101,7 @@ Of the 410 caption-checked species, 409 match a KU plate. `ku-disagreements.csv`
 | crossed | 219, 391 | Gould's Latin has since moved to the other species (see Traps) |
 | typo | 247, 273, 274, 276, 371 | same species, KU's spelling (*Aquila* for *Ardea*, a space in a name) |
 | old name | 194, 259, 321 | an older binomial for the same bird |
-| pre-split | 217, 287 | KU gives the parent species before the split |
+| pre-split | 217, 252, 287 | KU gives the parent species before the split |
 | composite | 151 | KU's English and Latin name different figures on the same sheet |
 
 That is 16 misidentified plates out of about 410, roughly one in 26. On the brace plates, KU's record names only one figure.

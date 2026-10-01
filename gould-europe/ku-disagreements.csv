@@ -16,6 +16,7 @@ plate,kind,ku_id,ku_name,ku_scientific,scientific,common,note
 217,pre-split,ku-gould:10539,Azure-winged Magpie,Cyanopica cyana,Cyanopica cooki / Cyanopica cyanus,Iberian Magpie / Azure-winged Magpie,KU gives the parent species before the split
 219,crossed,ku-gould:10531,Alpine Chough,Pyrrhocorax graculus,Pyrrhocorax pyrrhocorax,Red-billed Chough,Gould's Latin has since moved to the other chough; the plate shows the long red bill
 247,typo,ku-gould:10401,"Common Pheasant, faisan de chasse, Faisán de collar, Ring-necked Pheasant",Phasianus colch icus,Phasianus colchicus,Ring-necked Pheasant,a space inside KU's binomial; same species
+252,pre-split,ku-gould:10381,"Willow Grouse, Willow Ptarmigan, lagopède des saules",Lagopus lagopus,Lagopus scotica,Red Grouse,KU gives the parent species before the split
 259,old name,ku-gould:10353,Francolinus vulgaris,Francolinus vulgaris,Francolinus francolinus,Black Francolin,Gould's own binomial for the same species
 273,typo,ku-gould:10297,"Gray Heron, Grey Heron, Héron cendré",Aquila cinerea,Ardea cinerea,Gray Heron,KU's genus Aquila for Ardea; same species
 274,typo,ku-gould:10293,"Purple Heron, Héron pourpré",Aquila purpurea,Ardea purpurea,Purple Heron,KU's genus Aquila for Ardea; same species

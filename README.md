@@ -60,7 +60,7 @@ Old plates name their birds the way their authors did, and many of those names n
 | Folio | Plates | Plates identified | Caption-checked | Species | Rows: `high` / `judged` / `medium` / `low` / `none` | BirdNET-labelled | Wikidata-linked | Kansas disagreements |
 |---|---:|---:|---:|---:|---|---:|---:|---:|
 | `havell` | 435 | 399 | – | 431 | 431 / 0 / 0 / 0 / 36 | 409 / 431 | 431 / 431 | – |
-| `gould-europe` | 449 | 403 | 392 | 410 | 430 / 18 / 0 / 20 / 0 | 422 / 422 | 422 / 422 | 27 |
+| `gould-europe` | 449 | 403 | 392 | 411 | 430 / 18 / 0 / 20 / 0 | 422 / 422 | 422 / 422 | 28 |
 | `gould-australia` | 681 | 678 | 660 | 584 | 653 / 0 / 22 / 6 / 0 | 498 / 678 | 678 / 678 | 73 |
 | `gould-asia` | 530 | 354 | 526 | 310 | 260 / 9 / 77 / 8 / 176 | 341 / 354 | 354 / 354 | 118 |
 | `gould-britain` | 367 | 367 | 7 | 338 | 7 / 0 / 357 / 3 / 0 | 356 / 367 | 367 / 367 | – |
