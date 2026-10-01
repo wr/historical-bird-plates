@@ -1,20 +1,18 @@
 volume,plate,kind,ku_id,ku_name,ku_scientific,scientific,common,note
 I,4,lumped,ku-gould:17718,Barbary Falcon,Falco pelegrinoides,Falco peregrinus,Peregrine Falcon,"KU's Barbary Falcon (F. pelegrinoides), of which babylonicus is a race, is lumped into the Peregrine by eBird 2025"
-I,9,open,ku-gould:17698,Sulawesi Serpent Eagle,Spilornis rufipectus,Spilornis cheela,Crested Serpent-Eagle,"a form the survey assigned; KU assigns it elsewhere, so the row is low"
 I,10,old name,ku-gould:17694,Blyth's Hawk-Eagle,Spizaetus alboniger,Nisaetus alboniger,Blyth's Hawk-Eagle,KU uses the older genus Spizaetus
 I,15,old name,ku-gould:17674,Collared Owlet,Glaucidium brodiei,Taenioptynx brodiei,Collared Owlet,an older genus or spelling for the same species
 I,17,error,ku-gould:17666,Spotted Owlet,Athene brama indica,Tyto javanica,Eastern Barn Owl,"KU matched the epithet to Athene brama indica; the caption, the text and the bird are a barn owl"
 I,18,pre-split,ku-gould:17662,Grass Owl,Tyto capensis,Tyto longimembris,Australasian Grass-Owl,"KU's Tyto capensis is the African Grass-Owl, which once included the eastern birds as T. capensis longimembris"
-I,20,open,ku-gould:17654,African Palm Swift,Cypsiurus parvus,Cypsiurus balasiensis,Asian Palm Swift,"a form the survey assigned; KU assigns it elsewhere, so the row is low"
-I,27,subspecies,ku-gould:17626,European Striated Swallow,Hirundo (Cecropis) daurica rufula,Cecropis daurica,Eastern Red-rumped Swallow,KU names the race; the row gives its species
+I,20,error,ku-gould:17654,African Palm Swift,Cypsiurus parvus,Cypsiurus balasiensis,Asian Palm Swift,KU's Cypsiurus parvus is the African Palm Swift
+I,27,pre-split,ku-gould:17626,European Striated Swallow,Hirundo (Cecropis) daurica rufula,Cecropis rufula,European Red-rumped Swallow,"KU names it as a race of the old Red-rumped Swallow, Hirundo daurica rufula"
 I,28,subspecies,ku-gould:17622,European Striated Swallow,Hirundo (Cecropis) daurica,Cecropis daurica,Eastern Red-rumped Swallow,KU names the race; the row gives its species
-I,29,subspecies,ku-gould:17618,Indian Striated Swallow,Hirundo (Cecropis) daurica erythropygia,Cecropis daurica,Eastern Red-rumped Swallow,KU names the race; the row gives its species
+I,29,subspecies,ku-gould:17618,Indian Striated Swallow,Hirundo (Cecropis) daurica erythropygia,Cecropis daurica,Eastern Red-rumped Swallow,"KU names the race, daurica erythropygia"
 I,30,old name,ku-gould:17614,Sri Lanka Swallow,Hirundo (Cecropis) hyperythra,Cecropis hyperythra,Sri Lanka Swallow,KU files it under Hirundo (Cecropis)
 I,33,old name,ku-gould:17602,"Streak-throated Swallow, Indian Cliff Swallow",Hirundo fluvicola,Petrochelidon fluvicola,Streak-throated Swallow,an older genus or spelling for the same species
 I,35,printed name,ku-gould:17594,Blue-throated Bee-eater,Merops viridis,Merops orientalis,Asian Green Bee-eater,KU follows the printed Merops viridis; the plate shows the Green Bee-eater
 I,38,error,ku-gould:17582,Blue-bearded Bee-eater,Nyctyornis athertoni,Nyctyornis amictus,Red-bearded Bee-eater,"KU names another species; the caption, the text and the bird agree with the row"
 I,44,subspecies,ku-gould:17558,White-throated Kingfisher,Halcyon smyrnensis gularis,Halcyon gularis,Brown-breasted Kingfisher,KU names the race; the row gives its species
-I,47,open,ku-gould:17546,Javan Kingfisher,Halcyon cyanoventris,Todiramphus chloris,Collared Kingfisher,"a form the survey assigned; KU assigns it elsewhere, so the row is low"
 I,49,subspecies,ku-gould:17538,Banded Kingfisher,Lacedo pulchella melanops,Lacedo pulchella,Banded Kingfisher,KU names the race; the row gives its species
 I,55,pre-split,ku-gould:17514,Indian Roller,Coracias benghalensis affinis,Coracias affinis,Indochinese Roller,KU makes affinis a race of Indian Roller; eBird 2025 splits it as Indochinese Roller
 I,63,subspecies,ku-gould:17482,Silver-breasted Broadbill,Serilophus lunatus rubropygius,Serilophus rubropygius,Gray-lored Broadbill,KU names the race; the row gives its species
@@ -30,11 +28,11 @@ I,75,error,ku-gould:17434,"Violaceous Trogon, Trogón violáceo",Trogon violaceu
 I,76,error,ku-gould:17430,"Mountain Trogon, Trogón mexicano",Trogon mexicanus,Harpactes ardens,Philippine Trogon,KU names a New World trogon of the same epithet
 II,7,pre-split,ku-gould:17356,Scarlet Minivet,Pericrocotus flammeus,Pericrocotus speciosus,Scarlet Minivet,KU gives the parent species before the split
 II,13,pre-split,ku-gould:17332,White-browed Shrike-Babbler,Pteruthius flaviscapis,Pteruthius aeralatus,White-browed Shrike-Babbler,KU gives the parent species before the split
-II,14,open,ku-gould:17328,White-browed Shrike-Babbler,Pteruthius flaviscapis,Pteruthius aeralatus,White-browed Shrike-Babbler,"a form the survey assigned; KU assigns it elsewhere, so the row is low"
+II,14,pre-split,ku-gould:17328,White-browed Shrike-Babbler,Pteruthius flaviscapis,Pteruthius aeralatus,White-browed Shrike-Babbler,KU's Pteruthius flaviscapis is the old wide species; eBird 2025's flaviscapis is the Javan Pied Shrike-Babbler
 II,19,pre-split,ku-gould:17308,Asian Paradise Flycatcher,Terpsiphone paradisi,Terpsiphone incei,Amur Paradise-Flycatcher,KU gives the parent species before the split
 II,23,old name,ku-gould:17292,Nectarinia osea,Nectarinia osea,Cinnyris osea,Palestine Sunbird,an older genus or spelling for the same species
 II,24,old name,ku-gould:17288,Nectarinia zeylonica,Nectarinia zeylonica,Leptocoma zeylonica,Purple-rumped Sunbird,an older genus or spelling for the same species
-II,25,open,ku-gould:17284,Nectarinia calcostetha,Nectarinia calcostetha,Aethopyga siparaja,Crimson Sunbird,"a form the survey assigned; KU assigns it elsewhere, so the row is low"
+II,25,old name,ku-gould:17284,Nectarinia calcostetha,Nectarinia calcostetha,Leptocoma calcostetha,Copper-throated Sunbird,KU's Nectarinia calcostetha is the older genus
 II,30,pre-split,ku-gould:17264,Crimson Sunbird,Aethopyga siparaja,Aethopyga vigorsii,Vigors's Sunbird,KU gives the parent species before the split
 II,32,old name,ku-gould:17256,Nectarinia asiatica,Nectarinia asiatica,Cinnyris asiaticus,Purple Sunbird,an older genus or spelling for the same species
 II,33,old name,ku-gould:17252,Nectarinia lotenia,Nectarinia lotenia,Cinnyris lotenius,Loten's Sunbird,an older genus or spelling for the same species
@@ -49,7 +47,7 @@ II,54,pre-split,ku-gould:17168,Black-lored Tit,Parus xanthogenys,Machlolophus ap
 II,55,pre-split,ku-gould:17164,Great Tit,Parus major,Parus cinereus,Asian Tit,KU gives the parent species before the split
 II,56,pre-split,ku-gould:17160,Great Tit,Parus major,Parus cinereus,Asian Tit,KU gives the parent species before the split
 II,58,subspecies,ku-gould:17152,Grey Crested Tit,Lophophanes s dichrou,Lophophanes dichrous,Gray-crested Tit,KU names the race; the row gives its species
-II,61,open,ku-gould:17140,Spot-winged Ti,Periparus melanolophus,Periparus ater,Coal Tit,"a form the survey assigned; KU assigns it elsewhere, so the row is low"
+II,61,lumped,ku-gould:17140,Spot-winged Ti,Periparus melanolophus,Periparus ater,Coal Tit,KU's Periparus melanolophus (Spot-winged Tit) is lumped into Coal Tit in eBird 2025
 II,63,old name,ku-gould:17132,Pygmy Bushtit,Psaltria exilis,Aegithalos exilis,Pygmy Tit,KU uses the older genus Psaltria
 II,69,pre-split,ku-gould:17108,Long-tailed Bushtit,Aegithalos caudatus,Aegithalos glaucogularis,Silver-throated Tit,KU gives the parent species before the split
 III,1,error,ku-gould:17065,Great Thrush,Turdus fuscater,Turdus eunomus,Dusky Thrush,"KU names another species; the caption, the text and the bird agree with the row"
@@ -148,8 +146,6 @@ V,83,pre-split,ku-gould:16103,Banded Pitta,Pitta guajana,Hydrornis irena,Malayan
 VI,1,old name,ku-gould:16081,Layard's Parakeet,Psittacula calthropae,Psittacula calthrapae,Layard's Parakeet,KU spells it calthropae; eBird 2025 has calthrapae
 VI,2,printed name,ku-gould:16077,Blossom-headed Parakeet,Psittacula roseata,Psittacula cyanocephala,Plum-headed Parakeet,KU follows the printed rosa and 'Blossom-headed'; Gould's text and the bird are the Plum-headed Parakeet
 VI,3,printed name,ku-gould:16073,Plum-headed Parakeet,Psittacula cyanocephala,Psittacula roseata,Blossom-headed Parakeet,KU follows the printed cyanocephala; Gould's text and the bird are the Blossom-headed Parakeet
-VI,4,open,ku-gould:16069,Long-tailed Parakeet,Psittacula longicauda,Psittacula alexandri,Red-breasted Parakeet,"a form the survey assigned; KU assigns it elsewhere, so the row is low"
-VI,11,open,ku-gould:16041,Long-tailed Parakeet,Psittacula longicauda,Psittacula eupatria,Alexandrine Parakeet,"a form the survey assigned; KU assigns it elsewhere, so the row is low"
 VI,14,error,ku-gould:16029,Golden-mantled Racket-tai,Prioniturus platurus,Prioniturus discurus,Blue-crowned Racquet-tail,"KU took Bourjot's spatuliger, partly the Celebes setarius, as P. platurus; the text and the bird are the Philippine Blue-crowned Racquet-tail"
 VI,21,old name,ku-gould:16001,Grey-capped Pygmy Woodpecker,Dendrocopos canicapillus scintilliceps,Yungipicus canicapillus,Gray-capped Pygmy Woodpecker,KU has the older genus Dendrocopos
 VI,22,old name,ku-gould:15997,Grey-capped Pygmy Woodpecker,Dendrocopos canicapillus doerriesi,Yungipicus canicapillus,Gray-capped Pygmy Woodpecker,KU has the older genus Dendrocopos
@@ -184,5 +180,6 @@ VII,15,error,ku-gould:15707,Golden Pheasant,Chrysolophus pictus,Lophura rufa,Mal
 VII,22,printed name,ku-gould:15679,"Blue Eared Pheasant, White Eared Pheasant",Crossoptilon auritum,Crossoptilon mantchuricum,Brown Eared-Pheasant,"KU follows the printed Crossoptilon auritum, the Blue Eared-Pheasant; the Peking birds on the plate are the Brown Eared-Pheasant"
 VII,23,error,ku-gould:15675,Rock Bush Quail,Perdicula argoondah,Syrmaticus ellioti,Elliot's Pheasant,"KU names the Rock Bush-Quail, Perdicula argoondah; the caption, the text and the bird are Elliot's Pheasant"
 VII,38,subspecies,ku-gould:15615,Copper Pheasant,Syrmaticus soemmerringii scintillans,Syrmaticus soemmerringii,Copper Pheasant,KU names the race; the row gives its species
+VII,51,printed name,ku-gould:15563,Grey Peacock-Pheasant,Polyplectron bicalcaratum,Polyplectron malacense,Malayan Peacock-Pheasant,KU follows the printed bicalcaratum (Gray Peacock-Pheasant); Gould's text and the plate are the Malayan bird
 VII,60,printed name,ku-gould:15527,Eurasian Curlew,Numenius arquata,Numenius madagascariensis,Far Eastern Curlew,KU matched rufescens to the Eurasian Curlew; Gould's rufescens is the Far Eastern
 VII,66,error,ku-gould:15503,Lady Amherst's Pheasant,Chrysolophus amherstiae,Calidris pygmaea,Spoon-billed Sandpiper,"KU names another species; the caption, the text and the bird agree with the row"

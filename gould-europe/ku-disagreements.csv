@@ -1,5 +1,7 @@
 plate,kind,ku_id,ku_name,ku_scientific,scientific,common,note
+8,pre-split,ku-gould:11411,Lesser Spotted Eagle,Aquila pomarina,Clanga clanga,Greater Spotted Eagle,Gould's Aquila naevia covered both spotted eagles; the young bird's rows of large white drops make the figure the Greater (judged)
 14,error,ku-gould:11387,"Swainson's Hawk, Aguililla de Swainson, Buse de Swainson",Buteo swainsoni,Buteo buteo,Common Buzzard,KU names another species; the caption and the bird agree with ours
+20,error,ku-gould:11363,Lanner Falcon,Falco biarmicus,Falco cherrug,Saker Falcon,"KU has the Lanner; Gould himself lists this plate under the Saker (Birds of Asia I.5), as Dresser and Sharpe do, and the figure has no grey on the back"
 50,error,ku-gould:11243,Little Owl,Athene noctua,Glaucidium passerinum,Eurasian Pygmy-Owl,KU names another species; the caption and the bird agree with ours
 63,error,ku-gould:11173,Pied Monarch,Arses kaupi,Ficedula hypoleuca / Ficedula albicollis,European Pied Flycatcher / Collared Flycatcher,KU names an Australian monarch
 65,error,ku-gould:11165,"Gray-spotted Flycatcher, Gray-streaked Flycatcher, Grey-streaked Flycatcher",Muscicapa griseisticta,Muscicapa striata,Spotted Flycatcher,KU names another species; the caption and the bird agree with ours
@@ -7,23 +9,41 @@ plate,kind,ku_id,ku_name,ku_scientific,scientific,common,note
 75,error,ku-gould:11125,Red-throated Thrush,Turdus ruficollis,Turdus atrogularis,Black-throated Thrush,KU names another species; the caption and the bird agree with ours
 86,error,ku-gould:11081,Chestnut-bellied Rock Thrush,Monticola rufiventris,Monticola saxatilis,Rufous-tailed Rock-Thrush,KU names another species; the caption and the bird agree with ours
 108,error,ku-gould:10993,Great Reed Warbler,Acrocephalus arundinaceus,Acrocephalus scirpaceus,Common Reed Warbler,KU names another species; the caption and the bird agree with ours
+122,old name,ku-gould:10937,Rüppell's Warbler,Sylvia rueppelli,Curruca ruppeli,Rüppell's Warbler,an older genus and spelling for the same species
+124,pre-split,ku-gould:10929,Subalpine Warbler,Sylvia cantillans,Curruca cantillans,Eastern Subalpine Warbler,KU has the Subalpine Warbler before its three-way split; Meyer's leucopogon is the Eastern
+127,old name,ku-gould:10917,Marmora's Warbler,Sylvia sarda,Curruca sarda,Marmora's Warbler,an older genus for the same species
 130,error,ku-gould:10905,"Dunlin, Bécasseau variable, Playero dorso rojo",Calidris alpina,Troglodytes troglodytes,Eurasian Wren,KU names the Dunlin on the Wren's plate
+132,open,ku-gould:10897,Icterine Warbler,Hippolais icterina,Phylloscopus trochilus,Willow Warbler,"KU follows Vieillot's icterina; the plate is a Phylloscopus, open between Willow Warbler and Chiffchaff"
 137,error,ku-gould:10877,Nilgiri Pipit,Anthus nilghiriensis,Anthus campestris,Tawny Pipit,KU names another species; the caption and the bird agree with ours
+138,pre-split,ku-gould:10873,Water Pipit,Anthus spinoletta,Anthus petrosus,Rock Pipit,"KU has the Water Pipit, which then included the Rock Pipit Gould describes"
 149,error,ku-gould:10829,Goldcrest,Regulus regulus,Phylloscopus proregulus,Pallas's Leaf Warbler,KU names another species; the caption and the bird agree with ours
 151,composite,ku-gould:10803,Sombre Tit,Poecile cincta,Poecile lugubris / Poecile cinctus,Sombre Tit / Gray-headed Chickadee,KU's English and Latin name different figures; the sheet shows both
+193,error,ku-gould:10635,"Arctic Redpoll, Hoary Redpoll, sizerin blanchâtre",Carduelis hornemanni,Acanthis flammea,Redpoll,KU has the Hoary Redpoll; Gould's own synonymy (Great Britain III.51) puts canescens under the Mealy Redpoll
 194,old name,ku-gould:10631,"Common Redpoll, sizerin flammé",Carduelis flammea,Acanthis flammea,Redpoll,an older binomial for the same species
 205,error,ku-gould:10587,"Two-barred Crossbill, White-winged Crossbill",Loxia leucoptera,Carpodacus sibiricus,Long-tailed Rosefinch,KU names another species; the caption and the bird agree with ours
+207,error,ku-gould:10579,Common Rosefinch,Carpodacus erythrinus,Carpodacus roseus,Pallas's Rosefinch,"KU has the Common Rosefinch; Gould's Rosy Grosbeak, Erythrospiza rosea, is Pallas's Rosefinch"
 217,pre-split,ku-gould:10539,Azure-winged Magpie,Cyanopica cyana,Cyanopica cooki / Cyanopica cyanus,Iberian Magpie / Azure-winged Magpie,KU gives the parent species before the split
 219,crossed,ku-gould:10531,Alpine Chough,Pyrrhocorax graculus,Pyrrhocorax pyrrhocorax,Red-billed Chough,Gould's Latin has since moved to the other chough; the plate shows the long red bill
 247,typo,ku-gould:10401,"Common Pheasant, faisan de chasse, Faisán de collar, Ring-necked Pheasant",Phasianus colch icus,Phasianus colchicus,Ring-necked Pheasant,a space inside KU's binomial; same species
+249,error,ku-gould:10393,Western Capercaillie,Tetrao urogallus,,,"the plate is the Capercaillie × Black Grouse hybrid, not a species; KU names one parent"
 252,pre-split,ku-gould:10381,"Willow Grouse, Willow Ptarmigan, lagopède des saules",Lagopus lagopus,Lagopus scotica,Red Grouse,KU gives the parent species before the split
+256,open,ku-gould:10365,"lagopède des saules, Willow Grouse, Willow Ptarmigan",Lagopus lagopus,,,KU has the Willow Ptarmigan; Temminck's brachydactylus is open between Willow and a female Rock Ptarmigan
 259,old name,ku-gould:10353,Francolinus vulgaris,Francolinus vulgaris,Francolinus francolinus,Black Francolin,Gould's own binomial for the same species
 273,typo,ku-gould:10297,"Gray Heron, Grey Heron, Héron cendré",Aquila cinerea,Ardea cinerea,Gray Heron,KU's genus Aquila for Ardea; same species
 274,typo,ku-gould:10293,"Purple Heron, Héron pourpré",Aquila purpurea,Ardea purpurea,Purple Heron,KU's genus Aquila for Ardea; same species
 276,typo,ku-gould:10285,"Great Egret, Grande Aigrette",Aquila alba,Ardea alba,Great Egret,KU's genus Aquila for Ardea; same species
 287,pre-split,ku-gould:10241,"American Flamingo, Flamant des Caraïbes, flamant rose, Flamenco americano, Greater Flamingo",Phoenicopterus ruber,Phoenicopterus roseus,Greater Flamingo,KU gives the parent species before the split
+299,pre-split,ku-gould:10193,"Lesser Sand Plover, Lesser Sand-Plover, Mongolian Plover, Pluvier de Mongolie",Charadrius mongolus,Anarhynchus atrifrons,Tibetan Sand-Plover,KU has the Lesser Sand-Plover before its split; Sharpe based the black-fronted Tibetan bird on this plate
 321,old name,ku-gould:10105,Sabine's snipe,Scolopax sabini,Gallinago gallinago / Gallinago gallinago,Common Snipe / Common Snipe,Gould's name for the dark morph of the Common Snipe
+348,pre-split,ku-gould:9979,"Bean Goose, oie des moissons",Anser fabalis,Anser serrirostris,Tundra Bean-Goose,"KU has the Bean Goose before its split; the short, deep bill leans Tundra (open)"
 360,error,ku-gould:9931,Yellow-browed Warbler,Phylloscopus inornatus,Spatula clypeata,Northern Shoveler,KU names another species; the caption and the bird agree with ours
+363,old name,ku-gould:9919,Baikal Teal,Anas formosa,Sibirionetta formosa,Baikal Teal,an older genus for the same species
 371,typo,ku-gould:9887,"Greater Scaup, fuligule milouinan, Pato boludo-mayor",Aythya m arila,Aythya marila,Greater Scaup,a space inside KU's binomial; same species
 391,crossed,ku-gould:9807,"Horned Grebe, Grèbe esclavon, Zambullidor cornudo",Podiceps auritus,Podiceps nigricollis,Eared Grebe,Gould's Latin has since moved to the other grebe; the plate shows the black neck and fanned ear plumes
+408,error,ku-gould:9740,"Grand Cormoran, Great Cormorant",Phalacrocorax carbo,Nannopterum brasilianum,Neotropic Cormorant,KU has the Great Cormorant; the orange gular pouch edged white is the Neotropic Cormorant's
+409,old name,ku-gould:9736,Pygmy Cormorant,Microcarbo pygmeus,Microcarbo pygmaeus,Pygmy Cormorant,a spelling of the same species
+410,old name,ku-gould:9732,European Shag,Phalacrocorax aristotelis,Gulosus aristotelis,European Shag,an older genus for the same species
+411,subspecies,ku-gould:9728,European Shag,Phalacrocorax aristotelis desmarestii,Gulosus aristotelis,European Shag,KU names the race desmarestii
 442,error,ku-gould:9604,"Parasitic Jaeger, Labbe parasite, Salteador parásito",Stercorarius parasiticus,Stercorarius longicaudus,Long-tailed Jaeger,KU names another species; the caption and the bird agree with ours
+444,pre-split,ku-gould:9596,"Little Shearwater, Petit Puffin",Puffinus assimilis,Puffinus baroli,Barolo Shearwater,KU has the Little Shearwater before its split; open between Barolo and Sargasso
+445,composite,ku-gould:9592,"Great Shearwater, Greater Shearwater, Pardela mayor, Puffin majeur",Puffinus gravis,Ardenna grisea,Sooty Shearwater,KU's record names one figure; the lower bird is the Sooty Shearwater
