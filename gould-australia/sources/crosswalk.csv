@@ -189,7 +189,7 @@ III,47,Sericornis humilis,Sombre-coloured Sericornis,Sericornis humilis,Sericorn
 III,48,Sericornis osculans,Allied Sericornis,Sericornis frontalis,Sericornis frontalis,White-browed Scrubwren,high,osculans Gould (S Aus) = White-browed Scrubwren (Clements lumps Spotted forms)
 III,49,Sericornis frontalis,White-fronted Sericornis,Sericornis frontalis,Sericornis frontalis,White-browed Scrubwren,high,White-browed Scrubwren
 III,50,Sericornis laevigaster,Buff-breasted Sericornis,Sericornis frontalis,Sericornis frontalis,White-browed Scrubwren,high,laevigaster = NE race of White-browed Scrubwren
-III,51,Sericornis maculatus,Spotted Sericornis,Sericornis frontalis,Sericornis frontalis,White-browed Scrubwren,high,maculatus = Spotted Scrubwren (lumped)
+III,51,Sericornis maculatus,Spotted Sericornis,Sericornis maculatus,Sericornis frontalis,White-browed Scrubwren,high,maculatus = Spotted Scrubwren (Clements splits White-browed Scrubwren; BirdNET lumps)
 III,52,Sericornis magnirostris,Large-billed Sericornis,Sericornis magnirostra,Sericornis magnirostra,Large-billed Scrubwren,high,Large-billed Scrubwren
 III,53,Acanthiza pusilla,Little Brown Acanthiza,Acanthiza pusilla,Acanthiza pusilla,Brown Thornbill,high,Brown Thornbill
 III,54,Acanthiza Diemenensis,Tasmanian Acanthiza,Acanthiza pusilla,Acanthiza pusilla,Brown Thornbill,high,diemenensis Gould = Tasmanian race of Brown Thornbill (A. ewingii is plate 55)
@@ -643,7 +643,7 @@ Supp,41,Ptilotis notata,Yellow-spotted Honey-eater,Meliphaga notata,Meliphaga no
 Supp,42,Ptilotis filigera,Streaked Honey-eater,Xanthotis flaviventer,,,high,Ptilotis filigera = Cape York race of Tawny-breasted Honeyeater; not in BirdNET
 Supp,43,Ptilotis Cockerelli,Cockerell's Honey-eater,Trichodere cockerelli,,,high,White-streaked Honeyeater; not in BirdNET
 Supp,44,Tropidorhynchus buceroides,Helmeted Friar-bird,Philemon buceroides,Philemon buceroides,Helmeted Friarbird,medium,"Helmeted Friarbird; Gould's bird is probably the Cape York form (yorki), which BirdNET's buceroides includes"
-Supp,45,Nectarinia australis,Australian Sun-bird,Cinnyris jugularis,Cinnyris jugularis,Olive-backed Sunbird,high,Nectarinia australis = Olive-backed Sunbird
+Supp,45,Nectarinia australis,Australian Sun-bird,Cinnyris frenatus,Cinnyris jugularis,Olive-backed Sunbird,high,Nectarinia australis = Sahul Sunbird (Clements splits Olive-backed Sunbird; BirdNET lumps)
 Supp,46,Zosterops albogularis,White-breasted Zosterops,Zosterops albogularis,,,high,White-chested White-eye (Norfolk); not in BirdNET
 Supp,47,Zosterops tenuirostris,Slender-billed Zosterops,Zosterops tenuirostris,,,high,Slender-billed White-eye (Norfolk); not in BirdNET
 Supp,48,Zosterops strenuus,Robust Zosterops,Zosterops strenuus,,,high,"Robust White-eye (Lord Howe, extinct); not in BirdNET"
