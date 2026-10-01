@@ -1,23 +1,30 @@
 volume,plate,kind,ku_id,ku_name,ku_scientific,scientific,common,note
 I,4,lumped,ku-gould:17718,Barbary Falcon,Falco pelegrinoides,Falco peregrinus,Peregrine Falcon,"KU's Barbary Falcon (F. pelegrinoides), of which babylonicus is a race, is lumped into the Peregrine by eBird 2025"
 I,9,open,ku-gould:17698,Sulawesi Serpent Eagle,Spilornis rufipectus,Spilornis cheela,Crested Serpent-Eagle,"a form the survey assigned; KU assigns it elsewhere, so the row is low"
+I,10,old name,ku-gould:17694,Blyth's Hawk-Eagle,Spizaetus alboniger,Nisaetus alboniger,Blyth's Hawk-Eagle,KU uses the older genus Spizaetus
 I,15,old name,ku-gould:17674,Collared Owlet,Glaucidium brodiei,Taenioptynx brodiei,Collared Owlet,an older genus or spelling for the same species
 I,17,error,ku-gould:17666,Spotted Owlet,Athene brama indica,Tyto javanica,Eastern Barn Owl,"KU matched the epithet to Athene brama indica; the caption, the text and the bird are a barn owl"
+I,18,pre-split,ku-gould:17662,Grass Owl,Tyto capensis,Tyto longimembris,Australasian Grass-Owl,"KU's Tyto capensis is the African Grass-Owl, which once included the eastern birds as T. capensis longimembris"
 I,20,open,ku-gould:17654,African Palm Swift,Cypsiurus parvus,Cypsiurus balasiensis,Asian Palm Swift,"a form the survey assigned; KU assigns it elsewhere, so the row is low"
 I,27,subspecies,ku-gould:17626,European Striated Swallow,Hirundo (Cecropis) daurica rufula,Cecropis daurica,Eastern Red-rumped Swallow,KU names the race; the row gives its species
 I,28,subspecies,ku-gould:17622,European Striated Swallow,Hirundo (Cecropis) daurica,Cecropis daurica,Eastern Red-rumped Swallow,KU names the race; the row gives its species
 I,29,subspecies,ku-gould:17618,Indian Striated Swallow,Hirundo (Cecropis) daurica erythropygia,Cecropis daurica,Eastern Red-rumped Swallow,KU names the race; the row gives its species
+I,30,old name,ku-gould:17614,Sri Lanka Swallow,Hirundo (Cecropis) hyperythra,Cecropis hyperythra,Sri Lanka Swallow,KU files it under Hirundo (Cecropis)
 I,33,old name,ku-gould:17602,"Streak-throated Swallow, Indian Cliff Swallow",Hirundo fluvicola,Petrochelidon fluvicola,Streak-throated Swallow,an older genus or spelling for the same species
 I,35,printed name,ku-gould:17594,Blue-throated Bee-eater,Merops viridis,Merops orientalis,Asian Green Bee-eater,KU follows the printed Merops viridis; the plate shows the Green Bee-eater
 I,38,error,ku-gould:17582,Blue-bearded Bee-eater,Nyctyornis athertoni,Nyctyornis amictus,Red-bearded Bee-eater,"KU names another species; the caption, the text and the bird agree with the row"
 I,44,subspecies,ku-gould:17558,White-throated Kingfisher,Halcyon smyrnensis gularis,Halcyon gularis,Brown-breasted Kingfisher,KU names the race; the row gives its species
 I,47,open,ku-gould:17546,Javan Kingfisher,Halcyon cyanoventris,Todiramphus chloris,Collared Kingfisher,"a form the survey assigned; KU assigns it elsewhere, so the row is low"
+I,49,subspecies,ku-gould:17538,Banded Kingfisher,Lacedo pulchella melanops,Lacedo pulchella,Banded Kingfisher,KU names the race; the row gives its species
+I,55,pre-split,ku-gould:17514,Indian Roller,Coracias benghalensis affinis,Coracias affinis,Indochinese Roller,KU makes affinis a race of Indian Roller; eBird 2025 splits it as Indochinese Roller
 I,63,subspecies,ku-gould:17482,Silver-breasted Broadbill,Serilophus lunatus rubropygius,Serilophus rubropygius,Gray-lored Broadbill,KU names the race; the row gives its species
 I,67,error,ku-gould:17466,Masked Trogon,Trogon personatus,Harpactes duvaucelii,Scarlet-rumped Trogon,KU names a New World trogon of the same epithet
 I,68,error,ku-gould:17462,"Collared Trogon, Trogón de collar",Trogon collaris puella,Harpactes orrhophaeus,Cinnamon-rumped Trogon,KU names a New World trogon (Collared Trogon)
 I,69,error,ku-gould:17458,"Violaceous Trogon, Trogón violáceo",Trogon violaceus ramonianus,Harpactes erythrocephalus,Red-headed Trogon,KU names a New World trogon (Violaceous Trogon)
 I,70,error,ku-gould:17454,"Black-headed Trogon, Trogón cabeza negra",Trogon melanocephalus,Harpactes diardii,Diard's Trogon,KU names a New World trogon of the same epithet
 I,71,error,ku-gould:17450,"Amazonian White-tailed Trogon, White-tailed Trogon",Trogon viridis,Harpactes oreskios,Orange-breasted Trogon,KU names a New World trogon of the same epithet
+I,72,error,ku-gould:17446,Black-throated Trogon,Trogon rufus tenellus,Apalharpactes reinwardtii,Javan Trogon,KU names a New World trogon (Trogon rufus)
+I,73,error,ku-gould:17442,Blue-crowned Trogon,Trogon curucui,Apalharpactes mackloti,Sumatran Trogon,KU names a New World trogon (Trogon curucui)
 I,74,error,ku-gould:17438,Black-tailed Trogon,Trogon melanurus,Harpactes kasumba,Red-naped Trogon,KU names a New World trogon of the same epithet
 I,75,error,ku-gould:17434,"Violaceous Trogon, Trogón violáceo",Trogon violaceus,Harpactes fasciatus,Malabar Trogon,KU names a New World trogon of the same epithet
 I,76,error,ku-gould:17430,"Mountain Trogon, Trogón mexicano",Trogon mexicanus,Harpactes ardens,Philippine Trogon,KU names a New World trogon of the same epithet
@@ -32,6 +39,8 @@ II,30,pre-split,ku-gould:17264,Crimson Sunbird,Aethopyga siparaja,Aethopyga vigo
 II,32,old name,ku-gould:17256,Nectarinia asiatica,Nectarinia asiatica,Cinnyris asiaticus,Purple Sunbird,an older genus or spelling for the same species
 II,33,old name,ku-gould:17252,Nectarinia lotenia,Nectarinia lotenia,Cinnyris lotenius,Loten's Sunbird,an older genus or spelling for the same species
 II,34,subspecies,ku-gould:17248,Japanese White-eye,Zosterops japonicus  simplex,Zosterops simplex,Swinhoe's White-eye,KU names the race; the row gives its species
+II,36,printed name,ku-gould:17240,Scarlet-collared Flowerpecker,Dicaeum retrocinctum,Dicaeum australe,Red-keeled Flowerpecker,KU's record names only the title bird; Gould's supposed female is the Red-keeled Flowerpecker
+II,41,old name,ku-gould:17220,Legge's Flowerpecke,Dicaeum vincens,Pachyglossa vincens,White-throated Flowerpecker,KU uses Dicaeum; eBird 2025 puts it in Pachyglossa
 II,44,pre-split,ku-gould:17208,Chestnut-bellied Nuthatch,Sitta castanea,Sitta cinnamoventris,Chestnut-bellied Nuthatch,KU gives the parent species before the split
 II,49,error,ku-gould:17188,Chestnut-bellied Nuthatch,Sitta castanea,Sittiparus castaneoventris,Chestnut-bellied Tit,"KU names another species; the caption, the text and the bird agree with the row"
 II,52,old name,ku-gould:17176,Black-lored Tit,Parus xanthogenys,Machlolophus xanthogenys,Himalayan Black-lored Tit,an older genus or spelling for the same species
@@ -41,32 +50,51 @@ II,55,pre-split,ku-gould:17164,Great Tit,Parus major,Parus cinereus,Asian Tit,KU
 II,56,pre-split,ku-gould:17160,Great Tit,Parus major,Parus cinereus,Asian Tit,KU gives the parent species before the split
 II,58,subspecies,ku-gould:17152,Grey Crested Tit,Lophophanes s dichrou,Lophophanes dichrous,Gray-crested Tit,KU names the race; the row gives its species
 II,61,open,ku-gould:17140,Spot-winged Ti,Periparus melanolophus,Periparus ater,Coal Tit,"a form the survey assigned; KU assigns it elsewhere, so the row is low"
+II,63,old name,ku-gould:17132,Pygmy Bushtit,Psaltria exilis,Aegithalos exilis,Pygmy Tit,KU uses the older genus Psaltria
 II,69,pre-split,ku-gould:17108,Long-tailed Bushtit,Aegithalos caudatus,Aegithalos glaucogularis,Silver-throated Tit,KU gives the parent species before the split
 III,1,error,ku-gould:17065,Great Thrush,Turdus fuscater,Turdus eunomus,Dusky Thrush,"KU names another species; the caption, the text and the bird agree with the row"
 III,12,pre-split,ku-gould:17021,Malagasy Bulbul,Hypsipetes madagascariensis,Hypsipetes leucocephalus,Black Bulbul,KU's H. madagascariensis is the old wide species that once took in the Asian Black Bulbul
+III,15,error,ku-gould:17009,Orange-bellied Leafbird,Chloropsis hardwickii,Chloropsis aurifrons,Golden-fronted Leafbird,KU names the Orange-bellied Leafbird (Gould's III.14); the plate and text are the Golden-fronted
 III,17,pre-split,ku-gould:17001,Blue-winged Leafbird,Chloropsis cochinchinensis,Chloropsis jerdoni,Jerdon's Leafbird,KU gives the parent species before the split
 III,22,old name,ku-gould:16981,Irena cyanogaster,Irena cyanogaster,Irena cyanogastra,Philippine Fairy-bluebird,an older genus or spelling for the same species
+III,23,old name,ku-gould:16977,Irena cyanogaster,Irena cyanogaster,Irena cyanogastra,Philippine Fairy-bluebird,KU spells it Irena cyanogaster
 III,25,pre-split,ku-gould:16969,Oriental Magpie-Robin,Copsychus saularis,Copsychus mindanensis,Philippine Magpie-Robin,KU gives the parent species before the split
+III,27,old name,ku-gould:16961,Myiophonus blighi,Myiophonus blighi,Myophonus blighi,Sri Lanka Whistling-Thrush,KU spells the genus Myiophonus
 III,28,old name,ku-gould:16957,Myiophonus insularis,Myiophonus insularis,Myophonus insularis,Taiwan Whistling-Thrush,an older genus or spelling for the same species
 III,29,old name,ku-gould:16953,White-bellied Shortwing,Brachypteryx major,Sholicola albiventris,White-bellied Sholakili,an older genus for the same species
 III,30,old name,ku-gould:16949,Rufous-backed Sibia,Heterophasia annectens,Leioptila annectens,Rufous-backed Sibia,an older genus or spelling for the same species
 III,31,old name,ku-gould:16945,Great Parrotbill,Conostoma oemodium,Paradoxornis aemodius,Great Parrotbill,an older genus or spelling for the same species
 III,33,old name,ku-gould:16937,Spot-breasted Scimitar Babbler,Pomatorhinus erythrocnemis,Erythrogenys erythrocnemis,Black-necklaced Scimitar-Babbler,an older genus or spelling for the same species
 III,34,old name,ku-gould:16933,Slender-billed Scimitar Babbler,Xiphirhynchus superciliaris,Pomatorhinus superciliaris,Slender-billed Scimitar-Babbler,an older genus or spelling for the same species
+III,36,old name,ku-gould:16925,Red-winged Laughingthrush,Garrulax formosus,Trochalopteron formosum,Red-winged Laughingthrush,KU uses the older genus Garrulax
 III,37,old name,ku-gould:16921,Black-faced Laughingthrush,Garrulax affinis,Trochalopteron affine,Black-faced Laughingthrush,an older genus or spelling for the same species
 III,38,error,ku-gould:16917,Chestnut-crowned Laughingthrush,Garrulax erythrocephalus,Trochalopteron variegatum,Variegated Laughingthrush,"KU names another species; the caption, the text and the bird agree with the row"
+III,39,old name,ku-gould:16913,Moustached Laughingthrush,Garrulax cineraceus,Ianthocincla cineracea,Moustached Laughingthrush,KU uses the older genus Garrulax
 III,40,old name,ku-gould:16909,Striped Laughingthrush,Garrulax virgatus,Trochalopteron virgatum,Striped Laughingthrush,an older genus or spelling for the same species
+III,41,old name,ku-gould:16905,Black-faced Laughingthrush,Garrulax affinis,Trochalopteron affine,Black-faced Laughingthrush,KU uses the older genus Garrulax
 III,42,old name,ku-gould:16901,Elliot's Laughingthrush,Garrulax elliotii,Trochalopteron elliotii,Elliot's Laughingthrush,an older genus or spelling for the same species
 III,43,pre-split,ku-gould:16897,Chestnut-crowned Laughingthrush,Garrulax erythrocephalus,Trochalopteron melanostigma,Silver-eared Laughingthrush,KU gives the parent species before the split
 III,44,old name,ku-gould:16893,Spotted Laughingthrush,Garrulax ocellatus,Ianthocincla ocellata,Spotted Laughingthrush,an older genus or spelling for the same species
+III,45,old name,ku-gould:16889,Spotted Laughingthrush,Garrulax ocellatus,Ianthocincla ocellata,Spotted Laughingthrush,KU uses the older genus Garrulax
+III,46,old name,ku-gould:16885,Barred Laughingthrush,Garrulax lunulatus,Ianthocincla lunulata,Barred Laughingthrush,KU uses the older genus Garrulax
+III,47,old name,ku-gould:16881,Brown-capped Laughingthrush,Garrulax austeni,Trochalopteron austeni,Brown-capped Laughingthrush,KU uses the older genus Garrulax
 III,48,old name,ku-gould:16877,Wynaad Laughingthrush,Garrulax delesserti,Pterorhinus delesserti,Wayanad Laughingthrush,an older genus or spelling for the same species
+III,49,old name,ku-gould:16873,Rufous-vented Laughingthrush,Garrulax gularis,Pterorhinus gularis,Rufous-vented Laughingthrush,KU uses the older genus Garrulax
+III,50,old name,ku-gould:16869,White-throated Laughingthrush,Garrulax albogularis,Pterorhinus albogularis,White-throated Laughingthrush,KU uses the older genus Garrulax
 III,51,error,ku-gould:16865,Grey-sided Laughingthrush,Garrulax caerulatus,Pterorhinus poecilorhynchus,Rusty Laughingthrush,"KU names another species; the caption, the text and the bird agree with the row"
+III,52,old name,ku-gould:16861,Yellow-throated Laughingthrush,Garrulax galbanus,Pterorhinus galbanus,Yellow-throated Laughingthrush,KU uses the older genus Garrulax
 III,53,old name,ku-gould:16857,"Greater Necklaced Laughing Thrush, Greater Necklaced Laughingthrush",Garrulax pectoralis,Pterorhinus pectoralis,Greater Necklaced Laughingthrush,an older genus or spelling for the same species
 III,54,old name,ku-gould:16853,Black-throated Laughingthrush,Garrulax chinensis,Pterorhinus chinensis,Black-throated Laughingthrush,an older genus or spelling for the same species
 III,55,old name,ku-gould:16849,Plain Laughingthrush,Garrulax davidi,Pterorhinus davidi,Pere David's Laughingthrush,an older genus or spelling for the same species
 III,60,old name,ku-gould:16829,Long-billed Wren-Babbler,Rimator malacoptilus,Napothera malacoptila,Long-billed Wren-Babbler,an older genus for the same species
+III,61,old name,ku-gould:16825,Gould's Shortwing,Brachypteryx stellata,Heteroxenicus stellatus,Gould's Shortwing,KU uses the older genus Brachypteryx
+III,63,old name,ku-gould:16817,Streaked Wren-Babbler,Napothera brevicaudata,Gypsophila brevicaudata,Streaked Wren-Babbler,KU uses Napothera
+III,64,old name,ku-gould:16813,White-collared Yuhina,Yuhina diademata,Parayuhina diademata,White-collared Yuhina,KU uses the older genus Yuhina
 III,66,old name,ku-gould:16805,Dusky Fulvetta,Alcippe brunnea,Schoeniparus brunneus,Dusky Fulvetta,an older genus or spelling for the same species
+III,68,pre-split,ku-gould:16797,Vinous-throated Parrotbill,Paradoxornis webbianus,Suthora brunnea,Brown-winged Parrotbill,"KU gives Vinous-throated Parrotbill, which once included brunnea as a race; eBird keeps Brown-winged separate"
+III,69,old name,ku-gould:16793,Black-throated Parrotbill,Paradoxornis nipalensis,Suthora nipalensis,Black-throated Parrotbill,KU uses the older genus Paradoxornis
 III,70,old name,ku-gould:16789,Black-throated Parrotbill,Paradoxornis nipalensis,Suthora nipalensis,Black-throated Parrotbill,an older genus or spelling for the same species
+III,71,old name,ku-gould:16785,Fulvous Parrotbil,Paradoxornis fulvifrons,Suthora fulvifrons,Fulvous Parrotbill,KU uses the older genus Paradoxornis
 III,72,old name,ku-gould:16781,Vinous-throated Parrotbill,Paradoxornis webbianus,Suthora webbiana,Vinous-throated Parrotbill,an older genus or spelling for the same species
 IV,2,old name,ku-gould:16732,Tesia castaneocoronata,Tesia castaneocoronata,Cettia castaneocoronata,Chestnut-headed Tesia,an older genus or spelling for the same species
 IV,4,pre-split,ku-gould:16724,Graceful Prinia,Prinia gracilis,Prinia lepida,Delicate Prinia,KU gives the parent Graceful Prinia; Blyth's lepida and the Sind bird are the Delicate Prinia
