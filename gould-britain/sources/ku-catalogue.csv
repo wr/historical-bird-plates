@@ -1,0 +1,368 @@
+volume,plate,ku_id,ku_title,ku_english,ku_printed_latin,ku_sci,note
+I,1,ku-gould:9410,Egyptian Vulture. 1. plate,Egyptian Vulture,Neophron perenopterus,Neophron percnopterus,KU's printed Latin is misspelt (List: Neophron percnopterus)
+I,2,ku-gould:9406,"Águila real; aigle royal, Golden Eagle. 2. plate",Golden Eagle,,Aquila chrysaetos,printed_alt_name=Golden eagle; KU lists no printed Latin (ku_sci = List Latin)
+I,3,ku-gould:9402,Lesser Spotted Eagle. 3. plate,Lesser Spotted Eagle,Aquila naevia,Aquila pomarina,printed_english=Spotted eagle
+I,4,ku-gould:9398,White-tailed Eagle. 4. plate,White-tailed Eagle,Haliaetus albicilla,Haliaeetus albicilla,printed_english=Sea-eagle
+I,5,ku-gould:9394,"Osprey; balbuzard pêcheur, Gavilán pescador. 5. plate",Osprey,,Pandion haliaetus,printed_alt_name=Osprey; KU lists no printed Latin (ku_sci = List Latin)
+I,6,ku-gould:9390,Common Buzzard. 6. plate,Common Buzzard,Buteo vulgaris,Buteo buteo,
+I,7,ku-gould:9386,"Rough-legged Hawk; Roughleg, Aguililla ártica, buse pattue. 7. plate",Rough-legged Hawk,Archibuteo lagopus,Buteo lagopus,printed_english=Rough-legged buzzard
+I,8,ku-gould:9382,European Honey Buzzard. 8. plate,European Honey Buzzard,,Pernis apivorus,printed_alt_name=Honey-buzzard; KU lists no printed Latin (ku_sci = List Latin)
+I,9,ku-gould:9378,"Northern Goshawk; autour des palombes, Gavilán azor. 9. plate",Northern Goshawk,Astur palumbarius,Accipiter gentilis,printed_english=Goshawk
+I,10,ku-gould:9374,Eurasian Sparrowhawk. 10. plate,Eurasian Sparrowhawk,,Accipiter nisus,printed_alt_name=Sparrow-hawk; KU lists no printed Latin (ku_sci = List Latin)
+I,11,ku-gould:9370,Gyrfalcon; faucon gerfaut. 11. plate,Gyrfalcon,Falco islandus,Falco rusticolus,printed_english=Iceland falcon; same Latin as I.12; told apart by KU's plate number only
+I,12,ku-gould:9367,Gyrfalcon; faucon gerfaut. 12. plate,Gyrfalcon,Falco islandus,Falco rusticolus,printed_english=Iceland falcon; same Latin as I.11; told apart by KU's plate number only
+I,13,ku-gould:9364,Gyrfalcon; faucon gerfaut. 13. plate,Gyrfalcon,Falco candicans,Falco rusticolus,"printed_english=Greenland falcon; same Latin as I.14, I.15; told apart by KU's plate number only"
+I,14,ku-gould:9360,Gyrfalcon; faucon gerfaut. 14. plate,Gyrfalcon,Falco candicans,Falco rusticolus,"printed_english=Greenland falcon; same Latin as I.13, I.15; told apart by KU's plate number only"
+I,15,ku-gould:9357,Gyrfalcon; faucon gerfaut. 15. plate,Gyrfalcon,Falco candicans,Falco rusticolus,"printed_english=Greenland falcon; same Latin as I.13, I.14; told apart by KU's plate number only"
+I,16,ku-gould:9354,Gyrfalcon; faucon gerfaut. 16. plate,Gyrfalcon,Falco gyrfalco,Falco rusticolus,printed_english=Norwegian or gyr falcon
+I,17,ku-gould:9350,Eurasian Peregrine Falconn. 17. plate,Eurasian Peregrine Falconn,Falco peregrinus,Falco peregrinus peregrinus,printed_english=Peregrine falcon
+I,18,ku-gould:9346,Eurasian Hobby; Northern Hobby. 18. plate,Eurasian Hobby,,Falco subbuteo,printed_alt_name=Hobby; KU lists no printed Latin (ku_sci = List Latin)
+I,19,ku-gould:9342,"Merlin; faucon émerillon, Halcón esmerejón. 19. plate",Merlin,Falco aesalon,Falco columbarius aesalon,printed_english=Merlin
+I,20,ku-gould:9338,Red-thighed Sparrowhawk. 20. plate,Red-thighed Sparrowhawk,Erythropus vespertinus,Accipiter erythropus,printed_english=Orange-legged hobby
+I,21,ku-gould:9334,Common Kestrel; Eurasian Kestrel. 21. plate,Common Kestrel,Tinnunculus alaudarius,Falco tinnunculus,printed_english=Kestrel
+I,22,ku-gould:9330,Red Kite. 22. plate,Red Kite,Milvus regalis,Milvus milvus,printed_english=Kite or glede
+I,23,ku-gould:9326,Black Kite. 23. plate,Black Kite,,Milvus migrans,KU lists no printed Latin (ku_sci = List Latin)
+I,24,ku-gould:9322,Western Marsh Harrier. 24. plate,Western Marsh Harrier,,Circus aeruginosus,printed_alt_name=Marsh-harrier; KU lists no printed Latin (ku_sci = List Latin); same Latin as I.25; told apart by KU's plate number only
+I,25,ku-gould:9319,Western Marsh Harrier. 25. plate,Western Marsh Harrier,,Circus aeruginosus,printed_alt_name=Marsh-harrier; KU lists no printed Latin (ku_sci = List Latin); same Latin as I.24; told apart by KU's plate number only
+I,26,ku-gould:9316,"Northern Harrier;busard saint-martin, Gavilán rastrero. 26. plate",Northern Harrier,,Circus cyaneus,printed_alt_name=Hen-harrier; KU lists no printed Latin (ku_sci = List Latin)
+I,27,ku-gould:9312,Montagu's Harrier. 27. plate,Montagu's Harrier,Circus cinerascens,Circus pygargus,printed_english=Ash-coloured harrier
+I,28,ku-gould:9308,"Barn Owl; Common Barn-Owl, effraie de clochers, Lechuza de campanario. 28. plate",Barn Owl,Strix flammea,Tyto alba,printed_english=Barn-owl
+I,29,ku-gould:9304,Tawny Owl. 29. plate,Tawny Owl,Syrnium aluco,Strix aluco,printed_english=Tawny or brown owl
+I,30,ku-gould:9300,Eurasian Eagle-Owl. 30. plate,Eurasian Eagle-Owl,Bubo maximus,Bubo bubo,printed_english=Eagle owl
+I,31,ku-gould:9296,"Long-Ardea Owl; Búho cara café, hibou moyen-duc. 31. plate",Long-Ardea Owl,Otus vulgaris,Asio otus,printed_english=Long-eared owl; KU's English has 'Ardea' for 'eared'
+I,32,ku-gould:9292,"Búho cuerno corto; hibou des marais, Short-Ardea Owl. 32. plate",Short-Ardea Owl,Brachyotus palustris,Asio flammeus,printed_english=Short-eared owl; KU's English has 'Ardea' for 'eared'
+I,33,ku-gould:9288,Eurasian Scops Owl. 33. plate,Eurasian Scops Owl,Scops zorea,Otus scops,printed_english=Scops owl; KU's printed Latin is misspelt (List: Scops zorca)
+I,34,ku-gould:9284,harfang des neiges; Snowy Owl. 34. plate,Snowy Owl,Nyctea nivea,Bubo scandiacus,printed_english=Snowy owl
+I,35,ku-gould:9280,"chouette épervière; Northern Hawk Owl, Northern Hawk-Owl. 35. plate",Northern Hawk Owl,Surnia funerea,Surnia ulula,printed_english=Hawk owl
+I,36,ku-gould:9276,Boreal Owl; nyctale de Tengmalm. 36. plate,Boreal Owl,Nyctale tengmalmi,Aegolius funereus,printed_english=Tengmalm's owl
+I,37,ku-gould:9272,Little Owl. 37. plate,Little Owl,,Athene noctua,KU lists no printed Latin (ku_sci = List Latin)
+II,1,ku-gould:9249,European Nightjar. 1. plate,European Nightjar,,Caprimulgus europaeus,"printed_alt_name=Nightjar, or goatsucker; KU lists no printed Latin (ku_sci = List Latin)"
+II,2,ku-gould:9245,Red-necked Nightjar. 2. plate,Red-necked Nightjar,,Caprimulgus ruficollis,printed_alt_name=Red-necked goatsucker; KU lists no printed Latin (ku_sci = List Latin)
+II,3,ku-gould:9241,Common Swift. 3. plate,Common Swift,Cypselus apus,Apus apus,printed_english=Swift
+II,4,ku-gould:9237,Apus melba. 4. plate,,Cypselus melba,Apus melba,printed_english=Alpine swift; KU gives no English name (its title is the Latin)
+II,5,ku-gould:9233,"Barn Swallow; Golondrina tijereta, hirondelle rustique. 5. plate",Barn Swallow,,Hirundo rustica,printed_alt_name=Swallow; KU lists no printed Latin (ku_sci = List Latin)
+II,6,ku-gould:9229,House Martin. 6. plate,House Martin,Chelidon urbica,Delichon urbicum,printed_english=House-martin
+II,7,ku-gould:9225,"Sand Martin; Bank Swallow, Golondrina ribereña, hirondelle de rivageRiparia. 7. plate",Sand Martin,Cotyle riparia,Riparia riparia,printed_english=Sand-martin; same Latin as II.8; told apart by KU's plate number only
+II,8,ku-gould:9222,"Sand Martin; Bank Swallow, Golondrina ribereña, hirondelle de rivageR iparia riparia. 8. plate",Sand Martin,Cotyle riparia,Riparia riparia,printed_english=Sand-martin; same Latin as II.7; told apart by KU's plate number only
+II,9,ku-gould:9219,European Bee-eater. 9. plate,European Bee-eater,,Merops apiaster,printed_alt_name=Bee-eater; KU lists no printed Latin (ku_sci = List Latin)
+II,10,ku-gould:9215,Common Kingfisher. 10. plate,Common Kingfisher,Alcedo ispida,Alcedo atthis ispida,printed_english=Kingfisher
+II,11,ku-gould:9211,European Roller. 11. plate,European Roller,Coracias garrula,Coracias garrulus,printed_english=Roller
+II,12,ku-gould:9207,"Common Hoopoe; Eurasian Hoopoe, Hoopoe. 12. plate",Common Hoopoe,,Upupa epops,printed_alt_name=Hoopoe; KU lists no printed Latin (ku_sci = List Latin)
+II,13,ku-gould:9203,"Great Grey Shrike; Northern Shrike, pie-grièche grise. 13. plate",Great Grey Shrike,,Lanius excubitor,printed_alt_name=Great grey shrike; KU lists no printed Latin (ku_sci = List Latin)
+II,14,ku-gould:9199,Lesser Grey Shrike. 14. plate,Lesser Grey Shrike,,Lanius minor,printed_alt_name=Rose-breasted shrike; KU lists no printed Latin (ku_sci = List Latin)
+II,15,ku-gould:9195,Red-backed Shrike. 15. plate,Red-backed Shrike,Enneoctonus eollurio,Lanius collurio,printed_english=Butcher-bird; KU's printed Latin is misspelt (List: Enneoctonus collurio)
+II,16,ku-gould:9191,Woodchat Shrike. 16. plate,Woodchat Shrike,Enneoctonus rufus,Lanius senator,printed_english=Woodchat
+II,17,ku-gould:9187,European Pied Flycatcher. 17. plate,European Pied Flycatcher,Muscicapa atricapilla,Ficedula hypoleuca,printed_english=Pied flycatcher
+II,18,ku-gould:9183,Collared Flycatcher. 18. plate,Collared Flycatcher,Muscicapa collaris,Ficedula albicollis,printed_english=White-collared flycatcher
+II,19,ku-gould:9179,Spotted Flycatcher. 19. plate,Spotted Flycatcher,Butalis grisola,Muscicapa striata,
+II,20,ku-gould:9175,Red-breasted Flycatcher. 20. plate,Red-breasted Flycatcher,Erythrosterna parva,Ficedula parva,
+II,21,ku-gould:9171,Bohemian Waxwing; jaseur boréal. 21. plate,Bohemian Waxwing,Ampelis garrulus,Bombycilla garrulus,printed_english=Waxen chatterer
+II,22,ku-gould:9167,Eurasian Nuthatch. 22. plate,Eurasian Nuthatch,Sitta caesia,Sitta europaea,printed_english=Nuthatch
+II,23,ku-gould:9163,Great Tit. 23. plate,Great Tit,,Parus major,KU lists no printed Latin (ku_sci = List Latin)
+II,24,ku-gould:9159,Blue Tit. 24. plate,Blue Tit,Parus caeruleus,Cyanistes caeruleus,
+II,25,ku-gould:9155,Coal Tit. 25. plate,Coal Tit,Parus ater,Periparus ater,
+II,26,ku-gould:9151,European Crested Tit. 26. plate,European Crested Tit,Parus cristatus,Lophophanes cristatus,printed_english=Crested tit
+II,27,ku-gould:9147,Marsh Tit. 27. plate,Marsh Tit,,Poecile palustris,KU lists no printed Latin (ku_sci = List Latin)
+II,28,ku-gould:9143,Long-tailed Bushtit. 28. plate,Long-tailed Bushtit,Mecistura caudata,Aegithalos caudatus,printed_english=Long-tailed tit; same Latin as II.29; told apart by KU's plate number only
+II,29,ku-gould:9140,Long-tailed Bushtit. 29. plate,Long-tailed Bushtit,Mecistura caudata,Aegithalos caudatus,printed_english=Long-tailed tit; same Latin as II.28; told apart by KU's plate number only
+II,30,ku-gould:9137,Bearded Reedling. 30. plate,Bearded Reedling,Calamophilus biarmicus,Panurus biarmicus,printed_english=Bearded tit
+II,31,ku-gould:9133,Eurasian Golden Oriole. 31. plate,Eurasian Golden Oriole,Oriolus galbula,Oriolus oriolus,printed_english=Golden oriole
+II,32,ku-gould:9129,Redwing. 32. plate,Redwing,Turdus musicus,Turdus iliacus,printed_english=Thrush
+II,33,ku-gould:9125,Mistle Thrush. 33. plate,Mistle Thrush,,Turdus viscivorus,printed_alt_name=Missel-thrush; KU lists no printed Latin (ku_sci = List Latin)
+II,34,ku-gould:9121,Redwing. 34. plate,Redwing,Turdus illiacus,Turdus iliacus,KU's printed Latin is misspelt (List: Turdus iliacus)
+II,35,ku-gould:9117,Fieldfare; grive litorne. 35. plate,Fieldfare,,Turdus pilaris,printed_alt_name=Fieldfare; KU lists no printed Latin (ku_sci = List Latin)
+II,36,ku-gould:9113,Red-throated Thrush. 36. plate,Red-throated Thrush,Turdus atrogularis,Turdus ruficollis,printed_english=Black-throated thrush
+II,37,ku-gould:9109,"Common Blackbird; Eurasian Blackbird, merle noir. 37. plate",Common Blackbird,Merula vulgaris,Turdus merula,printed_english=Blackbird
+II,38,ku-gould:9105,Ring Ouzel. 38. plate,Ring Ouzel,Merula torquata,Turdus torquatus,printed_english=Ring-ouzel
+II,39,ku-gould:9101,Scaly Thrush. 39. plate,Scaly Thrush,Oreocincla aurea,Zoothera dauma,printed_english=White's thrush
+II,40,ku-gould:9097,Siberian Thrush. 40. plate,Siberian Thrush,Cichloselys sibiricus,Zoothera sibirica,
+II,41,ku-gould:9093,White-throated Dipper. 41. plate,White-throated Dipper,Cinclus aquaticus,Cinclus cinclus,"printed_english=Water-ouzel, or dipper"
+II,42,ku-gould:9089,White-throated Dipper. 42. plate,White-throated Dipper,Cinclus melanogaster,Cinclus cinclus,printed_english=Black-bellied water-ouzel
+II,43,ku-gould:9085,Blue Rock Thrush; Blue Rock-Thrush. 43. plate,Blue Rock Thrush,Petrocossyphus cyanus,Monticola solitarius,printed_english=Blue rock-thrush
+II,44,ku-gould:9081,Rufous-tailed Rock Thrush. 44. plate,Rufous-tailed Rock Thrush,Petrocincla saxatilis,Monticola saxatilis,printed_english=Rock-thrush
+II,45,ku-gould:9077,"Northern Wheatear; Collalba norteña, traquet motteux. 45. plate",Northern Wheatear,Saxicola oenanthe,Oenanthe oenanthe,printed_english=Wheatear
+II,46,ku-gould:9073,Whinchat. 46. plate,Whinchat,,Saxicola rubetra,KU lists no printed Latin (ku_sci = List Latin)
+II,47,ku-gould:9069,Stone-chat; or Furze-Chat. 47. plate,Stone-chat,Pratincola rubicola,Saxicola torquatus,"printed_english=Stone-chat, or furze-chat"
+II,48,ku-gould:9065,European Robin. 48. plate,European Robin,Erythacus rubecula,Erithacus rubecula,"printed_english=Robin, or redbreast"
+II,49,ku-gould:9061,Bluethroat; Bluethroats. 49. plate,Bluethroat,Cyanecula suecica,Luscinia svecica,printed_english=Red-throated bluebreast
+II,50,ku-gould:9057,Bluethroat; Bluethroats. 50. plate,Bluethroat,Cyanecula leucocyana,Luscinia svecica,printed_english=White-throated bluebreast
+II,51,ku-gould:9053,Black Redstart. 51. plate,Black Redstart,Ruticilla phoenicura,Phoenicurus ochruros,printed_english=Redstart
+II,52,ku-gould:9049,Black Redstart. 52. plate,Black Redstart,Ruticilla tithys,Phoenicurus ochruros,
+II,53,ku-gould:9045,Rufous-tailed Scrub Robin. 53. plate,Rufous-tailed Scrub Robin,Aedon galactodes,Cercotrichas galactotes,printed_english=Rufous sedge-warbler
+II,54,ku-gould:9041,Alpine Accentor. 54. plate,Alpine Accentor,Accentor alpinus,Prunella collaris,
+II,55,ku-gould:9037,Dunnock. 55. plate,Dunnock,Accentor modularis,Prunella modularis,"printed_english=Hedge-accentor, or hedge-sparrow"
+II,56,ku-gould:9033,Thrush Nightingale. 56. plate,Thrush Nightingale,Luscinia philomela,Luscinia luscinia,printed_english=Nightingale
+II,57,ku-gould:9029,Common Whitethroat. 57. plate,Common Whitethroat,Sylvia cinerea,Sylvia communis,printed_english=Whitethroat
+II,58,ku-gould:9025,Lesser Whitethroat. 58. plate,Lesser Whitethroat,,Sylvia curruca,KU lists no printed Latin (ku_sci = List Latin)
+II,59,ku-gould:9021,Dartford Warbler. 59. plate,Dartford Warbler,Melizophilus provincialis,Sylvia undata,
+II,60,ku-gould:9017,Eurasian Blackcap. 60. plate,Eurasian Blackcap,Curruca atricapilla,Sylvia atricapilla,printed_english=Blackcap
+II,61,ku-gould:9013,Orphean Warbler. 61. plate,Orphean Warbler,Curruca orphea,Sylvia hortensis,
+II,62,ku-gould:9009,Orphean Warbler. 62. plate,Orphean Warbler,Curruca hortensis,Sylvia hortensis,printed_english=Garden warbler
+II,63,ku-gould:9005,"Winter Wren; Chivirín chochín, troglodyte mignon. 63. plate",Winter Wren,Troglodytes europaeus,Troglodytes troglodytes,printed_english=Common wren
+II,64,ku-gould:9001,Eurasian Treecreeper. 64. plate,Eurasian Treecreeper,,Certhia familiaris,printed_alt_name=Tree-creeper; KU lists no printed Latin (ku_sci = List Latin)
+II,65,ku-gould:8997,Willow Warbler. 65. plate,Willow Warbler,Phyllopneuste trochilus,Phylloscopus trochilus,printed_english=Willow-wren
+II,66,ku-gould:8993,Common Chiffchaff. 66. plate,Common Chiffchaff,Phyllopneuste rufa,Phylloscopus collybita,printed_english=Chiff-chaff
+II,67,ku-gould:8989,Wood Warbler. 67. plate,Wood Warbler,Phyllopneuste sibilatrix,Phylloscopus sibilatrix,printed_english=Wood-wren
+II,68,ku-gould:8985,Yellow-browed Warble. 68. plate,Yellow-browed Warble,Reguloides superciliosus,Phylloscopus inornatus,printed_english=Yellow-browed warbler
+II,69,ku-gould:8981,"Golden-crowned Kinglet; Reyezuelo de oro, roitelet à couronne dorée. 69. plate",Golden-crowned Kinglet,Regulus cristatus,Regulus satrapa,"printed_english=Golden-crested wren, or kinglet"
+II,70,ku-gould:8977,Regulus ignicapillus. 70. plate,,,Regulus ignicapillus,printed_alt_name=Fire-crested wren; KU lists no printed Latin (ku_sci = List Latin); KU gives no English name (its title is the Latin)
+II,71,ku-gould:8973,Melodious Warbler. 71. plate,Melodious Warbler,Ficedula bypolais,Hippolais polyglotta,KU's printed Latin is misspelt (List: Ficedula hypolais)
+II,72,ku-gould:8969,Great Reed Warbler. 72. plate,Great Reed Warbler,Acrocephalus turdoides,Acrocephalus arundinaceus,printed_english=Thrush-warbler
+II,73,ku-gould:8965,Eurasian Reed Warbler. 73. plate,Eurasian Reed Warbler,Calamoherpe arundinacea,Acrocephalus scirpaceus,printed_english=Reed-warbler
+II,74,ku-gould:8961,Marsh Warbler. 74. plate,Marsh Warbler,Calamoherpe palustris,Acrocephalus palustris,printed_english=Marsh-warbler
+II,75,ku-gould:8957,Sedge Warbler. 75. plate,Sedge Warbler,Calamodyta phragmitis,Acrocephalus schoenobaenus,"printed_english=Sedge-warbler, or chat"
+II,76,ku-gould:8953,Aquatic Warbler. 76. plate,Aquatic Warbler,Calamodyta aquatica,Acrocephalus paludicola,
+II,77,ku-gould:8949,Savi's Warbler. 77. plate,Savi's Warbler,Lusciniopsis luscinioides,Locustella luscinioides,
+II,78,ku-gould:8945,Common Grasshopper Warbler. 78. plate,Common Grasshopper Warbler,Locustella avicula,Locustella naevia,printed_english=Grasshopper warbler
+III,1,ku-gould:8923,White Wagtail; Lavandera blanca. 1. plate,White Wagtail,Motacilla yarrelli,Motacilla alba,printed_english=Pied wagtail
+III,2,ku-gould:8919,White Wagtail; Lavandera blanca. 2. plate,White Wagtail,,Motacilla alba,printed_alt_name=White wagtail; KU lists no printed Latin (ku_sci = List Latin)
+III,3,ku-gould:8915,Western Yellow Wagtail; Yellow Wagtail. 3. plate,Western Yellow Wagtail,Budytes rayi,Motacilla flava,printed_english=Yellow wagtail
+III,4,ku-gould:8911,Western Yellow Wagtail; Yellow Wagtail. 4. plate,Western Yellow Wagtail,Budytes flava,Motacilla flava,printed_english=Grey-headed wagtail
+III,5,ku-gould:8907,Western Yellow Wagtail; Yellow Wagtail. 5. plate,Western Yellow Wagtail,Budytes cinereocapilla,Motacilla flava,printed_english=Grey-capped wagtail
+III,6,ku-gould:8903,Gray Wagtail; Grey Wagtail. 6. plate,Gray Wagtail,Calobates sulphurea,Motacilla cinerea,printed_english=Grey wagtail; same Latin as III.7; told apart by KU's plate number only
+III,7,ku-gould:8900,Gray Wagtail; Grey Wagtail. 7. plate,Gray Wagtail,Calobates sulphurea,Motacilla cinerea,printed_english=Grey wagtail; same Latin as III.6; told apart by KU's plate number only
+III,8,ku-gould:8897,Richard's Pipit. 8. plate,Richard's Pipit,Anthus richardii,Anthus richardi,
+III,9,ku-gould:8893,Tawny Pipit. 9. plate,Tawny Pipit,,Anthus campestris,KU lists no printed Latin (ku_sci = List Latin)
+III,10,ku-gould:8889,Water Pipit. 10. plate,Water Pipit,Anthus obscurus,Anthus spinoletta,printed_english=Rock-pipit
+III,11,ku-gould:8885,Water Pipit. 11. plate,Water Pipit,,Anthus spinoletta,printed_alt_name=Vinous pipit; KU lists no printed Latin (ku_sci = List Latin)
+III,12,ku-gould:8881,Red-throated Pipit; Bisbita garganta roja. 12. plate,Red-throated Pipit,,Anthus cervinus,printed_alt_name=Red-throated pipit; KU lists no printed Latin (ku_sci = List Latin)
+III,13,ku-gould:8877,Meadow Pipit. 13. plate,Meadow Pipit,,Anthus pratensis,"printed_alt_name=Meadow-pipit, or titlark; KU lists no printed Latin (ku_sci = List Latin)"
+III,14,ku-gould:8873,Brown Tree-Pipit; Tree Pipit. 14. plate,Brown Tree-Pipit,Anthus arboreus,Anthus trivialis,printed_english=Tree-pipit
+III,15,ku-gould:8869,Eurasian Skylark; Sky Lark. 15. plate,Eurasian Skylark,,Alauda arvensis,printed_alt_name=Sky-lark; KU lists no printed Latin (ku_sci = List Latin)
+III,16,ku-gould:8865,Woodlark. 16. plate,Woodlark,Alauda arborea,Lullula arborea,printed_english=Wood-lark
+III,17,ku-gould:8861,Crested Lark. 17. plate,Crested Lark,Galerita cristata,Lullula cristata,
+III,18,ku-gould:8857,"Horned Lark; Alondra cornuda, alouette hausse-col. 18. plate",Horned Lark,Otocoris alpestris,Eremophila alpestris,printed_english=Shore-lark
+III,19,ku-gould:8853,Calandra Lark. 19. plate,Calandra Lark,,Melanocorypha calandra,KU lists no printed Latin (ku_sci = List Latin)
+III,20,ku-gould:8849,White-winged Lark. 20. plate,White-winged Lark,,Melanocorypha leucoptera,KU lists no printed Latin (ku_sci = List Latin)
+III,21,ku-gould:8845,Greater Short-toed Lark. 21. plate,Greater Short-toed Lark,,Calandrella brachydactyla,printed_alt_name=Short-toed lark; KU lists no printed Latin (ku_sci = List Latin)
+III,22,ku-gould:8841,Yellowhammer. 22. plate,Yellowhammer,Emberiza citrinella,Emberiza Sturnus,"printed_english=Yellowhammer, or yellow bunting; KU's ku_sci is garbled (Emberiza citrinella)"
+III,23,ku-gould:8837,Cirl Bunting. 23. plate,Cirl Bunting,,Emberiza cirlus,KU lists no printed Latin (ku_sci = List Latin)
+III,24,ku-gould:8833,Rustic Bunting. 24. plate,Rustic Bunting,,Emberiza rustica,KU lists no printed Latin (ku_sci = List Latin)
+III,25,ku-gould:8829,Little Bunting. 25. plate,Little Bunting,,Emberiza pusilla,printed_alt_name=Dwarf bunting; KU lists no printed Latin (ku_sci = List Latin)
+III,26,ku-gould:8825,Corn Bunting. 26. plate,Corn Bunting,Crithophaga miliaria,Emberiza calandra,printed_english=Common bunting
+III,27,ku-gould:8821,Ortolan Bunting. 27. plate,Ortolan Bunting,Glycyspina hortulana,Emberiza hortulana,
+III,28,ku-gould:8817,Black-headed Bunting. 28. plate,Black-headed Bunting,Euspiza melanocephala,Emberiza melanocephala,
+III,29,ku-gould:8813,"Common Reed Bunting; Common Reed-Bunting, Reed Bunting. 29. plate",Common Reed Bunting,Schoenicola arundinacea,Emberiza schoeniclus,printed_english=Reed-bunting
+III,30,ku-gould:8809,"bruant lapon; Escribano ártico, Lapland Longspur. 30. plate",Lapland Longspur,Centrophanes lapponica,Calcarius lapponicus,printed_english=Lapland bunting
+III,31,ku-gould:8805,bruant des neiges; Snow Bunting. 31. plate,Snow Bunting,Plectrophanes nivalis,Plectrophenax nivalis,"printed_english=Snow-bunting, or snowflake"
+III,32,ku-gould:8801,"House Sparrow; Gorrión casero, moineau domestique. 32. plate",House Sparrow,,Passer domesticus,printed_alt_name=Common or house-sparrow; KU lists no printed Latin (ku_sci = List Latin)
+III,33,ku-gould:8797,Eurasian Sparrow; Eurasian Tree Sparrow. 33. plate,Eurasian Sparrow,,Passer montanus,printed_alt_name=Tree-sparrow; KU lists no printed Latin (ku_sci = List Latin)
+III,34,ku-gould:8793,Common Chaffinch. 34. plate,Common Chaffinch,,Fringilla coelebs,printed_alt_name=Chaffinch; KU lists no printed Latin (ku_sci = List Latin)
+III,35,ku-gould:8789,Brambling. 35. plate,Brambling,,Fringilla montifringilla,printed_alt_name=Bramblefinch; KU lists no printed Latin (ku_sci = List Latin)
+III,36,ku-gould:8785,"Eurasian Goldfinch; European Goldfinch, chardonneret élégant. 36. plate",Eurasian Goldfinch,Carduelis elegans,Carduelis carduelis,printed_english=Goldfinch
+III,37,ku-gould:8781,Eurasian Siskin. 37. plate,Eurasian Siskin,Chrysomitris spinus,Carduelis spinus,printed_english=Siskin
+III,38,ku-gould:8777,European Serin. 38. plate,European Serin,Serinus hortulanus,Serinus serinus,printed_english=Serin finch
+III,39,ku-gould:8773,European Greenfinch. 39. plate,European Greenfinch,Ligurinus chloris,Carduelis chloris,printed_english=Greenfinch
+III,40,ku-gould:8769,Hawfinch. 40. plate,Hawfinch,Coccothraustes vulgaris,Coccothraustes coccothraustes,
+III,41,ku-gould:8765,Eurasian Bullfinch. 41. plate,Eurasian Bullfinch,Pyrrhula vulgaris,Pyrrhula pyrrhula,printed_english=Bullfinch; same Latin as III.42; told apart by KU's plate number only
+III,42,ku-gould:8762,Eurasian Bullfinch. 42. plate,Eurasian Bullfinch,Pyrrhula vulgaris,Pyrrhula pyrrhula,printed_english=Bullfinch; same Latin as III.41; told apart by KU's plate number only
+III,43,ku-gould:8759,Eurasian Bullfinch. 43. plate,Eurasian Bullfinch,Carpodacus erythrinus,Pyrrhula pyrrhula,printed_english=Scarlet bullfinch
+III,44,ku-gould:8755,Pine Grosbeak; durbec des sapins. 44. plate,Pine Grosbeak,,Pinicola enucleator,printed_alt_name=Pine-grosbeak; KU lists no printed Latin (ku_sci = List Latin)
+III,45,ku-gould:8751,"Red Crossbill; bec-croisé des sapins, Picotuerto rojo,. 45. plate",Red Crossbill,,Loxia curvirostra,printed_alt_name=Common crossbill; KU lists no printed Latin (ku_sci = List Latin)
+III,46,ku-gould:8747,Parrot Crossbill. 46. plate,Parrot Crossbill,Loxia pityopsittacus,Loxia pytyopsittacus,
+III,47,ku-gould:8743,"Two-barred Crossbill; White-winged Crossbill, bec-croisé bifascié. 47. plate",Two-barred Crossbill,Loxia bifasciata,Loxia l leucoptera bifasciata,printed_english=White-winged crossbill
+III,48,ku-gould:8739,"Two-barred Crossbill; White-winged Crossbill, bec-croisé bifascié,. 48. plate",Two-barred Crossbill,,Loxia leucoptera,printed_alt_name=American white-winged crossbill; KU lists no printed Latin (ku_sci = List Latin)
+III,49,ku-gould:8735,Common Linnet. 49. plate,Common Linnet,Linota cannabina,Carduelis cannabina,printed_english=Linnet
+III,50,ku-gould:8731,Twite. 50. plate,Twite,Linota montium,Carduelis flavirostris,"printed_english=Twite, or mountain-linnet"
+III,51,ku-gould:8727,Common Redpoll; sizerin flammé. 51. plate,Common Redpoll,Aegiothus linaria,Carduelis flammea,printed_english=Mealy redpole
+III,52,ku-gould:8723,Common Redpoll; sizerin flammé. 52. plate,Common Redpoll,Aegiothus rufescens,Carduelis flammea,printed_english=Lesser redpole
+III,53,ku-gould:8719,"Common Starling; Estornino pinto, étourneau sansonnet, European Starling. 53. plate",Common Starling,Sternus vulgaris,Sturnus vulgaris,printed_english=Starling; KU's printed Latin is misspelt (List: Sturnus vulgaris); same Latin as III.54; told apart by KU's plate number only
+III,54,ku-gould:8716,"Common Starling; Estornino pinto, étourneau sansonnet, European Starling. 54. plate",Common Starling,Sternus vulgaris,Sturnus vulgaris,printed_english=Starling; KU's printed Latin is misspelt (List: Sturnus vulgaris); same Latin as III.53; told apart by KU's plate number only
+III,55,ku-gould:8713,Rosy Starling. 55. plate,Rosy Starling,Pastor roseus,Sturnus roseus,printed_english=Rose-coloured pastor; same Latin as III.56; told apart by KU's plate number only
+III,56,ku-gould:8710,Rosy Starling. 56. plate,Rosy Starling,Pastor roseus,Sturnus roseus,printed_english=Rose-coloured pastor; same Latin as III.55; told apart by KU's plate number only
+III,57,ku-gould:8707,"Common Raven; Northern Raven, Cuervo común, grand corbeau,. 57. plate",Common Raven,,Corvus corax,printed_alt_name=Raven; KU lists no printed Latin (ku_sci = List Latin)
+III,58,ku-gould:8703,Carrion Crow. 58. plate,Carrion Crow,,Corvus corone,KU lists no printed Latin (ku_sci = List Latin)
+III,59,ku-gould:8699,Hooded Crow. 59. plate,Hooded Crow,,Corvus cornix,KU lists no printed Latin (ku_sci = List Latin)
+III,60,ku-gould:8695,Rook. 60. plate,Rook,,Corvus frugilegus,KU lists no printed Latin (ku_sci = List Latin)
+III,61,ku-gould:8691,"Eurasian Crow; Eurasian Jackdaw, Western Jackdaw, choucas des tours. 61. plate",Eurasian Crow,,Corvus monedula,printed_alt_name=Jackdaw; KU lists no printed Latin (ku_sci = List Latin)
+III,62,ku-gould:8687,Red-billed Chough. 62. plate,Red-billed Chough,Fregilus graculus,Pyrrhocorax pyrrhocorax,printed_english=Chough
+III,63,ku-gould:8683,"Black-billed Magpie; Eurasian Magpie, pie bavarde. 63. plate",Black-billed Magpie,Pica caudata,Pica pica,printed_english=Magpie
+III,64,ku-gould:8679,Eurasian Jay. 64. plate,Eurasian Jay,,Garrulus glandarius,printed_alt_name=Jay; KU lists no printed Latin (ku_sci = List Latin)
+III,65,ku-gould:8675,Spotted Nutcracker. 65. plate,Spotted Nutcracker,,Nucifraga caryocatactes,printed_alt_name=Nutcracker; KU lists no printed Latin (ku_sci = List Latin); same Latin as III.66; told apart by KU's plate number only
+III,66,ku-gould:8672,Spotted Nutcracker. 66. plate,Spotted Nutcracker,,Nucifraga caryocatactes,printed_alt_name=Nutcracker; KU lists no printed Latin (ku_sci = List Latin); same Latin as III.65; told apart by KU's plate number only
+III,67,ku-gould:8669,Common Cuckoo. 67. plate,Common Cuckoo,,Cuculus canorus,printed_alt_name=Cuckoo; KU lists no printed Latin (ku_sci = List Latin); same Latin as III.68; told apart by KU's plate number only
+III,68,ku-gould:8664,Common Cuckoo. 68. plate,Common Cuckoo,,Cuculus canorus,printed_alt_name=Cuckoo; KU lists no printed Latin (ku_sci = List Latin); same Latin as III.67; told apart by KU's plate number only
+III,69,ku-gould:8661,Great Spotted Cuckoo. 69. plate,Great Spotted Cuckoo,Oxylophus glandarius,Clamator glandarius,
+III,70,ku-gould:8657,Great Spotted Woodpecker. 70. plate,Great Spotted Woodpecker,Picus major,Dendrocopos major,
+III,71,ku-gould:8653,White-backed Woodpecker. 71. plate,White-backed Woodpecker,Picus leuconotus,Dendrocopos leucotos,
+III,72,ku-gould:8649,Lesser Spotted Woodpecker. 72. plate,Lesser Spotted Woodpecker,Picus minor,Dendrocopos minor,
+III,73,ku-gould:8645,Black Woodpecker. 73. plate,Black Woodpecker,,Dryocopus martius,printed_alt_name=Great black woodpecker; KU lists no printed Latin (ku_sci = List Latin)
+III,74,ku-gould:8641,European Green Woodpecker. 74. plate,European Green Woodpecker,Gecinus viridis,Picus viridis,"printed_english=Green woodpecker, or yaffle; same Latin as III.75; told apart by KU's plate number only"
+III,75,ku-gould:8639,European Green Woodpecker. 75. plate,European Green Woodpecker,Gecinus viridis,Picus viridis,"printed_english=Green woodpecker, or yaffle; same Latin as III.74; told apart by KU's plate number only"
+III,76,ku-gould:8635,Eurasian Wryneck. 76. plate,Eurasian Wryneck,Yunx torquilla,Jynx torquilla,printed_english=Wryneck
+IV,1,ku-gould:8613,Common Wood Pigeon. 1. plate,Common Wood Pigeon,Palumbus torquatus,Columba palumbus,"printed_english=Wood-pigeon, or cuchat"
+IV,2,ku-gould:8609,Stock Dove. 2. plate,Stock Dove,Columba oenas,Columba Anas,printed_english=Stock-dove
+IV,3,ku-gould:8605,"Common Pigeon; Paloma doméstica, pigeon biset, Rock Dove, Rock Pigeon. 3. plate",Common Pigeon,,Columba livia,printed_alt_name=Rock-pigeon; KU lists no printed Latin (ku_sci = List Latin)
+IV,4,ku-gould:8601,European Turtle Dove; European Turtle-Dove. 4. plate,European Turtle Dove,Turtur auritus,Streptopelia turtur,printed_english=Turtle dove
+IV,5,ku-gould:8597,Western Capercaillie. 5. plate,Western Capercaillie,,Tetrao urogallus,"printed_alt_name=Capercailzie, or cock of the wood; KU lists no printed Latin (ku_sci = List Latin)"
+IV,6,ku-gould:8593,Black Grouse; Eurasian Black Grouse. 6. plate,Black Grouse,Tetrao tetrix,Lyrurus tetrix,printed_english=Blackcook
+IV,7,ku-gould:8589,Red Grouse. 7. plate,Red Grouse,Lagopus scoticus,Lagopus lagopus scotica,
+IV,8,ku-gould:8585,Rock Ptarmigan. 8. plate,Rock Ptarmigan,Lagopus mutus,Lagopus muta,"printed_english=Ptarmigan; same Latin as IV.9, IV.10; told apart by KU's plate number only"
+IV,9,ku-gould:8582,Rock Ptarmigan. 9. plate,Rock Ptarmigan,Lagopus mutus,Lagopus muta,"printed_english=Ptarmigan; same Latin as IV.8, IV.10; told apart by KU's plate number only"
+IV,10,ku-gould:8578,Rock Ptarmigan. 10. plate,Rock Ptarmigan,Lagopus mutus,Lagopus muta,"printed_english=Ptarmigan; same Latin as IV.8, IV.9; told apart by KU's plate number only"
+IV,11,ku-gould:8575,Pallas's Sandgrouse. 11. plate,Pallas's Sandgrouse,,Syrrhaptes paradoxus,printed_alt_name=Palla's sand-grouse; KU lists no printed Latin (ku_sci = List Latin)
+IV,12,ku-gould:8571,"Common Pheasant; Ring-necked Pheasant, faisan de chasse, Faisán de collar. 12. plate",Common Pheasant,,Phasianus colchicus,printed_alt_name=Common pheasant; KU lists no printed Latin (ku_sci = List Latin)
+IV,13,ku-gould:8567,Gray Partridge; perdrix grise. 13. plate,Gray Partridge,Perdix cinerea,Perdix perdix,printed_english=Partridge
+IV,14,ku-gould:8563,Red-legged Partridge. 14. plate,Red-legged Partridge,Caccabis rubra,Alectoris rufa,
+IV,15,ku-gould:8559,Common Quail. 15. plate,Common Quail,Coturnix communis,Coturnix coturnix,
+IV,16,ku-gould:8555,Common Buttonquail; Kurrichane Buttonquai. 16. plate,Common Buttonquail,Turnix africanus,Turnix sylvaticus,printed_english=Andalusian turnix
+IV,17,ku-gould:8551,Great Bustard. 17. plate,Great Bustard,,Otis tarda,KU lists no printed Latin (ku_sci = List Latin)
+IV,18,ku-gould:8547,Little Bustard. 18. plate,Little Bustard,Otis tetrax,Tetrax tetrax,
+IV,19,ku-gould:8543,Common Crane. 19. plate,Common Crane,Grus cinerea,Grus grus,
+IV,20,ku-gould:8539,Gray Heron; Grey Heron. 20. plate,Gray Heron,,Ardea cinerea,printed_alt_name=Heron; KU lists no printed Latin (ku_sci = List Latin)
+IV,21,ku-gould:8535,Purple Heron. 21. plate,Purple Heron,,Ardea purpurea,KU lists no printed Latin (ku_sci = List Latin)
+IV,22,ku-gould:8531,Great Egret. 22. plate,Great Egret,Herodias alba,Ardea alba,"printed_english=Great white egret, or white heron"
+IV,23,ku-gould:8527,Little Egret; aigrette garzette. 23. plate,Little Egret,Herodias garzetta,Egretta garzetta,printed_english=Little egret
+IV,24,ku-gould:8523,"Cattle Egret; Garza ganadera, héron garde-boeufs. 24. plate",Cattle Egret,Bubulcus russatus,Bubulcus ibis,printed_english=Buff-backed heron
+IV,25,ku-gould:8519,Squacco Heron. 25. plate,Squacco Heron,Buphus comatus,Ardeola ralloides,
+IV,26,ku-gould:8515,"Black-crowned Night Heron; bihoreau gris, Black-crowned Night-Heron, Pedrete corona negra. 26. plate",Black-crowned Night Heron,Nycticorax griseus,Nycticorax nycticorax,printed_english=Night-heron
+IV,27,ku-gould:8511,Eurasian Bittern. 27. plate,Eurasian Bittern,,Botaurus stellaris,printed_alt_name=Bittern; KU lists no printed Latin (ku_sci = List Latin)
+IV,28,ku-gould:8507,"American Bittern; Avetoro norteño, butor d'Amérique. 28. plate",American Bittern,,Botaurus lentiginosus,printed_alt_name=American bittern; KU lists no printed Latin (ku_sci = List Latin)
+IV,29,ku-gould:8503,Little Bittern. 29. plate,Little Bittern,Ardetta minuta,Ixobrychus minutus,
+IV,30,ku-gould:8499,White Stork. 30. plate,White Stork,Ciconia alba,Ciconia ciconia,printed_english=Stork
+IV,31,ku-gould:8495,Black Stork. 31. plate,Black Stork,,Ciconia nigra,KU lists no printed Latin (ku_sci = List Latin)
+IV,32,ku-gould:8491,Eurasian Spoonbill. 32. plate,Eurasian Spoonbill,,Platalea leucorodia,printed_alt_name=Spoonbill; KU lists no printed Latin (ku_sci = List Latin)
+IV,33,ku-gould:8487,Northern Lapwing; vanneau huppé. 33. plate,Northern Lapwing,Vanellus cristatus,Vanellus vanellus,"printed_english=Lapwing, or peewit"
+IV,34,ku-gould:8483,Black-winged Stilt. 34. plate,Black-winged Stilt,Himantopus candidus,Himantopus himantopus,"printed_english=Stilt, or long-legged plover"
+IV,35,ku-gould:8479,Eurasian Stone-curlew. 35. plate,Eurasian Stone-curlew,Oedicnemus crepitans,Burhinus oedicnemus,printed_english=Thick-kneed bustard
+IV,36,ku-gould:8475,"Grey Plover; Black-bellied Plover, Chorlo gris, pluvier argenté. 36. plate",Grey Plover,Squatarola helvetica,Pluvialis squatarola,printed_english=Grey plover; same Latin as IV.37; told apart by KU's plate number only
+IV,37,ku-gould:8472,"Grey Plover; Black-bellied Plover, Chorlo gris, pluvier argenté. 37. plate",Grey Plover,Squatarola helvetica,Pluvialis squatarola,printed_english=Grey plover; same Latin as IV.36; told apart by KU's plate number only
+IV,38,ku-gould:8469,"European Golden Plover; European Golden-Plover, Greater Golden-Plover, pluvier doré. 38. plate",European Golden Plover,Charadrius pluvialis,Pluvialis apricaria,printed_english=Golden plover; same Latin as IV.39; told apart by KU's plate number only
+IV,39,ku-gould:8466,"European Golden Plover; European Golden-Plover, Greater Golden-Plover, pluvier doré. 39. plate",European Golden Plover,Charadrius pluvialis,Pluvialis apricaria,printed_english=Golden plover; same Latin as IV.38; told apart by KU's plate number only
+IV,40,ku-gould:8463,"Kentish Plover; Snowy Plover, Chorlo nevado. 40. plate",Kentish Plover,Aegialophilus cantianus,Charadrius alexandrinus,printed_english=Kentish plover
+IV,41,ku-gould:8459,Common Ringed Plover. 41. plate,Common Ringed Plover,Aegialitis hiaticula,Charadrius hiaticula,printed_english=Ringed plover
+IV,42,ku-gould:8455,Little Ringed Plover. 42. plate,Little Ringed Plover,Aegialitis minor,Charadrius dubius,
+IV,43,ku-gould:8451,Eurasian Dotterel. 43. plate,Eurasian Dotterel,Eudromias morinellus,Charadrius morinellus,printed_english=Dotterel
+IV,44,ku-gould:8447,Cream-colored Courser. 44. plate,Cream-colored Courser,Cursorius gallicus,Cursorius cursor,
+IV,45,ku-gould:8443,Eurasian Oystercatcher. 45. plate,Eurasian Oystercatcher,,Haematopus ostralegus,printed_alt_name=Oyster-catcher; KU lists no printed Latin (ku_sci = List Latin)
+IV,46,ku-gould:8439,Collared Pratincole. 46. plate,Collared Pratincole,,Glareola pratincola,printed_alt_name=Common pratincole; KU lists no printed Latin (ku_sci = List Latin)
+IV,47,ku-gould:8435,"Glossy Ibis; Ibis cara oscura, ibis falcinelle. 47. plate",Glossy Ibis,Falcinellus igneus,Plegadis falcinellus,printed_english=Glossy ibis
+IV,48,ku-gould:8431,Eurasian Curlew. 48. plate,Eurasian Curlew,,Numenius arquata,printed_alt_name=Curlew; KU lists no printed Latin (ku_sci = List Latin)
+IV,49,ku-gould:8427,"Whimbrel; courlis corlieu, Zarapito trinador. 49. plate",Whimbrel,,Numenius phaeopus,printed_alt_name=Whimbrel; KU lists no printed Latin (ku_sci = List Latin)
+IV,50,ku-gould:8423,Black-tailed Godwit; barge à queue noire. 50. plate,Black-tailed Godwit,Limosa melanura,Limosa limosa,printed_english=Black-tailed godwit
+IV,51,ku-gould:8419,Bar-tailed Godwit; Picopando cola barrada. 51. plate,Bar-tailed Godwit,Limosa rufa,Limosa lapponica,printed_english=Bar-tailed godwit
+IV,52,ku-gould:8415,Pied Avocet. 52. plate,Pied Avocet,Recurvirostra avocetta,Recurvirostra avosetta,printed_english=Avocet
+IV,53,ku-gould:8411,Common Greenshank. 53. plate,Common Greenshank,Glottis canescens,Tringa nebularia,printed_english=Greenshank
+IV,54,ku-gould:8407,Common Redshank. 54. plate,Common Redshank,Totanus calidris,Tringa totanus,printed_english=Redshank
+IV,55,ku-gould:8403,Spotted Redshank. 55. plate,Spotted Redshank,Totanus fuscus,Tringa erythropus,
+IV,56,ku-gould:8399,Green Sandpiper. 56. plate,Green Sandpiper,Totanus ochropus,Tringa ochropus,
+IV,57,ku-gould:8395,Wood Sandpiper. 57. plate,Wood Sandpiper,Totanus glareola,Tringa glareola,printed_english=Wood-sandpiper
+IV,58,ku-gould:8391,Common Sandpiper. 58. plate,Common Sandpiper,,Actitis hypoleucos,printed_alt_name=Summer snipe; KU lists no printed Latin (ku_sci = List Latin)
+IV,59,ku-gould:8387,Spotted Sandpiper. 59. plate,Spotted Sandpiper,,Actitis macularius,KU lists no printed Latin (ku_sci = List Latin)
+IV,60,ku-gould:8383,"Ruddy Turnstone; tournepierre à collier, Vuelvepiedras rojizo. 60. plate",Ruddy Turnstone,Strepsilas interpres,Arenaria interpres,printed_english=Turnstone
+IV,61,ku-gould:8379,Ruff; combatant varié. 61. plate,Ruff,Machetes pugnax,Philomachus pugnax,printed_english=Ruff; same Latin as IV.62; told apart by KU's plate number only
+IV,62,ku-gould:8376,Ruff; combatant varié. 62. plate,Ruff,Machetes pugnax,Philomachus pugnax,printed_english=Ruff; same Latin as IV.61; told apart by KU's plate number only
+IV,63,ku-gould:8373,"Upland Sandpiper; maubèche des champs, Zarapito ganga. 63. plate",Upland Sandpiper,Actiturus bartramius,Bartramia longicauda,printed_english=Bartram's sandpiper
+IV,64,ku-gould:8369,"Buff-breasted Sandpiper; bécasseau roussâtre, Playero leonado. 64. plate",Buff-breasted Sandpiper,Tryngites rufescens,Tryngites subruficollis,printed_english=Buff-breasted sandpiper
+IV,65,ku-gould:8365,"bécasseau maubèche; Playero canuto, Red Knot. 65. plate",Red Knot,Tringa canutus,Calidris canutus,printed_english=Knot
+IV,66,ku-gould:8361,"Sanderling; bécasseau sanderling, Playero blanco. 66. plate",Sanderling,Calidris arenaria,Calidris alba,printed_english=Sanderling
+IV,67,ku-gould:8357,"Pectoral Sandpiper; bécasseau à poitrine cendrée, Playero pectoral. 67. plate",Pectoral Sandpiper,Limnocinclus pectoralis,Calidris melanotos,printed_english=Pectoral sandpiper
+IV,68,ku-gould:8353,bécasseau cocorli; Curlew Sandpiper. 68. plate,Curlew Sandpiper,Ancylocheilus subarquata,Calidris ferruginea,printed_english=Curlew sandpiper
+IV,69,ku-gould:8349,"Dunlin; bécasseau variable, Playero dorso rojo. 69. plate",Dunlin,Pelidna cinclus,Calidris alpina,printed_english=Dunlin; same Latin as IV.70; told apart by KU's plate number only
+IV,70,ku-gould:8346,"Dunlin; bécasseau variable, Playero dorso rojo. 70. plate",Dunlin,Pelidna cinclus,Calidris alpina,printed_english=Dunlin; same Latin as IV.69; told apart by KU's plate number only
+IV,71,ku-gould:8343,"White-rumped Sandpiper; bécasseau à croupion blanc, Playero rabadilla blanca. 71. plate",White-rumped Sandpiper,Pelidna bonapartei,Calidris fuscicollis,printed_english=Bonaparte's sandpiper
+IV,72,ku-gould:8339,Little Stint. 72. plate,Little Stint,Actodromas minuta,Calidris minuta,
+IV,73,ku-gould:8335,Temminck's Stint; bécasseau de TemminckTemminck's Stint. 73. plate,Temminck's Stint,Leimonites temminickii,Calidris temminckii,printed_english=Temminck's stint; KU's printed Latin is misspelt (List: Leimonites Temminckii)
+IV,74,ku-gould:8331,Purple Sandpiper; bécasseau violet. 74. plate,Purple Sandpiper,Arquatella maritima,Calidris maritima,printed_english=Purple sandpiper
+IV,75,ku-gould:8327,Broad-billed Sandpiper. 75. plate,Broad-billed Sandpiper,Limicola pygmaea,Limicola falcinellus,
+IV,76,ku-gould:8323,"Short-billed Dowitcher; bécassin roux, Costurero pico corto. 76. plate",Short-billed Dowitcher,Macrorhamphus griseus,Limnodromus griseus,printed_english=Red-breasted or brown snipe
+IV,77,ku-gould:8319,Eurasian Woodcock; bécasse des bois. 77. plate,Eurasian Woodcock,,Scolopax rusticola,printed_alt_name=Woodcock; KU lists no printed Latin (ku_sci = List Latin)
+IV,78,ku-gould:8313,Great Snipe. 78. plate,Great Snipe,Gallinago major,Gallinago media,
+IV,79,ku-gould:8309,"Common Snipe; Agachona común, bécassine des marais. 79. plate",Common Snipe,Gallinago scolopacina,Gallinago gallinago,printed_english=Common snipe
+IV,80,ku-gould:8305,Jack Snipe. 80. plate,Jack Snipe,Limnocryptes gallinula,Lymnocryptes minimus,
+IV,81,ku-gould:8301,"Red Phalarope; Falaropo pico grueso, phalarope à bec large. 81. plate",Red Phalarope,,Phalaropus fulicarius,printed_alt_name=Grey phalarope; KU lists no printed Latin (ku_sci = List Latin); same Latin as IV.82; told apart by KU's plate number only
+IV,82,ku-gould:8298,"Red Phalarope; Falaropo pico grueso, phalarope à bec large. 82. plate",Red Phalarope,,Phalaropus fulicarius,printed_alt_name=Grey phalarope; KU lists no printed Latin (ku_sci = List Latin); same Latin as IV.81; told apart by KU's plate number only
+IV,83,ku-gould:8295,"Falaropo cuello rojo; phalarope à bec étroit, Red-necked Phalarope. 83. plate",Red-necked Phalarope,Lobipes hyperboreus,Phalaropus lobatus,printed_english=Red-necked phalarope
+IV,84,ku-gould:8291,Eurasian Coot. 84. plate,Eurasian Coot,,Fulica atra,printed_alt_name=Coot; KU lists no printed Latin (ku_sci = List Latin)
+IV,85,ku-gould:8287,"Common Moorhen; Gallineta frente roja, gallinule poule-d'eau. 85. plate",Common Moorhen,,Gallinula chloropus,printed_alt_name=Moorhen; KU lists no printed Latin (ku_sci = List Latin)
+IV,86,ku-gould:8283,Water Rail. 86. plate,Water Rail,,Rallus aquaticus,printed_alt_name=Water-rail; KU lists no printed Latin (ku_sci = List Latin)
+IV,87,ku-gould:8279,Corn Crake. 87. plate,Corn Crake,Crex pratensis,Crex crex,"printed_english=Land-rail, or corn crake"
+IV,88,ku-gould:8275,Spotted Crake. 88. plate,Spotted Crake,Porzana maruetta,Porzana porzana,
+IV,89,ku-gould:8271,Baillon's Crake. 89. plate,Baillon's Crake,Porzana pygmaea,Porzana pusilla,
+IV,90,ku-gould:8267,Little Crake. 90. plate,Little Crake,Porzana minuta,Porzana parva,printed_english=Olivaceous crake
+V,1,ku-gould:8245,Greylag Goose. 1. plate,Greylag Goose,Anser ferus,Anser anser,printed_english=Grey lag goose
+V,2,ku-gould:8241,Bean Goose; oie des moissons. 2. plate,Bean Goose,Anser segetum,Anser fabalis,printed_english=Bean-goose
+V,3,ku-gould:8237,Pink-footed Goose; oie à bec court. 3. plate,Pink-footed Goose,,Anser brachyrhynchus,printed_alt_name=Pink-footed goose; KU lists no printed Latin (ku_sci = List Latin)
+V,4,ku-gould:8233,"Greater White-fronted Goose; Ganso careto-mayor, oie rieuse. 4. plate",Greater White-fronted Goose,,Anser albifrons,printed_alt_name=White-fronted goose; KU lists no printed Latin (ku_sci = List Latin)
+V,5,ku-gould:8229,Barnacle Goose; bernache nonnette. 5. plate,Barnacle Goose,Bernicla leucopsis,Branta leucopsis,printed_english=Bernicle goose
+V,6,ku-gould:8225,Red-breasted Goose. 6. plate,Red-breasted Goose,Bernicla ruficollis,Branta ruficollis,
+V,7,ku-gould:8221,"Brant; Brant Goose, Brent Goose, bernache cravant, Ganso de collar. 7. plate",Brant,Bernicla brenta,Branta bernicla,printed_english=Brent goose
+V,8,ku-gould:8217,cygne tuburculé; Mute Swan. 8. plate,Mute Swan,,Cygnus olor,printed_alt_name=Mute swan; KU lists no printed Latin (ku_sci = List Latin)
+V,9,ku-gould:8213,Whooper Swan. 9. plate,Whooper Swan,Cygnus ferus,Cygnus cygnus,"printed_english=Wild swan, or whooper"
+V,10,ku-gould:8209,"Tundra Swan; Cisne de tundra, cygne siffleur. 10. plate",Tundra Swan,Cygnus minor,Cygnus columbianus bewickii,printed_english=Bewick's swan
+V,11,ku-gould:8205,Common Shelduck; tadorne de Belon. 11. plate,Common Shelduck,Tadorna vulpanser,Tadorna tadorna,printed_english=Sheldrake
+V,12,ku-gould:8201,Ruddy Shelduck; canard des Bahamas. 12. plate,Ruddy Shelduck,Casarca rutila,Tadorna ferruginea,printed_english=Ruddy sheldrake
+V,13,ku-gould:8197,"Eurasian Wigeon; canard siffleur, Pato silbón. 13. plate",Eurasian Wigeon,Mareca penelope,Anas penelope,printed_english=Widgeon
+V,14,ku-gould:8193,"Northern Shoveler; canard souchet, Pato cucharón-norteño. 14. plate",Northern Shoveler,Spatula clypeata,Anas clypeata,printed_english=Shoveller duck
+V,15,ku-gould:8189,"Mallard; canard colvert, Pato de collar. 15. plate",Mallard,Anas boschas,Anas platyrhynchos,"printed_english=Mallard, or wild duck"
+V,16,ku-gould:8185,"Eurasian Teal; Green-winged Teal, Cerceta ala verde, sarcelle d'hiver. 16. plate",Eurasian Teal,Querquedula crecca,Anas crecca,printed_english=Teal
+V,17,ku-gould:8181,"Garganey; Cerceta ceja blanca, sarcelle d'été. 17. plate",Garganey,Querquedula circia,Anas querquedula,printed_english=Garganey
+V,18,ku-gould:8177,"Northern Pintail; canard pilet, Pato golondrino. 18. plate",Northern Pintail,Dafila acuta,Anas acuta,printed_english=Pin-tailed duck
+V,19,ku-gould:8173,"Gadwall; canard chipeau, Pato friso. 19. plate",Gadwall,Chaulelasmus strepera,Anas strepera,printed_english=Gadwall
+V,20,ku-gould:8169,Common Pochard. 20. plate,Common Pochard,Nyroca ferina,Aythya ferina,printed_english=Pochard
+V,21,ku-gould:8165,Ferruginous Duck. 21. plate,Ferruginous Duck,Nyroca leucophthalmos,Aythya nyroca,"printed_english=White-eyed, or ferruginous duck"
+V,22,ku-gould:8161,Red-crested Pochard. 22. plate,Red-crested Pochard,Branta rufina,Netta rufina,printed_english=Red-crested duck
+V,23,ku-gould:8157,Tufted Duck; fuligule morillon. 23. plate,Tufted Duck,Fuligula cristata,Aythya fuligula,printed_english=Tufted duck
+V,24,ku-gould:8153,"Greater Scaup; fuligule milouinan, Pato boludo-mayor. 24. plate",Greater Scaup,Fuligula marila,Aythya marila,printed_english=Scaup duck
+V,25,ku-gould:8149,Steller's Eider; eider de Steller. 25. plate,Steller's Eider,Eniconetta stelleri,Polysticta stelleri,printed_english=Steller's duck
+V,26,ku-gould:8145,Common Eider; eider à duvet. 26. plate,Common Eider,,Somateria mollissima,printed_alt_name=Eider duck; KU lists no printed Latin (ku_sci = List Latin)
+V,27,ku-gould:8141,eider à tête grise; King Eider. 27. plate,King Eider,,Somateria spectabilis,printed_alt_name=King duck; KU lists no printed Latin (ku_sci = List Latin)
+V,28,ku-gould:8137,"Black Scoter; macreuse noire, Negreta negra. 28. plate",Black Scoter,Oidemia nigra,Melanitta nigra,printed_english=Scoter
+V,29,ku-gould:8133,"Velvet Scoter; White-winged Scoter, macreuse brune, Negreta ala blanca. 29. plate",Velvet Scoter,Oidemia fusca,Melanitta fusca,printed_english=Velvet scoter
+V,30,ku-gould:8129,"macreuse à front blanc; Negreta nuca blanca, Surf Scoter. 30. plate",Surf Scoter,Oidemia perspicillata,Melanitta perspicillata,printed_english=Surf scoter
+V,31,ku-gould:8125,"Common Goldeneye; garrot à oeil d'or, Pato chillón. 31. plate",Common Goldeneye,Clangula glaucion,Bucephala clangula,printed_english=Golden-eye
+V,32,ku-gould:8121,"Harlequin Duck; arlequin plongeur, Pato arlequín. 32. plate",Harlequin Duck,Histrionicus torquatus,Histrionicus histrionicus,printed_english=Harlequin duck
+V,33,ku-gould:8117,"Long-tailed Duck; Oldsquaw, harelde kakawi, Pato cola larga. 33. plate",Long-tailed Duck,Harelda glacialis,Clangula hyemalis,printed_english=Long-tailed duck
+V,34,ku-gould:8113,"Common Merganser; grand harle, Mergo mayor. 34. plate",Common Merganser,Mergus castor,Mergus merganser,printed_english=Goosander
+V,35,ku-gould:8109,"Common Merganser; grand harle, Mergo mayor. 35. plate",Common Merganser,Mergus serrator,Mergus merganser,printed_english=Merganser
+V,36,ku-gould:8105,"harle couronné; Hooded Merganser, Mergo cresta blanca. 36. plate",Hooded Merganser,Mergus cucullatus,Lophodytes cucullatus,printed_english=Hooded merganser
+V,37,ku-gould:8101,Smew; harle piette. 37. plate,Smew,Mergus albellus,Mergellus albellus,"printed_english=Smew, or nun"
+V,38,ku-gould:8097,Great Crested Grebe. 38. plate,Great Crested Grebe,,Podiceps cristatus,KU lists no printed Latin (ku_sci = List Latin)
+V,39,ku-gould:8093,Red-necked Grebe; grèbe jougris. 39. plate,Red-necked Grebe,Podiceps rubricollis,Podiceps grisegena,printed_english=Red-necked grebe
+V,40,ku-gould:8089,"grèbe esclavon; Horned Grebe, Zambullidor cornudo. 40. plate",Horned Grebe,,Podiceps auritus,printed_alt_name=Horned grebe; KU lists no printed Latin (ku_sci = List Latin)
+V,41,ku-gould:8085,"Black-necked Grebe; Ardea Grebe, grèbe à cou noir, Zambullidor orejudo. 41. plate",Black-necked Grebe,,Podiceps nigricollis,printed_alt_name=Eared grebe; KU lists no printed Latin (ku_sci = List Latin); KU's English has 'Ardea' for 'eared'
+V,42,ku-gould:8081,Little Grebe. 42. plate,Little Grebe,Podiceps minor,Tachybaptus ruficollis,"printed_english=Little grebe, dabchick"
+V,43,ku-gould:8077,"Common Loon; Great Northern Loon, Colimbo mayor, plongeon huard. 43. plate",Common Loon,Colymbus glacialis,Gavia immer,printed_english=Great northern diver
+V,44,ku-gould:8073,"Arctic Loon; Black-throated Loon, Plongeon arctique. 44. plate",Arctic Loon,Colymbus arcticus,Gavia arctica,printed_english=Black-throated diver
+V,45,ku-gould:8069,"Colimbo menor; plongeon catmarin, Red-throated Loon. 45. plate",Red-throated Loon,Colymbus septentrionalis,Gavia stellata,printed_english=Red-throated diver
+V,46,ku-gould:8065,Great Auk; grand pingouin. 46. plate,Great Auk,Alea impennis,Pinguinus impennis,printed_english=Great auk; KU's printed Latin is misspelt (List: Alca impennis)
+V,47,ku-gould:8061,Razorbill; petit pingouin. 47. plate,Razorbill,Alea torda,Alca torda,printed_english=Razorbill; KU's printed Latin is misspelt (List: Alca torda)
+V,48,ku-gould:8057,"Arao común; Common Murre, guillemot marmette. 48. plate",Common Murre,Uria troile,Uria aalge,printed_english=Common guillemot
+V,49,ku-gould:8053,Black Guillemot; guillemot à miroir. 49. plate,Black Guillemot,Uria grylle,Cepphus grylle,printed_english=Black guillemot
+V,50,ku-gould:8049,"Little Auk; Dovekie, mergule main. 50. plate",Little Auk,Mergulus alle,Alle alle,printed_english=Little auk
+V,51,ku-gould:8045,Atlantic Puffin; macareux moine. 51. plate,Atlantic Puffin,,Fratercula arctica,printed_alt_name=Puffin; KU lists no printed Latin (ku_sci = List Latin)
+V,52,ku-gould:8041,Great Cormorant; grand cormoran. 52. plate,Great Cormorant,,Phalacrocorax carbo,printed_alt_name=Cormorant; KU lists no printed Latin (ku_sci = List Latin)
+V,53,ku-gould:8037,Phalacrocorax aristotelis. 53. plate,,Phalacrocorax graculus,Phalacrocorax aristotelis,"printed_english=Crested cormorant, or shag; KU gives no English name (its title is the Latin)"
+V,54,ku-gould:8033,Northern Gannet. 54. plate,Northern Gannet,Sula bassana,Sula bassanus,"printed_english=Gannet, or solan goose"
+V,55,ku-gould:8029,Great Black-headed Gull. 55. plate,Great Black-headed Gull,Larus marinus,Larus ichthyaetus,printed_english=Great black-backed gull
+V,56,ku-gould:8025,"Gaviota sombría; goéland brun, Lesser Black-backed Gull. 56. plate",Lesser Black-backed Gull,,Larus fuscus,printed_alt_name=Lesser black-backed gull; KU lists no printed Latin (ku_sci = List Latin)
+V,57,ku-gould:8021,"Glaucous Gull; Gaviota blanca, goéland bourgmestre. 57. plate",Glaucous Gull,Larus glaucus,Larus hyperboreus,printed_english=Glaucous gull
+V,58,ku-gould:8017,Iceland Gull. 58. plate,Iceland Gull,Larus islandicus,Larus glaucoides,
+V,59,ku-gould:8013,"Herring Gull; Gaviota plateada, goéland argenté. 59. plate",Herring Gull,,Larus argentatus,printed_alt_name=Herring-gull; KU lists no printed Latin (ku_sci = List Latin)
+V,60,ku-gould:8009,"Mew Gull; Gaviota cana, goéland cendré. 60. plate",Mew Gull,,Larus canus,printed_alt_name=Common gull; KU lists no printed Latin (ku_sci = List Latin)
+V,61,ku-gould:8005,Black-legged Kittiwake. 61. plate,Black-legged Kittiwake,Rissa tridactyla,Larus tridactyla,printed_english=Kittiwake
+V,62,ku-gould:8001,Ivory Gull; mouette blanche. 62. plate,Ivory Gull,,Pagophila eburnea,printed_alt_name=Ivory gull; KU lists no printed Latin (ku_sci = List Latin)
+V,63,ku-gould:7997,Ross's Gull. 63. plate,Ross's Gull,Rhodostethia rossii,Rhodostethia rosea,
+V,64,ku-gould:7993,"Black-headed Gull; Common Black-headed Gull, Gaviota encapuchada, mouette rieuse. 64. plate",Black-headed Gull,Chroicocephalus ridibundus,Larus ridibundus,printed_english=Black-headed gull
+V,65,ku-gould:7989,"Bonaparte's Gull; Gaviota de Bonaparte, mouette de Bonaparte. 65. plate",Bonaparte's Gull,Chroicocephalus philadelphia,Larus philadelphia,printed_english=Bonaparte's gull
+V,66,ku-gould:7985,"Little Gull; Gaviota mínima, mouette pygmée. 66. plate",Little Gull,Hydrocoloeus minutus,Larus minutus,printed_english=Little gull
+V,67,ku-gould:7981,"Gaviota cola hendida; mouette de Sabine, Sabine's Gull. 67. plate",Sabine's Gull,,Xema sabini,printed_alt_name=Sabine's gull; KU lists no printed Latin (ku_sci = List Latin)
+V,68,ku-gould:7977,"Caspian Tern; Charrán caspia, Sturnus. 68. plate",Caspian Tern,Hydroprogne caspia,Sturnus caspia,printed_english=Caspian tern; KU's ku_sci has Sturnus for Sterna
+V,69,ku-gould:7973,Sandwich Tern; Charrán de SandwichSandwich Tern. 69. plate,Sandwich Tern,Actochelidon cantiaca,Sturnus sandvicensis,printed_english=Sandwich tern; KU's ku_sci has Sturnus for Sterna
+V,70,ku-gould:7969,"Common Tern; Charrán común, Sturnus. 70. plate",Common Tern,Sterna hirundo,Sturnus hirundo pierregarin,printed_english=Common tern; KU's ku_sci has Sturnus for Sterna
+V,71,ku-gould:7965,"Arctic Tern; Charrán ártico, Sturnus. 71. plate",Arctic Tern,Sterna paradisea,Sturnus paradisaea,printed_english=Roseate tern; KU's ku_sci has Sturnus for Sterna
+V,72,ku-gould:7961,"Arctic Tern; Charrán ártico, Sturnus. 72. plate",Arctic Tern,Sterna macrura,Sturnus paradisaea,printed_english=Arctic tern; KU's ku_sci has Sturnus for Sterna
+V,73,ku-gould:7957,Little Tern. 73. plate,Little Tern,Sternula minuta,Sturnus albifrons,KU's ku_sci has Sturnus for Sterna
+V,74,ku-gould:7953,Gull-billed Tern; Charrán pico grueso. 74. plate,Gull-billed Tern,Gelochelidon anglica,Sturnus nilotica,printed_english=Gull-billed tern; KU's ku_sci has Sturnus for Sterna
+V,75,ku-gould:7949,"Black Tern; Charrán negro, guifette noire. 75. plate",Black Tern,Hydrochelidon nigra,Chlidonias niger,printed_english=Black tern
+V,76,ku-gould:7945,White-winged Tern; guifette leucoptère. 76. plate,White-winged Tern,Hydrochelidon leucoptera,Chlidonias leucopterus,printed_english=White-winged tern
+V,77,ku-gould:7941,Black Tern. 77. plate,Black Tern,Hydrochelidon leucopareia,Chlidonias hybrida,printed_english=Whiskered tern
+V,78,ku-gould:7937,Great Skua. 78. plate,Great Skua,Stercorarius catarrhactes,Stercorarius skua,
+V,79,ku-gould:7933,"Pomarine Jaeger; Pomarine Skua, labbe pomarin, Salteador pomarino. 79. plate",Pomarine Jaeger,Stercorarius pomatorhinus,Stercorarius pomarinus,printed_english=Pomatorhine skua
+V,80,ku-gould:7929,"Parasitic Jaeger; labbe parasite, Salteador parásito. 80. plate",Parasitic Jaeger,,Stercorarius parasiticus,printed_alt_name=Arctic skua; KU lists no printed Latin (ku_sci = List Latin)
+V,81,ku-gould:7925,"Long-tailed Jaeger; abbe à longue queue, Salteador cola larga. 81. plate",Long-tailed Jaeger,,Stercorarius longicaudus,printed_alt_name=Long-tailed skua; KU lists no printed Latin (ku_sci = List Latin)
+V,82,ku-gould:7921,"Northern Fulmar; fulmar boréal, Fulmar norteño. 82. plate",Northern Fulmar,Procellaria glacialis,Fulmarus glacialis,printed_english=Fulmar
+V,83,ku-gould:7917,"Great Shearwater; Greater Shearwater, Pardela mayor, puffin majeur. 83. plate",Great Shearwater,Puffinus major,Puffinus corvus,printed_english=Great shearwater
+V,84,ku-gould:7913,Manx Shearwater; puffin des anglais. 84. plate,Manx Shearwater,Puffinus anglorum,Puffinus puffinus,printed_english=Manx shearwater
+V,85,ku-gould:7909,"Leach's Storm-Petrel; océanite cul-blanc, Paíño de Leach. 85. plate",Leach's Storm-Petrel,Thalassidroma leachii,Oceanodroma leucorhoa,printed_english=Forked-tailed storm-petrel
+V,86,ku-gould:7905,European Storm-Petrel; Océanite tempête. 86. plate,European Storm-Petrel,Thalassidroma pelagica,Hydrobates pelagicus,printed_english=Storm-petrel
