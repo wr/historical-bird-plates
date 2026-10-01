@@ -14,7 +14,7 @@ Old plates name their birds the way their authors did, and many of those names n
 
 [![Wild Turkey, American Flamingo, Carolina Parakeet, Snowy Owl, Roseate Spoonbill](img/preview-havell.jpg)](havell/#the-plates)
 
-435 plates · 399 identified · [browse all plates](havell/#the-plates) · [tables](havell/) · [images](https://github.com/wr/historical-bird-plates/releases/tag/havell-v1)
+435 plates · 428 identified · [browse all plates](havell/#the-plates) · [tables](havell/) · [images](https://github.com/wr/historical-bird-plates/releases/tag/havell-v1)
 
 ### Gould, *The Birds of Europe* (1832–37)
 
@@ -59,7 +59,7 @@ Old plates name their birds the way their authors did, and many of those names n
 
 | Folio | Plates | Plates identified | Caption-checked | Species | Rows: `high` / `judged` / `medium` / `low` / `none` | BirdNET-labelled | Wikidata-linked | Kansas disagreements |
 |---|---:|---:|---:|---:|---|---:|---:|---:|
-| `havell` | 435 | 399 | – | 431 | 431 / 0 / 0 / 0 / 36 | 409 / 431 | 431 / 431 | – |
+| `havell` | 435 | 428 | – | 431 | 460 / 1 / 0 / 0 / 7 | 439 / 461 | 461 / 461 | – |
 | `gould-europe` | 449 | 403 | 392 | 411 | 430 / 18 / 0 / 20 / 0 | 422 / 422 | 422 / 422 | 28 |
 | `gould-australia` | 681 | 678 | 660 | 585 | 653 / 0 / 22 / 6 / 0 | 498 / 678 | 677 / 678 | 75 |
 | `gould-asia` | 530 | 354 | 526 | 311 | 261 / 10 / 75 / 8 / 176 | 341 / 354 | 354 / 354 | 120 |
