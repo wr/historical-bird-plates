@@ -97,6 +97,11 @@ Every plate as its art crop, by volume and number. The full-size images are in t
 
 These are the plates a careful reader would still get wrong.
 
+- **III.25** *Copsychus mindanensis*, the "Malaccan Dial Bird", is the Oriental Magpie-Robin's Malayan race *musicus*, not the Philippine Magpie-Robin: Gould never saw it from the Philippines and doubted it lived there.
+- **III.50** *Garrulax ruficeps* Gould is the Rufous-crowned Laughingthrush of Formosa, a species of its own in eBird 2025.
+- **V.22** shows two species. Gould's "young male" in front is the female Collared Grosbeak, as he concedes in the V.23 text; the rest are Black-and-yellow Grosbeaks.
+- **V.26** *Carpodacus rhodochlamys* is Blyth's Rosefinch (`judged`): Gould's figured male is the Himalayan bird he lent to Bonaparte and Schlegel, and Sharpe lists this plate under *C. grandis*.
+
 - **I.35**, printed *Merops viridis* Linn., shows the Green Bee-eater (*M. orientalis*): all green, golden crown, black gorget. Linnaeus's *viridis* is today's Blue-throated Bee-eater, which the plate does not show.
 - **IV.32** *Rhodophila melanoleuca* is Jerdon's Bushchat, not the Pied Bushchat.
 - **V.53** *Cissa pyrrhocyanea* is the Sri Lanka Blue-Magpie, chestnut and blue, not the Common Green-Magpie.
@@ -119,13 +124,13 @@ These are the plates a careful reader would still get wrong.
 
 ## The Kansas catalogue
 
-The University of Kansas Spencer Library's Ellis Collection copy (Ellis Aves H120, records around `ku-gould:15300`–`17700`) gives each plate a modern scientific name, matched from the printed Latin. `ku-disagreements.csv` lists the 184 rows where it differs, by kind:
+The University of Kansas Spencer Library's Ellis Collection copy (Ellis Aves H120, records around `ku-gould:15300`–`17700`) gives each plate a modern scientific name, matched from the printed Latin. `ku-disagreements.csv` lists the 208 rows where it differs, by kind:
 
 | kind | rows | what it is |
 |---|---|---|
-| old name | 91 | the same species under an older genus or spelling (*Garrulax* for *Trochalopteron*, *Pitta* for *Hydrornis*) |
-| pre-split | 33 | KU gives the parent species before a split (Great Tit for the Asian Tit, Asian Paradise-Flycatcher for the Amur) |
-| subspecies | 20 | KU names the race |
+| old name | 89 | the same species under an older genus or spelling (*Garrulax* for *Trochalopteron*, *Pitta* for *Hydrornis*) |
+| pre-split | 35 | KU gives the parent species before a split (Great Tit for the Asian Tit, Asian Paradise-Flycatcher for the Amur) |
+| subspecies | 44 | KU names the race |
 | lumped | 2 | eBird keeps KU's species within ours (I.4: the Barbary Falcon within the Peregrine) |
 | printed name | 11 | KU follows the printed name where the bird says otherwise: I.35, II.36, IV.57, VI.2, VI.3, VI.29, VI.38, VI.62, VII.22, VII.51, VII.60 |
 | error | 27 | KU names another species: Asian trogons sent to New World ones, the Spoon-billed Sandpiper to Lady Amherst's Pheasant, the Indian barn owl to the Spotted Owlet, Güldenstädt's Redstart to the White-capped, the Daurian Partridge to a Mexican quail |

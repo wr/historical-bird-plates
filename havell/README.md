@@ -75,6 +75,12 @@ Every plate with its lettering trimmed, by Havell number.
 ## Traps
 
 - **Plate 50 is a young Magnolia Warbler.** These scans carry its 1828 lettering, "Swainson's Warbler, *Sylvicola swainsonia*". Audubon wrote in 1831 that one drawing had been engraved in place of another while he was away from London, and the plate was re-lettered "Black and yellow warbler, *Sylvia maculosa*, young male". It is not the Swainson's Warbler of plate 198, which Audubon described in 1834. The adult Magnolia pair is plate 123.
+- **Plate 132's "Three-toed Woodpecker" is the Black-backed.** Every back on the plate is solid black, and Audubon himself called it Swainson's *Apternus arcticus* (1839). The American Three-toed is 417, figs. 3–4.
+- **Plate 229's "Scaup Duck" is the Lesser Scaup.** Audubon wrote in 1844 that the bird "figured in my large plates" was the smaller species.
+- **Plate 247's "Velvet Duck" is the White-winged Scoter**, the American daughter of the split; BirdNET still lumps the two, so its label is the Velvet Scoter's.
+- **Plate 45, Traill's Flycatcher, can't be split.** Halley (2025) shows the type, this bird, can't be told as Alder or Willow; both rows are `pre-split`, `judged`.
+- **Plate 407, the "Dusky Albatros", is the Light-mantled** (`judged`): Audubon describes the skin's pale body against a dark head and a long wedge tail, which the colourist's all-brown plate hides.
+- **Plate 394 fig. 2, the "Black-headed Siskin", is the Hooded Siskin** (`judged`), by Audubon's own measurements.
 - **Plate 399's "Mourning Warbler" (figs. 4–5) is MacGillivray's Warbler.** Audubon wrote in 1839 that these Columbia River birds were misnamed on the plate, and named them *Sylvia macgillivrayi*. He has no plate of the true Mourning Warbler.
 - **Nelson's Sparrow is not on 149.** Wilson's "Sharp-tailed Finch" there is the Saltmarsh Sparrow.
 - **Black-throated Diver (346)** is the Pacific Loon on audubon.org and at NYHS. Pitt still says Arctic Loon.
@@ -89,7 +95,7 @@ Every plate with its lettering trimmed, by Havell number.
 
 ## Not identified
 
-7 plates have no species here. Each row's `reason` says why.
+6 plates have no species here. Each row's `reason` says what is known and what would settle it.
 
 **Disputed birds, left out on purpose rather than guessed:**
 - 11, Bird of Washington;
@@ -97,12 +103,10 @@ Every plate with its lettering trimmed, by Havell number.
 - 60, Carbonated Warbler;
 - 164, Tawny Thrush: traditionally the Veery, disputed (Halley 2018);
 - 184, Mangrove Humming Bird;
-- 338, Bemaculated Duck: a hybrid;
-- 407, Dusky Albatros: Light-mantled or Sooty, unsettled.
+- 338, Bemaculated Duck: a hybrid.
 
 Some figures on composite plates are left out for the same reason:
 - 400 fig. 4, Townsend's Bunting;
 - 434 fig. 2, Small-headed Flycatcher, fig. 3, Blue Mountain Warbler, and fig. 4, Bartram's Vireo (yellow-throated and brown-eyed, so not plainly the Red-eyed Vireo that NYHS and the Boston Public Library give);
-- 402's fifth "species" (Kittlitz's Murrelet): curatorial sources list four birds there.
 
-**Composite plates** carry one row per species, with its figure key from the legend. Until 1 Oct only the species Featherframe needed had rows; 21 plates gained 32 birds.
+**Composite plates** carry one row per species, with its figure key from the legend. Until 1 Oct only the species Featherframe needed had rows; 21 plates gained 32 birds, and 402 now has all five, Kittlitz's Murrelet included (fig. 2, Audubon's "young" Black-throated Guillemot). Prey, such as the ducks under the Great-footed Hawk (16), has no row.

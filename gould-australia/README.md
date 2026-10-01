@@ -104,7 +104,8 @@ Every plate as its art crop, by volume and number. The full-size images are in t
    - IV.80 is engraved *Myzantha viridis*, Gould's plate name for the Bell-bird. The facing text is the Bell-bird's.
 3. **Names.** Each plate was mapped to a modern species from Gould's own text and synonymy, with a confidence and a written reason (`sources/crosswalk.csv`).
 4. **Checking.** `caption_checked` is `yes` for the 660 plates whose engraved caption was read and names the plate as listed. The identification is carried from that name through Gould's text.
-   - **Open:** seven rows, each asking what would settle it: IV.18 and VII.21 and VII.42 are `medium`; V.13, V.30, VI.2 and VII.83 are `low` and name no species. The other 21 doubtful rows were researched on 1 Oct (W-931) and are settled.
+   - **Open:** seven rows, each asking what would settle it: VI.59, VII.21 and VII.42 are `medium`; V.13, V.30, VI.2 and VII.83 are `low` and name no species. The doubtful rows were researched on 1 Oct (W-931), and every row was checked again by an independent pass, each correction confirmed by a second reviewer (W-936).
+   - **Forms:** until 1 Oct this folio set no `form`. 121 rows now mark a race (`subspecies`) and 10 a morph or plumage (`variant`), under the README's rule.
    - **No species:** Supp. 34, Rawnsley's Bower-bird, an intergeneric hybrid, besides the four open rows above.
 5. **Modern names.** 498 of the birds are in BirdNET V2.4. `birdnet_label` gives the label, and it can be broader than the species. For example, III.73's Australian Pipit falls under BirdNET's Australasian Pipit. `scientific` and `common` are eBird/Clements 2025's names for the species. Where eBird has since moved a name (the goshawks to *Tachyspiza*, the dotterels to *Anarhynchus*, the bronze-cuckoos to *Chalcites*), the row carries eBird's.
 
@@ -120,7 +121,12 @@ These are the plates a careful reader would still get wrong. Gould's binomial no
 - **Bassian Thrush:** his *Oreocincla lunulata* (IV.7) is the Bassian Thrush, not the Mountain Thrush of Central America.
 - **Thornbills:** his *Acanthiza diemenensis* (III.54) is the Brown Thornbill. The Tasmanian Thornbill is III.55.
 - **III.41** *Cysticola magna* is not Australian: Gould's own synonymy makes it his *C. campestris*, the Rattling Cisticola of Natal.
-- **The raven (IV.18)** is open. Its long throat hackle is the Australian Raven's, but Gould writes that the figure is a male killed in Van Diemen's Land, where only the Forest Raven lives.
+- **The raven (IV.18)** is the Forest Raven (`judged`). Gould writes that the figure is "a male, killed in Van Diemen's Land", where only the Forest Raven lives, and the bill is the Forest Raven's massive one; the throat hackle, short at full size, doesn't separate the ravens.
+- **The Fuscous Gerygone (II.98)** is the Brown Gerygone (`judged`): no white tail base (II.99, the Western, has one), and Gould's birds are from coastal New South Wales.
+- **The Striated Wren (III.28)** is the Thick-billed Grasswren: Gould's birds are from the Lower Namoi, the extinct New South Wales race, not the Western Grasswren of *textilis*.
+- **The Sooty Albatross (VII.44)**, *Diomedea fuliginosa*, is the Sooty, not the Light-mantled that Gmelin's name now belongs to: one even dark brown, and a cream groove on the bill.
+- **The Giant Petrel (VII.45)** is the Northern (`judged`): Gould gives the bill tip "tinged with vinous", and the plate paints it pink.
+- **The Sombre Egret (VI.59)** is open: long black legs, yellow toes and a slender bill are a dark Western Reef-Heron's, and Gould later renamed it after Sykes's Indian bird, but his skin is from Port Stephens.
 - **VII.51**, "Cook's Petrel", is Gould's Petrel: birds from Cabbage Tree Island, and Gould synonymises his own *P. leucoptera*.
 - **IV.2** is the Banda Sea Pitta, *Pitta vigorsii*, a species of its own in eBird 2025.
 - **Splits:** a lumped name now belongs to another population. His Delicate Owl (I.31) is the Eastern Barn Owl, *Tyto javanica*, not *T. alba*; his White-bellied Shrike-Tit (II.80) is the Western Shrike-tit, *Falcunculus leucogaster*; his White Tern (VII.30) is the Blue-billed White-Tern, *Gygis candida*, not the Atlantic *G. alba*; his Plumed Egret (VI.57) is the Plumed Egret, *Ardea plumifera*, not the Medium Egret of Asia; his Australian Sun-bird (Supp.45) is the Sahul Sunbird, *Cinnyris frenatus*, not the Garden Sunbird that keeps *C. jugularis*; his Spotted Sericornis (III.51) is the Spotted Scrubwren, *Sericornis maculatus*.
@@ -129,13 +135,13 @@ These are the plates a careful reader would still get wrong. Gould's binomial no
 
 The University of Kansas Spencer Library's Ellis Collection copy gives each plate a modern scientific name (books `ku-gould:15183` for volume I to `ku-gould:12471` for the Supplement). Its names were matched from the printed Latin, not from the birds.
 
-`ku-disagreements.csv` lists the 84 rows where the two differ, by kind:
+`ku-disagreements.csv` lists the 107 rows where the two differ, by kind:
 
 | kind | plates | what it is |
 |---|---|---|
-| same | 45 | the same bird under an older name, a lump, or a split since |
-| ku-error | 34 | Kansas matched the printed Latin, not the bird. It swaps V.15 with V.16 and IV.93 with IV.98 |
-| doubtful | V.13, V.30, VI.2, VII.21, VII.83 | open: the black cockatoo, the rosella, the kiwi, the skua and the rockhopper, each argued in `note` |
+| same | 56 | the same bird under an older name, a lump, or a split since |
+| ku-error | 45 | Kansas matched the printed Latin, not the bird. It swaps V.15 with V.16 and IV.93 with IV.98 |
+| doubtful | V.13, V.30, VI.2, VI.59, VII.21, VII.83 | open: the black cockatoo, the rosella, the kiwi, the reef heron, the skua and the rockhopper, each argued in `note` |
 
 ## The images: release `gould-australia-v1`
 
