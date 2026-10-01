@@ -119,6 +119,7 @@ The validator runs on every push. It checks:
 ### Contributing
 
 - **Fix a plate:** open a pull request to that folio's `species.csv`, with the evidence in `reason` and `sources`. The best evidence is the plate itself: the caption, the figure, the bird.
+- **Change identifications in bulk:** write the decisions to a CSV (one row per figure: `book`, `volume`, `plate`, `figure`, `scientific`, `form`, `confidence`, `caption_checked`, `reason`, `sources`) and run `python3 tools/identify.py DECISIONS.csv`. It replaces those plates' rows and fills the names and IDs from `scientific`. A species already in the dataset takes its reviewed IDs; a new one gets them by the rule in the script. Every decision is logged to the folio's `sources/decisions.csv`. Add `--dry-run` to see the changes first. `python3 tools/stats.py` prints the numbers table above.
 - **Add a folio:** add a new folder with the same tables and a `README.md`. The README covers the edition and the copy scanned, how the plates were found, how the names were checked, and the traps. Add its tables to `datapackage.json`, then run the validator.
 
 ### Acknowledgements
@@ -130,4 +131,4 @@ The validator runs on every push. It checks:
 
 ### Provenance
 
-This dataset was made for [Featherframe](https://github.com/wr/featherframe), an e-paper frame that shows the birds a [BirdNET](https://birdnet.cornell.edu/) station hears as plates from these folios. `server/scripts/export_dataset.py` exports Featherframe's folio files here. This repo is the public record of every plate; Featherframe uses only the plates it needs.
+This dataset was made for [Featherframe](https://github.com/wr/featherframe), an e-paper frame that shows the birds a [BirdNET](https://birdnet.cornell.edu/) station hears as plates from these folios. Featherframe's `server/scripts/export_dataset.py` first exported its folio files here. Since then this repo is where the identifications are kept and corrected, and Featherframe checks its pins against it. This repo is the public record of every plate; Featherframe uses only the plates it needs.

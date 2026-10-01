@@ -116,7 +116,7 @@
           {
             "name": "wikidata",
             "type": "string",
-            "description": "Wikidata item of the species (by its eBird taxon ID, P3444). Empty when Wikidata has none or several."
+            "description": "Wikidata item of the species: the species-rank item Wikipedia uses (see tools/identify.py). Empty when Wikidata has no species item."
           },
           {
             "name": "gbif",
@@ -334,7 +334,7 @@
           {
             "name": "wikidata",
             "type": "string",
-            "description": "Wikidata item of the species (by its eBird taxon ID, P3444). Empty when Wikidata has none or several."
+            "description": "Wikidata item of the species: the species-rank item Wikipedia uses (see tools/identify.py). Empty when Wikidata has no species item."
           },
           {
             "name": "gbif",
@@ -604,7 +604,7 @@
           {
             "name": "wikidata",
             "type": "string",
-            "description": "Wikidata item of the species (by its eBird taxon ID, P3444). Empty when Wikidata has none or several."
+            "description": "Wikidata item of the species: the species-rank item Wikipedia uses (see tools/identify.py). Empty when Wikidata has no species item."
           },
           {
             "name": "gbif",
@@ -879,7 +879,7 @@
           {
             "name": "wikidata",
             "type": "string",
-            "description": "Wikidata item of the species (by its eBird taxon ID, P3444). Empty when Wikidata has none or several."
+            "description": "Wikidata item of the species: the species-rank item Wikipedia uses (see tools/identify.py). Empty when Wikidata has no species item."
           },
           {
             "name": "gbif",
@@ -1101,7 +1101,7 @@
           {
             "name": "wikidata",
             "type": "string",
-            "description": "Wikidata item of the species (by its eBird taxon ID, P3444). Empty when Wikidata has none or several."
+            "description": "Wikidata item of the species: the species-rank item Wikipedia uses (see tools/identify.py). Empty when Wikidata has no species item."
           },
           {
             "name": "gbif",
