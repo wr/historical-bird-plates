@@ -1,0 +1,75 @@
+volume,plate,kind,ku_id,ku_name,ku_scientific,scientific,common,note
+I,3,pre-split,ku-gould:9402,Lesser Spotted Eagle,Aquila pomarina,Clanga clanga,Greater Spotted Eagle,Gould's Aquila naevia covered both spotted eagles; the young bird's rows of large pale spots are the Greater's (judged)
+I,9,old name,ku-gould:9378,Northern Goshawk,Accipiter gentilis,Astur gentilis,Eurasian Goshawk,an older genus or spelling for the same species
+I,17,subspecies,ku-gould:9350,Eurasian Peregrine Falconn,Falco peregrinus peregrinus,Falco peregrinus,Peregrine Falcon,KU names the race
+I,19,subspecies,ku-gould:9342,Merlin,Falco columbarius aesalon,Falco columbarius,Merlin,KU names the race
+I,20,error,ku-gould:9338,Red-thighed Sparrowhawk,Accipiter erythropus,Falco vespertinus,Red-footed Falcon,KU's Accipiter erythropus is an African sparrowhawk; the plate is the Red-footed Falcon
+II,4,old name,ku-gould:9237,,Apus melba,Tachymarptis melba,Alpine Swift,an older genus or spelling for the same species
+II,10,subspecies,ku-gould:9215,Common Kingfisher,Alcedo atthis ispida,Alcedo atthis,Common Kingfisher,KU names the race
+II,32,printed name,ku-gould:9129,Redwing,Turdus iliacus,Turdus philomelos,Song Thrush,KU reads Gould's Turdus musicus as the Redwing; his bird is the Song Thrush
+II,36,pre-split,ku-gould:9113,Red-throated Thrush,Turdus ruficollis,Turdus atrogularis,Black-throated Thrush,"KU has the Red-throated Thrush, then lumped with the Black-throated as the Dark-throated Thrush"
+II,39,pre-split,ku-gould:9101,Scaly Thrush,Zoothera dauma,Zoothera aurea,White's Thrush,KU has the Scaly Thrush; White's Thrush (Z. aurea) is split from it
+II,40,old name,ku-gould:9097,Siberian Thrush,Zoothera sibirica,Geokichla sibirica,Siberian Thrush,an older genus or spelling for the same species
+II,47,pre-split,ku-gould:9069,Stone-chat,Saxicola torquatus,Saxicola rubicola,European Stonechat,"KU has the African Stonechat, the old wide species; the British bird is the European Stonechat"
+II,51,error,ku-gould:9053,Black Redstart,Phoenicurus ochruros,Phoenicurus phoenicurus,Common Redstart,KU has the Black Redstart; the plate is the Common Redstart
+II,56,printed name,ku-gould:9033,Thrush Nightingale,Luscinia luscinia,Luscinia megarhynchos,Common Nightingale,KU reads Gould's Philomela luscinia as the Thrush Nightingale; his bird is the Common Nightingale
+II,57,old name,ku-gould:9029,Common Whitethroat,Sylvia communis,Curruca communis,Greater Whitethroat,an older genus or spelling for the same species
+II,58,old name,ku-gould:9025,Lesser Whitethroat,Sylvia curruca,Curruca curruca,Lesser Whitethroat,an older genus or spelling for the same species
+II,59,old name,ku-gould:9021,Dartford Warbler,Sylvia undata,Curruca undata,Dartford Warbler,an older genus or spelling for the same species
+II,61,old name,ku-gould:9013,Orphean Warbler,Sylvia hortensis,Curruca hortensis,Western Orphean Warbler,an older genus or spelling for the same species
+II,62,printed name,ku-gould:9009,Orphean Warbler,Sylvia hortensis,Sylvia borin,Garden Warbler,Gould's Sylvia hortensis is Bechstein's name for the Garden Warbler; today hortensis is the Orphean (II.61)
+II,69,error,ku-gould:8981,Golden-crowned Kinglet,Regulus satrapa,Regulus regulus,Goldcrest,KU has the American Golden-crowned Kinglet; the plate is the Goldcrest
+II,70,old name,ku-gould:8977,,Regulus ignicapillus,Regulus ignicapilla,Common Firecrest,an older genus or spelling for the same species
+II,71,error,ku-gould:8973,Melodious Warbler,Hippolais polyglotta,Hippolais icterina,Icterine Warbler,"KU has the Melodious Warbler; Gould's Ficedula hypolais is the Icterine, and he lists the Melodious separately"
+III,10,pre-split,ku-gould:8889,Water Pipit,Anthus spinoletta,Anthus petrosus,Rock Pipit,"KU has the Water Pipit, which then included the Rock Pipit"
+III,17,old name,ku-gould:8861,Crested Lark,Lullula cristata,Galerida cristata,Crested Lark,an older genus or spelling for the same species
+III,20,old name,ku-gould:8849,White-winged Lark,Melanocorypha leucoptera,Alauda leucoptera,White-winged Lark,an older genus or spelling for the same species
+III,22,typo,ku-gould:8841,Yellowhammer,Emberiza Sturnus,Emberiza citrinella,Yellowhammer,KU's records put Sturnus for Sterna throughout; here it replaced citrinella
+III,37,old name,ku-gould:8781,Eurasian Siskin,Carduelis spinus,Spinus spinus,Eurasian Siskin,an older genus or spelling for the same species
+III,39,old name,ku-gould:8773,European Greenfinch,Carduelis chloris,Chloris chloris,European Greenfinch,an older genus or spelling for the same species
+III,43,error,ku-gould:8759,Eurasian Bullfinch,Pyrrhula pyrrhula,Carpodacus erythrinus,Common Rosefinch,"KU has the Eurasian Bullfinch, from Gould's English 'Scarlet Bullfinch'; the plate is the Common Rosefinch"
+III,47,subspecies,ku-gould:8743,Two-barred Crossbill,Loxia l leucoptera bifasciata,Loxia leucoptera,White-winged Crossbill,KU names the race bifasciata
+III,49,old name,ku-gould:8735,Common Linnet,Carduelis cannabina,Linaria cannabina,Eurasian Linnet,an older genus or spelling for the same species
+III,50,old name,ku-gould:8731,Twite,Carduelis flavirostris,Linaria flavirostris,Twite,an older genus or spelling for the same species
+III,51,old name,ku-gould:8727,Common Redpoll,Carduelis flammea,Acanthis flammea,Redpoll,an older genus or spelling for the same species
+III,52,lumped,ku-gould:8723,Common Redpoll,Carduelis flammea,Acanthis flammea,Redpoll,"KU has the Common Redpoll; the plate is the Lesser Redpoll, which eBird 2025 lumps into Redpoll"
+III,55,typo,ku-gould:8713,Rosy Starling,Sturnus roseus,Pastor roseus,Rosy Starling,KU's records put Sturnus for Sterna; same species
+III,56,typo,ku-gould:8710,Rosy Starling,Sturnus roseus,Pastor roseus,Rosy Starling,KU's records put Sturnus for Sterna; same species
+III,61,old name,ku-gould:8691,Eurasian Crow,Corvus monedula,Coloeus monedula,Eurasian Jackdaw,an older genus or spelling for the same species
+III,72,old name,ku-gould:8649,Lesser Spotted Woodpecker,Dendrocopos minor,Dryobates minor,Lesser Spotted Woodpecker,an older genus or spelling for the same species
+IV,2,typo,ku-gould:8609,Stock Dove,Columba Anas,Columba oenas,Stock Dove,KU's 'Columba Anas' is a misspelling of oenas
+IV,7,pre-split,ku-gould:8589,Red Grouse,Lagopus lagopus scotica,Lagopus scotica,Red Grouse,KU names the race scotica of Willow Ptarmigan; eBird 2025 splits the Red Grouse
+IV,24,old name,ku-gould:8523,Cattle Egret,Bubulcus ibis,Ardea ibis,Western Cattle-Egret,an older genus or spelling for the same species
+IV,29,old name,ku-gould:8503,Little Bittern,Ixobrychus minutus,Botaurus minutus,Little Bittern,an older genus or spelling for the same species
+IV,40,old name,ku-gould:8463,Kentish Plover,Charadrius alexandrinus,Anarhynchus alexandrinus,Kentish Plover,an older genus or spelling for the same species
+IV,42,old name,ku-gould:8455,Little Ringed Plover,Charadrius dubius,Thinornis dubius,Little Ringed Plover,an older genus or spelling for the same species
+IV,43,old name,ku-gould:8451,Eurasian Dotterel,Charadrius morinellus,Eudromias morinellus,Eurasian Dotterel,an older genus or spelling for the same species
+IV,61,old name,ku-gould:8379,Ruff,Philomachus pugnax,Calidris pugnax,Ruff,an older genus or spelling for the same species
+IV,62,old name,ku-gould:8376,Ruff,Philomachus pugnax,Calidris pugnax,Ruff,an older genus or spelling for the same species
+IV,64,old name,ku-gould:8369,Buff-breasted Sandpiper,Tryngites subruficollis,Calidris subruficollis,Buff-breasted Sandpiper,an older genus or spelling for the same species
+IV,75,old name,ku-gould:8327,Broad-billed Sandpiper,Limicola falcinellus,Calidris falcinellus,Broad-billed Sandpiper,an older genus or spelling for the same species
+IV,76,printed name,ku-gould:8323,Short-billed Dowitcher,Limnodromus griseus,Limnodromus scolopaceus,Long-billed Dowitcher,KU follows the printed griseus (Short-billed); the plate's summer bird is the Long-billed Dowitcher (judged)
+IV,89,old name,ku-gould:8271,Baillon's Crake,Porzana pusilla,Zapornia pusilla,Baillon's Crake,an older genus or spelling for the same species
+IV,90,old name,ku-gould:8267,Little Crake,Porzana parva,Zapornia parva,Little Crake,an older genus or spelling for the same species
+V,10,subspecies,ku-gould:8209,Tundra Swan,Cygnus columbianus bewickii,Cygnus columbianus,Tundra Swan,KU names the race
+V,13,old name,ku-gould:8197,Eurasian Wigeon,Anas penelope,Mareca penelope,Eurasian Wigeon,an older genus or spelling for the same species
+V,14,old name,ku-gould:8193,Northern Shoveler,Anas clypeata,Spatula clypeata,Northern Shoveler,an older genus or spelling for the same species
+V,17,old name,ku-gould:8181,Garganey,Anas querquedula,Spatula querquedula,Garganey,an older genus or spelling for the same species
+V,19,old name,ku-gould:8173,Gadwall,Anas strepera,Mareca strepera,Gadwall,an older genus or spelling for the same species
+V,35,error,ku-gould:8109,Common Merganser,Mergus merganser,Mergus serrator,Red-breasted Merganser,KU has the Goosander; the plate is the Red-breasted Merganser
+V,53,old name,ku-gould:8037,,Phalacrocorax aristotelis,Gulosus aristotelis,European Shag,an older genus or spelling for the same species
+V,54,old name,ku-gould:8033,Northern Gannet,Sula bassanus,Morus bassanus,Northern Gannet,an older genus or spelling for the same species
+V,55,error,ku-gould:8029,Great Black-headed Gull,Larus ichthyaetus,Larus marinus,Great Black-backed Gull,KU has the Great Black-headed (Pallas's) Gull; the plate is the Great Black-backed Gull
+V,61,old name,ku-gould:8005,Black-legged Kittiwake,Larus tridactyla,Rissa tridactyla,Black-legged Kittiwake,an older genus or spelling for the same species
+V,64,old name,ku-gould:7993,Black-headed Gull,Larus ridibundus,Chroicocephalus ridibundus,Black-headed Gull,an older genus or spelling for the same species
+V,65,old name,ku-gould:7989,Bonaparte's Gull,Larus philadelphia,Chroicocephalus philadelphia,Bonaparte's Gull,an older genus or spelling for the same species
+V,66,old name,ku-gould:7985,Little Gull,Larus minutus,Hydrocoloeus minutus,Little Gull,an older genus or spelling for the same species
+V,68,typo,ku-gould:7977,Caspian Tern,Sturnus caspia,Hydroprogne caspia,Caspian Tern,KU's records put Sturnus for Sterna; same species
+V,69,typo,ku-gould:7973,Sandwich Tern,Sturnus sandvicensis,Thalasseus sandvicensis,Sandwich Tern,KU's records put Sturnus for Sterna; same species
+V,70,typo,ku-gould:7969,Common Tern,Sturnus hirundo pierregarin,Sterna hirundo,Common Tern,KU's records put Sturnus for Sterna; it also names the race
+V,71,error,ku-gould:7965,Arctic Tern,Sturnus paradisaea,Sterna dougallii,Roseate Tern,"KU has the Arctic Tern; the plate is the Roseate Tern (dark bill, rosy breast)"
+V,72,typo,ku-gould:7961,Arctic Tern,Sturnus paradisaea,Sterna paradisaea,Arctic Tern,KU's records put Sturnus for Sterna; same species
+V,73,typo,ku-gould:7957,Little Tern,Sturnus albifrons,Sternula albifrons,Little Tern,KU's records put Sturnus for Sterna; same species
+V,74,typo,ku-gould:7953,Gull-billed Tern,Sturnus nilotica,Gelochelidon nilotica,Gull-billed Tern,KU's records put Sturnus for Sterna; same species
+V,83,old name,ku-gould:7917,Great Shearwater,Puffinus corvus,Ardenna gravis,Great Shearwater,"KU's Puffinus corvus is not a current name; its English, Great Shearwater, agrees"
+V,85,old name,ku-gould:7909,Leach's Storm-Petrel,Oceanodroma leucorhoa,Hydrobates leucorhous,Leach's Storm-Petrel,an older genus or spelling for the same species

@@ -949,6 +949,63 @@
       }
     },
     {
+      "name": "gould-britain-ku-disagreements",
+      "path": "gould-britain/ku-disagreements.csv",
+      "title": "Gould, The Birds of Great Britain: where the University of Kansas catalogue differs",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "volume",
+            "type": "string",
+            "description": "The volume (I–VII): Birds of Asia numbers its plates within each volume."
+          },
+          {
+            "name": "plate",
+            "type": "integer",
+            "description": "The plate's number in its volume."
+          },
+          {
+            "name": "kind",
+            "type": "string",
+            "description": "old name, subspecies, pre-split, lumped, printed name, error or open."
+          },
+          {
+            "name": "ku_id",
+            "type": "string",
+            "description": "The Kansas record."
+          },
+          {
+            "name": "ku_name",
+            "type": "string",
+            "description": "KU's English name(s)."
+          },
+          {
+            "name": "ku_scientific",
+            "type": "string",
+            "description": "KU's scientific name."
+          },
+          {
+            "name": "scientific",
+            "type": "string",
+            "description": "This dataset's identification."
+          },
+          {
+            "name": "common",
+            "type": "string",
+            "description": "Its English name."
+          },
+          {
+            "name": "note",
+            "type": "string",
+            "description": "What the disagreement is."
+          }
+        ]
+      }
+    },
+    {
       "name": "gould-asia-plates",
       "path": "gould-asia/plates.csv",
       "title": "Gould, The Birds of Asia: plates",
