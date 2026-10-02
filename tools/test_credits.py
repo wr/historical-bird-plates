@@ -104,7 +104,8 @@ class Parse(unittest.TestCase):
 
     def test_and_may_touch_a_stop_or_the_next_capital(self):
         for line in ("J.Gould andH.C.Richter, del. et lith.", "J. Gould,and H.CRichter, del et lith,",
-                     "J. Gould.and H. CRichter, del. et lith", "J.GouldandH.C.Richter, del. et lith."):
+                     "J. Gould.and H. CRichter, del. et lith", "J.GouldandH.C.Richter, del. et lith.",
+                     "J. Gould and. H. C. Richter, del. et lith."):
             with self.subTest(line=line):
                 self.assertEqual([c.name for c in parse(line)], ["John Gould", "John Gould", "Henry Constantine Richter",
                                                                   "Henry Constantine Richter"])

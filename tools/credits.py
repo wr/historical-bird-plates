@@ -210,10 +210,11 @@ def known_names(folio: str | None = None) -> dict[str, tuple[str, ...]]:
 def name_forms(names: str, known: dict[str, tuple[str, ...]] = _NAMES) -> list[str]:
     """The name forms in a line's names: the whole if the table has it ("J. & E. Gould",
     "Walter & Cohn"), else each part between "&" or "and". An "and" may touch a stop or
-    comma before it, or the capital after it ("J. Gould,and", "andH.C. Richter")."""
+    comma before it, or the capital after it ("J. Gould,and", "andH.C. Richter"), or carry a
+    stop of its own ("J. Gould and. H. C. Richter", Asia IV.9)."""
     if name_key(names) in known:
         return [names]
-    parts = [p.strip(" ,") for p in re.split(r"\s*&\s*|\s+and\s+|(?<=[.,])\s*and\s*|\s*and(?=[A-Z])", names)]
+    parts = [p.strip(" ,") for p in re.split(r"\s*&\s*|\s+and\.?\s+|(?<=[.,])\s*and\s*|\s*and(?=[A-Z])", names)]
     unknown = [p for p in parts if name_key(p) not in known]
     if unknown:
         raise UnknownCredit(f"no known name for {', '.join(map(repr, unknown))} in {names!r}")
