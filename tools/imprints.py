@@ -5,20 +5,23 @@ lay them out for reading by eye, and write the readings into plates.csv.
     python3 tools/imprints.py sheets gould-europe               # contact sheets of the crops, for reading
     python3 tools/imprints.py draft gould-europe                # a readings file, prefilled from the drafts
     python3 tools/imprints.py scan gould-europe 132 418         # hard cases: the unaltered scan's corners
-    python3 tools/imprints.py check gould-europe                # each recorded imprint over its crops, enlarged
+    python3 tools/imprints.py check gould-europe [--zoom 4]     # each recorded imprint over its crops, enlarged
     python3 tools/imprints.py apply gould-europe READINGS.csv   # write the readings; regenerate credits.csv
 
 Sheets are read from the folio's release, downloaded into ASSETS/<release>/.
 Crops, contact sheets, scans, check images and the readings file go to
 ASSETS/<release>-imprints/, never into the repo.
 
-`check` is for checking what was recorded, down to the stops: one image per plate
-with an imprint, its tag and imprint as plates.csv has them over its two crops with
-contrast raised, each enlarged by 3 where it fits and by 2 where not. A crop too
-wide (or tall) for that is cut into pieces overlapping by a tenth. No image is
-wider than CHECK[0] or larger than CHECK[1] pixels, so none is shown scaled down;
-a plate that needs more is given TAG-a.png, TAG-b.png and so on. check/index.csv
-lists them in plates.csv order.
+`check` is for checking what was recorded, down to the stops. Each plate with an
+imprint gets a block: its tag and imprint as plates.csv has them, then its left
+crop and its right crop with contrast raised, enlarged ZOOM times (or --zoom N).
+An enlarged crop wider than an image is cut into segments overlapping by OVERLAP
+px, shown in order; one too tall is cut into bands the same way. An image takes
+as many whole blocks as fit; a block too big for one image goes onto images of
+its own, its head repeated on each. No image is wider than CHECK[0] or larger than
+CHECK[1] pixels, so none is shown scaled down. The images are check/001.png,
+002.png and so on (a digit more past 999); check/index.csv lists every image
+each plate is on, in plates.csv order.
 
 `crop` finds the credit lines by ink, not by OCR. On a half-size grey copy of
 the lower half of the sheet, each pixel is graded by how much darker it is than
@@ -74,7 +77,8 @@ LEAST = 0.75            # a crop is never scaled smaller than this
 SHEET = 2000            # a contact sheet's width, and its greatest height, px
 PER_SHEET = 12          # plates per contact sheet, at most
 CHECK = (1400, 1_100_000)   # check: an image's greatest width, px, and greatest size, pixels in all
-ZOOM = (3, 2)           # check: a crop is enlarged by the first of these that fits
+ZOOM = 4                # check: a crop is enlarged by this, unless --zoom says otherwise
+OVERLAP = 40            # check: tiles of an enlarged crop overlap by this, px
 LABEL, GAP, PAD = 26, 10, 6  # check: the label over each part of a crop, the space under it, the margin, px
 READ = {"eye", "scan", "none"}
 RECORD = ["plate", "leaf", "left_box", "right_box", "ocr", "read", "note"]
@@ -457,50 +461,54 @@ def pack(heights: list[int], limit: int = SHEET, most: int = PER_SHEET) -> list[
     return out
 
 
-def pieces(length: int, n: int, overlap: float = 0.1) -> list[tuple[int, int]]:
-    """`length` px cut into n equal pieces, each overlapping the next by `overlap` of a
-    piece: each piece's start and end."""
-    size = length / (n - overlap * (n - 1))
-    step = size * (1 - overlap)
-    return [(round(i * step), length if i == n - 1 else round(i * step + size)) for i in range(n)]
+def segments(length: int, most: int, overlap: int = OVERLAP) -> list[tuple[int, int]]:
+    """`length` px cut into the fewest equal segments no longer than `most`, each
+    overlapping the next by `overlap`: each segment's start and end. Whole if it fits."""
+    if length <= most:
+        return [(0, length)]
+    n = -(-(length - overlap) // (most - overlap))
+    size = (length + (n - 1) * overlap) / n
+    return [(round(i * (size - overlap)), length if i == n - 1 else round(i * (size - overlap) + size))
+            for i in range(n)]
 
 
-def enlarge(size: tuple[int, int], width: int, height: int) -> tuple[int, list[list[int]]]:
-    """How a crop (width, height) is shown in check images, no part of it more than `width`
-    by `height` once enlarged: cut into the fewest pieces across and down, overlapping by a
-    tenth, that fit at the last factor in ZOOM (whole, if it fits), each enlarged by the
-    first factor that fits them. The factor, and each piece's box in the crop, across then
-    down."""
-    w, h = size
-    least = ZOOM[-1]
-    assert width >= least and height >= least
-
-    def fewest(length: int, most: int) -> list[tuple[int, int]]:
-        n = 1
-        while max(b - a for a, b in pieces(length, n)) * least > most:
-            n += 1
-        return pieces(length, n)
-
-    across, down = fewest(w, width), fewest(h, height)
-    wide, tall = max(b - a for a, b in across), max(b - a for a, b in down)
-    k = next(k for k in ZOOM if wide * k <= width and tall * k <= height)
-    return k, [[x0, y0, x1, y1] for y0, y1 in down for x0, x1 in across]
+def tiles(size: tuple[int, int], width: int, height: int, overlap: int = OVERLAP) -> list[list[int]]:
+    """An enlarged crop (width, height) cut into tiles no bigger than `width` by `height`,
+    overlapping by `overlap`: each tile's box, band by band from the top, left to right
+    in each band, as a line is read."""
+    return [[x0, y0, x1, y1] for y0, y1 in segments(size[1], height, overlap)
+            for x0, x1 in segments(size[0], width, overlap)]
 
 
-def check_height(heights: list[int], head: int) -> int:
-    """A check image's height: its head, then each part of a crop under its label."""
-    return head + sum(LABEL + h + GAP for h in heights)
-
-
-def check_pages(heights: list[int], head: int, size: tuple[int, int] = CHECK) -> list[list[int]]:
-    """A plate's crop parts (their heights once enlarged) onto check images size[0] wide, in
-    order: an image takes parts until the next would make it more than size[1] pixels, and
-    always at least one. Each image's part numbers."""
-    out: list[list[int]] = [[]]
-    for i, h in enumerate(heights):
-        if out[-1] and size[0] * check_height([heights[j] for j in out[-1]] + [h], head) > size[1]:
-            out.append([])
-        out[-1].append(i)
+def check_layout(blocks: list[tuple[int, list[int]]], size: tuple[int, int] = CHECK,
+                 pad: int = PAD) -> list[list[tuple[int, list[int]]]]:
+    """Plates' blocks onto check images size[0] wide and at most size[1] pixels, in order.
+    A block is its head's height and its parts' heights (each part a tile under its
+    label). An image takes whole blocks while they fit; a block too tall for any image
+    goes onto images of its own, its parts in order, its head repeated on each. Each
+    image's (block number, its part numbers) in order."""
+    most = size[1] // size[0] - 2 * pad
+    out: list[list[tuple[int, list[int]]]] = []
+    room = 0
+    for b, (head, parts) in enumerate(blocks):
+        tall = head + sum(LABEL + h + GAP for h in parts)
+        if tall <= most:
+            if out and tall <= room:
+                out[-1].append((b, list(range(len(parts)))))
+                room -= tall
+            else:
+                out.append([(b, list(range(len(parts))))])
+                room = most - tall
+            continue
+        page, used = [], head
+        for i, h in enumerate(parts):
+            if page and used + LABEL + h + GAP > most:
+                out.append([(b, page)])
+                page, used = [], head
+            page.append(i)
+            used += LABEL + h + GAP
+        out.append([(b, page)])
+        room = 0
     return out
 
 
@@ -864,10 +872,12 @@ def wrap(text: str, fits) -> list[str]:
     return lines
 
 
-def check(folio: str) -> None:
-    """One image or more per plate with an imprint, for checking it against the crops, as
-    the module's docstring says. A run's images replace the last run's."""
+def check(folio: str, zoom: int = ZOOM) -> None:
+    """Check images of every plate with an imprint, several plates to an image, as the
+    module's docstring says. A run's images replace the last run's."""
     from PIL import Image, ImageDraw, ImageFont, ImageOps
+    if zoom < 1:
+        raise SystemExit("--zoom must be 1 or more")
     folder, out = ROOT / folio, work(folio)
     volumes = credits.per_volume(folder)
     (out / "check").mkdir(exist_ok=True)
@@ -876,14 +886,14 @@ def check(folio: str) -> None:
     font, small = ImageFont.load_default(size=24), ImageFont.load_default(size=18)
     measure = ImageDraw.Draw(Image.new("L", (1, 1)))
     room = CHECK[0] - 2 * PAD
-    index = []
+    most = CHECK[1] // CHECK[0] - 2 * PAD
+    plates = []   # (tag, head lines, [(label, tile)])
     for p in credits.read(folder / "plates.csv")[1]:
         if not p.get("imprint"):
             continue
         t = credits.tag(p, volumes)
-        lines = [t] + wrap(p["imprint"], lambda s: measure.textlength(s, font=font) <= room)
-        head = 8 + 30 * len(lines) + 6
-        tall = CHECK[1] // CHECK[0] - head - LABEL - GAP
+        lines = wrap(f"{t}   {p['imprint']}", lambda s: measure.textlength(s, font=font) <= room)
+        head = 6 + 30 * len(lines) + 4
         parts = []
         for side, name in (("L", "left"), ("R", "right")):
             path = out / "crops" / f"{t}-{side}.png"
@@ -891,34 +901,40 @@ def check(folio: str) -> None:
                 continue
             with Image.open(path) as im:
                 crop = ImageOps.autocontrast(im.convert("L"), cutoff=1)
-            k, boxes = enlarge(crop.size, room, tall)
+            big = crop.resize((crop.width * zoom, crop.height * zoom), Image.LANCZOS)
+            boxes = tiles(big.size, room, max(most - head - LABEL - GAP, 2 * OVERLAP + 1))
             for n, b in enumerate(boxes, 1):
-                piece = crop.crop(b)
-                piece = piece.resize((piece.width * k, piece.height * k), Image.LANCZOS)
-                label = f"{name} crop, x{k}"
+                label = f"{name} crop, x{zoom}"
                 if len(boxes) > 1:
-                    label += (f", piece {n} of {len(boxes)}: x {b[0]}-{b[2]}, y {b[1]}-{b[3]}"
-                              f" of {crop.width} x {crop.height}")
-                parts.append((label, piece))
-        pages = check_pages([piece.height for _, piece in parts], head)
-        names = [f"{t}.png"] if len(pages) == 1 else [f"{t}-{chr(97 + i)}.png" for i in range(len(pages))]
-        for name, page in zip(names, pages):
-            image = Image.new("L", (CHECK[0], check_height([parts[i][1].height for i in page], head)), 255)
-            d = ImageDraw.Draw(image)
-            first = f"{t}   ({name}, {names.index(name) + 1} of {len(names)})" if len(names) > 1 else t
-            top = [first] + lines[1:]
-            for n, line in enumerate(top):
-                d.text((PAD, 8 + 30 * n), line, fill=0, font=font)
-            y = head
-            for i in page:
-                label, piece = parts[i]
+                    label += f", part {n} of {len(boxes)}: x {b[0]}-{b[2]}, y {b[1]}-{b[3]} of {big.width} x {big.height}"
+                parts.append((label, big.crop(b)))
+        plates.append((t, lines, parts))
+    pages = check_layout([(6 + 30 * len(lines) + 4, [tile.height for _, tile in parts]) for _, lines, parts in plates])
+    digits = max(3, len(str(len(pages))))
+    index = []
+    for n, page in enumerate(pages, 1):
+        name = f"{n:0{digits}d}.png"
+        height = 2 * PAD + sum(6 + 30 * len(plates[b][1]) + 4 + sum(LABEL + plates[b][2][i][1].height + GAP for i in parts)
+                               for b, parts in page)
+        image = Image.new("L", (CHECK[0], height), 255)
+        d = ImageDraw.Draw(image)
+        y = PAD
+        for k, (b, parts) in enumerate(page):
+            t, lines, tiles_ = plates[b]
+            if k:
+                d.line([(0, y), (CHECK[0], y)], fill=120, width=2)
+            for j, line in enumerate(lines):
+                d.text((PAD, y + 6 + 30 * j), line, fill=0, font=font)
+            y += 6 + 30 * len(lines) + 4
+            for i in parts:
+                label, tile = tiles_[i]
                 d.text((PAD, y + 3), label, fill=90, font=small)
-                image.paste(piece, (PAD, y + LABEL))
-                y += LABEL + piece.height + GAP
-            image.save(out / "check" / name)
+                image.paste(tile, (PAD, y + LABEL))
+                y += LABEL + tile.height + GAP
             index.append({"tag": t, "file": name})
+        image.save(out / "check" / name)
     write_csv(out / "check" / "index.csv", ["tag", "file"], index)
-    print(f"{folio}: {len({x['tag'] for x in index})} plates in {len(index)} check images -> {out / 'check'}")
+    print(f"{folio}: {len(plates)} plates in {len(pages)} check images at x{zoom} -> {out / 'check'}")
 
 
 def main() -> int:
@@ -926,6 +942,7 @@ def main() -> int:
     ap.add_argument("command", choices=["crop", "sheets", "draft", "scan", "check", "apply"])
     ap.add_argument("folio", choices=credits.FOLIOS)
     ap.add_argument("rest", nargs="*", help="scan: plate tags; apply: the readings file")
+    ap.add_argument("--zoom", type=int, default=ZOOM, help=f"check: enlarge each crop this many times (default {ZOOM})")
     args = ap.parse_args()
     if args.command == "crop":
         crop(args.folio)
@@ -936,7 +953,7 @@ def main() -> int:
     elif args.command == "scan":
         scan(args.folio, args.rest)
     elif args.command == "check":
-        check(args.folio)
+        check(args.folio, args.zoom)
     else:
         apply(ROOT / args.folio, credits.read(Path(args.rest[0]))[1])
         print(f"{args.folio}: readings applied; credits.csv regenerated")

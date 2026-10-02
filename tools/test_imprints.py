@@ -277,37 +277,52 @@ class Sheets(unittest.TestCase):
 
 
 class Check(unittest.TestCase):
-    def test_pieces_are_equal_and_overlap_by_a_tenth(self):
-        self.assertEqual(imprints.pieces(1000, 1), [(0, 1000)])
-        self.assertEqual(imprints.pieces(1900, 2), [(0, 1000), (900, 1900)])
-        self.assertEqual(imprints.pieces(2800, 3), [(0, 1000), (900, 1900), (1800, 2800)])
+    def test_a_line_that_fits_is_one_segment(self):
+        self.assertEqual(imprints.segments(1388, 1388), [(0, 1388)])
+        self.assertEqual(imprints.segments(300, 1388), [(0, 300)])
 
-    def test_a_crop_is_enlarged_by_3_where_it_fits_else_by_2(self):
-        self.assertEqual(imprints.enlarge((450, 70), 1388, 680), (3, [[0, 0, 450, 70]]))
-        self.assertEqual(imprints.enlarge((570, 70), 1388, 680), (2, [[0, 0, 570, 70]]))
-        self.assertEqual(imprints.enlarge((300, 300), 1388, 680), (2, [[0, 0, 300, 300]]))
+    def test_a_long_line_is_cut_into_the_fewest_equal_segments_overlapping_by_40(self):
+        self.assertEqual(imprints.segments(2400, 1388), [(0, 1220), (1180, 2400)])
+        segs = imprints.segments(7600, 1388)
+        self.assertEqual(len(segs), 6)
+        self.assertEqual((segs[0][0], segs[-1][1]), (0, 7600))
+        for (a, b), (c, d) in zip(segs, segs[1:]):
+            self.assertEqual(b - c, 40)
+        self.assertTrue(all(b - a <= 1388 for a, b in segs))
+        self.assertEqual(len(imprints.segments(1389, 1388)), 2)
 
-    def test_a_crop_too_big_at_2_is_cut_into_the_fewest_pieces_that_fit_each_by_3_if_it_can(self):
-        self.assertEqual(imprints.enlarge((696, 84), 1388, 680), (3, [[0, 0, 366, 84], [330, 0, 696, 84]]))
-        k, boxes = imprints.enlarge((1000, 70), 1388, 680)
-        self.assertEqual((k, boxes), (2, [[0, 0, 526, 70], [474, 0, 1000, 70]]))
-        k, boxes = imprints.enlarge((1900, 400), 1388, 680)
-        self.assertEqual((k, len(boxes)), (2, 6))
-        for x0, y0, x1, y1 in boxes:
-            self.assertLessEqual((x1 - x0) * k, 1388)
-            self.assertLessEqual((y1 - y0) * k, 680)
-        self.assertEqual({(b[0], b[2]) for b in boxes}, {(0, 679), (611, 1289), (1221, 1900)})
-        self.assertEqual({(b[1], b[3]) for b in boxes}, {(0, 211), (189, 400)})
+    def test_tiles_go_band_by_band_left_to_right(self):
+        self.assertEqual(imprints.tiles((2400, 320), 1388, 667), [[0, 0, 1220, 320], [1180, 0, 2400, 320]])
+        self.assertEqual(imprints.tiles((2400, 1600), 1388, 667), [
+            [0, 0, 1220, 560], [1180, 0, 2400, 560],
+            [0, 520, 1220, 1080], [1180, 520, 2400, 1080],
+            [0, 1040, 1220, 1600], [1180, 1040, 2400, 1600]])
 
-    def test_parts_fill_an_image_until_the_next_would_make_it_too_big(self):
-        head = 68
-        self.assertEqual(imprints.check_height([140, 210], head), 68 + 26 + 140 + 10 + 26 + 210 + 10)
-        self.assertEqual(imprints.check_pages([140, 210], head), [[0, 1]])
-        self.assertEqual(imprints.check_pages([422] * 3 + [100], head), [[0], [1], [2, 3]])
-        self.assertEqual(imprints.check_pages([900], head), [[0]])
-        for page in imprints.check_pages([300, 300, 300, 50, 50], head):
-            self.assertLessEqual(1400 * imprints.check_height([[300, 300, 300, 50, 50][i] for i in page], head),
-                                 1_100_000)
+    @staticmethod
+    def tall(blocks, page):
+        return 2 * imprints.PAD + sum(blocks[b][0] + sum(imprints.LABEL + blocks[b][1][i] + imprints.GAP for i in parts)
+                                      for b, parts in page)
+
+    def test_an_image_takes_whole_blocks_while_they_fit(self):
+        # 1400 x 1,100,000 is 785 rows, 773 inside the margins; a part takes 26 + h + 10
+        blocks = [(40, [100]), (40, [100, 100]), (40, [300]), (40, [100])]   # 176, 312, 376, 176
+        self.assertEqual(imprints.check_layout(blocks), [[(0, [0]), (1, [0, 1])], [(2, [0]), (3, [0])]])
+        self.assertEqual(imprints.check_layout([(40, [100]), (40, [697])]), [[(0, [0])], [(1, [0])]])
+        self.assertEqual(self.tall([(40, [697])], [(0, [0])]), 785)
+
+    def test_a_block_too_tall_for_any_image_goes_onto_images_of_its_own(self):
+        blocks = [(40, [100]), (70, [300, 300, 300, 300]), (40, [100]), (40, [100])]   # 70 + 4 x 336
+        self.assertEqual(imprints.check_layout(blocks),
+                         [[(0, [0])], [(1, [0, 1])], [(1, [2, 3])], [(2, [0]), (3, [0])]])
+        self.assertEqual(imprints.check_layout([(40, [698])]), [[(0, [0])]])   # 774 rows: alone, all the same
+
+    def test_no_image_is_over_the_limit(self):
+        blocks = [(40, [100]), (70, [600] * 3), (40, [50] * 30), (100, [320, 320]), (40, [10])] * 3
+        pages = imprints.check_layout(blocks)
+        for page in pages:
+            self.assertLessEqual(1400 * self.tall(blocks, page), 1_100_000)
+        seen = [(b, i) for page in pages for b, parts in page for i in parts]
+        self.assertEqual(seen, [(b, i) for b, (_, parts) in enumerate(blocks) for i in range(len(parts))])
 
     def test_text_wraps_at_spaces(self):
         self.assertEqual(imprints.wrap("aa bb cc", lambda s: len(s) <= 5), ["aa bb", "cc"])
