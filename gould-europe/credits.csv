@@ -155,10 +155,10 @@ plate,name,role,as_printed
 39,Elizabeth Gould,drew,J & E. Gould.
 39,Elizabeth Gould,lithographed,J & E. Gould.
 39,Charles Joseph Hullmandel,printed,C. Hullmandel.
-40,John Gould,drew,J & E Gould.
-40,John Gould,lithographed,J & E Gould.
-40,Elizabeth Gould,drew,J & E Gould.
-40,Elizabeth Gould,lithographed,J & E Gould.
+40,John Gould,drew,J & E. Gould.
+40,John Gould,lithographed,J & E. Gould.
+40,Elizabeth Gould,drew,J & E. Gould.
+40,Elizabeth Gould,lithographed,J & E. Gould.
 40,Charles Joseph Hullmandel,printed,C. Hullmandel.
 41,John Gould,drew,J & E. Gould.
 41,John Gould,lithographed,J & E. Gould.
@@ -167,8 +167,8 @@ plate,name,role,as_printed
 41,Charles Joseph Hullmandel,printed,C. Hullmandel.
 42,Edward Lear,drew,E. Lear
 42,Charles Joseph Hullmandel,printed,C. Hullmandel.
-43,Edward Lear,drew,E. Lear
-43,Edward Lear,lithographed,E. Lear
+43,Edward Lear,drew,E. Lear.
+43,Edward Lear,lithographed,E. Lear.
 43,Charles Joseph Hullmandel,printed,C. Hullmandel.
 44,John Gould,drew,J & E. Gould.
 44,John Gould,lithographed,J & E. Gould.
@@ -358,10 +358,10 @@ plate,name,role,as_printed
 82,Elizabeth Gould,drew,J & E. Gould.
 82,Elizabeth Gould,lithographed,J & E. Gould.
 82,Charles Joseph Hullmandel,printed,C. Hullmandel.
-84,John Gould,drew,J & E. Gould
-84,John Gould,lithographed,J & E. Gould
-84,Elizabeth Gould,drew,J & E. Gould
-84,Elizabeth Gould,lithographed,J & E. Gould
+84,John Gould,drew,J & E. Gould.
+84,John Gould,lithographed,J & E. Gould.
+84,Elizabeth Gould,drew,J & E. Gould.
+84,Elizabeth Gould,lithographed,J & E. Gould.
 84,Charles Joseph Hullmandel,printed,C. Hullmandel.
 85,John Gould,drew,J & E. Gould.
 85,John Gould,lithographed,J & E. Gould.
@@ -467,7 +467,7 @@ plate,name,role,as_printed
 105,John Gould,lithographed,J & E. Gould.
 105,Elizabeth Gould,drew,J & E. Gould.
 105,Elizabeth Gould,lithographed,J & E. Gould.
-105,Charles Joseph Hullmandel,printed,C. Hullmandel.
+105,Charles Joseph Hullmandel,printed,C. Hullmandel
 106,John Gould,drew,J & E. Gould.
 106,John Gould,lithographed,J & E. Gould.
 106,Elizabeth Gould,drew,J & E. Gould.
@@ -553,10 +553,10 @@ plate,name,role,as_printed
 122,Elizabeth Gould,drew,J & E. Gould.
 122,Elizabeth Gould,lithographed,J & E. Gould.
 122,Charles Joseph Hullmandel,printed,C. Hullmandel.
-123,John Gould,drew,J & E. Gould.
-123,John Gould,lithographed,J & E. Gould.
-123,Elizabeth Gould,drew,J & E. Gould.
-123,Elizabeth Gould,lithographed,J & E. Gould.
+123,John Gould,drew,J & E. Gould
+123,John Gould,lithographed,J & E. Gould
+123,Elizabeth Gould,drew,J & E. Gould
+123,Elizabeth Gould,lithographed,J & E. Gould
 123,Charles Joseph Hullmandel,printed,C. Hullmandel.
 124,John Gould,drew,J & E. Gould.
 124,John Gould,lithographed,J & E. Gould.
@@ -902,7 +902,7 @@ plate,name,role,as_printed
 192,John Gould,lithographed,J & E. Gould.
 192,Elizabeth Gould,drew,J & E. Gould.
 192,Elizabeth Gould,lithographed,J & E. Gould.
-192,Charles Joseph Hullmandel,printed,C. Hullmandel.
+192,Charles Joseph Hullmandel,printed,C. Hullmandel
 193,John Gould,drew,J & E. Gould.
 193,John Gould,lithographed,J & E. Gould.
 193,Elizabeth Gould,drew,J & E. Gould.
@@ -957,7 +957,7 @@ plate,name,role,as_printed
 203,John Gould,lithographed,J & E. Gould.
 203,Elizabeth Gould,drew,J & E. Gould.
 203,Elizabeth Gould,lithographed,J & E. Gould.
-203,Charles Joseph Hullmandel,printed,C. Hullmandel
+203,Charles Joseph Hullmandel,printed,C Hullmandel
 204,John Gould,drew,J & E. Gould.
 204,John Gould,lithographed,J & E. Gould.
 204,Elizabeth Gould,drew,J & E. Gould.
@@ -1087,7 +1087,7 @@ plate,name,role,as_printed
 231,John Gould,lithographed,J & E. Gould.
 231,Elizabeth Gould,drew,J & E. Gould.
 231,Elizabeth Gould,lithographed,J & E. Gould.
-231,Charles Joseph Hullmandel,printed,C. Hullmandel.
+231,Charles Joseph Hullmandel,printed,C. Hullmandel
 232,John Gould,drew,J & E. Gould.
 232,John Gould,lithographed,J & E. Gould.
 232,Elizabeth Gould,drew,J & E. Gould.
@@ -1184,10 +1184,10 @@ plate,name,role,as_printed
 260,Elizabeth Gould,drew,J & E. Gould.
 260,Elizabeth Gould,lithographed,J & E. Gould.
 260,Charles Joseph Hullmandel,printed,C. Hullmandel.
-262,John Gould,drew,J & E. Gould.
-262,John Gould,lithographed,J & E. Gould.
-262,Elizabeth Gould,drew,J & E. Gould.
-262,Elizabeth Gould,lithographed,J & E. Gould.
+262,John Gould,drew,J. & E. Gould.
+262,John Gould,lithographed,J. & E. Gould.
+262,Elizabeth Gould,drew,J. & E. Gould.
+262,Elizabeth Gould,lithographed,J. & E. Gould.
 262,Charles Joseph Hullmandel,printed,C. Hullmandel.
 263,John Gould,drew,J & E. Gould.
 263,John Gould,lithographed,J & E. Gould.
@@ -1202,14 +1202,14 @@ plate,name,role,as_printed
 270,Edward Lear,drew,E. Lear
 270,Edward Lear,lithographed,E. Lear
 270,Charles Joseph Hullmandel,printed,C Hullmandel
-271,Edward Lear,drew,E. Lear
-271,Edward Lear,lithographed,E. Lear
+271,Edward Lear,drew,E Lear
+271,Edward Lear,lithographed,E Lear
 271,Charles Joseph Hullmandel,printed,C. Hullmandel.
 272,Edward Lear,drew,E. Lear
 272,Edward Lear,lithographed,E. Lear
 272,Charles Joseph Hullmandel,printed,C. Hullmandel.
-273,Edward Lear,drew,E. Lear
-273,Edward Lear,lithographed,E. Lear
+273,Edward Lear,drew,E Lear
+273,Edward Lear,lithographed,E Lear
 273,Charles Joseph Hullmandel,printed,C. Hullmandel
 274,Edward Lear,drew,E. Lear
 274,Edward Lear,lithographed,E. Lear
@@ -1221,7 +1221,7 @@ plate,name,role,as_printed
 275,Charles Joseph Hullmandel,printed,C. Hullmandel.
 276,Edward Lear,drew,E. Lear
 276,Edward Lear,lithographed,E. Lear
-276,Charles Joseph Hullmandel,printed,C. Hullmandel
+276,Charles Joseph Hullmandel,printed,C Hullmandel
 277,Edward Lear,drew,E. Lear
 277,Edward Lear,lithographed,E. Lear
 277,Charles Joseph Hullmandel,printed,C. Hullmandel
@@ -1238,8 +1238,8 @@ plate,name,role,as_printed
 283,Edward Lear,drew,E. Lear
 283,Edward Lear,lithographed,E. Lear
 283,Charles Joseph Hullmandel,printed,C. Hullmandel.
-284,Edward Lear,drew,E. Lear
-284,Edward Lear,lithographed,E. Lear
+284,Edward Lear,drew,ELear
+284,Edward Lear,lithographed,ELear
 284,Charles Joseph Hullmandel,printed,C. Hullmandel.
 285,Edward Lear,drew,E. Lear
 285,Edward Lear,lithographed,E. Lear
@@ -1277,10 +1277,10 @@ plate,name,role,as_printed
 293,Elizabeth Gould,drew,J & E. Gould.
 293,Elizabeth Gould,lithographed,J & E. Gould.
 293,Charles Joseph Hullmandel,printed,C. Hullmandel.
-294,John Gould,drew,J & E. Gould.
-294,John Gould,lithographed,J & E. Gould.
-294,Elizabeth Gould,drew,J & E. Gould.
-294,Elizabeth Gould,lithographed,J & E. Gould.
+294,John Gould,drew,J & E Gould.
+294,John Gould,lithographed,J & E Gould.
+294,Elizabeth Gould,drew,J & E Gould.
+294,Elizabeth Gould,lithographed,J & E Gould.
 294,Charles Joseph Hullmandel,printed,C. Hullmandel.
 295,John Gould,drew,J & E. Gould
 295,John Gould,lithographed,J & E. Gould
@@ -1312,10 +1312,10 @@ plate,name,role,as_printed
 300,Elizabeth Gould,drew,J & E. Gould.
 300,Elizabeth Gould,lithographed,J & E. Gould.
 300,Charles Joseph Hullmandel,printed,C. Hullmandel.
-301,John Gould,drew,J & E. Gould.
-301,John Gould,lithographed,J & E. Gould.
-301,Elizabeth Gould,drew,J & E. Gould.
-301,Elizabeth Gould,lithographed,J & E. Gould.
+301,John Gould,drew,J & E Gould.
+301,John Gould,lithographed,J & E Gould.
+301,Elizabeth Gould,drew,J & E Gould.
+301,Elizabeth Gould,lithographed,J & E Gould.
 301,Charles Joseph Hullmandel,printed,C. Hullmandel.
 302,John Gould,drew,J & E. Gould.
 302,John Gould,lithographed,J & E. Gould.
@@ -1387,11 +1387,11 @@ plate,name,role,as_printed
 317,Elizabeth Gould,drew,J & E. Gould.
 317,Elizabeth Gould,lithographed,J & E. Gould.
 317,Charles Joseph Hullmandel,printed,C. Hullmandel.
-318,John Gould,drew,J & E. Gould.
-318,John Gould,lithographed,J & E. Gould.
-318,Elizabeth Gould,drew,J & E. Gould.
-318,Elizabeth Gould,lithographed,J & E. Gould.
-318,Charles Joseph Hullmandel,printed,C. Hullmandel.
+318,John Gould,drew,J & E Gould.
+318,John Gould,lithographed,J & E Gould.
+318,Elizabeth Gould,drew,J & E Gould.
+318,Elizabeth Gould,lithographed,J & E Gould.
+318,Charles Joseph Hullmandel,printed,C Hullmandel.
 319,John Gould,drew,J & E. Gould.
 319,John Gould,lithographed,J & E. Gould.
 319,Elizabeth Gould,drew,J & E. Gould.
@@ -1442,10 +1442,10 @@ plate,name,role,as_printed
 328,Elizabeth Gould,drew,J & E. Gould.
 328,Elizabeth Gould,lithographed,J & E. Gould.
 328,Charles Joseph Hullmandel,printed,C. Hullmandel.
-329,John Gould,drew,J & E. Gould.
-329,John Gould,lithographed,J & E. Gould.
-329,Elizabeth Gould,drew,J & E. Gould.
-329,Elizabeth Gould,lithographed,J & E. Gould.
+329,John Gould,drew,J & E Gould.
+329,John Gould,lithographed,J & E Gould.
+329,Elizabeth Gould,drew,J & E Gould.
+329,Elizabeth Gould,lithographed,J & E Gould.
 329,Charles Joseph Hullmandel,printed,C. Hullmandel.
 330,John Gould,drew,J & E. Gould
 330,John Gould,lithographed,J & E. Gould
@@ -1540,8 +1540,8 @@ plate,name,role,as_printed
 351,Edward Lear,drew,E. Lear
 351,Edward Lear,lithographed,E. Lear
 351,Charles Joseph Hullmandel,printed,C. Hullmandel.
-353,Edward Lear,drew,E. Lear
-353,Edward Lear,lithographed,E. Lear
+353,Edward Lear,drew,E Lear
+353,Edward Lear,lithographed,E Lear
 353,Charles Joseph Hullmandel,printed,C Hullmandel
 354,Edward Lear,drew,E. Lear
 354,Edward Lear,lithographed,E. Lear
@@ -1549,8 +1549,8 @@ plate,name,role,as_printed
 355,Edward Lear,drew,E. Lear
 355,Edward Lear,lithographed,E. Lear
 355,Charles Joseph Hullmandel,printed,C. Hullmandel.
-356,Edward Lear,drew,E. Lear
-356,Edward Lear,lithographed,E. Lear
+356,Edward Lear,drew,ELear
+356,Edward Lear,lithographed,ELear
 356,Charles Joseph Hullmandel,printed,C. Hullmandel.
 357,John Gould,drew,J & E. Gould.
 357,John Gould,lithographed,J & E. Gould.
@@ -1766,7 +1766,7 @@ plate,name,role,as_printed
 403,John Gould,lithographed,J & E. Gould.
 403,Elizabeth Gould,drew,J & E. Gould.
 403,Elizabeth Gould,lithographed,J & E. Gould.
-403,Charles Joseph Hullmandel,printed,C. Hullmandel.
+403,Charles Joseph Hullmandel,printed,C Hullmandel.
 404,John Gould,drew,J & E. Gould.
 404,John Gould,lithographed,J & E. Gould.
 404,Elizabeth Gould,drew,J & E. Gould.
@@ -1795,8 +1795,8 @@ plate,name,role,as_printed
 411,Edward Lear,drew,E. Lear
 411,Edward Lear,lithographed,E. Lear
 411,Charles Joseph Hullmandel,printed,C. Hullmandel.
-413,Edward Lear,drew,E. Lear
-413,Edward Lear,lithographed,E. Lear
+413,Edward Lear,drew,E Lear
+413,Edward Lear,lithographed,E Lear
 413,Charles Joseph Hullmandel,printed,C. Hullmandel.
 414,John Gould,drew,J & E. Gould.
 414,John Gould,lithographed,J & E. Gould.
@@ -1894,13 +1894,13 @@ plate,name,role,as_printed
 437,Elizabeth Gould,drew,J & E. Gould.
 437,Elizabeth Gould,lithographed,J & E. Gould.
 437,Charles Joseph Hullmandel,printed,C. Hullmandel.
-438,Edward Lear,drew,E. Lear
-438,Edward Lear,lithographed,E. Lear
+438,Edward Lear,drew,E Lear
+438,Edward Lear,lithographed,E Lear
 438,Charles Joseph Hullmandel,printed,C. Hullmandel.
-439,John Gould,drew,J & E. Gould.
-439,John Gould,lithographed,J & E. Gould.
-439,Elizabeth Gould,drew,J & E. Gould.
-439,Elizabeth Gould,lithographed,J & E. Gould.
+439,John Gould,drew,J & E Gould.
+439,John Gould,lithographed,J & E Gould.
+439,Elizabeth Gould,drew,J & E Gould.
+439,Elizabeth Gould,lithographed,J & E Gould.
 439,Charles Joseph Hullmandel,printed,C. Hullmandel.
 440,John Gould,drew,J & E. Gould.
 440,John Gould,lithographed,J & E. Gould.
@@ -1912,10 +1912,10 @@ plate,name,role,as_printed
 442,Elizabeth Gould,drew,J & E. Gould.
 442,Elizabeth Gould,lithographed,J & E. Gould.
 442,Charles Joseph Hullmandel,printed,C. Hullmandel.
-443,John Gould,drew,J & E. Gould.
-443,John Gould,lithographed,J & E. Gould.
-443,Elizabeth Gould,drew,J & E. Gould.
-443,Elizabeth Gould,lithographed,J & E. Gould.
+443,John Gould,drew,J & E Gould.
+443,John Gould,lithographed,J & E Gould.
+443,Elizabeth Gould,drew,J & E Gould.
+443,Elizabeth Gould,lithographed,J & E Gould.
 443,Charles Joseph Hullmandel,printed,C. Hullmandel.
 444,John Gould,drew,J & E. Gould.
 444,John Gould,lithographed,J & E. Gould.
