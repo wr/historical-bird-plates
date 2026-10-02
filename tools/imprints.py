@@ -51,8 +51,13 @@ or AFTER) that run together take one space between them ("Drawnfrom" is "Drawn
 from", "onStone" "on Stone", "delet lith" "del et lith"), and so does "by" run into
 a capital ("byJ. Gould"). So "J.Gould &H.C.Richter,del" is written "J. Gould &
 H. C. Richter, del". Other letters that run together with no mark between
-("HCRichter", "Hullmandel") are left as they are. Stops, commas, colons, capitals,
-& or and, and spelling are as engraved.
+("Hullmandel") are left as they are. Initials are written by convention too: every
+capital standing as an initial, before a name, another initial, & or and, or glued
+to a name, is written with a stop and a space ("J Wolf & HCRichter" is "J. Wolf &
+H. C. Richter", "J & E Gould" "J. & E. Gould"), because the stops after initials
+are fused with the letters' serifs at the scans' resolution and cannot be read.
+Every other stop, and commas, colons, capitals, & or and, and spelling are as
+engraved.
 
 Needs Pillow, and macOS for the OCR (tools/ocr.swift, compiled into .cache/ on
 first use). `apply`, the line finding and the layout of the contact sheets need
@@ -596,7 +601,31 @@ def normalise_line(line: str) -> str:
     s = re.sub(r"([.,;:])(?=[^\s.,;:])", r"\1 ", s)
     s = re.sub(r"(?<=[a-z])and(?=[A-Z])", " and ", s)
     s = re.sub(r"\band(?=[A-Z])", "and ", s)
-    return " ".join(s.split())
+    return initials(" ".join(s.split()))
+
+
+def initials(line: str) -> str:
+    """Every initial written "X. ": a lone capital, with a stop or without, followed by
+    another initial, & or and, or a capitalised word; and capitals glued to a name or to
+    a stop before one ("HCRichter", "HC. Richter", "JGould"). Words that begin with a
+    capital ("Drawn", "Imp.") and lowercase abbreviations are left as they are."""
+    tokens = []
+    for tok in line.split():
+        glued = re.fullmatch(r"([A-Z]+)([A-Z][a-z]\S*)", tok)
+        if glued:
+            tokens += list(glued.group(1)) + [glued.group(2)]
+        elif re.fullmatch(r"[A-Z]{2,}\.", tok):
+            tokens += list(tok[:-1])
+        else:
+            tokens.append(tok)
+    lone = lambda t: re.fullmatch(r"[A-Z]\.?", t)
+    nxt = lambda t: lone(t) or t in ("&", "and") or re.match(r"[A-Z][a-z]", t)
+    out = []
+    for i, tok in enumerate(tokens):
+        if lone(tok) and i + 1 < len(tokens) and nxt(tokens[i + 1]):
+            tok = tok[0] + "."
+        out.append(tok)
+    return " ".join(out)
 
 
 def normalise(imprint: str) -> str:

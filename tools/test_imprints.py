@@ -335,7 +335,7 @@ class Normalise(unittest.TestCase):
         self.assertEqual(imprints.normalise("J.Gould & H.C.Richter, del et lith. | Walter,Imp."),
                          "J. Gould & H. C. Richter, del et lith. | Walter, Imp.")
         self.assertEqual(imprints.normalise("Drawn from Nature& on Stone by J &E. Gould."),
-                         "Drawn from Nature & on Stone by J & E. Gould.")
+                         "Drawn from Nature & on Stone by J. & E. Gould.")
         self.assertEqual(imprints.normalise("J.&E. Gould del et lith."), "J. & E. Gould del et lith.")
         self.assertEqual(imprints.normalise("J.J. Audubon F.R.S. F.L.S."), "J. J. Audubon F. R. S. F. L. S.")
 
@@ -346,7 +346,7 @@ class Normalise(unittest.TestCase):
 
     def test_no_space_before_a_mark_and_none_at_a_line_s_end(self):
         self.assertEqual(imprints.normalise("Drawn by J & E. Gould . |  Printed by C. Hullmandel. "),
-                         "Drawn by J & E. Gould. | Printed by C. Hullmandel.")
+                         "Drawn by J. & E. Gould. | Printed by C. Hullmandel.")
         self.assertEqual(imprints.normalise("E. Lear del: et lith:"), "E. Lear del: et lith:")
         self.assertEqual(imprints.normalise("del.,et"), "del., et")
         self.assertEqual(imprints.normalise("J & .E. Gould"), "J &. E. Gould")   # a mark keeps to what precedes it
@@ -354,7 +354,7 @@ class Normalise(unittest.TestCase):
     def test_words_of_a_wording_run_together_take_a_space(self):
         for line, spaced in (("Drawnfrom Nature & onStoneby J. & E. Gould", "Drawn from Nature & on Stone by J. & E. Gould"),
                              ("Drawnfromnature & on stone by", "Drawn from nature & on stone by"),
-                             ("J. Gould and H. CRichter delet lith", "J. Gould and H. CRichter del et lith"),
+                             ("J. Gould and H. CRichter delet lith", "J. Gould and H. C. Richter del et lith"),
                              ("E. Lear deletlith.", "E. Lear del et lith."),
                              ("Engravedby R. Havell", "Engraved by R. Havell"),
                              ("Drawn on Stone fromaDrawing by Edwd. Lear", "Drawn on Stone from a Drawing by Edwd. Lear")):
@@ -373,13 +373,34 @@ class Normalise(unittest.TestCase):
             with self.subTest(run=run):
                 self.assertEqual(imprints.run_apart(run), run)
 
-    def test_stops_capitals_and_letters_run_together_are_untouched(self):
-        for line in ("J Wolf & HCRichter del et lith", "E Lear del et lithog", "Drawn from life and on stone by J & E Gould"):
+    def test_every_initial_is_written_with_a_stop_and_a_space(self):
+        for line, written in (("J Wolf & HCRichter, del et lith.", "J. Wolf & H. C. Richter, del et lith."),
+                              ("H.CRichter", "H. C. Richter"),
+                              ("J & E Gould", "J. & E. Gould"),
+                              ("W.H.Lizars Edinr.", "W. H. Lizars Edinr."),
+                              ("J.J. Audubon F. R. S. F. L. S.", "J. J. Audubon F. R. S. F. L. S."),
+                              ("I & E. Gould", "I. & E. Gould"),
+                              ("C C. Hullmandel", "C. C. Hullmandel"),
+                              ("J. Gould & HC. Richter, del et lith.", "J. Gould & H. C. Richter, del et lith."),
+                              ("JGould andHCRichter: del. et lith.", "J. Gould and H. C. Richter: del. et lith."),
+                              ("J.Wolf & WHart,del et lith.", "J. Wolf & W. Hart, del et lith."),
+                              ("Drawn on Stone by ELear", "Drawn on Stone by E. Lear"),
+                              ("E Lear del et lithog", "E. Lear del et lithog"),
+                              ("Printed by C Hullmandel", "Printed by C. Hullmandel")):
+            with self.subTest(line=line):
+                self.assertEqual(imprints.normalise(line), written)
+
+    def test_capitals_beginning_words_and_lowercase_abbreviations_are_untouched(self):
+        for line in ("Drawn from life and on stone by", "Walter & Cohn, Imp", "Hullmandel & Walton Imp.",
+                     "Engraved, Printed & Coloured by R. Havell Junr.", "J. Gould del et lith", "del: et lith:"):
             with self.subTest(line=line):
                 self.assertEqual(imprints.normalise(line), line)
+        self.assertEqual(imprints.initials("Richter Imp. Drawn"), "Richter Imp. Drawn")
+        self.assertEqual(imprints.initials("J"), "J")   # a capital with nothing after it is not taken for an initial
 
     def test_normalising_twice_changes_nothing(self):
-        for line in ("J.Gould &H.C.Richter,del et lith | Walter,Imp.", "J.J. Audubon F.R.S. F.L.S.", "J & .E. Gould"):
+        for line in ("J.Gould &H.C.Richter,del et lith | Walter,Imp.", "J.J. Audubon F.R.S. F.L.S.", "J & .E. Gould",
+                     "J Wolf & HCRichter, del et lith.", "C C. Hullmandel"):
             with self.subTest(line=line):
                 once = imprints.normalise(line)
                 self.assertEqual(imprints.normalise(once), once)
