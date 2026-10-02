@@ -13,3 +13,4 @@ jobs:
       - run: python3 tools/validate.py
       - run: python3 tools/test_identify.py
       - run: python3 tools/test_credits.py
+      - run: python3 tools/test_imprints.py
