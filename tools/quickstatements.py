@@ -7,7 +7,8 @@
     python3 tools/quickstatements.py havell --chunk 80 -o havell  # havell-1.qs, havell-2.qs, ...
 
 Each item: instance of (print type), part of the work with the plate's number
-(and volume) as qualifiers, creator, title, BHL page ID where the folio is
+(and volume) as qualifiers, creators and printer from the plate's credit line
+(credits.csv), each referenced to the scan, title, BHL page ID where the folio is
 scanned on BHL, and `depicts` for every species identified with confidence
 high or judged, referenced to this dataset. A plate is eligible when it is
 identified and that identification was checked against the engraved caption
@@ -46,6 +47,11 @@ REPO = "https://github.com/wr/historical-bird-plates"
 GOULD, AUDUBON = "Q313787", "Q182882"
 LITHOGRAPH, ENGRAVING = "Q15123870", "Q11835431"
 LIST_ARTICLE = "Q13406463"
+DRAFTSPERSON, LITHOGRAPHER, ENGRAVER, COLORIST = "Q15296811", "Q16947657", "Q329439", "Q1111648"
+# credits.csv role -> the item that qualifies `creator` (P3831, object of statement has role).
+# "retouched" has none: Wikidata's retoucher (Q33383789) is a photographic trade, so a
+# retoucher is a creator with no role rather than a wrong one. "printed" is `printed by`.
+ROLE_ITEM = {"drew": DRAFTSPERSON, "lithographed": LITHOGRAPHER, "engraved": ENGRAVER, "coloured": COLORIST}
 FOLIOS = {
     "gould-europe":    ("Q51448070", "The Birds of Europe", GOULD, LITHOGRAPH, "hand-coloured lithograph"),
     "gould-australia": ("Q967304", "The Birds of Australia", GOULD, LITHOGRAPH, "hand-coloured lithograph"),
@@ -136,6 +142,39 @@ def clean(s: str) -> str:
     return " ".join(s.split())
 
 
+def artist_qids() -> dict[str, str]:
+    """artists.csv name -> Wikidata item, for the names that have one."""
+    return {r["name"]: r["wikidata"] for r in read(ROOT / "artists.csv") if r["wikidata"]}
+
+
+def credited(folder: str, per_volume: bool) -> dict[tuple[str, str], list[dict]]:
+    """credits.csv rows by (volume, plate); volume blank for a folio numbered straight through."""
+    by: dict[tuple[str, str], list[dict]] = {}
+    for c in read(ROOT / folder / "credits.csv"):
+        by.setdefault((c["volume"] if per_volume else "", c["plate"]), []).append(c)
+    return by
+
+
+def creator_lines(subject: str, plate_credits: list[dict], qids: dict[str, str], url: str, imprint: str) -> list[str]:
+    """`creator` with its roles for each artist the credit line names, and `printed by` for
+    its printer; each referenced to the plate's scan, quoting the credit line."""
+    ref = f"\tS854\t{q(url)}\tS1683\ten:{q(imprint)}"
+    roles: dict[str, list[str]] = {}
+    for c in plate_credits:
+        roles.setdefault(c["name"], []).append(c["role"])
+    lines = []
+    for name, rs in roles.items():
+        qid = qids.get(name)
+        if not qid:
+            continue
+        if any(r != "printed" for r in rs):
+            quals = "".join(f"\tP3831\t{ROLE_ITEM[r]}" for r in rs if r in ROLE_ITEM)
+            lines.append(f"{subject}\tP170\t{qid}{quals}{ref}")
+        if "printed" in rs:
+            lines.append(f"{subject}\tP872\t{qid}{ref}")
+    return lines
+
+
 def listing(parts: list[str], names: set = frozenset()) -> str:
     """"A, B and C". A last part with an "and" in it is one bird if it is a printed
     name ("Black and White Kingfisher"); otherwise it already joins two
@@ -169,6 +208,7 @@ def batch(folder: str, only: set | None, limit: int | None, check_existing: bool
     # A folio numbered per volume (Australia, Britain, Asia) keys its plates by
     # volume and number; species.csv then leads with `volume` too.
     per_volume = bool(species) and "volume" in species[0]
+    creds, qids = credited(folder, per_volume), artist_qids()
     key = lambda r: (r.get("volume", "") if per_volume else "", r["plate"])
     by_plate: dict = {}
     for s in species:
@@ -244,9 +284,11 @@ def batch(folder: str, only: set | None, limit: int | None, check_existing: bool
                      f"LAST\tLen\t{q(name)}",
                      f"LAST\tDen\t{q(desc)}",
                      f"LAST\tP31\t{kind}",
-                     f"LAST\tP361{part}",
-                     f"LAST\tP170\t{artist}"]
+                     f"LAST\tP361{part}"]
             subject = "LAST"
+        url = p.get("page_url") or p.get("image_url") or ""
+        if p.get("imprint") and url:
+            block += creator_lines(subject, creds.get(k, []), qids, url, p["imprint"])
         if printed:
             block.append(f"{subject}\tP1476\t{lang}:{q(printed)}")
         if p.get("bhl_page"):
