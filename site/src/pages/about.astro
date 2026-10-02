@@ -1,0 +1,44 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { folios, href, plates } from "../lib/data";
+import { REPO } from "../lib/links";
+
+const misnamed = plates.filter((p) => p.misnamed.length).length;
+const open = plates.filter((p) => p.open).length;
+---
+<Layout title="About · Historical bird plates" description={`How ${plates.length.toLocaleString("en")} plates from Audubon's and Gould's folios were identified to modern species, how to get the data, and how to cite it.`}>
+  <article class="prose">
+    <h1>About</h1>
+    <p class="lede">Every plate of five great nineteenth-century bird folios, matched to the bird it actually shows, in today's taxonomy, with the reasoning.</p>
+    <p>Old plates name their birds the way their authors did, and many of those names now belong to other species: Gould's “Black-headed Gull” is today's Mediterranean Gull. {misnamed} plates carry a printed name that eBird now gives to a different bird. <a href={href("?flag=m")}>See them on the wall</a>.</p>
+
+    <h2>How the plates were identified</h2>
+    <ul>
+      <li>Names and codes follow eBird/Clements 2025. Each identification also carries the IDs other tools join on: eBird, Wikidata, GBIF, Avibase and BirdNET.</li>
+      <li>Gould's plates were checked against the engraved caption on the scan wherever it could be read, against Gould's own text, and against the University of Kansas catalogue.</li>
+      <li>Audubon's were mapped from Wikimedia Commons and the Havell titles, and the hard cases checked one by one against audubon.org, the University of Pittsburgh and the New-York Historical Society.</li>
+      <li>Each identification is certain, judged (a considered call, argued in its reasoning) or open. The {open} open plates each say what would settle them.</li>
+    </ul>
+    <p>Each folio's README has the full story, traps included:</p>
+    <ul>
+      {folios.map((f) => <li><a href={f.readme}>{f.author.split(" ").pop()}, <i>{f.title}</i></a></li>)}
+    </ul>
+
+    <h2>Get the data</h2>
+    <p>The tables are CSV files on <a href={REPO}>GitHub</a>, described by a Frictionless <code>datapackage.json</code> and archived on <a href="https://doi.org/10.5281/zenodo.22964828">Zenodo</a>. The cleaned images, full sheets and art crops, are in each folio's GitHub release.</p>
+
+    <h2>Cite</h2>
+    <p>Riley, W. <i>Historical bird plates: modern identifications</i>. Zenodo. <a href="https://doi.org/10.5281/zenodo.22964828">doi:10.5281/zenodo.22964828</a>.</p>
+
+    <h2>Licence and credit</h2>
+    <ul>
+      <li>The tables are dedicated to the public domain under CC0 1.0.</li>
+      <li>The plates are public-domain works of the 1820s–80s. The cleaned images are marked with the Public Domain Mark.</li>
+      <li>Gould scans: Smithsonian Libraries and Archives, via the Biodiversity Heritage Library.</li>
+      <li>Havell scans: courtesy of the John James Audubon Center at Mill Grove, Montgomery County Audubon Collection, and Zebra Publishing.</li>
+    </ul>
+
+    <h2>Help</h2>
+    <p>Think a plate is wrong, or can settle an open one? <a href={`${REPO}/issues`}>Open an issue</a> or a pull request with the evidence. The best evidence is the plate itself: the caption, the figure, the bird.</p>
+  </article>
+</Layout>
