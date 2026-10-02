@@ -1,0 +1,43 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PlateStrip from "../../components/PlateStrip.astro";
+import { absolute, folioOf, href, imageSrc, plateById, species, speciesHref } from "../../lib/data";
+import { outlinks } from "../../lib/links";
+import { speciesDescription, speciesJsonLd, speciesTitle } from "../../lib/seo";
+import { plural } from "../../scripts/wall-core";
+import type { Species } from "../../lib/types";
+
+export function getStaticPaths() {
+  return species.map((s) => ({ params: { slug: s.slug }, props: { s } }));
+}
+
+interface Props {
+  s: Species;
+}
+const { s } = Astro.props;
+const shownOn = s.plates.map((id) => plateById.get(id)!);
+const printedAs = s.printed_as.map((id) => plateById.get(id)!);
+const inFolios = [...new Set(shownOn.map(folioOf))];
+const cover = shownOn.find((p) => p.image);
+const image = cover ? absolute(imageSrc(cover, "crop")) : undefined;
+---
+<Layout title={speciesTitle(s)} description={speciesDescription(s, inFolios)} image={image} jsonld={speciesJsonLd(s, absolute(speciesHref(s)), image)}>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <span><a href={href()}>Plates</a> / <a href={href("species/")}>Species</a> / <span aria-current="page">{s.common}</span></span>
+  </nav>
+  <header class="plate-head">
+    <p class="eyebrow">{s.family_common} · {s.family} · {s.order}</p>
+    <h1>{s.common}</h1>
+    <p class="sci">{s.scientific}</p>
+    {s.extinct && <ul class="facts"><li>Extinct</li></ul>}
+    <p>{plural(shownOn.length, "plate")} in {plural(inFolios.length, "folio")}.</p>
+  </header>
+  <PlateStrip plates={shownOn} height={320} />
+  {printedAs.length > 0 && (
+    <section class="elsewhere">
+      <h2>Printed as the {s.common}, but showing another bird</h2>
+      <PlateStrip plates={printedAs} height={200} showShown />
+    </section>
+  )}
+  <ul class="outlinks">{outlinks(s).map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+</Layout>

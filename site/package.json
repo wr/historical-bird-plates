@@ -1,0 +1,20 @@
+{
+  "name": "historical-bird-plates-site",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.12" },
+  "scripts": {
+    "data": "python3 ../tools/site_data.py",
+    "predev": "npm run data",
+    "dev": "astro dev",
+    "prebuild": "npm run data",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "node --test src/lib/*.test.ts src/scripts/*.test.ts"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@fontsource-variable/newsreader": "^5.3.0",
+    "astro": "^7.3.5"
+  }
+}

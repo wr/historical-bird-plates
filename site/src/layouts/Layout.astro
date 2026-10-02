@@ -1,0 +1,55 @@
+---
+import "@fontsource-variable/newsreader/opsz.css";
+import "@fontsource-variable/newsreader/opsz-italic.css";
+import "../styles/global.css";
+import Seo from "../components/Seo.astro";
+import { absolute, folioHref, folios, href, imageSrc, plates } from "../lib/data";
+import { REPO } from "../lib/links";
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  jsonld?: object;
+}
+const { title, description, image, jsonld } = Astro.props;
+const cover = plates.find((p) => p.image);
+const ogImage = image ?? (cover ? absolute(imageSrc(cover, "crop")) : undefined);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>document.documentElement.classList.add("js")</script>
+    <Seo title={title} description={description} image={ogImage} jsonld={jsonld} />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href={href("favicon.svg")} type="image/svg+xml" />
+    <link rel="sitemap" href={href("sitemap-index.xml")} />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-head">
+      <a class="brand" href={href()}>Historical bird plates</a>
+      <nav aria-label="Site">
+        <details class="menu">
+          <summary>Folios</summary>
+          <ul>
+            {folios.map((f) => (
+              <li><a href={folioHref(f)}>{f.author.split(" ").pop()}, <i>{f.title}</i></a></li>
+            ))}
+          </ul>
+        </details>
+        <a href={href("species/")}>Species</a>
+        <a href={href("about/")}>About</a>
+        <a href={REPO}>Data</a>
+      </nav>
+    </header>
+    <main id="main"><slot /></main>
+    <footer class="site-foot">
+      <p>Every plate of five nineteenth-century bird folios, identified to modern species. The tables are CC0; the plates are in the public domain.</p>
+      <p>Gould scans: Smithsonian Libraries and Archives, via the Biodiversity Heritage Library. Havell scans: courtesy of the John James Audubon Center at Mill Grove, Montgomery County Audubon Collection, and Zebra Publishing.</p>
+      <p>Cite: Riley, W. <i>Historical bird plates: modern identifications</i>. Zenodo. <a href="https://doi.org/10.5281/zenodo.22964828">doi:10.5281/zenodo.22964828</a></p>
+    </footer>
+  </body>
+</html>

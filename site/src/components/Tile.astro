@@ -1,0 +1,37 @@
+---
+import { folioOf, imageSrc, plateHref } from "../lib/data";
+import { altText, norm, shown } from "../lib/seo";
+import type { Plate } from "../lib/types";
+
+interface Props {
+  plate: Plate;
+}
+const { plate: p } = Astro.props;
+const f = folioOf(p);
+const img = p.image;
+const ar = img ? img.thumb[0] / img.thumb[1] : 0.75;
+const name = shown(p);
+const printed = p.printed.name && norm(p.printed.name) !== norm(name) ? p.printed.name : "";
+const style = `--ar:${ar.toFixed(4)}${img ? `;--c:${img.colour}` : ""}`;
+---
+<a class="tile" href={plateHref(p)} data-id={p.id} style={style}>
+  {img ? (
+    <img
+      src={imageSrc(p, "thumb")}
+      srcset={`${imageSrc(p, "thumb")} ${img.thumb[0]}w, ${imageSrc(p, "crop")} ${img.crop[0]}w`}
+      sizes={`auto, (max-width: 600px) ${Math.round(ar * 120)}px, ${Math.round(ar * 180)}px`}
+      width={img.thumb[0]}
+      height={img.thumb[1]}
+      alt={altText(p, f)}
+      loading="lazy"
+      decoding="async"
+    />
+  ) : (
+    <span class="missing">{f.short} {p.key}: not yet in the image release</span>
+  )}
+  <span class="cap" aria-hidden="true">
+    <span class="cap-name">{name}</span>
+    {printed && <span>Printed “{printed}”</span>}
+    <span>{f.short} {p.key}</span>
+  </span>
+</a>

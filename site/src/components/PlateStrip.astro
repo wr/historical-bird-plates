@@ -1,0 +1,44 @@
+---
+import { folioOf, imageSrc, plateHref } from "../lib/data";
+import { altText, shown } from "../lib/seo";
+import type { Plate } from "../lib/types";
+
+interface Props {
+  plates: Plate[];
+  height: number;
+  showShown?: boolean;
+}
+const { plates, height, showShown = false } = Astro.props;
+---
+<ul class="strip" style={`--strip-h:${height}px`}>
+  {plates.map((p) => {
+    const f = folioOf(p);
+    const ar = p.image ? p.image.thumb[0] / p.image.thumb[1] : 0.75;
+    return (
+      <li style={`--ar:${ar.toFixed(4)}`}>
+        <a href={plateHref(p)}>
+          {p.image ? (
+            <img
+              src={imageSrc(p, "thumb")}
+              srcset={`${imageSrc(p, "thumb")} ${p.image.thumb[0]}w, ${imageSrc(p, "crop")} ${p.image.crop[0]}w`}
+              sizes={`${Math.round(ar * height)}px`}
+              width={p.image.thumb[0]}
+              height={p.image.thumb[1]}
+              alt={altText(p, f)}
+              loading="lazy"
+              decoding="async"
+            />
+          ) : (
+            <span class="missing">Not yet in the image release</span>
+          )}
+          <span class="strip-cap">
+            <span>{f.short}, {f.years}</span>
+            <span>{p.label}</span>
+            {p.printed.name && <span class="strip-printed">“{p.printed.name}”</span>}
+            {showShown && <span>Shows: {shown(p)}</span>}
+          </span>
+        </a>
+      </li>
+    );
+  })}
+</ul>

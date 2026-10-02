@@ -1,0 +1,36 @@
+---
+import { imageSrc } from "../lib/data";
+import { altText, sheetAlt } from "../lib/seo";
+import type { Folio, Plate } from "../lib/types";
+
+interface Props {
+  plate: Plate;
+  folio: Folio;
+}
+const { plate: p, folio: f } = Astro.props;
+const img = p.image!;
+---
+<figure class="viewer" data-viewer>
+  <div class="stage" data-stage>
+    <img data-cut="crop" src={imageSrc(p, "crop")} width={img.crop[0]} height={img.crop[1]} alt={altText(p, f)}
+      fetchpriority="high" draggable="false" style="view-transition-name: plate" />
+    <img data-cut="sheet" src={imageSrc(p, "sheet")} width={img.sheet[0]} height={img.sheet[1]}
+      alt={sheetAlt(p)} loading="lazy" draggable="false" hidden />
+  </div>
+  <figcaption class="viewer-bar">
+    <span class="segmented" role="group" aria-label="Show">
+      <button type="button" data-show="crop" aria-pressed="true">Plate</button>
+      <button type="button" data-show="sheet" aria-pressed="false">Full sheet</button>
+    </span>
+    <span class="zoom" role="group" aria-label="Zoom">
+      <button type="button" data-zoom="out" aria-label="Zoom out">−</button>
+      <button type="button" data-zoom="in" aria-label="Zoom in">+</button>
+      <button type="button" data-zoom="reset" hidden>Reset</button>
+    </span>
+    {p.original && <a href={p.original}>Full resolution</a>}
+    <span class="credit">{p.credit || f.credit}</span>
+  </figcaption>
+</figure>
+<script>
+  import "../scripts/viewer";
+</script>
