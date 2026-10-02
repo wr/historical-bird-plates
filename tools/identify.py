@@ -27,8 +27,13 @@ new to the dataset gets them by rule:
     `scientific` as a taxon synonym, or labelled with the eBird English name;
     the last two only when their own epithet matches. The candidate with the
     most sitelinks wins.
-  - gbif: that item's GBIF key (P846), followed to the accepted name when GBIF
-    calls it a synonym; blank unless GBIF has it at species rank.
+  - gbif: from the GBIF Backbone, the accepted species named `scientific`;
+    else the species that name is a synonym of; else the species the item's
+    GBIF key (P846) is, or is a synonym of; else the name's doubtful key, if
+    it is the name's only species-rank key; else blank. Never a subspecies or
+    a key the Backbone has deleted, and a synonym is followed only to a
+    species of the same epithet (the genus, and so the gender ending, may
+    differ).
   - avibase: that item's Avibase ID (P2026), blank when it has none or several.
   - birdnet_label: BirdNET GLOBAL 6K V2.4's label with the same scientific
     name, else the one with the same English name; blank when BirdNET has no
@@ -58,6 +63,8 @@ BIRDNET_LABELS_URL = ("https://raw.githubusercontent.com/joeweiss/birdnetlib/mai
                       "models/analyzer/BirdNET_GLOBAL_6K_V2.4_Labels.txt")
 SPARQL = "https://query.wikidata.org/sparql"
 GBIF = "https://api.gbif.org/v1/species/"
+BACKBONE = "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"
+GBIF_RULE = 2  # raise when the gbif rule changes, so .cache/gbif.json is looked up again
 UA = {"User-Agent": "historical-bird-plates identify (+https://github.com/wr/historical-bird-plates)"}
 
 DECISION_COLUMNS = ["book", "volume", "plate", "figure", "scientific", "form", "confidence",
@@ -155,6 +162,15 @@ def epithet(name: str) -> str:
     return name.split()[-1] if name else ""
 
 
+def same_epithet(a: str, b: str) -> bool:
+    """Whether two epithets are one name declined for its genus (griseus/grisea, niger/nigrum, sinense/sinensis)."""
+    def masculine(e: str) -> set[str]:
+        e = e.lower()
+        return {e} | {e[:-len(end)] + to for end, to in (("a", "us"), ("um", "us"), ("ra", "er"), ("rum", "er"),
+                                                          ("e", "is")) if e.endswith(end)}
+    return bool(masculine(a) & masculine(b))
+
+
 def sparql(query: str) -> list[dict]:
     body = urllib.parse.urlencode({"query": query, "format": "json"}).encode()
     data = json.loads(get(SPARQL, body, {"Content-Type": "application/x-www-form-urlencoded",
@@ -180,13 +196,17 @@ class Ids:
         self.names = names
         self.path = CACHE / "ids.json"
         self.cache: dict = json.loads(self.path.read_text()) if self.path.exists() else {}
+        # GBIF keys by "scientific|Wikidata's key". A cache from another rule, or from before rules
+        # were numbered (a flat key -> key map), is dropped rather than read.
         self.gbif_path = CACHE / "gbif.json"
-        self.gbif_cache: dict = json.loads(self.gbif_path.read_text()) if self.gbif_path.exists() else {}
+        gbif = json.loads(self.gbif_path.read_text()) if self.gbif_path.exists() else {}
+        self.gbif_cache: dict = gbif.get("keys", {}) if gbif.get("rule") == GBIF_RULE else {}
 
     def save(self) -> None:
         CACHE.mkdir(exist_ok=True)
         self.path.write_text(json.dumps(self.cache, indent=0, sort_keys=True))
-        self.gbif_path.write_text(json.dumps(self.gbif_cache, indent=0, sort_keys=True))
+        gbif = {"rule": GBIF_RULE, "keys": self.gbif_cache}
+        self.gbif_path.write_text(json.dumps(gbif, indent=0, sort_keys=True))
 
     def lookup(self, scis: list[str]) -> None:
         todo = [s for s in dict.fromkeys(scis) if s not in self.cache]
@@ -233,41 +253,74 @@ class Ids:
             print(f"  wikidata: {min(i + 60, len(todo))}/{len(todo)}", file=sys.stderr)
 
     @staticmethod
-    def _accepted(key: str) -> str:
-        try:
-            r = json.loads(get(GBIF + key))
-        except urllib.error.HTTPError:
-            return ""
-        if r.get("taxonomicStatus", "").endswith("SYNONYM") and r.get("acceptedKey"):
-            acc = json.loads(get(GBIF + str(r["acceptedKey"])))
-            return str(acc["key"]) if acc.get("rank") == "SPECIES" else ""
-        return key if r.get("rank") == "SPECIES" and r.get("taxonomicStatus") in ("ACCEPTED", "DOUBTFUL") else ""
+    def _accepted(sci: str, key: str) -> str:
+        """The GBIF Backbone key for species `sci` by the rule in the module notes; `key` is Wikidata's."""
+        def record(k: str) -> dict:
+            try:
+                return json.loads(get(GBIF + k))
+            except urllib.error.HTTPError:
+                return {}
+
+        def current(r: dict) -> bool:
+            # A live Backbone bird at species rank: never a subspecies, a deleted key or another kingdom's homonym.
+            return (r.get("datasetKey") == BACKBONE and not r.get("deleted") and r.get("class") == "Aves"
+                    and r.get("rank") == "SPECIES")
+
+        def species(r: dict) -> str:
+            """The accepted species `r` is, or is a synonym of, if that has `sci`'s epithet; else blank."""
+            if not current(r):
+                return ""
+            if r.get("taxonomicStatus", "").endswith("SYNONYM"):
+                r = record(str(r["acceptedKey"])) if r.get("acceptedKey") else {}
+                if not current(r):
+                    return ""
+            if r.get("taxonomicStatus") != "ACCEPTED":
+                return ""
+            return str(r["key"]) if same_epithet(epithet(r.get("canonicalName", "")), epithet(sci)) else ""
+
+        query = urllib.parse.urlencode({"name": sci, "datasetKey": BACKBONE, "limit": 100})
+        usages = [r for r in json.loads(get(GBIF + "?" + query))["results"]
+                  if current(r) and r.get("canonicalName") == sci]
+        found = {species(r) for r in usages if r["taxonomicStatus"] == "ACCEPTED"} - {""}
+        if not found:
+            found = {species(r) for r in usages if r["taxonomicStatus"].endswith("SYNONYM")} - {""}
+        if not found and key:
+            found = {species(record(key))} - {""}
+        if found:
+            # Two species for one name is a question for a person, not the rule.
+            return found.pop() if len(found) == 1 else ""
+        if len(usages) == 1 and usages[0]["taxonomicStatus"] == "DOUBTFUL":
+            return str(usages[0]["key"])
+        return ""
+
+    def slot(self, sci: str) -> str:
+        """`sci`'s entry in gbif.json, named for the rule's two inputs: the name and Wikidata's key."""
+        return f"{sci}|{self.cache[sci]['gbif']}"
 
     def prefetch(self, scis: list[str]) -> None:
         """Look up every species' item, then its GBIF key, several at a time (GBIF answers slowly)."""
         self.lookup(scis)
-        keys = sorted({self.cache[s]["gbif"] for s in scis if self.cache[s]["gbif"]} - set(self.gbif_cache))
+        todo = sorted({s for s in scis if self.slot(s) not in self.gbif_cache})
+        keys = [self.cache[s]["gbif"] for s in todo]
         with ThreadPoolExecutor(max_workers=16) as pool:
-            for n, (key, out) in enumerate(zip(keys, pool.map(self._accepted, keys)), start=1):
-                self.gbif_cache[key] = out
+            for n, (sci, out) in enumerate(zip(todo, pool.map(self._accepted, todo, keys)), start=1):
+                self.gbif_cache[self.slot(sci)] = out
                 if n % 100 == 0:
                     self.save()
-                    print(f"  gbif: {n}/{len(keys)}", file=sys.stderr)
+                    print(f"  gbif: {n}/{len(todo)}", file=sys.stderr)
         self.save()
 
-    def gbif(self, key: str) -> str:
-        """The key itself if GBIF accepts it as a species, its accepted species if a synonym, else blank."""
-        if not key:
-            return ""
-        if key not in self.gbif_cache:
-            self.gbif_cache[key] = self._accepted(key)
+    def gbif(self, sci: str) -> str:
+        """`sci`'s GBIF key by the rule in the module notes; its item must be looked up first."""
+        if self.slot(sci) not in self.gbif_cache:
+            self.gbif_cache[self.slot(sci)] = self._accepted(sci, self.cache[sci]["gbif"])
             self.save()
-        return self.gbif_cache[key]
+        return self.gbif_cache[self.slot(sci)]
 
     def of(self, sci: str) -> dict:
         self.lookup([sci])
         c = self.cache[sci]
-        return {"wikidata": c["wikidata"], "gbif": self.gbif(c["gbif"]), "avibase": c["avibase"]}
+        return {"wikidata": c["wikidata"], "gbif": self.gbif(sci), "avibase": c["avibase"]}
 
 
 def fill(r: dict, names: Names, ids: Ids) -> dict:

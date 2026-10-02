@@ -49,12 +49,12 @@
           {
             "name": "sheet_asset",
             "type": "string",
-            "description": "The full plate in the havell-v1 release."
+            "description": "The full plate in the havell-v2 release."
           },
           {
             "name": "crop_asset",
             "type": "string",
-            "description": "The plate with its lettering trimmed, in the havell-v1 release."
+            "description": "The plate with its lettering trimmed, in the havell-v2 release."
           },
           {
             "name": "notes",

@@ -6,7 +6,7 @@ Five volumes and 449 plates: 448 in this copy, as one was never found. Drawn and
 
 ## The plates
 
-Every plate as its art crop, by General List number. The full-size images are in the [`gould-europe-v1`](https://github.com/wr/historical-bird-plates/releases/tag/gould-europe-v1) release.
+Every plate as its art crop, by General List number. The full-size images are in the [`gould-europe-v2`](https://github.com/wr/historical-bird-plates/releases/tag/gould-europe-v2) release.
 
 **Plates 1–50**
 
@@ -16,33 +16,33 @@ Every plate as its art crop, by General List number. The full-size images are in
 
 ![Plates 51–100](img/plates-051-100.jpg)
 
-**Plates 101–151**
+**Plates 101–150**
 
-![Plates 101–151](img/plates-101-151.jpg)
+![Plates 101–150](img/plates-101-150.jpg)
 
-**Plates 152–201**
+**Plates 151–200**
 
-![Plates 152–201](img/plates-152-201.jpg)
+![Plates 151–200](img/plates-151-200.jpg)
 
-**Plates 202–251**
+**Plates 201–250**
 
-![Plates 202–251](img/plates-202-251.jpg)
+![Plates 201–250](img/plates-201-250.jpg)
 
-**Plates 252–301**
+**Plates 251–300**
 
-![Plates 252–301](img/plates-252-301.jpg)
+![Plates 251–300](img/plates-251-300.jpg)
 
-**Plates 302–351**
+**Plates 301–350**
 
-![Plates 302–351](img/plates-302-351.jpg)
+![Plates 301–350](img/plates-301-350.jpg)
 
-**Plates 352–401**
+**Plates 351–400**
 
-![Plates 352–401](img/plates-352-401.jpg)
+![Plates 351–400](img/plates-351-400.jpg)
 
-**Plates 402–449**
+**Plates 401–449**
 
-![Plates 402–449](img/plates-402-449.jpg)
+![Plates 401–449](img/plates-401-449.jpg)
 
 ## Files
 
@@ -67,7 +67,7 @@ Every plate as its art crop, by General List number. The full-size images are in
 3. **Names.** Each List row was mapped to a modern species through its Latin name, its English name and the literature. Each mapping got a confidence and a written reason (`sources/crosswalk.csv`).
 4. **Checking.** An identification is `caption_checked: yes` only when its leaf's engraved caption names that bird, by Latin epithet or the whole English name, never a shared family word. It was checked by eye on the scan. 411 identifications on 392 plates meet that bar.
    - **High but unchecked:** 43 more `high` rows are not caption-checked: secondary plates of species checked elsewhere, and 26 birds BirdNET has no class for. Until 1 Oct those 26 had their species left blank; they carry it now.
-   - **Open:** four rows ask a specific question (132, 256, 348, 444), and 249 is the Capercaillie × Black Grouse hybrid, with no species. The 20 `low` rows of the first pass were researched on 1 Oct (W-931): the rest are settled, most of them `judged`.
+   - **Open:** three rows ask a specific question (132, 348, 444). 249 (Capercaillie × Black Grouse) and 363 (the British "Bimaculated Duck", a Common Teal hybrid) are hybrids, with no species. The first pass's 20 `low` rows were researched on 1 Oct (W-931) and every row checked again by an independent pass (W-936).
 5. **Modern names.** Each identification was first made to BirdNET V2.4's labels (Featherframe's use), then carried to eBird/Clements 2025. Where the two taxonomies differ, `reason` says so. The Wikidata, GBIF and Avibase ids come from the species' Wikidata item. Wikidata often has two items for one species, one under an older genus; the item used is the one Wikipedia links to (the most sitelinks) among those at species rank that carry the row's `scientific` name or eBird code, or are listed as their synonym with the same species epithet. Where GBIF doesn't accept that item's key as a species, GBIF's accepted species for the name is used.
 
 ## Traps
@@ -84,7 +84,13 @@ These are the plates a careful reader would still get wrong.
 - **The Dalmatian Regulus** (149) is Pallas's Leaf Warbler.
 - **The Imperial Eagle** (5) is the eastern bird.
 - **A plate drawn before a split** stands for the species as it was then understood (`form: pre-split`).
-- **133** is listed as both Icterine and Melodious Warbler (`judged`; `reason` says why).
+- **133**, Gould's "Melodious Willow Wren", is the Icterine Warbler (`judged`): his range runs to Sweden, which the Melodious doesn't reach, and Seebohm and Dresser cite the plate under the Icterine. Its legs are painted pink, the Melodious's colour, which keeps it from `high`.
+- **One bird per figure:** 119 is the Western Orphean Warbler (western localities, buff flanks), 134 the Western Bonelli's (Natterer's Algeciras bird) and 217 the Iberian Magpie (Captain Cook's specimen from near Madrid). Until 1 Oct each also carried the other daughter of the split.
+- **Naumann's Thrush** (79) is the Dusky Thrush: a blackish breast scaled white, and Seebohm and Dresser cite the plate there.
+- **The Short-toed Ptarmigan** (256) is the Willow Ptarmigan: Temminck's specimen, lent for this plate, survives in Naturalis, Leiden (van der Mije et al. 2023).
+- **The Rufous-backed Egret** (278) is the Eastern Cattle-Egret: orange over the whole head and throat.
+- **The Bimaculated Teal** (363) is not the Baikal Teal but the British "Bimaculated Duck" pair, a Common Teal hybrid (Salvadori).
+- **The Northern Puffin** (404) is the Horned Puffin: an all-orange bill and long horns over the eyes (Ogilvie-Grant).
 - **Sabine's Snipe** (321) is the Common Snipe's dark morph (`form: variant`), not a species.
 - **Chough and grebe:** on 219 and 391, Gould's Latin names have since moved to the other species. The plates decide:
   - 219 has the Red-billed Chough's long, curved red bill;
@@ -98,24 +104,24 @@ These are the plates a careful reader would still get wrong.
 
 The University of Kansas Spencer Library's Ellis Collection copy (volume I: [ku-gould:11233](https://digital.lib.ku.edu/ku-gould/11233)) gives each plate a modern scientific name. It is the one other public identification of this folio. Its names were matched from the printed Latin, not from the birds.
 
-Of the 410 caption-checked species, 409 match a KU plate. `ku-disagreements.csv` lists the 48 rows where KU names something else, by kind:
+Of the 410 caption-checked species, 409 match a KU plate. `ku-disagreements.csv` lists the 54 rows where KU names something else, by kind:
 
 | kind | plates | what it is |
 |---|---|---|
-| error | 14, 20, 50, 63, 65, 67, 75, 86, 108, 130, 137, 149, 193, 205, 207, 249, 360, 408, 442 | KU names another species. Some are unrelated: 360, the Shoveler, is labelled a warbler; 63 is labelled an Australian monarch. Others are Latin look-alikes. |
+| error | 14, 20, 50, 63, 65, 67, 75, 79, 86, 108, 130, 133, 137, 149, 193, 205, 207, 249, 360, 363, 404, 408, 442 | KU names another species. Some are unrelated: 360, the Shoveler, is labelled a warbler; 63 is labelled an Australian monarch. Others are Latin look-alikes. |
 | crossed | 219, 391 | Gould's Latin has since moved to the other species (see Traps) |
 | typo | 247, 273, 274, 276, 371 | same species, KU's spelling (*Aquila* for *Ardea*, a space in a name) |
-| old name | 122, 127, 194, 259, 321, 363, 409, 410 | an older binomial for the same bird |
+| old name | 122, 127, 194, 259, 321, 409, 410 | an older binomial for the same bird |
 | subspecies | 411 | KU names the race |
-| pre-split | 8, 124, 138, 217, 252, 287, 299, 348, 444 | KU gives the parent species before the split |
+| pre-split | 8, 55, 81, 94, 124, 138, 217, 252, 278, 287, 299, 348, 444 | KU gives the parent species before the split |
 | composite | 151, 445 | KU's record names a different figure on the same sheet |
-| open | 132, 256 | KU names a bird the row leaves open |
+| open | 132 | KU names a bird the row leaves open |
 
-That is 19 misidentified plates out of about 445, roughly one in 23. On the brace plates, KU's record names only one figure.
+That is 23 misidentified plates out of about 445, roughly one in 19. On the brace plates, KU's record names only one figure.
 
-## The images: release `gould-europe-v1`
+## The images: release `gould-europe-v2`
 
-Two images per plate leaf, 448 leaves. `manifest.json` and `SHA256SUMS` give each file's sha256.
+Two images per plate leaf, 448 leaves. `manifest.json` and `SHA256SUMS` give each file's sha256. v2 adds plate 132's leaf, which `gould-europe-v1` lacked, and recuts 119's crop; every other file is unchanged.
 
 - **`sheet-<barcode>-<leaf>.jpg`, the cleaned full sheet:**
   - The JPEG 2000 master, stood upright: 90° clockwise for a landscape plate, so its caption runs along the bottom.
@@ -127,6 +133,7 @@ Two images per plate leaf, 448 leaves. `manifest.json` and `SHA256SUMS` give eac
   - A plate with several birds keeps every one.
   - This is Featherframe's cut for e-paper, and more opinionated than the sheet.
   - The Ivory Gull (436) is white on white paper, so its crop is cut from the whole sheet instead.
+  - 119's two figures sit far apart, and the art's box found only the upper one, so its crop is placed by hand.
 
 Clearing the paper is a choice. For the sheet as it is, with its paper and its age, follow the row's `scan_url` to BHL's original.
 

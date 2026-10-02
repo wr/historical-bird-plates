@@ -4,12 +4,12 @@
 
 ## Images
 
-Release [`havell-v1`](https://github.com/wr/historical-bird-plates/releases/tag/havell-v1) has two images of every plate. `manifest.json` and `SHA256SUMS` give each file's sha256.
+Release [`havell-v2`](https://github.com/wr/historical-bird-plates/releases/tag/havell-v2) has two images of every plate. `manifest.json` and `SHA256SUMS` give each file's sha256.
 
-- **`sheet-NNN.jpg`**: the full plate, as audubon.org publishes it, unaltered. About 2.7 GB.
+- **`sheet-NNN.jpg`**: the full plate, as audubon.org publishes it, unaltered. About 2.7 GB. Plate 165 is the exception: audubon.org's file is the octavo lithograph, so `havell-v2` cuts the Havell plate at its plate mark from the University of Pittsburgh's scan on [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:165_Bachmans_Finch.jpg) (public domain).
 - **`crop-NNN.jpg`**: the same plate with its lettering trimmed away: the plate number along the top and the engraved caption along the bottom. It is the whole engraving, never one bird of a sheet. About 250 MB.
 
-Credit the scans: *Courtesy of the John James Audubon Center at Mill Grove, Montgomery County Audubon Collection, and Zebra Publishing.*
+Credit the scans: *Courtesy of the John James Audubon Center at Mill Grove, Montgomery County Audubon Collection, and Zebra Publishing.* Plate 165: *University of Pittsburgh, via Wikimedia Commons.*
 
 - **Rights:** the plates are public domain, and a faithful photograph of a public-domain plate carries no copyright of its own in the US. The images are marked with the [Public Domain Mark](https://creativecommons.org/publicdomain/mark/1.0/). audubon.org offers them under its [terms of use](https://www.audubon.org/terms-use); please follow its credit line.
 - **Other mirrors:** Nathan Buchar's [audubon-bird-plates](https://github.com/nathanbuchar/audubon-bird-plates) holds the same files. Public-domain scans of other copies are on [Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:The_Birds_of_America) and at the University of Pittsburgh's [Darlington Library](https://digital.library.pitt.edu/collection/audubon-birds-america).
@@ -60,6 +60,8 @@ Every plate with its lettering trimmed, by Havell number.
   - `title` is Audubon's title as audubon.org gives it. That is usually the plate's *first-state* lettering, which some plates later changed. Plate 50 is the exception: audubon.org titles it "Black & Yellow Warbler", the later lettering, while its scan carries the 1828 first state, "Swainson's Warbler".
   - `legend` is the lines engraved under the title and Latin name: the figure key and the plant or setting, in Audubon's spelling, transcribed from the scans' caption bands.
 - **`species.csv`**: one row per plate and modern species. On a sheet with several species, `figure` is that species' own key.
+  - `printed_name` is the English title engraved on this release's scan, read off all 435 sheets on 1 Oct 2026, in the engraver's spelling: "Ruffed Grous", "Belted Kingsfisher", "Great Red brested Rail or Fresh-water Marsh hen". Case and hyphens are not compared. On a sheet with several species it is that bird's own title; a bird named only in the legend (284 fig. 3, 285 fig. 2) or a plate with no English title (245) carries its Latin. Where the scan and audubon.org's `title` differ, as on plates 48, 153, 198 and 263, the row's `reason` gives both.
+  - `printed_latin` is the line of capitals under the title, without its author, written as *Genus epithet* in the engraver's spelling and ligatures: *Fringilla corulea*, *Litta carolinensis*, *Hœmatopus bachmani*. It was read twice, independently, and the reads agreed on all but five lines, each settled on the scan. It is blank on 270 (too faint to read letter by letter) and 419 fig. 2, whose title "Ptiliogony's Townsendi" is itself the Latin. Plate 28 swaps the two: its script title is *Vireo Solitarius* and its capitals "SOLITARY FLYCATCHER".
 
 ## How the plates were identified
 
@@ -75,6 +77,13 @@ Every plate with its lettering trimmed, by Havell number.
 ## Traps
 
 - **Plate 50 is a young Magnolia Warbler.** These scans carry its 1828 lettering, "Swainson's Warbler, *Sylvicola swainsonia*". Audubon wrote in 1831 that one drawing had been engraved in place of another while he was away from London, and the plate was re-lettered "Black and yellow warbler, *Sylvia maculosa*, young male". It is not the Swainson's Warbler of plate 198, which Audubon described in 1834. The adult Magnolia pair is plate 123.
+- **Plate 165's audubon.org file is not the Havell plate.** It is the octavo edition's small lithograph (J. T. Bowen, Philadelphia), lettered "Bachman's Pinewood-Finch", at 1082 × 1314 pixels; `havell-v1` carried it. From `havell-v2`, `sheet-165.jpg` is the Havell plate, from the University of Pittsburgh's copy.
+- **Plate 132's "Three-toed Woodpecker" is the Black-backed.** Every back on the plate is solid black, and Audubon himself called it Swainson's *Apternus arcticus* (1839). The American Three-toed is 417, figs. 3–4.
+- **Plate 229's "Scaup Duck" is the Lesser Scaup.** Audubon wrote in 1844 that the bird "figured in my large plates" was the smaller species.
+- **Plate 247's "Velvet Duck" is the White-winged Scoter**, the American daughter of the split; BirdNET still lumps the two, so its label is the Velvet Scoter's.
+- **Plate 45, Traill's Flycatcher, can't be split.** Halley (2025) shows the type, this bird, can't be told as Alder or Willow; both rows are `pre-split`, `judged`.
+- **Plate 407, the "Dusky Albatros", is the Light-mantled** (`judged`): Audubon describes the skin's pale body against a dark head and a long wedge tail, which the colourist's all-brown plate hides.
+- **Plate 394 fig. 2, the "Black-headed Siskin", is the Hooded Siskin** (`judged`), by Audubon's own measurements.
 - **Plate 399's "Mourning Warbler" (figs. 4–5) is MacGillivray's Warbler.** Audubon wrote in 1839 that these Columbia River birds were misnamed on the plate, and named them *Sylvia macgillivrayi*. He has no plate of the true Mourning Warbler.
 - **Nelson's Sparrow is not on 149.** Wilson's "Sharp-tailed Finch" there is the Saltmarsh Sparrow.
 - **Black-throated Diver (346)** is the Pacific Loon on audubon.org and at NYHS. Pitt still says Arctic Loon.
@@ -89,7 +98,7 @@ Every plate with its lettering trimmed, by Havell number.
 
 ## Not identified
 
-7 plates have no species here. Each row's `reason` says why.
+6 plates have no species here. Each row's `reason` says what is known and what would settle it.
 
 **Disputed birds, left out on purpose rather than guessed:**
 - 11, Bird of Washington;
@@ -97,12 +106,10 @@ Every plate with its lettering trimmed, by Havell number.
 - 60, Carbonated Warbler;
 - 164, Tawny Thrush: traditionally the Veery, disputed (Halley 2018);
 - 184, Mangrove Humming Bird;
-- 338, Bemaculated Duck: a hybrid;
-- 407, Dusky Albatros: Light-mantled or Sooty, unsettled.
+- 338, Bemaculated Duck: a hybrid.
 
 Some figures on composite plates are left out for the same reason:
 - 400 fig. 4, Townsend's Bunting;
 - 434 fig. 2, Small-headed Flycatcher, fig. 3, Blue Mountain Warbler, and fig. 4, Bartram's Vireo (yellow-throated and brown-eyed, so not plainly the Red-eyed Vireo that NYHS and the Boston Public Library give);
-- 402's fifth "species" (Kittlitz's Murrelet): curatorial sources list four birds there.
 
-**Composite plates** carry one row per species, with its figure key from the legend. Until 1 Oct only the species Featherframe needed had rows; 21 plates gained 32 birds.
+**Composite plates** carry one row per species, with its figure key from the legend. Until 1 Oct only the species Featherframe needed had rows; 21 plates gained 32 birds, and 402 now has all five, Kittlitz's Murrelet included (fig. 2, Audubon's "young" Black-throated Guillemot). Prey, such as the ducks under the Great-footed Hawk (16), has no row.
