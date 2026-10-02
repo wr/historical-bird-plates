@@ -145,6 +145,12 @@ function start(wall: HTMLElement, form: HTMLFormElement): void {
     if (img) img.style.viewTransitionName = "plate";
   });
 
+  // A focused tile, or a scrolled-to anchor, stops below the sticky controls rather than under them. Their height
+  // changes with the width (the pills wrap), so it is measured; the 8 px leaves room for the focus ring.
+  new ResizeObserver(() => {
+    document.documentElement.style.setProperty("--controls-h", `${form.offsetHeight + 8}px`);
+  }).observe(form);
+
   syncControls();
 
   fetch(wall.dataset.index!)
