@@ -5,7 +5,7 @@
     python3 tools/quickstatements.py gould-europe --plates 1,12,425
     python3 tools/quickstatements.py gould-asia --plates IV.59    # VOL.N for per-volume folios
     python3 tools/quickstatements.py havell --chunk 80 -o havell  # havell-1.qs, havell-2.qs, ...
-    python3 tools/quickstatements.py gould-europe --fix-creators --chunk 80 -o fix-europe   # correct existing items
+    python3 tools/quickstatements.py gould-europe --fix-creators --chunk 25 -o fix-europe   # correct existing items
 
 Each item has: instance of (print type); part of the work, with the plate's
 number (and volume) as qualifiers; its creators and printer, from the plate's
@@ -27,11 +27,14 @@ plate's name gets the plate's statements instead of a new item being made.
 The check reads Wikidata's search index and API, not the query service, which
 can lag by hours; wait a few minutes after a batch ends before rerunning.
 
---fix-creators writes a batch for the plate items this dataset already made (those
-whose `depicts` cites this repository): each credited artist and the printer are
-added from the credit line, and a `creator: John Gould` (or Audubon) the line does
-not name is removed if it is unreferenced. Plates with no artist's credit line read
-are left as they are.
+--fix-creators writes a batch for the plate items this dataset already made: those
+that are part of the work and were created by the maintainer's account (ACCOUNT).
+Each credited artist and the printer are added from the credit line, and a
+`creator: John Gould` (or Audubon) the line does not name is removed if it is
+unreferenced. Plates with no artist's credit line read are left as they are, and so
+is an item someone else made, which is listed on stderr. QuickStatements does not
+bundle edits to an existing item as it does for a new one, so every statement,
+qualifier and reference is an edit of its own: split this batch with --chunk 25.
 
 Wikidata lets an account make about 90 edits a minute, and QuickStatements'
 background runner goes faster, so the excess fails. Split a batch with
@@ -44,6 +47,7 @@ from __future__ import annotations
 import argparse
 import collections
 import csv
+import functools
 import json
 import re
 import sys
@@ -55,6 +59,7 @@ ROOT = Path(__file__).resolve().parents[1]
 UA = {"User-Agent": "historical-bird-plates quickstatements (+https://github.com/wr/historical-bird-plates)"}
 API = "https://www.wikidata.org/w/api.php"
 REPO = "https://github.com/wr/historical-bird-plates"
+ACCOUNT = "Wells.riley"   # the maintainer's Wikidata account, which made this dataset's plate items
 
 GOULD, AUDUBON = "Q313787", "Q182882"
 LITHOGRAPH, ENGRAVING = "Q15123870", "Q11835431"
@@ -172,11 +177,20 @@ def plate_items(ents: dict, work: str, volumes: bool) -> dict[tuple[str, str], l
     return out
 
 
-def ours(claims: dict) -> bool:
-    """Made from this dataset: a `depicts` referenced to this repository."""
-    return any(str(value(x) or "").startswith(REPO)
-               for s in claims.get("P180", []) for ref in s.get("references", [])
-               for x in ref.get("snaks", {}).get("P854", []))
+@functools.cache
+def created() -> frozenset[str]:
+    """Every item ACCOUNT has created, read once per run."""
+    out, cont = [], None
+    while True:
+        d = api(action="query", list="usercontribs", ucuser=ACCOUNT, ucshow="new", ucnamespace=0,
+                uclimit=500, ucprop="title", **({"uccontinue": cont} if cont else {}))
+        out += [c["title"] for c in d["query"]["usercontribs"]]
+        cont = d.get("continue", {}).get("uccontinue")
+        if not cont:
+            break
+    if not out:
+        sys.exit(f"{ACCOUNT} has created no items on Wikidata; is ACCOUNT the right name?")
+    return frozenset(out)
 
 
 def fix_item(qid: str, claims: dict, plate_credits: list[dict], qids: dict[str, str], url: str,
@@ -192,24 +206,30 @@ def fix_item(qid: str, claims: dict, plate_credits: list[dict], qids: dict[str, 
     lines = [x for x in creator_lines(qid, plate_credits, qids, url, imprint)
              if not at_scan(x.split("\t")[1], x.split("\t")[2])]
     named = {qids.get(c["name"]) for c in plate_credits if c["role"] != "printed"}
-    reports = []
+    by_artist: dict[str, list[dict]] = {}
     for s in claims.get("P170", []):
         v = (value(s["mainsnak"]) or {}).get("id")
         if v in ARTIST and v not in named:
-            if s.get("references"):
-                reports.append(f"{qid}: keeps creator {ARTIST[v]}, which someone else has referenced")
-            else:
-                lines.append(f"-{qid}\tP170\t{v}")
+            by_artist.setdefault(v, []).append(s)
+    reports = []
+    for v, statements in by_artist.items():
+        # `-QID P170 value` removes whichever statement of that value QuickStatements finds
+        # last, so one referenced statement among several keeps them all.
+        if any(s.get("references") for s in statements):
+            reports.append(f"{qid}: keeps creator {ARTIST[v]}, which someone else has referenced")
+        else:
+            lines += [f"-{qid}\tP170\t{v}"] * len(statements)
     return lines, reports
 
 
 def fix(folder: str, only: set | None, limit: int | None) -> tuple[list[list[str]], list[str]]:
-    """A correction batch for the plate items this dataset made: one block per item."""
+    """A correction batch for the plate items this dataset made, which are the ones ACCOUNT
+    created: one block per item. Others' items are listed and left alone."""
     work = FOLIOS[folder][0]
     plates = read(ROOT / folder / "plates.csv")
     species = read(ROOT / folder / "species.csv")
     per_volume = bool(species) and "volume" in species[0]
-    creds, qids = credited(folder, per_volume), artist_qids()
+    creds, qids, made = credited(folder, per_volume), artist_qids(), created()
     works = {work} | {w for (f, _), (w, _) in SEPARATE.items() if f == folder}
     items = {w: plate_items(entities(w), w, per_volume and w == work) for w in works}
     blocks, reports = [], []
@@ -220,8 +240,9 @@ def fix(folder: str, only: set | None, limit: int | None) -> tuple[list[list[str
         if only and tag not in only:
             continue
         on = SEPARATE.get((folder, vol), (work,))[0]
-        mine = [(qid, claims) for qid, claims in items[on].get((volume_key(vol) if on == work else "", n), [])
-                if ours(claims)]
+        there = items[on].get((volume_key(vol) if on == work else "", n), [])
+        reports += [f"plate {tag}: {qid} is not ours, left alone" for qid, _ in there if qid not in made]
+        mine = [(qid, claims) for qid, claims in there if qid in made]
         if not mine:
             continue
         if not any(c["role"] != "printed" for c in creds.get((vol, n), [])):
@@ -229,14 +250,15 @@ def fix(folder: str, only: set | None, limit: int | None) -> tuple[list[list[str
             reports.append(f"plate {tag}: no artist's credit line read; {', '.join(x for x, _ in mine)} left as it is")
             continue
         url = scan_url(folder, p)
+        if not (p.get("imprint") and url):
+            reports.append(f"plate {tag}: no scan to cite for its credit line; {', '.join(x for x, _ in mine)} left as it is")
+            continue
         for qid, claims in mine:
             lines, rep = fix_item(qid, claims, creds.get((vol, n), []), qids, url, p["imprint"])
             reports += rep
             if lines:
                 blocks.append(lines)
-        if limit and len(blocks) >= limit:
-            break
-    return blocks, reports
+    return (blocks[:limit] if limit else blocks), reports
 
 
 def q(s: str) -> str:
