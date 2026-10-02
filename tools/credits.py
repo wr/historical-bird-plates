@@ -174,21 +174,31 @@ FOLIO_NAMES = {
         "John J. Audubon F.R.S's. L. & E. F.L.S. &c.": ("John James Audubon",),   # plate 95
     },
     "gould-asia": {
+        # These are whole joint forms, as engraved on each plate, so that a bare surname parses
+        # nowhere on its own.
         # Asia VI.74 and VII.40: the line begins at "Wolf" with blank paper to its left, so no
-        # initial is engraved. Every other line of The Birds of Asia that names a Wolf reads J. Wolf.
-        "Wolf": ("Joseph Wolf",),
+        # initial is engraved. Every other line of The Birds of Asia that names a Wolf reads J. Wolf,
+        # and Joseph Wolf is the only Wolf among Gould's artists.
+        "Wolf and H.C. Richter": ("Joseph Wolf", "Henry Constantine Richter"),
         # Asia VII.13: "J.Wolf and Hart", no initial engraved before Hart. Every other line of the
-        # folio that names a Hart reads W. Hart.
-        "Hart": ("William Matthew Hart",),
+        # folio that names a Hart reads W. Hart, and William Matthew Hart is the only Hart among
+        # Gould's artists.
+        "J. Wolf and Hart": ("Joseph Wolf", "William Matthew Hart"),
         # Asia IV.5: the faint line reads "J.Gould and C.H.Richter" on the scan, the initials in
         # the wrong order. Every other Richter of the folio is H.C. Richter.
         "C.H. Richter": ("Henry Constantine Richter",),
-        # Asia IV.26: the initial before "Gould" is an H on the scan (3x), not a J. The plate is
-        # a Gould and Richter plate of the same part as IV.25 and IV.31, which read J.Gould.
-        "H. Gould": ("John Gould",),
+        # Asia IV.26: the artists' line reads "H. Gould, and H.C.Richter" on the scan (3x): the
+        # initial is an H, not a J. A complete name that contradicts the initial is not John
+        # Gould's by inference (John Henry Gould, his son, collected in India), so the Gould is
+        # credited to no one and only Richter is.
+        "H. Gould and H.C. Richter": ("Henry Constantine Richter",),
         # Asia III.4: the printer's line is engraved "Hulmandel & Walton Imp" (one l), at 2x on the
         # scan; every other plate with this printer reads Hullmandel & Walton.
         "Hulmandel & Walton": ("Hullmandel & Walton",),
+        # Asia III.22: the printer's line is engraved "Waller, Imp." (neither tall stroke has a
+        # crossbar, and both reach the full height of an l, unlike the t of III.21 and III.23), an
+        # engraving slip for Walter, who prints every plate around it.
+        "Waller": ("Walter",),
     },
 }
 

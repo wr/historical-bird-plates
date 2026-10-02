@@ -857,7 +857,7 @@ III,22,John Gould,drew,J. Gould
 III,22,John Gould,lithographed,J. Gould
 III,22,William Matthew Hart,drew,W. Hart
 III,22,William Matthew Hart,lithographed,W. Hart
-III,22,Walter,printed,Walter
+III,22,Walter,printed,Waller
 III,23,John Gould,drew,J. Gould
 III,23,John Gould,lithographed,J. Gould
 III,23,William Matthew Hart,drew,W. Hart
@@ -1257,10 +1257,8 @@ IV,25,John Gould,lithographed,J. Gould
 IV,25,Henry Constantine Richter,drew,H. C. Richter
 IV,25,Henry Constantine Richter,lithographed,H. C. Richter
 IV,25,Hullmandel & Walton,printed,Hullmandel & Walton
-IV,26,John Gould,drew,H. Gould
-IV,26,John Gould,lithographed,H. Gould
-IV,26,Henry Constantine Richter,drew,H. C. Richter
-IV,26,Henry Constantine Richter,lithographed,H. C. Richter
+IV,26,Henry Constantine Richter,drew,"H. Gould, and H. C. Richter"
+IV,26,Henry Constantine Richter,lithographed,"H. Gould, and H. C. Richter"
 IV,26,Walter,printed,Walter
 IV,27,John Gould,drew,J. Gould
 IV,27,John Gould,lithographed,J. Gould
@@ -2251,10 +2249,10 @@ VI,73,John Gould,lithographed,J. Gould
 VI,73,Henry Constantine Richter,drew,H. C. Richter
 VI,73,Henry Constantine Richter,lithographed,H. C. Richter
 VI,73,Walter,printed,Walter
-VI,74,Joseph Wolf,drew,Wolf
-VI,74,Joseph Wolf,lithographed,Wolf
-VI,74,Henry Constantine Richter,drew,H. C. Richter
-VI,74,Henry Constantine Richter,lithographed,H. C. Richter
+VI,74,Joseph Wolf,drew,Wolf and H. C. Richter
+VI,74,Joseph Wolf,lithographed,Wolf and H. C. Richter
+VI,74,Henry Constantine Richter,drew,Wolf and H. C. Richter
+VI,74,Henry Constantine Richter,lithographed,Wolf and H. C. Richter
 VI,74,Hullmandel & Walton,printed,Hullmandel & Walton
 VI,75,John Gould,drew,J. Gould
 VI,75,John Gould,lithographed,J. Gould
@@ -2321,10 +2319,10 @@ VII,12,John Gould,lithographed,J. Gould
 VII,12,William Matthew Hart,drew,W. Hart
 VII,12,William Matthew Hart,lithographed,W. Hart
 VII,12,Walter,printed,Walter
-VII,13,Joseph Wolf,drew,J. Wolf
-VII,13,Joseph Wolf,lithographed,J. Wolf
-VII,13,William Matthew Hart,drew,Hart
-VII,13,William Matthew Hart,lithographed,Hart
+VII,13,Joseph Wolf,drew,J. Wolf and Hart
+VII,13,Joseph Wolf,lithographed,J. Wolf and Hart
+VII,13,William Matthew Hart,drew,J. Wolf and Hart
+VII,13,William Matthew Hart,lithographed,J. Wolf and Hart
 VII,13,Walter,printed,Walter
 VII,14,John Gould,drew,J. Gould
 VII,14,John Gould,lithographed,J. Gould
@@ -2335,7 +2333,7 @@ VII,15,Joseph Wolf,drew,J. Wolf
 VII,15,Joseph Wolf,lithographed,J. Wolf
 VII,15,Henry Constantine Richter,drew,H. C. Richter
 VII,15,Henry Constantine Richter,lithographed,H. C. Richter
-VII,15,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,15,Hullmandel & Walton,printed,Hullmandel & Walton.
 VII,16,John Gould,drew,J. Gould
 VII,16,John Gould,lithographed,J. Gould
 VII,16,Henry Constantine Richter,drew,H. C. Richter
@@ -2406,11 +2404,6 @@ VII,29,Joseph Wolf,lithographed,J. Wolf
 VII,29,Henry Constantine Richter,drew,H. C. Richter
 VII,29,Henry Constantine Richter,lithographed,H. C. Richter
 VII,29,Hullmandel & Walton,printed,Hullmandel & Walton
-VII,30,Joseph Wolf,drew,J. Wolf
-VII,30,Joseph Wolf,lithographed,J. Wolf
-VII,30,Henry Constantine Richter,drew,H. C. Richter
-VII,30,Henry Constantine Richter,lithographed,H. C. Richter
-VII,30,Hullmandel & Walton,printed,Hullmandel & Walton
 VII,31,Joseph Wolf,drew,J. Wolf
 VII,31,Joseph Wolf,lithographed,J. Wolf
 VII,31,Henry Constantine Richter,drew,H. C. Richter
@@ -2454,11 +2447,11 @@ VII,38,Walter,printed,Walter
 VII,39,Joseph Wolf,drew,J. Wolf
 VII,39,Henry Constantine Richter,lithographed,H. C. Richter
 VII,39,Hullmandel & Walton,printed,Hullmandel & Walton
-VII,40,Joseph Wolf,drew,Wolf
-VII,40,Joseph Wolf,lithographed,Wolf
-VII,40,Henry Constantine Richter,drew,H. C. Richter
-VII,40,Henry Constantine Richter,lithographed,H. C. Richter
-VII,40,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,40,Joseph Wolf,drew,Wolf and H. C. Richter
+VII,40,Joseph Wolf,lithographed,Wolf and H. C. Richter
+VII,40,Henry Constantine Richter,drew,Wolf and H. C. Richter
+VII,40,Henry Constantine Richter,lithographed,Wolf and H. C. Richter
+VII,40,Hullmandel & Walton,printed,Hullmandel & Walton.
 VII,41,Hullmandel & Walton,printed,Hullmandel & Walton
 VII,42,John Gould,drew,J. Gould
 VII,42,John Gould,lithographed,J. Gould

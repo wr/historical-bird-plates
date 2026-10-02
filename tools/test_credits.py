@@ -156,17 +156,28 @@ class Parse(unittest.TestCase):
                             ("Hullmandel & Walton", "printed")),
                            ("H. Gould, and H.C.Richter, del et lith. | Walter Imp.", ("Walter", "printed")),  # IV.26
                            ("J.Gould and H.C.Richter del et lith | Hulmandel & Walton Imp",  # III.4
-                            ("Hullmandel & Walton", "printed"))):
+                            ("Hullmandel & Walton", "printed")),
+                           ("J.Gould & W.Hart, del et lith. | Waller, Imp.", ("Walter", "printed"))):  # III.22
             self.assertEqual(names_roles(parse(line, "gould-asia"))[-1], last)
             for folio in (None, "gould-britain", "gould-europe", "gould-australia", "havell"):
                 with self.subTest(line=line, folio=folio), self.assertRaises(UnknownCredit):
                     parse(line, folio)
-        self.assertEqual(names_roles(parse("Wolf and H.C.Richter del. et lith.", "gould-asia"))[0], ("Joseph Wolf", "drew"))
+        self.assertEqual(names_roles(parse("Wolf and H.C.Richter del. et lith.", "gould-asia"))[:2],
+                         [("Joseph Wolf", "drew"), ("Joseph Wolf", "lithographed")])
         self.assertEqual(names_roles(parse("J.Wolf and Hart del et lith.", "gould-asia"))[2:],
                          [("William Matthew Hart", "drew"), ("William Matthew Hart", "lithographed")])
-        for line in ("Wolf del.", "Hart del. et lith.", "H. Gould del."):  # a bare surname or a stray initial stands alone nowhere
-            with self.subTest(line=line):
-                self.assertRaises(UnknownCredit, parse, line)
+        # IV.26: "H. Gould" is a complete name that contradicts the initial, so it is credited to no
+        # one; the plate credits Richter and the printer only
+        self.assertEqual(names_roles(parse("H. Gould, and H.C.Richter, del et lith. | Walter Imp.", "gould-asia")), [
+            ("Henry Constantine Richter", "drew"), ("Henry Constantine Richter", "lithographed"),
+            ("Walter", "printed")])
+
+    def test_a_bare_surname_or_a_stray_initial_is_refused_in_asia_too(self):
+        for line in ("Wolf del.", "Hart del. et lith.", "H. Gould del.", "H. Gould del. et lith.",
+                     "Wolf del. et lith. | Walter Imp.", "Hulmandel Imp."):
+            for folio in (None, "gould-asia"):
+                with self.subTest(line=line, folio=folio), self.assertRaises(UnknownCredit):
+                    parse(line, folio)
 
     def test_seen_on_the_plates(self):
         """Every wording found on the plates parses. Add each new variant here."""
