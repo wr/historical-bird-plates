@@ -141,5 +141,53 @@ class Batch(Fixture):
         self.assertFalse(any("\tP170\t" in line or "\tP872\t" in line for line in self.blocks[1]))
 
 
+def item(p170: list[dict], depicts_ref: str = qs.REPO + "/tree/main/gould-europe") -> dict:
+    """An item's claims, as wbgetentities gives them."""
+    snak = lambda qid: {"datavalue": {"value": {"id": qid}}}
+    return {"P170": p170,
+            "P180": [{"mainsnak": snak("Q1"), "references": [{"snaks": {"P854": [{"datavalue": {"value": depicts_ref}}]}}]}]}
+
+
+def creator(qid: str, references: list | None = None) -> dict:
+    s = {"mainsnak": {"datavalue": {"value": {"id": qid}}}}
+    if references:
+        s["references"] = references
+    return s
+
+
+LEAR = [credit("Edward Lear", "lithographed"), credit("Charles Joseph Hullmandel", "printed")]
+GOULDS = [credit("John Gould", "drew"), credit("John Gould", "lithographed"),
+          credit("Elizabeth Gould", "drew"), credit("Elizabeth Gould", "lithographed")]
+
+
+class FixItem(unittest.TestCase):
+    def test_ours_is_an_item_whose_depicts_cites_this_dataset(self):
+        self.assertTrue(qs.ours(item([])))
+        self.assertFalse(qs.ours(item([], depicts_ref="https://example.org/catalogue")))
+
+    def test_an_unreferenced_gould_the_line_does_not_name_is_removed(self):
+        lines, reports = qs.fix_item("Q9", item([creator(qs.GOULD)]), LEAR, QIDS, URL, "imprint")
+        self.assertIn("-Q9\tP170\tQ313787", lines)
+        self.assertTrue(any(x.startswith("Q9\tP170\tQ309759\tP3831\tQ16947657") for x in lines))
+        self.assertTrue(any(x.startswith("Q9\tP872\tQ376691") for x in lines))
+        self.assertEqual(reports, [])
+
+    def test_a_referenced_gould_is_kept_and_reported(self):
+        ref = [{"snaks": {"P248": [{"datavalue": {"value": {"id": "Q5"}}}]}}]
+        lines, reports = qs.fix_item("Q9", item([creator(qs.GOULD, ref)]), LEAR, QIDS, URL, "imprint")
+        self.assertNotIn("-Q9\tP170\tQ313787", lines)
+        self.assertEqual(len(reports), 1)
+
+    def test_a_gould_the_line_names_gets_roles_not_removed(self):
+        lines, _ = qs.fix_item("Q9", item([creator(qs.GOULD)]), GOULDS, QIDS, URL, "imprint")
+        self.assertNotIn("-Q9\tP170\tQ313787", lines)
+        self.assertTrue(any(x.startswith("Q9\tP170\tQ313787\tP3831\tQ15296811\tP3831\tQ16947657") for x in lines))
+
+    def test_a_statement_already_referenced_to_the_scan_is_not_repeated(self):
+        done = [{"snaks": {"P854": [{"datavalue": {"value": URL}}]}}]
+        lines, _ = qs.fix_item("Q9", item([creator("Q309759", done)]), LEAR, QIDS, URL, "imprint")
+        self.assertFalse(any(x.startswith("Q9\tP170\tQ309759") for x in lines))
+
+
 if __name__ == "__main__":
     unittest.main()

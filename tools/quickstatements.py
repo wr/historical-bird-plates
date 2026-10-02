@@ -5,6 +5,7 @@
     python3 tools/quickstatements.py gould-europe --plates 1,12,425
     python3 tools/quickstatements.py gould-asia --plates IV.59    # VOL.N for per-volume folios
     python3 tools/quickstatements.py havell --chunk 80 -o havell  # havell-1.qs, havell-2.qs, ...
+    python3 tools/quickstatements.py gould-europe --fix-creators --chunk 80 -o fix-europe   # correct existing items
 
 Each item has: instance of (print type); part of the work, with the plate's
 number (and volume) as qualifiers; its creators and printer, from the plate's
@@ -25,6 +26,12 @@ page. An item that is part of the work, has no plate number and has the
 plate's name gets the plate's statements instead of a new item being made.
 The check reads Wikidata's search index and API, not the query service, which
 can lag by hours; wait a few minutes after a batch ends before rerunning.
+
+--fix-creators writes a batch for the plate items this dataset already made (those
+whose `depicts` cites this repository): each credited artist and the printer are
+added from the credit line, and a `creator: John Gould` (or Audubon) the line does
+not name is removed if it is unreferenced. Plates with no artist's credit line read
+are left as they are.
 
 Wikidata lets an account make about 90 edits a minute, and QuickStatements'
 background runner goes faster, so the excess fails. Split a batch with
@@ -96,13 +103,14 @@ def fold(s: str) -> str:
     return " ".join(s.split()).casefold()
 
 
-def existing(work: str, kind: str, artist: str, volumes: bool) -> tuple[set, set, dict]:
-    """What Wikidata already has for the work: (volume, number) pairs, BHL page ids,
-    and items with no plate number, by label. Only a print of the plate itself (same
-    print type and artist, in no collection) counts as unnumbered; a museum's
-    impression is a different thing."""
-    # Pages sorted by relevance shift under an index that is still updating, so an
-    # item can come twice and another not at all; creation order holds still.
+def value(snak: dict):
+    return snak.get("datavalue", {}).get("value")
+
+
+def entities(work: str) -> dict[str, dict]:
+    """Every item that is part of the work, by QID, with its claims and English label.
+    Pages sorted by relevance shift under an index that is still updating, so an item
+    can come twice and another not at all; creation order holds still."""
     qids, offset, total = [], 0, 0
     while offset is not None:
         d = api(action="query", list="search", srsearch=f"haswbstatement:P361={work}", srnamespace=0,
@@ -113,30 +121,122 @@ def existing(work: str, kind: str, artist: str, volumes: bool) -> tuple[set, set
     qids = list(dict.fromkeys(qids))
     if len(qids) != total:
         sys.exit(f"search for part of {work} gave {len(qids)} distinct items of {total}; try again in a minute")
-    value = lambda snak: snak.get("datavalue", {}).get("value")
-    nums, pages, unnumbered = set(), set(), collections.defaultdict(list)
+    out = {}
     for i in range(0, len(qids), 50):
-        for qid, e in api(action="wbgetentities", ids="|".join(qids[i:i + 50]),
-                          props="claims|labels", languages="en")["entities"].items():
-            claims = e.get("claims", {})
-            if any((value(s["mainsnak"]) or {}).get("id") == LIST_ARTICLE for s in claims.get("P31", [])):
+        out.update(api(action="wbgetentities", ids="|".join(qids[i:i + 50]),
+                       props="claims|labels", languages="en")["entities"])
+    return out
+
+
+def existing(work: str, kind: str, artist: str, volumes: bool) -> tuple[set, set, dict]:
+    """What Wikidata already has for the work: (volume, number) pairs, BHL page ids,
+    and items with no plate number, by label. Only a print of the plate itself (same
+    print type and artist, in no collection) counts as unnumbered; a museum's
+    impression is a different thing."""
+    nums, pages, unnumbered = set(), set(), collections.defaultdict(list)
+    for qid, e in entities(work).items():
+        claims = e.get("claims", {})
+        if any((value(s["mainsnak"]) or {}).get("id") == LIST_ARTICLE for s in claims.get("P31", [])):
+            continue
+        pages |= {value(s["mainsnak"]) for s in claims.get("P687", []) if value(s["mainsnak"])}
+        numbered = False
+        for s in claims.get("P361", []):
+            if (value(s["mainsnak"]) or {}).get("id") != work:
                 continue
-            pages |= {value(s["mainsnak"]) for s in claims.get("P687", []) if value(s["mainsnak"])}
-            numbered = False
-            for s in claims.get("P361", []):
-                if (value(s["mainsnak"]) or {}).get("id") != work:
-                    continue
-                qual = s.get("qualifiers", {})
-                vol = next((value(x) for x in qual.get("P478", []) if value(x)), "")
-                for x in qual.get("P1545", []):
-                    if value(x):
-                        nums.add((volume_key(vol) if volumes else "", value(x)))
-                        numbered = True
-            ids = lambda p: {(value(s["mainsnak"]) or {}).get("id") for s in claims.get(p, [])}
-            if (not numbered and "en" in e.get("labels", {}) and kind in ids("P31")
-                    and artist in ids("P170") and not claims.get("P195")):
-                unnumbered[fold(e["labels"]["en"]["value"])].append(qid)
+            qual = s.get("qualifiers", {})
+            vol = next((value(x) for x in qual.get("P478", []) if value(x)), "")
+            for x in qual.get("P1545", []):
+                if value(x):
+                    nums.add((volume_key(vol) if volumes else "", value(x)))
+                    numbered = True
+        ids = lambda p: {(value(s["mainsnak"]) or {}).get("id") for s in claims.get(p, [])}
+        if (not numbered and "en" in e.get("labels", {}) and kind in ids("P31")
+                and artist in ids("P170") and not claims.get("P195")):
+            unnumbered[fold(e["labels"]["en"]["value"])].append(qid)
     return nums, pages, unnumbered
+
+
+def plate_items(ents: dict, work: str, volumes: bool) -> dict[tuple[str, str], list[tuple[str, dict]]]:
+    """Items that are part of the work, by (volume, plate number) as their P361 qualifiers give them."""
+    out: dict = collections.defaultdict(list)
+    for qid, e in ents.items():
+        claims = e.get("claims", {})
+        for s in claims.get("P361", []):
+            if (value(s["mainsnak"]) or {}).get("id") != work:
+                continue
+            qual = s.get("qualifiers", {})
+            vol = next((value(x) for x in qual.get("P478", []) if value(x)), "")
+            for x in qual.get("P1545", []):
+                if value(x):
+                    out[(volume_key(vol) if volumes else "", value(x))].append((qid, claims))
+    return out
+
+
+def ours(claims: dict) -> bool:
+    """Made from this dataset: a `depicts` referenced to this repository."""
+    return any(str(value(x) or "").startswith(REPO)
+               for s in claims.get("P180", []) for ref in s.get("references", [])
+               for x in ref.get("snaks", {}).get("P854", []))
+
+
+def fix_item(qid: str, claims: dict, plate_credits: list[dict], qids: dict[str, str], url: str,
+             imprint: str) -> tuple[list[str], list[str]]:
+    """The edits that bring one item's creators into line with its plate's credit line, and
+    what to report. A creator the line doesn't name is removed only if unreferenced, as this
+    dataset's own statements were; a referenced one is someone else's claim and stays."""
+    def at_scan(prop: str, target: str) -> bool:
+        return any((value(s["mainsnak"]) or {}).get("id") == target
+                   and any(value(x) == url for ref in s.get("references", [])
+                           for x in ref.get("snaks", {}).get("P854", []))
+                   for s in claims.get(prop, []))
+    lines = [x for x in creator_lines(qid, plate_credits, qids, url, imprint)
+             if not at_scan(x.split("\t")[1], x.split("\t")[2])]
+    named = {qids.get(c["name"]) for c in plate_credits if c["role"] != "printed"}
+    reports = []
+    for s in claims.get("P170", []):
+        v = (value(s["mainsnak"]) or {}).get("id")
+        if v in ARTIST and v not in named:
+            if s.get("references"):
+                reports.append(f"{qid}: keeps creator {ARTIST[v]}, which someone else has referenced")
+            else:
+                lines.append(f"-{qid}\tP170\t{v}")
+    return lines, reports
+
+
+def fix(folder: str, only: set | None, limit: int | None) -> tuple[list[list[str]], list[str]]:
+    """A correction batch for the plate items this dataset made: one block per item."""
+    work = FOLIOS[folder][0]
+    plates = read(ROOT / folder / "plates.csv")
+    species = read(ROOT / folder / "species.csv")
+    per_volume = bool(species) and "volume" in species[0]
+    creds, qids = credited(folder, per_volume), artist_qids()
+    works = {work} | {w for (f, _), (w, _) in SEPARATE.items() if f == folder}
+    items = {w: plate_items(entities(w), w, per_volume and w == work) for w in works}
+    blocks, reports = [], []
+    for p in plates:
+        vol = p.get("volume", "") if per_volume else ""
+        n = p["plate"]
+        tag = f"{vol}.{n}" if vol else n
+        if only and tag not in only:
+            continue
+        on = SEPARATE.get((folder, vol), (work,))[0]
+        mine = [(qid, claims) for qid, claims in items[on].get((volume_key(vol) if on == work else "", n), [])
+                if ours(claims)]
+        if not mine:
+            continue
+        if not any(c["role"] != "printed" for c in creds.get((vol, n), [])):
+            # No credit line read, or only the printer's: no evidence about the artist.
+            reports.append(f"plate {tag}: no artist's credit line read; {', '.join(x for x, _ in mine)} left as it is")
+            continue
+        url = scan_url(folder, p)
+        for qid, claims in mine:
+            lines, rep = fix_item(qid, claims, creds.get((vol, n), []), qids, url, p["imprint"])
+            reports += rep
+            if lines:
+                blocks.append(lines)
+        if limit and len(blocks) >= limit:
+            break
+    return blocks, reports
 
 
 def q(s: str) -> str:
@@ -323,11 +423,18 @@ def main() -> int:
     ap.add_argument("--no-check", action="store_true", help="don't ask Wikidata which plates already have items")
     ap.add_argument("--chunk", type=int, help="split into files of this many items (needs -o)")
     ap.add_argument("-o", "--out", help="with --chunk: write OUT-1.qs, OUT-2.qs, ...")
+    ap.add_argument("--fix-creators", action="store_true",
+                    help="instead: a batch correcting the creators of the plate items this dataset made")
     args = ap.parse_args()
     if bool(args.chunk) != bool(args.out):
         ap.error("--chunk and --out go together")
     only = set(args.plates.split(",")) if args.plates else None
-    blocks, skipped, adopted = batch(args.folio, only, args.limit, not args.no_check)
+    if args.fix_creators:
+        blocks, reports = fix(args.folio, only, args.limit)
+        for r in reports:
+            print(r, file=sys.stderr)
+    else:
+        blocks, skipped, adopted = batch(args.folio, only, args.limit, not args.no_check)
     if args.chunk:
         for i in range(0, len(blocks), args.chunk):
             path = Path(f"{args.out}-{i // args.chunk + 1}.qs")
@@ -335,9 +442,12 @@ def main() -> int:
             print(f"{path}: {len(blocks[i:i + args.chunk])} items", file=sys.stderr)
     else:
         print("\n".join(line for b in blocks for line in b))
-    created = len(blocks) - adopted
-    print(f"{created} new items, {adopted} existing items given their plate, "
-          f"{skipped} skipped as already on Wikidata", file=sys.stderr)
+    if args.fix_creators:
+        print(f"{len(blocks)} items to correct, {sum(len(b) for b in blocks)} edits", file=sys.stderr)
+    else:
+        created = len(blocks) - adopted
+        print(f"{created} new items, {adopted} existing items given their plate, "
+              f"{skipped} skipped as already on Wikidata", file=sys.stderr)
     return 0
 
 
