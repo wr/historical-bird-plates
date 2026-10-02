@@ -281,22 +281,23 @@ class Check(unittest.TestCase):
         self.assertEqual(imprints.segments(1388, 1388), [(0, 1388)])
         self.assertEqual(imprints.segments(300, 1388), [(0, 300)])
 
-    def test_a_long_line_is_cut_into_the_fewest_equal_segments_overlapping_by_40(self):
-        self.assertEqual(imprints.segments(2400, 1388), [(0, 1220), (1180, 2400)])
+    def test_a_long_line_is_cut_into_the_fewest_equal_segments_overlapping_by_120(self):
+        self.assertEqual(imprints.OVERLAP, 120)
+        self.assertEqual(imprints.segments(2400, 1388), [(0, 1260), (1140, 2400)])
         segs = imprints.segments(7600, 1388)
         self.assertEqual(len(segs), 6)
         self.assertEqual((segs[0][0], segs[-1][1]), (0, 7600))
         for (a, b), (c, d) in zip(segs, segs[1:]):
-            self.assertEqual(b - c, 40)
+            self.assertEqual(b - c, 120)
         self.assertTrue(all(b - a <= 1388 for a, b in segs))
         self.assertEqual(len(imprints.segments(1389, 1388)), 2)
 
     def test_tiles_go_band_by_band_left_to_right(self):
-        self.assertEqual(imprints.tiles((2400, 320), 1388, 667), [[0, 0, 1220, 320], [1180, 0, 2400, 320]])
+        self.assertEqual(imprints.tiles((2400, 320), 1388, 667), [[0, 0, 1260, 320], [1140, 0, 2400, 320]])
         self.assertEqual(imprints.tiles((2400, 1600), 1388, 667), [
-            [0, 0, 1220, 560], [1180, 0, 2400, 560],
-            [0, 520, 1220, 1080], [1180, 520, 2400, 1080],
-            [0, 1040, 1220, 1600], [1180, 1040, 2400, 1600]])
+            [0, 0, 1260, 613], [1140, 0, 2400, 613],
+            [0, 493, 1260, 1107], [1140, 493, 2400, 1107],
+            [0, 987, 1260, 1600], [1140, 987, 2400, 1600]])
 
     @staticmethod
     def tall(blocks, page):
