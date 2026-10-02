@@ -60,6 +60,7 @@ Every plate with its lettering trimmed, by Havell number.
   - `title` is Audubon's title as audubon.org gives it. That is usually the plate's *first-state* lettering, which some plates later changed. Plate 50 is the exception: audubon.org titles it "Black & Yellow Warbler", the later lettering, while its scan carries the 1828 first state, "Swainson's Warbler".
   - `legend` is the lines engraved under the title and Latin name: the figure key and the plant or setting, in Audubon's spelling, transcribed from the scans' caption bands.
 - **`species.csv`**: one row per plate and modern species. On a sheet with several species, `figure` is that species' own key.
+  - `printed_name` is the English title engraved on this release's scan, read off all 435 sheets on 1 Oct 2026, in the engraver's spelling: "Ruffed Grous", "Belted Kingsfisher", "Great Red brested Rail or Fresh-water Marsh hen". Case and hyphens are not compared. On a sheet with several species it is that bird's own title; a bird named only in the legend (284 fig. 3, 285 fig. 2) or a plate with no English title (245) carries its Latin. Where the scan and audubon.org's `title` differ, as on plates 48, 153, 198 and 263, the row's `reason` gives both.
 
 ## How the plates were identified
 
@@ -75,6 +76,7 @@ Every plate with its lettering trimmed, by Havell number.
 ## Traps
 
 - **Plate 50 is a young Magnolia Warbler.** These scans carry its 1828 lettering, "Swainson's Warbler, *Sylvicola swainsonia*". Audubon wrote in 1831 that one drawing had been engraved in place of another while he was away from London, and the plate was re-lettered "Black and yellow warbler, *Sylvia maculosa*, young male". It is not the Swainson's Warbler of plate 198, which Audubon described in 1834. The adult Magnolia pair is plate 123.
+- **Plate 165's scan is not the Havell plate.** audubon.org's file, and so `sheet-165.jpg`, is the octavo edition's small lithograph (J. T. Bowen, Philadelphia), lettered "Bachman's Pinewood-Finch", at 1082 × 1314 pixels. The row keeps the Havell title, "Bachman's Finch".
 - **Plate 132's "Three-toed Woodpecker" is the Black-backed.** Every back on the plate is solid black, and Audubon himself called it Swainson's *Apternus arcticus* (1839). The American Three-toed is 417, figs. 3–4.
 - **Plate 229's "Scaup Duck" is the Lesser Scaup.** Audubon wrote in 1844 that the bird "figured in my large plates" was the smaller species.
 - **Plate 247's "Velvet Duck" is the White-winged Scoter**, the American daughter of the split; BirdNET still lumps the two, so its label is the Velvet Scoter's.

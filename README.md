@@ -6,7 +6,7 @@
 
 Every plate of five great nineteenth-century bird folios, identified to modern species. Each identification carries the IDs other tools join on: eBird, Wikidata, GBIF, Avibase and BirdNET. The plate images are cleaned and cut two ways.
 
-Old plates name their birds the way their authors did, and many of those names now belong to other species. Gould's "Black-headed Gull" is today's Mediterranean Gull. This dataset matches each plate to the bird it actually shows, gives the reasoning, and is released CC0. [64 plates](#names-that-now-mean-another-bird) carry a printed name that eBird now gives to a different species.
+Old plates name their birds the way their authors did, and many of those names now belong to other species. Gould's "Black-headed Gull" is today's Mediterranean Gull. This dataset matches each plate to the bird it actually shows, gives the reasoning, and is released CC0. [65 plates](#names-that-now-mean-another-bird) carry a printed name that eBird now gives to a different species.
 
 ## The folios
 
@@ -72,11 +72,12 @@ The 18 [open rows](#open-questions) (`medium`, `low` and `none`) are the questio
 These plates are printed with an English name that eBird/Clements 2025 now gives to a different species. Look one up by its printed name and you get the wrong bird. `python3 tools/misnamed.py` regenerates the list.
 
 <details>
-<summary>64 plates</summary>
+<summary>65 plates</summary>
 
 **Audubon, *The Birds of America***
 
 - 23: "Yellow-breasted Warbler" → Common Yellowthroat
+- 50: "Swainson's Warbler" → Magnolia Warbler
 - 199: "Little Owl" → Northern Saw-whet Owl
 - 223: "Pied oyster-catcher" → American Oystercatcher
 - 256: "Purple Heron" → Reddish Egret
