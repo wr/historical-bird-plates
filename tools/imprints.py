@@ -56,8 +56,10 @@ capital standing as an initial, before a name, another initial, & or and, or glu
 to a name, is written with a stop and a space ("J Wolf & HCRichter" is "J. Wolf &
 H. C. Richter", "J & E Gould" "J. & E. Gould"), because the stops after initials
 are fused with the letters' serifs at the scans' resolution and cannot be read.
-Every other stop, and commas, colons, capitals, & or and, and spelling are as
-engraved.
+A comma or colon directly after an initial is such a stop, misread ("J, Gould" is
+"J. Gould", "C: Hullmandel" "C. Hullmandel"); one after a name ("Richter, del.")
+or in a wording ("del:") is not. Every other stop, and commas, colons, capitals,
+& or and, and spelling are as engraved.
 
 Needs Pillow, and macOS for the OCR (tools/ocr.swift, compiled into .cache/ on
 first use). `apply`, the line finding and the layout of the contact sheets need
@@ -605,12 +607,15 @@ def normalise_line(line: str) -> str:
 
 
 def initials(line: str) -> str:
-    """Every initial written "X. ": a lone capital, with a stop or without, followed by
-    another initial, & or and, or a capitalised word; and capitals glued to a name or to
-    a stop ("HCRichter", "HC. Richter", "JGould", "FRS." is "F. R. S."). Words that begin
-    with a capital ("Drawn", "Imp.") and lowercase abbreviations are left as they are,
-    and so are a Roman numeral with a stop that ends the line or comes before a lowercase
-    word ("Plate IV."), and the article A before a word of a wording ("A Drawing")."""
+    """Every initial written "X. ": a lone capital, with a stop, a comma, a colon or
+    nothing after it, followed by another initial, & or and, or a capitalised word
+    ("J, Gould" is "J. Gould", "C: Hullmandel" "C. Hullmandel"; a mark after a name,
+    "Richter, del.", or in a wording, "del:", is left); and capitals glued to a name or
+    to a stop ("HCRichter", "HC. Richter", "JGould", "FRS." is "F. R. S."). Words that
+    begin with a capital ("Drawn", "Imp.") and lowercase abbreviations are left as they
+    are, and so are a Roman numeral with a stop that ends the line or comes before a
+    lowercase word ("Plate IV."), and the article A before a word of a wording
+    ("A Drawing")."""
     words = {w for pair in PAIRS for w in pair}
     raw = line.split()
     tokens = []
@@ -625,7 +630,7 @@ def initials(line: str) -> str:
             tokens += list(tok[:-2]) + [tok[-2:]]
         else:
             tokens.append(tok)
-    lone = lambda t: re.fullmatch(r"[A-Z]\.?", t)
+    lone = lambda t: re.fullmatch(r"[A-Z][.,:]?", t)
     nxt = lambda t: lone(t) or t in ("&", "and") or re.match(r"[A-Z][a-z]", t)
     article = lambda t, n: t == "A" and re.sub(r"[^A-Za-z]", "", n).casefold() in words
     out = []

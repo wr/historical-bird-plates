@@ -390,6 +390,27 @@ class Normalise(unittest.TestCase):
             with self.subTest(line=line):
                 self.assertEqual(imprints.normalise(line), written)
 
+    def test_a_comma_or_colon_directly_after_an_initial_is_a_stop(self):
+        for line, written in (("J, Gould", "J. Gould"),
+                              ("H. C, Richter", "H. C. Richter"),
+                              ("J: Gould", "J. Gould"),
+                              ("C: Hullmandel", "C. Hullmandel"),
+                              ("J,Gould and H.C,Richter del et lith.", "J. Gould and H. C. Richter del et lith."),
+                              ("J, Gould and H. C, Richter del et lith. | Hullmandel & Walton Imp.",
+                               "J. Gould and H. C. Richter del et lith. | Hullmandel & Walton Imp."),
+                              ("J & E. Gould del: | C: Hullmandel Imp:", "J. & E. Gould del: | C. Hullmandel Imp:"),
+                              ("J, & E, Gould", "J. & E. Gould"),
+                              ("Drawn on Stone by E: Lear", "Drawn on Stone by E. Lear")):
+            with self.subTest(line=line):
+                self.assertEqual(imprints.normalise(line), written)
+
+    def test_a_comma_or_colon_after_a_name_or_in_a_wording_is_left(self):
+        for line in ("J. Gould and H. C. Richter, del et lith.", "H. C. Richter, del.", "Walter, Imp.",
+                     "J. Gould, and H. C. Richter", "E. Lear del: et lith:", "del: et lith: | Imp:",
+                     "J. & E. Gould del: | C. Hullmandel Imp:", "J. Gould, E, del."):   # an initial with nothing after it to join
+            with self.subTest(line=line):
+                self.assertEqual(imprints.normalise(line), line)
+
     def test_a_stop_after_a_run_of_capitals_is_kept(self):
         for line, written in (("by HC.", "by H. C."), ("J.J. Audubon FRS.", "J. J. Audubon F. R. S."),
                               ("FRS. FLS.", "F. R. S. F. L. S."), ("HC. del et lith.", "H. C. del et lith."),
@@ -413,7 +434,8 @@ class Normalise(unittest.TestCase):
 
     def test_normalising_twice_changes_nothing(self):
         for line in ("J.Gould &H.C.Richter,del et lith | Walter,Imp.", "J.J. Audubon F.R.S. F.L.S.", "J & .E. Gould",
-                     "J Wolf & HCRichter, del et lith.", "C C. Hullmandel"):
+                     "J Wolf & HCRichter, del et lith.", "C C. Hullmandel", "J, Gould and H. C, Richter del:",
+                     "C: Hullmandel Imp:"):
             with self.subTest(line=line):
                 once = imprints.normalise(line)
                 self.assertEqual(imprints.normalise(once), once)
