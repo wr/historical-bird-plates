@@ -54,6 +54,8 @@ class Parse(unittest.TestCase):
     def test_case_punctuation_and_spacing_fold(self):
         self.assertEqual(names_roles(parse("drawn from nature  &  on stone by J.&E.Gould")),
                          names_roles(parse("Drawn from Nature & on Stone by J. & E. Gould")))
+        self.assertEqual(names_roles(parse("J.Gould &H.C.Richter,del et lith | Walter,Imp.")),
+                         names_roles(parse("J. Gould & H.C. Richter, del et lith. | Walter, Imp.")))
 
     def test_havell_lines_keep_their_abbreviations(self):
         self.assertEqual(parse("Drawn from nature by J.J. Audubon F.R.S. F.L.S. | Engraved by W.H. Lizars Edinr. "
@@ -83,6 +85,8 @@ class Parse(unittest.TestCase):
                         "J. Gould and H.C. Richter del. et lith. | Hullmandel & Walton Imp.",
                         "J. Gould & H.C. Richter del et lith. | Walter Imp.",
                         "J. Gould & W. Hart del. et lith. | Walter Imp.",
+                        "J.Gould &H.C.Richter,del et lith | Walter,Imp.",
+                        "Gould & H.C.Richter, del. et lith. | Walter, Imp.",
                         "Drawn from nature by J.J. Audubon F.R.S. F.L.S. | Engraved, Printed & Coloured by R. Havell Junr."):
             with self.subTest(imprint=imprint):
                 self.assertTrue(parse(imprint))

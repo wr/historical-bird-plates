@@ -56,6 +56,7 @@ AFTER = {
 NAMES = {
     "J. & E. Gould": ("John Gould", "Elizabeth Gould"),
     "J. Gould": ("John Gould",),
+    "Gould": ("John Gould",),
     "E. Lear": ("Edward Lear",),
     "H.C. Richter": ("Henry Constantine Richter",),
     "J. Wolf": ("Joseph Wolf",),
@@ -94,7 +95,7 @@ _NAMES = {name_key(k): v for k, v in NAMES.items()}
 # Longest first, so "del. et lith." is tried before "del.".
 _BEFORE = [(re.compile(rf"^{wording_pattern(w)}[\s.,]+(?P<names>.+?)[\s,]*$", re.I), roles)
            for w, roles in sorted(BEFORE.items(), key=lambda x: -len(x[0]))]
-_AFTER = [(re.compile(rf"^(?P<names>.+?),?\s+{wording_pattern(w)}[\s.,]*$", re.I), roles)
+_AFTER = [(re.compile(rf"^(?P<names>.+?)(?:,\s*|\s+){wording_pattern(w)}[\s.,]*$", re.I), roles)
           for w, roles in sorted(AFTER.items(), key=lambda x: -len(x[0]))]
 
 
