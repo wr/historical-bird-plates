@@ -32,7 +32,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 [hidden] { display: none !important; }
-html { -webkit-text-size-adjust: 100%; scroll-padding-top: var(--controls-h, 0px); }
+html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1rem/1.6 var(--sans); }
 h1, h2, .serif { font-family: var(--serif); font-weight: 500; line-height: 1.15; letter-spacing: -0.01em; }
 h1 { font-size: clamp(2rem, 4.5vw, 3.25rem); margin: 0 0 0.25em; }
@@ -103,6 +103,9 @@ main { padding: 0 var(--gutter) 4rem; }
 .rows { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
 .rows::after { content: ""; flex-grow: 10000; }
 .tile { position: relative; display: block; flex: var(--ar) 1 calc(var(--ar) * var(--row-h)); max-width: calc(var(--ar) * var(--row-h) * 2); aspect-ratio: var(--ar); overflow: hidden; border-radius: 2px; background: color-mix(in srgb, var(--c, var(--tile)) 22%, var(--tile)); }
+/* A tile scrolled into view by focus stops below the sticky controls (their height is measured by wall.ts). Only the
+   tiles take it: as page-wide scroll-padding it also moved the page whenever focus moved inside the stuck controls. */
+.tile { scroll-margin-top: var(--controls-h, 0px); }
 .tile img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .missing { display: grid; place-items: center; height: 100%; padding: 0.5rem; text-align: center; font-size: 0.75rem; color: var(--ink-2); }
 .cap { position: absolute; inset: auto 0 0 0; display: grid; padding: 1.75rem 0.6rem 0.5rem; font-size: 0.78rem; line-height: 1.3; color: #fff; background: linear-gradient(transparent, rgb(0 0 0 / 0.75) 1.75rem); opacity: 0; transform: translateY(4px); transition: opacity 0.15s, transform 0.15s; pointer-events: none; }
