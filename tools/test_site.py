@@ -14,6 +14,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import misnamed  # noqa: E402
 import site_data  # noqa: E402
 
+try:
+    from PIL import Image, ImageDraw
+    import site_images
+except ImportError:  # Pillow is needed only to make the images
+    site_images = None
+
 DATA = site_data.build(site_data.load_images())
 FOLIO = {f["id"]: f for f in site_data.FOLIOS}
 PLATE = {p["id"]: p for p in DATA["plates"]}
@@ -86,6 +92,37 @@ class Data(unittest.TestCase):
     def test_species_are_in_taxonomic_order(self) -> None:
         orders = [s["taxon_order"] for s in DATA["species"]]
         self.assertEqual(orders, sorted(orders))
+
+
+@unittest.skipUnless(site_images, "needs Pillow")
+class Images(unittest.TestCase):
+    def canvas(self) -> tuple[Image.Image, ImageDraw.ImageDraw]:
+        im = Image.new("RGB", (400, 500), (255, 255, 255))
+        return im, ImageDraw.Draw(im)
+
+    def test_a_red_bird_on_white(self) -> None:
+        im, draw = self.canvas()
+        draw.ellipse([100, 100, 300, 400], fill=(200, 30, 40))
+        c = site_images.colour(im)
+        self.assertTrue(c["hue"] is not None and (c["hue"] < 10 or c["hue"] > 350), c)
+
+    def test_cream_paper_inside_a_white_margin_is_masked(self) -> None:
+        im, draw = self.canvas()
+        draw.rectangle([20, 20, 380, 480], fill=(218, 204, 177))  # a Havell sheet's paper
+        draw.ellipse([120, 150, 280, 350], fill=(40, 90, 170))
+        c = site_images.colour(im)
+        self.assertTrue(c["hue"] is not None and 200 <= c["hue"] <= 230, c)
+
+    def test_a_grey_engraving_has_no_hue(self) -> None:
+        im, draw = self.canvas()
+        draw.ellipse([100, 100, 300, 400], fill=(90, 90, 92))
+        c = site_images.colour(im)
+        self.assertIsNone(c["hue"])
+        self.assertLess(c["light"], 0.5)
+
+    def test_cut_never_enlarges(self) -> None:
+        self.assertEqual(site_images.cut(Image.new("RGB", (3000, 2000)), 480).size, (480, 320))
+        self.assertEqual(site_images.cut(Image.new("RGB", (300, 200)), 480).size, (300, 200))
 
 
 if __name__ == "__main__":
