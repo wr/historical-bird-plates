@@ -1,3 +1,8 @@
 .cache/
 __pycache__/
 .DS_Store
+site/node_modules/
+site/dist/
+site/.astro/
+site/public/img/
+site/src/data/plates.json
