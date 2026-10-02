@@ -6,14 +6,19 @@
     python3 tools/quickstatements.py gould-asia --plates IV.59    # VOL.N for per-volume folios
     python3 tools/quickstatements.py havell --chunk 80 -o havell  # havell-1.qs, havell-2.qs, ...
 
-Each item: instance of (print type), part of the work with the plate's number
-(and volume) as qualifiers, creators and printer from the plate's credit line
-(credits.csv), each referenced to the scan, title, BHL page ID where the folio is
-scanned on BHL, and `depicts` for every species identified with confidence
-high or judged, referenced to this dataset. A plate is eligible when it is
-identified and that identification was checked against the engraved caption
-(Havell: when it is identified at all). The Supplement to The Birds of
-Australia is its own work on Wikidata, so its plates are part of that.
+Each item has: instance of (print type); part of the work, with the plate's
+number (and volume) as qualifiers; its creators and printer, from the plate's
+credit line (credits.csv), each referenced to the plate's scan and quoting the
+credit line; title; BHL page ID where the folio is scanned on BHL; and
+`depicts` for every species identified with confidence high or judged,
+referenced to this dataset. "The scan" is the BHL page for a Gould plate and,
+for Havell, the plate's sheet in the havell-v1 release. A plate with no imprint
+recorded gets no creator statement: no credit line, no claim.
+
+A plate is eligible when it is identified and that identification was checked
+against the engraved caption (Havell: when it is identified at all). The
+Supplement to The Birds of Australia is its own work on Wikidata, so its plates
+are part of that.
 
 Plates Wikidata already has are skipped: same work and number, or same BHL
 page. An item that is part of the work, has no plate number and has the
@@ -140,6 +145,14 @@ def q(s: str) -> str:
 
 def clean(s: str) -> str:
     return " ".join(s.split())
+
+
+def scan_url(folder: str, p: dict) -> str:
+    """Where a plate's credit line can be seen, for a reference: a Gould plate's BHL page,
+    a Havell plate's sheet in the release. Blank when the row has none."""
+    if folder == "havell":
+        return f"{REPO}/releases/download/havell-v1/{p['sheet_asset']}" if p.get("sheet_asset") else ""
+    return p.get("page_url") or ""
 
 
 def artist_qids() -> dict[str, str]:
@@ -286,7 +299,7 @@ def batch(folder: str, only: set | None, limit: int | None, check_existing: bool
                      f"LAST\tP31\t{kind}",
                      f"LAST\tP361{part}"]
             subject = "LAST"
-        url = p.get("page_url") or p.get("image_url") or ""
+        url = scan_url(folder, p)
         if p.get("imprint") and url:
             block += creator_lines(subject, creds.get(k, []), qids, url, p["imprint"])
         if printed:
