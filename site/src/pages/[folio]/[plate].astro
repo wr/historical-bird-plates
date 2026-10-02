@@ -1,0 +1,90 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PlateStrip from "../../components/PlateStrip.astro";
+import PlateViewer from "../../components/PlateViewer.astro";
+import SpeciesBlock from "../../components/SpeciesBlock.astro";
+import { absolute, folioHref, folioOf, href, imageSrc, plateById, plateHref, plates, speciesByCode, speciesHref } from "../../lib/data";
+import { REPO } from "../../lib/links";
+import { identified, norm, plateDescription, plateJsonLd, plateTitle, shown } from "../../lib/seo";
+import type { Plate } from "../../lib/types";
+
+export function getStaticPaths() {
+  return plates.map((p, i) => {
+    const prev = plates[i - 1];
+    const next = plates[i + 1];
+    return {
+      params: { folio: p.folio, plate: p.slug },
+      props: { p, prev: prev?.folio === p.folio ? prev : undefined, next: next?.folio === p.folio ? next : undefined },
+    };
+  });
+}
+
+interface Props {
+  p: Plate;
+  prev?: Plate;
+  next?: Plate;
+}
+const { p, prev, next } = Astro.props;
+const f = folioOf(p);
+const url = absolute(plateHref(p));
+const image = p.image ? absolute(imageSrc(p, "crop")) : undefined;
+const ids = identified(p);
+const others = [...new Set(ids.flatMap((s) => speciesByCode.get(s.code)!.plates))]
+  .filter((id) => id !== p.id)
+  .map((id) => plateById.get(id)!);
+const printedDiffers = ids.length > 0 && p.printed.name && norm(p.printed.name) !== norm(shown(p));
+const scanLabel = f.id === "havell" ? "The plate at audubon.org" : "The scan at the Biodiversity Heritage Library";
+const issue = `${REPO}/issues/new?title=${encodeURIComponent(`${f.short} ${p.key}: ${p.printed.name}`)}`;
+---
+<Layout title={plateTitle(p, f)} description={plateDescription(p, f)} image={image} jsonld={plateJsonLd(p, f, url, image)}>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <span><a href={href()}>Plates</a> / <a href={folioHref(f)}>{f.cite}</a> / <span aria-current="page">{p.label}</span></span>
+    <span class="pager">
+      {prev && <a rel="prev" href={plateHref(prev)}>← {prev.key}</a>}
+      {next && <a rel="next" href={plateHref(next)}>{next.key} →</a>}
+    </span>
+  </nav>
+  <header class="plate-head">
+    <p class="eyebrow">{f.cite} · {p.label}{!p.group && p.volume ? `, volume ${p.volume}` : ""}</p>
+    <h1>{ids.length ? shown(p) : `“${p.printed.name}”`}</h1>
+    {printedDiffers && <p class="printed-as">Printed “{p.printed.name}”</p>}
+    {!ids.length && <p class="printed-as">Not identified</p>}
+  </header>
+  <article class="plate">
+    {p.image ? <PlateViewer plate={p} folio={f} /> : (
+      <div class="viewer"><div class="stage"><p class="missing">This plate is not yet in the image release. <a href={p.scan}>{scanLabel}</a>.</p></div></div>
+    )}
+    <div class="plate-text">
+      <section>
+        <h2 class="eyebrow">Printed on the plate</h2>
+        {p.printed.name && <p class="printed">“{p.printed.name}”</p>}
+        {p.printed.latin && <p class="printed-latin">{p.printed.latin}</p>}
+        {p.printed.caption && <p class="small">Engraved caption: {p.printed.caption}</p>}
+        {p.printed.legend && <p class="small">{p.printed.legend}</p>}
+      </section>
+      {p.misnamed.length > 0 && (
+        <p class="note">The printed name is now eBird's name for another bird: {p.misnamed.map((m, i) => {
+          const s = speciesByCode.get(m.code);
+          return <>{i > 0 && " and "}{s ? <a href={speciesHref(s)}>{m.name}</a> : m.name}</>;
+        })}.</p>
+      )}
+      {p.open && (
+        <p class="note">This identification is still open; the reasoning below says what would settle it. If you can, <a href={issue}>open an issue</a> with the evidence.</p>
+      )}
+      <section>
+        <h2 class="eyebrow">Modern identification</h2>
+        {p.species.map((s) => <SpeciesBlock s={s} several={p.species.length > 1} />)}
+      </section>
+      {p.scan && <ul class="outlinks"><li><a href={p.scan}>{scanLabel}</a></li></ul>}
+    </div>
+  </article>
+  {others.length > 0 && (
+    <section class="elsewhere">
+      <h2>The same {ids.length > 1 ? "birds" : "bird"} on other plates</h2>
+      <PlateStrip plates={others} height={200} />
+    </section>
+  )}
+  <script>
+    import "../../scripts/pager";
+  </script>
+</Layout>
