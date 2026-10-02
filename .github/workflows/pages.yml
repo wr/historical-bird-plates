@@ -33,11 +33,12 @@ jobs:
       - run: npm ci && npm test && npm run build
         working-directory: site
       - name: Unpack the site images
+        shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           release=$(python3 -c "import json; print(json.load(open('site/src/data/images.json'))['release'])")
-          gh release download "$release" -p site-images.tar -O - | tar -x -C site/dist
+          gh release download "$release" --repo "$GITHUB_REPOSITORY" -p site-images.tar -O - | tar -x -C site/dist
       - run: python3 tools/site_check.py site/dist
       - uses: actions/upload-pages-artifact@v5
         with:
