@@ -257,6 +257,29 @@ class Check(unittest.TestCase):
         self.assertEqual(site_check.check(self.dist, images=False),
                          [f"about/index.html: {self.URL}about/ is not in the sitemap"])
 
+    def bare(self, path: str, canonical: str, og_image: str) -> None:
+        """A page whose canonical and og:image are exactly as given."""
+        file = self.dist / path
+        file.parent.mkdir(parents=True, exist_ok=True)
+        file.write_text(
+            f'<html><head><title>T</title><meta name="description" content="D">'
+            f'<meta property="og:image" content="{og_image}">'
+            f'<link rel="canonical" href="{canonical}"></head><body></body></html>')
+
+    def test_a_canonical_pointing_elsewhere_is_reported(self) -> None:
+        self.page("index.html")
+        self.bare("havell/1/index.html", self.URL, f"{self.URL}img/havell/1-thumb.webp")
+        self.assertEqual(site_check.check(self.dist),
+                         [f"havell/1/index.html: canonical {self.URL} is not this page's URL"])
+
+    def test_an_off_site_og_image_or_canonical_is_reported(self) -> None:
+        local = "http://localhost:4321/historical-bird-plates/"
+        self.bare("index.html", local, f"{self.URL}img/havell/1-thumb.webp")
+        self.bare("havell/1/index.html", f"{self.URL}havell/1/", "https://example.com/x.png")
+        self.assertEqual(site_check.check(self.dist),
+                         ["havell/1/index.html: og:image https://example.com/x.png is not on the site",
+                          f"index.html: canonical {local} is not this page's URL"])
+
     def test_the_404_page_needs_no_canonical(self) -> None:
         self.page("index.html")
         (self.dist / "404.html").write_text(

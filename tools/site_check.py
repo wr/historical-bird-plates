@@ -3,9 +3,10 @@
     python3 tools/site_check.py site/dist              # every link, image and page
     python3 tools/site_check.py site/dist --no-images  # skip img/, for a build without the image tarball
 
-Every internal href, src, srcset, data-index and og:image must name a file in the build. Every page
-needs a title, a description, an og:image, and a canonical URL that the sitemap lists (404.html is
-exempt from the canonical). Every JSON-LD block must parse. Standard library only.
+Every internal href, src, srcset, data-index and og:image must name a file in the build, and og:image
+must be on the site. Every page needs a title, a description, an og:image, and a canonical URL that
+is its own on the site's origin and that the sitemap lists (404.html is exempt from the canonical).
+Every JSON-LD block must parse. Standard library only.
 """
 from __future__ import annotations
 
@@ -105,8 +106,11 @@ def check(dist: Path, images: bool = True) -> list[str]:
         name = file.relative_to(dist).as_posix()
         page = Page()
         page.feed(file.read_text(encoding="utf-8"))
-        refs = page.refs + ([page.meta["og:image"]] if page.meta.get("og:image") else [])
-        for ref in dict.fromkeys(refs):
+        og_image = page.meta.get("og:image", "")
+        if og_image and not og_image.startswith(ORIGIN + BASE):
+            errors.append(f"{name}: og:image {og_image} is not on the site")
+            og_image = ""
+        for ref in dict.fromkeys(page.refs + ([og_image] if og_image else [])):
             found = target(dist, file, ref)
             if found is None or (not images and found.relative_to(dist).parts[:1] == ("img",)):
                 continue
@@ -118,10 +122,13 @@ def check(dist: Path, images: bool = True) -> list[str]:
             if not page.meta.get(key):
                 errors.append(f"{name}: no {key}")
         if name != "404.html":
+            own = ORIGIN + BASE + name.removesuffix("index.html")
             if not page.canonical:
                 errors.append(f"{name}: no canonical URL")
-            elif page.canonical not in listed:
-                errors.append(f"{name}: {page.canonical} is not in the sitemap")
+            elif page.canonical != own:
+                errors.append(f"{name}: canonical {page.canonical} is not this page's URL")
+            if own not in listed:
+                errors.append(f"{name}: {own} is not in the sitemap")
         for block in page.jsonld:
             try:
                 json.loads(block)
