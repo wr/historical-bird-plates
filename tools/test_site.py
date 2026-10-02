@@ -124,6 +124,42 @@ class Images(unittest.TestCase):
         self.assertEqual(site_images.cut(Image.new("RGB", (3000, 2000)), 480).size, (480, 320))
         self.assertEqual(site_images.cut(Image.new("RGB", (300, 200)), 480).size, (300, 200))
 
+    def test_red_shaded_across_the_hue_wrap_beats_a_larger_green(self) -> None:
+        im = Image.new("RGB", (400, 500), (255, 255, 255))
+        draw = ImageDraw.Draw(im)
+        draw.rectangle([50, 50, 150, 150], fill=(200, 30, 45))  # red shaded towards magenta
+        draw.rectangle([150, 50, 250, 150], fill=(200, 45, 30))  # red shaded towards orange
+        draw.rectangle([50, 200, 350, 300], fill=(40, 160, 60))  # larger green area
+        c = site_images.colour(im)
+        self.assertTrue(c["hue"] is not None and (c["hue"] < 10 or c["hue"] > 350), c)
+
+    def test_a_plate_already_cut_is_not_cut_again(self) -> None:
+        import tempfile
+        import unittest.mock
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmppath = Path(tmpdir)
+            with unittest.mock.patch.object(site_images, "OUT", tmppath):
+                with unittest.mock.patch.object(site_images, "asset", side_effect=AssertionError("downloaded")):
+                    # Create three webp files for a plate
+                    folio = site_data.FOLIOS[0]
+                    slug = "1"
+                    folio_dir = tmppath / folio["id"]
+                    folio_dir.mkdir(parents=True)
+                    for cut_name, size in [("thumb", (480, 360)), ("crop", (1600, 1200)), ("sheet", (1000, 750))]:
+                        im = Image.new("RGB", size, (255, 255, 255))
+                        draw = ImageDraw.Draw(im)
+                        # Draw a red ellipse
+                        draw.ellipse([10, 10, size[0] - 10, size[1] - 10], fill=(200, 30, 40))
+                        im.save(folio_dir / f"{slug}-{cut_name}.webp", "WEBP")
+                    # Call make() - should not call asset() and should not raise
+                    entry = site_images.make(folio, {"crop_asset": "x", "sheet_asset": "y"}, slug)
+                    # Verify sizes match
+                    self.assertEqual(entry["thumb"], [480, 360])
+                    self.assertEqual(entry["crop"], [1600, 1200])
+                    self.assertEqual(entry["sheet"], [1000, 750])
+                    # Verify it detected the red colour
+                    self.assertTrue(entry["hue"] is not None and (entry["hue"] < 10 or entry["hue"] > 350), entry)
+
 
 if __name__ == "__main__":
     unittest.main()

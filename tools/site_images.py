@@ -11,11 +11,14 @@ resumes. Needs Pillow with WebP. CI never runs this: the site's build reads only
 from __future__ import annotations
 
 import colorsys
+import http.client
 import io
 import json
 import shutil
 import sys
 import tarfile
+import time
+import urllib.error
 import urllib.request
 import zipfile
 from collections import Counter
@@ -82,8 +85,11 @@ def colour(im: Image.Image) -> dict:
         rgb = tuple(round(sum(c[i] for c in pool) / len(pool)) for i in range(3))
         hue = None
     else:
-        best = max(votes, key=lambda v: v[0])
-        rgb = tuple(round(best[i] / best[0]) for i in (1, 2, 3))
+        # Choose winning bin by circular sum: bin k-1, k, k+1 modulo 24
+        best_k = max(range(24), key=lambda k: votes[k][0] + votes[(k - 1) % 24][0] + votes[(k + 1) % 24][0])
+        # Colour is weighted RGB mean over the three bins
+        w = votes[best_k][0] + votes[(best_k - 1) % 24][0] + votes[(best_k + 1) % 24][0]
+        rgb = tuple(round((votes[best_k][i] + votes[(best_k - 1) % 24][i] + votes[(best_k + 1) % 24][i]) / w) for i in (1, 2, 3))
         hue = round(colorsys.rgb_to_hls(*(v / 255 for v in rgb))[0] * 360) % 360
     light = colorsys.rgb_to_hls(*(v / 255 for v in rgb))[1]
     return {"colour": "#%02x%02x%02x" % rgb, "hue": hue, "light": round(light, 3)}
@@ -96,11 +102,29 @@ def cut(im: Image.Image, long_edge: int) -> Image.Image:
     return out
 
 
+def _fetch_with_retry(url: str) -> bytes:
+    """Fetch URL with retries for transient errors; raise on persistent failure."""
+    sleeps = [5, 15]
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=600) as r:
+                return r.read()
+        except (urllib.error.URLError, http.client.IncompleteRead, TimeoutError, ConnectionError) as e:
+            if attempt < 2:
+                time.sleep(sleeps[attempt])
+            else:
+                raise
+
+
 def download(url: str, path: Path) -> Path:
     path.parent.mkdir(parents=True, exist_ok=True)
     part = path.with_suffix(path.suffix + ".part")
-    with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=600) as r, open(part, "wb") as f:
-        shutil.copyfileobj(r, f)
+    with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=600) as r:
+        data = r.read()
+        content_length = r.headers.get("Content-Length")
+        if content_length is not None and len(data) != int(content_length):
+            raise IOError(f"Short read: {len(data)} bytes, expected {content_length}")
+    part.write_bytes(data)
     part.rename(path)
     return path
 
@@ -118,15 +142,22 @@ def asset(folio: dict, name: str) -> bytes:
         with zipfile.ZipFile(crops_zip(folio)) as z:
             return z.read(next(m for m in z.namelist() if m.rsplit("/", 1)[-1] == name))
     url = f"{site_data.REPO}/releases/download/{folio['release']}/{name}"
-    with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=600) as r:
-        return r.read()
+    return _fetch_with_retry(url)
 
 
-def make(folio: dict, row: dict, slug: str, known: dict | None) -> dict:
+def make(folio: dict, row: dict, slug: str) -> dict:
     """Cut one plate's three images, unless they're already cut; return its images.json entry."""
     paths = {name: OUT / folio["id"] / f"{slug}-{name}.webp" for name in CUTS}
-    if known and all(p.exists() for p in paths.values()):
-        return known
+    # If all three webp files exist, rebuild entry from disk
+    if all(p.exists() for p in paths.values()):
+        entry = {}
+        for name in ("thumb", "crop", "sheet"):
+            with Image.open(paths[name]) as im:
+                entry[name] = list(im.size)
+        with Image.open(paths["crop"]) as crop_im:
+            entry.update(colour(crop_im))
+        return entry
+    # Otherwise download and cut
     paths["crop"].parent.mkdir(parents=True, exist_ok=True)
     crop = Image.open(io.BytesIO(asset(folio, row["crop_asset"])))
     sheet = Image.open(io.BytesIO(asset(folio, row["sheet_asset"])))
@@ -134,21 +165,25 @@ def make(folio: dict, row: dict, slug: str, known: dict | None) -> dict:
     for name, source in (("thumb", crop), ("crop", crop), ("sheet", sheet)):
         long_edge, quality = CUTS[name]
         out = cut(source, long_edge)
-        out.save(paths[name], "WEBP", quality=quality, method=6)
+        # Save atomically to .part then rename
+        part = paths[name].with_name(paths[name].name + ".part")
+        out.save(part, "WEBP", quality=quality, method=6)
+        part.replace(paths[name])
         entry[name] = list(out.size)
-    entry.update(colour(crop))
+    # Compute colour from the 1600px crop cut
+    crop_cut = cut(crop, CUTS["crop"][0])
+    entry.update(colour(crop_cut))
     print(f"{folio['id']}/{slug}", flush=True)
     return entry
 
 
 def build() -> int:
-    known = json.loads(IMAGES.read_text(encoding="utf-8"))["plates"] if IMAGES.exists() else {}
     for folio in site_data.FOLIOS:
         if folio["id"] in ZIPPED:
             crops_zip(folio)  # once, before the threads start
     jobs = [(folio, row, slug) for folio, row, _, slug in site_data.plate_rows() if row["crop_asset"]]
     with ThreadPoolExecutor(8) as pool:
-        entries = list(pool.map(lambda j: make(*j, known.get(f"{j[0]['id']}/{j[2]}")), jobs))
+        entries = list(pool.map(lambda j: make(*j), jobs))
     plates = {f"{folio['id']}/{slug}": entry for (folio, _, slug), entry in zip(jobs, entries)}
     size = sum(p.stat().st_size for p in OUT.rglob("*.webp"))
     if size > BUDGET:
