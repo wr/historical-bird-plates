@@ -390,6 +390,19 @@ class Normalise(unittest.TestCase):
             with self.subTest(line=line):
                 self.assertEqual(imprints.normalise(line), written)
 
+    def test_a_stop_after_a_run_of_capitals_is_kept(self):
+        for line, written in (("by HC.", "by H. C."), ("J.J. Audubon FRS.", "J. J. Audubon F. R. S."),
+                              ("FRS. FLS.", "F. R. S. F. L. S."), ("HC. del et lith.", "H. C. del et lith."),
+                              ("J.J. Audubon FRS. del", "J. J. Audubon F. R. S. del")):
+            with self.subTest(line=line):
+                self.assertEqual(imprints.normalise(line), written)
+
+    def test_a_roman_numeral_and_the_article_a_are_not_initials(self):
+        for line in ("Plate IV.", "Plate IV. fig. 2", "Plate XII. del", "from A Drawing by E. Lear", "A Drawing"):
+            with self.subTest(line=line):
+                self.assertEqual(imprints.normalise(line), line)
+        self.assertEqual(imprints.normalise("A Smith del."), "A. Smith del.")   # before a name, A is an initial
+
     def test_capitals_beginning_words_and_lowercase_abbreviations_are_untouched(self):
         for line in ("Drawn from life and on stone by", "Walter & Cohn, Imp", "Hullmandel & Walton Imp.",
                      "Engraved, Printed & Coloured by R. Havell Junr.", "J. Gould del et lith", "del: et lith:"):

@@ -607,22 +607,30 @@ def normalise_line(line: str) -> str:
 def initials(line: str) -> str:
     """Every initial written "X. ": a lone capital, with a stop or without, followed by
     another initial, & or and, or a capitalised word; and capitals glued to a name or to
-    a stop before one ("HCRichter", "HC. Richter", "JGould"). Words that begin with a
-    capital ("Drawn", "Imp.") and lowercase abbreviations are left as they are."""
+    a stop ("HCRichter", "HC. Richter", "JGould", "FRS." is "F. R. S."). Words that begin
+    with a capital ("Drawn", "Imp.") and lowercase abbreviations are left as they are,
+    and so are a Roman numeral with a stop that ends the line or comes before a lowercase
+    word ("Plate IV."), and the article A before a word of a wording ("A Drawing")."""
+    words = {w for pair in PAIRS for w in pair}
+    raw = line.split()
     tokens = []
-    for tok in line.split():
+    for i, tok in enumerate(raw):
+        after = raw[i + 1] if i + 1 < len(raw) else ""
         glued = re.fullmatch(r"([A-Z]+)([A-Z][a-z]\S*)", tok)
         if glued:
             tokens += list(glued.group(1)) + [glued.group(2)]
+        elif re.fullmatch(r"[IVXLC]{2,}\.", tok) and not re.match(r"[A-Z&]|and$", after):
+            tokens.append(tok)
         elif re.fullmatch(r"[A-Z]{2,}\.", tok):
-            tokens += list(tok[:-1])
+            tokens += list(tok[:-2]) + [tok[-2:]]
         else:
             tokens.append(tok)
     lone = lambda t: re.fullmatch(r"[A-Z]\.?", t)
     nxt = lambda t: lone(t) or t in ("&", "and") or re.match(r"[A-Z][a-z]", t)
+    article = lambda t, n: t == "A" and re.sub(r"[^A-Za-z]", "", n).casefold() in words
     out = []
     for i, tok in enumerate(tokens):
-        if lone(tok) and i + 1 < len(tokens) and nxt(tokens[i + 1]):
+        if lone(tok) and i + 1 < len(tokens) and nxt(tokens[i + 1]) and not article(tok, tokens[i + 1]):
             tok = tok[0] + "."
         out.append(tok)
     return " ".join(out)
