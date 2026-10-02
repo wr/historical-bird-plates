@@ -60,6 +60,11 @@ a:hover { text-decoration-color: currentColor; }
 .menu summary::-webkit-details-marker { display: none; }
 .menu summary::after { content: " ▾"; font-size: 0.75em; }
 .menu ul { position: absolute; right: 0; top: calc(100% + 8px); z-index: 20; margin: 0; padding: 0.4rem 0; list-style: none; min-width: 17rem; background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; box-shadow: 0 8px 24px rgb(0 0 0 / 0.12); }
+@media (max-width: 600px) {
+  .site-head { position: relative; }
+  .menu { position: static; }
+  .menu ul { left: var(--gutter); right: var(--gutter); min-width: 0; max-width: 24rem; }
+}
 .menu li a { display: block; padding: 0.4rem 1rem; }
 .menu li a:hover { background: var(--paper-2); text-decoration: none; }
 main { padding: 0 var(--gutter) 4rem; }
