@@ -5,8 +5,14 @@
     python3 tools/site_images.py fetch   # unpack the published tarball into site/public/img/
 
 Each plate's crop and sheet come from its folio's image release; Australia's and Asia's crops come
-from crops.zip, downloaded once into .cache/. Plates already cut are skipped, so a stopped build
-resumes. Needs Pillow with WebP. CI never runs this: the site's build reads only images.json.
+from crops.zip, downloaded once into .cache/. A plate whose three WebPs are already in
+site/public/img/ is not cut again and keeps its entry in images.json, so a stopped build resumes and
+an unchanged plate's colour never drifts. Resuming goes by the files being there, not by what they
+were cut from: when a new folio release changes a file under the same name, delete that plate's three
+WebPs before rebuilding.
+
+build needs Pillow with WebP; fetch needs only the standard library. CI never runs this: the site's
+build reads only images.json.
 """
 from __future__ import annotations
 
@@ -25,7 +31,11 @@ from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
-from PIL import Image
+try:
+    from PIL import Image
+    Image.MAX_IMAGE_PIXELS = None  # full sheets run to tens of megapixels, from our own releases: no bomb guard
+except ImportError:  # fetch needs no Pillow; build says so if it's missing
+    Image = None
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import site_data  # noqa: E402
@@ -158,11 +168,16 @@ def asset(folio: dict, name: str) -> bytes:
     return _with_retry(fetch)
 
 
-def make(folio: dict, row: dict, slug: str) -> dict:
-    """Cut one plate's three images, unless they're already cut; return its images.json entry."""
+def make(folio: dict, row: dict, slug: str, known: dict | None) -> dict:
+    """Cut one plate's three images, unless they're already cut; return its images.json entry.
+
+    known is the plate's entry in the images.json being replaced, if it has one. A plate already
+    cut keeps it; a plate cut but not yet listed has its entry read back from the files.
+    """
     paths = {name: OUT / folio["id"] / f"{slug}-{name}.webp" for name in CUTS}
-    # If all three webp files exist, rebuild entry from disk
     if all(p.exists() for p in paths.values()):
+        if known:
+            return known
         entry = {}
         for name in ("thumb", "crop", "sheet"):
             with Image.open(paths[name]) as im:
@@ -191,13 +206,18 @@ def make(folio: dict, row: dict, slug: str) -> dict:
 
 
 def build() -> int:
+    if Image is None:
+        print("site_images.py build needs Pillow with WebP: python3 -m pip install Pillow", file=sys.stderr)
+        return 1
     for folio in site_data.FOLIOS:
         if folio["id"] in ZIPPED:
             crops_zip(folio)  # once, before the threads start
-    jobs = [(folio, row, slug) for folio, row, _, slug in site_data.plate_rows() if row["crop_asset"]]
+    known = site_data.load_images()
+    jobs = [(folio, row, slug, known.get(f"{folio['id']}/{slug}"))
+            for folio, row, _, slug in site_data.plate_rows() if row["crop_asset"]]
     with ThreadPoolExecutor(8) as pool:
         entries = list(pool.map(lambda j: make(*j), jobs))
-    plates = {f"{folio['id']}/{slug}": entry for (folio, _, slug), entry in zip(jobs, entries)}
+    plates = {f"{folio['id']}/{slug}": entry for (folio, _, slug, _), entry in zip(jobs, entries)}
     size = sum(p.stat().st_size for p in OUT.rglob("*.webp"))
     if size > BUDGET:
         print(f"the images come to {size / 1e6:.0f} MB, over the {BUDGET / 1e6:.0f} MB budget", file=sys.stderr)

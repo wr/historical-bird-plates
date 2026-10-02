@@ -219,7 +219,7 @@ Measured or found while writing the implementation plan:
 - **Tool names.** The data tool is `tools/site_data.py` and the build check `tools/site_check.py`. A module named `site` would shadow Python's own `site`, which every interpreter imports at startup.
 - **Image sizes.** The sheet cut is 1000 px at WebP quality 65; the thumb and crop are at quality 70. Measured on sample plates, all three come to about 620 MB, inside the 850 MB budget.
 - **Colour.** The paper mask also drops the two commonest light, near-grey tones, as well as the border's: the Havell crops keep some cream paper inside their white margin. Hue votes are weighted by chroma squared.
-- **Europe plate 132** is not in `gould-europe-v1` yet. Its tile is a placeholder, and its plate page links to the BHL scan.
+- **Europe plate 132** was not in `gould-europe-v1`; `gould-europe-v2` added it, so every plate now has its images. The placeholder tile and the plate page's link to the scan stay for any plate a release lacks.
 - **The wall's index** is a static `wall.json`, shared by the wall and the folio pages, built from the same `entryOf` function the server render uses.
 - **Viewer.** It zooms by pinch, by ctrl- or ⌘-scroll (a trackpad pinch arrives that way), by double-click and by + and − buttons. Plain scrolling scrolls the page. The toggle reads *Plate* and *Full sheet*.
 - **View transitions** use CSS cross-document `@view-transition`, with no client router, so page scripts never need re-running.

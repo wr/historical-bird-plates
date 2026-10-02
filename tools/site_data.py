@@ -31,13 +31,13 @@ GOULD = {"author": "John Gould", "medium": "Hand-coloured lithograph",
 FOLIOS = [
     {"id": "havell", "author": "John James Audubon", "title": "The Birds of America", "years": "1827–38",
      "start": 1827, "end": 1838, "cite": "Audubon, The Birds of America", "short": "Audubon",
-     "medium": "Hand-coloured engraving and aquatint", "release": "havell-v1", "by_volume": False,
+     "medium": "Hand-coloured engraving and aquatint", "release": "havell-v2", "by_volume": False,
      "intro": "435 plates, engraved, printed and hand-coloured by Robert Havell Jr. in London from Audubon's "
               "watercolours, and numbered 1–435 on the plates themselves.",
      "credit": "Courtesy of the John James Audubon Center at Mill Grove, Montgomery County Audubon Collection, "
                "and Zebra Publishing."},
     {**GOULD, "id": "gould-europe", "title": "The Birds of Europe", "years": "1832–37", "start": 1832, "end": 1837,
-     "cite": "Gould, The Birds of Europe", "short": "Europe", "release": "gould-europe-v1", "by_volume": False,
+     "cite": "Gould, The Birds of Europe", "short": "Europe", "release": "gould-europe-v2", "by_volume": False,
      "intro": "Five volumes and 449 plates, numbered by Gould's General List. Drawn and lithographed by John and "
               "Elizabeth Gould and Edward Lear, hand-coloured, and published in parts in London."},
     {**GOULD, "id": "gould-australia", "title": "The Birds of Australia", "years": "1840–69", "start": 1840,

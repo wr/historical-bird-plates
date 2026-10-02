@@ -222,7 +222,7 @@ python3 tools/site_images.py fetch       # the published WebP images, into site/
 cd site && npm ci && npm run dev         # serve it at localhost:4321/historical-bird-plates/
 ```
 
-`python3 tools/site_images.py build` remakes the images and `site/src/data/images.json` from the folio releases. A new set is published as a new `site-images-vN` release.
+`python3 tools/site_images.py build` remakes the images and `site/src/data/images.json` from the folio releases; it needs [Pillow](https://pypi.org/project/pillow/), which `fetch` doesn't. A new set is published as a new `site-images-vN` release.
 
 ### Contributing
 

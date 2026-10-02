@@ -2,25 +2,30 @@
 
     python3 tools/test_site.py
 
-The data tests build from the real tables. The image tests need Pillow and are skipped without it.
+The data tests build from the real tables. The tests that cut images need Pillow and are skipped
+without it.
 """
 from __future__ import annotations
 
+import contextlib
+import io
+import subprocess
 import sys
 import tempfile
 import unittest
+import unittest.mock
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import misnamed  # noqa: E402
 import site_check  # noqa: E402
 import site_data  # noqa: E402
+import site_images  # noqa: E402  (imports without Pillow: only cutting needs it)
 
 try:
     from PIL import Image, ImageDraw
-    import site_images
-except ImportError:  # Pillow is needed only to make the images
-    site_images = None
+except ImportError:  # Pillow is needed only to cut the images
+    Image = None
 
 DATA = site_data.build(site_data.load_images())
 FOLIO = {f["id"]: f for f in site_data.FOLIOS}
@@ -96,13 +101,14 @@ class Data(unittest.TestCase):
         self.assertEqual(orders, sorted(orders))
 
     def test_every_plate_in_a_release_has_its_images(self) -> None:
-        self.assertEqual([p["id"] for p in DATA["plates"] if not p["image"]], ["gould-europe/132"])
+        unreleased = [f"{folio['id']}/{slug}" for folio, row, _, slug in site_data.plate_rows() if not row["crop_asset"]]
+        self.assertEqual([p["id"] for p in DATA["plates"] if not p["image"]], unreleased)
         p = PLATE["havell/121"]["image"]
         self.assertEqual(max(p["thumb"]), 480)
         self.assertIsNone(p["hue"])  # a white owl
 
 
-@unittest.skipUnless(site_images, "needs Pillow")
+@unittest.skipUnless(Image, "needs Pillow")
 class Images(unittest.TestCase):
     def canvas(self) -> tuple[Image.Image, ImageDraw.ImageDraw]:
         im = Image.new("RGB", (400, 500), (255, 255, 255))
@@ -142,8 +148,6 @@ class Images(unittest.TestCase):
         self.assertTrue(c["hue"] is not None and (c["hue"] < 10 or c["hue"] > 350), c)
 
     def test_a_plate_already_cut_is_not_cut_again(self) -> None:
-        import tempfile
-        import unittest.mock
         with tempfile.TemporaryDirectory() as tmpdir:
             tmppath = Path(tmpdir)
             with unittest.mock.patch.object(site_images, "OUT", tmppath):
@@ -160,7 +164,7 @@ class Images(unittest.TestCase):
                         draw.ellipse([10, 10, size[0] - 10, size[1] - 10], fill=(200, 30, 40))
                         im.save(folio_dir / f"{slug}-{cut_name}.webp", "WEBP")
                     # Call make() - should not call asset() and should not raise
-                    entry = site_images.make(folio, {"crop_asset": "x", "sheet_asset": "y"}, slug)
+                    entry = site_images.make(folio, {"crop_asset": "x", "sheet_asset": "y"}, slug, None)
                     # Verify sizes match
                     self.assertEqual(entry["thumb"], [480, 360])
                     self.assertEqual(entry["crop"], [1600, 1200])
@@ -168,10 +172,33 @@ class Images(unittest.TestCase):
                     # Verify it detected the red colour
                     self.assertTrue(entry["hue"] is not None and (entry["hue"] < 10 or entry["hue"] > 350), entry)
 
+    def test_a_plate_already_cut_keeps_its_entry(self) -> None:
+        known = {"thumb": [1, 2], "crop": [3, 4], "sheet": [5, 6], "colour": "#123456", "hue": 210, "light": 0.2}
+        with tempfile.TemporaryDirectory() as tmpdir:
+            folio = site_data.FOLIOS[0]
+            (Path(tmpdir) / folio["id"]).mkdir()
+            for cut_name in site_images.CUTS:
+                Image.new("RGB", (8, 8), (200, 30, 40)).save(Path(tmpdir) / folio["id"] / f"1-{cut_name}.webp", "WEBP")
+            with unittest.mock.patch.object(site_images, "OUT", Path(tmpdir)), \
+                 unittest.mock.patch.object(site_images, "asset", side_effect=AssertionError("downloaded")):
+                self.assertEqual(site_images.make(folio, {"crop_asset": "x", "sheet_asset": "y"}, "1", dict(known)),
+                                 known)
+
+
+class Fetch(unittest.TestCase):
+    def test_site_images_imports_without_pillow(self) -> None:
+        code = "import sys; sys.modules['PIL'] = None; import site_images; print(site_images.Image)"
+        out = subprocess.run([sys.executable, "-c", code], cwd=Path(__file__).resolve().parent,
+                             capture_output=True, text=True, check=True)
+        self.assertEqual(out.stdout.strip(), "None")
+
+    def test_build_without_pillow_says_so(self) -> None:
+        err = io.StringIO()
+        with unittest.mock.patch.object(site_images, "Image", None), contextlib.redirect_stderr(err):
+            self.assertEqual(site_images.build(), 1)
+        self.assertIn("needs Pillow", err.getvalue())
+
     def test_a_short_download_is_retried_then_kept_out(self) -> None:
-        import io
-        import tempfile
-        import unittest.mock
         import http.client
         with tempfile.TemporaryDirectory() as tmpdir:
             tmppath = Path(tmpdir)
