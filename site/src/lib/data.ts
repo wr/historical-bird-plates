@@ -1,5 +1,6 @@
 import raw from "../data/plates.json";
 import type { Data, Folio, Plate } from "./types";
+import { entryOf } from "../scripts/wall-core";
 
 const data = raw as unknown as Data;
 
@@ -7,6 +8,7 @@ export const { folios, plates, species } = data;
 export const folioById = new Map(folios.map((f) => [f.id, f]));
 export const plateById = new Map(plates.map((p) => [p.id, p]));
 export const speciesByCode = new Map(species.map((s) => [s.code, s]));
+export const entries = plates.map(entryOf);
 
 export const SITE = "https://wr.github.io";
 const base = import.meta.env.BASE_URL; // "/historical-bird-plates/"

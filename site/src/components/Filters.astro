@@ -1,0 +1,37 @@
+---
+import { FLAGS, plural } from "../scripts/wall-core";
+import type { Folio } from "../lib/types";
+
+interface Props {
+  folios: Folio[];
+  count: number;
+  showFolios?: boolean;
+}
+const { folios, count, showFolios = true } = Astro.props;
+---
+<form class="controls" data-controls role="search">
+  <label>
+    <span class="sr-only">Search the plates</span>
+    <input type="search" name="q" placeholder="Snowy owl, Strix, snoowl1" autocomplete="off" spellcheck="false" />
+  </label>
+  <label class="arrange">
+    <span>Arrange</span>
+    <select name="arrange">
+      <option value="folio">{showFolios ? "By folio" : "In plate order"}</option>
+      <option value="taxonomy">By family</option>
+      <option value="colour">By colour</option>
+    </select>
+  </label>
+  <div class="pills" role="group" aria-label="Filters">
+    {showFolios && folios.map((f) => (
+      <button type="button" class="pill" data-folio={f.id} aria-pressed="false">{f.short}</button>
+    ))}
+    {Object.entries(FLAGS).map(([flag, label]) => (
+      <button type="button" class="pill" data-flag={flag} aria-pressed="false">{label}</button>
+    ))}
+  </div>
+  <div class="status">
+    <p data-count aria-live="polite">{plural(count, "plate")}</p>
+    <label>Tile size <input type="range" name="size" min="100" max="360" step="20" value="180" /></label>
+  </div>
+</form>
