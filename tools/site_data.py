@@ -39,12 +39,12 @@ FOLIOS = [
     {**GOULD, "id": "gould-europe", "title": "The Birds of Europe", "years": "1832–37", "start": 1832, "end": 1837,
      "cite": "Gould, The Birds of Europe", "short": "Europe", "release": "gould-europe-v2", "by_volume": False,
      "intro": "Five volumes and 449 plates, numbered by Gould's General List. Drawn and lithographed by John and "
-              "Elizabeth Gould and Edward Lear, hand-coloured, and published in parts in London."},
+              "Elizabeth Gould and Edward Lear, hand-coloured and published in parts in London."},
     {**GOULD, "id": "gould-australia", "title": "The Birds of Australia", "years": "1840–69", "start": 1840,
      "end": 1869, "cite": "Gould, The Birds of Australia", "short": "Australia", "release": "gould-australia-v1",
      "by_volume": True,
      "intro": "Seven volumes (1840–48) and a Supplement (1851–69), 681 plates. Drawn by John and Elizabeth Gould "
-              "and H. C. Richter, lithographed, hand-coloured, and published in parts in London."},
+              "and H. C. Richter, lithographed, hand-coloured and published in parts in London."},
     {**GOULD, "id": "gould-asia", "title": "The Birds of Asia", "years": "1850–83", "start": 1850, "end": 1883,
      "cite": "Gould, The Birds of Asia", "short": "Asia", "release": "gould-asia-v1", "by_volume": True,
      "intro": "Seven volumes and 530 plates, drawn and lithographed by John Gould with H. C. Richter, Joseph Wolf "
@@ -53,7 +53,7 @@ FOLIOS = [
      "end": 1873, "cite": "Gould, The Birds of Great Britain", "short": "Britain", "release": "gould-britain-v2",
      "by_volume": True,
      "intro": "Five volumes and 367 plates, drawn by John Gould with H. C. Richter, W. Hart and J. Wolf, "
-              "lithographed, hand-coloured, and published in parts in London."},
+              "lithographed, hand-coloured and published in parts in London."},
 ]
 # Scans credited to someone other than the folio's source, by (folio, plate key). The havell-v2
 # release notes credit plate 165, cut from the University of Pittsburgh's copy, separately.
