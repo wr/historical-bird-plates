@@ -58,8 +58,11 @@ H. C. Richter", "J & E Gould" "J. & E. Gould"), because the stops after initials
 are fused with the letters' serifs at the scans' resolution and cannot be read.
 A comma or colon directly after an initial is such a stop, misread ("J, Gould" is
 "J. Gould", "C: Hullmandel" "C. Hullmandel"); one after a name ("Richter, del.")
-or in a wording ("del:") is not. Every other stop, and commas, colons, capitals,
-& or and, and spelling are as engraved.
+is not. The mark after an abbreviation (del, delt, lith, lithog, Imp, Impt, Edwd,
+Edinr, Junr) is written as a stop too: "delt," is "delt.", "Imp:" "Imp.", "del: et
+lith:" "del. et lith."; the engraver's variants of that mark do not converge, and a
+mark that is not there stays absent ("del et lith" is unchanged). Every other stop,
+and commas, colons, capitals, & or and, and spelling are as engraved.
 
 Needs Pillow, and macOS for the OCR (tools/ocr.swift, compiled into .cache/ on
 first use). `apply`, the line finding and the layout of the contact sheets need
@@ -594,6 +597,13 @@ def run_apart(run: str, pairs: set[tuple[str, str]] = PAIRS) -> str:
     return " ".join(run[a:b] for a, b in zip(bounds, bounds[1:]))
 
 
+# The abbreviations of a credit line: the mark after one is written as a stop (normalise_line).
+ABBREVIATIONS = ("del", "delt", "lith", "lithog", "Imp", "Impt", "Edwd", "Edinr", "Junr")
+ABBREVIATED_WORDS = {a.casefold() for a in ABBREVIATIONS}   # "DEL." and "IMP." are not initials
+ABBREVIATED = re.compile(r"(?<![A-Za-z])(" + "|".join(sorted(ABBREVIATIONS, key=len, reverse=True))
+                         + r")[,:;](?![.,;:])", re.I)
+
+
 def normalise_line(line: str) -> str:
     """One credit line spaced by the convention in the module's docstring."""
     s = " ".join(line.split())
@@ -603,16 +613,17 @@ def normalise_line(line: str) -> str:
     s = re.sub(r"([.,;:])(?=[^\s.,;:])", r"\1 ", s)
     s = re.sub(r"(?<=[a-z])and(?=[A-Z])", " and ", s)
     s = re.sub(r"\band(?=[A-Z])", "and ", s)
+    s = ABBREVIATED.sub(r"\1.", s)
     return initials(" ".join(s.split()))
 
 
 def initials(line: str) -> str:
     """Every initial written "X. ": a lone capital, with a stop, a comma, a colon or
     nothing after it, followed by another initial, & or and, or a capitalised word
-    ("J, Gould" is "J. Gould", "C: Hullmandel" "C. Hullmandel"; a mark after a name,
-    "Richter, del.", or in a wording, "del:", is left); and capitals run together
-    ("HC Richter", "HCRichter", "HC. Richter", "JGould", "FRS." are "H. C. Richter",
-    "J. Gould", "F. R. S."), except a Roman numeral with no stop before a name. Words
+    ("J, Gould" is "J. Gould", "C: Hullmandel" "C. Hullmandel"; a comma after a name,
+    "Richter, del.", is left); and capitals run together ("HC Richter",
+    "HCRichter", "HC. Richter", "JGould", "FRS." are "H. C. Richter", "J. Gould",
+    "F. R. S."), except a Roman numeral with no stop before a name. Words
     that begin with a capital ("Drawn", "Imp.") and lowercase abbreviations are left as
     they are, and so are a Roman numeral with a stop that ends the line or comes before
     a lowercase word ("Plate IV."), and the article A before a word of a wording
@@ -627,10 +638,10 @@ def initials(line: str) -> str:
             tokens += list(glued.group(1)) + [glued.group(2)]
         elif re.fullmatch(r"[IVXLC]{2,}\.", tok) and not re.match(r"[A-Z&]|and$", after):
             tokens.append(tok)
-        elif re.fullmatch(r"[A-Z]{2,}\.", tok):
+        elif re.fullmatch(r"[A-Z]{2,}\.", tok) and tok[:-1].casefold() not in ABBREVIATED_WORDS:
             tokens += list(tok[:-2]) + [tok[-2:]]
         elif re.fullmatch(r"[A-Z]{2,}", tok) and not re.fullmatch(r"[IVXLCDM]+", tok) \
-                and re.match(r"[A-Z][a-z]|&$|and$", after):
+                and tok.casefold() not in ABBREVIATED_WORDS and re.match(r"[A-Z][a-z]|&$|and$", after):
             tokens += list(tok)
         else:
             tokens.append(tok)

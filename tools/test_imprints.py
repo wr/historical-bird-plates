@@ -347,7 +347,7 @@ class Normalise(unittest.TestCase):
     def test_no_space_before_a_mark_and_none_at_a_line_s_end(self):
         self.assertEqual(imprints.normalise("Drawn by J & E. Gould . |  Printed by C. Hullmandel. "),
                          "Drawn by J. & E. Gould. | Printed by C. Hullmandel.")
-        self.assertEqual(imprints.normalise("E. Lear del: et lith:"), "E. Lear del: et lith:")
+        self.assertEqual(imprints.normalise("E. Lear del: et lith:"), "E. Lear del. et lith.")   # Ruling 25
         self.assertEqual(imprints.normalise("del.,et"), "del., et")
         self.assertEqual(imprints.normalise("J & .E. Gould"), "J &. E. Gould")   # a mark keeps to what precedes it
 
@@ -398,16 +398,40 @@ class Normalise(unittest.TestCase):
                               ("J,Gould and H.C,Richter del et lith.", "J. Gould and H. C. Richter del et lith."),
                               ("J, Gould and H. C, Richter del et lith. | Hullmandel & Walton Imp.",
                                "J. Gould and H. C. Richter del et lith. | Hullmandel & Walton Imp."),
-                              ("J & E. Gould del: | C: Hullmandel Imp:", "J. & E. Gould del: | C. Hullmandel Imp:"),
+                              ("J & E. Gould del: | C: Hullmandel Imp:", "J. & E. Gould del. | C. Hullmandel Imp."),
                               ("J, & E, Gould", "J. & E. Gould"),
                               ("Drawn on Stone by E: Lear", "Drawn on Stone by E. Lear")):
             with self.subTest(line=line):
                 self.assertEqual(imprints.normalise(line), written)
 
-    def test_a_comma_or_colon_after_a_name_or_in_a_wording_is_left(self):
+    def test_a_comma_after_a_name_is_left(self):
         for line in ("J. Gould and H. C. Richter, del et lith.", "H. C. Richter, del.", "Walter, Imp.",
-                     "J. Gould, and H. C. Richter", "E. Lear del: et lith:", "del: et lith: | Imp:",
-                     "J. & E. Gould del: | C. Hullmandel Imp:", "J. Gould, E, del."):   # an initial with nothing after it to join
+                     "J. Gould, and H. C. Richter", "J. Gould, E, del."):   # an initial with nothing after it to join
+            with self.subTest(line=line):
+                self.assertEqual(imprints.normalise(line), line)
+
+    def test_the_mark_after_an_abbreviation_is_a_stop(self):
+        for line, written in (("J. Gould and H. C. Richter delt,", "J. Gould and H. C. Richter delt."),
+                              ("C. Hullmandel Impt,", "C. Hullmandel Impt."),
+                              ("C. Hullmandel Imp,", "C. Hullmandel Imp."),
+                              ("Walter, Imp:", "Walter, Imp."),
+                              ("J. & E. Gould del: et lith:", "J. & E. Gould del. et lith."),
+                              ("J. Gould and H. C. Richter, del; et lithog:", "J. Gould and H. C. Richter, del. et lithog."),
+                              ("J. Gould and H. C. Richter delt, et lith, | Hullmandel & Walton Imp:",
+                               "J. Gould and H. C. Richter delt. et lith. | Hullmandel & Walton Imp."),
+                              ("J. Gould and H. C. Richter DEL: et LITH:", "J. Gould and H. C. Richter DEL. et LITH."),
+                              ("Drawn on Stone by I & E. Gould from a Drawing by Edwd, Lear.",
+                               "Drawn on Stone by I. & E. Gould from a Drawing by Edwd. Lear."),
+                              ("W.H.Lizars Edinr, | Retouched by R. Havell Junr:", "W. H. Lizars Edinr. | Retouched by R. Havell Junr."),
+                              ("del :et lith ;", "del. et lith.")):
+            with self.subTest(line=line):
+                self.assertEqual(imprints.normalise(line), written)
+
+    def test_a_mark_that_is_not_there_stays_absent_and_other_marks_stay(self):
+        for line in ("del et lith", "J. Gould and H. C. Richter del | C. Hullmandel Imp",
+                     "J. Gould and H. C. Richter, del et lith.", "H. C. Richter, del.", "Walter, Imp.",
+                     "J. Gould and H. C. Richter del., et lith.", "J. Gould and H. C. Richter del. et lith.",
+                     "Imperial", "Delta, Junrock", "J. Gould, and H. C. Richter"):   # only whole abbreviations count
             with self.subTest(line=line):
                 self.assertEqual(imprints.normalise(line), line)
 
@@ -437,7 +461,7 @@ class Normalise(unittest.TestCase):
 
     def test_capitals_beginning_words_and_lowercase_abbreviations_are_untouched(self):
         for line in ("Drawn from life and on stone by", "Walter & Cohn, Imp", "Hullmandel & Walton Imp.",
-                     "Engraved, Printed & Coloured by R. Havell Junr.", "J. Gould del et lith", "del: et lith:"):
+                     "Engraved, Printed & Coloured by R. Havell Junr.", "J. Gould del et lith", "del et lith"):
             with self.subTest(line=line):
                 self.assertEqual(imprints.normalise(line), line)
         self.assertEqual(imprints.initials("Richter Imp. Drawn"), "Richter Imp. Drawn")
