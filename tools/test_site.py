@@ -7,11 +7,13 @@ The data tests build from the real tables. The image tests need Pillow and are s
 from __future__ import annotations
 
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import misnamed  # noqa: E402
+import site_check  # noqa: E402
 import site_data  # noqa: E402
 
 try:
@@ -200,6 +202,67 @@ class Images(unittest.TestCase):
             # Verify neither x.zip nor x.zip.part exist
             self.assertFalse(zip_path.exists())
             self.assertFalse((tmppath / "x.zip.part").exists())
+
+
+class Check(unittest.TestCase):
+    SM = "http://www.sitemaps.org/schemas/sitemap/0.9"
+    URL = "https://wr.github.io/historical-bird-plates/"
+
+    def setUp(self) -> None:
+        self.dist = Path(tempfile.mkdtemp())
+        (self.dist / "sitemap-index.xml").write_text(
+            f'<sitemapindex xmlns="{self.SM}"><sitemap><loc>{self.URL}sitemap-0.xml</loc></sitemap></sitemapindex>')
+        (self.dist / "sitemap-0.xml").write_text(
+            f'<urlset xmlns="{self.SM}"><url><loc>{self.URL}</loc></url><url><loc>{self.URL}havell/1/</loc></url></urlset>')
+        (self.dist / "img" / "havell").mkdir(parents=True)
+        (self.dist / "img" / "havell" / "1-thumb.webp").write_bytes(b"")
+
+    def page(self, path: str, body: str = "", head: str = "") -> None:
+        file = self.dist / path
+        file.parent.mkdir(parents=True, exist_ok=True)
+        file.write_text(
+            f'<html><head><title>T</title><meta name="description" content="D">'
+            f'<meta property="og:image" content="{self.URL}img/havell/1-thumb.webp">'
+            f'<link rel="canonical" href="{self.URL}{path.removesuffix("index.html")}">{head}</head>'
+            f"<body>{body}</body></html>")
+
+    def test_a_good_site_passes(self) -> None:
+        self.page("index.html",
+                  '<a href="/historical-bird-plates/havell/1/">1</a><a href="#main">skip</a>'
+                  '<img src="img/havell/1-thumb.webp" srcset="/historical-bird-plates/img/havell/1-thumb.webp 360w">'
+                  '<a href="https://ebird.org/species/snoowl1">eBird</a>',
+                  '<script type="application/ld+json">{"@type": "WebSite"}</script>')
+        self.page("havell/1/index.html", '<a href="../../">home</a>')
+        self.assertEqual(site_check.check(self.dist), [])
+
+    def test_problems_are_named(self) -> None:
+        self.page("index.html",
+                  '<a href="/historical-bird-plates/havell/2/">2</a><a href="/elsewhere/">x</a>'
+                  '<img src="img/havell/9-thumb.webp">',
+                  '<script type="application/ld+json">{not json}</script>')
+        (self.dist / "havell" / "1").mkdir(parents=True)
+        (self.dist / "havell" / "1" / "index.html").write_text("<html><head></head><body></body></html>")
+        errors = site_check.check(self.dist)
+        for expected in ("index.html: broken link /historical-bird-plates/havell/2/",
+                         "index.html: broken link /elsewhere/",
+                         "index.html: broken link img/havell/9-thumb.webp",
+                         "havell/1/index.html: no <title>", "havell/1/index.html: no description",
+                         "havell/1/index.html: no og:image", "havell/1/index.html: no canonical URL"):
+            self.assertIn(expected, errors)
+        self.assertTrue(any(e.startswith("index.html: JSON-LD does not parse") for e in errors), errors)
+
+    def test_unlisted_pages_and_skipped_images(self) -> None:
+        self.page("index.html", '<img src="img/havell/9-thumb.webp">')
+        self.page("about/index.html")
+        self.assertEqual(site_check.check(self.dist, images=False),
+                         [f"about/index.html: {self.URL}about/ is not in the sitemap"])
+
+    def test_the_404_page_needs_no_canonical(self) -> None:
+        self.page("index.html")
+        (self.dist / "404.html").write_text(
+            f'<html><head><title>Not found</title><meta name="description" content="D">'
+            f'<meta property="og:image" content="{self.URL}img/havell/1-thumb.webp"></head><body></body></html>')
+        self.assertEqual(site_check.check(self.dist), [])
 
 
 if __name__ == "__main__":
