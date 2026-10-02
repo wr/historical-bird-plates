@@ -72,7 +72,8 @@ class Parse(unittest.TestCase):
 
     def test_unknown_wording_or_name_is_an_error(self):
         for imprint in ("Sketched by J. Gould", "Drawn on Stone by J. Smith",
-                        "J. Gould & J. Smith del. et lith.", "Printed by C. Hullmandel | ", ""):
+                        "J. Gould & J. Smith del. et lith.", "Printed by C. Hullmandel | ", "",
+                        "Drawn on Stone by E. Lear 2", "Drawn on Stone by E. Lear?"):
             with self.subTest(imprint=imprint), self.assertRaises(UnknownCredit):
                 parse(imprint)
 

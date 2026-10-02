@@ -9,8 +9,8 @@ is a wording and the names it credits: "Drawn on Stone by E. Lear",
 "J. Gould & H.C. Richter del. et lith.", "C. Hullmandel Imp.". BEFORE and
 AFTER give the roles a wording stands for, written before or after the names;
 NAMES gives the people or firms a name form stands for. Wordings match with
-case, full stops, commas and spacing folded ("del. et lith." is "del et lith);
-name forms with everything but letters and "&" dropped ("H. C. Richter" is
+case, full stops, commas and spacing folded ("del. et lith." is "del et lith");
+name forms with full stops, commas and spacing dropped ("H. C. Richter" is
 "H.C.Richter"). A line whose wording or name is in neither table is an error:
 check the variant on the plate, then add it.
 
@@ -82,7 +82,7 @@ class UnknownCredit(ValueError):
 
 
 def name_key(s: str) -> str:
-    return re.sub(r"[^a-z&]", "", s.casefold())
+    return re.sub(r"[.,\s]", "", s.casefold())
 
 
 def wording_pattern(wording: str) -> str:
@@ -182,7 +182,7 @@ def write(folder: Path) -> bool:
     path, text = folder / "credits.csv", render(folder)
     if path.exists() and path.read_text(encoding="utf-8") == text:
         return False
-    path.write_text(text, encoding="utf-8")
+    path.write_text(text, encoding="utf-8", newline="")
     return True
 
 
