@@ -439,6 +439,15 @@ class Apply(unittest.TestCase):
         self.assertEqual([r["note"] for r in read_csv(self.d / "sources" / "imprints.csv")],
                          ["left credit line cut off at the sheet's foot", "stop after Lear faint"])
 
+    def test_only_the_parts_of_a_note_about_a_credit_line_go_into_plates_csv(self):
+        readings = [{"plate": "37", "imprint": "Printed by C. Hullmandel", "read": "scan",
+                     "note": "left credit line cut off at the sheet's foot; no separate stop after C visible"}]
+        imprints.apply(self.d, readings)
+        imprints.apply(self.d, readings)
+        self.assertEqual(read_csv(self.d / "plates.csv")[0]["notes"], "left credit line cut off at the sheet's foot")
+        self.assertEqual(read_csv(self.d / "sources" / "imprints.csv")[0]["note"],
+                         "left credit line cut off at the sheet's foot; no separate stop after C visible")
+
     def test_refuses_everything_if_one_row_is_wrong(self):
         before = (self.d / "plates.csv").read_text(encoding="utf-8")
         for bad in ({"plate": "37", "imprint": "Sketched by J. Gould", "read": "eye", "note": ""},

@@ -613,10 +613,11 @@ def write_csv(path: Path, columns: list[str], rows: list[dict]) -> None:
 
 
 def apply(folder: Path, readings: list[dict]) -> None:
-    """Write readings into plates.csv (imprint, and the note of any reading whose note
-    is about a credit line, such as one cut off or unreadable) and sources/imprints.csv
-    (read, note), then regenerate credits.csv. A note is added to plates.csv's notes
-    once, after any already there. Every row is checked first; if any is wrong,
+    """Write readings into plates.csv (imprint, and each part of a reading's note that is
+    about a credit line, such as one cut off or unreadable) and sources/imprints.csv
+    (read, note), then regenerate credits.csv. A note's parts are split at "; ", and a
+    part is added to plates.csv's notes once, after any already there; the other parts,
+    about the reading, stay in the record. Every row is checked first; if any is wrong,
     nothing is written."""
     volumes = credits.per_volume(folder)
     key = lambda r: (r.get("volume", "") if volumes else "", r["plate"])
@@ -651,9 +652,9 @@ def apply(folder: Path, readings: list[dict]) -> None:
         if r is None:
             continue
         p["imprint"] = normalise(r["imprint"])
-        note = r.get("note", "")
-        if "credit line" in note and note not in p["notes"]:
-            p["notes"] = f"{p['notes']}; {note}" if p["notes"] else note
+        for part in (x.strip() for x in r.get("note", "").split("; ")):
+            if "credit line" in part and part not in p["notes"]:
+                p["notes"] = f"{p['notes']}; {part}" if p["notes"] else part
     write_csv(folder / "plates.csv", plate_cols, plates)
     record_path = folder / "sources" / "imprints.csv"
     if record_path.exists():
