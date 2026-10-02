@@ -8,12 +8,14 @@ A plate's `imprint` is its credit lines verbatim, joined with " | ". Each line
 is a wording and the names it credits: "Drawn on Stone by E. Lear",
 "J. Gould & H.C. Richter del. et lith.", "C. Hullmandel Imp.". BEFORE and
 AFTER give the roles a wording stands for, written before or after the names;
-NAMES gives the people or firms a name form stands for, and FOLIO_NAMES the
-name forms that stand for someone in one folio only. Wordings match with
-case, full stops, commas and spacing folded ("del. et lith." is "del et lith");
-name forms with full stops, commas and spacing dropped ("H. C. Richter" is
-"H.C.Richter"). A line whose wording or name is in neither table is an error:
-check the variant on the plate, then add it.
+a line holding two credits is split before a wording in WITHIN ("Drawn on Stone
+by I & E. Gould from a Drawing by Edwd. Lear."). NAMES gives the people or
+firms a name form stands for, and FOLIO_NAMES the name forms that stand for
+someone in one folio only. Wordings match with case, full stops, commas and
+spacing folded ("del. et lith." is "del et lith"); name forms with full stops,
+commas and spacing dropped ("H. C. Richter" is "H.C.Richter"). A line whose
+wording or name is in neither table is an error: check the variant on the
+plate, then add it.
 
 Joint credits stay joint: "J. Gould & H.C. Richter del. et lith." credits both
 men with drawing and lithographing, because that is all the plate says.
@@ -40,6 +42,7 @@ BEFORE = {
     "Drawn from Nature & on Stone by": ("drew", "lithographed"),
     "Drawn from Life & on Stone by": ("drew", "lithographed"),
     "Drawn from Life and on Stone by": ("drew", "lithographed"),
+    "Drawn from Nature and on Stone by": ("drew", "lithographed"),
     "Drawn on Stone from Nature by": ("drew", "lithographed"),
     "Drawn on Stone from Life by": ("drew", "lithographed"),
     "Drawn on Stone by": ("lithographed",),
@@ -48,7 +51,11 @@ BEFORE = {
     "Engraved by": ("engraved",),
     "Retouched by": ("retouched",),
     "Printed by": ("printed",),
+    "from a Drawing by": ("drew",),
 }
+# A wording that begins a second credit inside a line, which is split before it:
+# "Drawn on Stone by I & E. Gould from a Drawing by Edwd. Lear." Each is in BEFORE too.
+WITHIN = ("from a Drawing by",)
 # A wording written after the names -> the roles it gives them.
 AFTER = {
     "del. et lith.": ("drew", "lithographed"),
@@ -58,20 +65,34 @@ AFTER = {
     "del. et lithog.": ("drew", "lithographed"),
     "del. et lithog:": ("drew", "lithographed"),
     "del: et lithog:": ("drew", "lithographed"),
+    "delt. et lith.": ("drew", "lithographed"),
     "del.": ("drew",),
+    "del:": ("drew",),
+    "delt.": ("drew",),
     "lith.": ("lithographed",),
+    "lithog.": ("lithographed",),
     "Imp.": ("printed",),
+    "Imp:": ("printed",),
+    "Impt.": ("printed",),
 }
 # A name form as printed -> who it is: names in artists.csv.
 NAMES = {
     "J. & E. Gould": ("John Gould", "Elizabeth Gould"),
     "J. Gould": ("John Gould",),
+    "J: Gould": ("John Gould",),
+    "I. Gould": ("John Gould",),
+    "I & E. Gould": ("John Gould", "Elizabeth Gould"),
+    "J. Gould H.C. Richter": ("John Gould", "Henry Constantine Richter"),
     "E. Lear": ("Edward Lear",),
+    "Edwd. Lear": ("Edward Lear",),
+    "Waterhouse Hawkins": ("Benjamin Waterhouse Hawkins",),
     "H.C. Richter": ("Henry Constantine Richter",),
     "J. Wolf": ("Joseph Wolf",),
     "W. Hart": ("William Matthew Hart",),
     "C. Hullmandel": ("Charles Joseph Hullmandel",),
+    "C: Hullmandel": ("Charles Joseph Hullmandel",),
     "Hullmandel & Walton": ("Hullmandel & Walton",),
+    "Hullmandel and Walton": ("Hullmandel & Walton",),
     "Walter": ("Walter",),
     "Walter & Cohn": ("Walter & Cohn",),
     "J.J. Audubon F.R.S. F.L.S.": ("John James Audubon",),
@@ -89,6 +110,19 @@ FOLIO_NAMES = {
     # blank, mid-page. Every other plate of The Birds of Europe that names its printer
     # reads C. Hullmandel.
     "gould-europe": {"C. Hullman": ("Charles Joseph Hullmandel",)},
+    "gould-australia": {
+        # Australia V.8 and VII.5: the initial before "Gould" is cut off at the sheet's edge (V.8)
+        # or did not print (VII.5). Every other line of The Birds of Australia that names Richter
+        # with a Gould reads J. Gould (once I. Gould), never J. & E. Gould. A bare "Gould" is not
+        # mapped on its own: a J. & E. Gould line that had lost its initials would read the same.
+        "Gould and H.C. Richter": ("John Gould", "Henry Constantine Richter"),
+        # Australia IV.3: the printer's line is faint, and no C shows before "Hullmandel", only a
+        # dot; it reads "Hullmandel Imp.", not Hullmandel & Walton. Every other plate of the folio
+        # printed by Hullmandel alone reads C. Hullmandel.
+        "Hullmandel": ("Charles Joseph Hullmandel",),
+        # Australia IV.93: a stray C is engraved before "C.Hullmandel Imp.", with a gap after it.
+        "C C. Hullmandel": ("Charles Joseph Hullmandel",),
+    },
 }
 
 
@@ -113,10 +147,11 @@ def wording_pattern(wording: str) -> str:
 
 
 _NAMES = {name_key(k): v for k, v in NAMES.items()}
+_WITHIN = re.compile(r"\s+(?=(?:" + "|".join(wording_pattern(w) for w in WITHIN) + r")[\s.,])", re.I)
 # Longest first, so "del. et lith." is tried before "del.".
 _BEFORE = [(re.compile(rf"^{wording_pattern(w)}[\s.,]+(?P<names>.+?)[\s,]*$", re.I), roles)
            for w, roles in sorted(BEFORE.items(), key=lambda x: -len(x[0]))]
-_AFTER = [(re.compile(rf"^(?P<names>.+?)(?:,\s*|\s+){wording_pattern(w)}[\s.,]*$", re.I), roles)
+_AFTER = [(re.compile(rf"^(?P<names>.+?)(?:,\s*|\.(?=\S)|\s+){wording_pattern(w)}[\s.,]*$", re.I), roles)
           for w, roles in sorted(AFTER.items(), key=lambda x: -len(x[0]))]
 
 
@@ -156,12 +191,13 @@ def parse(imprint: str, folio: str | None = None) -> list[Credit]:
         line = line.strip()
         if not line:
             raise UnknownCredit(f"an empty line in {imprint!r}")
-        roles, names = split_line(line)
-        for form in name_forms(names, known):
-            for person in known[name_key(form)]:
-                for role in roles:
-                    if not any(c.name == person and c.role == role for c in out):
-                        out.append(Credit(person, role, form))
+        for part in _WITHIN.split(line):
+            roles, names = split_line(part)
+            for form in name_forms(names, known):
+                for person in known[name_key(form)]:
+                    for role in roles:
+                        if not any(c.name == person and c.role == role for c in out):
+                            out.append(Credit(person, role, form))
     return out
 
 
