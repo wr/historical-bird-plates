@@ -330,6 +330,39 @@ class Check(unittest.TestCase):
         self.assertEqual(imprints.wrap("aaaaaaa b", lambda s: len(s) <= 5), ["aaaaaaa", "b"])
 
 
+class Normalise(unittest.TestCase):
+    def test_a_space_after_each_stop_and_comma_and_around_ampersand(self):
+        self.assertEqual(imprints.normalise("J.Gould & H.C.Richter, del et lith. | Walter,Imp."),
+                         "J. Gould & H. C. Richter, del et lith. | Walter, Imp.")
+        self.assertEqual(imprints.normalise("Drawn from Nature& on Stone by J &E. Gould."),
+                         "Drawn from Nature & on Stone by J & E. Gould.")
+        self.assertEqual(imprints.normalise("J.&E. Gould del et lith."), "J. & E. Gould del et lith.")
+        self.assertEqual(imprints.normalise("J.J. Audubon F.R.S. F.L.S."), "J. J. Audubon F. R. S. F. L. S.")
+
+    def test_and_run_into_a_capital_is_split_off(self):
+        self.assertEqual(imprints.normalise("J.GouldandH.C.Richter del."), "J. Gould and H. C. Richter del.")
+        self.assertEqual(imprints.normalise("J.Gould,andH.C.Richter"), "J. Gould, and H. C. Richter")
+        self.assertEqual(imprints.normalise("Hullmandel and Walton Imp."), "Hullmandel and Walton Imp.")
+
+    def test_no_space_before_a_mark_and_none_at_a_line_s_end(self):
+        self.assertEqual(imprints.normalise("Drawn by J & E. Gould . |  Printed by C. Hullmandel. "),
+                         "Drawn by J & E. Gould. | Printed by C. Hullmandel.")
+        self.assertEqual(imprints.normalise("E. Lear del: et lith:"), "E. Lear del: et lith:")
+        self.assertEqual(imprints.normalise("del.,et"), "del., et")
+        self.assertEqual(imprints.normalise("J & .E. Gould"), "J &. E. Gould")   # a mark keeps to what precedes it
+
+    def test_stops_capitals_and_letters_run_together_are_untouched(self):
+        for line in ("J Wolf & HCRichter del et lith", "E Lear del et lithog", "Drawn from life and on stone by J & E Gould"):
+            with self.subTest(line=line):
+                self.assertEqual(imprints.normalise(line), line)
+
+    def test_normalising_twice_changes_nothing(self):
+        for line in ("J.Gould &H.C.Richter,del et lith | Walter,Imp.", "J.J. Audubon F.R.S. F.L.S.", "J & .E. Gould"):
+            with self.subTest(line=line):
+                once = imprints.normalise(line)
+                self.assertEqual(imprints.normalise(once), once)
+
+
 class Record(unittest.TestCase):
     def test_a_rerun_keeps_read_and_note_only_once_a_reading_was_applied(self):
         self.assertEqual(imprints.carried({"read": "eye", "note": "faint"}), {"read": "eye", "note": "faint"})

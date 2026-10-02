@@ -41,6 +41,16 @@ plate, imprint, read and note, one row per plate (others, such as `sheet`, are
 ignored). `read` is eye (read off the crop), scan (read off the unaltered scan)
 or none (nothing can be read; `note` says why, with the words "credit line").
 
+An imprint's spacing follows one convention, not the engraver's gaps, which run
+from touching to wide with nothing between to tell them apart (`normalise`, which
+`apply` runs). In each line: whitespace collapsed; no space before a stop,
+comma, semicolon or colon, and one after it unless the line ends there or another
+of them follows; one space each side of &; and "and" run into a capital split off
+("GouldandH." is "Gould and H."). So "J.Gould &H.C.Richter,del" is written
+"J. Gould & H. C. Richter, del". Letters that run together with no mark between
+("HCRichter") are left as they are. Stops, commas, colons, capitals, & or and, and
+spelling are as engraved.
+
 Needs Pillow, and macOS for the OCR (tools/ocr.swift, compiled into .cache/ on
 first use). `apply`, the line finding and the layout of the contact sheets need
 neither.
@@ -534,8 +544,20 @@ def snap(text: str, known: list[str]) -> str:
     return " | ".join(p for p in out if p)
 
 
+def normalise_line(line: str) -> str:
+    """One credit line spaced by the convention in the module's docstring."""
+    s = " ".join(line.split())
+    s = re.sub(r"\s*&\s*", " & ", s)
+    s = re.sub(r"\s+(?=[.,;:])", "", s)
+    s = re.sub(r"([.,;:])(?=[^\s.,;:])", r"\1 ", s)
+    s = re.sub(r"(?<=[a-z])and(?=[A-Z])", " and ", s)
+    s = re.sub(r"\band(?=[A-Z])", "and ", s)
+    return " ".join(s.split())
+
+
 def normalise(imprint: str) -> str:
-    return " | ".join(" ".join(p.split()) for p in imprint.split("|") if p.strip())
+    """An imprint's lines, each spaced by the convention, joined with " | "."""
+    return " | ".join(normalise_line(p) for p in imprint.split("|") if p.strip())
 
 
 def write_csv(path: Path, columns: list[str], rows: list[dict]) -> None:
