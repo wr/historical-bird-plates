@@ -1,0 +1,56 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { species, speciesHref } from "../../lib/data";
+import { fold, plural } from "../../scripts/wall-core";
+import type { Species } from "../../lib/types";
+
+const families: { family: string; common: string; list: Species[] }[] = [];
+for (const s of species) {
+  const last = families[families.length - 1];
+  if (last && last.family === s.family) last.list.push(s);
+  else families.push({ family: s.family, common: s.family_common, list: [s] });
+}
+---
+<Layout title="Species · Historical bird plates" description={`${plural(species.length, "species")} in ${families.length} families, from Audubon's and Gould's plates, in eBird taxonomic order.`}>
+  <header class="intro">
+    <h1>Species</h1>
+    <p class="lede">{species.length.toLocaleString("en")} species in {families.length} families, in eBird taxonomic order. The number is how many plates show each one.</p>
+  </header>
+  <label class="species-filter js-only">
+    <span class="sr-only">Filter the species</span>
+    <input type="search" data-species-filter placeholder="Owl, Strigidae, Bubo" autocomplete="off" />
+  </label>
+  <div class="families">
+    {families.map((fam) => (
+      <section class="family" data-family>
+        <h2>{fam.common} <i class="small">{fam.family}</i></h2>
+        <ul>
+          {fam.list.map((s) => (
+            <li data-text={` ${fold(`${s.common} ${s.scientific} ${s.family} ${s.family_common} ${s.code}`)} `}>
+              <a href={speciesHref(s)}>{s.common}</a>
+              <span class="n">{s.plates.length}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </div>
+  <script>
+    import { fold } from "../../scripts/wall-core";
+
+    const input = document.querySelector<HTMLInputElement>("[data-species-filter]")!;
+    const families = Array.from(document.querySelectorAll<HTMLElement>("[data-family]"));
+    input.addEventListener("input", () => {
+      const words = fold(input.value).split(" ").filter(Boolean);
+      for (const family of families) {
+        let any = false;
+        for (const li of family.querySelectorAll<HTMLElement>("li")) {
+          const hit = words.every((w) => li.dataset.text!.includes(` ${w}`));
+          li.hidden = !hit;
+          any ||= hit;
+        }
+        family.hidden = !any;
+      }
+    });
+  </script>
+</Layout>
