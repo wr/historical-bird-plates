@@ -435,6 +435,17 @@ class Normalise(unittest.TestCase):
             with self.subTest(line=line):
                 self.assertEqual(imprints.normalise(line), line)
 
+    def test_an_all_capitals_word_is_not_split_into_initials(self):
+        for line in ("LONDON Published", "PLATE Drawn", "LONDON. Published", "PLATE. Drawn by J. Gould",
+                     "PUBLISHED & Printed", "LONDON and Paris"):
+            with self.subTest(line=line):
+                self.assertEqual(imprints.normalise(line), line)
+        for line, written in (("HC Richter", "H. C. Richter"), ("J.J. Audubon FRS.", "J. J. Audubon F. R. S."),
+                              ("W. H. Lizars FRS. Edinr.", "W. H. Lizars F. R. S. Edinr."), ("HCRichter", "H. C. Richter"),
+                              ("WHF Smith", "W. H. F. Smith")):
+            with self.subTest(line=line):
+                self.assertEqual(imprints.normalise(line), written)
+
     def test_a_stop_after_a_run_of_capitals_is_kept(self):
         for line, written in (("by HC.", "by H. C."), ("J.J. Audubon FRS.", "J. J. Audubon F. R. S."),
                               ("FRS. FLS.", "F. R. S. F. L. S."), ("HC. del et lith.", "H. C. del et lith."),

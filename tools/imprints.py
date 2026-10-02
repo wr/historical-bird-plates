@@ -621,9 +621,10 @@ def initials(line: str) -> str:
     """Every initial written "X. ": a lone capital, with a stop, a comma, a colon or
     nothing after it, followed by another initial, & or and, or a capitalised word
     ("J, Gould" is "J. Gould", "C: Hullmandel" "C. Hullmandel"; a comma after a name,
-    "Richter, del.", is left); and capitals run together ("HC Richter",
+    "Richter, del.", is left); and two or three capitals run together ("HC Richter",
     "HCRichter", "HC. Richter", "JGould", "FRS." are "H. C. Richter", "J. Gould",
-    "F. R. S."), except a Roman numeral with no stop before a name. Words
+    "F. R. S."), except a Roman numeral with no stop before a name; a longer run is an
+    all-capitals word ("LONDON Published"), left as it is. Words
     that begin with a capital ("Drawn", "Imp.") and lowercase abbreviations are left as
     they are, and so are a Roman numeral with a stop that ends the line or comes before
     a lowercase word ("Plate IV."), and the article A before a word of a wording
@@ -633,14 +634,14 @@ def initials(line: str) -> str:
     tokens = []
     for i, tok in enumerate(raw):
         after = raw[i + 1] if i + 1 < len(raw) else ""
-        glued = re.fullmatch(r"([A-Z]+)([A-Z][a-z]\S*)", tok)
+        glued = re.fullmatch(r"([A-Z]{1,3})([A-Z][a-z]\S*)", tok)
         if glued:
             tokens += list(glued.group(1)) + [glued.group(2)]
         elif re.fullmatch(r"[IVXLC]{2,}\.", tok) and not re.match(r"[A-Z&]|and$", after):
             tokens.append(tok)
-        elif re.fullmatch(r"[A-Z]{2,}\.", tok) and tok[:-1].casefold() not in ABBREVIATED_WORDS:
+        elif re.fullmatch(r"[A-Z]{2,3}\.", tok) and tok[:-1].casefold() not in ABBREVIATED_WORDS:
             tokens += list(tok[:-2]) + [tok[-2:]]
-        elif re.fullmatch(r"[A-Z]{2,}", tok) and not re.fullmatch(r"[IVXLCDM]+", tok) \
+        elif re.fullmatch(r"[A-Z]{2,3}", tok) and not re.fullmatch(r"[IVXLCDM]+", tok) \
                 and tok.casefold() not in ABBREVIATED_WORDS and re.match(r"[A-Z][a-z]|&$|and$", after):
             tokens += list(tok)
         else:

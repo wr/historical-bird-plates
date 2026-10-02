@@ -80,7 +80,6 @@ AFTER = {
 NAMES = {
     "J. & E. Gould": ("John Gould", "Elizabeth Gould"),
     "J. Gould": ("John Gould",),
-    "J: Gould": ("John Gould",),
     "I. Gould": ("John Gould",),
     "I & E. Gould": ("John Gould", "Elizabeth Gould"),
     "J. Gould H.C. Richter": ("John Gould", "Henry Constantine Richter"),
@@ -91,7 +90,6 @@ NAMES = {
     "J. Wolf": ("Joseph Wolf",),
     "W. Hart": ("William Matthew Hart",),
     "C. Hullmandel": ("Charles Joseph Hullmandel",),
-    "C: Hullmandel": ("Charles Joseph Hullmandel",),
     "Hullmandel & Walton": ("Hullmandel & Walton",),
     "Hullmandel and Walton": ("Hullmandel & Walton",),
     "Walter": ("Walter",),

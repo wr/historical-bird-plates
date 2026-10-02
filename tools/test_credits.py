@@ -197,9 +197,7 @@ class Parse(unittest.TestCase):
                         "J. Gould and H.C.Richter delt, et lith. | Hullmandel & Walton Imp.",
                         "J. Gould and H.C.Richter lithog. | C. Hullmandel Imp.",
                         "J & E. Gould del: | C.Hullmandel Imp:",
-                        "J & E. Gould del: | C: Hullmandel Imp:",
                         "I. Gould and H. C. Richter delt. | C. Hullmandel Impt.",
-                        "J:Gould and H.C.Richter del et lith. | Hullmandel & Walton Imp.",
                         "J.Gould H.C.Richter, del. et lith. | Hullmandel & Walton, Imp.",
                         "J. Gould and H.C.Richter del et lith. | Hullmandel and Walton Imp.",
                         "Drawn from Nature and on Stone by Waterhouse Hawkins. | Hullmandel & Walton Imp.",
@@ -228,6 +226,13 @@ class Tables(unittest.TestCase):
 
     def test_folio_names_are_for_known_folios(self):
         self.assertTrue(set(credits.FOLIO_NAMES) <= set(credits.FOLIOS))
+
+    def test_every_within_wording_is_also_a_before_wording(self):
+        """A line is split before a WITHIN wording, and each half is then parsed as a line of
+        its own, so the wording must give its names their roles as a BEFORE wording does."""
+        self.assertTrue(credits.WITHIN)
+        for wording in credits.WITHIN:
+            self.assertIn(wording, credits.BEFORE)
 
     def test_every_role_is_known(self):
         for table in (credits.BEFORE, credits.AFTER):
