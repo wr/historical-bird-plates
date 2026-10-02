@@ -89,6 +89,18 @@ class Parse(unittest.TestCase):
             with self.subTest(imprint=imprint), self.assertRaises(UnknownCredit):
                 parse(imprint)
 
+    def test_and_may_touch_a_stop_or_the_next_capital(self):
+        for line in ("J.Gould andH.C.Richter, del. et lith.", "J. Gould,and H.CRichter, del et lith,",
+                     "J. Gould.and H. CRichter, del. et lith", "J.GouldandH.C.Richter, del. et lith."):
+            with self.subTest(line=line):
+                self.assertEqual([c.name for c in parse(line)], ["John Gould", "John Gould", "Henry Constantine Richter",
+                                                                  "Henry Constantine Richter"])
+        self.assertEqual(names_roles(parse("Printed by C. Hullmandel")), [("Charles Joseph Hullmandel", "printed")])
+
+    def test_a_colon_may_stand_before_a_wording_written_after_the_names(self):
+        self.assertEqual(parse("J.Gould and H.C.Richter:del.et lith"),
+                         parse("J.Gould and H.C.Richter, del. et lith"))
+
     def test_a_folio_s_own_name_forms_count_in_that_folio_only(self):
         line = "Gould & H. C Richter, del. et lith. | Walter, Imp."  # Great Britain III.61
         self.assertEqual(names_roles(parse(line, "gould-britain")), [
@@ -129,6 +141,12 @@ class Parse(unittest.TestCase):
                         "J. Gould & H.C. Richter del et lith. | Walter Imp.",
                         "J. Gould & W. Hart del. et lith. | Walter Imp.",
                         "J.Gould &H.C.Richter,del et lith | Walter,Imp.",
+                        "J.Gould andH.C.Richter, del. et lith. | Walter & Cohn, Imp.",
+                        "J. Gould,and H.CRichter, del et lith, | Walter, Imp.",
+                        "J. Gould.and H. CRichter, del. et lith | Walter,Imp.",
+                        "J.GouldandH.C.Richter, del. et lith. | Walter & Cohn, Imp.",
+                        "J.Gould and H.C.Richter:del.et lith | Walter & Cohn, Imp.",
+                        "J.Gould & H.C.Richter: del et lith. | Walter Imp",
                         "Drawn from Life and on Stone by J & E. Gould. | Printed by C. Hullmandel.",
                         "Drawn on Stone from Life by J & E. Gould. | Printed by C. Hullmandel.",
                         "Drawn on Stone from Nature by J & E. Gould. | Printed by C.Hullmandel.",

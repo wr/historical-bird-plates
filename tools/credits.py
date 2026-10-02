@@ -151,7 +151,7 @@ _WITHIN = re.compile(r"\s+(?=(?:" + "|".join(wording_pattern(w) for w in WITHIN)
 # Longest first, so "del. et lith." is tried before "del.".
 _BEFORE = [(re.compile(rf"^{wording_pattern(w)}[\s.,]+(?P<names>.+?)[\s,]*$", re.I), roles)
            for w, roles in sorted(BEFORE.items(), key=lambda x: -len(x[0]))]
-_AFTER = [(re.compile(rf"^(?P<names>.+?)(?:,\s*|\.(?=\S)|\s+){wording_pattern(w)}[\s.,]*$", re.I), roles)
+_AFTER = [(re.compile(rf"^(?P<names>.+?)(?:[,:]\s*|\.(?=\S)|\s+){wording_pattern(w)}[\s.,]*$", re.I), roles)
           for w, roles in sorted(AFTER.items(), key=lambda x: -len(x[0]))]
 
 
@@ -172,10 +172,11 @@ def known_names(folio: str | None = None) -> dict[str, tuple[str, ...]]:
 
 def name_forms(names: str, known: dict[str, tuple[str, ...]] = _NAMES) -> list[str]:
     """The name forms in a line's names: the whole if the table has it ("J. & E. Gould",
-    "Walter & Cohn"), else each part between "&" or "and"."""
+    "Walter & Cohn"), else each part between "&" or "and". An "and" may touch a stop or
+    comma before it, or the capital after it ("J. Gould,and", "andH.C. Richter")."""
     if name_key(names) in known:
         return [names]
-    parts = [p.strip(" ,") for p in re.split(r"\s*&\s*|\s+and\s+", names)]
+    parts = [p.strip(" ,") for p in re.split(r"\s*&\s*|\s+and\s+|(?<=[.,])\s*and\s*|\s*and(?=[A-Z])", names)]
     unknown = [p for p in parts if name_key(p) not in known]
     if unknown:
         raise UnknownCredit(f"no known name for {', '.join(map(repr, unknown))} in {names!r}")
