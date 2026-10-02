@@ -22,6 +22,11 @@ test("fold drops accents, apostrophes and case, and spells grey gray", () => {
   assert.equal(fold("Rüppell’s  Grey Warbler!"), "ruppells gray warbler");
 });
 
+test("fold spells out ligatures and letters NFKD leaves alone", () => {
+  assert.equal(fold("Caprimulgus Europæus"), "caprimulgus europaeus");
+  assert.equal(fold("Læmmer-geyer, Œdicnemus"), "laemmer geyer oedicnemus");
+});
+
 test("entryOf indexes printed and modern names, Latin and the eBird code", () => {
   const e = entryOf(plate({ printed: { name: "Black-headed Gull", latin: "Larus melanocephalus", caption: "", legend: "" } }), 7);
   assert.equal(e.i, 7);

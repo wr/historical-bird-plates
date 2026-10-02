@@ -31,9 +31,13 @@ export interface Group {
 export const FLAGS: Record<string, string> = { m: "Misnamed", x: "Extinct", o: "Open question", s: "Several species" };
 const ARRANGEMENTS: Arrangement[] = ["folio", "taxonomy", "colour"];
 
-/** Lower case, accents and apostrophes gone, grey spelled gray, anything else a single space. */
+/** Letters that NFKD leaves whole, in the ASCII spelling a person would type. */
+const SPELT: Record<string, string> = { æ: "ae", œ: "oe", ø: "o", ł: "l", ß: "ss" };
+
+/** Lower case, accents and apostrophes gone, æ and œ spelt out, grey spelled gray, anything else a single space. */
 export function fold(text: string): string {
   return text.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase()
+    .replace(/[æœøłß]/g, (c) => SPELT[c])
     .replace(/grey/g, "gray").replace(/['’]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
 }
 
