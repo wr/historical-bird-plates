@@ -2,7 +2,7 @@ import { arrange, isDefault, matches, plural, readState, writeState, type Entry,
 
 const wall = document.querySelector<HTMLElement>("[data-wall]");
 const form = document.querySelector<HTMLFormElement>("[data-controls]");
-if (wall && form) void start(wall, form);
+if (wall && form) start(wall, form);
 
 function stored(key: string): string | null {
   try {
@@ -20,17 +20,19 @@ function store(key: string, value: string): void {
   }
 }
 
-async function start(wall: HTMLElement, form: HTMLFormElement): Promise<void> {
+function start(wall: HTMLElement, form: HTMLFormElement): void {
   const scope = wall.dataset.folio || null;
   const titles = JSON.parse(wall.dataset.titles ?? "{}") as Record<string, string>;
-  const all = (await (await fetch(wall.dataset.index!)).json()) as Entry[];
-  const entries = scope ? all.filter((e) => e.f === scope) : all;
   const tiles = new Map(Array.from(wall.querySelectorAll<HTMLElement>(".tile"), (t) => [t.dataset.id!, t]));
   const q = form.elements.namedItem("q") as HTMLInputElement;
   const how = form.elements.namedItem("arrange") as HTMLSelectElement;
   const size = form.elements.namedItem("size") as HTMLInputElement;
   const count = form.querySelector<HTMLElement>("[data-count]")!;
   const pills = Array.from(form.querySelectorAll<HTMLButtonElement>(".pill"));
+
+  // The index arrives in the background. Until it does the controls already work: they change `state`, and render() waits.
+  let entries: Entry[] | null = null;
+  let asked = false;
 
   let state: State = readState(location.search);
   if (scope) state = { ...state, folios: [] };
@@ -76,6 +78,10 @@ async function start(wall: HTMLElement, form: HTMLFormElement): Promise<void> {
   };
 
   function render(): void {
+    if (!entries) {
+      asked = true;
+      return;
+    }
     const visible = entries.filter((e) => matches(e, state));
     const out = document.createDocumentFragment();
     for (const g of arrange(visible, state.arrange, titles, scope)) out.append(section(g.title, g.ids.map((id) => tiles.get(id)!)));
@@ -83,6 +89,9 @@ async function start(wall: HTMLElement, form: HTMLFormElement): Promise<void> {
     wall.replaceChildren(out);
     count.textContent = plural(visible.length, "plate");
     history.replaceState(history.state, "", location.pathname + writeState(state) + location.hash);
+    // The page just got shorter, and a reader scrolled deep would be left at the bottom of the new results: start at their top.
+    const gap = wall.getBoundingClientRect().top - form.getBoundingClientRect().bottom;
+    if (gap < 0) window.scrollTo({ top: window.scrollY + gap - 8, behavior: "instant" });
   }
 
   const setRow = (): void => wall.style.setProperty("--row-h", `${size.value}px`);
@@ -134,5 +143,19 @@ async function start(wall: HTMLElement, form: HTMLFormElement): Promise<void> {
   });
 
   syncControls();
-  if (!isDefault(state)) render();
+
+  fetch(wall.dataset.index!)
+    .then((res) => {
+      if (!res.ok) throw new Error(String(res.status));
+      return res.json() as Promise<Entry[]>;
+    })
+    .then(
+      (all) => {
+        entries = scope ? all.filter((e) => e.f === scope) : all;
+        if (asked || !isDefault(state)) render();
+      },
+      () => {
+        count.textContent = "The filters couldn't load. Reload the page to try again.";
+      },
+    );
 }
