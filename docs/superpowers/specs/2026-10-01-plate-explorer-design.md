@@ -30,7 +30,7 @@ Family pages, deep-zoom tiles, Gould's text, translations, a custom domain, user
 
 ```
 CSVs ─┐
-      ├─ tools/site.py ──────────► site/src/data/plates.json (generated, gitignored)
+      ├─ tools/site_data.py ──────────► site/src/data/plates.json (generated, gitignored)
 eBird ┘        ▲                              │
                │                              ▼
 site/src/data/images.json ◄─ tools/site_images.py      site/ (Astro) ── astro build ──► site/dist/
@@ -38,7 +38,7 @@ site/src/data/images.json ◄─ tools/site_images.py      site/ (Astro) ── 
                                   ▼                                                        ▼
                  release site-images-v1: site-images.tar ──── extracted into ──► site/dist/img/
                                                                                            │
-                                                          tools/check_site.py ◄────────────┤
+                                                          tools/site_check.py ◄────────────┤
                                                                                            ▼
                                                                                 GitHub Pages
 ```
@@ -61,7 +61,7 @@ Python owns the data and the images. Astro only renders. No logic about identifi
 
 The release tag the site uses is written once, in `images.json` (`"release": "site-images-v1"`). Regenerating after a crop changes means publishing `site-images-v2` and committing the new `images.json`.
 
-### `tools/site.py`: data (run in CI and locally)
+### `tools/site_data.py`: data (run in CI and locally)
 
 Standard library only. It reads the five folios' `plates.csv` and `species.csv`, the eBird 2025 taxonomy (through `validate.py`'s `fetch`, into `.cache/`) and `images.json`, then writes `site/src/data/plates.json`:
 
@@ -76,7 +76,7 @@ Standard library only. It reads the five folios' `plates.csv` and `species.csv`,
   - outbound links: BHL page or audubon.org image, the full-resolution sheet in the release.
 - `species`: one record per eBird code: slug, common, scientific, family, order, taxon order, extinct, outbound IDs, the plates showing it, and the plates *printed* under its name that show another bird.
 
-Folio intros and credit lines live in `tools/site.py` as data, condensed from each folio README. The Havell credit line is the one audubon.org asks for.
+Folio intros and credit lines live in `tools/site_data.py` as data, condensed from each folio README. The Havell credit line is the one audubon.org asks for.
 
 ### URLs
 
@@ -178,10 +178,10 @@ Also `sitemap.xml` (every page) and `robots.txt` (allow all; points to the sitem
 
 `.github/workflows/pages.yml`, on push to `main` when `site/**`, any `plates.csv` or `species.csv`, or `tools/site*.py` changes, and on manual dispatch:
 
-1. Set up Python 3.12; run `python3 tools/site.py`.
+1. Set up Python 3.12; run `python3 tools/site_data.py`.
 2. Set up Node (LTS); `npm ci` and `npm run build` in `site/`.
 3. Download `site-images.tar` from the release named in `images.json`; unpack it into `site/dist/`.
-4. Run `python3 tools/check_site.py site/dist`.
+4. Run `python3 tools/site_check.py site/dist`.
 5. `actions/upload-pages-artifact` and `actions/deploy-pages`.
 
 GitHub Pages has to be switched on once, in the repo settings, with "GitHub Actions" as the source.
@@ -189,13 +189,13 @@ GitHub Pages has to be switched on once, in the repo settings, with "GitHub Acti
 ## Testing
 
 - `tools/test_site.py`, in `test_identify.py`'s unittest style, runs in `validate.yml` next to it. Checks:
-  - `site.py` emits 2,462 plates, each once, with unique slugs;
+  - `site_data.py` emits 2,462 plates, each once, with unique slugs;
   - every plate has an `images.json` entry;
   - every eBird code resolves in the taxonomy;
   - species slugs are unique;
   - the plates flagged `misnamed` are exactly the ones `misnamed.py` lists;
   - every plate's species link names a species record.
-- `tools/check_site.py dist/` runs in the Pages workflow before deploy. It is standard library only and parses the built HTML. Checks:
+- `tools/site_check.py dist/` runs in the Pages workflow before deploy. It is standard library only and parses the built HTML. Checks:
   - every internal `href` and `src` resolves to a file in `dist/`;
   - the sitemap lists every plate and species page;
   - every page has a title, description, canonical and `og:image`;
@@ -211,3 +211,16 @@ GitHub Pages has to be switched on once, in the repo settings, with "GitHub Acti
 1. Publishing the `site-images-v1` release.
 2. Switching on GitHub Pages in the repo settings.
 3. Merging to `main`, which deploys.
+
+## Amendments from planning (2026-10-01)
+
+Measured or found while writing the implementation plan:
+
+- **Tool names.** The data tool is `tools/site_data.py` and the build check `tools/site_check.py`. A module named `site` would shadow Python's own `site`, which every interpreter imports at startup.
+- **Image sizes.** The sheet cut is 1000 px at WebP quality 65; the thumb and crop are at quality 70. Measured on sample plates, all three come to about 620 MB, inside the 850 MB budget.
+- **Colour.** The paper mask also drops the two commonest light, near-grey tones, as well as the border's: the Havell crops keep some cream paper inside their white margin. Hue votes are weighted by chroma squared.
+- **Europe plate 132** is not in `gould-europe-v1` yet. Its tile is a placeholder, and its plate page links to the BHL scan.
+- **The wall's index** is a static `wall.json`, shared by the wall and the folio pages, built from the same `entryOf` function the server render uses.
+- **Viewer.** It zooms by pinch, by ctrl- or ⌘-scroll (a trackpad pinch arrives that way), by double-click and by + and − buttons. Plain scrolling scrolls the page. The toggle reads *Plate* and *Full sheet*.
+- **View transitions** use CSS cross-document `@view-transition`, with no client router, so page scripts never need re-running.
+- **No BirdNET link.** BirdNET has no public page per species; its label is kept in the data.
