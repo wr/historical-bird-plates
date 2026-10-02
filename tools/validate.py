@@ -13,6 +13,7 @@ Checks, per folio folder (any folder holding a species.csv):
   - wikidata / gbif / avibase ids are well formed
   - credits.csv has the declared columns and is what tools/credits.py writes from plates.csv's imprint;
     every name in it is in artists.csv, every role a known role
+  - an empty imprint has a note with the words "credit line"
   - artists.csv has the declared columns, one row per name, kind person or firm, a well-formed wikidata id
 
 The eBird taxonomy and the BirdNET labels are downloaded into .cache/, never
@@ -104,6 +105,11 @@ def validate(offline: bool) -> list[str]:
         species_cols, species = read(folder / "species.csv")
         # A folio numbered per volume keys a plate by its volume and number.
         per_volume = "volume" in species_cols
+        for p in plates:
+            if not p.get("imprint") and "credit line" not in p.get("notes", ""):
+                plate = ".".join(x for x in (p.get("volume", "") if per_volume else "", p["plate"]) if x)
+                errors.append(f"{name}/plates.csv: plate {plate} has no imprint and no note saying why "
+                              "(a note with the words 'credit line')")
         keys = [(r.get("volume", ""), r["plate"], r.get("leaf", "")) for r in plates]
         if len(keys) != len(set(keys)):
             errors.append(f"{name}/plates.csv: a plate and leaf appear twice")

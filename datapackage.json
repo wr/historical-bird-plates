@@ -44,7 +44,7 @@
           {
             "name": "imprint",
             "type": "string",
-            "description": "The plate's credit lines, verbatim: the left corner, then the centre, then the right corner, each top to bottom, joined with \" | \". They name who drew, lithographed or engraved the plate and who printed it. Empty where none can be read, with the reason in notes."
+            "description": "The plate's credit lines, as engraved, with spacing, initials and the mark after an abbreviation written by one convention (see the README): the left corner, then the centre, then the right corner, each top to bottom, joined with \" | \". They name who drew, lithographed or engraved the plate and who printed it. Empty where none can be read, with the reason in notes."
           },
           {
             "name": "image_url",
@@ -290,7 +290,7 @@
           {
             "name": "imprint",
             "type": "string",
-            "description": "The plate's credit lines, verbatim: the left corner, then the centre, then the right corner, each top to bottom, joined with \" | \". They name who drew, lithographed or engraved the plate and who printed it. Empty where none can be read, with the reason in notes."
+            "description": "The plate's credit lines, as engraved, with spacing, initials and the mark after an abbreviation written by one convention (see the README): the left corner, then the centre, then the right corner, each top to bottom, joined with \" | \". They name who drew, lithographed or engraved the plate and who printed it. Empty where none can be read, with the reason in notes."
           },
           {
             "name": "volume",
@@ -628,7 +628,7 @@
           {
             "name": "imprint",
             "type": "string",
-            "description": "The plate's credit lines, verbatim: the left corner, then the centre, then the right corner, each top to bottom, joined with \" | \". They name who drew, lithographed or engraved the plate and who printed it. Empty where none can be read, with the reason in notes."
+            "description": "The plate's credit lines, as engraved, with spacing, initials and the mark after an abbreviation written by one convention (see the README): the left corner, then the centre, then the right corner, each top to bottom, joined with \" | \". They name who drew, lithographed or engraved the plate and who printed it. Empty where none can be read, with the reason in notes."
           },
           {
             "name": "bhl_barcode",
@@ -978,7 +978,7 @@
           {
             "name": "imprint",
             "type": "string",
-            "description": "The plate's credit lines, verbatim: the left corner, then the centre, then the right corner, each top to bottom, joined with \" | \". They name who drew, lithographed or engraved the plate and who printed it. Empty where none can be read, with the reason in notes."
+            "description": "The plate's credit lines, as engraved, with spacing, initials and the mark after an abbreviation written by one convention (see the README): the left corner, then the centre, then the right corner, each top to bottom, joined with \" | \". They name who drew, lithographed or engraved the plate and who printed it. Empty where none can be read, with the reason in notes."
           },
           {
             "name": "bhl_barcode",
@@ -1328,7 +1328,7 @@
           {
             "name": "imprint",
             "type": "string",
-            "description": "The plate's credit lines, verbatim: the left corner, then the centre, then the right corner, each top to bottom, joined with \" | \". They name who drew, lithographed or engraved the plate and who printed it. Empty where none can be read, with the reason in notes."
+            "description": "The plate's credit lines, as engraved, with spacing, initials and the mark after an abbreviation written by one convention (see the README): the left corner, then the centre, then the right corner, each top to bottom, joined with \" | \". They name who drew, lithographed or engraved the plate and who printed it. Empty where none can be read, with the reason in notes."
           },
           {
             "name": "bhl_barcode",

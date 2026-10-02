@@ -1,6 +1,6 @@
 # John Gould, *The Birds of Australia* (1840–48) and its *Supplement* (1851–69)
 
-Seven volumes and a Supplement, 681 plates. Drawn by John and Elizabeth Gould and H. C. Richter, lithographed and hand-coloured, published in parts in London.
+Seven volumes and a Supplement, 681 plates. Drawn and lithographed by John Gould with Elizabeth Gould (77 plates) or H. C. Richter (560), hand-coloured, published in parts in London.
 
 **Copy:** Smithsonian Libraries, scanned for the Biodiversity Heritage Library (BHL): [title 105698](https://www.biodiversitylibrary.org/bibliography/105698) (volumes I–VII, BHL barcodes `birdsAustraliav{1..7}Goul`) and [title 107411](https://www.biodiversitylibrary.org/bibliography/107411) (the Supplement, `birdsAustraliasSuppGoul`). Public domain. Credit: *Smithsonian Libraries and Archives, via the Biodiversity Heritage Library.*
 
@@ -83,17 +83,78 @@ Every plate as its art crop, by volume and number. The full-size images are in t
   - the List's English and Latin names, and the Latin name engraved on the plate;
   - where the plate is: BHL item, leaf, BHL PageID, and a link to the page;
   - `scan_url`, the unaltered JPEG 2000 on BHL's open-data bucket;
-  - the two release images.
+  - the two release images;
+  - `imprint`, the plate's credit lines (see [Who made the plates](#who-made-the-plates)).
 - **`species.csv`**: one row per plate, including the three that name no species.
+- **`credits.csv`**: one row per plate, name and role, from `imprint`.
 - **`ku-disagreements.csv`**: the 75 plates where the Kansas catalogue names a different bird than this dataset, beyond a subspecies, an ending or a genus change. Each one is settled (see below).
 - **`sources/`**: the working record.
   - `plate-leaves.csv`: every plate's leaf, its engraved caption as read, whether it agrees with the List, its orientation and where its caption starts.
   - `crosswalk.csv`: each plate mapped to a modern species and to BirdNET V2.4's label, with confidence and reason.
   - `ku-catalogue.csv`: the Kansas record for each plate.
+  - `imprints.csv`: how each plate's credit lines were read: where they are on the sheet, the OCR draft, whether they were read off the crop (`eye`) or the scan (`scan`) or not at all (`none`), and what the readers noted.
   - `ku-check.csv`: the disagreements with Kansas and how each was settled.
   - `review.csv`: the 23 plates Featherframe does not show, and why.
   - `doubtful-decisions.csv`: how 24 doubtful plates were settled.
   - `decisions.csv`: every identification made or changed since, as `tools/identify.py` logged it.
+
+## Who made the plates
+
+Every plate is credited on its face, in small engraved lines below the art: on the left who drew it and put it on stone, on the right who printed it. `imprint` in `plates.csv` gives them as engraved, with spacing, initials and the mark after an abbreviation written by one convention (see [Credit lines](../README.md#credit-lines)). `credits.csv` gives one row per plate, name and role, read from them by `tools/credits.py`.
+
+Lines that differ only in capitals, stops or commas are counted together, under their commonest form.
+
+| Credit line | Credits | Plates |
+|---|---|---:|
+| J. Gould and H. C. Richter del et lith. | John Gould and H. C. Richter: drew, lithographed | 467 |
+| J. Gould and H. C. Richter delt. | John Gould and H. C. Richter: drew | 49 |
+| J. Gould & H. C. Richter, del et lith. | John Gould and H. C. Richter: drew, lithographed | 29 |
+| J. & E. Gould delt. | John and Elizabeth Gould: drew | 28 |
+| J. & E. Gould del et lith. | John and Elizabeth Gould: drew, lithographed | 25 |
+| J. & E. Gould del. | John and Elizabeth Gould: drew | 18 |
+| Drawn from Nature & on Stone by J. & E. Gould. | John and Elizabeth Gould: drew, lithographed | 5 |
+| J. Gould and H. C. Richter lithog. | John Gould and H. C. Richter: lithographed | 4 |
+| J. Gould H. C. Richter del et lith. | John Gould and H. C. Richter: drew, lithographed | 2 |
+
+One plate each:
+- John Gould and Richter drew: "J. Gould & H. C. Richter delt." (II.31), "I. Gould and H. C. Richter delt." (II.32), "J. Gould and H. C. Richter del." (VI.49), "Gould and H. C. Richter del" (VII.5).
+- Both drew and lithographed: "J. Gould and H. C. Richter delt. et lith." (II.82), "J. Gould and H. C. Richter del et lithog." (III.10), "Gould and H. C. Richter del et lith." (V.8).
+- Both lithographed: "J. Gould and H. C. Richter lith" (V.67).
+- Richter alone drew and lithographed: "H. C. Richter del et lithog" (VI.4).
+- Edward Lear drew, and John and Elizabeth Gould lithographed: "Drawn on Stone by I. & E. Gould from a Drawing by Edwd. Lear." (V.45).
+- Benjamin Waterhouse Hawkins drew and lithographed: "Drawn from Nature and on Stone by Waterhouse Hawkins." (VI.1, the Emu).
+
+That makes John Gould on 636 plates, H. C. Richter on 560 and Elizabeth Gould on 77, and Lear and Waterhouse Hawkins on one each.
+
+| Printer | Credit line | Plates |
+|---|---|---:|
+| Hullmandel & Walton | Hullmandel & Walton Imp. | 334 |
+| Charles Joseph Hullmandel | C. Hullmandel Imp. | 262 |
+| Walter | Walter, Imp. | 32 |
+
+C. Hullmandel prints in volumes I–VII, 7 times as "C. Hullmandel Impt." and 6 as "Printed by C. Hullmandel."; Hullmandel & Walton in every volume and the Supplement (once "Hullmandel and Walton Imp.", VI.8); Walter in the Supplement only.
+
+A joint line credits both names with every role it gives, because that is all it says. Gould's own drawings "are never more than rough sketches", with colour notes for his artists (Australian Museum, "Gould the artist").
+
+Elizabeth Gould is named on 77 plates, in volumes I–VII: as drawing 76, and as putting V.45 on stone. The literature gives 84 "produced by her hand" (Australian Museum, "Elizabeth Gould"; also KU Libraries, "Elizabeth Gould", and Helman 2023). The difference likely lies among the 42 plates of volumes V–VII whose artist's line can't be read in this copy; only another copy could say which.
+
+No plate names her with Richter. When she died in 1841, Gould hired Richter (Australian Museum, "Henry Constantine Richter"), and "Richter's first task was to complete the illustrations for *Birds of Australia*" (KU Libraries, "Henry Constantine Richter", citing Jackson 1978, p. 12). He worked "from sketches and notes created by Elizabeth" (Australian Museum, "Elizabeth Gould"). The credit lines name him on 560 plates, all of them with John Gould but VI.4, and among them all 81 of the Supplement.
+
+Four readings rest on this folio's own pattern, and `tools/credits.py` gives the reason for each:
+- V.8 and VII.5 read "Gould and H. C. Richter": the initial is cut off at the sheet's edge (V.8) or did not print (VII.5). They are credited to John Gould, since every other line here that names Richter with a Gould reads J. Gould (once I. Gould), never J. & E. Gould.
+- IV.3 reads "Hullmandel Imp.", with no C, and IV.93 "C. C. Hullmandel Imp.", with a stray C engraved before the name. Both are credited to Charles Joseph Hullmandel: every other plate of the folio printed by Hullmandel alone reads C. Hullmandel.
+
+33 plates have no credit line read; `notes` says why for each. All are bound sideways, in volumes V–VII, with the foot of the plate in the binding or cut off at the sheet's edge:
+- on 16 the sheet ends in the caption;
+- on 11 it ends at the foot of the picture, above the caption;
+- on 6 only the tops of the letters, or broken fragments, show.
+
+30 more have one line only: the artist's on 20, the printer's on 10. On 16 of the 20 the printer's name can be read but not the wording after it, which is lost in the binding, faded or printed short ("Hullmandel & Walton I…"). Such a line is left out of `imprint`, with its legible text in `notes`, so these plates name no printer in `credits.csv`.
+
+Sources:
+- Australian Museum Research Library, *John Gould: illustrations and books*: "Gould the artist" (2021), [australian.museum](https://australian.museum/learn/collections/museum-archives-library/john-gould/gould-the-artist/); "Elizabeth Gould (1804–1841)", [australian.museum](https://australian.museum/learn/collections/museum-archives-library/john-gould/elizabeth-gould-1804-1841/); "Henry Constantine Richter (about 1821–1902)" (2018), [australian.museum](https://australian.museum/learn/collections/museum-archives-library/john-gould/henry-constantine-richter-about-1821-1902/).
+- KU Libraries, *John Gould: Bird Illustration in the Age of Darwin* (online exhibit): "Elizabeth Gould" (M. Ashley, 2014), [exhibits.lib.ku.edu](https://exhibits.lib.ku.edu/exhibits/show/gould/about/elizabeth_gould); "Henry Constantine Richter", [exhibits.lib.ku.edu](https://exhibits.lib.ku.edu/exhibits/show/gould/art/henry_constantine_richter). The Richter page cites Jackson, C. E. 1978, "H. C. Richter – John Gould's unknown bird artist", *Journal of the Society for the Bibliography of Natural History* 9(1): 10–14, not seen here.
+- Helman, S. 2023. "Conserving John Gould's Australian Bird Pattern Plates". National Library of Australia, 13 Jan. [library.gov.au](https://www.library.gov.au/news-media/conserving-john-goulds-australian-bird-pattern-plates)
 
 ## How the plates were identified
 

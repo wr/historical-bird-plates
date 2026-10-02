@@ -1,6 +1,6 @@
 # John Gould, *The Birds of Europe* (1832–37)
 
-Five volumes and 449 plates: 448 in this copy, as one was never found. Drawn and lithographed by John and Elizabeth Gould and Edward Lear, hand-coloured, published in parts in London.
+Five volumes and 449 plates: 448 in this copy, as one was never found. Drawn and lithographed by John and Elizabeth Gould (356 plates) and Edward Lear (56), printed by Charles Hullmandel, hand-coloured, published in parts in London.
 
 **Copy:** Smithsonian Libraries, scanned for the Biodiversity Heritage Library (BHL): [title 65989](https://www.biodiversitylibrary.org/bibliography/65989), items 132863, 132861, 133913, 132862 and 133915, i.e. volumes I–V, BHL barcodes `birdsEurope{I..V}Goul`. Public domain. Credit: *Smithsonian Libraries and Archives, via the Biodiversity Heritage Library.*
 
@@ -50,8 +50,10 @@ Every plate as its art crop, by General List number. The full-size images are in
   - the General List's name for the plate, and the name engraved on the plate itself;
   - where the plate is: volume, BHL item, leaf, BHL PageID, and a link to the page;
   - `scan_url`, the unaltered JPEG 2000 on BHL's open-data bucket;
-  - the two release images.
+  - the two release images;
+  - `imprint`, the plate's credit lines (see [Who made the plates](#who-made-the-plates)).
 - **`species.csv`**: one row per plate and bird on the General List, including every row that isn't identified.
+- **`credits.csv`**: one row per plate, name and role, from `imprint`.
 - **`ku-disagreements.csv`**: every plate where the Kansas catalogue names a different species, and what the disagreement is (see below).
 - **`sources/`**: the working record.
   - `general-list.csv`: the General List of Plates, transcribed from volume I.
@@ -59,6 +61,51 @@ Every plate as its art crop, by General List number. The full-size images are in
   - `crosswalk.csv`: each List row mapped to a modern name, with confidence and reason, as first settled.
   - `decisions.csv`: every identification made or changed since, as `tools/identify.py` logged it.
   - `ku-catalogue.csv`: the Kansas record for each plate.
+  - `imprints.csv`: how each plate's credit lines were read: where they are on the sheet, the OCR draft, whether they were read off the crop (`eye`) or the scan (`scan`) or not at all (`none`), and what the readers noted.
+
+## Who made the plates
+
+Every plate is credited on its face, in small engraved lines below the art: on the left who drew it and put it on stone, on the right who printed it. `imprint` in `plates.csv` gives them as engraved, with spacing, initials and the mark after an abbreviation written by one convention (see [Credit lines](../README.md#credit-lines)). `credits.csv` gives one row per plate, name and role, read from them by `tools/credits.py`.
+
+Lines that differ only in capitals, stops or commas are counted together, under their commonest form.
+
+| Credit line | Credits | Plates |
+|---|---|---:|
+| Drawn from Nature & on Stone by J. & E. Gould. | John and Elizabeth Gould: drew, lithographed | 250 |
+| Drawn from Life & on Stone by J. & E. Gould. | John and Elizabeth Gould: drew, lithographed | 70 |
+| Drawn from Life and on Stone by J. & E. Gould. | John and Elizabeth Gould: drew, lithographed | 34 |
+| E. Lear del et lith. | Edward Lear: drew, lithographed | 32 |
+| E. Lear del et lithog. | Edward Lear: drew, lithographed | 16 |
+| E. Lear del. | Edward Lear: drew | 4 |
+| Drawn on Stone by E. Lear. | Edward Lear: lithographed | 3 |
+
+One plate each: "Drawn from Life & on Stone by E. Lear" (12), "Drawn on Stone from Life by J. & E. Gould." (91) and "Drawn on Stone from Nature by J. & E. Gould." (322). That makes John and Elizabeth Gould on 356 plates and Edward Lear on 56. No plate names both.
+
+| Printer | Credit line | Plates |
+|---|---|---:|
+| Charles Joseph Hullmandel | Printed by C. Hullmandel. | 411 |
+
+On 202 the printer's name did not print past "Hullman". It is credited to Hullmandel, as every other plate of the folio that names a printer names him, and the plate's note says so.
+
+The Goulds' line credits both of them with drawing and lithographing, because that is all it says. Gould's preface divides the work: the plates were "drawn and lithographed by Mrs. Gould, from sketches and designs by myself", and "the remainder of the drawings have been made by Mr. Lear" (Gould 1837, preface). Gould's own drawings "are never more than rough sketches", with colour notes for his artists (Australian Museum, "Gould the artist"). Sketches in the Ralph Ellis Collection suggest that he would "either make minor changes to or simply approve Elizabeth's sketches" (Newman 2019).
+
+The credit lines name Lear on 56 plates: as drawing 53 and as lithographing 52. The literature gives 68 of the 448 (KU Libraries, "Edward Lear", citing Jackson 1975, pp. 35–36, and Lambourne 1987, pp. 37–38; Ashworth 2023) or 67 (Sotheby's 2022; Museums Victoria). That figure likely counts plates he signed in the art as well. 400 carries his signature in the picture and the Goulds' credit line; 405 carries it and no artist's line on the sheet (`notes`). A signature is not a credit line, so neither is credited to him here. Others of his may be among the 34 plates with no credit line read.
+
+34 plates have no credit line read; `notes` says why for each. All are bound sideways:
+- on 25 the sheet ends in the caption, so the lines are cut off;
+- on 2 (256, 306) they are cut off at the sheet's foot, and only the tops of the letters show;
+- on 7 (257, 258, 266, 269, 415, 416, 419) the paper below the caption is blank to the sheet's foot, so the lines may be cut off or may never have been printed.
+
+Seven more have one line only: the artist's on 62, 281, 298 and 353, and the printer's on 348, 405 and 407.
+
+Sources:
+- Gould, J. 1837. *The Birds of Europe*, vol. I, Preface (1 Aug 1837). [archive.org/details/birdsEuropeIGoul](https://archive.org/details/birdsEuropeIGoul)
+- Australian Museum Research Library 2021. "Gould the artist", in *John Gould: illustrations and books*. [australian.museum](https://australian.museum/learn/collections/museum-archives-library/john-gould/gould-the-artist/)
+- Newman, A. K. 2019. "Elizabeth Gould: An Accomplished Woman". Biodiversity Heritage Library blog, 18 Mar. [blog.biodiversitylibrary.org](https://blog.biodiversitylibrary.org/2019/03/elizabeth-gould)
+- KU Libraries. "Edward Lear", in *John Gould: Bird Illustration in the Age of Darwin* (online exhibit). [exhibits.lib.ku.edu](https://exhibits.lib.ku.edu/exhibits/show/gould/art/edward_lear). It cites Jackson, C. E. 1975, *Bird Illustrators: Some Artists in Early Lithography* (Witherby), and Lambourne, M. 1987, *John Gould – Bird Man* (Osburton), not seen here.
+- Ashworth, W. B. 2023. "Edward Lear". Linda Hall Library. [lindahall.org](https://www.lindahall.org/about/news/scientist-of-the-day/edward-lear-2/)
+- Sotheby's 2022. John Gould, *The Birds of Europe*, 1832–1837, 5 volumes; the library of Henry Rogers Broughton, 2nd Baron Fairhaven. [sothebys.com](https://www.sothebys.com/en/buy/auction/2022/the-library-of-henry-rogers-broughton-2nd-baron-fairhaven/john-gould-the-birds-of-europe-1832-1837-5-volumes)
+- Museums Victoria. *The Birds of Europe*, vol. 1, item 1599244. [collections.museumsvictoria.com.au](https://collections.museumsvictoria.com.au/items/1599244)
 
 ## How the plates were identified
 

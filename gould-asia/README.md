@@ -1,6 +1,6 @@
 # John Gould, *The Birds of Asia* (1850–83)
 
-Seven volumes, 530 plates. Drawn and lithographed by John Gould with H. C. Richter, Joseph Wolf and William Hart, hand-coloured, published in parts in London. Gould died in 1881 and R. B. Sharpe finished the work.
+Seven volumes, 530 plates. Drawn and lithographed by John Gould (488 plates), H. C. Richter (406), William Hart (122) and Joseph Wolf (23), two to a plate or Hart alone, hand-coloured, published in parts in London. Gould died in 1881 and R. B. Sharpe finished the work.
 
 **Copy:** Smithsonian Libraries, scanned for the Biodiversity Heritage Library (BHL): items 115342, 118636, 118635, 120503, 121124, 122488 and 122491, i.e. volumes I–VII, BHL barcodes `BirdsAsiaJohnGo{I..VII}Goul`. Public domain. Credit: *Smithsonian Libraries and Archives, via the Biodiversity Heritage Library.*
 
@@ -71,14 +71,66 @@ Every plate as its art crop, by volume and number. The full-size images are in t
   - the List's English and Latin names, and the Latin engraved on the plate as read from the scan;
   - where the plate is: BHL item, leaf, BHL PageID, and a link to the page;
   - `scan_url`, the unaltered JPEG 2000 on BHL's open-data bucket;
-  - the two release images.
+  - the two release images;
+  - `imprint`, the plate's credit lines (see [Who made the plates](#who-made-the-plates)).
 - **`species.csv`**: one row per plate and species. Two plates show two species (II.36, IV.57).
+- **`credits.csv`**: one row per plate, name and role, from `imprint`.
 - **`ku-disagreements.csv`**: the 184 rows where the Kansas catalogue gives a different name, each with its kind (see below).
 - **`sources/`**: the working record.
   - `plate-leaves.csv`: every plate's leaf, its orientation, its engraved caption as read and how it was read, where the caption starts, and the heading of the text leaf bound after it.
   - `crosswalk.csv`: the first pass (W-871): each plate's modern species, form, confidence and reason as first settled, the survey's reading, and what Featherframe does with it.
   - `decisions.csv`: every identification made or changed since, as `tools/identify.py` logged it.
   - `ku-catalogue.csv`: the Kansas record for each plate.
+  - `imprints.csv`: how each plate's credit lines were read: where they are on the sheet, the OCR draft, whether they were read off the crop (`eye`) or the scan (`scan`) or not at all (`none`), and what the readers noted.
+
+## Who made the plates
+
+Every plate is credited on its face, in small engraved lines below the art: on the left who drew it and put it on stone, on the right who printed it. `imprint` in `plates.csv` gives them as engraved, with spacing, initials and the mark after an abbreviation written by one convention (see [Credit lines](../README.md#credit-lines)). `credits.csv` gives one row per plate, name and role, read from them by `tools/credits.py`.
+
+Lines that differ only in capitals, stops or commas are counted together, under their commonest form.
+
+| Credit line | Credits | Plates |
+|---|---|---:|
+| J. Gould and H. C. Richter, del. et lith. | John Gould and H. C. Richter: drew, lithographed | 271 |
+| J. Gould & H. C. Richter, del et lith. | John Gould and H. C. Richter: drew, lithographed | 110 |
+| J. Gould & W. Hart, del et lith. | John Gould and William Hart: drew, lithographed | 105 |
+| W. Hart del. et lith. | William Hart: drew, lithographed | 16 |
+| J. Wolf and H. C. Richter, del et lith. | Joseph Wolf and H. C. Richter: drew, lithographed | 11 |
+| J. Wolf & H. C. Richter, del et lith. | Joseph Wolf and H. C. Richter: drew, lithographed | 7 |
+| J. Wolf del. H. C. Richter lith. | Joseph Wolf: drew; H. C. Richter: lithographed | 2 |
+| Wolf and H. C. Richter, del. et lith. | Joseph Wolf and H. C. Richter: drew, lithographed | 2 |
+
+One plate each: "J. Gould and C. H. Richter, del. et lith." (IV.5) and "J. Gould. H. C. Richter, del. et lith." (VI.72), John Gould and Richter; "J. Wolf and Hart del et lith." (VII.13), Wolf and Hart; "H. Gould, and H. C. Richter, del et lith." (IV.26), Richter alone (see below). That makes John Gould on 488 plates, H. C. Richter on 406, William Hart on 122 and Joseph Wolf on 23. No plate pairs Gould with Wolf.
+
+| Printer | Credit line | Plates |
+|---|---|---:|
+| Walter | Walter, Imp. | 261 |
+| Hullmandel & Walton | Hullmandel & Walton, Imp. | 214 |
+| Walter & Cohn | Walter & Cohn, Imp. | 48 |
+| T. Walter | T. Walter, Imp. | 5 |
+
+A joint line credits both names with every role it gives, because that is all it says. Only I.7 and VII.39 divide them: "J. Wolf del. H. C. Richter lith.", Wolf drew and Richter lithographed. The sources say more:
+- Gould's own drawings "are never more than rough sketches", with colour notes for his artists (Australian Museum, "Gould the artist").
+- Wolf worked for Gould "on a freelance basis" (Australian Museum, "Josef Wolf"), and Richter and Hart put his drawings on stone (KU Libraries, "Joseph Wolf"; Australian Museum, "Josef Wolf"). His drawings for *The Birds of Asia* "were his last for Gould" (KU Libraries, "Joseph Wolf").
+- Gould died in 1881, and R. B. Sharpe completed the last three parts (Christie's; Australian Museum, "Gould the publisher"). Sharpe's preface says the final plates "had nearly all been designed by Mr. Gould before his death", and were "faithfully produced on stone by his old and valued coadjutor Mr. Hart" (Sharpe 1883, preface). No credit line names Sharpe, and the lines don't show which plates came after 1881.
+
+The work was "printed by Hullmandel & Walton, Walter or Walter & Cohn" (Christie's). Who Walter and Walter & Cohn were is not established. I.69 to I.73 read "T. Walter, Imp.", and a dealer gives the printer as T. Walter (Marshall Rare Books). Whether he is the Walter of the other plates is not established either, so `artists.csv` lists him apart.
+
+IV.26 reads "H. Gould, and H. C. Richter, del et lith.". H is not John Gould's initial, so its Gould is credited to no one, and only Richter is.
+
+Six readings rest on this folio's own pattern. `tools/credits.py` gives the reason for each, and each plate's note says what is engraved:
+- VI.74 and VII.40 read "Wolf", with no initial, and VII.13 "Hart": Joseph Wolf and William Hart, the only Wolf and the only Hart among Gould's artists.
+- IV.5 reads "C. H. Richter", the initials reversed: Henry Constantine Richter.
+- III.4 reads "Hulmandel & Walton", with one l, and III.22 "Waller", an engraving slip for Walter, who prints the plates either side of it. They are credited to Hullmandel & Walton and to Walter.
+
+One plate has no credit line read: VII.30, bound sideways, whose lines are cut off at the sheet's foot so that only the tops of their letters show (`notes`). Two more have one line only. IV.32's printer's line fades after "Walter, Im", so its wording is lost and the line is left out of `imprint`, its text kept in `notes`. VII.41's foot is in the binding's fold, and its artist's line can't be seen.
+
+Sources:
+- Sharpe, R. B. 1883. Preface, in Gould, *The Birds of Asia*, vol. I. [archive.org/details/BirdsAsiaJohnGoIGoul](https://archive.org/details/BirdsAsiaJohnGoIGoul)
+- Australian Museum Research Library, *John Gould: illustrations and books*: "Gould the artist" (2021), [australian.museum](https://australian.museum/learn/collections/museum-archives-library/john-gould/gould-the-artist/); "Josef Wolf (1820–1899)" (2018), [australian.museum](https://australian.museum/learn/collections/museum-archives-library/john-gould/josef-wolf-1820-1899/); "Gould the publisher" (2023), [australian.museum](https://australian.museum/learn/collections/museum-archives-library/john-gould/gould-the-publisher/).
+- KU Libraries. "Joseph Wolf", in *John Gould: Bird Illustration in the Age of Darwin* (online exhibit). [exhibits.lib.ku.edu](https://exhibits.lib.ku.edu/exhibits/show/gould/art/joseph_wolf)
+- Christie's. Gould and Sharpe, *The Birds of Asia*, lot 5909189. [christies.com.cn](https://www.christies.com.cn/en/lot/lot-5909189)
+- Marshall Rare Books. *The Birds of Asia*. [marshallrarebooks.com](https://www.marshallrarebooks.com/all-books/archive/the-birds-of-asia/)
 
 ## How the plates were identified
 

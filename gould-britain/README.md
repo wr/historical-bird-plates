@@ -1,6 +1,6 @@
 # John Gould, *The Birds of Great Britain* (1862–73)
 
-Five volumes and 367 plates. Drawn by John Gould with H. C. Richter, W. Hart and J. Wolf, lithographed and hand-coloured, published in parts in London.
+Five volumes and 367 plates. Drawn and lithographed by John Gould (288 plates) or Joseph Wolf (55), each with H. C. Richter (312) or William Hart (31), hand-coloured, published in parts in London.
 
 **Copy:** Smithsonian Libraries, scanned for the Biodiversity Heritage Library (BHL): [title 127814](https://www.biodiversitylibrary.org/bibliography/127814), BHL barcodes `birdsgreatbrita{1..5}goul`. Public domain. Credit: *Smithsonian Libraries and Archives, via the Biodiversity Heritage Library.*
 
@@ -51,13 +51,55 @@ Every plate as its art crop, by volume and number. The full-size images are in t
   - the List's English and Latin names, and the Latin name engraved on the plate;
   - where the plate is: BHL item, leaf, BHL PageID, and a link to the page;
   - `scan_url`, the unaltered JPEG 2000 on BHL's open-data bucket;
-  - the two release images.
+  - the two release images;
+  - `imprint`, the plate's credit lines (see [Who made the plates](#who-made-the-plates)).
 - **`species.csv`**: one row per plate and species. Two plates have a second bird: the cuckoos' foster parents (`figure` `foster parent`).
+- **`credits.csv`**: one row per plate, name and role, from `imprint`.
 - **`ku-disagreements.csv`**: the 74 plates where the Kansas catalogue differs, and the `kind` of each.
 - **`sources/plate-leaves.csv`**: each plate's engraved caption as read, how it was read, where it starts, and the heading of the next text leaf.
 - **`sources/ku-catalogue.csv`**: the Kansas catalogue's record for every plate.
 - **`sources/decisions.csv`**: every identification as decided, in `tools/identify.py`'s log.
+- **`sources/imprints.csv`**: how each plate's credit lines were read: where they are on the sheet, the OCR draft, whether they were read off the crop (`eye`) or the scan (`scan`) or not at all (`none`), and what the readers noted.
 - **`sources/survey.csv`**: the first survey. For every plate it gives its leaf, the name as printed, a draft modern name, whether BirdNET V2.4 has it, and the matching plate of *The Birds of Europe* where there is one.
+
+## Who made the plates
+
+Every plate is credited on its face, in small engraved lines below the art: on the left who drew it and put it on stone, on the right who printed it. `imprint` in `plates.csv` gives them as engraved, with spacing, initials and the mark after an abbreviation written by one convention (see [Credit lines](../README.md#credit-lines)). `credits.csv` gives one row per plate, name and role, read from them by `tools/credits.py`.
+
+Lines that differ only in capitals, stops, commas or colons are counted together, under their commonest form.
+
+| Credit line | Credits | Plates |
+|---|---|---:|
+| J. Gould & H. C. Richter, del et lith. | John Gould and H. C. Richter: drew, lithographed | 164 |
+| J. Gould and H. C. Richter, del. et lith. | John Gould and H. C. Richter: drew, lithographed | 96 |
+| J. Wolf & H. C. Richter, del et lith. | Joseph Wolf and H. C. Richter: drew, lithographed | 28 |
+| J. Gould & W. Hart, del et lith. | John Gould and William Hart: drew, lithographed | 27 |
+| J. Wolf and H. C. Richter, del. et lith. | Joseph Wolf and H. C. Richter: drew, lithographed | 23 |
+| J. Wolf & W. Hart, del et lith. | Joseph Wolf and William Hart: drew, lithographed | 4 |
+
+One plate, III.61, reads "Gould & H. C. Richter, del. et lith." (see below). That makes H. C. Richter on 312 plates, John Gould on 288, Joseph Wolf on 55 and William Hart on 31. Every artist's line names two: Gould or Wolf, with Richter or Hart.
+
+| Printer | Credit line | Plates |
+|---|---|---:|
+| Walter | Walter, Imp. | 258 |
+| Walter & Cohn | Walter & Cohn, Imp. | 87 |
+
+Who Walter and Walter & Cohn were is not established.
+
+A joint line credits both names with every role it gives, because that is all it says. The sources say more:
+- Gould's preface of 1873: "Mr. Wolf affords me the benefit of his talented pencil", and "Mr. Richter and Mr. Hart continue their services as heretofore" (Gould 1873, preface).
+- Gould's own drawings "are never more than rough sketches", with colour notes for his artists (Australian Museum, "Gould the artist").
+- Richter "produced over 300 of the 367 plates, sharing the lithography with William Hart" (Australian Museum, "Henry Constantine Richter"). The credit lines name him on 312.
+- Wolf worked for Gould "on a freelance basis" (Australian Museum, "Josef Wolf"), and Richter and Hart put his drawings on stone (KU Libraries, "Joseph Wolf"; Australian Museum, "Josef Wolf"). Wolf and Hart share four plates: I.14, I.23, V.1 and V.58.
+
+III.61's line begins "Gould &": its initial is cut off at the sheet's edge. It is credited to John Gould, a reading that rests on this folio alone (`FOLIO_NAMES` in `tools/credits.py`, and the plate's note). *The Birds of Great Britain* is of 1862–73, after Elizabeth Gould's death in 1841 (Australian Museum, "Henry Constantine Richter"), and every other line of it that names a Gould reads J. Gould.
+
+19 plates have no credit line read; `notes` says why for each. All are bound sideways, and their lines are cut off at the sheet's foot: on 14 the sheet ends in the caption or the picture, and on 5 only the tops of the letters show. Eight more have one line only: the artist's on I.24, III.27 and IV.8, and the printer's on IV.21, IV.25, IV.41, IV.51 and V.51.
+
+Sources:
+- Gould, J. 1873. *The Birds of Great Britain*, vol. I, Preface (1 Nov 1873). [archive.org/details/birdsgreatbrita1goul](https://archive.org/details/birdsgreatbrita1goul)
+- Australian Museum Research Library, *John Gould: illustrations and books*: "Gould the artist" (2021), [australian.museum](https://australian.museum/learn/collections/museum-archives-library/john-gould/gould-the-artist/); "Henry Constantine Richter (about 1821–1902)" (2018), [australian.museum](https://australian.museum/learn/collections/museum-archives-library/john-gould/henry-constantine-richter-about-1821-1902/); "Josef Wolf (1820–1899)" (2018), [australian.museum](https://australian.museum/learn/collections/museum-archives-library/john-gould/josef-wolf-1820-1899/).
+- KU Libraries. "Joseph Wolf", in *John Gould: Bird Illustration in the Age of Darwin* (online exhibit). [exhibits.lib.ku.edu](https://exhibits.lib.ku.edu/exhibits/show/gould/art/joseph_wolf)
 
 ## How the plates were identified
 

@@ -8,6 +8,8 @@ Every plate of five great nineteenth-century bird folios, identified to modern s
 
 Old plates name their birds the way their authors did, and many of those names now belong to other species. Gould's "Black-headed Gull" is today's Mediterranean Gull. This dataset matches each plate to the bird it actually shows, gives the reasoning, and is released CC0. [64 plates](#names-that-now-mean-another-bird) carry a printed name that eBird now gives to a different species.
 
+Every plate also carries its credit line: the small engraved lines under the art that say who drew it, who put it on stone or engraved it, and who printed it. Wherever this copy shows them, the lines are read off the plate, given as engraved, and parsed into who they name and for what. By their credit lines, Gould's plates were drawn and put on stone by Elizabeth Gould (433 plates), Edward Lear (57), H. C. Richter (1,278), Joseph Wolf (78) and William Hart (153) as well as by Gould himself (1,768); Audubon's were engraved by W. H. Lizars and Robert Havell Jr.
+
 ## The folios
 
 ### Audubon, *The Birds of America* (Havell edition, 1827–38)
@@ -22,11 +24,15 @@ Old plates name their birds the way their authors did, and many of those names n
 
 449 plates · 447 identified, 392 checked against the engraved caption · [browse all plates](gould-europe/#the-plates) · [tables](gould-europe/) · [images](https://github.com/wr/historical-bird-plates/releases/tag/gould-europe-v1)
 
+[Credit lines](gould-europe/#who-made-the-plates): John and Elizabeth Gould 356 · Edward Lear 56
+
 ### Gould, *The Birds of Australia* and *Supplement* (1840–69)
 
 [![Superb Lyrebird, Laughing Kookaburra, Gouldian Finch, Sulphur-crested Cockatoo, Rainbow Lorikeet](img/preview-gould-australia.jpg)](gould-australia/#the-plates)
 
 681 plates · 676 identified, 660 checked · [browse all plates](gould-australia/#the-plates) · [tables](gould-australia/) · [images](https://github.com/wr/historical-bird-plates/releases/tag/gould-australia-v1)
+
+[Credit lines](gould-australia/#who-made-the-plates): John Gould 636 · H. C. Richter 560 · Elizabeth Gould 77
 
 ### Gould, *The Birds of Asia* (1850–83)
 
@@ -34,11 +40,15 @@ Old plates name their birds the way their authors did, and many of those names n
 
 530 plates · 530 identified, every caption read · [browse all plates](gould-asia/#the-plates) · [tables](gould-asia/) · [images](https://github.com/wr/historical-bird-plates/releases/tag/gould-asia-v1)
 
+[Credit lines](gould-asia/#who-made-the-plates): John Gould 488 · H. C. Richter 406 · William Hart 122
+
 ### Gould, *The Birds of Great Britain* (1862–73)
 
 [![Common Kingfisher, Barn Owl, Atlantic Puffin, Golden Oriole, Hoopoe](img/preview-gould-britain.jpg)](gould-britain/#the-plates)
 
 367 plates · 367 identified, 366 checked against the engraved caption · [browse all plates](gould-britain/#the-plates) · [tables](gould-britain/) · [images](https://github.com/wr/historical-bird-plates/releases/tag/gould-britain-v2)
+
+[Credit lines](gould-britain/#who-made-the-plates): H. C. Richter 312 · John Gould 288 · Joseph Wolf 55
 
 ## Get the data
 
@@ -157,12 +167,14 @@ These plates are printed with an English name that eBird/Clements 2025 now gives
 
 ### Tables
 
-Every folio folder has `plates.csv` and `species.csv`. Some also have `ku-disagreements.csv` and a `sources/` folder holding the working record. [`datapackage.json`](datapackage.json) ([Frictionless Data](https://specs.frictionlessdata.io/data-package/)) is the schema.
+Every folio folder has `plates.csv`, `species.csv` and `credits.csv`, and the root has `artists.csv`. Some folders also have `ku-disagreements.csv` and a `sources/` folder holding the working record. [`datapackage.json`](datapackage.json) ([Frictionless Data](https://specs.frictionlessdata.io/data-package/)) is the schema.
 
 | File | One row per | Key columns |
 |---|---|---|
-| `plates.csv` | plate | `plate` in the folio's own numbering (plus `volume` where a folio numbers per volume: *Australia*, *Great Britain*, *Asia*); printed title and Latin; BHL `bhl_item`, `leaf`, `bhl_page`; `scan_url` (the unaltered JPEG 2000); `sheet_asset`, `crop_asset` |
+| `plates.csv` | plate | `plate` in the folio's own numbering (plus `volume` where a folio numbers per volume: *Australia*, *Great Britain*, *Asia*); printed title and Latin; BHL `bhl_item`, `leaf`, `bhl_page`; `scan_url` (the unaltered JPEG 2000); `sheet_asset`, `crop_asset`; `imprint` (the plate's credit lines, as engraved) |
 | `species.csv` | plate × modern species | `scientific`, `common`, `ebird_code`, `taxonomy` (eBird/Clements 2025); `wikidata`, `gbif`, `avibase`; `birdnet_label` (BirdNET GLOBAL 6K V2.4, verbatim); `form`; `figure`; `confidence`; `caption_checked`; `reason`; `sources` |
+| `credits.csv` | plate × name × role | `plate` (plus `volume` where the folio numbers per volume), `name`, `role` (drew, lithographed, engraved, retouched, printed, coloured), `as_printed`; generated from `imprint` by `tools/credits.py` |
+| `artists.csv` (root) | person or firm on a credit line | `name`, `kind`, `wikidata`, `note` |
 | `ku-disagreements.csv` | plate where the University of Kansas catalogue differs | KU's record and name, ours, and the `kind` of disagreement (error, crossed, typo, old name, pre-split, composite, …) |
 
 - **`confidence`:** `high` is certain; `judged` is a considered call, argued in `reason`; `medium` and `low` are open; `none` is not identified.
@@ -175,6 +187,20 @@ Every folio folder has `plates.csv` and `species.csv`. Some also have `ku-disagr
   - Races follow eBird/Clements 2025's groups, and otherwise the IOC World Bird List.
 - **Unresolved plates keep their rows,** with an empty species and the reason, so the open questions are in the data.
 - **Taxonomy:** names and codes follow eBird/Clements 2025. Where BirdNET's older taxonomy differs, `birdnet_label` keeps BirdNET's name. A species split since then is resolved by where the bird came from: Audubon's Barn Owl is the American Barn Owl; Gould's is the Western in *Europe* and *Great Britain*, and the Eastern in *Australia* (I.31) and *Asia* (I.17).
+
+#### Credit lines
+
+`imprint` gives a plate's credit lines as engraved: the left corner, then the centre, then the right corner, each top to bottom, joined with " | ". `tools/credits.py` reads them into `credits.csv`, one row per plate, name and role, with every name in `artists.csv`. A joint credit gives every name every role, because that is all the plate says: "J. Gould & H. C. Richter, del. et lith." credits both men with drawing and lithographing. Each folio's README says what the sources add.
+
+- **How they were read.** Readers transcribed every line by eye from crops of the plate's corners, working from the image, not from the OCR draft. Each reading was then compared with the OCR draft word by word, and every disagreement was looked at again, on the crop or on the full-resolution scan. Faint, cut or missed lines were read on the scan. Then the marks (stops, commas, colons) were checked plate by plate on the lines enlarged 4× (*Great Britain*: at least 2×), and at 8× where a mark was in doubt.
+- **As engraved:** the words and their spelling (*Asia* III.22's "Waller"), capitals, & or "and", commas after names, whether a mark follows an abbreviation, and the stop at a line's end. A stop or comma is recorded only where a separate mark can be seen, enlarged to 8× if need be.
+- **Written by one convention**, because at the scans' resolution these can't be read consistently:
+  - **Spacing:** one space after each stop, comma and colon, and none before; one space each side of &. Words run together take a space: "Drawnfrom" is written "Drawn from", "andH." "and H.".
+  - **Initials:** written "X. ", whatever mark, if any, follows the letter on the plate: "H. C. Richter", "J. & E. Gould".
+  - **The mark after an abbreviation** (del, delt, lith, lithog, Imp, Impt, Edwd, Edinr, Junr) is written as a stop, where the plate has a stop, comma or colon.
+- **Not read:** a line cut off at the sheet's edge or in the binding is read only if every letter can still be told, and left out where only the tops of its letters show. A faint line is read if it is whole and every word can be read. A printer's line whose wording is cut off ("Hullmandel & Walton", with "Imp." lost in the binding) is left out too, with its legible text in `notes`. A plate with no credit line read has an empty `imprint` and a note saying why.
+- **One folio's inferences:** where a name form stands for someone only by its folio's pattern, it is listed in `FOLIO_NAMES` in `tools/credits.py` with its reason, and the folio's README names the plates. *Great Britain* III.61 reads "Gould &", its initial cut off; it is credited to John Gould, since the folio postdates Elizabeth Gould's death and every other plate of it reads J. Gould. A name no pattern settles is credited to no one, like *Asia* IV.26's "H. Gould".
+- **What isn't certain:** the marks. A faint stop at the threshold of visibility may have been missed, or kept where there is none. The words rest on two independent readings, and the marks on a reading and one check.
 
 ### Images
 
@@ -205,13 +231,16 @@ The validator runs on every push. It checks:
 - every column against `datapackage.json`;
 - every `ebird_code` against the eBird taxonomy the row names, including that the code's scientific name matches;
 - every `birdnet_label`, verbatim, against BirdNET's labels;
+- that every `credits.csv` is what `tools/credits.py` writes from `imprint`, and every name is in `artists.csv`;
+- that a plate with an empty `imprint` has a note saying why;
 - that every ID is well formed.
 
-`tools/quickstatements.py FOLIO` writes a [QuickStatements](https://quickstatements.toolforge.org/) batch that creates one Wikidata item per plate: instance of, part of the work with its plate number, creator, title, BHL page ID, and `depicts`, referenced to this dataset. It skips plates Wikidata already has.
+`tools/quickstatements.py FOLIO` writes a [QuickStatements](https://quickstatements.toolforge.org/) batch that creates one Wikidata item per plate: instance of; part of the work, with its plate number; creators and printer from the credit line, each referenced to the plate's scan (for Havell, its sheet in the release) and quoting the line; title; BHL page ID; and `depicts`, referenced to this dataset. A plate with no credit line read gets no creator. It skips plates Wikidata already has. `--fix-creators` writes a batch that corrects the plate items this dataset already made, those the maintainer's Wikidata account created: it adds each artist and the printer the credit line names, and removes an unreferenced `creator: John Gould` (or Audubon) that the line doesn't name. Items whose plate has no artist's line read are left as they are, and so are items someone else made. Each edit to an existing item counts on its own, so split this batch with `--chunk 25`.
 
 ### Contributing
 
 - **Fix a plate:** open a pull request to that folio's `species.csv`, with the evidence in `reason` and `sources`. The best evidence is the plate itself: the caption, the figure, the bird.
+- **Fix a credit line:** correct `imprint` in that folio's `plates.csv`, as engraved and by the conventions under [Credit lines](#credit-lines), and run `python3 tools/credits.py`. A new wording or name must be added to the tables in `tools/credits.py` first, and a new person or firm to `artists.csv`.
 - **Change identifications in bulk:** write the decisions to a CSV (one row per figure: `book`, `volume`, `plate`, `figure`, `scientific`, `form`, `confidence`, `caption_checked`, `reason`, `sources`) and run `python3 tools/identify.py DECISIONS.csv`. It replaces those plates' rows and fills the names and IDs from `scientific`. A species already in the dataset takes its reviewed IDs; a new one gets them by the rule in the script. Every decision is logged to the folio's `sources/decisions.csv`. Add `--dry-run` to see the changes first. `python3 tools/stats.py` prints the numbers table above.
 - **Add a folio:** add a new folder with the same tables and a `README.md`. The README covers the edition and the copy scanned, how the plates were found, how the names were checked, and the traps. Add its tables to `datapackage.json`, then run the validator.
 
@@ -242,6 +271,7 @@ These 18 rows are what's left. Each is a mystery bird, a hybrid, or two candidat
 
 ### Acknowledgements
 
+- **A reader of the r/birding announcement:** pointed out that many plates published under Gould's name were drawn by others, Elizabeth Gould first among them, and should be credited. The credit lines in `plates.csv` and `credits.csv` are the answer.
 - **Nathan Buchar's [audubon-bird-plates](https://github.com/nathanbuchar/audubon-bird-plates):** the Havell plate list (the titles and image links in `havell/plates.csv`) comes from it, and it's the other public mirror of Audubon's plates.
 - **The [Biodiversity Heritage Library](https://www.biodiversitylibrary.org/) and Smithsonian Libraries and Archives:** they scanned Gould's *Birds of Europe*, *Australia*, *Great Britain* and *Asia* and publish them openly.
 - **The University of Kansas Spencer Library:** its [Gould catalogue](https://digital.lib.ku.edu/ku-gould/11233) was the cross-check for the Gould identifications.

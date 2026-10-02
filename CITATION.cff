@@ -7,8 +7,9 @@ abstract: >-
   The Birds of Europe, The Birds of Australia, The Birds of Great Britain and
   The Birds of Asia;
   Audubon's The Birds of America, Havell edition), with eBird,
-  Wikidata, GBIF, Avibase and BirdNET identifiers, and cleaned public-domain images
-  of the Gould and Havell plates.
+  Wikidata, GBIF, Avibase and BirdNET identifiers, each plate's engraved credit
+  line (who drew, lithographed or engraved and printed it), and cleaned
+  public-domain images of the Gould and Havell plates.
 authors:
   - family-names: Riley
     given-names: Wells
