@@ -19,7 +19,7 @@ const style = `--ar:${ar.toFixed(4)}${img ? `;--c:${img.colour}` : ""}`;
     <img
       src={imageSrc(p, "thumb")}
       srcset={`${imageSrc(p, "thumb")} ${img.thumb[0]}w, ${imageSrc(p, "crop")} ${img.crop[0]}w`}
-      sizes="auto, 240px"
+      sizes={`auto, (max-width: 600px) ${Math.round(ar * 120)}px, ${Math.round(ar * 180)}px`}
       width={img.thumb[0]}
       height={img.thumb[1]}
       alt={altText(p, f)}
