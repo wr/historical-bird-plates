@@ -40,6 +40,11 @@ export function altText(p: Plate, f: Folio): string {
   return `${p.label} of ${possessive(f)}: ${ids.length ? named(ids) : `“${p.printed.name}”, not identified`}`;
 }
 
+/** "The whole sheet of volume I, plate 1, with its engraved caption". */
+export function sheetAlt(p: Plate): string {
+  return `The whole sheet of ${lowerFirst(p.label)}, with its engraved caption`;
+}
+
 /** The modern name, or the printed name quoted first when it differs. */
 export function plateTitle(p: Plate, f: Folio): string {
   const modern = shown(p);

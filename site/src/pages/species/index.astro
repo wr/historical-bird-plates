@@ -29,7 +29,7 @@ for (const s of species) {
           {fam.list.map((s) => (
             <li data-text={` ${fold(`${s.common} ${s.scientific} ${s.family} ${s.family_common} ${s.code}`)} `}>
               <a href={speciesHref(s)}>{s.common}</a>
-              <span class="n">{s.plates.length}</span>
+              <span class="n">{s.plates.length}<span class="sr-only"> {s.plates.length === 1 ? "plate" : "plates"}</span></span>
             </li>
           ))}
         </ul>

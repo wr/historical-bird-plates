@@ -8,6 +8,8 @@ Every plate of five great nineteenth-century bird folios, identified to modern s
 
 Old plates name their birds the way their authors did, and many of those names now belong to other species. Gould's "Black-headed Gull" is today's Mediterranean Gull. This dataset matches each plate to the bird it actually shows, gives the reasoning, and is released CC0. [62 plates](#names-that-now-mean-another-bird) carry a printed name that eBird now gives to a different species.
 
+**Browse the plates:** [wr.github.io/historical-bird-plates](https://wr.github.io/historical-bird-plates/), every plate with its identification and reasoning, searchable by printed or modern name.
+
 ## The folios
 
 ### Audubon, *The Birds of America* (Havell edition, 1827–38)
@@ -201,6 +203,18 @@ The validator runs on every push. It checks:
 - that every ID is well formed.
 
 `tools/quickstatements.py FOLIO` writes a [QuickStatements](https://quickstatements.toolforge.org/) batch that creates one Wikidata item per plate: instance of, part of the work with its plate number, creator, title, BHL page ID, and `depicts`, referenced to this dataset. It skips plates Wikidata already has.
+
+### The site
+
+[`site/`](site/) is the [Astro](https://astro.build) site at [wr.github.io/historical-bird-plates](https://wr.github.io/historical-bird-plates/). GitHub Actions rebuilds and deploys it on every push to `main` that touches the tables or the site.
+
+```sh
+python3 tools/site_data.py               # the tables and the eBird taxonomy, joined into site/src/data/plates.json
+python3 tools/site_images.py fetch       # the published WebP images, into site/public/img/
+cd site && npm ci && npm run dev         # serve it at localhost:4321/historical-bird-plates/
+```
+
+`python3 tools/site_images.py build` remakes the images and `site/src/data/images.json` from the folio releases. A new set is published as a new `site-images-vN` release.
 
 ### Contributing
 

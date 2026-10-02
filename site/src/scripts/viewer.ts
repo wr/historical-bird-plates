@@ -4,6 +4,7 @@ for (const root of document.querySelectorAll<HTMLElement>("[data-viewer]")) view
 function viewer(root: HTMLElement): void {
   const stage = root.querySelector<HTMLElement>("[data-stage]")!;
   const reset = root.querySelector<HTMLButtonElement>("[data-zoom=reset]")!;
+  const zoomIn = root.querySelector<HTMLButtonElement>("[data-zoom=in]")!;
   const pointers = new Map<number, { x: number; y: number }>();
   let scale = 1;
   let x = 0;
@@ -20,6 +21,8 @@ function viewer(root: HTMLElement): void {
     y = clamp(y, -my, my);
     img.style.transform = scale === 1 ? "" : `translate(${x}px, ${y}px) scale(${scale})`;
     stage.classList.toggle("zoomed", scale > 1);
+    // Reset hides itself once the plate is back to fit; focus moves to zoom in rather than falling to the page.
+    if (scale === 1 && document.activeElement === reset) zoomIn.focus();
     reset.hidden = scale === 1;
   }
 
@@ -97,7 +100,7 @@ function viewer(root: HTMLElement): void {
     gestureScale = g.scale;
   });
 
-  root.querySelector("[data-zoom=in]")!.addEventListener("click", () => zoomAt(1.6, ...centre()));
+  zoomIn.addEventListener("click", () => zoomAt(1.6, ...centre()));
   root.querySelector("[data-zoom=out]")!.addEventListener("click", () => zoomAt(1 / 1.6, ...centre()));
   reset.addEventListener("click", () => zoomAt(1 / scale, ...centre()));
 

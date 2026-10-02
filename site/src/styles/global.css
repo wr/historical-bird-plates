@@ -10,7 +10,7 @@
   --serif: "Newsreader Variable", "Iowan Old Style", Georgia, serif;
   --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --gutter: clamp(16px, 4vw, 40px);
-  --measure: 68ch;
+  --measure: 60ch;
   --row-h: 180px;
   color-scheme: light dark;
 }
@@ -60,7 +60,8 @@ a:hover { text-decoration-color: currentColor; }
 .menu summary::-webkit-details-marker { display: none; }
 .menu summary::after { content: " ▾"; font-size: 0.75em; }
 .menu ul { position: absolute; right: 0; top: calc(100% + 8px); z-index: 20; margin: 0; padding: 0.4rem 0; list-style: none; min-width: 17rem; background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; box-shadow: 0 8px 24px rgb(0 0 0 / 0.12); }
-@media (max-width: 600px) {
+/* In em: a larger default font wraps the nav sooner, and this follows it. */
+@media (max-width: 37.5em) {
   .site-head { position: relative; }
   .menu { position: static; }
   .menu ul { left: var(--gutter); right: var(--gutter); min-width: 0; max-width: 24rem; }
@@ -77,7 +78,8 @@ main { padding: 0 var(--gutter) 4rem; }
 
 .controls { display: none; position: sticky; top: 0; z-index: 10; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 0.6rem 1rem; padding: 0.75rem 0; margin-bottom: 0.5rem; background: color-mix(in srgb, var(--paper) 94%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
 .js .controls { display: grid; }
-.controls input[type="search"], .controls select, .species-filter input { font: inherit; color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; padding: 0.5rem 0.75rem; }
+.controls input[type="search"], .controls select, .species-filter input { font: inherit; color: var(--ink); background: var(--paper); border: 1px solid color-mix(in srgb, var(--ink-2) 70%, var(--paper)); border-radius: 6px; padding: 0.5rem 0.75rem; }
+::placeholder { color: var(--ink-2); opacity: 1; }
 .controls input[type="search"] { width: 100%; }
 .arrange { display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: var(--ink-2); }
 .pills { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 0.4rem; }
@@ -87,15 +89,23 @@ main { padding: 0 var(--gutter) 4rem; }
 .status { grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem 1rem; font-size: 0.875rem; color: var(--ink-2); }
 .status p { margin: 0; }
 .status input[type="range"] { width: 8rem; vertical-align: middle; accent-color: var(--ink); }
+/* On a phone the sticky controls keep to three short lines: the pills scroll sideways in one. */
+@media (max-width: 600px) {
+  .controls { padding: 0.5rem 0; gap: 0.5rem 0.75rem; }
+  .arrange > span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .pills { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 calc(-1 * var(--gutter)); padding: 3px var(--gutter); scroll-padding-inline: var(--gutter); }
+  .pill { flex: none; }
+}
 
 .group-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.75rem; font-size: 1.35rem; margin: 2rem 0 0.75rem; }
 .group-count { font: 400 0.8rem var(--sans); color: var(--ink-2); }
-.rows { display: flex; flex-wrap: wrap; gap: 6px; }
+/* A row grows to at most twice the row height; one that would grow further (a lone plate, often) is centred instead. */
+.rows { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
 .rows::after { content: ""; flex-grow: 10000; }
-.tile { position: relative; display: block; flex: var(--ar) 1 calc(var(--ar) * var(--row-h)); aspect-ratio: var(--ar); overflow: hidden; border-radius: 2px; background: color-mix(in srgb, var(--c, var(--tile)) 22%, var(--tile)); }
+.tile { position: relative; display: block; flex: var(--ar) 1 calc(var(--ar) * var(--row-h)); max-width: calc(var(--ar) * var(--row-h) * 2); aspect-ratio: var(--ar); overflow: hidden; border-radius: 2px; background: color-mix(in srgb, var(--c, var(--tile)) 22%, var(--tile)); }
 .tile img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .missing { display: grid; place-items: center; height: 100%; padding: 0.5rem; text-align: center; font-size: 0.75rem; color: var(--ink-2); }
-.cap { position: absolute; inset: auto 0 0 0; display: grid; padding: 1.75rem 0.6rem 0.5rem; font-size: 0.78rem; line-height: 1.3; color: #fff; background: linear-gradient(transparent, rgb(0 0 0 / 0.75)); opacity: 0; transform: translateY(4px); transition: opacity 0.15s, transform 0.15s; pointer-events: none; }
+.cap { position: absolute; inset: auto 0 0 0; display: grid; padding: 1.75rem 0.6rem 0.5rem; font-size: 0.78rem; line-height: 1.3; color: #fff; background: linear-gradient(transparent, rgb(0 0 0 / 0.75) 1.75rem); opacity: 0; transform: translateY(4px); transition: opacity 0.15s, transform 0.15s; pointer-events: none; }
 .tile:hover .cap, .tile:focus-visible .cap { opacity: 1; transform: none; }
 .cap-name { font-family: var(--serif); font-size: 1rem; }
 .empty { padding: 3rem 0; font-family: var(--serif); font-size: 1.25rem; color: var(--ink-2); }
@@ -124,6 +134,8 @@ main { padding: 0 var(--gutter) 4rem; }
 .zoom button { font: inherit; min-width: 2rem; height: 2rem; padding: 0 0.5rem; border: 1px solid var(--rule); border-radius: 6px; background: transparent; color: var(--ink); cursor: pointer; }
 .credit { flex-basis: 100%; font-size: 0.8rem; color: var(--ink-2); }
 .plate-text { max-width: var(--measure); }
+.plate-text > * + section { margin-top: 1.75rem; }
+.plate-text section > h2.eyebrow { margin-bottom: 0.6rem; }
 .printed { font-family: var(--serif); font-size: 1.4rem; margin: 0; }
 .printed-latin { font-family: var(--serif); font-style: italic; margin: 0 0 0.5rem; }
 .note { border-left: 3px solid var(--accent); padding: 0.4rem 0 0.4rem 1rem; margin: 1.25rem 0; }
@@ -145,6 +157,7 @@ main { padding: 0 var(--gutter) 4rem; }
 .strip-printed { font-family: var(--serif); font-size: 1rem; color: var(--ink); }
 
 .species-filter { margin: 1rem 0 0.5rem; }
+.species-filter input { width: min(100%, 24rem); }
 [data-species-count] { margin: 0 0 2rem; }
 .families { columns: 17rem; column-gap: 2.5rem; }
 .family { break-inside: avoid; margin-bottom: 1.5rem; }
@@ -154,7 +167,7 @@ main { padding: 0 var(--gutter) 4rem; }
 .family .n { color: var(--ink-2); font-variant-numeric: tabular-nums; }
 
 .prose { max-width: var(--measure); padding-top: 2rem; }
-.prose p, .prose li { font-size: 1.05rem; }
+.prose p:not(.lede), .prose li { font-size: 1.05rem; }
 .prose h2 { margin-top: 2.5rem; }
 
 @view-transition { navigation: auto; }

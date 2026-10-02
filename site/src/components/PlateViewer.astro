@@ -1,6 +1,6 @@
 ---
 import { imageSrc } from "../lib/data";
-import { altText } from "../lib/seo";
+import { altText, sheetAlt } from "../lib/seo";
 import type { Folio, Plate } from "../lib/types";
 
 interface Props {
@@ -15,7 +15,7 @@ const img = p.image!;
     <img data-cut="crop" src={imageSrc(p, "crop")} width={img.crop[0]} height={img.crop[1]} alt={altText(p, f)}
       fetchpriority="high" draggable="false" style="view-transition-name: plate" />
     <img data-cut="sheet" src={imageSrc(p, "sheet")} width={img.sheet[0]} height={img.sheet[1]}
-      alt={`The whole sheet of ${p.label.toLowerCase()}, with its engraved caption`} loading="lazy" draggable="false" hidden />
+      alt={sheetAlt(p)} loading="lazy" draggable="false" hidden />
   </div>
   <figcaption class="viewer-bar">
     <span class="segmented" role="group" aria-label="Show">

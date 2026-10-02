@@ -29,7 +29,8 @@ const image = cover ? absolute(imageSrc(cover, "crop")) : undefined;
     <p class="eyebrow">{s.family_common} · {s.family} · {s.order}</p>
     <h1>{s.common}</h1>
     <p class="sci">{s.scientific}</p>
-    <p>{plural(shownOn.length, "plate")} in {plural(inFolios.length, "folio")}.{s.extinct && " Extinct."}</p>
+    {s.extinct && <ul class="facts"><li>Extinct</li></ul>}
+    <p>{plural(shownOn.length, "plate")} in {plural(inFolios.length, "folio")}.</p>
   </header>
   <PlateStrip plates={shownOn} height={320} />
   {printedAs.length > 0 && (

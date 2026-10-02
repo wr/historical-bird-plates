@@ -48,7 +48,6 @@ const issue = `${REPO}/issues/new?title=${encodeURIComponent(`${f.short} ${p.key
     <p class="eyebrow">{f.cite} · {p.label}{!p.group && p.volume ? `, volume ${p.volume}` : ""}</p>
     <h1>{ids.length ? shown(p) : `“${p.printed.name}”`}</h1>
     {printedDiffers && <p class="printed-as">Printed “{p.printed.name}”</p>}
-    {!ids.length && <p class="printed-as">Not identified</p>}
   </header>
   <article class="plate">
     {p.image ? <PlateViewer plate={p} folio={f} /> : (

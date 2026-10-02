@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { altText, clip, plateDescription, plateJsonLd, plateTitle, shown } from "./seo.ts";
+import { altText, clip, plateDescription, plateJsonLd, plateTitle, sheetAlt, shown } from "./seo.ts";
 import type { Folio, Plate } from "./types.ts";
 
 const europe = {
@@ -53,6 +53,11 @@ test("a description stops at a word, under 160 characters", () => {
 
 test("alt text names the plate, the folio and the bird", () => {
   assert.equal(altText(plate(), europe), "Plate 427 of Gould's The Birds of Europe: Mediterranean Gull (Ichthyaetus melanocephalus)");
+});
+
+test("the full sheet's alt text keeps a volume's roman numeral", () => {
+  assert.equal(sheetAlt(plate({ label: "Volume I, plate 1" })), "The whole sheet of volume I, plate 1, with its engraved caption");
+  assert.equal(sheetAlt(plate()), "The whole sheet of plate 427, with its engraved caption");
 });
 
 test("JSON-LD is a VisualArtwork about a Taxon", () => {

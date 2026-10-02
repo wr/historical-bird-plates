@@ -72,6 +72,9 @@ function start(wall: HTMLElement, form: HTMLFormElement): void {
       state = { q: "", folios: [], flags: [], arrange: state.arrange };
       syncControls();
       render();
+      // The link has just been replaced by the wall. From the keyboard (a click with no pointer), focus goes back to
+      // the search box rather than to the page; a tap leaves it be, so a phone doesn't open its keyboard.
+      if (e.detail === 0) q.focus();
     });
     p.append("No plates match. ", clear);
     return p;
