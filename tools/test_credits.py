@@ -92,6 +92,11 @@ class Parse(unittest.TestCase):
                 parse(line, folio)
         with self.assertRaises(UnknownCredit):
             parse("Drawn from Life & on Stone by Gould", "gould-europe")
+        line = "Drawn from Nature & on stone by J & E. Gould. | Printed by C. Hullman"  # Europe 202
+        self.assertEqual(names_roles(parse(line, "gould-europe"))[-1], ("Charles Joseph Hullmandel", "printed"))
+        for folio in (None, "gould-britain", "gould-australia", "gould-asia", "havell"):
+            with self.subTest(folio=folio), self.assertRaises(UnknownCredit):
+                parse(line, folio)
 
     def test_seen_on_the_plates(self):
         """Every wording found on the plates parses. Add each new variant here."""
@@ -100,6 +105,17 @@ class Parse(unittest.TestCase):
                         "J. Gould & H.C. Richter del et lith. | Walter Imp.",
                         "J. Gould & W. Hart del. et lith. | Walter Imp.",
                         "J.Gould &H.C.Richter,del et lith | Walter,Imp.",
+                        "Drawn from Life and on Stone by J & E. Gould. | Printed by C. Hullmandel.",
+                        "Drawn on Stone from Life by J & E. Gould. | Printed by C. Hullmandel.",
+                        "Drawn on Stone from Nature by J & E. Gould. | Printed by C.Hullmandel.",
+                        "E. Lear del et lithog. | Printed by C. Hullmandel.",
+                        "E.Lear del et lith: | Printed by C.Hullmandel.",
+                        "E. Lear del et lithog: | Printed by C.Hullmandel.",
+                        "E.Lear del: et lith. | Printed by C. Hullmandel.",
+                        "E. Lear del: et lith: | Printed by C.Hullmandel",
+                        "E. Lear del: et lithog: | Printed by C. Hullmandel.",
+                        "Drawn from Nature & on Stone by J & E. Gould. | Printed by C.Hullmandel.",
+                        "Drawn from Life & on Stone by E. Lear | Printed by C. Hullmandel.",
                         "Drawn from nature by J.J. Audubon F.R.S. F.L.S. | Engraved, Printed & Coloured by R. Havell Junr."):
             with self.subTest(imprint=imprint):
                 self.assertTrue(parse(imprint))

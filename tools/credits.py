@@ -39,6 +39,9 @@ ROLES = ("drew", "lithographed", "engraved", "retouched", "printed", "coloured")
 BEFORE = {
     "Drawn from Nature & on Stone by": ("drew", "lithographed"),
     "Drawn from Life & on Stone by": ("drew", "lithographed"),
+    "Drawn from Life and on Stone by": ("drew", "lithographed"),
+    "Drawn on Stone from Nature by": ("drew", "lithographed"),
+    "Drawn on Stone from Life by": ("drew", "lithographed"),
     "Drawn on Stone by": ("lithographed",),
     "Drawn from Nature by": ("drew",),
     "Engraved, Printed & Coloured by": ("engraved", "printed", "coloured"),
@@ -49,6 +52,12 @@ BEFORE = {
 # A wording written after the names -> the roles it gives them.
 AFTER = {
     "del. et lith.": ("drew", "lithographed"),
+    "del. et lith:": ("drew", "lithographed"),
+    "del: et lith.": ("drew", "lithographed"),
+    "del: et lith:": ("drew", "lithographed"),
+    "del. et lithog.": ("drew", "lithographed"),
+    "del. et lithog:": ("drew", "lithographed"),
+    "del: et lithog:": ("drew", "lithographed"),
     "del.": ("drew",),
     "lith.": ("lithographed",),
     "Imp.": ("printed",),
@@ -76,6 +85,10 @@ FOLIO_NAMES = {
     # Birds of Great Britain is 1862-73, after Elizabeth Gould's death in 1841, and every
     # other plate of it that can be read reads J. Gould.
     "gould-britain": {"Gould": ("John Gould",)},
+    # Europe 202: the printer's name did not print past "Hullman"; the paper after it is
+    # blank, mid-page. Every other plate of The Birds of Europe that names its printer
+    # reads C. Hullmandel.
+    "gould-europe": {"C. Hullman": ("Charles Joseph Hullmandel",)},
 }
 
 
