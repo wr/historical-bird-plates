@@ -14,7 +14,7 @@ Old plates name their birds the way their authors did, and many of those names n
 
 [![Wild Turkey, American Flamingo, Carolina Parakeet, Snowy Owl, Roseate Spoonbill](img/preview-havell.jpg)](havell/#the-plates)
 
-435 plates · 428 identified · [browse all plates](havell/#the-plates) · [tables](havell/) · [images](https://github.com/wr/historical-bird-plates/releases/tag/havell-v1)
+435 plates · 428 identified · [browse all plates](havell/#the-plates) · [tables](havell/) · [images](https://github.com/wr/historical-bird-plates/releases/tag/havell-v2)
 
 ### Gould, *The Birds of Europe* (1832–37)
 
@@ -179,7 +179,7 @@ Every folio folder has `plates.csv` and `species.csv`. Some also have `ku-disagr
 
 ### Images
 
-Each Gould release has two cuts of every plate leaf. `havell-v1` has audubon.org's plates as published, plus crops with the lettering removed.
+Each Gould release has two cuts of every plate leaf. `havell-v2` has audubon.org's plates as published (165 excepted), plus crops with the lettering removed.
 
 - **`sheet-…`:** the full sheet, stood upright, with the paper evened and cleared to white and the caption kept.
 - **`crop-…`:** the art alone, with the caption and pencilled number cut away and a white margin added. *Australia* and *Asia* ship their crops as `crops.zip`.
