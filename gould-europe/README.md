@@ -6,7 +6,7 @@ Five volumes and 449 plates: 448 in this copy, as one was never found. Drawn and
 
 ## The plates
 
-Every plate as its art crop, by General List number. The full-size images are in the [`gould-europe-v1`](https://github.com/wr/historical-bird-plates/releases/tag/gould-europe-v1) release.
+Every plate as its art crop, by General List number. The full-size images are in the [`gould-europe-v2`](https://github.com/wr/historical-bird-plates/releases/tag/gould-europe-v2) release.
 
 **Plates 1–50**
 
@@ -119,9 +119,9 @@ Of the 410 caption-checked species, 409 match a KU plate. `ku-disagreements.csv`
 
 That is 23 misidentified plates out of about 445, roughly one in 19. On the brace plates, KU's record names only one figure.
 
-## The images: release `gould-europe-v1`
+## The images: release `gould-europe-v2`
 
-Two images per plate leaf, 448 leaves. `manifest.json` and `SHA256SUMS` give each file's sha256.
+Two images per plate leaf, 448 leaves. `manifest.json` and `SHA256SUMS` give each file's sha256. v2 adds plate 132's leaf, which `gould-europe-v1` lacked, and recuts 119's crop; every other file is unchanged.
 
 - **`sheet-<barcode>-<leaf>.jpg`, the cleaned full sheet:**
   - The JPEG 2000 master, stood upright: 90° clockwise for a landscape plate, so its caption runs along the bottom.
@@ -133,6 +133,7 @@ Two images per plate leaf, 448 leaves. `manifest.json` and `SHA256SUMS` give eac
   - A plate with several birds keeps every one.
   - This is Featherframe's cut for e-paper, and more opinionated than the sheet.
   - The Ivory Gull (436) is white on white paper, so its crop is cut from the whole sheet instead.
+  - 119's two figures sit far apart, and the art's box found only the upper one, so its crop is placed by hand.
 
 Clearing the paper is a choice. For the sheet as it is, with its paper and its age, follow the row's `scan_url` to BHL's original.
 

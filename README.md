@@ -20,7 +20,7 @@ Old plates name their birds the way their authors did, and many of those names n
 
 [![Osprey, Hoopoe, European Roller, Atlantic Puffin, Snowy Owl](img/preview-gould-europe.jpg)](gould-europe/#the-plates)
 
-449 plates · 447 identified, 392 checked against the engraved caption · [browse all plates](gould-europe/#the-plates) · [tables](gould-europe/) · [images](https://github.com/wr/historical-bird-plates/releases/tag/gould-europe-v1)
+449 plates · 447 identified, 392 checked against the engraved caption · [browse all plates](gould-europe/#the-plates) · [tables](gould-europe/) · [images](https://github.com/wr/historical-bird-plates/releases/tag/gould-europe-v2)
 
 ### Gould, *The Birds of Australia* and *Supplement* (1840–69)
 
@@ -46,7 +46,7 @@ Old plates name their birds the way their authors did, and many of those names n
 - **Images:** each folio has a release of cleaned full sheets and art crops, with a sha256 manifest. For example:
 
   ```sh
-  gh release download gould-europe-v1 -R wr/historical-bird-plates -p 'crop-*'
+  gh release download gould-europe-v2 -R wr/historical-bird-plates -p 'crop-*'
   ```
 
 - **Cite:** Riley, W. *Historical bird plates: modern identifications*. Zenodo. [doi:10.5281/zenodo.22964828](https://doi.org/10.5281/zenodo.22964828). See [`CITATION.cff`](CITATION.cff).
