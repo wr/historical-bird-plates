@@ -52,7 +52,7 @@ const issue = `${REPO}/issues/new?title=${encodeURIComponent(`${f.short} ${p.key
   </header>
   <article class="plate">
     {p.image ? <PlateViewer plate={p} folio={f} /> : (
-      <div class="viewer"><div class="stage"><p class="missing">This plate is not yet in the image release. <a href={p.scan}>{scanLabel}</a>.</p></div></div>
+      <div class="viewer"><div class="stage stage-empty"><p class="missing"><span>This plate is not yet in the image release. <a href={p.scan}>{scanLabel}</a>.</span></p></div></div>
     )}
     <div class="plate-text">
       <section>
@@ -75,7 +75,7 @@ const issue = `${REPO}/issues/new?title=${encodeURIComponent(`${f.short} ${p.key
         <h2 class="eyebrow">Modern identification</h2>
         {p.species.map((s) => <SpeciesBlock s={s} several={p.species.length > 1} />)}
       </section>
-      {p.scan && <ul class="outlinks"><li><a href={p.scan}>{scanLabel}</a></li></ul>}
+      {p.image && p.scan && <ul class="outlinks"><li><a href={p.scan}>{scanLabel}</a></li></ul>}
     </div>
   </article>
   {others.length > 0 && (

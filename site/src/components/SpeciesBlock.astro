@@ -22,7 +22,7 @@ const FORM: Record<string, string> = {
   <p class="ident-name">{sp ? <a href={speciesHref(sp)}>{s.common}</a> : "Not identified"}</p>
   {s.scientific && <p class="sci">{s.scientific}</p>}
   <ul class="facts">
-    {CONFIDENCE[s.confidence] && <li>{CONFIDENCE[s.confidence]}</li>}
+    {s.code && CONFIDENCE[s.confidence] && <li>{CONFIDENCE[s.confidence]}</li>}
     {s.form && <li>{FORM[s.form] ?? s.form}</li>}
     {s.caption_checked === "yes" && <li>Checked against the engraved caption</li>}
     {sp && <li>{sp.family_common} · <i>{sp.family}</i></li>}

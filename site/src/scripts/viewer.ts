@@ -29,12 +29,22 @@ function viewer(root: HTMLElement): void {
     const r = stage.getBoundingClientRect();
     const px = cx - (r.left + img.offsetLeft + img.offsetWidth / 2);
     const py = cy - (r.top + img.offsetTop + img.offsetHeight / 2);
-    const next = clamp(scale * factor, 1, 8);
+    const raw = clamp(scale * factor, 1, 8);
+    const next = raw < 1.001 ? 1 : raw; // zooming in and out by the same steps drifts a hair above 1
     x = px - ((px - x) * next) / scale;
     y = py - ((py - y) * next) / scale;
     scale = next;
     if (scale === 1) x = y = 0;
     apply();
+  }
+
+  /** Keep a drag going outside the stage. Best effort: it throws for a pointer that has already ended. */
+  function capture(id: number): void {
+    try {
+      stage.setPointerCapture(id);
+    } catch {
+      // gone already
+    }
   }
 
   const centre = (): [number, number] => {
@@ -49,9 +59,9 @@ function viewer(root: HTMLElement): void {
   }, { passive: false });
   stage.addEventListener("dblclick", (e) => zoomAt(scale > 1 ? 1 / scale : 2.5, e.clientX, e.clientY));
   stage.addEventListener("pointerdown", (e) => {
-    if (scale === 1 && e.pointerType !== "mouse") return; // let a finger scroll the page
     pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
-    stage.setPointerCapture(e.pointerId);
+    // One finger on an unzoomed plate is left alone, so it can scroll the page; a second finger starts a pinch.
+    if (scale > 1 || pointers.size === 2) for (const id of pointers.keys()) capture(id);
   });
   stage.addEventListener("pointermove", (e) => {
     const last = pointers.get(e.pointerId);
@@ -68,7 +78,24 @@ function viewer(root: HTMLElement): void {
     }
     pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
   });
-  for (const type of ["pointerup", "pointercancel"] as const) stage.addEventListener(type, (e) => pointers.delete(e.pointerId));
+  // On the window, so a pointer released outside the stage is still forgotten.
+  for (const type of ["pointerup", "pointercancel"] as const) window.addEventListener(type, (e) => pointers.delete(e.pointerId));
+
+  // Safari's trackpad pinch (and an iOS pinch) fires non-standard gesture events, not ctrl-wheel. iOS also sends touch
+  // pointers, which already pinch above, so only act when there are none.
+  type Gesture = Event & { scale: number; clientX: number; clientY: number };
+  let gestureScale = 1;
+  stage.addEventListener("gesturestart", (e) => {
+    gestureScale = 1;
+    if (pointers.size === 0) e.preventDefault();
+  });
+  stage.addEventListener("gesturechange", (e) => {
+    if (pointers.size > 0) return;
+    e.preventDefault();
+    const g = e as Gesture;
+    zoomAt(g.scale / gestureScale, g.clientX, g.clientY);
+    gestureScale = g.scale;
+  });
 
   root.querySelector("[data-zoom=in]")!.addEventListener("click", () => zoomAt(1.6, ...centre()));
   root.querySelector("[data-zoom=out]")!.addEventListener("click", () => zoomAt(1 / 1.6, ...centre()));
