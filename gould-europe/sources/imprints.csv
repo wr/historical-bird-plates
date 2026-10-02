@@ -1,6 +1,6 @@
 plate,leaf,left_box,right_box,ocr,read,note
 1,30,590 4909 1168 4979,2713 4914 3109 4994,Drawn fom Tife & on Stone by I & E. Goutà. | Printed by C.Hulmiandel,eye,Drawn and from run together
-2,34,318 5314 1010 5402,2888 5331 3266 5401,Irawn from Nature & on Store by I & E. Gould. | Frinted Jy C Hullmandei,eye,
+2,34,318 5314 1010 5402,2888 5331 3266 5401,Irawn from Nature & on Store by I & E. Gould. | Frinted Jy C Hullmandei,eye,no separate stop after Hullmandel visible at 8x
 3,38,820 5139 1104 5201,2658 5159 2986 5207,E. Lear del et titrça. | Brintet nuEutmandel:,scan,read from the scan; the right line is broken at by C.
 4,42,724 5041 1406 5129,2665 5056 3075 5126,Drawn from Iife & on Stone by I & E. Gould. | Frinted by CHullimandet,eye,Drawn and from run together
 5,46,878 5095 1448 5165,2422 5104 2776 5170,Drann from Nature & on FtondouJ & E Govid. | Printed by C. Hullmandel,scan,read from the scan; no stop visible after E
@@ -11,11 +11,11 @@ plate,leaf,left_box,right_box,ocr,read,note
 10,66,902 5535 1258 5614,2320 5551 2678 5613,E Jear del et lithog. | Printed by C.Hullmandel.,eye,E of E. Lear partly obscured
 11,70,706 5281 1086 5365,2638 5275 3066 5359,E. Inw del et lithog: | Printed Vy C. Hullonandel,scan,read from the scan; an ink blot over the ear of Lear
 12,74,584 5241 1032 5311,2674 5268 2978 5312,Drasm fron Lyfe ts erestone be P. Iee | Parted oui Iamrarar,scan,read from the scan; the end of Hullmandel faint; no stop visible after Lear; no separate stop after Hullmandel visible at 8x: the right line is broken into dots
-13,78,741 5056 1021 5114,2448 5077 2806 5139,F. Lear del et lith | Printed by C.Huttmandtel.,eye,stop after lith could be a colon
+13,78,741 5056 1021 5114,2448 5077 2806 5139,F. Lear del et lith | Printed by C.Huttmandtel.,eye,stop after lith could be a colon; a separate stop after lith visible at 8x
 14,82,727 5434 1067 5492,2547 5432 2945 5512,E. Lear del: et lithoa: | Printed by C. Hulimandei.,eye,
 15,86,612 4967 908 5033,2671 4976 3081 5060,ELear del et lith | Brinted by C Eullinandel,eye,
 16,90,981 4906 1583 4980,2330 4917 2704 4987,Drawn from Natare & on stone by I&E.Govld. | Printed by C.Frilmandei.,eye,
-17,94,978 5330 1528 5396,2465 5340 2783 5398,Drawn from Nature&e on Sone by J& E. Goutå. | Brinted by C. Hullmondel,eye,
+17,94,978 5330 1528 5396,2465 5340 2783 5398,Drawn from Nature&e on Sone by J& E. Goutå. | Brinted by C. Hullmondel,eye,a separate stop after Hullmandel visible at 8x
 18,98,895 5108 1461 5182,2378 5121 2722 5169,Dravon from Iife le on Stone by I leE. Gorld. | Printed Ju C. Hullmandel.,eye,
 19,102,727 5226 1317 5300,2680 5242 3022 5308,Drawntrom Irfe & on Stone by I & E!Goutd. | Frinted by CEuilmandel:,eye,Drawn and from run together
 20,106,1111 5444 1411 5496,2453 5440 2887 5514,E. Iear del et lith. | Frinted by C.Hullmandel.,eye,
@@ -25,13 +25,13 @@ plate,leaf,left_box,right_box,ocr,read,note
 24,122,770 5160 1410 5248,2437 5162 2829 5236,Drarm from Life & on Stons by J & F. Goutd. | Printed by C.Euttmande.,eye,
 25,126,654 4799 1388 4883,2328 4819 2716 4889,Irava from Nahur kon stone by I& E. Goutd.. | Crintuaou ( Bei . Ai:,scan,right credit line broken: the middle of Hullmandel shows only as traces
 26,130,683 5262 1079 5320,2613 5268 2989 5348,Irawn on Stone by E.Iear: | Printed by (. Eutmande.,eye,
-27,134,266 5048 810 5092,2725 5060 3065 5112,Tram Aon lyt ken Stn de l i An | Frinted by C Hellmande?,scan,read from the scan; left line faint
+27,134,266 5048 810 5092,2725 5060 3065 5112,Tram Aon lyt ken Stn de l i An | Frinted by C Hellmande?,scan,read from the scan; left line faint; a separate stop after Hullmandel visible at 8x
 28,138,805 5236 1111 5294,2605 5236 2999 5316,E Leardely Ahea. | Printed by C. Aulhmandel,scan,read from the scan; left line faint after del
 29,142,626 5251 820 5299,2707 5228 3107 5308,B. Lear del. | Printed by C Eulimandel.,eye,stop after E faint
 30,146,538 5359 1116 5429,2381 5366 2711 5424,Dravon from Nature & on Stane by J &c E. Goutd. | Binted'by C. Hatmande.,eye,
 31,150,907 5017 1571 5091,2603 5020 2943 5068,Fiwwn from Nature & on Stone by I &E. Goutd. | Printed by ( Fullmande.,eye,D of Drawn and C in right line faint
 32,154,1470 3602 1720 3646,4129 3598 4457 3656,E. Lear del et bith: | Printed by C.Hutmande.,eye,
-33,158,1692 3729 2212 3791,3497 3736 3789 3788,,scan,"read from the scan; both lines doubled and blurred on the scan too, so the case of Stone and the stops cannot be confirmed"
+33,158,1692 3729 2212 3791,3497 3736 3789 3788,,scan,"read from the scan; both lines doubled and blurred on the scan too, so the case of Stone and the stops cannot be confirmed; no separate stop after Gould visible at 8x; a separate stop after Hullmandel visible at 8x"
 34,162,1534 3541 2128 3611,3921 3532 4271 3590,Dravm from Nature & on Stone by J &.E. Goutd. | Frinted by C. Hutlmandel.,eye,
 35,166,1732 3763 2328 3811,3359 3754 3707 3806,Trawnfrom Nature & on Stone by J&E.Goatd. | Trinted by C.Autimanitei.,eye,
 36,170,563 4900 1191 4958,2795 4888 3195 4968,Dranfiom Tifé & un Stone by I & E Goulá. | Printed by C Eutimandel!,eye,Drawn and from run together; no stop after E; final stop set apart from Gould
@@ -56,7 +56,7 @@ plate,leaf,left_box,right_box,ocr,read,note
 55,32,791 4589 1471 4669,2583 4594 2973 4664,Dravon from Nature & on Stoneby J &.E. Gould. | Frinted by C. Hullmandel.,eye,
 56,36,713 4852 1167 4910,2520 4873 2812 4921,Jrasonfrom Natare & on Stone by J&Z Gould.. | Frinted by C.Etuttmnandet.,eye,
 57,40,762 4518 1288 4580,2398 4523 2716 4581,i onfrom Nature & on stone by J & E. Goutd. | Printed by C. Hullmandel.,scan,read from the scan; Dra of Drawn faint
-58,44,900 4965 1470 5027,2584 4964 2948 5030,Dravn from Nattre & on stone by J & F. Goutd. | Printed by C. Hallmandel.,eye,
+58,44,900 4965 1470 5027,2584 4964 2948 5030,Dravn from Nattre & on stone by J & F. Goutd. | Printed by C. Hallmandel.,eye,a separate stop after Gould visible at 8x
 59,48,527 4746 1193 4826,2651 4760 3037 4818,Dravon from Life & on Stone by J le.F. Gould. | Prnted by C.Eultmandel.,eye,
 60,52,841 5161 1479 5241,2456 5173 2872 5247,Dravn from Life and on Stone by J &E. Gould. | Printed byC. Fatimande,eye,gap between by and C. is narrow
 61,56,735 4482 1423 4562,2731 4488 3143 4562,Drawn from Iifé and on Stone bụ I & E. Goulá. | Frinted by C. Hullmandel.,eye,
@@ -82,7 +82,7 @@ plate,leaf,left_box,right_box,ocr,read,note
 81,136,842 4640 1458 4710,2523 4649 2891 4715,Diurm from Natare &on Stoneby JKE. Gould | Printed by C.Hallmandel.,eye,
 82,140,698 5102 1388 5186,2550 5113 2996 5193,Dranm from Natare & on Stone by J & E. Gould. | Printed by C. Halimardel.,eye,
 83,144,553 3267 2453 3667,3079 3267 4979 3667,RDIPPER. | echst).,none,credit lines cut off: the sheet ends in the caption
-84,148,860 4188 1460 4258,2609 4193 2969 4259,Drawn framn Nature & on Stone by J & E. Gould | Frinted by C. Hullmandel.,eye,no stop visible after Gould
+84,148,860 4188 1460 4258,2609 4193 2969 4259,Drawn framn Nature & on Stone by J & E. Gould | Frinted by C. Hullmandel.,eye,no stop visible after Gould; a separate stop after Gould visible at 8x
 85,152,896 4495 1596 4583,2326 4507 2736 4565,Drawnfiom Natare & on.Stone by J & E.Gortd. | Print: i bị C. Hullmandel,scan,read from the scan; ed of Printed faint
 86,156,552 4764 1270 4848,2653 4750 3069 4834,Drawn from Fife and on stone by J &e E Gerta. | Printed by C. Eullimandel.,eye,Gould faint; stop after E faint
 87,160,726 4908 1372 4992,2425 4917 2793 4983,Drawn from Iife li on Stone by I le. E.Goutd. | Printed by CZullinandel.,eye,a mark between & and E. is likely a stray dot
@@ -188,7 +188,7 @@ plate,leaf,left_box,right_box,ocr,read,note
 187,162,963 5121 1473 5179,2608 5135 2910 5187,Iram from.Natare & on Stone by J & E.Gortá. | Frinted by C.Hullmandel.,eye,
 188,166,663 5005 1251 5079,2523 5010 2857 5072,Drawn from Natare & ou Stoneby I & E.Goald. | Printed by C. Eullmandel,eye,the u in Nature and Gould is closed and looks like an a
 189,170,610 4898 1236 4982,2814 4923 3204 5003,Droown from Iite & on Stone by J & E. Gould. | Printed by CHutimandet.,eye,stop after C not visible
-190,174,938 4664 1586 4734,2399 4669 2773 4735,", Dravn from Nature & on Stone by J & E. Gould | Printed byC. Hullmandel:",eye,stop after Gould faint; by and C. run together
+190,174,938 4664 1586 4734,2399 4669 2773 4735,", Dravn from Nature & on Stone by J & E. Gould | Printed byC. Hullmandel:",eye,stop after Gould faint; by and C. run together; no separate stop after Gould visible at 8x
 191,178,790 4646 1374 4716,2571 4660 2901 4722,Drawn from Nature & on stone by J &E. Gould. | Printed by C.Euttmande?.,eye,
 192,182,744 5020 1346 5090,2562 5033 2922 5091,Iraim from Nature se on stone bu I & E. Gould. | Binted by C. Etillmandel,eye,
 193,186,870 4686 1502 4756,2374 4689 2774 4763,Drawn from Nature k on Stone by I &.E. Gould. | Printed by C. Eultmandel.,eye,
@@ -217,7 +217,7 @@ plate,leaf,left_box,right_box,ocr,read,note
 216,278,464 4845 1086 4937,2886 4870 3326 4958,Drawn from Fife & on Stone by I & E. Gould. | Printed by C.Hullmandel.,eye,
 217,282,746 4376 1464 4468,2524 4375 2960 4455,Drawn from Iife & on Stone by I & E. Gould. | Printed by C.Hullmandel.,eye,
 218,286,649 4929 1301 5009,2640 4925 3012 4999,Dravon from Noture & on Stone by J &.E. Goald. | Printed by C.Hutlmandel.,eye,
-219,290,622 5284 930 5354,2903 5293 3259 5359,E Lear del et lithog. | Prinied by C. Hulmundel.,eye,
+219,290,622 5284 930 5354,2903 5293 3259 5359,E Lear del et lithog. | Prinied by C. Hulmundel.,eye,no separate stop after del visible at 8x
 220,294,965 5308 1273 5360,2555 5312 2983 5386,Flear del et uth | Prinzal by CEullmandel.,scan,read from the scan; the E of E. Lear lacks its lower stroke and looks like an F
 221,298,1014 5143 1248 5183,2478 5151 2784 5199,E. Lvar Zel oi lish | Frerad by C Eutmandel.,scan,read from the scan; both lines small and faint
 222,302,754 4936 1296 4998,2311 4942 2649 5004,Irasm from Natare& on Stene by I &E.Goutd. | Printed by C. Fulttmandel.,eye,
@@ -269,13 +269,13 @@ plate,leaf,left_box,right_box,ocr,read,note
 268,114,549 3327 2449 3727,3048 3327 4948 3727,,none,credit lines cut off: the sheet ends in the caption
 269,118,549 3216 2449 3616,3048 3216 4948 3616,IRD.,none,no credit line on the sheet: the paper below the caption is blank to the sheet's foot
 270,122,1018 5411 1382 5497,2709 5444 3077 5497,E Tear del et äthog. | Printed bu C Halmande,scan,read from the scan; right line faint; no stop visible after C or Hullmandel
-271,126,678 5507 924 5553,2904 5514 3250 5553,E Lear dii etTizh. | PntdivA Halmandel,scan,right credit line's foot cut off at the sheet's edge: the tail of the y in by is lost
+271,126,678 5507 924 5553,2904 5514 3250 5553,E Lear dii etTizh. | PntdivA Halmandel,scan,right credit line's foot cut off at the sheet's edge: the tail of the y in by is lost; no separate stop after del visible at 8x
 272,130,936 5155 1166 5195,2471 5150 2793 5208,I Tonv del et With | Printed by C Hulimeri ei,scan,read from the scan; both lines small and faint; no separate stop after Hullmandel visible at 8x
 273,134,728 5286 1070 5370,2633 5304 3001 5352,B teer dei ee linsy. | Printed by C. Erlimandel,scan,read from the scan: lithog. is clear; no stop visible after Hullmandel
-274,138,1088 5188 1352 5236,2491 5178 2849 5226,ELearde eath | BratetlyCHalimonda,scan,read from the scan; both lines faint
+274,138,1088 5188 1352 5236,2491 5178 2849 5226,ELearde eath | BratetlyCHalimonda,scan,read from the scan; both lines faint; a separate stop after Hullmandel visible at 8x
 275,142,579 5245 1189 5319,2877 5249 3243 5315,Drawn from Fife & on Stne by J & E Gould. | Frinted by CEuimarâa:,eye,
 276,146,1651 3571 1955 3623,3181 3566 3575 3636,E. Zear det et lith. | Printed by (Hallmande?,eye,right line ends at the crop edge; a final stop may be cut off
-277,150,1580 3666 1832 3714,3807 3681 4157 3747,E Lear del et lith: | Trinted by C. Fullmande,eye,stop after lith could be a colon; no stop visible after Hullmandel
+277,150,1580 3666 1832 3714,3807 3681 4157 3747,E Lear del et lith: | Trinted by C. Fullmande,eye,stop after lith could be a colon; no stop visible after Hullmandel; no separate stop after lith visible at 8x
 278,154,1632 3608 2212 3656,3433 3615 3785 3681,"Crava from Nalure d on Stoni by / & F Could. | Frinted by C, Hullmandel",scan,read from the scan; Drawn faint; the E after & lacks its lower stroke and looks like an F
 279,158,1689 3611 1971 3663,3404 3603 3840 3683,E. Lear del et tith. | Printed by C.Huttmandet,eye,
 280,162,549 3314 2449 3714,3048 3314 4948 3714,DO | N -,none,credit lines cut off: the sheet ends in the caption
@@ -296,15 +296,15 @@ plate,leaf,left_box,right_box,ocr,read,note
 295,222,1692 3416 2298 3486,3705 3418 4103 3488,Drawn from Tiife &on Stoneby I & K Garld | Frinted by C. Hullmandel.,scan,read from the scan; no stop visible after Gould; the E after & lacks its lower stroke and looks like an F
 296,226,1596 3303 2122 3369,3365 3302 3713 3364,Drawn from Life & on Stone by J &.E. Gould. | Printed by C. Hullmardel.,eye,
 297,230,1704 3142 2236 3212,3296 3145 3606 3203,Drawn from Natare & on Stone by J&E.Gould. | Trinted by (.Hullmandet.,eye,
-298,234,1629 3667 2219 3693,3445 3673 3769 3693,7.7,scan,"foot of both credit lines cut off at the sheet's edge, read from the upper part of the letters, so stops are unreadable"
+298,234,1629 3667 2219 3693,3445 3673 3769 3693,7.7,scan,"right credit line cut off at the sheet's foot: only the tops of its letters show; foot of the left credit line cut off at the sheet's edge, read from the upper part of its letters, every letter of which shows"
 299,238,1710 3355 2440 3443,3452 3373 3878 3453,Drawn from Nature & on stone by I & E. Gould. | Printed by C.Hallmandel,eye,
 300,242,1777 3467 2331 3541,3405 3472 3735 3534,Dravn from Nature & on Stone by I &H. Could. | Printed by & Hultmandel.,eye,
 301,246,1152 3720 1648 3760,4309 3752 5531 3792,Draun from Natare & on Stone by I &.E Goald.,scan,read from the scan: the right line is level with the left; the crop missed it
-302,250,1211 3609 2485 3689,3563 3616 3909 3678,Draun frum Nature & on stons by I B.E Gouid. | Brnted by C. Ihullmandel,scan,read from the scan; both lines in the shadow at the sheet's foot; spacing and stops uncertain
+302,250,1211 3609 2485 3689,3563 3616 3909 3678,Draun frum Nature & on stons by I B.E Gouid. | Brnted by C. Ihullmandel,scan,read from the scan; both lines in the shadow at the sheet's foot; spacing and stops uncertain; a separate stop after Gould and after Hullmandel visible at 8x
 303,254,1467 3477 2161 3557,3617 3489 4019 3555,Dravn from Nature & on stone by J &.E.Gould. | Printed by C. Hallmandel.,eye,a dot on the line between & and E
 304,258,1338 3641 2514 3751,3591 3642 3995 3712,unIT | Drawm from Nature & on Stone by J &.E. Goutd. | Printed by C Hulimandel.,eye,J&E set tight; could be J & E
 305,262,553 3293 2453 3693,3078 3293 4978 3693,BLA | DWIT.,none,credit lines cut off: the sheet ends in the caption
-306,266,1631 3711 2259 3749,3449 3717 3783 3749,,scan,"foot of both credit lines cut off at the sheet's edge, read from the upper part of the letters, so stops are unreadable"
+306,266,1631 3711 2259 3749,3449 3717 3783 3749,,none,credit lines cut off at the sheet's foot: only the tops of their letters show
 307,270,1810 3350 2384 3412,3469 3350 3827 3412,Drawn from Nature & on Stoneby J & E. Goutd. | Printed by C. Eullmandel,eye,Stone and by run together
 308,274,1454 3525 2018 3591,3767 3550 4121 3612,Drawn trom Titk and on Stone by I &e E. Gould. | Frinted by C.Hullmandel.,eye,
 309,278,553 3250 2453 3650,3078 3250 4978 3650,SI | HANK. | ist),none,credit lines cut off: the sheet ends in the caption
@@ -346,12 +346,12 @@ plate,leaf,left_box,right_box,ocr,read,note
 345,422,1317 3429 1921 3503,3647 3439 4021 3505,Dravn from Nature & on Stone by I & F. Goutd. | Printed by C. Hullmandel,eye,& and on run together
 346,14,1468 3610 2056 3678,3685 3594 4051 3664,Drawn from Noture & on Stone by I & E. Gould. | Printed by C.Hultmandel.,eye,stop after Hullmandel could be a colon
 347,18,556 3297 2456 3697,3105 3297 5005 3697,GR | OSE.,none,credit lines cut off: the sheet ends in the caption
-348,22,1480 3483 1666 3527,3669 3506 4069 3576,- sar dei. | Printed by C. Fullmandel.,scan,"read from the scan: the E is a faint trace; the line is level with the printer's, under the art"
+348,22,1480 3483 1666 3527,3669 3506 4069 3576,- sar dei. | Printed by C. Fullmandel.,scan,"left credit line faint: only ""ear del."" and the feet of the two capitals before it show; read from the scan"
 349,26,1250 3536 1870 3620,3861 3554 4215 3624,Drawn from Natare & on Stne by I&F. Gould. | Printedioy CiEtuilmandel.,eye,
 350,30,1230 3612 1802 3682,3985 3625 4353 3691,Travn from Natuve & on Stone by J & E. Gould. | Printed by CHutmandel.,eye,D of Drawn faint; the u in Gould is closed and looks like an a
 351,34,1582 3655 1834 3699,3911 3642 4267 3704,E.Lear del et lith. | Printed by C.Hattmandel.,eye,
 352,38,1543 3715 1949 3745,2729 3348 4193 3748,GOOSE. | 9. /F7om),none,credit lines cut off: the sheet ends in the caption
-353,42,1875 3657 2165 3715,2856 3318 4115 3718,E Lear del et lith. | Y GOOSE. | yptiaca; /Steph:),scan,"right credit line's foot cut off at the sheet's edge, read from the upper part of its letters, so its stops are unreadable"
+353,42,1875 3657 2165 3715,2856 3318 4115 3718,E Lear del et lith. | Y GOOSE. | yptiaca; /Steph:),scan,right credit line cut off at the sheet's foot: only the tops of its letters show
 354,46,1613 3605 1935 3679,4048 3599 4438 3673,E' Lear dei et lithog. | Frinted by C.Hullmandel.,eye,
 355,50,556 3314 2456 3714,3105 3314 5005 3714,Kotnt de dPtriimandeй,scan,read from the scan; both lines faint and dotted; the crops missed the corners; no separate stop after Hullmandel visible at 8x
 356,54,1534 3397 1784 3441,3653 3401 4037 3467,Elear del et lith: | Binted by C. Huttmandel,eye,
@@ -411,7 +411,7 @@ plate,leaf,left_box,right_box,ocr,read,note
 410,270,1026 3702 1842 3786,3665 3729 4103 3795,Drawn from Nature & on Stone by J & Fi. Goudd. | Printed by C Hritlmande.,eye,both crops shaded
 411,274,1744 3693 2030 3737,3384 3705 3826 3757,E. Lear del:et lith. | Printed by C. Hullmundel.,eye,
 412,278,556 3331 2456 3731,3105 3331 5005 3731,,none,credit lines cut off: the sheet ends in the caption
-413,282,1700 3586 2040 3648,3528 3591 3996 3665,E Lear del et lith. | Frinied by CHulimandel,eye,stop after C is faint
+413,282,1700 3586 2040 3648,3528 3591 3996 3665,E Lear del et lith. | Frinied by CHulimandel,eye,stop after C is faint; a separate stop after Hullmandel visible at 8x
 414,286,1826 3408 2480 3500,3246 3411 3646 3491,Drawn from Natare & on Stone by J &.E. Goald. | Printed by C.Hallmandel,eye,
 415,290,556 3252 2456 3652,3105 3252 5005 3652,,none,no credit line on the sheet: the paper below the caption is blank to the sheet's foot
 416,294,556 3207 2456 3607,3105 3207 5005 3607,EN.,none,no credit line on the sheet: the paper below the caption is blank to the sheet's foot
@@ -422,7 +422,7 @@ plate,leaf,left_box,right_box,ocr,read,note
 421,314,1570 3468 2212 3538,3467 3480 3863 3542,Drann from Nature &on Stone by J & E. Gould. | Printed by C. Hullmandel.,eye,
 422,318,1235 3345 1821 3425,3875 3371 4251 3437,Dramn from Life don. Stone by I &.E. Gouid. | Printed by C. Hulmanad.,eye,
 423,322,1391 3379 2035 3459,3543 3403 3911 3469,Drawn from Natare & or Stone by J& E. Gould. | Printed by CEultmandel.,eye,
-424,326,1662 3620 2306 3682,3329 3619 3737 3685,Drevn fram Natuve de on Stone by J &.E. Gouid. | Printed by C Hultmandel.,eye,both crops shaded; a stray mark over by; stop after C sits close to the H
+424,326,1662 3620 2306 3682,3329 3619 3737 3685,Drevn fram Natuve de on Stone by J &.E. Gouid. | Printed by C Hultmandel.,eye,both crops shaded; a stray mark over by; stop after C sits close to the H; a separate stop after Gould visible at 8x
 425,330,1719 3539 2243 3597,3486 3541 3798 3599,Drawnfrom Nairre & on Stone by J&E.Gowid. | Trintedby C.Hulimandel.,eye,Drawn and from run together; Printed and by run together
 426,334,1654 3578 2236 3640,3421 3576 3783 3638,Drammfrom Nature & on Stone by I & E. Goatd. | Printed by CHtattmandel.,eye,both crops shaded; Drawn and from run together
 427,338,1391 3557 1973 3631,3907 3571 4231 3637,Drawn from Natere & on Store by J&.E. Gould. | Printed by C.Hultmandel.,eye,
@@ -437,7 +437,7 @@ plate,leaf,left_box,right_box,ocr,read,note
 436,374,1698 3419 2388 3507,3369 3432 3779 3502,Drawn from Nature & on Stone by I&.F. Gould: | Printed by C.Hallmandel.,eye,
 437,378,1650 3558 2302 3628,3434 3573 3814 3631,Dravon from Naturek: on stsne by JK.E. Gould. | Printed by C.Hullmandel.,eye,
 438,382,1542 3537 1780 3581,3643 3546 4017 3608,E Iear dei etlith | Frinted by C. Hellmandei,scan,read from the scan; left line small and faint
-439,386,1830 3679 2428 3745,3452 3689 3794 3747,Iravn fron Zife and on Stone by J & E Gould. | Frinted by C. Fulimandel.,eye,
+439,386,1830 3679 2428 3745,3452 3689 3794 3747,Iravn fron Zife and on Stone by J & E Gould. | Frinted by C. Fulimandel.,eye,a separate stop after Hullmandel visible at 8x
 440,390,683 3651 1425 3725,3979 3654 4371 3716,Drawn from Tife &onStone by J &E.Goald. | Frinted by C. Hillmande?,eye,
 441,394,556 3258 2456 3658,3105 3258 5005 3658,RI | STRIS.,none,credit lines cut off: the sheet ends in the caption
 442,398,1390 3556 1978 3626,3375 3558 3749 3620,Drawn fromtife and on Stone by J & E. Goutd. | Frinted by C. Hullmandel.,eye,

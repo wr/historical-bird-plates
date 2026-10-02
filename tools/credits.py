@@ -106,9 +106,9 @@ FOLIO_NAMES = {
     # Birds of Great Britain is 1862-73, after Elizabeth Gould's death in 1841, and every
     # other plate of it that can be read reads J. Gould.
     "gould-britain": {"Gould": ("John Gould",)},
-    # Europe 202: the printer's name did not print past "Hullman"; the paper after it is
-    # blank, mid-page. Every other plate of The Birds of Europe that names its printer
-    # reads C. Hullmandel.
+    # Europe 202: the printer's name did not print past "Hullman": one broken trace of a
+    # letter follows it, then blank paper, mid-page. Every other plate of The Birds of Europe
+    # that names its printer reads C. Hullmandel.
     "gould-europe": {"C. Hullman": ("Charles Joseph Hullmandel",)},
     "gould-australia": {
         # Australia V.8 and VII.5: the initial before "Gould" is cut off at the sheet's edge (V.8)
