@@ -91,7 +91,7 @@ export function plateJsonLd(p: Plate, f: Folio, url: string, image?: string): ob
     position: p.key,
     about: identified(p).map(taxon),
     license: PDM,
-    creditText: f.credit,
+    creditText: p.credit || f.credit,
   };
 }
 

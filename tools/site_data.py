@@ -55,6 +55,9 @@ FOLIOS = [
      "intro": "Five volumes and 367 plates, drawn by John Gould with H. C. Richter, W. Hart and J. Wolf, "
               "lithographed, hand-coloured, and published in parts in London."},
 ]
+# Scans credited to someone other than the folio's source, by (folio, plate key). The havell-v2
+# release notes credit plate 165, cut from the University of Pittsburgh's copy, separately.
+CREDITS = {("havell", "165"): "University of Pittsburgh, via Wikimedia Commons."}
 
 
 def slugify(name: str) -> str:
@@ -152,6 +155,7 @@ def build(images: dict[str, dict]) -> dict:
             "taxon": {"order": float(first["TAXON_ORDER"]), "family": first["FAMILY_SCI_NAME"],
                       "family_common": first["FAMILY_COM_NAME"], "bird_order": first["ORDER"]} if first else None,
             "image": images.get(pid),
+            "credit": CREDITS.get((folio["id"], key), ""),
             "scan": r.get("page_url") or r.get("image_url", ""),
             "original": f"{REPO}/releases/download/{folio['release']}/{r['sheet_asset']}" if r["sheet_asset"] else "",
         })

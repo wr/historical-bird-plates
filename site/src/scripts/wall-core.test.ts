@@ -12,7 +12,7 @@ const plate = (over: Record<string, unknown> = {}) => ({
   misnamed: [], extinct: false, open: false, multi: false,
   taxon: { order: 9000, family: "Strigidae", family_common: "Owls", bird_order: "Strigiformes" },
   image: { thumb: [360, 480], crop: [1198, 1600], sheet: [666, 1000], colour: "#dfdedf", hue: null, light: 0.87 },
-  scan: "", original: "", ...over,
+  credit: "", scan: "", original: "", ...over,
 }) as unknown as Plate;
 
 const entry = (over: Partial<Entry>): Entry => ({ id: "a", i: 0, f: "havell", v: "", t: " ", fl: "", ord: null, fam: "", hue: null, light: 1, ...over });

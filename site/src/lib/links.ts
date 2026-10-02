@@ -5,6 +5,16 @@ export const wikidata = (q: string): string => `https://www.wikidata.org/wiki/${
 export const gbif = (id: string): string => `https://www.gbif.org/species/${id}`;
 export const avibase = (id: string): string => `https://avibase.bsc-eoc.org/species.jsp?avibaseid=${id}`;
 
+/** The link text for a plate's source scan, named for the site it is on. */
+export function scanLabel(url: string): string {
+  const host = URL.canParse(url) ? new URL(url).hostname : "";
+  const on = (domain: string): boolean => host === domain || host.endsWith(`.${domain}`);
+  if (on("audubon.org")) return "The plate at audubon.org";
+  if (on("wikimedia.org")) return "The scan on Wikimedia Commons";
+  if (on("biodiversitylibrary.org")) return "The scan at the Biodiversity Heritage Library";
+  return host ? `The scan at ${host}` : "The scan";
+}
+
 /** The outside pages for a species, in a fixed order, skipping IDs it doesn't have. */
 export function outlinks(x: { code: string; wikidata: string; gbif: string; avibase: string }): { label: string; href: string }[] {
   const links: { label: string; href: string }[] = [];

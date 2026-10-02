@@ -28,7 +28,7 @@ const img = p.image!;
       <button type="button" data-zoom="reset" hidden>Reset</button>
     </span>
     {p.original && <a href={p.original}>Full resolution</a>}
-    <span class="credit">{f.credit}</span>
+    <span class="credit">{p.credit || f.credit}</span>
   </figcaption>
 </figure>
 <script>

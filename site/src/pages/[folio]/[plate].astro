@@ -4,7 +4,7 @@ import PlateStrip from "../../components/PlateStrip.astro";
 import PlateViewer from "../../components/PlateViewer.astro";
 import SpeciesBlock from "../../components/SpeciesBlock.astro";
 import { absolute, folioHref, folioOf, href, imageSrc, plateById, plateHref, plates, speciesByCode, speciesHref } from "../../lib/data";
-import { REPO } from "../../lib/links";
+import { REPO, scanLabel } from "../../lib/links";
 import { identified, norm, plateDescription, plateJsonLd, plateTitle, shown } from "../../lib/seo";
 import type { Plate } from "../../lib/types";
 
@@ -33,7 +33,7 @@ const others = [...new Set(ids.flatMap((s) => speciesByCode.get(s.code)!.plates)
   .filter((id) => id !== p.id)
   .map((id) => plateById.get(id)!);
 const printedDiffers = ids.length > 0 && p.printed.name && norm(p.printed.name) !== norm(shown(p));
-const scanLabel = f.id === "havell" ? "The plate at audubon.org" : "The scan at the Biodiversity Heritage Library";
+const scan = scanLabel(p.scan);
 const issue = `${REPO}/issues/new?title=${encodeURIComponent(`${f.short} ${p.key}: ${p.printed.name}`)}`;
 ---
 <Layout title={plateTitle(p, f)} description={plateDescription(p, f)} image={image} jsonld={plateJsonLd(p, f, url, image)}>
@@ -51,7 +51,7 @@ const issue = `${REPO}/issues/new?title=${encodeURIComponent(`${f.short} ${p.key
   </header>
   <article class="plate">
     {p.image ? <PlateViewer plate={p} folio={f} /> : (
-      <div class="viewer"><div class="stage stage-empty"><p class="missing"><span>This plate is not yet in the image release. <a href={p.scan}>{scanLabel}</a>.</span></p></div></div>
+      <div class="viewer"><div class="stage stage-empty"><p class="missing"><span>This plate is not yet in the image release. <a href={p.scan}>{scan}</a>.</span></p></div></div>
     )}
     <div class="plate-text">
       <section>
@@ -74,7 +74,7 @@ const issue = `${REPO}/issues/new?title=${encodeURIComponent(`${f.short} ${p.key
         <h2 class="eyebrow">Modern identification</h2>
         {p.species.map((s) => <SpeciesBlock s={s} several={p.species.length > 1} />)}
       </section>
-      {p.image && p.scan && <ul class="outlinks"><li><a href={p.scan}>{scanLabel}</a></li></ul>}
+      {p.image && p.scan && <ul class="outlinks"><li><a href={p.scan}>{scan}</a></li></ul>}
     </div>
   </article>
   {others.length > 0 && (

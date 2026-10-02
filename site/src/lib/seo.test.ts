@@ -21,7 +21,7 @@ const plate = (over: Record<string, unknown> = {}) => ({
   id: "gould-europe/427", folio: "gould-europe", slug: "427", key: "427", volume: "V", plate: "427", group: "",
   label: "Plate 427", printed: { name: "Black-headed Gull", latin: "Larus melanocephalus", caption: "", legend: "" },
   species: [ident()], misnamed: [{ name: "Black-headed Gull", code: "bkhgul" }], extinct: false, open: false,
-  multi: false, taxon: null, image: null, scan: "", original: "", ...over,
+  multi: false, taxon: null, image: null, credit: "", scan: "", original: "", ...over,
 }) as unknown as Plate;
 
 test("a printed name that differs leads, quoted, with the modern name after", () => {
@@ -67,4 +67,11 @@ test("JSON-LD is a VisualArtwork about a Taxon", () => {
   assert.equal(ld.image, "https://x/i.webp");
   assert.deepEqual(ld.about[0].sameAs, ["https://www.wikidata.org/wiki/Q27064", "https://ebird.org/species/medgul1"]);
   assert.equal(ld.license, "https://creativecommons.org/publicdomain/mark/1.0/");
+  assert.equal(ld.creditText, europe.credit);
+});
+
+test("a plate's own scan credit replaces the folio's in JSON-LD", () => {
+  const credit = "University of Pittsburgh, via Wikimedia Commons.";
+  const ld = plateJsonLd(plate({ credit }), europe, "https://x/") as Record<string, any>;
+  assert.equal(ld.creditText, credit);
 });

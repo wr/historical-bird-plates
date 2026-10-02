@@ -61,6 +61,8 @@ export interface Plate {
   multi: boolean;
   taxon: { order: number; family: string; family_common: string; bird_order: string } | null;
   image: PlateImage | null;
+  /** The scan's credit when it isn't the folio's; empty otherwise. */
+  credit: string;
   scan: string;
   original: string;
 }

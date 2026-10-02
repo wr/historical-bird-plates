@@ -107,6 +107,13 @@ class Data(unittest.TestCase):
         self.assertEqual(max(p["thumb"]), 480)
         self.assertIsNone(p["hue"])  # a white owl
 
+    def test_a_plate_credited_apart_from_its_folio(self) -> None:
+        p = PLATE["havell/165"]
+        self.assertEqual(p["credit"], "University of Pittsburgh, via Wikimedia Commons.")
+        self.assertTrue(p["original"].endswith("/havell-v2/sheet-165.jpg"), p["original"])
+        self.assertEqual(PLATE["havell/121"]["credit"], "")
+        self.assertLessEqual({f"{folio}/{key}" for folio, key in site_data.CREDITS}, set(PLATE))
+
 
 @unittest.skipUnless(Image, "needs Pillow")
 class Images(unittest.TestCase):
