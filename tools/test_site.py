@@ -160,6 +160,41 @@ class Images(unittest.TestCase):
                     # Verify it detected the red colour
                     self.assertTrue(entry["hue"] is not None and (entry["hue"] < 10 or entry["hue"] > 350), entry)
 
+    def test_a_short_download_is_retried_then_kept_out(self) -> None:
+        import io
+        import tempfile
+        import unittest.mock
+        import http.client
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmppath = Path(tmpdir)
+            zip_path = tmppath / "x.zip"
+
+            # Create a mock response with Content-Length=10 but only 4 bytes of body
+            def create_mock_response(*args, **kwargs):
+                mock_response = unittest.mock.MagicMock()
+                mock_response.headers.get.return_value = "10"  # Content-Length: 10
+                # read() returns 4 bytes first, then empty to signal end of stream
+                mock_response.read.side_effect = [b"1234", b""]
+                mock_response.__enter__.return_value = mock_response
+                mock_response.__exit__.return_value = None
+                return mock_response
+
+            urlopen_mock = unittest.mock.MagicMock(side_effect=create_mock_response)
+            sleep_mock = unittest.mock.MagicMock()
+
+            with unittest.mock.patch("site_images.urllib.request.urlopen", urlopen_mock):
+                with unittest.mock.patch("site_images.time.sleep", sleep_mock):
+                    # Call download() - should raise IncompleteRead after 3 attempts
+                    with self.assertRaises(http.client.IncompleteRead):
+                        site_images.download("https://example.invalid/x.zip", zip_path)
+
+            # Verify urlopen was called 3 times (3 retries)
+            self.assertEqual(urlopen_mock.call_count, 3)
+
+            # Verify neither x.zip nor x.zip.part exist
+            self.assertFalse(zip_path.exists())
+            self.assertFalse((tmppath / "x.zip.part").exists())
+
 
 if __name__ == "__main__":
     unittest.main()

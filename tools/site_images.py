@@ -102,14 +102,13 @@ def cut(im: Image.Image, long_edge: int) -> Image.Image:
     return out
 
 
-def _fetch_with_retry(url: str) -> bytes:
-    """Fetch URL with retries for transient errors; raise on persistent failure."""
+def _with_retry(fn):
+    """Execute function with retries for transient errors; raise on persistent failure."""
     sleeps = [5, 15]
     for attempt in range(3):
         try:
-            with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=600) as r:
-                return r.read()
-        except (urllib.error.URLError, http.client.IncompleteRead, TimeoutError, ConnectionError) as e:
+            return fn()
+        except (urllib.error.URLError, http.client.IncompleteRead, TimeoutError, ConnectionError):
             if attempt < 2:
                 time.sleep(sleeps[attempt])
             else:
@@ -119,13 +118,24 @@ def _fetch_with_retry(url: str) -> bytes:
 def download(url: str, path: Path) -> Path:
     path.parent.mkdir(parents=True, exist_ok=True)
     part = path.with_suffix(path.suffix + ".part")
-    with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=600) as r:
-        data = r.read()
-        content_length = r.headers.get("Content-Length")
-        if content_length is not None and len(data) != int(content_length):
-            raise IOError(f"Short read: {len(data)} bytes, expected {content_length}")
-    part.write_bytes(data)
-    part.rename(path)
+
+    def download_with_stream():
+        with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=600) as r:
+            content_length = r.headers.get("Content-Length")
+            bytes_written = 0
+            with open(part, "wb") as f:
+                while True:
+                    chunk = r.read(1024 * 1024)  # 1 MiB chunks
+                    if not chunk:
+                        break
+                    f.write(chunk)
+                    bytes_written += len(chunk)
+            if content_length is not None and bytes_written != int(content_length):
+                part.unlink()
+                raise http.client.IncompleteRead(bytes_written, int(content_length))
+
+    _with_retry(download_with_stream)
+    part.replace(path)
     return path
 
 
@@ -142,7 +152,10 @@ def asset(folio: dict, name: str) -> bytes:
         with zipfile.ZipFile(crops_zip(folio)) as z:
             return z.read(next(m for m in z.namelist() if m.rsplit("/", 1)[-1] == name))
     url = f"{site_data.REPO}/releases/download/{folio['release']}/{name}"
-    return _fetch_with_retry(url)
+    def fetch():
+        with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=600) as r:
+            return r.read()
+    return _with_retry(fetch)
 
 
 def make(folio: dict, row: dict, slug: str) -> dict:
