@@ -116,10 +116,10 @@ A joint line credits both names with every role it gives, because that is all it
 
 The work was "printed by Hullmandel & Walton, Walter or Walter & Cohn" (Christie's). Who Walter and Walter & Cohn were is not established. I.69 to I.73 read "T. Walter, Imp.", and a dealer gives the printer as T. Walter (Marshall Rare Books). Whether he is the Walter of the other plates is not established either, so `artists.csv` lists him apart.
 
-IV.26 reads "H. Gould, and H. C. Richter, del et lith.". H is not John Gould's initial, so its Gould is credited to no one, and only Richter is.
+IV.26 reads "H. Gould, and H. C. Richter, del et lith.". H is not John Gould's initial, so its Gould is credited to no one, and only Richter is. It may still be John Gould, the H an engraving slip like III.22's "Waller"; this copy can't tell.
 
 Six readings rest on this folio's own pattern. `tools/credits.py` gives the reason for each, and each plate's note says what is engraved:
-- VI.74 and VII.40 read "Wolf", with no initial, and VII.13 "Hart": Joseph Wolf and William Hart, the only Wolf and the only Hart among Gould's artists.
+- VI.74 and VII.40 read "Wolf", with no initial, and VII.13 "Hart": Joseph Wolf and William Hart, since no other Wolf or Hart is named on any Gould plate in this dataset.
 - IV.5 reads "C. H. Richter", the initials reversed: Henry Constantine Richter.
 - III.4 reads "Hulmandel & Walton", with one l, and III.22 "Waller", an engraving slip for Walter, who prints the plates either side of it. They are credited to Hullmandel & Walton and to Walter.
 

@@ -4,10 +4,11 @@
     python3 tools/credits.py --check                  # exit 1 if any is out of date
     python3 tools/credits.py --totals gould-europe    # plates per name and role
 
-A plate's `imprint` is its credit lines verbatim, joined with " | ". Each line
-is a wording and the names it credits: "Drawn on Stone by E. Lear",
-"J. Gould & H.C. Richter del. et lith.", "C. Hullmandel Imp.". BEFORE and
-AFTER give the roles a wording stands for, written before or after the names;
+A plate's `imprint` is its credit lines as engraved, with the conventions in
+README.md, joined with " | ". Each line is a wording and the names it credits:
+"Drawn on Stone by E. Lear", "J. Gould & H.C. Richter del. et lith.",
+"C. Hullmandel Imp.". BEFORE and AFTER give the roles a wording stands for,
+written before or after the names;
 a line holding two credits is split before a wording in WITHIN ("Drawn on Stone
 by I & E. Gould from a Drawing by Edwd. Lear."), and so is one holding a wording written
 after the names and then more names ("J.Wolf del. H.C.Richter lith."). NAMES gives the people or
