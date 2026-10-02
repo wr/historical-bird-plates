@@ -351,6 +351,28 @@ class Normalise(unittest.TestCase):
         self.assertEqual(imprints.normalise("del.,et"), "del., et")
         self.assertEqual(imprints.normalise("J & .E. Gould"), "J &. E. Gould")   # a mark keeps to what precedes it
 
+    def test_words_of_a_wording_run_together_take_a_space(self):
+        for line, spaced in (("Drawnfrom Nature & onStoneby J. & E. Gould", "Drawn from Nature & on Stone by J. & E. Gould"),
+                             ("Drawnfromnature & on stone by", "Drawn from nature & on stone by"),
+                             ("J. Gould and H. CRichter delet lith", "J. Gould and H. CRichter del et lith"),
+                             ("E. Lear deletlith.", "E. Lear del et lith."),
+                             ("Engravedby R. Havell", "Engraved by R. Havell"),
+                             ("Drawn on Stone fromaDrawing by Edwd. Lear", "Drawn on Stone from a Drawing by Edwd. Lear")):
+            with self.subTest(line=line):
+                self.assertEqual(imprints.normalise(line), spaced)
+
+    def test_by_run_into_a_capital_takes_a_space(self):
+        self.assertEqual(imprints.normalise("Drawn on Stone byJ. Gould"), "Drawn on Stone by J. Gould")
+        self.assertEqual(imprints.normalise("Drawn on StonebyE. Lear"), "Drawn on Stone by E. Lear")
+        self.assertEqual(imprints.normalise("Printed by C.Hullmandel"), "Printed by C. Hullmandel")
+
+    def test_only_words_of_a_wording_are_split(self):
+        self.assertEqual(imprints.wording_pairs(["Drawn on Stone by", "del. et lith."]),
+                         {("drawn", "on"), ("on", "stone"), ("stone", "by"), ("del", "et"), ("et", "lith")})
+        for run in ("Hullmandel", "Walter", "WalterImp", "Drawnby", "nearby", "Byron", "Stone", "HCRichter"):
+            with self.subTest(run=run):
+                self.assertEqual(imprints.run_apart(run), run)
+
     def test_stops_capitals_and_letters_run_together_are_untouched(self):
         for line in ("J Wolf & HCRichter del et lith", "E Lear del et lithog", "Drawn from life and on stone by J & E Gould"):
             with self.subTest(line=line):

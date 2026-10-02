@@ -46,10 +46,13 @@ from touching to wide with nothing between to tell them apart (`normalise`, whic
 `apply` runs). In each line: whitespace collapsed; no space before a stop,
 comma, semicolon or colon, and one after it unless the line ends there or another
 of them follows; one space each side of &; and "and" run into a capital split off
-("GouldandH." is "Gould and H."). So "J.Gould &H.C.Richter,del" is written
-"J. Gould & H. C. Richter, del". Letters that run together with no mark between
-("HCRichter") are left as they are. Stops, commas, colons, capitals, & or and, and
-spelling are as engraved.
+("GouldandH." is "Gould and H."). Words of a known wording (any in credits.BEFORE
+or AFTER) that run together take one space between them ("Drawnfrom" is "Drawn
+from", "onStone" "on Stone", "delet lith" "del et lith"), and so does "by" run into
+a capital ("byJ. Gould"). So "J.Gould &H.C.Richter,del" is written "J. Gould &
+H. C. Richter, del". Other letters that run together with no mark between
+("HCRichter", "Hullmandel") are left as they are. Stops, commas, colons, capitals,
+& or and, and spelling are as engraved.
 
 Needs Pillow, and macOS for the OCR (tools/ocr.swift, compiled into .cache/ on
 first use). `apply`, the line finding and the layout of the contact sheets need
@@ -544,9 +547,50 @@ def snap(text: str, known: list[str]) -> str:
     return " | ".join(p for p in out if p)
 
 
+def wording_pairs(wordings) -> set[tuple[str, str]]:
+    """Each two words (runs of letters) next to each other in a wording, casefolded."""
+    out = set()
+    for w in wordings:
+        words = [x.casefold() for x in re.findall(r"[A-Za-z]+", w)]
+        out |= set(zip(words, words[1:]))
+    return out
+
+
+PAIRS = wording_pairs(list(credits.BEFORE) + list(credits.AFTER))
+
+
+def run_apart(run: str, pairs: set[tuple[str, str]] = PAIRS) -> str:
+    """A run of letters that is two or more words of a wording run together, spaced
+    ("Drawnfrom" is "Drawn from", "onStoneby" "on Stone by"), or ending in "by" run into
+    a capital ("byJ", "StonebyJ"); any other run as it is. Case is kept."""
+    low = run.casefold()
+    words = sorted({w for pair in pairs for w in pair}, key=len, reverse=True)
+
+    def split(i: int, prev: str | None) -> list[int] | None:
+        for w in words:
+            if not low.startswith(w, i) or (prev is not None and (prev, w) not in pairs):
+                continue
+            j = i + len(w)
+            if j == len(low):
+                return [j] if prev is not None else None
+            if w == "by" and run[j].isupper():
+                return [j]
+            rest = split(j, w)
+            if rest is not None:
+                return [j] + rest
+        return None
+
+    cuts = split(0, None)
+    if not cuts:
+        return run
+    bounds = [0] + cuts + ([len(run)] if cuts[-1] < len(run) else [])
+    return " ".join(run[a:b] for a, b in zip(bounds, bounds[1:]))
+
+
 def normalise_line(line: str) -> str:
     """One credit line spaced by the convention in the module's docstring."""
     s = " ".join(line.split())
+    s = re.sub(r"[A-Za-z]+", lambda m: run_apart(m.group()), s)
     s = re.sub(r"\s*&\s*", " & ", s)
     s = re.sub(r"\s+(?=[.,;:])", "", s)
     s = re.sub(r"([.,;:])(?=[^\s.,;:])", r"\1 ", s)
