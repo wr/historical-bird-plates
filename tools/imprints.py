@@ -11,13 +11,27 @@ Sheets are read from the folio's release, downloaded into ASSETS/<release>/.
 Crops, contact sheets, scans and the readings file go to
 ASSETS/<release>-imprints/, never into the repo.
 
+`crop` finds the credit lines by ink, not by OCR. On a half-size grey copy of
+the lower half of the sheet, each pixel is graded by how much darker it is than
+the paper around it, so the gutter's shadow and a foxed margin drop out. Ink is
+joined into blobs, and blobs level with each other into lines. In each half of
+the sheet the credit line is the lowest line of small text (Gould: it sits
+level with the caption or below it), or the outermost (Havell: the title often
+sits below the credit lines). A line across the centre is the caption; a line
+with art just above it is in the art, like a signature on the stone; a line
+with no dark ink is pencil. A corner left empty is looked at again, faint ink
+counted, level with the other corner's line. Each crop is the lines at full
+size and a margin. Where no line is found, the crop is a strip where it should
+be, and the record's note says so: that plate is read from the scan.
+
 A readings file has the columns volume (where the folio numbers per volume),
 plate, imprint, read and note, one row per plate (others, such as `sheet`, are
 ignored). `read` is eye (read off the crop), scan (read off the unaltered scan)
 or none (nothing can be read; `note` says why, with the words "credit line").
 
 Needs Pillow, and macOS for the OCR (tools/ocr.swift, compiled into .cache/ on
-first use). `apply` and the functions it uses need neither.
+first use). `apply`, the line finding and the layout of the contact sheets need
+neither.
 """
 from __future__ import annotations
 
@@ -25,11 +39,11 @@ import argparse
 import csv
 import difflib
 import json
+import re
 import subprocess
 import sys
-import tempfile
 import urllib.request
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -41,8 +55,15 @@ ASSETS = Path.home() / "Projects" / "historical-bird-plates-assets"
 RELEASE = {"havell": "havell-v1", "gould-europe": "gould-europe-v1", "gould-australia": "gould-australia-v1",
            "gould-britain": "gould-britain-v2", "gould-asia": "gould-asia-v1"}
 UA = {"User-Agent": "historical-bird-plates imprints (+https://github.com/wr/historical-bird-plates)"}
-BAND = 0.35       # the bottom of the sheet searched for credit lines
-PER_SHEET = 12    # plates per contact sheet
+BAND = 0.35             # scan: the bottom of the scan shown for a hard case
+REGION = 0.5            # crop: the lower part of the sheet searched for credit lines
+SHADES = (18, 30, 80)   # faint ink, ink, dark ink: this much darker than the paper around it, of 255
+RULE = {"havell": "outermost"}   # which line of a corner is its credit line; "lowest" for the rest
+CROP = (1900, 600)      # a crop's largest size, px, once scaled
+STRIP = (1900, 400)     # where no credit line is found, the strip cropped instead
+LEAST = 0.75            # a crop is never scaled smaller than this
+SHEET = 2000            # a contact sheet's width, and its greatest height, px
+PER_SHEET = 12          # plates per contact sheet, at most
 READ = {"eye", "scan", "none"}
 RECORD = ["plate", "leaf", "left_box", "right_box", "ocr", "read", "note"]
 # Credit lines seen before any plate was read, to snap OCR drafts to. Lines in
@@ -58,34 +79,376 @@ SEED = [
 
 
 # --- pure: no images -----------------------------------------------------------
+#
+# Finding the lines works on a mask: one byte per pixel of the working copy, in
+# rows of `width`, 0 for paper, 1 faint ink, 2 ink, 3 dark ink. A blob or a line
+# is [x0, y0, x1, y1, ink, dark] (x1, y1 exclusive; ink and dark count pixels).
+# Sizes are in units: a thousandth of the sheet's long side, in pixels of the
+# working copy.
 
-def lowest(lines: list[dict]) -> list[dict]:
-    """A corner's credit lines: its lowest line and any stacked just above it, top to
-    bottom. Text higher up is in the art, such as a signature on the stone."""
-    if not lines:
+def blobs(mask: bytes, width: int, gap: int, longest: int, least: int = 2):
+    """Connected pieces of ink in a mask, counting pixels of shade `least` or more. Ink
+    closer than `gap` px along a row is joined; a solid run longer than `longest` px is a
+    rule or the sheet's edge, and is left out. Returns the blobs and the runs of ink they
+    are made of, (y, x0, x1, blob index)."""
+    pattern = re.compile(b"[" + bytes([least]) + b"-\x03]+")
+    parent: list[int] = []
+
+    def find(i: int) -> int:
+        while parent[i] != i:
+            parent[i] = parent[parent[i]]
+            i = parent[i]
+        return i
+
+    runs, prev = [], []
+    for y in range(len(mask) // width):
+        row: list[list[int]] = []
+        for m in pattern.finditer(mask, y * width, (y + 1) * width):
+            a, b = m.start() - y * width, m.end() - y * width
+            if b - a > longest:
+                continue
+            dark = m.group().count(3)
+            if row and a - row[-1][1] <= gap:
+                row[-1][1:] = [b, row[-1][2] + b - a, row[-1][3] + dark]
+            else:
+                row.append([a, b, b - a, dark])
+        here, j = [], 0
+        for a, b, ink, dark in row:
+            i = len(parent)
+            parent.append(i)
+            while j < len(prev) and prev[j][1] < a:
+                j += 1
+            k = j
+            while k < len(prev) and prev[k][0] <= b:
+                ri, rk = find(i), find(prev[k][2])
+                if ri != rk:
+                    parent[ri] = rk
+                k += 1
+            here.append((a, b, i))
+            runs.append((y, a, b, i, ink, dark))
+        prev = here
+    index: dict[int, int] = {}
+    found: list[list[int]] = []
+    labelled = []
+    for y, a, b, i, ink, dark in runs:
+        r = find(i)
+        if r not in index:
+            index[r] = len(found)
+            found.append([a, y, b, y + 1, 0, 0])
+        c = found[index[r]]
+        c[0], c[2], c[3], c[4], c[5] = min(c[0], a), max(c[2], b), y + 1, c[4] + ink, c[5] + dark
+        labelled.append((y, a, b, index[r]))
+    return found, labelled
+
+
+def floor(runs: list[tuple[int, int, int, int]], art: set[int], width: int, step: int) -> list[int]:
+    """The lowest row of art (the blobs numbered in `art`) in each band of `step` columns,
+    -1 where there is none."""
+    low = [-1] * (width // step + 1)
+    for y, a, b, i in runs:
+        if i in art:
+            for k in range(a // step, (b - 1) // step + 1):
+                low[k] = max(low[k], y)
+    return low
+
+
+def lines(found: list[list[int]], reach: float, tallest: float) -> list[list[int]]:
+    """Blobs level with each other (overlapping by half the smaller's height) and no farther
+    apart than `reach`, or 2.5 letter heights, joined into lines, top to bottom. No blob is
+    taller than `tallest`."""
+    found = sorted(found, key=lambda c: c[0])
+    parent = list(range(len(found)))
+    most = max(reach, 2.5 * tallest)
+
+    def find(i: int) -> int:
+        while parent[i] != i:
+            parent[i] = parent[parent[i]]
+            i = parent[i]
+        return i
+
+    for i, a in enumerate(found):
+        for j in range(i + 1, len(found)):
+            b = found[j]
+            if b[0] - a[2] > most:
+                break
+            if b[0] - a[2] > max(reach, 2.5 * max(a[3] - a[1], b[3] - b[1])):
+                continue
+            if min(a[3], b[3]) - max(a[1], b[1]) >= 0.5 * min(a[3] - a[1], b[3] - b[1]):
+                parent[find(i)] = find(j)
+    out: dict[int, list[int]] = {}
+    for i, c in enumerate(found):
+        L = out.setdefault(find(i), [c[0], c[1], c[2], c[3], 0, 0])
+        L[:] = [min(L[0], c[0]), min(L[1], c[1]), max(L[2], c[2]), max(L[3], c[3]), L[4] + c[4], L[5] + c[5]]
+    return sorted(out.values(), key=lambda L: (L[1], L[0]))
+
+
+def caption(found: list[list[int]], width: int, unit: float) -> list[list[int]]:
+    """The caption: the lowest block of lines of text across the centre of the sheet and
+    centred on it (within a tenth of its width), top to bottom."""
+    cx = width / 2
+    across = sorted((L for L in found if L[0] < cx < L[2] and abs((L[0] + L[2]) / 2 - cx) <= 0.1 * width
+                     and 0.1 * width <= L[2] - L[0] <= 0.6 * width and 2.5 * unit <= L[3] - L[1] <= 12 * unit),
+                    key=lambda L: -L[3])
+    block = across[:1]
+    for L in across[1:]:
+        if min(b[1] for b in block) - L[3] <= 1.5 * max(L[3] - L[1], block[-1][3] - block[-1][1]):
+            block.append(L)
+    return sorted(block, key=lambda L: L[1])
+
+
+def textlike(L: list[int], unit: float, faint: bool = False) -> bool:
+    """A credit line: 2.5 to 9.5 units tall (from 2 if faint; a caption's capitals are
+    taller), 20 to 240 units and three letter heights long (shorter is a pencilled number
+    or a stroke of the art, longer the page's edge), inked over 6 % of its box, and with
+    some dark ink, which pencil and shadow have not: 2 % of its ink, or if faint a trace;
+    under 25 units long, a tenth of its ink (a short line of pencil is a plate number)."""
+    x0, y0, x1, y1, ink, dark = L
+    h, w = y1 - y0, x1 - x0
+    return ((2 if faint else 2.5) * unit <= h <= 9.5 * unit and max(20 * unit, 3 * h) <= w <= 240 * unit
+            and ink >= 0.06 * w * h and dark >= (2 if faint else max(3, 0.02 * ink))
+            and (w >= 25 * unit or dark >= 0.1 * ink))
+
+
+def corner(found: list[list[int]], side: str, width: int, unit: float, rule: str,
+           low: list[int] | None = None, step: int = 1, cap_top: int | None = None,
+           band: tuple[float, float] | None = None, faint: bool = False,
+           clear: float | None = None) -> list[list[int]]:
+    """The credit lines in one corner, top to bottom, among lines of small text in that half
+    of the sheet; a line across the centre is the caption.
+
+    In its own columns, the art (`low`, its lowest row per `step` columns) must end `clear`
+    units above a line: by default 10 for rule 'lowest', which also wants it not above the
+    caption (`cap_top`), and 0 for 'outermost'. Rule 'lowest' (Gould) takes the lowest
+    line, and of lines level with it the outermost; rule 'outermost' (Havell, whose credit
+    lines sit close under the art) takes the line reaching farthest to the sheet's edge.
+    Lines stacked on the one taken, of its size, come with it. With a `band` (y0, y1),
+    only lines level with it count."""
+    cx = width / 2
+    cands = []
+    for L in found:
+        x0, y0, x1, y1 = L[:4]
+        if not textlike(L, unit, faint) or x0 < cx < x1 or (side == "left") != (x1 <= cx):
+            continue
+        if band is not None and not (y0 < band[1] and y1 > band[0]):
+            continue
+        if rule == "lowest" and cap_top is not None and y1 <= cap_top:
+            continue
+        if low is not None:
+            by = (10 if rule == "lowest" else 0) if clear is None else clear
+            ks = range(x0 // step, (x1 - 1) // step + 1)
+            if sum(low[k] > y0 - by * unit for k in ks) > 0.1 * len(ks):
+                continue
+        cands.append(L)
+    if not cands:
         return []
-    bottom = max(x["box"][3] for x in lines)
-    height = sorted(x["box"][3] - x["box"][1] for x in lines)[len(lines) // 2]
-    return sorted((x for x in lines if x["box"][1] >= bottom - 3.5 * height), key=lambda x: x["box"][1])
+    outer = (lambda L: -L[0]) if side == "left" else (lambda L: L[2])
+    if rule == "lowest":
+        bottom = max(cands, key=lambda L: L[3])
+        best = max((L for L in cands if min(L[3], bottom[3]) > max(L[1], bottom[1])), key=outer)
+    else:
+        best = max(cands, key=outer)
+    chosen = [best]
+    grew = True
+    while grew:
+        grew = False
+        for L in cands:
+            if L in chosen:
+                continue
+            for c in chosen:
+                hc, hl = c[3] - c[1], L[3] - L[1]
+                if (max(L[1] - c[3], c[1] - L[3]) <= 0.8 * max(hc, hl)
+                        and min(L[2], c[2]) - max(L[0], c[0]) > 0.3 * min(L[2] - L[0], c[2] - c[0])
+                        and max(hc, hl) <= 1.35 * min(hc, hl)):
+                    chosen.append(L)
+                    grew = True
+                    break
+    return sorted(chosen, key=lambda L: L[1])
 
 
-def corners(lines: list[dict], width: int) -> tuple[list[dict], list[dict]]:
-    """The credit lines in the sheet's left and right corners, each top to bottom. The
-    caption sits between them; a pencilled plate number (digits only) is dropped."""
-    lines = [x for x in lines if not x["text"].replace(" ", "").isdigit()]
-    left = [x for x in lines if x["box"][0] < 0.30 * width and x["box"][2] < 0.50 * width]
-    right = [x for x in lines if x["box"][2] > 0.70 * width and x["box"][0] > 0.50 * width]
-    return lowest(left), lowest(right)
+def credit_lines(mask: bytes, width: int, unit: float, rule: str = "lowest"):
+    """Both corners' credit lines in a mask of the lower part of a sheet, and the caption:
+    (left, right, caption), each a list of lines top to bottom.
+
+    Blobs taller than 12 units with enough ink are art. A corner left empty is looked at
+    again, faint ink counted, level with the other corner's line (Gould sets the two
+    level) or, if neither was found, below the caption's last line; then just above a
+    ragged page edge at the foot, with and without its specks. A line found takes in the
+    faint ink level with it and touching it, such as a worn first or last word, while it
+    stays the size of a credit line."""
+    height = len(mask) // width
+    gap, longest = max(2, round(2.5 * unit)), round(40 * unit)
+    found, runs = blobs(mask, width, gap, longest)
+    text, art = [], set()
+    for i, (x0, y0, x1, y1, ink, dark) in enumerate(found):
+        if y1 - y0 > 12 * unit:
+            if ink >= 150 * unit * unit and x1 - x0 >= 20 * unit and y1 < height - 1 and 1 < x0 and x1 < width - 1:
+                art.add(i)
+        elif ink >= unit * unit and not (y1 >= height - 1 and x1 - x0 > width / 3):
+            text.append(found[i])
+    step = max(1, round(2 * unit))
+    low = floor(runs, art, width, step)
+    found_lines = lines(text, 16 * unit, 12 * unit)
+    cap = caption(found_lines, width, unit)
+    cap_top = cap[0][1] if cap else None
+
+    def faint(y0: float, y1: float, least: float = 0) -> list[list[int]]:
+        """The lines in rows y0 to y1, faint ink counted; blobs under `least` tall left out."""
+        lo, hi = max(0, int(y0)), min(height, int(y1) + 1)
+        return lines([[x0, a + lo, x1, b + lo, ink, dark]
+                      for x0, a, x1, b, ink, dark in blobs(mask[lo * width:hi * width], width, gap, longest, 1)[0]
+                      if 1 < x0 and x1 < width - 1 and least <= b - a <= 12 * unit and ink >= unit * unit / 2],
+                     16 * unit, 12 * unit)
+
+    out = {s: corner(found_lines, s, width, unit, rule, low, step, cap_top) for s in ("left", "right")}
+    for side, ls in out.items():
+        if not ls:
+            continue
+        y0, y1 = min(L[1] for L in ls), max(L[3] for L in ls)
+        wider = [F for F in faint(y0 - (y1 - y0), y1 + (y1 - y0))
+                 if (F[2] <= width / 2 if side == "left" else F[0] >= width / 2)]
+        for L in ls:
+            for F in wider:
+                grown = [min(L[0], F[0]), min(L[1], F[1]), max(L[2], F[2]), max(L[3], F[3])]
+                if (min(L[3], F[3]) - max(L[1], F[1]) >= 0.5 * min(L[3] - L[1], F[3] - F[1])
+                        and F[0] < L[2] and F[2] > L[0]
+                        and grown[2] - grown[0] <= 240 * unit and grown[3] - grown[1] <= 9.5 * unit):
+                    L[:4] = grown
+    # Both empty: the credit lines may sit above a low caption. A pair of lines, one in each
+    # half, level with each other and set about the caption's centre (to a tenth of the
+    # sheet's width), no more than 25 units above its top, is taken.
+    if rule == "lowest" and cap and not out["left"] and not out["right"]:
+        centre = (cap[-1][0] + cap[-1][2]) / 2
+        above = (cap_top - 25 * unit, cap_top)
+        left, right = (corner(found_lines, s, width, unit, rule, low, step, band=above) for s in ("left", "right"))
+        if (left and right and min(left[-1][3], right[-1][3]) - max(left[-1][1], right[-1][1])
+                >= 0.5 * min(left[-1][3] - left[-1][1], right[-1][3] - right[-1][1])
+                and abs((centre - left[-1][0]) - (right[-1][2] - centre)) <= 0.1 * width):
+            out["left"], out["right"] = left, right
+    for side, other in (("left", "right"), ("right", "left")):
+        if out[side] or rule != "lowest":
+            continue
+        if out[other]:
+            y0, y1 = min(L[1] for L in out[other]), max(L[3] for L in out[other])
+            band = (y0 - 2 * (y1 - y0), y1 + (y1 - y0))
+        elif cap:
+            h = cap[-1][3] - cap[-1][1]
+            band = (cap[-1][1], cap[-1][3] + 8 * h)
+        else:
+            continue
+        out[side] = corner(faint(*band), side, width, unit, rule, low, step, band=band, faint=True, clear=0)
+    # Lines sitting on a ragged page edge at the foot join its specks into one line across
+    # the sheet. Still missing, they are looked for again just above the edge: the last
+    # rows with ink that are more than 8 % inked.
+    if rule == "lowest" and not (out["left"] and out["right"]):
+        inked = lambda y: width - mask[y * width:(y + 1) * width].count(0)
+        cut = height
+        while cut > height - 40 * unit and inked(cut - 1) == 0:
+            cut -= 1
+        while cut > height - 40 * unit and inked(cut - 1) > 0.08 * width:
+            cut -= 1
+        if cut < height:
+            band = (cut - 15 * unit, cut - 1)
+            for side in ("left", "right"):
+                if not out[side]:
+                    out[side] = corner(faint(*band), side, width, unit, rule, low, step, cap_top, band, True, 0)
+        # Or the line touches the edge's specks, which join it into one line across the
+        # sheet: look again without them (blobs under 2.5 units tall), in the 10 units
+        # above the last ink, for a line 40 units long or more, no more than 7 tall (a word
+        # of the caption is taller), a hundredth of it dark.
+        foot = height
+        while foot > 0 and not any(mask[(foot - 1) * width:foot * width]):
+            foot -= 1
+        band = (foot - 10 * unit, foot)
+        found_foot = [L for L in faint(foot - 20 * unit, foot, least=2.5 * unit)
+                      if L[3] >= band[0] and L[2] - L[0] >= 40 * unit and L[3] - L[1] <= 7 * unit
+                      and L[5] >= 0.01 * L[4]]
+        for side in ("left", "right"):
+            if not out[side]:
+                out[side] = corner(found_foot, side, width, unit, rule, low, step, cap_top, band, True, 0)
+    return out["left"], out["right"], cap
 
 
-def guess(side: str, other: list[dict], width: int, height: int) -> list[int]:
-    """Where a corner's credit line should be when OCR found none there: level with the
-    other corner's lines, across that half of the sheet; else across the bottom of the band."""
-    x0, x1 = (int(0.02 * width), int(0.48 * width)) if side == "left" else (int(0.52 * width), int(0.98 * width))
-    if other:
-        tall = max(x["box"][3] - x["box"][1] for x in other)
-        return [x0, min(x["box"][1] for x in other) - 2 * tall, x1, max(x["box"][3] for x in other) + 2 * tall]
-    return [x0, int(0.55 * height), x1, height]
+def box(found: list[list[int]], scale: float, top: int) -> list[int]:
+    """A crop box at full size around lines found on the working copy (`scale` times
+    smaller, its mask starting `top` rows down): the lines and a margin of 0.6 letter
+    heights above and below, 1.2 at the ends (for a faint first or last letter), at
+    least 8 px."""
+    h = max(L[3] - L[1] for L in found) * scale
+    dx, dy = max(8, round(1.2 * h)), max(8, round(0.6 * h))
+    return [round(min(L[0] for L in found) * scale) - dx, round((min(L[1] for L in found) + top) * scale) - dy,
+            round(max(L[2] for L in found) * scale) + dx, round((max(L[3] for L in found) + top) * scale) + dy]
+
+
+def fit(b: list[int], side: str, most: tuple[int, int] = CROP, least: float = LEAST) -> tuple[list[int], float]:
+    """A crop box and the scale that brings it within `most`, never below `least`. Too big
+    even at `least`, the box is cut: a left crop keeps its left end, a right crop its right
+    end, and both keep their foot."""
+    x0, y0, x1, y1 = b
+    scale = min(1.0, most[0] / (x1 - x0), most[1] / (y1 - y0))
+    if scale >= least:
+        return [x0, y0, x1, y1], scale
+    w, h = int(most[0] / least), int(most[1] / least)
+    if x1 - x0 > w:
+        x0, x1 = (x0, x0 + w) if side == "left" else (x1 - w, x1)
+    if y1 - y0 > h:
+        y0 = y1 - h
+    return [x0, y0, x1, y1], least
+
+
+def strip(side: str, width: int, height: int, other: list[int] | None = None,
+          level: tuple[int, int] | None = None, centre: int | None = None,
+          size: tuple[int, int] = STRIP) -> list[int]:
+    """Where a corner's credit line should be, when none was found: a strip of at most
+    `size` in that half of the sheet (the half's edge is the caption's `centre`, if known).
+    It is level with the other corner's line (`other`, its box), reaching a little past
+    that line's outer end mirrored across the centre; else it runs down from the top of
+    `level` (the caption's last line, y0 and y1); else it is at the foot of the sheet."""
+    w, h = size
+    cx = width // 2 if centre is None else centre
+    if other is not None:
+        y0, pad = (other[1] + other[3]) // 2 - h // 2, width // 20
+        outer = 2 * cx - (other[2] if side == "left" else other[0])
+    else:
+        y0, pad = (level[0] if level else height - h), 0
+        outer = width // 10 if side == "left" else width - width // 10
+    y0 = max(0, min(y0, height - h))
+    if side == "left":
+        x0 = max(0, min(outer - pad, cx - w // 4))
+        x1 = min(cx, x0 + w)
+    else:
+        x1 = min(width, max(outer + pad, cx + w // 4))
+        x0 = max(cx, x1 - w)
+    return [x0, y0, x1, min(height, y0 + h)]
+
+
+def layout(left: tuple[int, int], right: tuple[int, int], width: int = SHEET) -> tuple[bool, int]:
+    """How a plate's two crops (each width, height) sit in its block on a contact sheet:
+    side by side if they fit, else one above the other; and the block's height, with its
+    label above and a rule below."""
+    beside = left[0] + 20 + right[0] <= width
+    return beside, 34 + (max(left[1], right[1]) if beside else left[1] + 10 + right[1]) + 16
+
+
+def pack(heights: list[int], limit: int = SHEET, most: int = PER_SHEET) -> list[list[int]]:
+    """Blocks onto contact sheets, in order: a sheet takes blocks until the next would make
+    it taller than `limit`, and never more than `most`. Each sheet's block numbers."""
+    out: list[list[int]] = []
+    tall = 0
+    for i, h in enumerate(heights):
+        if out and out[-1] and (tall + h > limit or len(out[-1]) == most):
+            out.append([])
+            tall = 0
+        if not out:
+            out.append([])
+        out[-1].append(i)
+        tall += h
+    return out
+
+
+def carried(old: dict) -> dict:
+    """What a new crop keeps of a plate's old record: its read and note, once a reading was
+    applied; otherwise nothing."""
+    return {"read": old["read"], "note": old.get("note", "")} if old.get("read") else {"read": "", "note": ""}
 
 
 def draft_text(left: list[dict], right: list[dict]) -> str:
@@ -196,15 +559,92 @@ def work(folio: str) -> Path:
     return d
 
 
-def union(lines: list[dict], pad: int) -> list[int] | None:
-    if not lines:
-        return None
-    return [min(x["box"][0] for x in lines) - pad, min(x["box"][1] for x in lines) - pad,
-            max(x["box"][2] for x in lines) + pad, max(x["box"][3] for x in lines) + pad]
+def shade(sheet: Path) -> tuple[bytes, int, int, float, float]:
+    """The mask credit_lines reads, from the lower part (REGION) of a half-size grey copy of
+    a sheet: each pixel graded (SHADES) by how much darker it is than the paper around it,
+    as a share of the paper's lightness. Columns at the sides and rows at the foot that are
+    mostly ink, the sheet's edge and the gutter's shadow, are blanked, so a line beside
+    them stays apart; so is what lies beyond the page, dark ground reaching the sheet's
+    border, with the page's edge along it. Returns the mask, its width, the row of the copy
+    it starts at, the copy's scale (full size over copy) and the unit."""
+    from PIL import Image, ImageDraw, ImageFilter, ImageMath
+    with Image.open(sheet) as im:
+        size = im.size
+        im.draft("L", (size[0] // 2, size[1] // 2))
+        im = im.convert("L")
+    w, h = im.size
+    top = int(h * (1 - REGION))
+    part = im.crop((0, top, w, h))
+    paper = part.reduce(4).filter(ImageFilter.MaxFilter(3)).resize(part.size, Image.BILINEAR)
+    graded = ImageMath.lambda_eval(
+        lambda a: a["convert"](a["max"](255 * (a["p"] - a["i"]) / (a["p"] + 1), 0), "L"), p=paper, i=part)
+    faint, ink, dark = SHADES
+    mask = graded.point(lambda v: 0 if v <= faint else 1 if v <= ink else 2 if v <= dark else 3)
+    inked = mask.point(lambda v: 255 if v >= 2 else 0)
+    cols = inked.resize((w, 1), Image.BOX).tobytes()
+    rows = inked.resize((1, mask.height), Image.BOX).tobytes()
+    a, b, c = 0, w, mask.height
+    while a < w // 12 and cols[a] > 12:
+        a += 1
+    while b > w - w // 12 and cols[b - 1] > 12:
+        b -= 1
+    while c > mask.height - mask.height // 12 and rows[c - 1] > 100:
+        c -= 1
+    for x0, y0, x1, y1 in ((0, 0, a, mask.height), (b, 0, w, mask.height), (0, c, w, mask.height)):
+        if x1 > x0 and y1 > y0:
+            mask.paste(0, (x0, y0, x1, y1))
+    ground = part.reduce(8).point(lambda v: 255 if v < 60 else 0)
+    gw, gh = ground.size
+    for x, y in [(x, 0) for x in range(gw)] + [(x, gh - 1) for x in range(gw)] + \
+                [(0, y) for y in range(gh)] + [(gw - 1, y) for y in range(gh)]:
+        if ground.getpixel((x, y)) == 255:
+            ImageDraw.floodfill(ground, (x, y), 128)
+    ground = ground.point(lambda v: 255 if v == 128 else 0)
+    if ground.getbbox():
+        mask.paste(0, mask=ground.filter(ImageFilter.MaxFilter(5)).resize(mask.size, Image.NEAREST))
+    return mask.tobytes(), w, top, size[0] / w, max(w, h) / 1000
+
+
+def locate(sheet: Path, rule: str) -> tuple[dict[str, list[int]], dict[str, bool]]:
+    """Each corner's crop box on a sheet, at full size, and whether a credit line was found
+    there; where none was, the box is a strip where it should be."""
+    from PIL import Image
+    mask, width, top, scale, unit = shade(sheet)
+    left, right, cap = credit_lines(mask, width, unit, rule)
+    with Image.open(sheet) as im:
+        w, h = im.size
+    found = {"left": left, "right": right}
+    boxes = {}
+    for side, ls in found.items():
+        if ls:
+            b = box(ls, scale, top)
+            boxes[side] = [max(0, b[0]), max(0, b[1]), min(w, b[2]), min(h, b[3])]
+    level = (round((cap[-1][1] + top) * scale), round((cap[-1][3] + top) * scale)) if cap else None
+    centre = round((cap[-1][0] + cap[-1][2]) / 2 * scale) if cap else None
+    for side, other in (("left", "right"), ("right", "left")):
+        if not found[side]:
+            boxes[side] = strip(side, w, h, boxes[other] if found[other] else None, level, centre)
+    return boxes, {side: bool(ls) for side, ls in found.items()}
+
+
+def cut(job: tuple[str, str, str, str]) -> tuple[dict[str, list[int]], dict[str, bool]]:
+    """One sheet's two crops, saved: job is (sheet, rule, left crop's path, right crop's
+    path). Returns the boxes cut and whether each corner's line was found."""
+    from PIL import Image, ImageOps
+    sheet, rule, *paths = job
+    boxes, found = locate(Path(sheet), rule)
+    with Image.open(sheet) as im:
+        im = im.convert("L")
+        for side, path in zip(("left", "right"), paths):
+            boxes[side], scale = fit(boxes[side], side)
+            part = ImageOps.autocontrast(im.crop(boxes[side]), cutoff=1)
+            if scale < 1:
+                part = part.resize((round(part.width * scale), round(part.height * scale)), Image.LANCZOS)
+            part.save(path)
+    return boxes, found
 
 
 def crop(folio: str) -> None:
-    from PIL import Image, ImageOps
     folder, out = ROOT / folio, work(folio)
     volumes = credits.per_volume(folder)
     (out / "crops").mkdir(exist_ok=True)
@@ -213,53 +653,39 @@ def crop(folio: str) -> None:
     old = {}
     if record_path.exists():
         old = {credits.tag(x, volumes): x for x in credits.read(record_path)[1]}
-    rows, todo, retry, texts = [], [], [], {}
-    with tempfile.TemporaryDirectory() as tmp:
-        for p in plates:
-            t = credits.tag(p, volumes)
-            row = {"volume": p.get("volume", ""), "plate": p["plate"], "leaf": p.get("leaf", ""),
-                   "read": old.get(t, {}).get("read", ""), "note": old.get(t, {}).get("note", "")}
-            rows.append(row)
-            sheet = ASSETS / RELEASE[folio] / p["sheet_asset"] if p["sheet_asset"] else None
-            if not sheet or not sheet.exists():
-                row["note"] = row["note"] or "no sheet in the release; read from the scan"
-                continue
-            with Image.open(sheet) as im:
-                w, h = im.size
-                top = int(h * (1 - BAND))
-                band = Path(tmp) / f"{t}.jpg"
-                im.crop((0, top, w, h)).convert("RGB").save(band, quality=95)
-            todo.append((row, sheet, w, h, top, band, t))
-        found = ocr([x[5] for x in todo])
-        for row, sheet, w, h, top, band, t in todo:
-            left, right = corners(found.get(str(band), []), w)
-            texts[id(row)] = {"left": [x["text"] for x in left], "right": [x["text"] for x in right]}
-            with Image.open(sheet) as im:
-                for side, own, other in (("left", left, right), ("right", right, left)):
-                    tall = max([x["box"][3] - x["box"][1] for x in own] or [20])
-                    box = union(own, max(12, int(0.6 * tall))) or guess(side, other, w, h - top)
-                    box = [max(0, box[0]), max(0, box[1] + top), min(w, box[2]), min(h, box[3] + top)]
-                    row[f"{side}_box"] = " ".join(map(str, box))
-                    path = out / "crops" / f"{t}-{side[0].upper()}.png"
-                    ImageOps.autocontrast(im.crop(box).convert("L"), cutoff=1).save(path)
-                    if not own:
-                        retry.append((row, side, path))
-    # A faint line OCR missed on the whole band is often read on its own crop.
-    again = ocr([path for _, _, path in retry])
-    for row, side, path in retry:
-        lines = [x for x in sorted(again.get(str(path), []), key=lambda x: x["box"][1])
-                 if not x["text"].replace(" ", "").isdigit()]
-        texts[id(row)][side] = [x["text"] for x in lines]
-        if not lines:
-            row["note"] = row["note"] or f"OCR found no text in the {side} corner"
-    for row in rows:
-        if id(row) in texts:
-            row["ocr"] = " | ".join(x.strip() for x in texts[id(row)]["left"] + texts[id(row)]["right"] if x.strip())
+    rule = RULE.get(folio, "lowest")
+    rows, jobs = [], []
+    for p in plates:
+        t = credits.tag(p, volumes)
+        row = {"volume": p.get("volume", ""), "plate": p["plate"], "leaf": p.get("leaf", ""),
+               **carried(old.get(t, {}))}
+        rows.append(row)
+        sheet = ASSETS / RELEASE[folio] / p["sheet_asset"] if p["sheet_asset"] else None
+        if not sheet or not sheet.exists():
+            row["note"] = row["note"] or "no sheet in the release; read from the scan"
+            continue
+        jobs.append((row, (str(sheet), rule, str(out / "crops" / f"{t}-L.png"), str(out / "crops" / f"{t}-R.png"))))
+    with ProcessPoolExecutor() as pool:
+        results = list(pool.map(cut, [job for _, job in jobs], chunksize=4))
+    missing = 0
+    for (row, _), (boxes, found) in zip(jobs, results):
+        lost = [side for side in ("left", "right") if not found[side]]
+        missing += len(lost)
+        for side in ("left", "right"):
+            row[f"{side}_box"] = " ".join(map(str, boxes[side]))
+        if not row["read"]:
+            row["note"] = "; ".join(f"no credit line found in the {side} corner" for side in lost)
+    # Each crop's draft; a pencilled plate number (digits only) is dropped.
+    texts = ocr([Path(p) for _, job in jobs for p in job[2:]])
+    read = lambda p: [x for x in sorted(texts.get(p, []), key=lambda x: x["box"][1])
+                      if not x["text"].replace(" ", "").isdigit()]
+    for row, job in jobs:
+        row["ocr"] = draft_text(read(job[2]), read(job[3]))
     record_cols = (["volume"] if volumes else []) + RECORD
     record_path.parent.mkdir(exist_ok=True)
     write_csv(record_path, record_cols, rows)
-    print(f"{folio}: {len(todo)} sheets cropped, {len(rows) - len(todo)} without a sheet, "
-          f"{len(retry)} corners OCR'd again -> {record_path}")
+    print(f"{folio}: {len(jobs)} sheets cropped, {len(rows) - len(jobs)} without a sheet, "
+          f"{missing} corners with no credit line found -> {record_path}")
 
 
 def known_lines() -> list[str]:
@@ -283,47 +709,49 @@ def ordered(folio: str) -> list[dict]:
 
 
 def sheets(folio: str) -> None:
+    """Contact sheets of the crops, SHEET px wide and no taller (unless one block is), at
+    most PER_SHEET plates each. Every crop is at the size it was cut. A run's sheets
+    replace the last run's, which may have been more."""
     from PIL import Image, ImageDraw, ImageFont
     folder, out = ROOT / folio, work(folio)
     volumes = credits.per_volume(folder)
     (out / "sheets").mkdir(exist_ok=True)
+    for old in (out / "sheets").glob(f"{folio}-[0-9][0-9][0-9].png"):
+        old.unlink()
     font = ImageFont.load_default(size=22)
-    rows, width, half = ordered(folio), 1800, 890
+    blank = (SHEET // 2 - 10, 40)
+    blocks = []
+    for r in ordered(folio):
+        t = credits.tag(r, volumes)
+        paths = [out / "crops" / f"{t}-{side}.png" for side in "LR"]
+        sizes = []
+        for path in paths:
+            if path.exists():
+                with Image.open(path) as im:
+                    sizes.append(im.size)
+            else:
+                sizes.append(blank)
+        blocks.append((t, r, paths, *layout(*sizes)))
+    groups = pack([b[-1] for b in blocks])
     index = []
-    for n in range(0, len(rows), PER_SHEET):
-        blocks = []
-        for r in rows[n:n + PER_SHEET]:
-            t = credits.tag(r, volumes)
-            crops = []
-            for side in "LR":
-                path = out / "crops" / f"{t}-{side}.png"
-                im = Image.open(path) if path.exists() else Image.new("L", (half, 40), 255)
-                if im.width > width:
-                    im = im.resize((width, int(im.height * width / im.width)))
-                if im.height > 400:   # a whole corner, where neither OCR pass found a line
-                    im = im.resize((int(im.width * 400 / im.height), 400))
-                crops.append(im)
-            # Side by side if they fit; else one above the other, each at full size.
-            beside = crops[0].width + crops[1].width + 20 <= width
-            body = max(c.height for c in crops) if beside else crops[0].height + 10 + crops[1].height
-            height = 34 + body + 16
-            block = Image.new("L", (width, height), 255)
-            d = ImageDraw.Draw(block)
-            d.text((6, 4), f"{t}   draft: {r['ocr'] or '(nothing read)'}", fill=0, font=font)
-            block.paste(crops[0], (0, 34))
-            block.paste(crops[1], (width - crops[1].width, 34 if beside else 34 + crops[0].height + 10))
-            d.line((0, height - 2, width, height - 2), fill=160, width=2)
-            blocks.append(block)
-        sheet = Image.new("L", (width, sum(b.height for b in blocks)), 255)
+    for n, group in enumerate(groups, 1):
+        sheet = Image.new("L", (SHEET, sum(blocks[i][-1] for i in group)), 255)
+        d = ImageDraw.Draw(sheet)
         y = 0
-        for b in blocks:
-            sheet.paste(b, (0, y))
-            y += b.height
-        name = f"{folio}-{n // PER_SHEET + 1:03d}.png"
+        for i in group:
+            t, r, paths, beside, height = blocks[i]
+            note = f"   note: {r['note']}" if r["note"] else ""
+            d.text((6, y + 4), f"{t}   draft: {r['ocr'] or '(nothing read)'}{note}", fill=0, font=font)
+            crops = [Image.open(p).convert("L") if p.exists() else Image.new("L", blank, 255) for p in paths]
+            sheet.paste(crops[0], (0, y + 34))
+            sheet.paste(crops[1], (SHEET - crops[1].width, y + 34 + (0 if beside else crops[0].height + 10)))
+            d.line((0, y + height - 2, SHEET, y + height - 2), fill=160, width=2)
+            y += height
+        name = f"{folio}-{n:03d}.png"
         sheet.save(out / "sheets" / name)
-        index += [{"sheet": name, "plate": credits.tag(r, volumes)} for r in rows[n:n + PER_SHEET]]
+        index += [{"sheet": name, "plate": blocks[i][0]} for i in group]
     write_csv(out / "sheets" / "index.csv", ["sheet", "plate"], index)
-    print(f"{folio}: {len(index)} plates on {(len(rows) + PER_SHEET - 1) // PER_SHEET} sheets -> {out / 'sheets'}")
+    print(f"{folio}: {len(index)} plates on {len(groups)} sheets -> {out / 'sheets'}")
 
 
 def draft(folio: str) -> None:
