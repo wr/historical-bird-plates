@@ -21,7 +21,7 @@ I,19,212,398 5548 924 5636,3102 5557 3446 5627,"JGould anch FrPichtor del, | C.I
 I,20,216,484 5568 966 5634,2891 5576 3239 5642,TGould and HeRichto đã? | C. Hattmanoil Imp.,eye,t of delt is superscript; stop under it faint
 I,21,220,596 5306 1198 5394,2773 5312 3175 5392,I. Gould and HCRichter del? | C.Hallmandel Imp,eye,
 I,22,224,1050 5351 1444 5457,2514 5345 2932 5437,I x: E. Golđ ứữ} | C Zhallnanded Iomp,eye,
-I,23,228,549 5432 1129 5506,2700 5441 3084 5511,I Gonld and Hl Rachtemi! | C: Htallmanded Iop,eye,
+I,23,228,549 5432 1129 5506,2700 5441 3084 5511,I Gonld and Hl Rachtemi! | C: Htallmanded Iop,eye,no separate stop after Imp visible (clean paper)
 I,24,232,543 5584 1073 5664,2669 5576 3055 5656,I.Gould and H.C. Zichter del? | CBullmardd Tip.,eye,
 I,25,236,482 5473 1108 5561,3031 5445 3435 5533,IGould and HC Richter del et lith. | CHailmandel Imp.,eye,
 I,26,240,528 5651 1098 5721,2725 5638 3091 5704,I. Gould and H.C. Richter dd it lith | C. Ehullmandel Imp.,eye,no stop after lith
@@ -65,9 +65,9 @@ II,27,116,403 5377 873 5451,2934 5375 3328 5470,EFiskter det!,scan,read from the
 II,28,120,441 5518 967 5598,3111 5519 3447 5581,Favid und F.C. Richter deit | CFrtmandel Imxt,scan,read from the scan; J. G faint; no stop visible after the printer's C
 II,29,124,659 5131 1203 5211,2933 5155 3335 5243,"J. Gold and HC Richter dett | CHtuttmandet Imp""",eye,t of Impt is superscript
 II,30,128,395 5103 1005 5161,2803 5096 3269 5158,I. Gould and HC Richter del et tith. | Hulbundel & Wolton Imp.,eye,
-II,31,132,424 5348 898 5432,2807 5352 3167 5436,"I Gaudd & H: C'Richter del, | CEutnandet Imx""",eye,superscript t after Imp
+II,31,132,424 5348 898 5432,2807 5352 3167 5436,"I Gaudd & H: C'Richter del, | CEutnandet Imx""",eye,superscript t after Imp; no separate stop after Imp-t visible: the short tick under the t is the t's own stem
 II,32,136,761 5375 1273 5449,2841 5355 3239 5443,"I. Gould and H. C.Richter del,t | C. Huttmandel Imp.",eye,"initial reads I, not J; t of Impt is superscript"
-II,33,140,669 5189 1141 5247,1994 5018 3500 5418,"""Soaia ane BGEachterdel"" | DPYGIALIS: Gould:",scan,"read from the scan; the printer's line is very faint and broken, below the caption"
+II,33,140,669 5189 1141 5247,1994 5018 3500 5418,"""Soaia ane BGEachterdel"" | DPYGIALIS: Gould:",scan,"read from the scan; the printer's line is very faint and broken, below the caption; no separate stop after Imp visible (a lone dot lies 28 px beyond the p, too far to be its stop)"
 II,34,144,738 5584 1148 5650,2766 5584 3110 5664,J & E. Gould del et lith: | ( Hultmandel Imp.,eye,colon after lith could be a stop with a speck
 II,35,148,444 5533 970 5581,3011 5527 3357 5597,J. Cold and DCHihter Ad eblith. | C. Hultmandd trp.,eye,
 II,36,152,278 5368 868 5438,2592 5399 3120 5478,Lanid and HCKichterdd A ith. | Haltmandit & Halten Imp.,eye,
@@ -117,7 +117,7 @@ II,79,324,661 5478 1025 5536,2617 5486 2965 5566,J& L. Gould del et tith. | C. H
 II,80,328,694 5319 1114 5389,2619 5308 2977 5382,J& E. Gould del et lith. | C. Hultmandel Imp.,eye,
 II,81,332,424 5387 1094 5457,2764 5385 3182 5469,"I, Gould and HCRichter ded et lith. | CHullmandel tmp.",eye,stop after J is comma-shaped
 II,82,336,398 5252 988 5322,3144 5249 3611 5323,IGoil unid IEHichter deFe Wh. | Thallmundel & Watton Imp.,eye,"superscript t after del, with a comma-like mark under it"
-II,83,340,261 5344 1994 5744,3287 5518 3549 5570,RHIPIDURA AI,scan,"read from the scan; both lines faint; the printer's line is very broken, in the shadow of the binding, read from the fragments of C, Hull, ndel and Imp"
+II,83,340,261 5344 1994 5744,3287 5518 3549 5570,RHIPIDURA AI,scan,"read from the scan; both lines faint; the printer's line is very broken, in the shadow of the binding, read from the fragments of C, Hull, ndel and Imp; the line ends in the binding's shadow: no separate stop after Imp visible"
 II,84,344,569 5204 1143 5262,2703 5202 3199 5276,/ Could and HC Fachter de e ith | Hnlmandel & Nalton Imp,eye,mark after lith looks like a comma
 II,85,348,414 5227 1034 5289,2849 5208 3379 5282,F.Gouta and H:O Hichter Jel eutith. | Gattmandel & Welton Tomp.,eye,
 II,86,352,343 5306 871 5358,2904 5302 3346 5368,J. Gould and HCRichter di üith. | Hultnandet I Walton lons.,eye,
@@ -171,7 +171,7 @@ III,29,124,1016 5332 1392 5416,2421 5322 2833 5414,I & E. Gould del! | C. Hullma
 III,30,128,396 5330 1024 5400,2845 5306 3349 5376,I. Coula and ACkichter del ei lith. | Nullmandel & Walton Imp.,eye,
 III,31,132,948 5482 1316 5570,2603 5488 2979 5576,"J&E.Gould, del,® | C. Hultmandel Imp.",eye,comma after Gould
 III,32,136,852 5435 1170 5505,2560 5406 2942 5486,J& E. Gould del. | C. Hultmandel Imp.,eye,
-III,33,140,907 5526 1263 5606,2601 5524 2961 5612,J & È Goutà del? | C Hultmandei Imp,eye,
+III,33,140,907 5526 1263 5606,2601 5524 2961 5612,J & È Goutà del? | C Hultmandei Imp,eye,no separate stop after Imp visible (clean paper)
 III,34,144,596 5482 1252 5548,2818 5466 3176 5546,I. Gould and H•C-Richter det ettith | C Ballmandel tomp.,eye,"Hullmandel and Imp run together, the first word's last stroke touching the next; written with a space here, for the punctuation check"
 III,35,148,476 5355 938 5399,2554 5361 2918 5419,y beid und KCeachisdd dk. | Entremtil de Walton Fe,eye,no stop visible after J or after Imp
 III,36,152,481 5227 1063 5307,2899 5190 3339 5260,F.Gould and H-C.Ruchter del et lith. | Fallmandel & Walton Iip,eye,no stop visible after Imp
@@ -229,7 +229,7 @@ III,87,356,214 5176 786 5242,3166 5203 3502 5265,I. Gould and HCHichter đã A l
 III,88,360,168 5439 804 5501,3064 5435 3396 5497,T Gould and HCRichter Ad at lith. | C•Hullmandel Imp.,eye,
 III,89,364,323 5566 887 5618,2823 5554 3297 5628,Could and U Ckichter dd et litte. | Hallmandet &Walton Imp,eye,no stop visible after Imp
 III,90,368,342 5057 1016 5163,2816 5049 3252 5133,"J. Gould and HCFichter det,! | C. Hullmandel Ing'.",eye,
-III,91,372,638 5182 1148 5248,2536 5177 2988 5239,/Gmldcd Chectlede,scan,read from the scan; both lines faint
+III,91,372,638 5182 1148 5248,2536 5177 2988 5239,/Gmldcd Chectlede,scan,read from the scan; both lines faint; no separate stop after Imp visible (clean paper)
 III,92,376,463 5178 1031 5230,2760 5174 3220 5240,I.Ginla anA HC Richter del etlith. | Bollmandlet & Waltor Imp.,eye,
 III,93,380,734 5284 1326 5390,2577 5309 2975 5375,"I. Gould and, H.C.Frchter det,t | C. Hultmondel Imp.",eye,
 III,94,384,611 5199 1195 5279,3074 5207 3470 5281,Mould and H CRichter ddf | C.Hulmendd Inp,eye,t of delt is superscript; a comma-like speck after and; e of Hullmandel faint; no stop visible after Imp
@@ -244,7 +244,7 @@ IV,5,28,641 5376 945 5434,2825 5368 3195 5448,"J & E. Gouid dei. | "" Hullmande 
 IV,6,32,483 5176 1037 5234,2744 5181 3200 5243,I. Gould and H.C. Richter del et lith. | Hallmandel & Walton Imp.,eye,
 IV,7,36,465 5280 1073 5338,2921 5258 3409 5338,T.CeulA and HCRichter Ad A litle. | Haltmandd & Welten Ip.,eye,
 IV,8,41,0 5333 1228 5362,3926 5182 4308 5270,C Hulmandel Imx,scan,"read from the scan: the release sheet of this fold-out spread ends above the left line, which the BHL scan shows whole; stop after E faint"
-IV,9,46,788 5234 1108 5278,2374 5225 2702 5287,J & E. Gould del et lith. | 1 HalmanYel ee,scan,read from the scan; both lines faint
+IV,9,46,788 5234 1108 5278,2374 5225 2702 5287,J & E. Gould del et lith. | 1 HalmanYel ee,scan,read from the scan; both lines faint; end of Imp is broken: no separate stop visible
 IV,10,51,783 5068 1259 5148,3947 5350 4307 5430,C.Hailmnandel Irx,scan,"read from the scan: the release sheet of this fold-out spread misses the left line, which the BHL scan shows"
 IV,11,56,230 5491 792 5553,3233 5478 3709 5552,"I, Ceuld and HCKichter del a lith. | Hallmonde! & Walton Imp.",eye,mark after J looks like a comma
 IV,12,60,372 5382 992 5448,2950 5365 3420 5435,J.Could and HCKichter del et lith | Hutlmandel & Walton Imp.,eye,no stop visible after lith
@@ -397,7 +397,7 @@ V,54,224,242 5415 882 5485,3087 5372 3465 5441,IGouid and HCHicher del elith. | 
 V,55,228,503 5299 1011 5379,2823 5314 3113 5376,mid wd Brtohterdete,scan,"right credit line too faint to read after ""C. Hullmand"", so its wording is lost; the J read from the scan"
 V,56,232,633 5313 1115 5371,2642 5299 3038 5379,РАУ Н ИК0 | / Hullmandel Imp,scan,"read from the scan: the left crop cut off the faint ""J."""
 V,57,236,344 5395 1020 5465,3171 5376 3575 5467,I. Could and HCRichter del ét lith. | C.Huthmandel Ip.,eye,"Hullmandel and Imp run together, the first word's last stroke touching the next; written with a space here, for the punctuation check"
-V,58,240,601 5307 1155 5359,2995 5303 3439 5369,I. Gmia und FCRicer dd Auh | nallanandd a iaiton trp,scan,read from the scan; both lines faint and broken
+V,58,240,601 5307 1155 5359,2995 5303 3439 5369,I. Gmia und FCRicer dd Auh | nallanandd a iaiton trp,scan,read from the scan; both lines faint and broken; no separate stop after lith visible
 V,59,244,568 5470 1194 5536,2926 5480 3340 5560,I.Gould and H:C'Richter del et Tiik. | C.Itultmandel Imo.,eye,
 V,60,248,432 5447 1118 5517,2706 5434 3140 5530,I.Goid and EC Kichter del et lith: | C. Hallmandel Imp.,eye,mark after lith faint and looks like a colon; could be a stop
 V,61,252,746 5468 1150 5534,2840 5452 3190 5526,FHE Gonld Bel eith | C. Hulmandel Imp.,eye,
@@ -442,7 +442,7 @@ VI,7,36,1120 3633 1770 3695,3782 3631 4302 3701,J.Gould and HC Hichter dã 1 lit
 VI,8,40,1403 3512 2053 3586,3844 3518 4486 3606,I.bould and HC Kichter del đ lith. | tultwoudel und Watton Irrop.,eye,and spelled out in the printer's line
 VI,9,44,575 3342 2475 3742,3279 3342 5179 3742,,none,"credit lines cut off: the sheet ends in the caption, itself cut"
 VI,10,48,1378 3627 1934 3697,3880 3629 4262 3699,I.Gerrld and H.t.Richterdet | C Hullmandel Jop.,eye,no stop visible under the superscript t
-VI,11,52,1657 3614 2163 3666,3820 3610 4188 3676,J. Gonld and HC. Biao da | C. Hullmandel Ings,eye,
+VI,11,52,1657 3614 2163 3666,3820 3610 4188 3676,J. Gonld and HC. Biao da | C. Hullmandel Ings,eye,no separate mark under del-t visible (clean paper); no separate stop after Imp visible (clean paper)
 VI,12,56,1039 3544 1613 3596,4098 3532 4574 3598,J. Gould and H.CHickter del et lith. | Hullmandel & Wilton Ing.,eye,
 VI,13,60,889 3564 1605 3644,4318 3576 4826 3642,J. Gorrtà and -C.Bichter del et titt. | Gortenaritet & Wattan Temp.,eye,a speck before Imp
 VI,14,64,845 3558 1517 3616,4114 3549 4656 3619,I. Gould and TCBichier đã e Tith. | Hattmandt & Walton tmp.,eye,
@@ -458,7 +458,7 @@ VI,23,100,1184 3499 1810 3561,4237 3472 4743 3552,I. Gould and HC Richter del et
 VI,24,104,575 3314 2475 3714,3279 3314 5179 3714,HIMANT | LWS: Gould,none,credit lines cut off: the sheet ends in the caption
 VI,25,108,575 3323 2475 3723,3279 3323 5179 3723,,none,"credit lines cut off: the sheet ends at the foot of the picture, above the caption"
 VI,26,112,1170 3321 2877 3721,3325 3688 4297 3721,,none,"credit lines cut off: the sheet ends at the foot of the picture, above the caption"
-VI,27,116,1353 3668 1799 3704,3826 3676 4286 3715,Hallnaue but,eye,
+VI,27,116,1353 3668 1799 3704,3826 3676 4286 3715,Hallnaue but,eye,no separate stop after Imp visible (soft print)
 VI,28,120,858 3589 1474 3637,3980 3566 4486 3632,J. Coold and H-C.Richter del t tith. | Fallmandd & Waltn Inp.,eye,
 VI,29,124,834 3637 1468 3685,4344 3636 4884 3702,J. Gould and HC.Richter del et birh. | Huttmandel & Walton Imp.,eye,
 VI,30,128,1172 3266 1812 3332,3881 3268 4375 3348,I. Goald and HCRichter del a lith. | Hallmandet & Walter Imp.,eye,
@@ -474,7 +474,7 @@ VI,39,164,801 3466 1529 3540,4576 3467 5190 3559,I. Gould and HC Richter del et 
 VI,40,168,790 3564 1428 3608,4293 3554 4825 3612,J. Could and H•C Richter đe et tith. | Hullmandel & Watton Imp.,eye,
 VI,41,172,1467 3644 1945 3680,3860 3649 4196 3681,,eye,t after del is superscript; spacing in H.C.Richter is tight and could be H. C. Richter; a mark between Hullmandel and Imp. looks like a blemish
 VI,42,176,666 3470 1420 3536,4617 3462 5161 3542,J. Gould and H•C-Richter del etlith. | Hullmandel & Walton Imp.,eye,
-VI,43,180,906 3572 1410 3600,4552 3575 4978 3615,1.Gend end B.Chdhterda e W | Initnondel & Watten Irp,eye,small crops; stops hard to see
+VI,43,180,906 3572 1410 3600,4552 3575 4978 3615,1.Gend end B.Chdhterda e W | Initnondel & Watten Irp,eye,small crops; stops hard to see; no separate stop after lith visible; no separate stop after Imp visible
 VI,44,184,648 3563 1232 3603,4546 3564 4990 3608,T Coald avd HCHichter dd tlith. | Nallmandel & Walton Imp,eye,no stop visible after J or after Imp
 VI,45,188,1331 3536 1901 3588,4111 3522 4437 3580,J.Gndd and Ht; Hichter del d-lith. | 1 Bullmandel teng.,eye,"mark after C of H.C. looks like a semicolon, read as a stop; stop after the printer's C shows as a raised mark"
 VI,46,192,575 3260 2475 3660,3279 3260 5179 3660,,scan,"left credit line's foot cut off at the sheet's edge, read from the upper half of its letters, so stops are unreadable; right credit line cut off: the sheet ends in the caption"
@@ -494,7 +494,7 @@ VI,59,244,575 3270 2475 3670,3279 3270 5179 3670,,none,"credit lines cut off: th
 VI,60,248,575 3281 2475 3681,3279 3281 5179 3681,,none,"credit lines cut off: the sheet ends at the foot of the picture, above the caption"
 VI,61,252,546 3638 1448 3666,4380 3625 4880 3673,lilh | Halimandel & Walten Imp.,eye,"J faint; no stop visible after lith, which ends at the crop's edge"
 VI,62,256,1151 3265 2877 3665,3508 3635 4316 3665,,none,credit lines cut off at the sheet's foot: only the tops of a few letters show
-VI,63,260,1168 3274 2877 3674,3893 3624 4299 3660,Halmandel & Waltor Inp.,scan,read from the scan; both lines sit on the sheet's foot; the word between del and lith is et
+VI,63,260,1168 3274 2877 3674,3893 3624 4299 3660,Halmandel & Waltor Inp.,scan,read from the scan; both lines sit on the sheet's foot; the word between del and lith is et; the line sits on the sheet's foot: no separate stop after lith visible
 VI,64,264,690 3603 1292 3643,4600 3587 5074 3635,"1,Gould and H.t. Richer dd evlith. | BalnanAel & Walton bnp.",eye,stop after J is comma-shaped
 VI,65,268,1361 3616 1857 3652,4032 3609 4482 3649,J. Gonda and U.C Hichter del et liBhr. | Hullmandel & Walten Imy.,eye,
 VI,66,272,766 3279 2666 3679,4187 3610 4701 3662,TR TTANDA | Hutmandel & Watten Imp.,eye,left crop is wide (art and caption); its line sits at the bottom edge
@@ -512,9 +512,9 @@ VI,77,316,1152 3543 1810 3591,4231 3540 4765 3592,1. Godld cnd HOBachder dd dtit
 VI,78,320,1326 3618 1776 3646,4149 3622 4425 3652,LGold and HCHichto Ad a tith. | C. Hhalnande Imp.,eye,
 VI,79,324,1435 3572 2095 3608,3958 3573 4332 3621,J. Gould and H.C. Bichter del et lith. | C. Hadimandel bg,eye,
 VI,80,328,1395 3454 2109 3528,3815 3480 4229 3554,I. Goald and H.C. Richter de etlith. | C. Huttmandel Imp.,eye,
-VI,81,332,1124 3445 1716 3493,3792 3446 4270 3512,J. Caddand BoHichter Ad a lih. | Hultmandd & Halten I,eye,
+VI,81,332,1124 3445 1716 3493,3792 3446 4270 3512,J. Caddand BoHichter Ad a lih. | Hultmandd & Halten I,eye,no separate stop after Imp visible
 VI,82,336,1291 3490 1841 3542,3898 3493 4350 3555,I Goalà and HCRichter đã clah. | Halmandel & Walten bp.,eye,
-VII,1,12,1093 3598 1469 3650,4440 3605 4954 3675,HV98 00222 | Hntlmmaadel d Welir Ag,scan,"read from the scan: the left crop missed the start of the faint left line; the word between del and lith is et; the n of Walton is broken, its second stroke not printed, so the word could be taken for Walter"
+VII,1,12,1093 3598 1469 3650,4440 3605 4954 3675,HV98 00222 | Hntlmmaadel d Welir Ag,scan,"read from the scan: the left crop missed the start of the faint left line; the word between del and lith is et; the n of Walton is broken, its second stroke not printed, so the word could be taken for Walter; no separate stop after Imp visible"
 VII,2,16,2500 2995 2772 3101,2885 2848 3558 3248,,none,"credit lines cut off: the sheet ends at the foot of the picture, above the caption"
 VII,3,20,1284 3605 1784 3653,3988 3590 4446 3656,"I. Could and HC Richter del a lilh. | Hullmandd & Walton Imp,",eye,"mark after Imp looks like a comma, could be a stop"
 VII,4,24,1393 3628 1889 3700,4121 3622 4487 3674,I Goad and IICkichier äd! | O. Hudimanaei,eye,superscript t after Imp
@@ -537,7 +537,7 @@ VII,20,88,551 3668 1121 3720,4539 3656 5027 3708,J.Gould and HC.Hichter del et l
 VII,21,92,699 3704 1417 3734,4540 3690 4968 3734,Coold and H.C:Hichter del a lith. | Thallandel & Walten Ing.,eye,
 VII,22,96,582 3515 1188 3577,4294 3515 4738 3585,F Could and HE RzchterAd alith | Iuttmandel & Walton Imp.,eye,
 VII,23,100,704 3548 1380 3614,4400 3529 4934 3621,Ltold and HCRiader dd rhrh | HolimandI & Watton Imp.,eye,
-VII,24,104,611 3436 1257 3510,3387 3223 5287 3623,/GoA aA HCRidterdã a a,scan,read from the scan; the printer's line is very faint and broken
+VII,24,104,611 3436 1257 3510,3387 3223 5287 3623,/GoA aA HCRidterdã a a,scan,read from the scan; the printer's line is very faint and broken; no separate stop after Imp visible (line faint and broken)
 VII,25,108,709 3382 1305 3440,4139 3378 4639 3458,"NHN PP WPHA P PRST | Hultmandel & Walten Lup,",eye,
 VII,26,112,577 3289 2477 3689,3293 3289 5193 3689,,none,credit lines cut off: the sheet ends in the caption
 VII,27,116,906 3595 1782 3665,3717 3608 4191 3665,I.Gould and H.C.Richter đet et lith. | Ballmandel & Walton Imp.,eye,
@@ -606,7 +606,7 @@ Supp,4,28,640 5344 1286 5432,2670 5353 3202 5445,"J. Gould and H.C. Prichter, de
 Supp,5,32,404 5417 1000 5465,2806 5399 3290 5469,F. Gould and EC Richter de et lith. | Tullmande& Walton Imp.,eye,
 Supp,6,36,347 5390 921 5442,2915 5390 3335 5448,7. Ga lA and H.C.Rika đd & lah. | Hullnande & Walten Imp.,eye,
 Supp,7,40,84 5452 684 5540,3100 5465 3376 5557,"J.Gould & E.CRichter, del et lith. | Walter Imp.",eye,stop after Walter could be a comma
-Supp,8,44,567 5448 1101 5528,2486 5391 2674 5453,"J.Gould & HCRichter, del et littv",scan,"read from the scan: the right crop missed the printer's line, which sits right of the caption; no stop visible after Imp"
+Supp,8,44,567 5448 1101 5528,2486 5391 2674 5453,"J.Gould & HCRichter, del et littv",scan,"read from the scan: the right crop missed the printer's line, which sits right of the caption; no stop visible after Imp; no separate stop after lith visible (a speck well below the baseline)"
 Supp,9,48,775 5352 1427 5454,2821 5376 3349 5472,"I.Gouldt and H.C.Prichter; del et lith. | Hullmandct & Wailton, Imp.",eye,"the mark after Richter looks like a semicolon: read as the r's terminal over a comma, as ruled for Great Britain"
 Supp,10,52,600 5445 1156 5493,2853 5438 3295 5490,"I. Bould and, H-C Richter del d üth. | Hattandel & Walton Imp.",eye,
 Supp,11,56,325 5360 935 5418,3148 5365 3640 5449,I Could and HCRedder AA ef htk. | Huttmande & Walion Inp.,eye,
