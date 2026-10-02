@@ -93,6 +93,12 @@ class Data(unittest.TestCase):
         orders = [s["taxon_order"] for s in DATA["species"]]
         self.assertEqual(orders, sorted(orders))
 
+    def test_every_plate_in_a_release_has_its_images(self) -> None:
+        self.assertEqual([p["id"] for p in DATA["plates"] if not p["image"]], ["gould-europe/132"])
+        p = PLATE["havell/121"]["image"]
+        self.assertEqual(max(p["thumb"]), 480)
+        self.assertIsNone(p["hue"])  # a white owl
+
 
 @unittest.skipUnless(site_images, "needs Pillow")
 class Images(unittest.TestCase):
