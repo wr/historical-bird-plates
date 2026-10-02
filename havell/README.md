@@ -61,6 +61,7 @@ Every plate with its lettering trimmed, by Havell number.
   - `legend` is the lines engraved under the title and Latin name: the figure key and the plant or setting, in Audubon's spelling, transcribed from the scans' caption bands.
 - **`species.csv`**: one row per plate and modern species. On a sheet with several species, `figure` is that species' own key.
   - `printed_name` is the English title engraved on this release's scan, read off all 435 sheets on 1 Oct 2026, in the engraver's spelling: "Ruffed Grous", "Belted Kingsfisher", "Great Red brested Rail or Fresh-water Marsh hen". Case and hyphens are not compared. On a sheet with several species it is that bird's own title; a bird named only in the legend (284 fig. 3, 285 fig. 2) or a plate with no English title (245) carries its Latin. Where the scan and audubon.org's `title` differ, as on plates 48, 153, 198 and 263, the row's `reason` gives both.
+  - `printed_latin` is the line of capitals under the title, without its author, written as *Genus epithet* in the engraver's spelling and ligatures: *Fringilla corulea*, *Litta carolinensis*, *Hœmatopus bachmani*. It was read twice, independently, and the reads agreed on all but five lines, each settled on the scan. It is blank on 165 (the octavo scan), 270 (too faint to read letter by letter) and 419 fig. 2, whose title "Ptiliogony's Townsendi" is itself the Latin. Plate 28 swaps the two: its script title is *Vireo Solitarius* and its capitals "SOLITARY FLYCATCHER".
 
 ## How the plates were identified
 
