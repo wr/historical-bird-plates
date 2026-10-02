@@ -610,11 +610,12 @@ def initials(line: str) -> str:
     """Every initial written "X. ": a lone capital, with a stop, a comma, a colon or
     nothing after it, followed by another initial, & or and, or a capitalised word
     ("J, Gould" is "J. Gould", "C: Hullmandel" "C. Hullmandel"; a mark after a name,
-    "Richter, del.", or in a wording, "del:", is left); and capitals glued to a name or
-    to a stop ("HCRichter", "HC. Richter", "JGould", "FRS." is "F. R. S."). Words that
-    begin with a capital ("Drawn", "Imp.") and lowercase abbreviations are left as they
-    are, and so are a Roman numeral with a stop that ends the line or comes before a
-    lowercase word ("Plate IV."), and the article A before a word of a wording
+    "Richter, del.", or in a wording, "del:", is left); and capitals run together
+    ("HC Richter", "HCRichter", "HC. Richter", "JGould", "FRS." are "H. C. Richter",
+    "J. Gould", "F. R. S."), except a Roman numeral with no stop before a name. Words
+    that begin with a capital ("Drawn", "Imp.") and lowercase abbreviations are left as
+    they are, and so are a Roman numeral with a stop that ends the line or comes before
+    a lowercase word ("Plate IV."), and the article A before a word of a wording
     ("A Drawing")."""
     words = {w for pair in PAIRS for w in pair}
     raw = line.split()
@@ -628,6 +629,9 @@ def initials(line: str) -> str:
             tokens.append(tok)
         elif re.fullmatch(r"[A-Z]{2,}\.", tok):
             tokens += list(tok[:-2]) + [tok[-2:]]
+        elif re.fullmatch(r"[A-Z]{2,}", tok) and not re.fullmatch(r"[IVXLCDM]+", tok) \
+                and re.match(r"[A-Z][a-z]|&$|and$", after):
+            tokens += list(tok)
         else:
             tokens.append(tok)
     lone = lambda t: re.fullmatch(r"[A-Z][.,:]?", t)

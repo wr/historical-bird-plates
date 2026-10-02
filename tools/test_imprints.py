@@ -418,6 +418,17 @@ class Normalise(unittest.TestCase):
             with self.subTest(line=line):
                 self.assertEqual(imprints.normalise(line), written)
 
+    def test_capitals_run_together_before_a_name_are_initials(self):
+        for line, written in (("J. Gould and HC Richter del et lith.", "J. Gould and H. C. Richter del et lith."),
+                              ("J. Gould & HC Richter, del et lith.", "J. Gould & H. C. Richter, del et lith."),
+                              ("WH Lizars Edinr.", "W. H. Lizars Edinr."),
+                              ("J. Gould and HC & E. Gould", "J. Gould and H. C. & E. Gould")):
+            with self.subTest(line=line):
+                self.assertEqual(imprints.normalise(line), written)
+        for line in ("Plate IV Fig. 2", "CC Hullmandel Imp.", "HC del et lith", "Plate XII Richter"):   # numerals; lowercase after
+            with self.subTest(line=line):
+                self.assertEqual(imprints.normalise(line), line)
+
     def test_a_roman_numeral_and_the_article_a_are_not_initials(self):
         for line in ("Plate IV.", "Plate IV. fig. 2", "Plate XII. del", "from A Drawing by E. Lear", "A Drawing"):
             with self.subTest(line=line):
@@ -435,7 +446,7 @@ class Normalise(unittest.TestCase):
     def test_normalising_twice_changes_nothing(self):
         for line in ("J.Gould &H.C.Richter,del et lith | Walter,Imp.", "J.J. Audubon F.R.S. F.L.S.", "J & .E. Gould",
                      "J Wolf & HCRichter, del et lith.", "C C. Hullmandel", "J, Gould and H. C, Richter del:",
-                     "C: Hullmandel Imp:"):
+                     "C: Hullmandel Imp:", "J. Gould and HC Richter del"):
             with self.subTest(line=line):
                 once = imprints.normalise(line)
                 self.assertEqual(imprints.normalise(once), once)
