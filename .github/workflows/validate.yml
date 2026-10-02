@@ -12,3 +12,23 @@ jobs:
           python-version: "3.12"
       - run: python3 tools/validate.py
       - run: python3 tools/test_identify.py
+      - run: python3 tools/test_site.py
+  site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - run: npm ci
+        working-directory: site
+      - run: npm test
+        working-directory: site
+      - run: npm run build
+        working-directory: site
+      - run: python3 tools/site_check.py site/dist --no-images
