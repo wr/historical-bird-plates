@@ -21,6 +21,9 @@ plate, then add it.
 Joint credits stay joint: "J. Gould & H.C. Richter del. et lith." credits both
 men with drawing and lithographing, because that is all the plate says.
 
+A place and a date after the names ("R.Havell, London 1831.", "R.Havell & Son. London._1828.")
+belong to the line, which keeps them in the imprint, but not to the name.
+
 Standard library only.
 """
 from __future__ import annotations
@@ -48,15 +51,26 @@ BEFORE = {
     "Drawn on Stone from Life by": ("drew", "lithographed"),
     "Drawn on Stone by": ("lithographed",),
     "Drawn from Nature by": ("drew",),
+    # "Published" is not one of ROLES: Audubon published his own plates, and the wording gives him "drew".
+    "Drawn from Nature and Published by": ("drew",),
+    "Drawn from Nature & Published by": ("drew",),
+    "Drawn by": ("drew",),
     "Engraved, Printed & Coloured by": ("engraved", "printed", "coloured"),
+    "Engraved, Printed and Coloured by": ("engraved", "printed", "coloured"),
+    "Engraved: Printed and Coloured by": ("engraved", "printed", "coloured"),  # Havell 396, a colon after Engraved
+    "Engraved, Printed & Colotured by": ("engraved", "printed", "coloured"),  # Havell 296, as engraved
     "Engraved by": ("engraved",),
+    "Printed & Coloured by": ("printed", "coloured"),
+    "Printed and Coloured by": ("printed", "coloured"),
+    "Coloured by": ("coloured",),
     "Retouched by": ("retouched",),
     "Printed by": ("printed",),
     "from a Drawing by": ("drew",),
 }
 # A wording that begins a second credit inside a line, which is split before it:
-# "Drawn on Stone by I & E. Gould from a Drawing by Edwd. Lear." Each is in BEFORE too.
-WITHIN = ("from a Drawing by",)
+# "Drawn on Stone by I & E. Gould from a Drawing by Edwd. Lear.", "Engraved by R.Havell.Junr.
+# Printed & Coloured by R.Havell. Senr. London. 1828." Each is in BEFORE too.
+WITHIN = ("from a Drawing by", "Printed & Coloured by", "Printed and Coloured by")
 # A wording written after the names -> the roles it gives them.
 AFTER = {
     "del. et lith.": ("drew", "lithographed"),
@@ -96,8 +110,20 @@ NAMES = {
     "T. Walter": ("T. Walter",),
     "Walter & Cohn": ("Walter & Cohn",),
     "J.J. Audubon F.R.S. F.L.S.": ("John James Audubon",),
+    "John J. Audubon F.R.S. F.L.S.": ("John James Audubon",),
+    "John J. Audubon F.R.S. M.W.S.": ("John James Audubon",),
+    "John J. Audubon F.R.S.E. M.W.S.": ("John James Audubon",),
+    "John J. Audubon F.R.S.E. F.L.S. M.W.S.": ("John James Audubon",),
+    "J.J. Audubon F.R.S.E.": ("John James Audubon",),
+    "J.J. Audubon F.R.S.E. M.W.S.": ("John James Audubon",),
+    "Lucy Audubon": ("Lucy Audubon",),
     "W.H. Lizars Edinr.": ("William Home Lizars",),
     "R. Havell Junr.": ("Robert Havell Jr.",),
+    "Robt. Havell Junr.": ("Robert Havell Jr.",),
+    "R. Havell Senr.": ("Robert Havell Sr.",),
+    "R. Havell Sen.": ("Robert Havell Sr.",),
+    "R. Havell & Son": ("Robert Havell & Son",),
+    "R. Havell and Son": ("Robert Havell & Son",),
 }
 # A name form that stands for someone in one folio only -> who it is there. Looked up
 # after NAMES, and only when a folio is given.
@@ -122,6 +148,30 @@ FOLIO_NAMES = {
         "Hullmandel": ("Charles Joseph Hullmandel",),
         # Australia IV.93: a stray C is engraved before "C.Hullmandel Imp.", with a gap after it.
         "C C. Hullmandel": ("Charles Joseph Hullmandel",),
+    },
+    "havell": {
+        # A bare "R. Havell" or "Robt. Havell", with no "Junr.", is the son. The partnership of father and
+        # son was dissolved in 1828, and at his father's death the son, who had signed "R. Havell Junr.",
+        # "designated himself Robert Havell" (Williams 1916, "Robert Havell, Junior, Engraver of Audubon's
+        # 'The Birds of America'", Print-Collector's Quarterly 6(3), pp. 242-243; Low 2002, p. 2, dates the
+        # death 1831, Williams and Lane 1832). The father is "Senr." and the firm "& Son" wherever a plate
+        # names them, so a line with neither names the son. 58 of the plates that read this way come before
+        # plate 106, the first dated 1831 (11, 12, 16, 21, 23, 31, and the undated 51-105): the father was
+        # then alive, and the reading rests on the dissolution of the partnership alone.
+        "R. Havell": ("Robert Havell Jr.",),
+        "Robt. Havell": ("Robert Havell Jr.",),
+        # Audubon's postnominals as engraved where they differ from every other plate of the folio. Each is
+        # the whole form, checked on the sheet.
+        "John J. Audubon E.R.S.E. M.W.S.": ("John James Audubon",),    # plate 10: an E where the F is
+        "John J. Audubon F.R.S.E.L.S.": ("John James Audubon",),       # plate 60: an E where F.L.S. has its F
+        "John J. Audubon F.R.S.P.L.S.": ("John James Audubon",),       # plate 88: a P where F.L.S. has its F
+        "John J. Audnbon F.R.S. F.L.S.": ("John James Audubon",),      # plate 51: an n for the second u
+        "J.J. Aududon F.R.S. F.L.S.": ("John James Audubon",),         # plate 167: a d for the b
+        "J.J. Aububon F.R.S. F.L.S.": ("John James Audubon",),         # plates 216 and 251: a b for the d
+        "J.J. Aubudon F.R.S. F.L.S.": ("John James Audubon",),         # plate 244: the b and d swapped
+        "J.J. Audubon F.R.S. F.L": ("John James Audubon",),            # plate 286: no final S is printed
+        "J.J. Audubon": ("John James Audubon",),                       # plate 291: no postnominals are printed
+        "John J. Audubon F.R.S's. L. & E. F.L.S. &c.": ("John James Audubon",),   # plate 95
     },
     "gould-asia": {
         # Asia VI.74 and VII.40: the line begins at "Wolf" with blank paper to its left, so no
@@ -178,11 +228,26 @@ _THEN = re.compile(r"^(?P<head>.+?(?<![A-Za-z])(?i:" + "|".join(wording_pattern(
                    + r")[.,:]*)\s+(?P<tail>[A-Z].*)$")
 
 
+# A line that ends in a bare "Engraved" has not split a credit: "Engraved, Printed & Coloured by
+# R. Havell" is one wording, though "Printed & Coloured by" is also a WITHIN wording.
+_BARE_ENGRAVED = re.compile(r"(?<![A-Za-z])Engraved[.,:]*$", re.I)
+# The place and date at the end of a credit's names: "R.Havell, London. 1833.", "R.Havell. 1834",
+# "R.Havell & Son. London._1828." (a low dash is written _). Taken off the names, never off the line.
+_PLACE_DATE = re.compile(r"[\s.,:_]*(?:(?<![A-Za-z])London(?![A-Za-z])[\s.,:_]*)?"
+                         r"(?:(?<![0-9])1[89][0-9]{2}(?![0-9]))?[\s.,:_]*$", re.I)
+
+
 def credit_parts(line: str) -> list[str]:
     """The credits a line holds, as separate strings: split before a wording in WITHIN, and
     after a wording written after names when more names follow."""
-    out = []
+    pieces: list[str] = []
     for part in _WITHIN.split(line):
+        if pieces and _BARE_ENGRAVED.search(pieces[-1]):
+            pieces[-1] += " " + part
+        else:
+            pieces.append(part)
+    out = []
+    for part in pieces:
         while (m := _THEN.match(part)):
             out.append(m.group("head"))
             part = m.group("tail")
@@ -191,11 +256,16 @@ def credit_parts(line: str) -> list[str]:
 
 
 def split_line(line: str) -> tuple[tuple[str, ...], str]:
-    """A credit line's roles and the names they belong to, as printed."""
+    """A credit line's roles and the names they belong to, as printed, without a place and
+    date after them ("R.Havell, London 1831." gives "R.Havell")."""
     for pattern, roles in _BEFORE + _AFTER:
         m = pattern.match(line)
         if m:
-            return roles, m.group("names").strip()
+            names = m.group("names").strip()
+            tail = _PLACE_DATE.search(names)
+            if tail and re.search(r"[A-Za-z0-9]", tail.group()):
+                names = names[:tail.start()]
+            return roles, names
     raise UnknownCredit(f"no known wording in {line!r}")
 
 

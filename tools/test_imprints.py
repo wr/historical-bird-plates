@@ -369,9 +369,11 @@ class Normalise(unittest.TestCase):
     def test_only_words_of_a_wording_are_split(self):
         self.assertEqual(imprints.wording_pairs(["Drawn on Stone by", "del. et lith."]),
                          {("drawn", "on"), ("on", "stone"), ("stone", "by"), ("del", "et"), ("et", "lith")})
-        for run in ("Hullmandel", "Walter", "WalterImp", "Drawnby", "nearby", "Byron", "Stone", "HCRichter"):
+        for run in ("Hullmandel", "Walter", "WalterImp", "Drawnto", "nearby", "Byron", "Stone", "HCRichter"):
             with self.subTest(run=run):
                 self.assertEqual(imprints.run_apart(run), run)
+        # "Drawn by" is a wording since The Birds of America (plates 2 and 15), so Drawnby is two words of it
+        self.assertEqual(imprints.normalise("Drawnby J.J. Audubon"), "Drawn by J. J. Audubon")
 
     def test_every_initial_is_written_with_a_stop_and_a_space(self):
         for line, written in (("J Wolf & HCRichter, del et lith.", "J. Wolf & H. C. Richter, del et lith."),

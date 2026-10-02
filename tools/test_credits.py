@@ -214,6 +214,101 @@ class Parse(unittest.TestCase):
             with self.subTest(imprint=imprint):
                 self.assertTrue(parse(imprint))
 
+    def test_seen_on_the_havell_plates(self):
+        """Every wording and name form found on the plates of The Birds of America parses in its folio."""
+        for imprint in (
+                "Drawn by J.J. Audubon. F.R.S.E. | Engraved by W.H.Lizars Edinr. | "
+                "Retouched by R.Havell.Junr. London 1829.",  # 2
+                "Drawn from Nature by John J. Audubon. F.R.S.E. F.L.S. M.W.S. | Engraved by W.H.Lizars Edinr. | "
+                "Retouched by R. Havell Junr. London 1829. | Coloured by R.Havell. Senr.",  # 6
+                "Drawn from Nature by John J.Audubon F.R.S.E.M.W.S. | Engraved by W.H.Lizars Edinr. | "
+                "Printed & Coloured by R.Havell. Senr.",  # 8
+                "Drawn from Nature by John J.Audubon F.R.S.E.M.W.S. | Engraved by W.H.Lizars Edinr. | "
+                "Printed & Coloured by R.Havell Sen.",  # 9
+                "Drawn from Nature by John J.Audubon E.R.S.E.M.W.S. | Engraved by W.H.Lizars Edinr. | "
+                "Printed and Coloured by R. Havell Senr",  # 10
+                "Drawn from Nature by John J. Audubon. F.R.S. M.W.S. | Engraved by R.Havell.Junr. | "
+                "Printed & Coloured by R.Havell. Senr.",  # 14
+                "Drawn by J.J. Audubon. F.R.S.E. M.W.S. | Engraved by R. Havell.Junr",  # 15
+                "Drawn from Nature and Published by John J. Audubon. F.R.S.E. M.W.S. | "
+                "Engraved. Printed & Coloured by R.Havell & Son. London.",  # 17
+                "Drawn from Nature and Published by John J. Audubon. F.R.S.E. M.W.S. | "
+                "Engraved.Printed & Coloured by R.Havell and Son.",  # 24
+                "Drawn from Nature and Published by John J. Audubon. F.R.S.E., F.L.S., M.W.S. | "
+                "Engraved.Printed & Coloured by R. Havell & Son. London._1828.",  # 33
+                "Drawn from Nature and Published by John J. Audubon. F.R.S.E. F.L.S. M.W.S. | "
+                "Engraved by Robt. Havell, Junr. Printed & Coloured by R. Havell, Senr. London. 1828.",  # 37
+                "Drawn from Nature & Published by John J. Audubon. F.R.S.E. F.L.S. M.W.S. | "
+                "Engraved by R.Havell.Junr. Printed & Coloured by R.Havell Senr. London 1828",  # 41
+                "Drawn from Nature, and Published by John J. Audubon. F.R.S. F.L.S. | "
+                "Engraved, Printed & Coloured, by R.Havell.",  # 52
+                "Drawn from Nature and Published by John J. Audubon. F.R.S.E.L.S. | Engraved, Printed & Coloured by R.Havell.",  # 60
+                "Drawn from Nature by Lucy Audubon. | Engraved, Printed & Coloured, by R.Havell",  # 64
+                "Drawn from Nature and Published by John J. Audubon. F.R.S.P.L.S. | Engraved, Printed & Coloured by R.Havell.",  # 88
+                "Drawn from Nature and Published by John J. Audubon F.R.S's. L. & E. F.L.S. &c. | "
+                "Engraved, Printed & Coloured by R.Havell Junr. London. 1830.",  # 95
+                "Drawn from Nature by J.J.Audubon F.R.S. F.L.S. | Engraved, Printed & Coloured by R.Havell London 1831.",  # 106
+                "Drawn from Nature, by J.J.Aududon. F.R.S. F.L.S | Engraved, Printed & Coloured by R.Havell. London 1833",  # 167
+                "Drawn from Nature by J.J.Aububon, F.R.S. F.L.S. | Engraved, Printed, & Coloured, by R. Havell, 1834.",  # 216
+                "Drawn from Nature by J.J.Aubudon. F.R.S. F.L.S. | Engraved, Printed & Coloured, by R.Havell. London. 1835.",  # 244
+                "Drawn from Nature by J.J.Audubon, F.R.S. F.L | Engraved. Printed. & Coloured. by R. Havell 1836.",  # 286
+                "Drawn from Nature by J. J. Audubon | Engraved. Printed.& Coloured.by R. Havell. 1836.",  # 291
+                "Drawn from Nature by J.J.Audubon. F.R.S. F.L.S. | Engraved Printed & Colotured by R.Havell. 1836.",  # 296
+                "Drawn from Nature by J.J.Audubon F.R.S. F.L.S. | Engraved, Printed, and Coloured by R. Havell, 1836.",  # 335
+                "Drawn from Nature by J.J.Audubon F.R.S. F.L.S. | Engraved Printed and Coloured by R. Havell 1836.",  # 336
+                "Drawn from Nature by J.J.Audubon.F.R.S. F.L.S. | Engraved: Printed and Coloured by R Havell. 1837.",  # 396
+                "Drawn from Nature by J.J. Audubon. F.R.S. F.L.S. | Engraved. Printed and Coloured by Robt. Havell. 1838."):  # 412
+            with self.subTest(imprint=imprint):
+                self.assertTrue(parse(imprint, "havell"))
+        with self.assertRaises(UnknownCredit):  # a plate of the same folio that names someone else is still an error
+            parse("Drawn from Nature by J.J. Audubon F.R.S. F.L.S. | Engraved, Printed & Coloured by R. Smith, 1834.", "havell")
+
+    def test_havell_credits_roles_and_forms(self):
+        # two credits in one line: the engraver, then the father's printing and colouring
+        self.assertEqual(parse("Engraved by R.Havell.Junr. Printed & Coloured by R.Havell. Senr. London. 1828.", "havell"), [
+            Credit("Robert Havell Jr.", "engraved", "R.Havell.Junr."),
+            Credit("Robert Havell Sr.", "printed", "R.Havell. Senr"),
+            Credit("Robert Havell Sr.", "coloured", "R.Havell. Senr")])
+        self.assertEqual(credits.credit_parts("Engraved by R.Havell.Junr. Printed & Coloured by R.Havell. Senr. London. 1828."),
+                         ["Engraved by R.Havell.Junr.", "Printed & Coloured by R.Havell. Senr. London. 1828."])
+        # "Engraved, Printed & Coloured by" is one wording, and is not split before "Printed & Coloured by"
+        for line in ("Engraved, Printed & Coloured by R.Havell", "Engraved. Printed and Coloured by Robt. Havell. 1838."):
+            self.assertEqual(credits.credit_parts(line), [line])
+        # a place and a date after the names are not part of the name, and the role is kept
+        for line in ("Engraved, Printed & Coloured, by R.Havell, London 1831.", "Engraved, Printed & Coloured by R.Havell London",
+                     "Engraved. Printed & Coloured by R.Havell. 1833", "Engraved. Printed & Coloured by R.Havell. London._1831."):
+            with self.subTest(line=line):
+                self.assertEqual(parse(line, "havell"), [Credit("Robert Havell Jr.", role, "R.Havell")
+                                                          for role in ("engraved", "printed", "coloured")])
+        self.assertEqual(names_roles(parse("Engraved, Printed & Coloured by R.Havell & Son. London. 1828.", "havell")), [
+            ("Robert Havell & Son", "engraved"), ("Robert Havell & Son", "printed"), ("Robert Havell & Son", "coloured")])
+        # a place or a date alone names nobody
+        for line in ("Engraved by London 1831.", "Engraved by 1831", "Engraved by ,London,"):
+            with self.subTest(line=line), self.assertRaises(UnknownCredit):
+                parse(line, "havell")
+        # "Published" is not a role: the wording gives Audubon "drew" only
+        self.assertEqual(names_roles(parse("Drawn from Nature and Published by John J. Audubon. F.R.S. F.L.S.", "havell")),
+                         [("John James Audubon", "drew")])
+        self.assertEqual(names_roles(parse("Drawn from Nature by Lucy Audubon.")), [("Lucy Audubon", "drew")])
+
+    def test_havell_s_own_name_forms(self):
+        """A bare R. Havell is the son (Williams 1916, pp. 242-243), in this folio only; so are the misprints of
+        Audubon's postnominals, which are as engraved."""
+        for line, who in (("Engraved, Printed & Coloured by R.Havell, 1833.", "Robert Havell Jr."),
+                          ("Engraved. Printed and Coloured by Robt. Havell. 1838.", "Robert Havell Jr."),
+                          ("Drawn from Nature by John J.Audubon E.R.S.E.M.W.S.", "John James Audubon"),
+                          ("Drawn from Nature and Published by John J. Audubon. F.R.S.E.L.S.", "John James Audubon"),
+                          ("Drawn from Nature by J.J.Aububon, F.R.S. F.L.S.", "John James Audubon"),
+                          ("Drawn from Nature by J. J. Audubon", "John James Audubon"),
+                          ("Drawn from Nature by J.J.Audubon, F.R.S. F.L", "John James Audubon")):
+            self.assertEqual(parse(line, "havell")[0].name, who)
+            for folio in (None, "gould-britain", "gould-europe", "gould-australia", "gould-asia"):
+                with self.subTest(line=line, folio=folio), self.assertRaises(UnknownCredit):
+                    parse(line, folio)
+        # Senr. and & Son are in NAMES, so they are the same in any folio
+        self.assertEqual(parse("Printed & Coloured by R. Havell Senr.")[0].name, "Robert Havell Sr.")
+        self.assertEqual(parse("Engraved, Printed & Coloured by R. Havell and Son.")[0].name, "Robert Havell & Son")
+
 
 class Tables(unittest.TestCase):
     def test_every_name_is_in_artists_csv(self):
