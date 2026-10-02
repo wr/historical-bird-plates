@@ -276,6 +276,44 @@ class Sheets(unittest.TestCase):
         self.assertEqual(imprints.layout((1300, 60), (800, 50)), (False, 34 + 60 + 10 + 50 + 16))
 
 
+class Check(unittest.TestCase):
+    def test_pieces_are_equal_and_overlap_by_a_tenth(self):
+        self.assertEqual(imprints.pieces(1000, 1), [(0, 1000)])
+        self.assertEqual(imprints.pieces(1900, 2), [(0, 1000), (900, 1900)])
+        self.assertEqual(imprints.pieces(2800, 3), [(0, 1000), (900, 1900), (1800, 2800)])
+
+    def test_a_crop_is_enlarged_by_3_where_it_fits_else_by_2(self):
+        self.assertEqual(imprints.enlarge((450, 70), 1388, 680), (3, [[0, 0, 450, 70]]))
+        self.assertEqual(imprints.enlarge((570, 70), 1388, 680), (2, [[0, 0, 570, 70]]))
+        self.assertEqual(imprints.enlarge((300, 300), 1388, 680), (2, [[0, 0, 300, 300]]))
+
+    def test_a_crop_too_big_at_2_is_cut_into_the_fewest_pieces_that_fit_each_by_3_if_it_can(self):
+        self.assertEqual(imprints.enlarge((696, 84), 1388, 680), (3, [[0, 0, 366, 84], [330, 0, 696, 84]]))
+        k, boxes = imprints.enlarge((1000, 70), 1388, 680)
+        self.assertEqual((k, boxes), (2, [[0, 0, 526, 70], [474, 0, 1000, 70]]))
+        k, boxes = imprints.enlarge((1900, 400), 1388, 680)
+        self.assertEqual((k, len(boxes)), (2, 6))
+        for x0, y0, x1, y1 in boxes:
+            self.assertLessEqual((x1 - x0) * k, 1388)
+            self.assertLessEqual((y1 - y0) * k, 680)
+        self.assertEqual({(b[0], b[2]) for b in boxes}, {(0, 679), (611, 1289), (1221, 1900)})
+        self.assertEqual({(b[1], b[3]) for b in boxes}, {(0, 211), (189, 400)})
+
+    def test_parts_fill_an_image_until_the_next_would_make_it_too_big(self):
+        head = 68
+        self.assertEqual(imprints.check_height([140, 210], head), 68 + 26 + 140 + 10 + 26 + 210 + 10)
+        self.assertEqual(imprints.check_pages([140, 210], head), [[0, 1]])
+        self.assertEqual(imprints.check_pages([422] * 3 + [100], head), [[0], [1], [2, 3]])
+        self.assertEqual(imprints.check_pages([900], head), [[0]])
+        for page in imprints.check_pages([300, 300, 300, 50, 50], head):
+            self.assertLessEqual(1400 * imprints.check_height([[300, 300, 300, 50, 50][i] for i in page], head),
+                                 1_100_000)
+
+    def test_text_wraps_at_spaces(self):
+        self.assertEqual(imprints.wrap("aa bb cc", lambda s: len(s) <= 5), ["aa bb", "cc"])
+        self.assertEqual(imprints.wrap("aaaaaaa b", lambda s: len(s) <= 5), ["aaaaaaa", "b"])
+
+
 class Record(unittest.TestCase):
     def test_a_rerun_keeps_read_and_note_only_once_a_reading_was_applied(self):
         self.assertEqual(imprints.carried({"read": "eye", "note": "faint"}), {"read": "eye", "note": "faint"})
@@ -318,6 +356,17 @@ class Apply(unittest.TestCase):
         record = read_csv(self.d / "sources" / "imprints.csv")
         self.assertEqual([r["read"] for r in record], ["eye", "none"])
         self.assertIn("37,Edward Lear,lithographed,E. Lear", (self.d / "credits.csv").read_text(encoding="utf-8"))
+
+    def test_a_note_about_a_credit_line_goes_into_plates_csv_once(self):
+        readings = [{"plate": "37", "imprint": "Printed by C. Hullmandel", "read": "scan",
+                     "note": "left credit line cut off at the sheet's foot"},
+                    {"plate": "38", "imprint": "Drawn on Stone by E. Lear", "read": "eye", "note": "stop after Lear faint"}]
+        imprints.apply(self.d, readings)
+        imprints.apply(self.d, readings)
+        plates = read_csv(self.d / "plates.csv")
+        self.assertEqual([p["notes"] for p in plates], ["left credit line cut off at the sheet's foot", "an older note"])
+        self.assertEqual([r["note"] for r in read_csv(self.d / "sources" / "imprints.csv")],
+                         ["left credit line cut off at the sheet's foot", "stop after Lear faint"])
 
     def test_refuses_everything_if_one_row_is_wrong(self):
         before = (self.d / "plates.csv").read_text(encoding="utf-8")

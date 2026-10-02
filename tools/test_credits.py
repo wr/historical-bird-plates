@@ -56,6 +56,8 @@ class Parse(unittest.TestCase):
                          names_roles(parse("Drawn from Nature & on Stone by J. & E. Gould")))
         self.assertEqual(names_roles(parse("J.Gould &H.C.Richter,del et lith | Walter,Imp.")),
                          names_roles(parse("J. Gould & H.C. Richter, del et lith. | Walter, Imp.")))
+        with self.assertRaises(UnknownCredit):
+            parse("J.Gould & H.C.Richter, del et lith. | WalterImp.")
 
     def test_havell_lines_keep_their_abbreviations(self):
         self.assertEqual(parse("Drawn from nature by J.J. Audubon F.R.S. F.L.S. | Engraved by W.H. Lizars Edinr. "
@@ -79,6 +81,18 @@ class Parse(unittest.TestCase):
             with self.subTest(imprint=imprint), self.assertRaises(UnknownCredit):
                 parse(imprint)
 
+    def test_a_folio_s_own_name_forms_count_in_that_folio_only(self):
+        line = "Gould & H. C Richter, del. et lith. | Walter, Imp."  # Great Britain III.61
+        self.assertEqual(names_roles(parse(line, "gould-britain")), [
+            ("John Gould", "drew"), ("John Gould", "lithographed"),
+            ("Henry Constantine Richter", "drew"), ("Henry Constantine Richter", "lithographed"),
+            ("Walter", "printed")])
+        for folio in (None, "gould-europe", "gould-australia", "gould-asia", "havell"):
+            with self.subTest(folio=folio), self.assertRaises(UnknownCredit):
+                parse(line, folio)
+        with self.assertRaises(UnknownCredit):
+            parse("Drawn from Life & on Stone by Gould", "gould-europe")
+
     def test_seen_on_the_plates(self):
         """Every wording found on the plates parses. Add each new variant here."""
         for imprint in ("Drawn from Life & on Stone by J. & E. Gould | Printed by C. Hullmandel",
@@ -86,7 +100,6 @@ class Parse(unittest.TestCase):
                         "J. Gould & H.C. Richter del et lith. | Walter Imp.",
                         "J. Gould & W. Hart del. et lith. | Walter Imp.",
                         "J.Gould &H.C.Richter,del et lith | Walter,Imp.",
-                        "Gould & H.C.Richter, del. et lith. | Walter, Imp.",
                         "Drawn from nature by J.J. Audubon F.R.S. F.L.S. | Engraved, Printed & Coloured by R. Havell Junr."):
             with self.subTest(imprint=imprint):
                 self.assertTrue(parse(imprint))
@@ -96,9 +109,13 @@ class Tables(unittest.TestCase):
     def test_every_name_is_in_artists_csv(self):
         with open(credits.ROOT / "artists.csv", newline="", encoding="utf-8") as f:
             known = {r["name"] for r in csv.DictReader(f)}
-        for form, people in credits.NAMES.items():
+        tables = [credits.NAMES] + list(credits.FOLIO_NAMES.values())
+        for form, people in (x for table in tables for x in table.items()):
             for person in people:
                 self.assertIn(person, known, f"{form} -> {person}")
+
+    def test_folio_names_are_for_known_folios(self):
+        self.assertTrue(set(credits.FOLIO_NAMES) <= set(credits.FOLIOS))
 
     def test_every_role_is_known(self):
         for table in (credits.BEFORE, credits.AFTER):
@@ -137,6 +154,18 @@ class Files(unittest.TestCase):
                         {"plate": "2", "imprint": "Drawn on Stone by E. Lear | Printed by C. Hullmandel"}], False)
         self.assertEqual(credits.totals(d)[("Edward Lear", "lithographed")], 2)
         self.assertEqual(credits.totals(d)[("Charles Joseph Hullmandel", "printed")], 1)
+
+    def test_rows_use_the_folio_s_own_name_forms(self):
+        for folio, ok in (("gould-britain", True), ("gould-europe", False)):
+            d = Path(tempfile.mkdtemp()) / folio
+            d.mkdir()
+            write_csv(d / "plates.csv", ["plate", "imprint"], [{"plate": "1", "imprint": "Gould & H. C Richter del."}])
+            write_csv(d / "species.csv", ["plate", "scientific"], [])
+            with self.subTest(folio=folio):
+                if ok:
+                    self.assertEqual([r["name"] for r in credits.rows(d)], ["John Gould", "Henry Constantine Richter"])
+                else:
+                    self.assertRaises(UnknownCredit, credits.rows, d)
 
     def test_an_error_names_the_plate(self):
         d = self.folio([{"volume": "IV", "plate": "5", "imprint": "Sketched by J. Gould"}], True)

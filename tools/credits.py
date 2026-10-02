@@ -8,7 +8,8 @@ A plate's `imprint` is its credit lines verbatim, joined with " | ". Each line
 is a wording and the names it credits: "Drawn on Stone by E. Lear",
 "J. Gould & H.C. Richter del. et lith.", "C. Hullmandel Imp.". BEFORE and
 AFTER give the roles a wording stands for, written before or after the names;
-NAMES gives the people or firms a name form stands for. Wordings match with
+NAMES gives the people or firms a name form stands for, and FOLIO_NAMES the
+name forms that stand for someone in one folio only. Wordings match with
 case, full stops, commas and spacing folded ("del. et lith." is "del et lith");
 name forms with full stops, commas and spacing dropped ("H. C. Richter" is
 "H.C.Richter"). A line whose wording or name is in neither table is an error:
@@ -56,7 +57,6 @@ AFTER = {
 NAMES = {
     "J. & E. Gould": ("John Gould", "Elizabeth Gould"),
     "J. Gould": ("John Gould",),
-    "Gould": ("John Gould",),
     "E. Lear": ("Edward Lear",),
     "H.C. Richter": ("Henry Constantine Richter",),
     "J. Wolf": ("Joseph Wolf",),
@@ -68,6 +68,14 @@ NAMES = {
     "J.J. Audubon F.R.S. F.L.S.": ("John James Audubon",),
     "W.H. Lizars Edinr.": ("William Home Lizars",),
     "R. Havell Junr.": ("Robert Havell Jr.",),
+}
+# A name form that stands for someone in one folio only -> who it is there. Looked up
+# after NAMES, and only when a folio is given.
+FOLIO_NAMES = {
+    # Great Britain III.61: the initial before "Gould" is cut off at the sheet's edge. The
+    # Birds of Great Britain is 1862-73, after Elizabeth Gould's death in 1841, and every
+    # other plate of it that can be read reads J. Gould.
+    "gould-britain": {"Gould": ("John Gould",)},
 }
 
 
@@ -108,28 +116,36 @@ def split_line(line: str) -> tuple[tuple[str, ...], str]:
     raise UnknownCredit(f"no known wording in {line!r}")
 
 
-def name_forms(names: str) -> list[str]:
+def known_names(folio: str | None = None) -> dict[str, tuple[str, ...]]:
+    """Name keys -> people: NAMES, then the folio's FOLIO_NAMES, if a folio is given."""
+    extra = {name_key(k): v for k, v in FOLIO_NAMES.get(folio, {}).items()} if folio else {}
+    return {**extra, **_NAMES}
+
+
+def name_forms(names: str, known: dict[str, tuple[str, ...]] = _NAMES) -> list[str]:
     """The name forms in a line's names: the whole if the table has it ("J. & E. Gould",
     "Walter & Cohn"), else each part between "&" or "and"."""
-    if name_key(names) in _NAMES:
+    if name_key(names) in known:
         return [names]
     parts = [p.strip(" ,") for p in re.split(r"\s*&\s*|\s+and\s+", names)]
-    unknown = [p for p in parts if name_key(p) not in _NAMES]
+    unknown = [p for p in parts if name_key(p) not in known]
     if unknown:
         raise UnknownCredit(f"no known name for {', '.join(map(repr, unknown))} in {names!r}")
     return parts
 
 
-def parse(imprint: str) -> list[Credit]:
-    """The credits a plate's imprint gives, line by line, in order; each name and role once."""
+def parse(imprint: str, folio: str | None = None) -> list[Credit]:
+    """The credits a plate's imprint gives, line by line, in order; each name and role once.
+    Name forms are looked up in NAMES, then in the folio's FOLIO_NAMES if a folio is given."""
+    known = known_names(folio)
     out: list[Credit] = []
     for line in imprint.split(" | "):
         line = line.strip()
         if not line:
             raise UnknownCredit(f"an empty line in {imprint!r}")
         roles, names = split_line(line)
-        for form in name_forms(names):
-            for person in _NAMES[name_key(form)]:
+        for form in name_forms(names, known):
+            for person in known[name_key(form)]:
                 for role in roles:
                     if not any(c.name == person and c.role == role for c in out):
                         out.append(Credit(person, role, form))
@@ -162,7 +178,7 @@ def rows(folder: Path) -> list[dict]:
         if not p.get("imprint"):
             continue
         try:
-            found = parse(p["imprint"])
+            found = parse(p["imprint"], folder.name)
         except UnknownCredit as e:
             raise UnknownCredit(f"{folder.name} plate {tag(p, volumes)}: {e}") from None
         for c in found:

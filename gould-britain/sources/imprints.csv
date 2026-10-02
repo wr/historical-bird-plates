@@ -114,7 +114,7 @@ II,75,304,416 5469 956 5534,3069 5437 3437 5525,"I.Gould and HCFichter, del ot l
 II,76,308,580 5400 1158 5484,2831 5401 3109 5489,"J.Gould & H CRichter, del et lith. | Walter, Imp.",eye,
 II,77,312,92 5499 872 5586,3269 5452 3623 5558,"J.Gould & H.C.Richter, del. et lith. | Walter, Imp.",eye,stop after Walter could be a comma
 II,78,316,961 3599 1769 3679,4941 3624 5283 3730,J. Gould & H.C.Richter del. et lith. | Walter: Imp,eye,
-III,1,12,805 3531 1437 3611,4501 3543 4765 3631,"I.Gould &H.C. Richter, del et lith. | Walter; Imp.",eye,faint marks under the left line are not a credit line
+III,1,12,805 3531 1437 3611,4501 3543 4765 3631,"I.Gould &H.C. Richter, del et lith. | Walter; Imp.",eye,faint marks under the left line are not lettering
 III,2,16,718 3540 1356 3624,4225 3540 4507 3632,"J. Gould & H.C. Richter, del et lith. | Walter; Imp.",eye,
 III,3,20,850 3564 1448 3648,4235 3536 4501 3628,"J.Gould &H.C Richter; dei. el lith. | Walter, Imp.",eye,
 III,4,24,1007 3497 1573 3577,4301 3492 4575 3584,"J. Crould &HCRichter, del. et lith. | Walter, Imp.",eye,
@@ -174,7 +174,7 @@ III,57,228,238 5506 944 5594,2803 5474 3131 5570,"J. Gould & H.CRichter, del et 
 III,58,232,420 5524 1058 5612,2756 5509 3042 5601,"IGrould &H.CRichter, del et lith. | Walter, Imp.",eye,
 III,59,236,424 5540 982 5628,2871 5496 3149 5584,"J. Wolf & HCRichter; del et lit?v. | Walter, Imp.",eye,
 III,60,240,366 5522 912 5610,3125 5486 3595 5582,"J.Gould andHCRichter, del. et lith. | Watter & Cohn, Imp.",eye,no stop visible after lith
-III,61,244,0 5474 619 5554,3182 5430 3490 5518,"rould & H.C.Pichter, del. et lith. | Walter, Imp.",scan,left credit line's start cut off at the sheet's edge: the initial before Gould is not on the scan
+III,61,244,0 5474 619 5554,3182 5430 3490 5518,"rould & H.C.Pichter, del. et lith. | Walter, Imp.",scan,left credit line's start cut off at the sheet's edge: the initial before Gould is not on the sheet
 III,62,248,486 5538 1024 5626,2916 5517 3166 5601,"I. Gould &e H.CRichter, del et lith! | Walter; Iimp.",eye,
 III,63,252,354 5480 848 5546,2980 5455 3352 5539,"I.Gould and, H.C.Richter, del. et lith. | Walter & Cohn, Imp.",eye,a mark after and is likely a stray mark not a comma
 III,64,256,310 5513 814 5583,3024 5507 3378 5591,"I Gould ond HC. Richter, del. et lith. | Walter & Cohn, Imp.",eye,
@@ -211,7 +211,7 @@ IV,18,78,1222 3570 1714 3640,3587 3548 3967 3632,"J.Wolf and H.C. Richter, del. 
 IV,19,82,574 3318 2474 3718,3275 3318 5175 3718,,none,credit lines cut off: the sheet ends in the caption
 IV,20,86,259 5564 849 5644,2991 5545 3249 5629,"J. Gould, and H.CRichter, del,et lith. | Walter Imp.",eye,
 IV,21,90,574 3311 2474 3711,3275 3311 5175 3711,Linn.,scan,"left credit line cut off at the sheet's foot; the right one's foot is cut too, so its punctuation is unreadable"
-IV,22,94,574 3324 2474 3724,3275 3324 5175 3724,,scan,"left credit line cut off at the sheet's foot; right credit line faint and its foot cut, read from the upper part of its letters, punctuation unreadable"
+IV,22,94,574 3324 2474 3724,3275 3324 5175 3724,,none,"credit lines cut off at the sheet's foot: the left credit line is gone, and of the printer's credit line only the tops of the letters show"
 IV,23,98,218 5410 884 5498,2873 5390 3191 5486,"J. Gould & H.C. Bichter, del et lith | Walter, Imrp.",eye,
 IV,24,102,574 3323 2474 3723,3275 3323 5175 3723,,none,"credit lines cut off at the sheet's foot: only the tops of the right one's letters show, unreadable"
 IV,25,106,574 3308 2474 3708,3275 3308 5175 3708,,scan,"left credit line cut off at the sheet's foot; right credit line's foot cut, read from the upper part of its letters, punctuation unreadable"
@@ -292,7 +292,7 @@ V,9,44,1424 3578 1860 3636,3914 3569 4112 3627,J.Wolf & H.C.Bichter; del et lith
 V,10,48,1356 3522 1852 3592,4299 3522 4523 3592,J.Wolf & HCRichter; del et lith. | Walter; Imp.,eye,
 V,11,52,917 3599 1469 3647,4176 3593 4414 3647,"T.Crould & H.CRichter: del et lith. | Walter, Imp.",eye,
 V,12,56,1125 3527 1695 3601,3935 3518 4205 3602,"J.Gould & HCRichter, del et lith. | Walter, Imp.",eye,
-V,13,60,1154 3536 1708 3628,4025 3532 4279 3616,"J.Gould & H.CRichter del et lith. | Walter, Imp.",eye,stains under the left line are not a credit line
+V,13,60,1154 3536 1708 3628,4025 3532 4279 3616,"J.Gould & H.CRichter del et lith. | Walter, Imp.",eye,stains under the left line are not lettering
 V,14,64,1206 3580 1682 3642,4480 3587 4694 3645,"J.Wolf & H.CRichter, del et lith. | Natter: hrp.",scan,the mark after Walter is the r's terminal over a stop; the stop could be a comma
 V,15,68,1528 3573 1994 3639,3984 3549 4214 3623,"J. Wolf & H.C Kichter, del et lith. | Walter, Imp.",eye,
 V,16,72,1293 3561 1825 3619,4004 3565 4226 3623,"J. Gould, and H.C.Richter del et lith, | Walter: Imp.",eye,
@@ -319,7 +319,7 @@ V,36,152,2404 3645 2786 3706,3230 3306 4343 3706,"MIERGUS | US, Linn",none,credi
 V,37,156,1468 3646 1954 3686,4124 3639 4486 3697,"J.Wolf und.HClichter del.el 1äh | Wale & Coha, frep.",scan,no stop visible after lith
 V,38,160,1399 3611 1877 3669,4173 3619 4533 3684,"I.Gould and H.CRichter; del et lith. | Walter & Cohn, Imp.",eye,a semicolon-like mark is the r's (or n's) terminal over a comma; read as a comma
 V,39,164,1531 3595 2001 3653,4091 3605 4443 3671,"Iould and HC.Richter, del. et lith. | Walter & Cohn, Imp.",eye,comma after Richter could be a semicolon
-V,40,168,574 3314 2474 3714,3267 3314 5167 3714,,none,credit lines cut off: the sheet ends in the caption
+V,40,168,574 3314 2474 3714,3267 3314 5167 3714,,none,"credit lines cut off at the sheet's foot: the left corner ends in the caption, the right in the tops of a credit line's letters"
 V,41,172,1185 3623 1629 3681,3851 3644 4167 3699,"I. Gould and H C.Fichter, del a lith | Watter & Cohn, Imp",eye,no stop visible after Imp
 V,42,176,1302 3567 1852 3633,4115 3574 4491 3657,"J.Could and.H.C.Richter, del et lith. | Walter & Cohn, Imp.",eye,a semicolon-like mark is the r's (or n's) terminal over a comma; read as a comma
 V,43,180,1129 3659 1695 3706,4045 3650 4273 3706,J.Could and H.C.Richter: del etlith. | Watter Imp.,eye,

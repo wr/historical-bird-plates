@@ -859,8 +859,8 @@ III,60,Henry Constantine Richter,lithographed,H.C.Richter
 III,60,Walter & Cohn,printed,Walter & Cohn
 III,61,John Gould,drew,Gould
 III,61,John Gould,lithographed,Gould
-III,61,Henry Constantine Richter,drew,H.C.Richter
-III,61,Henry Constantine Richter,lithographed,H.C.Richter
+III,61,Henry Constantine Richter,drew,H. C Richter
+III,61,Henry Constantine Richter,lithographed,H. C Richter
 III,61,Walter,printed,Walter
 III,62,John Gould,drew,J.Gould
 III,62,John Gould,lithographed,J.Gould
@@ -1027,7 +1027,6 @@ IV,20,Henry Constantine Richter,drew,H.C.Richter
 IV,20,Henry Constantine Richter,lithographed,H.C.Richter
 IV,20,Walter,printed,Walter
 IV,21,Walter,printed,Walter
-IV,22,Walter,printed,Walter
 IV,23,John Gould,drew,J.Gould
 IV,23,John Gould,lithographed,J.Gould
 IV,23,Henry Constantine Richter,drew,H.C.Richter
