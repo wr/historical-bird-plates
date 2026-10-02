@@ -9,7 +9,8 @@ is a wording and the names it credits: "Drawn on Stone by E. Lear",
 "J. Gould & H.C. Richter del. et lith.", "C. Hullmandel Imp.". BEFORE and
 AFTER give the roles a wording stands for, written before or after the names;
 a line holding two credits is split before a wording in WITHIN ("Drawn on Stone
-by I & E. Gould from a Drawing by Edwd. Lear."). NAMES gives the people or
+by I & E. Gould from a Drawing by Edwd. Lear."), and so is one holding a wording written
+after the names and then more names ("J.Wolf del. H.C.Richter lith."). NAMES gives the people or
 firms a name form stands for, and FOLIO_NAMES the name forms that stand for
 someone in one folio only. Wordings match with case, full stops, commas and
 spacing folded ("del. et lith." is "del et lith"); name forms with full stops,
@@ -94,6 +95,7 @@ NAMES = {
     "Hullmandel & Walton": ("Hullmandel & Walton",),
     "Hullmandel and Walton": ("Hullmandel & Walton",),
     "Walter": ("Walter",),
+    "T. Walter": ("T. Walter",),
     "Walter & Cohn": ("Walter & Cohn",),
     "J.J. Audubon F.R.S. F.L.S.": ("John James Audubon",),
     "W.H. Lizars Edinr.": ("William Home Lizars",),
@@ -122,6 +124,23 @@ FOLIO_NAMES = {
         "Hullmandel": ("Charles Joseph Hullmandel",),
         # Australia IV.93: a stray C is engraved before "C.Hullmandel Imp.", with a gap after it.
         "C C. Hullmandel": ("Charles Joseph Hullmandel",),
+    },
+    "gould-asia": {
+        # Asia VI.74 and VII.40: the line begins at "Wolf" with blank paper to its left, so no
+        # initial is engraved. Every other line of The Birds of Asia that names a Wolf reads J. Wolf.
+        "Wolf": ("Joseph Wolf",),
+        # Asia VII.13: "J.Wolf and Hart", no initial engraved before Hart. Every other line of the
+        # folio that names a Hart reads W. Hart.
+        "Hart": ("William Matthew Hart",),
+        # Asia IV.5: the faint line reads "J.Gould and C.H.Richter" on the scan, the initials in
+        # the wrong order. Every other Richter of the folio is H.C. Richter.
+        "C.H. Richter": ("Henry Constantine Richter",),
+        # Asia IV.26: the initial before "Gould" is an H on the scan (3x), not a J. The plate is
+        # a Gould and Richter plate of the same part as IV.25 and IV.31, which read J.Gould.
+        "H. Gould": ("John Gould",),
+        # Asia III.4: the printer's line is engraved "Hulmandel & Walton Imp" (one l), at 2x on the
+        # scan; every other plate with this printer reads Hullmandel & Walton.
+        "Hulmandel & Walton": ("Hullmandel & Walton",),
     },
 }
 
@@ -153,6 +172,24 @@ _BEFORE = [(re.compile(rf"^{wording_pattern(w)}[\s.,]+(?P<names>.+?)[\s,]*$", re
            for w, roles in sorted(BEFORE.items(), key=lambda x: -len(x[0]))]
 _AFTER = [(re.compile(rf"^(?P<names>.+?)(?:[,:]\s*|\.(?=\S)|\s+){wording_pattern(w)}[\s.,]*$", re.I), roles)
           for w, roles in sorted(AFTER.items(), key=lambda x: -len(x[0]))]
+
+
+# A wording written after names, then a capitalised word: the line holds a second credit
+# ("J.Wolf del. H.C.Richter lith."). The wording must start a word, so "Hullmandel Imp." stays whole.
+_THEN = re.compile(r"^(?P<head>.+?(?<![A-Za-z])(?i:" + "|".join(wording_pattern(w) for w in sorted(AFTER, key=len, reverse=True))
+                   + r")[.,:]*)\s+(?P<tail>[A-Z].*)$")
+
+
+def credit_parts(line: str) -> list[str]:
+    """The credits a line holds, as separate strings: split before a wording in WITHIN, and
+    after a wording written after names when more names follow."""
+    out = []
+    for part in _WITHIN.split(line):
+        while (m := _THEN.match(part)):
+            out.append(m.group("head"))
+            part = m.group("tail")
+        out.append(part)
+    return out
 
 
 def split_line(line: str) -> tuple[tuple[str, ...], str]:
@@ -192,7 +229,7 @@ def parse(imprint: str, folio: str | None = None) -> list[Credit]:
         line = line.strip()
         if not line:
             raise UnknownCredit(f"an empty line in {imprint!r}")
-        for part in _WITHIN.split(line):
+        for part in credit_parts(line):
             roles, names = split_line(part)
             for form in name_forms(names, known):
                 for person in known[name_key(form)]:

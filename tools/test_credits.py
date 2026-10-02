@@ -67,6 +67,19 @@ class Parse(unittest.TestCase):
             ("John Gould", "lithographed"), ("Elizabeth Gould", "lithographed"), ("Edward Lear", "drew"),
             ("Charles Joseph Hullmandel", "printed")])
 
+    def test_a_line_with_two_credits_is_split_after_the_first_wording(self):
+        self.assertEqual(names_roles(parse(  # Asia I.7
+            "J.Wolf del. H.C.Richter lith. | Hullmandel & Walton Imp.")), [
+            ("Joseph Wolf", "drew"), ("Henry Constantine Richter", "lithographed"),
+            ("Hullmandel & Walton", "printed")])
+        self.assertEqual(names_roles(parse("J. Wolf, del. H.C.Richter, lith. | Hullmandel & Walton, Imp")),  # Asia VII.39
+                         names_roles(parse("J.Wolf del. H.C.Richter lith. | Hullmandel & Walton Imp.")))
+        # a wording inside a name, or one followed by lower-case words, splits nothing
+        for line in ("Hullmandel Imp.", "J.Gould and H.C.Richter, del. et lith.", "J.Gould & W.Hart del et lith"):
+            with self.subTest(line=line):
+                self.assertEqual(credits.credit_parts(line), [line])
+        self.assertEqual(credits.credit_parts("J.Wolf del. H.C.Richter lith."), ["J.Wolf del.", "H.C.Richter lith."])
+
     def test_havell_lines_keep_their_abbreviations(self):
         self.assertEqual(parse("Drawn from nature by J.J. Audubon F.R.S. F.L.S. | Engraved by W.H. Lizars Edinr. "
                                "| Retouched by R. Havell Junr."), [
@@ -134,6 +147,26 @@ class Parse(unittest.TestCase):
         with self.assertRaises(UnknownCredit):  # a bare Gould alone could be J. & E. Gould with its initials lost
             parse("Gould del.", "gould-australia")
 
+    def test_asia_s_own_name_forms(self):
+        for line, last in (("Wolf and H.C.Richter del. et lith. | Hullmandel & Walton, Imp.",  # VI.74
+                            ("Hullmandel & Walton", "printed")),
+                           ("J.Wolf and Hart del et lith. | Walter, Imp.", ("Walter", "printed")),  # VII.13
+                           ("J.Gould and C.H.Richter, del. et lith. | Hullmandel & Walton, Imp",  # IV.5
+                            ("Hullmandel & Walton", "printed")),
+                           ("H. Gould, and H.C.Richter, del et lith. | Walter Imp.", ("Walter", "printed")),  # IV.26
+                           ("J.Gould and H.C.Richter del et lith | Hulmandel & Walton Imp",  # III.4
+                            ("Hullmandel & Walton", "printed"))):
+            self.assertEqual(names_roles(parse(line, "gould-asia"))[-1], last)
+            for folio in (None, "gould-britain", "gould-europe", "gould-australia", "havell"):
+                with self.subTest(line=line, folio=folio), self.assertRaises(UnknownCredit):
+                    parse(line, folio)
+        self.assertEqual(names_roles(parse("Wolf and H.C.Richter del. et lith.", "gould-asia"))[0], ("Joseph Wolf", "drew"))
+        self.assertEqual(names_roles(parse("J.Wolf and Hart del et lith.", "gould-asia"))[2:],
+                         [("William Matthew Hart", "drew"), ("William Matthew Hart", "lithographed")])
+        for line in ("Wolf del.", "Hart del. et lith.", "H. Gould del."):  # a bare surname or a stray initial stands alone nowhere
+            with self.subTest(line=line):
+                self.assertRaises(UnknownCredit, parse, line)
+
     def test_seen_on_the_plates(self):
         """Every wording found on the plates parses. Add each new variant here."""
         for imprint in ("Drawn from Life & on Stone by J. & E. Gould | Printed by C. Hullmandel",
@@ -171,6 +204,13 @@ class Parse(unittest.TestCase):
                         "Drawn from Nature and on Stone by Waterhouse Hawkins. | Hullmandel & Walton Imp.",
                         "Drawn on Stone by I & E. Gould from a Drawing by Edwd. Lear. | Printed by C. Hullmandel.",
                         "J.Gould & H.C.Richter, del et lith. | Walter.Imp.",
+                        "J.Gould and H.C.Richter, del. et lith. | T. Walter, Imp.",  # Asia I.69
+                        "W.Hart del. et lith. | Walter imp.",  # Asia IV.17
+                        "J. Gould, and H.C.Richter, del, et, lith, | Walter, Imp.",  # Asia VII.19
+                        "J.Gould.H.C.Richter, del. et lith. | Walter & Cohn, Imp.",  # Asia VI.72
+                        "J.Wolf and H.C.Richter, del. et lith. | Walter & Cohn, Imp.",  # Asia I.10
+                        "J.Gould & W.Hart. del et lith | Walter, Imp",  # Asia V.32
+                        "J.Gould and H.C.Richter del et lith | Hullmandel & Walton Imp.",  # Asia II.22
                         "Drawn from nature by J.J. Audubon F.R.S. F.L.S. | Engraved, Printed & Coloured by R. Havell Junr."):
             with self.subTest(imprint=imprint):
                 self.assertTrue(parse(imprint))
