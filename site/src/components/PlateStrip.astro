@@ -1,13 +1,14 @@
 ---
 import { folioOf, imageSrc, plateHref } from "../lib/data";
-import { altText } from "../lib/seo";
+import { altText, shown } from "../lib/seo";
 import type { Plate } from "../lib/types";
 
 interface Props {
   plates: Plate[];
   height: number;
+  showShown?: boolean;
 }
-const { plates, height } = Astro.props;
+const { plates, height, showShown = false } = Astro.props;
 ---
 <ul class="strip" style={`--strip-h:${height}px`}>
   {plates.map((p) => {
@@ -34,6 +35,7 @@ const { plates, height } = Astro.props;
             <span>{f.short}, {f.years}</span>
             <span>{p.label}</span>
             {p.printed.name && <span class="strip-printed">“{p.printed.name}”</span>}
+            {showShown && <span>Shows: {shown(p)}</span>}
           </span>
         </a>
       </li>

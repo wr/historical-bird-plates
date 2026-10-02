@@ -144,7 +144,8 @@ main { padding: 0 var(--gutter) 4rem; }
 .strip-cap { display: grid; font-size: 0.85rem; line-height: 1.35; color: var(--ink-2); }
 .strip-printed { font-family: var(--serif); font-size: 1rem; color: var(--ink); }
 
-.species-filter { margin: 1rem 0 2rem; }
+.species-filter { margin: 1rem 0 0.5rem; }
+[data-species-count] { margin: 0 0 2rem; }
 .families { columns: 17rem; column-gap: 2.5rem; }
 .family { break-inside: avoid; margin-bottom: 1.5rem; }
 .family h2 { font-size: 1.1rem; margin: 0 0 0.35rem; }

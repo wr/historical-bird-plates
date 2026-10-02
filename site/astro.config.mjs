@@ -5,5 +5,5 @@ export default defineConfig({
   site: "https://wr.github.io",
   base: "/historical-bird-plates",
   trailingSlash: "always",
-  integrations: [sitemap({ filter: (page) => !page.endsWith("/404/") })],
+  integrations: [sitemap({ filter: (page) => page !== "https://wr.github.io/historical-bird-plates/404/" })],
 });

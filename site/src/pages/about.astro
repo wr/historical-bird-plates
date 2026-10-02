@@ -6,7 +6,7 @@ import { REPO } from "../lib/links";
 const misnamed = plates.filter((p) => p.misnamed.length).length;
 const open = plates.filter((p) => p.open).length;
 ---
-<Layout title="About · Historical bird plates" description={`How ${plates.length.toLocaleString("en")} plates from Audubon's and Gould's folios were identified to modern species, how to get the data, and how to cite it.`}>
+<Layout title="About · Historical bird plates" description={`How ${plates.length.toLocaleString("en")} plates from Audubon's and Gould's folios were identified to modern species, how to get the data and how to cite it.`}>
   <article class="prose">
     <h1>About</h1>
     <p class="lede">Every plate of five great nineteenth-century bird folios, matched to the bird it actually shows, in today's taxonomy, with the reasoning.</p>
@@ -15,7 +15,7 @@ const open = plates.filter((p) => p.open).length;
     <h2>How the plates were identified</h2>
     <ul>
       <li>Names and codes follow eBird/Clements 2025. Each identification also carries the IDs other tools join on: eBird, Wikidata, GBIF, Avibase and BirdNET.</li>
-      <li>Gould's plates were checked against the engraved caption on the scan wherever it could be read, against Gould's own text, and against the University of Kansas catalogue.</li>
+      <li>Gould's plates were checked against the engraved caption on the scan wherever it could be read, against Gould's own text and against the University of Kansas catalogue.</li>
       <li>Audubon's were mapped from Wikimedia Commons and the Havell titles, and the hard cases checked one by one against audubon.org, the University of Pittsburgh and the New-York Historical Society.</li>
       <li>Each identification is certain, judged (a considered call, argued in its reasoning) or open. The {open} open plates each say what would settle them.</li>
     </ul>

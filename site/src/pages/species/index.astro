@@ -1,7 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { species, speciesHref } from "../../lib/data";
-import { fold, plural } from "../../scripts/wall-core";
+import { fold } from "../../scripts/wall-core";
 import type { Species } from "../../lib/types";
 
 const families: { family: string; common: string; list: Species[] }[] = [];
@@ -11,7 +11,7 @@ for (const s of species) {
   else families.push({ family: s.family, common: s.family_common, list: [s] });
 }
 ---
-<Layout title="Species · Historical bird plates" description={`${plural(species.length, "species")} in ${families.length} families, from Audubon's and Gould's plates, in eBird taxonomic order.`}>
+<Layout title="Species · Historical bird plates" description={`${species.length.toLocaleString("en")} species in ${families.length} families, from Audubon's and Gould's plates, in eBird taxonomic order.`}>
   <header class="intro">
     <h1>Species</h1>
     <p class="lede">{species.length.toLocaleString("en")} species in {families.length} families, in eBird taxonomic order. The number is how many plates show each one.</p>
@@ -20,6 +20,7 @@ for (const s of species) {
     <span class="sr-only">Filter the species</span>
     <input type="search" data-species-filter placeholder="Owl, Strigidae, Bubo" autocomplete="off" />
   </label>
+  <p class="small js-only" data-species-count aria-live="polite">{species.length.toLocaleString("en")} species</p>
   <div class="families">
     {families.map((fam) => (
       <section class="family" data-family>
@@ -39,18 +40,22 @@ for (const s of species) {
     import { fold } from "../../scripts/wall-core";
 
     const input = document.querySelector<HTMLInputElement>("[data-species-filter]")!;
+    const count = document.querySelector<HTMLElement>("[data-species-count]")!;
     const families = Array.from(document.querySelectorAll<HTMLElement>("[data-family]"));
     input.addEventListener("input", () => {
       const words = fold(input.value).split(" ").filter(Boolean);
+      let n = 0;
       for (const family of families) {
         let any = false;
         for (const li of family.querySelectorAll<HTMLElement>("li")) {
           const hit = words.every((w) => li.dataset.text!.includes(` ${w}`));
           li.hidden = !hit;
           any ||= hit;
+          if (hit) n++;
         }
         family.hidden = !any;
       }
+      count.textContent = n ? `${n.toLocaleString("en")} species` : "No species match.";
     });
   </script>
 </Layout>
