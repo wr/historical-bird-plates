@@ -1,0 +1,2603 @@
+volume,plate,name,role,as_printed
+I,1,Joseph Wolf,drew,J. Wolf
+I,1,Joseph Wolf,lithographed,J. Wolf
+I,1,Henry Constantine Richter,drew,H. C. Richter
+I,1,Henry Constantine Richter,lithographed,H. C. Richter
+I,1,Hullmandel & Walton,printed,Hullmandel & Walton
+I,2,John Gould,drew,J. Gould
+I,2,John Gould,lithographed,J. Gould
+I,2,Henry Constantine Richter,drew,H. C. Richter
+I,2,Henry Constantine Richter,lithographed,H. C. Richter
+I,2,Hullmandel & Walton,printed,Hullmandel & Walton
+I,3,John Gould,drew,J. Gould
+I,3,John Gould,lithographed,J. Gould
+I,3,Henry Constantine Richter,drew,H. C. Richter
+I,3,Henry Constantine Richter,lithographed,H. C. Richter
+I,3,Hullmandel & Walton,printed,Hullmandel & Walton
+I,4,Joseph Wolf,drew,J. Wolf
+I,4,Joseph Wolf,lithographed,J. Wolf
+I,4,Henry Constantine Richter,drew,H. C. Richter
+I,4,Henry Constantine Richter,lithographed,H. C. Richter
+I,4,Walter,printed,Walter
+I,5,Joseph Wolf,drew,J. Wolf
+I,5,Joseph Wolf,lithographed,J. Wolf
+I,5,Henry Constantine Richter,drew,H. C. Richter
+I,5,Henry Constantine Richter,lithographed,H. C. Richter
+I,5,Walter,printed,Walter
+I,6,Joseph Wolf,drew,J. Wolf
+I,6,Joseph Wolf,lithographed,J. Wolf
+I,6,Henry Constantine Richter,drew,H. C. Richter
+I,6,Henry Constantine Richter,lithographed,H. C. Richter
+I,6,Walter,printed,Walter
+I,7,Joseph Wolf,drew,J. Wolf
+I,7,Henry Constantine Richter,lithographed,H. C. Richter
+I,7,Hullmandel & Walton,printed,Hullmandel & Walton
+I,8,John Gould,drew,J. Gould
+I,8,John Gould,lithographed,J. Gould
+I,8,William Matthew Hart,drew,W. Hart
+I,8,William Matthew Hart,lithographed,W. Hart
+I,8,Walter,printed,Walter
+I,9,Joseph Wolf,drew,J. Wolf
+I,9,Joseph Wolf,lithographed,J. Wolf
+I,9,Henry Constantine Richter,drew,H. C. Richter
+I,9,Henry Constantine Richter,lithographed,H. C. Richter
+I,9,Hullmandel & Walton,printed,Hullmandel & Walton
+I,10,Joseph Wolf,drew,J. Wolf
+I,10,Joseph Wolf,lithographed,J. Wolf
+I,10,Henry Constantine Richter,drew,H. C. Richter
+I,10,Henry Constantine Richter,lithographed,H. C. Richter
+I,10,Walter & Cohn,printed,Walter & Cohn
+I,11,Joseph Wolf,drew,J. Wolf
+I,11,Joseph Wolf,lithographed,J. Wolf
+I,11,Henry Constantine Richter,drew,H. C. Richter
+I,11,Henry Constantine Richter,lithographed,H. C. Richter
+I,11,Hullmandel & Walton,printed,Hullmandel & Walton
+I,12,John Gould,drew,J. Gould
+I,12,John Gould,lithographed,J. Gould
+I,12,Henry Constantine Richter,drew,H. C. Richter
+I,12,Henry Constantine Richter,lithographed,H. C. Richter
+I,12,Hullmandel & Walton,printed,Hullmandel & Walton
+I,13,John Gould,drew,J. Gould
+I,13,John Gould,lithographed,J. Gould
+I,13,Henry Constantine Richter,drew,H. C. Richter
+I,13,Henry Constantine Richter,lithographed,H. C. Richter
+I,13,Walter,printed,Walter
+I,14,John Gould,drew,J. Gould
+I,14,John Gould,lithographed,J. Gould
+I,14,Henry Constantine Richter,drew,H. C. Richter
+I,14,Henry Constantine Richter,lithographed,H. C. Richter
+I,14,Walter,printed,Walter
+I,15,John Gould,drew,J. Gould
+I,15,John Gould,lithographed,J. Gould
+I,15,Henry Constantine Richter,drew,H. C. Richter
+I,15,Henry Constantine Richter,lithographed,H. C. Richter
+I,15,Walter,printed,Walter
+I,16,John Gould,drew,J. Gould
+I,16,John Gould,lithographed,J. Gould
+I,16,Henry Constantine Richter,drew,H. C. Richter
+I,16,Henry Constantine Richter,lithographed,H. C. Richter
+I,16,Walter,printed,Walter
+I,17,John Gould,drew,J. Gould
+I,17,John Gould,lithographed,J. Gould
+I,17,Henry Constantine Richter,drew,H. C. Richter
+I,17,Henry Constantine Richter,lithographed,H. C. Richter
+I,17,Walter,printed,Walter
+I,18,John Gould,drew,J. Gould
+I,18,John Gould,lithographed,J. Gould
+I,18,Henry Constantine Richter,drew,H. C. Richter
+I,18,Henry Constantine Richter,lithographed,H. C. Richter
+I,18,Walter,printed,Walter
+I,19,John Gould,drew,J. Gould
+I,19,John Gould,lithographed,J. Gould
+I,19,Henry Constantine Richter,drew,H. C. Richter
+I,19,Henry Constantine Richter,lithographed,H. C. Richter
+I,19,Hullmandel & Walton,printed,Hullmandel & Walton
+I,20,John Gould,drew,J. Gould
+I,20,John Gould,lithographed,J. Gould
+I,20,Henry Constantine Richter,drew,H. C. Richter
+I,20,Henry Constantine Richter,lithographed,H. C. Richter
+I,20,Walter,printed,Walter
+I,21,John Gould,drew,J. Gould
+I,21,John Gould,lithographed,J. Gould
+I,21,Henry Constantine Richter,drew,H. C. Richter
+I,21,Henry Constantine Richter,lithographed,H. C. Richter
+I,21,Hullmandel & Walton,printed,Hullmandel & Walton
+I,22,John Gould,drew,J. Gould
+I,22,John Gould,lithographed,J. Gould
+I,22,Henry Constantine Richter,drew,H. C. Richter
+I,22,Henry Constantine Richter,lithographed,H. C. Richter
+I,22,Hullmandel & Walton,printed,Hullmandel & Walton
+I,23,John Gould,drew,J. Gould
+I,23,John Gould,lithographed,J. Gould
+I,23,Henry Constantine Richter,drew,H. C. Richter
+I,23,Henry Constantine Richter,lithographed,H. C. Richter
+I,23,Hullmandel & Walton,printed,Hullmandel & Walton
+I,24,John Gould,drew,J. Gould
+I,24,John Gould,lithographed,J. Gould
+I,24,Henry Constantine Richter,drew,H. C. Richter
+I,24,Henry Constantine Richter,lithographed,H. C. Richter
+I,24,Hullmandel & Walton,printed,Hullmandel & Walton
+I,25,John Gould,drew,J. Gould
+I,25,John Gould,lithographed,J. Gould
+I,25,Henry Constantine Richter,drew,H. C. Richter
+I,25,Henry Constantine Richter,lithographed,H. C. Richter
+I,25,Hullmandel & Walton,printed,Hullmandel & Walton
+I,26,John Gould,drew,J. Gould
+I,26,John Gould,lithographed,J. Gould
+I,26,Henry Constantine Richter,drew,H. C. Richter
+I,26,Henry Constantine Richter,lithographed,H. C. Richter
+I,26,Walter,printed,Walter
+I,27,John Gould,drew,J. Gould
+I,27,John Gould,lithographed,J. Gould
+I,27,Henry Constantine Richter,drew,H. C. Richter
+I,27,Henry Constantine Richter,lithographed,H. C. Richter
+I,27,Walter,printed,Walter
+I,28,John Gould,drew,J. Gould
+I,28,John Gould,lithographed,J. Gould
+I,28,Henry Constantine Richter,drew,H. C. Richter
+I,28,Henry Constantine Richter,lithographed,H. C. Richter
+I,28,Walter,printed,Walter
+I,29,John Gould,drew,J. Gould
+I,29,John Gould,lithographed,J. Gould
+I,29,Henry Constantine Richter,drew,H. C. Richter
+I,29,Henry Constantine Richter,lithographed,H. C. Richter
+I,29,Walter,printed,Walter
+I,30,John Gould,drew,J. Gould
+I,30,John Gould,lithographed,J. Gould
+I,30,Henry Constantine Richter,drew,H. C. Richter
+I,30,Henry Constantine Richter,lithographed,H. C. Richter
+I,30,Walter,printed,Walter
+I,31,John Gould,drew,J. Gould
+I,31,John Gould,lithographed,J. Gould
+I,31,Henry Constantine Richter,drew,H. C. Richter
+I,31,Henry Constantine Richter,lithographed,H. C. Richter
+I,31,Walter,printed,Walter
+I,32,John Gould,drew,J. Gould
+I,32,John Gould,lithographed,J. Gould
+I,32,Henry Constantine Richter,drew,H. C. Richter
+I,32,Henry Constantine Richter,lithographed,H. C. Richter
+I,32,Walter,printed,Walter
+I,33,John Gould,drew,J. Gould
+I,33,John Gould,lithographed,J. Gould
+I,33,Henry Constantine Richter,drew,H. C. Richter
+I,33,Henry Constantine Richter,lithographed,H. C. Richter
+I,33,Walter,printed,Walter
+I,34,John Gould,drew,J. Gould
+I,34,John Gould,lithographed,J. Gould
+I,34,Henry Constantine Richter,drew,H. C. Richter
+I,34,Henry Constantine Richter,lithographed,H. C. Richter
+I,34,Hullmandel & Walton,printed,Hullmandel & Walton
+I,35,John Gould,drew,J. Gould
+I,35,John Gould,lithographed,J. Gould
+I,35,Henry Constantine Richter,drew,H. C. Richter
+I,35,Henry Constantine Richter,lithographed,H. C. Richter
+I,35,Hullmandel & Walton,printed,Hullmandel & Walton
+I,36,John Gould,drew,J. Gould
+I,36,John Gould,lithographed,J. Gould
+I,36,Henry Constantine Richter,drew,H. C. Richter
+I,36,Henry Constantine Richter,lithographed,H. C. Richter
+I,36,Hullmandel & Walton,printed,Hullmandel & Walton
+I,37,John Gould,drew,J. Gould
+I,37,John Gould,lithographed,J. Gould
+I,37,Henry Constantine Richter,drew,H. C. Richter
+I,37,Henry Constantine Richter,lithographed,H. C. Richter
+I,37,Hullmandel & Walton,printed,Hullmandel & Walton
+I,38,John Gould,drew,J. Gould
+I,38,John Gould,lithographed,J. Gould
+I,38,Henry Constantine Richter,drew,H. C. Richter
+I,38,Henry Constantine Richter,lithographed,H. C. Richter
+I,38,Hullmandel & Walton,printed,Hullmandel & Walton
+I,39,John Gould,drew,J. Gould
+I,39,John Gould,lithographed,J. Gould
+I,39,Henry Constantine Richter,drew,H. C. Richter
+I,39,Henry Constantine Richter,lithographed,H. C. Richter
+I,39,Walter,printed,Walter
+I,40,John Gould,drew,J. Gould
+I,40,John Gould,lithographed,J. Gould
+I,40,William Matthew Hart,drew,W. Hart
+I,40,William Matthew Hart,lithographed,W. Hart
+I,40,Walter,printed,Walter
+I,41,John Gould,drew,J. Gould
+I,41,John Gould,lithographed,J. Gould
+I,41,William Matthew Hart,drew,W. Hart
+I,41,William Matthew Hart,lithographed,W. Hart
+I,41,Walter,printed,Walter
+I,42,John Gould,drew,J. Gould
+I,42,John Gould,lithographed,J. Gould
+I,42,William Matthew Hart,drew,W. Hart
+I,42,William Matthew Hart,lithographed,W. Hart
+I,42,Walter,printed,Walter
+I,43,John Gould,drew,J. Gould
+I,43,John Gould,lithographed,J. Gould
+I,43,Henry Constantine Richter,drew,H. C. Richter
+I,43,Henry Constantine Richter,lithographed,H. C. Richter
+I,43,Hullmandel & Walton,printed,Hullmandel & Walton
+I,44,John Gould,drew,J. Gould
+I,44,John Gould,lithographed,J. Gould
+I,44,Henry Constantine Richter,drew,H. C. Richter
+I,44,Henry Constantine Richter,lithographed,H. C. Richter
+I,44,Hullmandel & Walton,printed,Hullmandel & Walton
+I,45,John Gould,drew,J. Gould
+I,45,John Gould,lithographed,J. Gould
+I,45,Henry Constantine Richter,drew,H. C. Richter
+I,45,Henry Constantine Richter,lithographed,H. C. Richter
+I,45,Hullmandel & Walton,printed,Hullmandel & Walton
+I,46,John Gould,drew,J. Gould
+I,46,John Gould,lithographed,J. Gould
+I,46,Henry Constantine Richter,drew,H. C. Richter
+I,46,Henry Constantine Richter,lithographed,H. C. Richter
+I,46,Hullmandel & Walton,printed,Hullmandel & Walton
+I,47,John Gould,drew,J. Gould
+I,47,John Gould,lithographed,J. Gould
+I,47,Henry Constantine Richter,drew,H. C. Richter
+I,47,Henry Constantine Richter,lithographed,H. C. Richter
+I,47,Hullmandel & Walton,printed,Hullmandel & Walton
+I,48,John Gould,drew,J. Gould
+I,48,John Gould,lithographed,J. Gould
+I,48,William Matthew Hart,drew,W. Hart
+I,48,William Matthew Hart,lithographed,W. Hart
+I,48,Walter,printed,Walter
+I,49,John Gould,drew,J. Gould
+I,49,John Gould,lithographed,J. Gould
+I,49,William Matthew Hart,drew,W. Hart
+I,49,William Matthew Hart,lithographed,W. Hart
+I,49,Walter,printed,Walter
+I,50,John Gould,drew,J. Gould
+I,50,John Gould,lithographed,J. Gould
+I,50,William Matthew Hart,drew,W. Hart
+I,50,William Matthew Hart,lithographed,W. Hart
+I,50,Walter,printed,Walter
+I,51,John Gould,drew,J. Gould
+I,51,John Gould,lithographed,J. Gould
+I,51,Henry Constantine Richter,drew,H. C. Richter
+I,51,Henry Constantine Richter,lithographed,H. C. Richter
+I,51,Hullmandel & Walton,printed,Hullmandel & Walton
+I,52,John Gould,drew,J. Gould
+I,52,John Gould,lithographed,J. Gould
+I,52,Henry Constantine Richter,drew,H. C. Richter
+I,52,Henry Constantine Richter,lithographed,H. C. Richter
+I,52,Walter,printed,Walter
+I,53,John Gould,drew,J. Gould
+I,53,John Gould,lithographed,J. Gould
+I,53,Henry Constantine Richter,drew,H. C. Richter
+I,53,Henry Constantine Richter,lithographed,H. C. Richter
+I,53,Walter & Cohn,printed,Walter & Cohn
+I,54,John Gould,drew,J. Gould
+I,54,John Gould,lithographed,J. Gould
+I,54,Henry Constantine Richter,drew,H. C. Richter
+I,54,Henry Constantine Richter,lithographed,H. C. Richter
+I,54,Walter,printed,Walter
+I,55,John Gould,drew,J. Gould
+I,55,John Gould,lithographed,J. Gould
+I,55,Henry Constantine Richter,drew,H. C. Richter
+I,55,Henry Constantine Richter,lithographed,H. C. Richter
+I,55,Walter,printed,Walter
+I,56,John Gould,drew,J. Gould
+I,56,John Gould,lithographed,J. Gould
+I,56,Henry Constantine Richter,drew,H. C. Richter
+I,56,Henry Constantine Richter,lithographed,H. C. Richter
+I,56,Walter,printed,Walter
+I,57,John Gould,drew,J. Gould
+I,57,John Gould,lithographed,J. Gould
+I,57,Henry Constantine Richter,drew,H. C. Richter
+I,57,Henry Constantine Richter,lithographed,H. C. Richter
+I,57,Hullmandel & Walton,printed,Hullmandel & Walton
+I,58,John Gould,drew,J. Gould
+I,58,John Gould,lithographed,J. Gould
+I,58,Henry Constantine Richter,drew,H. C. Richter
+I,58,Henry Constantine Richter,lithographed,H. C. Richter
+I,58,Hullmandel & Walton,printed,Hullmandel & Walton
+I,59,John Gould,drew,J. Gould
+I,59,John Gould,lithographed,J. Gould
+I,59,Henry Constantine Richter,drew,H. C. Richter
+I,59,Henry Constantine Richter,lithographed,H. C. Richter
+I,59,Hullmandel & Walton,printed,Hullmandel & Walton
+I,60,John Gould,drew,J. Gould
+I,60,John Gould,lithographed,J. Gould
+I,60,Henry Constantine Richter,drew,H. C. Richter
+I,60,Henry Constantine Richter,lithographed,H. C. Richter
+I,60,Hullmandel & Walton,printed,Hullmandel & Walton
+I,61,John Gould,drew,J. Gould
+I,61,John Gould,lithographed,J. Gould
+I,61,Henry Constantine Richter,drew,H. C. Richter
+I,61,Henry Constantine Richter,lithographed,H. C. Richter
+I,61,Hullmandel & Walton,printed,Hullmandel & Walton
+I,62,John Gould,drew,J. Gould
+I,62,John Gould,lithographed,J. Gould
+I,62,Henry Constantine Richter,drew,H. C. Richter
+I,62,Henry Constantine Richter,lithographed,H. C. Richter
+I,62,Hullmandel & Walton,printed,Hullmandel & Walton
+I,63,John Gould,drew,J. Gould
+I,63,John Gould,lithographed,J. Gould
+I,63,Henry Constantine Richter,drew,H. C. Richter
+I,63,Henry Constantine Richter,lithographed,H. C. Richter
+I,63,Hullmandel & Walton,printed,Hullmandel & Walton
+I,64,John Gould,drew,J. Gould
+I,64,John Gould,lithographed,J. Gould
+I,64,Henry Constantine Richter,drew,H. C. Richter
+I,64,Henry Constantine Richter,lithographed,H. C. Richter
+I,64,Hullmandel & Walton,printed,Hullmandel & Walton
+I,65,John Gould,drew,J. Gould
+I,65,John Gould,lithographed,J. Gould
+I,65,William Matthew Hart,drew,W. Hart
+I,65,William Matthew Hart,lithographed,W. Hart
+I,65,Walter,printed,Walter
+I,66,John Gould,drew,J. Gould
+I,66,John Gould,lithographed,J. Gould
+I,66,William Matthew Hart,drew,W. Hart
+I,66,William Matthew Hart,lithographed,W. Hart
+I,66,Walter,printed,Walter
+I,67,John Gould,drew,J. Gould
+I,67,John Gould,lithographed,J. Gould
+I,67,Henry Constantine Richter,drew,H. C. Richter
+I,67,Henry Constantine Richter,lithographed,H. C. Richter
+I,67,Hullmandel & Walton,printed,Hullmandel & Walton
+I,68,John Gould,drew,J. Gould
+I,68,John Gould,lithographed,J. Gould
+I,68,Henry Constantine Richter,drew,H. C. Richter
+I,68,Henry Constantine Richter,lithographed,H. C. Richter
+I,68,Hullmandel & Walton,printed,Hullmandel & Walton
+I,69,John Gould,drew,J. Gould
+I,69,John Gould,lithographed,J. Gould
+I,69,Henry Constantine Richter,drew,H. C. Richter
+I,69,Henry Constantine Richter,lithographed,H. C. Richter
+I,69,T. Walter,printed,T. Walter
+I,70,John Gould,drew,J. Gould
+I,70,John Gould,lithographed,J. Gould
+I,70,Henry Constantine Richter,drew,H. C. Richter
+I,70,Henry Constantine Richter,lithographed,H. C. Richter
+I,70,T. Walter,printed,T. Walter
+I,71,John Gould,drew,J. Gould
+I,71,John Gould,lithographed,J. Gould
+I,71,Henry Constantine Richter,drew,H. C. Richter
+I,71,Henry Constantine Richter,lithographed,H. C. Richter
+I,71,T. Walter,printed,T. Walter
+I,72,John Gould,drew,J. Gould
+I,72,John Gould,lithographed,J. Gould
+I,72,Henry Constantine Richter,drew,H. C. Richter
+I,72,Henry Constantine Richter,lithographed,H. C. Richter
+I,72,T. Walter,printed,T. Walter
+I,73,John Gould,drew,J. Gould
+I,73,John Gould,lithographed,J. Gould
+I,73,Henry Constantine Richter,drew,H. C. Richter
+I,73,Henry Constantine Richter,lithographed,H. C. Richter
+I,73,T. Walter,printed,T. Walter
+I,74,John Gould,drew,J. Gould
+I,74,John Gould,lithographed,J. Gould
+I,74,Henry Constantine Richter,drew,H. C. Richter
+I,74,Henry Constantine Richter,lithographed,H. C. Richter
+I,74,Hullmandel & Walton,printed,Hullmandel & Walton
+I,75,John Gould,drew,J. Gould
+I,75,John Gould,lithographed,J. Gould
+I,75,Henry Constantine Richter,drew,H. C. Richter
+I,75,Henry Constantine Richter,lithographed,H. C. Richter
+I,75,Hullmandel & Walton,printed,Hullmandel & Walton
+I,76,John Gould,drew,J. Gould
+I,76,John Gould,lithographed,J. Gould
+I,76,Henry Constantine Richter,drew,H. C. Richter
+I,76,Henry Constantine Richter,lithographed,H. C. Richter
+I,76,Walter & Cohn,printed,Walter & Cohn
+II,1,John Gould,drew,J. Gould
+II,1,John Gould,lithographed,J. Gould
+II,1,Henry Constantine Richter,drew,H. C. Richter
+II,1,Henry Constantine Richter,lithographed,H. C. Richter
+II,1,Hullmandel & Walton,printed,Hullmandel & Walton
+II,2,John Gould,drew,J. Gould
+II,2,John Gould,lithographed,J. Gould
+II,2,Henry Constantine Richter,drew,H. C. Richter
+II,2,Henry Constantine Richter,lithographed,H. C. Richter
+II,2,Hullmandel & Walton,printed,Hullmandel & Walton
+II,3,John Gould,drew,J. Gould
+II,3,John Gould,lithographed,J. Gould
+II,3,Henry Constantine Richter,drew,H. C. Richter
+II,3,Henry Constantine Richter,lithographed,H. C. Richter
+II,3,Walter & Cohn,printed,Walter & Cohn
+II,4,John Gould,drew,J. Gould
+II,4,John Gould,lithographed,J. Gould
+II,4,Henry Constantine Richter,drew,H. C. Richter
+II,4,Henry Constantine Richter,lithographed,H. C. Richter
+II,4,Walter,printed,Walter
+II,5,John Gould,drew,J. Gould
+II,5,John Gould,lithographed,J. Gould
+II,5,Henry Constantine Richter,drew,H. C. Richter
+II,5,Henry Constantine Richter,lithographed,H. C. Richter
+II,5,Hullmandel & Walton,printed,Hullmandel & Walton
+II,6,John Gould,drew,J. Gould
+II,6,John Gould,lithographed,J. Gould
+II,6,Henry Constantine Richter,drew,H. C. Richter
+II,6,Henry Constantine Richter,lithographed,H. C. Richter
+II,6,Hullmandel & Walton,printed,Hullmandel & Walton
+II,7,John Gould,drew,J. Gould
+II,7,John Gould,lithographed,J. Gould
+II,7,Henry Constantine Richter,drew,H. C. Richter
+II,7,Henry Constantine Richter,lithographed,H. C. Richter
+II,7,Hullmandel & Walton,printed,Hullmandel & Walton
+II,8,John Gould,drew,J. Gould
+II,8,John Gould,lithographed,J. Gould
+II,8,Henry Constantine Richter,drew,H. C. Richter
+II,8,Henry Constantine Richter,lithographed,H. C. Richter
+II,8,Hullmandel & Walton,printed,Hullmandel & Walton
+II,9,John Gould,drew,J. Gould
+II,9,John Gould,lithographed,J. Gould
+II,9,Henry Constantine Richter,drew,H. C. Richter
+II,9,Henry Constantine Richter,lithographed,H. C. Richter
+II,9,Hullmandel & Walton,printed,Hullmandel & Walton
+II,10,John Gould,drew,J. Gould
+II,10,John Gould,lithographed,J. Gould
+II,10,Henry Constantine Richter,drew,H. C. Richter
+II,10,Henry Constantine Richter,lithographed,H. C. Richter
+II,10,Hullmandel & Walton,printed,Hullmandel & Walton
+II,11,John Gould,drew,J. Gould
+II,11,John Gould,lithographed,J. Gould
+II,11,Henry Constantine Richter,drew,H. C. Richter
+II,11,Henry Constantine Richter,lithographed,H. C. Richter
+II,11,Hullmandel & Walton,printed,Hullmandel & Walton
+II,12,William Matthew Hart,drew,W. Hart
+II,12,William Matthew Hart,lithographed,W. Hart
+II,12,Walter,printed,Walter
+II,13,John Gould,drew,J. Gould
+II,13,John Gould,lithographed,J. Gould
+II,13,William Matthew Hart,drew,W. Hart
+II,13,William Matthew Hart,lithographed,W. Hart
+II,13,Walter,printed,Walter
+II,14,John Gould,drew,J. Gould
+II,14,John Gould,lithographed,J. Gould
+II,14,Henry Constantine Richter,drew,H. C. Richter
+II,14,Henry Constantine Richter,lithographed,H. C. Richter
+II,14,Hullmandel & Walton,printed,Hullmandel & Walton
+II,15,John Gould,drew,J. Gould
+II,15,John Gould,lithographed,J. Gould
+II,15,Henry Constantine Richter,drew,H. C. Richter
+II,15,Henry Constantine Richter,lithographed,H. C. Richter
+II,15,Hullmandel & Walton,printed,Hullmandel & Walton
+II,16,John Gould,drew,J. Gould
+II,16,John Gould,lithographed,J. Gould
+II,16,Henry Constantine Richter,drew,H. C. Richter
+II,16,Henry Constantine Richter,lithographed,H. C. Richter
+II,16,Hullmandel & Walton,printed,Hullmandel & Walton
+II,17,John Gould,drew,J. Gould
+II,17,John Gould,lithographed,J. Gould
+II,17,Henry Constantine Richter,drew,H. C. Richter
+II,17,Henry Constantine Richter,lithographed,H. C. Richter
+II,17,Hullmandel & Walton,printed,Hullmandel & Walton
+II,18,John Gould,drew,J. Gould
+II,18,John Gould,lithographed,J. Gould
+II,18,Henry Constantine Richter,drew,H. C. Richter
+II,18,Henry Constantine Richter,lithographed,H. C. Richter
+II,18,Hullmandel & Walton,printed,Hullmandel & Walton
+II,19,John Gould,drew,J. Gould
+II,19,John Gould,lithographed,J. Gould
+II,19,Henry Constantine Richter,drew,H. C. Richter
+II,19,Henry Constantine Richter,lithographed,H. C. Richter
+II,19,Hullmandel & Walton,printed,Hullmandel & Walton
+II,20,John Gould,drew,J. Gould
+II,20,John Gould,lithographed,J. Gould
+II,20,Henry Constantine Richter,drew,H. C. Richter
+II,20,Henry Constantine Richter,lithographed,H. C. Richter
+II,20,Hullmandel & Walton,printed,Hullmandel & Walton
+II,21,John Gould,drew,J. Gould
+II,21,John Gould,lithographed,J. Gould
+II,21,Henry Constantine Richter,drew,H. C. Richter
+II,21,Henry Constantine Richter,lithographed,H. C. Richter
+II,21,Hullmandel & Walton,printed,Hullmandel & Walton
+II,22,John Gould,drew,J. Gould
+II,22,John Gould,lithographed,J. Gould
+II,22,Henry Constantine Richter,drew,H. C. Richter
+II,22,Henry Constantine Richter,lithographed,H. C. Richter
+II,22,Hullmandel & Walton,printed,Hullmandel & Walton
+II,23,John Gould,drew,J. Gould
+II,23,John Gould,lithographed,J. Gould
+II,23,Henry Constantine Richter,drew,H. C. Richter
+II,23,Henry Constantine Richter,lithographed,H. C. Richter
+II,23,Walter,printed,Walter
+II,24,John Gould,drew,J. Gould
+II,24,John Gould,lithographed,J. Gould
+II,24,Henry Constantine Richter,drew,H. C. Richter
+II,24,Henry Constantine Richter,lithographed,H. C. Richter
+II,24,Walter,printed,Walter
+II,25,John Gould,drew,J. Gould
+II,25,John Gould,lithographed,J. Gould
+II,25,Henry Constantine Richter,drew,H. C. Richter
+II,25,Henry Constantine Richter,lithographed,H. C. Richter
+II,25,Walter,printed,Walter
+II,26,John Gould,drew,J. Gould
+II,26,John Gould,lithographed,J. Gould
+II,26,Henry Constantine Richter,drew,H. C. Richter
+II,26,Henry Constantine Richter,lithographed,H. C. Richter
+II,26,Walter,printed,Walter
+II,27,John Gould,drew,J. Gould
+II,27,John Gould,lithographed,J. Gould
+II,27,Henry Constantine Richter,drew,H. C. Richter
+II,27,Henry Constantine Richter,lithographed,H. C. Richter
+II,27,Walter,printed,Walter
+II,28,John Gould,drew,J. Gould
+II,28,John Gould,lithographed,J. Gould
+II,28,Henry Constantine Richter,drew,H. C. Richter
+II,28,Henry Constantine Richter,lithographed,H. C. Richter
+II,28,Hullmandel & Walton,printed,Hullmandel & Walton
+II,29,John Gould,drew,J. Gould
+II,29,John Gould,lithographed,J. Gould
+II,29,Henry Constantine Richter,drew,H. C. Richter
+II,29,Henry Constantine Richter,lithographed,H. C. Richter
+II,29,Hullmandel & Walton,printed,Hullmandel & Walton
+II,30,John Gould,drew,J. Gould
+II,30,John Gould,lithographed,J. Gould
+II,30,Henry Constantine Richter,drew,H. C. Richter
+II,30,Henry Constantine Richter,lithographed,H. C. Richter
+II,30,Hullmandel & Walton,printed,Hullmandel & Walton
+II,31,John Gould,drew,J. Gould
+II,31,John Gould,lithographed,J. Gould
+II,31,Henry Constantine Richter,drew,H. C. Richter
+II,31,Henry Constantine Richter,lithographed,H. C. Richter
+II,31,Hullmandel & Walton,printed,Hullmandel & Walton
+II,32,John Gould,drew,J. Gould
+II,32,John Gould,lithographed,J. Gould
+II,32,Henry Constantine Richter,drew,H. C. Richter
+II,32,Henry Constantine Richter,lithographed,H. C. Richter
+II,32,Hullmandel & Walton,printed,Hullmandel & Walton
+II,33,John Gould,drew,J. Gould
+II,33,John Gould,lithographed,J. Gould
+II,33,Henry Constantine Richter,drew,H. C. Richter
+II,33,Henry Constantine Richter,lithographed,H. C. Richter
+II,33,Hullmandel & Walton,printed,Hullmandel & Walton
+II,34,John Gould,drew,J. Gould
+II,34,John Gould,lithographed,J. Gould
+II,34,Henry Constantine Richter,drew,H. C. Richter
+II,34,Henry Constantine Richter,lithographed,H. C. Richter
+II,34,Walter,printed,Walter
+II,35,John Gould,drew,J. Gould
+II,35,John Gould,lithographed,J. Gould
+II,35,Henry Constantine Richter,drew,H. C. Richter
+II,35,Henry Constantine Richter,lithographed,H. C. Richter
+II,35,Walter,printed,Walter
+II,36,John Gould,drew,J. Gould
+II,36,John Gould,lithographed,J. Gould
+II,36,William Matthew Hart,drew,W. Hart
+II,36,William Matthew Hart,lithographed,W. Hart
+II,36,Walter,printed,Walter
+II,37,John Gould,drew,J. Gould
+II,37,John Gould,lithographed,J. Gould
+II,37,William Matthew Hart,drew,W. Hart
+II,37,William Matthew Hart,lithographed,W. Hart
+II,37,Walter,printed,Walter
+II,38,John Gould,drew,J. Gould
+II,38,John Gould,lithographed,J. Gould
+II,38,Henry Constantine Richter,drew,H. C. Richter
+II,38,Henry Constantine Richter,lithographed,H. C. Richter
+II,38,Hullmandel & Walton,printed,Hullmandel & Walton
+II,39,William Matthew Hart,drew,W. Hart
+II,39,William Matthew Hart,lithographed,W. Hart
+II,39,Walter,printed,Walter
+II,40,John Gould,drew,J. Gould
+II,40,John Gould,lithographed,J. Gould
+II,40,Henry Constantine Richter,drew,H. C. Richter
+II,40,Henry Constantine Richter,lithographed,H. C. Richter
+II,40,Hullmandel & Walton,printed,Hullmandel & Walton
+II,41,John Gould,drew,J. Gould
+II,41,John Gould,lithographed,J. Gould
+II,41,William Matthew Hart,drew,W. Hart
+II,41,William Matthew Hart,lithographed,W. Hart
+II,41,Walter,printed,Walter
+II,42,John Gould,drew,J. Gould
+II,42,John Gould,lithographed,J. Gould
+II,42,William Matthew Hart,drew,W. Hart
+II,42,William Matthew Hart,lithographed,W. Hart
+II,42,Walter,printed,Walter
+II,43,John Gould,drew,J. Gould
+II,43,John Gould,lithographed,J. Gould
+II,43,Henry Constantine Richter,drew,H. C. Richter
+II,43,Henry Constantine Richter,lithographed,H. C. Richter
+II,43,Hullmandel & Walton,printed,Hullmandel & Walton
+II,44,John Gould,drew,J. Gould
+II,44,John Gould,lithographed,J. Gould
+II,44,Henry Constantine Richter,drew,H. C. Richter
+II,44,Henry Constantine Richter,lithographed,H. C. Richter
+II,44,Hullmandel & Walton,printed,Hullmandel & Walton
+II,45,John Gould,drew,J. Gould
+II,45,John Gould,lithographed,J. Gould
+II,45,Henry Constantine Richter,drew,H. C. Richter
+II,45,Henry Constantine Richter,lithographed,H. C. Richter
+II,45,Hullmandel & Walton,printed,Hullmandel & Walton
+II,46,John Gould,drew,J. Gould
+II,46,John Gould,lithographed,J. Gould
+II,46,Henry Constantine Richter,drew,H. C. Richter
+II,46,Henry Constantine Richter,lithographed,H. C. Richter
+II,46,Hullmandel & Walton,printed,Hullmandel & Walton
+II,47,John Gould,drew,J. Gould
+II,47,John Gould,lithographed,J. Gould
+II,47,Henry Constantine Richter,drew,H. C. Richter
+II,47,Henry Constantine Richter,lithographed,H. C. Richter
+II,47,Hullmandel & Walton,printed,Hullmandel & Walton
+II,48,John Gould,drew,J. Gould
+II,48,John Gould,lithographed,J. Gould
+II,48,Henry Constantine Richter,drew,H. C. Richter
+II,48,Henry Constantine Richter,lithographed,H. C. Richter
+II,48,Walter,printed,Walter
+II,49,John Gould,drew,J. Gould
+II,49,John Gould,lithographed,J. Gould
+II,49,Henry Constantine Richter,drew,H. C. Richter
+II,49,Henry Constantine Richter,lithographed,H. C. Richter
+II,49,Walter & Cohn,printed,Walter & Cohn
+II,50,John Gould,drew,J. Gould
+II,50,John Gould,lithographed,J. Gould
+II,50,William Matthew Hart,drew,W. Hart
+II,50,William Matthew Hart,lithographed,W. Hart
+II,50,Walter,printed,Walter
+II,51,John Gould,drew,J. Gould
+II,51,John Gould,lithographed,J. Gould
+II,51,Henry Constantine Richter,drew,H. C. Richter
+II,51,Henry Constantine Richter,lithographed,H. C. Richter
+II,51,Walter,printed,Walter
+II,52,John Gould,drew,J. Gould
+II,52,John Gould,lithographed,J. Gould
+II,52,Henry Constantine Richter,drew,H. C. Richter
+II,52,Henry Constantine Richter,lithographed,H. C. Richter
+II,52,Hullmandel & Walton,printed,Hullmandel & Walton
+II,53,John Gould,drew,J. Gould
+II,53,John Gould,lithographed,J. Gould
+II,53,Henry Constantine Richter,drew,H. C. Richter
+II,53,Henry Constantine Richter,lithographed,H. C. Richter
+II,53,Hullmandel & Walton,printed,Hullmandel & Walton
+II,54,John Gould,drew,J. Gould
+II,54,John Gould,lithographed,J. Gould
+II,54,Henry Constantine Richter,drew,H. C. Richter
+II,54,Henry Constantine Richter,lithographed,H. C. Richter
+II,54,Hullmandel & Walton,printed,Hullmandel & Walton
+II,55,John Gould,drew,J. Gould
+II,55,John Gould,lithographed,J. Gould
+II,55,Henry Constantine Richter,drew,H. C. Richter
+II,55,Henry Constantine Richter,lithographed,H. C. Richter
+II,55,Hullmandel & Walton,printed,Hullmandel & Walton
+II,56,John Gould,drew,J. Gould
+II,56,John Gould,lithographed,J. Gould
+II,56,Henry Constantine Richter,drew,H. C. Richter
+II,56,Henry Constantine Richter,lithographed,H. C. Richter
+II,56,Hullmandel & Walton,printed,Hullmandel & Walton
+II,57,John Gould,drew,J. Gould.
+II,57,John Gould,lithographed,J. Gould.
+II,57,Henry Constantine Richter,drew,H. C. Richter
+II,57,Henry Constantine Richter,lithographed,H. C. Richter
+II,57,Hullmandel & Walton,printed,Hullmandel & Walton
+II,58,John Gould,drew,J. Gould
+II,58,John Gould,lithographed,J. Gould
+II,58,Henry Constantine Richter,drew,H. C. Richter
+II,58,Henry Constantine Richter,lithographed,H. C. Richter
+II,58,Hullmandel & Walton,printed,Hullmandel & Walton
+II,59,John Gould,drew,J. Gould
+II,59,John Gould,lithographed,J. Gould
+II,59,Henry Constantine Richter,drew,H. C. Richter
+II,59,Henry Constantine Richter,lithographed,H. C. Richter
+II,59,Hullmandel & Walton,printed,Hullmandel & Walton
+II,60,John Gould,drew,J. Gould
+II,60,John Gould,lithographed,J. Gould
+II,60,Henry Constantine Richter,drew,H. C. Richter
+II,60,Henry Constantine Richter,lithographed,H. C. Richter
+II,60,Hullmandel & Walton,printed,Hullmandel & Walton
+II,61,John Gould,drew,J. Gould
+II,61,John Gould,lithographed,J. Gould
+II,61,Henry Constantine Richter,drew,H. C. Richter
+II,61,Henry Constantine Richter,lithographed,H. C. Richter
+II,61,Hullmandel & Walton,printed,Hullmandel & Walton
+II,62,John Gould,drew,J. Gould
+II,62,John Gould,lithographed,J. Gould
+II,62,William Matthew Hart,drew,W. Hart
+II,62,William Matthew Hart,lithographed,W. Hart
+II,62,Walter,printed,Walter
+II,63,John Gould,drew,J. Gould
+II,63,John Gould,lithographed,J. Gould
+II,63,Henry Constantine Richter,drew,H. C. Richter
+II,63,Henry Constantine Richter,lithographed,H. C. Richter
+II,63,Hullmandel & Walton,printed,Hullmandel & Walton
+II,64,John Gould,drew,J. Gould
+II,64,John Gould,lithographed,J. Gould
+II,64,Henry Constantine Richter,drew,H. C. Richter
+II,64,Henry Constantine Richter,lithographed,H. C. Richter
+II,64,Hullmandel & Walton,printed,Hullmandel & Walton
+II,65,John Gould,drew,J. Gould
+II,65,John Gould,lithographed,J. Gould
+II,65,Henry Constantine Richter,drew,H. C. Richter
+II,65,Henry Constantine Richter,lithographed,H. C. Richter
+II,65,Hullmandel & Walton,printed,Hullmandel & Walton
+II,66,John Gould,drew,J. Gould
+II,66,John Gould,lithographed,J. Gould
+II,66,Henry Constantine Richter,drew,H. C. Richter
+II,66,Henry Constantine Richter,lithographed,H. C. Richter
+II,66,Hullmandel & Walton,printed,Hullmandel & Walton
+II,67,John Gould,drew,J. Gould
+II,67,John Gould,lithographed,J. Gould
+II,67,Henry Constantine Richter,drew,H. C. Richter
+II,67,Henry Constantine Richter,lithographed,H. C. Richter
+II,67,Hullmandel & Walton,printed,Hullmandel & Walton
+II,68,John Gould,drew,J. Gould
+II,68,John Gould,lithographed,J. Gould
+II,68,Henry Constantine Richter,drew,H. C. Richter
+II,68,Henry Constantine Richter,lithographed,H. C. Richter
+II,68,Hullmandel & Walton,printed,Hullmandel & Walton
+II,69,John Gould,drew,J. Gould
+II,69,John Gould,lithographed,J. Gould
+II,69,Henry Constantine Richter,drew,H. C. Richter
+II,69,Henry Constantine Richter,lithographed,H. C. Richter
+II,69,Hullmandel & Walton,printed,Hullmandel & Walton
+II,70,John Gould,drew,J. Gould
+II,70,John Gould,lithographed,J. Gould
+II,70,William Matthew Hart,drew,W. Hart
+II,70,William Matthew Hart,lithographed,W. Hart
+II,70,Walter,printed,Walter
+II,71,John Gould,drew,J. Gould
+II,71,John Gould,lithographed,J. Gould
+II,71,William Matthew Hart,drew,W. Hart
+II,71,William Matthew Hart,lithographed,W. Hart
+II,71,Walter,printed,Walter
+II,72,John Gould,drew,J. Gould
+II,72,John Gould,lithographed,J. Gould
+II,72,William Matthew Hart,drew,W. Hart
+II,72,William Matthew Hart,lithographed,W. Hart
+II,72,Walter,printed,Walter
+II,73,John Gould,drew,J. Gould
+II,73,John Gould,lithographed,J. Gould
+II,73,William Matthew Hart,drew,W. Hart
+II,73,William Matthew Hart,lithographed,W. Hart
+II,73,Walter,printed,Walter
+II,74,John Gould,drew,J. Gould
+II,74,John Gould,lithographed,J. Gould
+II,74,Henry Constantine Richter,drew,H. C. Richter
+II,74,Henry Constantine Richter,lithographed,H. C. Richter
+II,74,Walter,printed,Walter
+II,75,John Gould,drew,J. Gould
+II,75,John Gould,lithographed,J. Gould
+II,75,Henry Constantine Richter,drew,H. C. Richter
+II,75,Henry Constantine Richter,lithographed,H. C. Richter
+II,75,Walter,printed,Walter
+III,1,John Gould,drew,J. Gould
+III,1,John Gould,lithographed,J. Gould
+III,1,Henry Constantine Richter,drew,H. C. Richter
+III,1,Henry Constantine Richter,lithographed,H. C. Richter
+III,1,Hullmandel & Walton,printed,Hullmandel & Walton
+III,2,John Gould,drew,J. Gould
+III,2,John Gould,lithographed,J. Gould
+III,2,Henry Constantine Richter,drew,H. C. Richter
+III,2,Henry Constantine Richter,lithographed,H. C. Richter
+III,2,Hullmandel & Walton,printed,Hullmandel & Walton
+III,3,John Gould,drew,J. Gould
+III,3,John Gould,lithographed,J. Gould
+III,3,Henry Constantine Richter,drew,H. C. Richter
+III,3,Henry Constantine Richter,lithographed,H. C. Richter
+III,3,Walter,printed,Walter
+III,4,John Gould,drew,J. Gould
+III,4,John Gould,lithographed,J. Gould
+III,4,Henry Constantine Richter,drew,H. C. Richter
+III,4,Henry Constantine Richter,lithographed,H. C. Richter
+III,4,Hullmandel & Walton,printed,Hulmandel & Walton
+III,5,John Gould,drew,J. Gould
+III,5,John Gould,lithographed,J. Gould
+III,5,Henry Constantine Richter,drew,H. C. Richter
+III,5,Henry Constantine Richter,lithographed,H. C. Richter
+III,5,Hullmandel & Walton,printed,Hullmandel & Walton
+III,6,John Gould,drew,J. Gould
+III,6,John Gould,lithographed,J. Gould
+III,6,Henry Constantine Richter,drew,H. C. Richter
+III,6,Henry Constantine Richter,lithographed,H. C. Richter
+III,6,Hullmandel & Walton,printed,Hullmandel & Walton
+III,7,John Gould,drew,J. Gould
+III,7,John Gould,lithographed,J. Gould
+III,7,Henry Constantine Richter,drew,H. C. Richter
+III,7,Henry Constantine Richter,lithographed,H. C. Richter
+III,7,Hullmandel & Walton,printed,Hullmandel & Walton
+III,8,John Gould,drew,J. Gould
+III,8,John Gould,lithographed,J. Gould
+III,8,Henry Constantine Richter,drew,H. C. Richter
+III,8,Henry Constantine Richter,lithographed,H. C. Richter
+III,8,Walter & Cohn,printed,Walter & Cohn
+III,9,John Gould,drew,J. Gould
+III,9,John Gould,lithographed,J. Gould
+III,9,Henry Constantine Richter,drew,H. C. Richter
+III,9,Henry Constantine Richter,lithographed,H. C. Richter
+III,9,Walter,printed,Walter
+III,10,John Gould,drew,J. Gould
+III,10,John Gould,lithographed,J. Gould
+III,10,Henry Constantine Richter,drew,H. C. Richter
+III,10,Henry Constantine Richter,lithographed,H. C. Richter
+III,10,Walter,printed,Walter
+III,11,John Gould,drew,J. Gould
+III,11,John Gould,lithographed,J. Gould
+III,11,Henry Constantine Richter,drew,H. C. Richter
+III,11,Henry Constantine Richter,lithographed,H. C. Richter
+III,11,Walter,printed,Walter
+III,12,John Gould,drew,J. Gould
+III,12,John Gould,lithographed,J. Gould
+III,12,Henry Constantine Richter,drew,H. C. Richter
+III,12,Henry Constantine Richter,lithographed,H. C. Richter
+III,12,Walter & Cohn,printed,Walter & Cohn
+III,13,John Gould,drew,J. Gould
+III,13,John Gould,lithographed,J. Gould
+III,13,Henry Constantine Richter,drew,H. C. Richter
+III,13,Henry Constantine Richter,lithographed,H. C. Richter
+III,13,Hullmandel & Walton,printed,Hullmandel & Walton
+III,14,John Gould,drew,J. Gould
+III,14,John Gould,lithographed,J. Gould
+III,14,Henry Constantine Richter,drew,H. C. Richter
+III,14,Henry Constantine Richter,lithographed,H. C. Richter
+III,14,Hullmandel & Walton,printed,Hullmandel & Walton
+III,15,John Gould,drew,J. Gould
+III,15,John Gould,lithographed,J. Gould
+III,15,Henry Constantine Richter,drew,H. C. Richter
+III,15,Henry Constantine Richter,lithographed,H. C. Richter
+III,15,Hullmandel & Walton,printed,Hullmandel & Walton
+III,16,John Gould,drew,J. Gould
+III,16,John Gould,lithographed,J. Gould
+III,16,Henry Constantine Richter,drew,H. C. Richter
+III,16,Henry Constantine Richter,lithographed,H. C. Richter
+III,16,Hullmandel & Walton,printed,Hullmandel & Walton
+III,17,John Gould,drew,J. Gould
+III,17,John Gould,lithographed,J. Gould
+III,17,Henry Constantine Richter,drew,H. C. Richter
+III,17,Henry Constantine Richter,lithographed,H. C. Richter
+III,17,Hullmandel & Walton,printed,Hullmandel & Walton
+III,18,John Gould,drew,J. Gould
+III,18,John Gould,lithographed,J. Gould
+III,18,Henry Constantine Richter,drew,H. C. Richter
+III,18,Henry Constantine Richter,lithographed,H. C. Richter
+III,18,Hullmandel & Walton,printed,Hullmandel & Walton
+III,19,John Gould,drew,J. Gould
+III,19,John Gould,lithographed,J. Gould
+III,19,William Matthew Hart,drew,W. Hart
+III,19,William Matthew Hart,lithographed,W. Hart
+III,19,Walter,printed,Walter
+III,20,John Gould,drew,J. Gould
+III,20,John Gould,lithographed,J. Gould
+III,20,William Matthew Hart,drew,W. Hart
+III,20,William Matthew Hart,lithographed,W. Hart
+III,20,Walter,printed,Walter
+III,21,John Gould,drew,J. Gould
+III,21,John Gould,lithographed,J. Gould
+III,21,William Matthew Hart,drew,W. Hart
+III,21,William Matthew Hart,lithographed,W. Hart
+III,21,Walter,printed,Walter
+III,22,John Gould,drew,J. Gould
+III,22,John Gould,lithographed,J. Gould
+III,22,William Matthew Hart,drew,W. Hart
+III,22,William Matthew Hart,lithographed,W. Hart
+III,22,Walter,printed,Waller
+III,23,John Gould,drew,J. Gould
+III,23,John Gould,lithographed,J. Gould
+III,23,William Matthew Hart,drew,W. Hart
+III,23,William Matthew Hart,lithographed,W. Hart
+III,23,Walter,printed,Walter
+III,24,John Gould,drew,J. Gould
+III,24,John Gould,lithographed,J. Gould
+III,24,Henry Constantine Richter,drew,H. C. Richter
+III,24,Henry Constantine Richter,lithographed,H. C. Richter
+III,24,Walter & Cohn,printed,Walter & Cohn
+III,25,John Gould,drew,J. Gould
+III,25,John Gould,lithographed,J. Gould
+III,25,Henry Constantine Richter,drew,H. C. Richter
+III,25,Henry Constantine Richter,lithographed,H. C. Richter
+III,25,Walter & Cohn,printed,Walter & Cohn
+III,26,John Gould,drew,J. Gould
+III,26,John Gould,lithographed,J. Gould
+III,26,Henry Constantine Richter,drew,H. C. Richter
+III,26,Henry Constantine Richter,lithographed,H. C. Richter
+III,26,Walter & Cohn,printed,Walter & Cohn
+III,27,John Gould,drew,J. Gould
+III,27,John Gould,lithographed,J. Gould
+III,27,William Matthew Hart,drew,W. Hart
+III,27,William Matthew Hart,lithographed,W. Hart
+III,27,Walter,printed,Walter
+III,28,John Gould,drew,J. Gould
+III,28,John Gould,lithographed,J. Gould
+III,28,Henry Constantine Richter,drew,H. C. Richter
+III,28,Henry Constantine Richter,lithographed,H. C. Richter
+III,28,Walter & Cohn,printed,Walter & Cohn
+III,29,John Gould,drew,J. Gould
+III,29,John Gould,lithographed,J. Gould
+III,29,Henry Constantine Richter,drew,H. C. Richter
+III,29,Henry Constantine Richter,lithographed,H. C. Richter
+III,29,Walter,printed,Walter
+III,30,William Matthew Hart,drew,W. Hart
+III,30,William Matthew Hart,lithographed,W. Hart
+III,30,Walter,printed,Walter
+III,31,John Gould,drew,J. Gould
+III,31,John Gould,lithographed,J. Gould
+III,31,Henry Constantine Richter,drew,H. C. Richter
+III,31,Henry Constantine Richter,lithographed,H. C. Richter
+III,31,Hullmandel & Walton,printed,Hullmandel & Walton
+III,32,William Matthew Hart,drew,W. Hart
+III,32,William Matthew Hart,lithographed,W. Hart
+III,32,Walter,printed,Walter
+III,33,John Gould,drew,J. Gould
+III,33,John Gould,lithographed,J. Gould
+III,33,Henry Constantine Richter,drew,H. C. Richter
+III,33,Henry Constantine Richter,lithographed,H. C. Richter
+III,33,Walter & Cohn,printed,Walter & Cohn
+III,34,John Gould,drew,J. Gould
+III,34,John Gould,lithographed,J. Gould
+III,34,Henry Constantine Richter,drew,H. C. Richter
+III,34,Henry Constantine Richter,lithographed,H. C. Richter
+III,34,Hullmandel & Walton,printed,Hullmandel & Walton
+III,35,John Gould,drew,J. Gould
+III,35,John Gould,lithographed,J. Gould
+III,35,Henry Constantine Richter,drew,H. C. Richter
+III,35,Henry Constantine Richter,lithographed,H. C. Richter
+III,35,Walter,printed,Walter
+III,36,John Gould,drew,J. Gould
+III,36,John Gould,lithographed,J. Gould
+III,36,Henry Constantine Richter,drew,H. C. Richter
+III,36,Henry Constantine Richter,lithographed,H. C. Richter
+III,36,Walter,printed,Walter
+III,37,John Gould,drew,J. Gould
+III,37,John Gould,lithographed,J. Gould
+III,37,William Matthew Hart,drew,W. Hart
+III,37,William Matthew Hart,lithographed,W. Hart
+III,37,Walter,printed,Walter
+III,38,John Gould,drew,J. Gould
+III,38,John Gould,lithographed,J. Gould
+III,38,William Matthew Hart,drew,W. Hart
+III,38,William Matthew Hart,lithographed,W. Hart
+III,38,Walter,printed,Walter
+III,39,John Gould,drew,J. Gould
+III,39,John Gould,lithographed,J. Gould
+III,39,William Matthew Hart,drew,W. Hart
+III,39,William Matthew Hart,lithographed,W. Hart
+III,39,Walter,printed,Walter
+III,40,John Gould,drew,J. Gould
+III,40,John Gould,lithographed,J. Gould
+III,40,William Matthew Hart,drew,W. Hart
+III,40,William Matthew Hart,lithographed,W. Hart
+III,40,Walter,printed,Walter
+III,41,John Gould,drew,J. Gould
+III,41,John Gould,lithographed,J. Gould
+III,41,Henry Constantine Richter,drew,H. C. Richter
+III,41,Henry Constantine Richter,lithographed,H. C. Richter
+III,41,Walter,printed,Walter
+III,42,John Gould,drew,J. Gould
+III,42,John Gould,lithographed,J. Gould
+III,42,Henry Constantine Richter,drew,H. C. Richter
+III,42,Henry Constantine Richter,lithographed,H. C. Richter
+III,42,Walter,printed,Walter
+III,43,John Gould,drew,J. Gould
+III,43,John Gould,lithographed,J. Gould
+III,43,William Matthew Hart,drew,W. Hart
+III,43,William Matthew Hart,lithographed,W. Hart
+III,43,Walter,printed,Walter
+III,44,John Gould,drew,J. Gould
+III,44,John Gould,lithographed,J. Gould
+III,44,Henry Constantine Richter,drew,H. C. Richter
+III,44,Henry Constantine Richter,lithographed,H. C. Richter
+III,44,Walter,printed,Walter
+III,45,John Gould,drew,J. Gould
+III,45,John Gould,lithographed,J. Gould
+III,45,Henry Constantine Richter,drew,H. C. Richter
+III,45,Henry Constantine Richter,lithographed,H. C. Richter
+III,45,Walter,printed,Walter
+III,46,John Gould,drew,J. Gould
+III,46,John Gould,lithographed,J. Gould
+III,46,Henry Constantine Richter,drew,H. C. Richter
+III,46,Henry Constantine Richter,lithographed,H. C. Richter
+III,46,Walter,printed,Walter
+III,47,John Gould,drew,J. Gould
+III,47,John Gould,lithographed,J. Gould
+III,47,Henry Constantine Richter,drew,H. C. Richter
+III,47,Henry Constantine Richter,lithographed,H. C. Richter
+III,47,Walter,printed,Walter
+III,48,John Gould,drew,J. Gould
+III,48,John Gould,lithographed,J. Gould
+III,48,Henry Constantine Richter,drew,H. C. Richter
+III,48,Henry Constantine Richter,lithographed,H. C. Richter
+III,48,Walter,printed,Walter
+III,49,John Gould,drew,J. Gould
+III,49,John Gould,lithographed,J. Gould
+III,49,Henry Constantine Richter,drew,H. C. Richter
+III,49,Henry Constantine Richter,lithographed,H. C. Richter
+III,49,Walter,printed,Walter
+III,50,John Gould,drew,J. Gould
+III,50,John Gould,lithographed,J. Gould
+III,50,Henry Constantine Richter,drew,H. C. Richter
+III,50,Henry Constantine Richter,lithographed,H. C. Richter
+III,50,Walter & Cohn,printed,Walter & Cohn
+III,51,John Gould,drew,J. Gould
+III,51,John Gould,lithographed,J. Gould
+III,51,Henry Constantine Richter,drew,H. C. Richter
+III,51,Henry Constantine Richter,lithographed,H. C. Richter
+III,51,Walter & Cohn,printed,Walter & Cohn
+III,52,John Gould,drew,J. Gould
+III,52,John Gould,lithographed,J. Gould
+III,52,William Matthew Hart,drew,W. Hart
+III,52,William Matthew Hart,lithographed,W. Hart
+III,52,Walter,printed,Walter
+III,53,John Gould,drew,J. Gould
+III,53,John Gould,lithographed,J. Gould
+III,53,William Matthew Hart,drew,W. Hart
+III,53,William Matthew Hart,lithographed,W. Hart
+III,53,Walter,printed,Walter
+III,54,John Gould,drew,J. Gould
+III,54,John Gould,lithographed,J. Gould
+III,54,Henry Constantine Richter,drew,H. C. Richter
+III,54,Henry Constantine Richter,lithographed,H. C. Richter
+III,54,Walter,printed,Walter
+III,55,John Gould,drew,J. Gould
+III,55,John Gould,lithographed,J. Gould
+III,55,Henry Constantine Richter,drew,H. C. Richter
+III,55,Henry Constantine Richter,lithographed,H. C. Richter
+III,55,Walter,printed,Walter
+III,56,John Gould,drew,J. Gould.
+III,56,John Gould,lithographed,J. Gould.
+III,56,Henry Constantine Richter,drew,H. C. Richter
+III,56,Henry Constantine Richter,lithographed,H. C. Richter
+III,56,Walter,printed,Walter
+III,57,John Gould,drew,J. Gould
+III,57,John Gould,lithographed,J. Gould
+III,57,Henry Constantine Richter,drew,H. C. Richter
+III,57,Henry Constantine Richter,lithographed,H. C. Richter
+III,57,Walter,printed,Walter
+III,58,John Gould,drew,J. Gould
+III,58,John Gould,lithographed,J. Gould
+III,58,William Matthew Hart,drew,W. Hart
+III,58,William Matthew Hart,lithographed,W. Hart
+III,58,Walter,printed,Walter
+III,59,John Gould,drew,J. Gould
+III,59,John Gould,lithographed,J. Gould
+III,59,William Matthew Hart,drew,W. Hart
+III,59,William Matthew Hart,lithographed,W. Hart
+III,59,Walter,printed,Walter
+III,60,John Gould,drew,J. Gould
+III,60,John Gould,lithographed,J. Gould
+III,60,Henry Constantine Richter,drew,H. C. Richter
+III,60,Henry Constantine Richter,lithographed,H. C. Richter
+III,60,Walter,printed,Walter
+III,61,John Gould,drew,J. Gould
+III,61,John Gould,lithographed,J. Gould
+III,61,Henry Constantine Richter,drew,H. C. Richter
+III,61,Henry Constantine Richter,lithographed,H. C. Richter
+III,61,Walter,printed,Walter
+III,62,John Gould,drew,J. Gould
+III,62,John Gould,lithographed,J. Gould
+III,62,William Matthew Hart,drew,W. Hart
+III,62,William Matthew Hart,lithographed,W. Hart
+III,62,Walter,printed,Walter
+III,63,John Gould,drew,J. Gould
+III,63,John Gould,lithographed,J. Gould
+III,63,Henry Constantine Richter,drew,H. C. Richter
+III,63,Henry Constantine Richter,lithographed,H. C. Richter
+III,63,Walter,printed,Walter
+III,64,John Gould,drew,J. Gould
+III,64,John Gould,lithographed,J. Gould
+III,64,Henry Constantine Richter,drew,H. C. Richter
+III,64,Henry Constantine Richter,lithographed,H. C. Richter
+III,64,Walter,printed,Walter
+III,65,John Gould,drew,J. Gould
+III,65,John Gould,lithographed,J. Gould
+III,65,Henry Constantine Richter,drew,H. C. Richter
+III,65,Henry Constantine Richter,lithographed,H. C. Richter
+III,65,Walter,printed,Walter
+III,66,John Gould,drew,J. Gould.
+III,66,John Gould,lithographed,J. Gould.
+III,66,Henry Constantine Richter,drew,H. C. Richter
+III,66,Henry Constantine Richter,lithographed,H. C. Richter
+III,66,Walter & Cohn,printed,Walter & Cohn
+III,67,John Gould,drew,J. Gould
+III,67,John Gould,lithographed,J. Gould
+III,67,Henry Constantine Richter,drew,H. C. Richter
+III,67,Henry Constantine Richter,lithographed,H. C. Richter
+III,67,Hullmandel & Walton,printed,Hullmandel & Walton
+III,68,John Gould,drew,J. Gould
+III,68,John Gould,lithographed,J. Gould
+III,68,William Matthew Hart,drew,W. Hart
+III,68,William Matthew Hart,lithographed,W. Hart
+III,68,Walter,printed,Walter
+III,69,John Gould,drew,J. Gould
+III,69,John Gould,lithographed,J. Gould
+III,69,William Matthew Hart,drew,W. Hart
+III,69,William Matthew Hart,lithographed,W. Hart
+III,69,Walter,printed,Walter
+III,70,John Gould,drew,J. Gould
+III,70,John Gould,lithographed,J. Gould
+III,70,Henry Constantine Richter,drew,H. C. Richter
+III,70,Henry Constantine Richter,lithographed,H. C. Richter
+III,70,Hullmandel & Walton,printed,Hullmandel & Walton
+III,71,John Gould,drew,J. Gould
+III,71,John Gould,lithographed,J. Gould
+III,71,Henry Constantine Richter,drew,H. C. Richter
+III,71,Henry Constantine Richter,lithographed,H. C. Richter
+III,71,Hullmandel & Walton,printed,Hullmandel & Walton
+III,72,John Gould,drew,J. Gould
+III,72,John Gould,lithographed,J. Gould
+III,72,Henry Constantine Richter,drew,H. C. Richter
+III,72,Henry Constantine Richter,lithographed,H. C. Richter
+III,72,Hullmandel & Walton,printed,Hullmandel & Walton
+III,73,John Gould,drew,J. Gould
+III,73,John Gould,lithographed,J. Gould
+III,73,William Matthew Hart,drew,W. Hart
+III,73,William Matthew Hart,lithographed,W. Hart
+III,73,Walter,printed,Walter
+III,74,John Gould,drew,J. Gould
+III,74,John Gould,lithographed,J. Gould
+III,74,William Matthew Hart,drew,W. Hart
+III,74,William Matthew Hart,lithographed,W. Hart
+III,74,Walter,printed,Walter
+III,75,John Gould,drew,J. Gould
+III,75,John Gould,lithographed,J. Gould
+III,75,Henry Constantine Richter,drew,H. C. Richter
+III,75,Henry Constantine Richter,lithographed,H. C. Richter
+III,75,Hullmandel & Walton,printed,Hullmandel & Walton
+III,76,John Gould,drew,J. Gould
+III,76,John Gould,lithographed,J. Gould
+III,76,Henry Constantine Richter,drew,H. C. Richter
+III,76,Henry Constantine Richter,lithographed,H. C. Richter
+III,76,Hullmandel & Walton,printed,Hullmandel & Walton
+III,77,John Gould,drew,J. Gould
+III,77,John Gould,lithographed,J. Gould
+III,77,Henry Constantine Richter,drew,H. C. Richter
+III,77,Henry Constantine Richter,lithographed,H. C. Richter
+III,77,Hullmandel & Walton,printed,Hullmandel & Walton
+III,78,John Gould,drew,J. Gould
+III,78,John Gould,lithographed,J. Gould
+III,78,Henry Constantine Richter,drew,H. C. Richter
+III,78,Henry Constantine Richter,lithographed,H. C. Richter
+III,78,Hullmandel & Walton,printed,Hullmandel & Walton
+IV,1,John Gould,drew,J. Gould
+IV,1,John Gould,lithographed,J. Gould
+IV,1,Henry Constantine Richter,drew,H. C. Richter
+IV,1,Henry Constantine Richter,lithographed,H. C. Richter
+IV,1,Hullmandel & Walton,printed,Hullmandel & Walton
+IV,2,John Gould,drew,J. Gould
+IV,2,John Gould,lithographed,J. Gould
+IV,2,Henry Constantine Richter,drew,H. C. Richter
+IV,2,Henry Constantine Richter,lithographed,H. C. Richter
+IV,2,Hullmandel & Walton,printed,Hullmandel & Walton
+IV,3,John Gould,drew,J. Gould
+IV,3,John Gould,lithographed,J. Gould
+IV,3,Henry Constantine Richter,drew,H. C. Richter
+IV,3,Henry Constantine Richter,lithographed,H. C. Richter
+IV,3,Walter,printed,Walter
+IV,4,John Gould,drew,J. Gould
+IV,4,John Gould,lithographed,J. Gould
+IV,4,Henry Constantine Richter,drew,H. C. Richter
+IV,4,Henry Constantine Richter,lithographed,H. C. Richter
+IV,4,Hullmandel & Walton,printed,Hullmandel & Walton
+IV,5,John Gould,drew,J. Gould
+IV,5,John Gould,lithographed,J. Gould
+IV,5,Henry Constantine Richter,drew,C. H. Richter
+IV,5,Henry Constantine Richter,lithographed,C. H. Richter
+IV,5,Hullmandel & Walton,printed,Hullmandel & Walton
+IV,6,John Gould,drew,J. Gould
+IV,6,John Gould,lithographed,J. Gould
+IV,6,Henry Constantine Richter,drew,H. C. Richter
+IV,6,Henry Constantine Richter,lithographed,H. C. Richter
+IV,6,Hullmandel & Walton,printed,Hullmandel & Walton
+IV,7,John Gould,drew,J. Gould
+IV,7,John Gould,lithographed,J. Gould
+IV,7,Henry Constantine Richter,drew,H. C. Richter
+IV,7,Henry Constantine Richter,lithographed,H. C. Richter
+IV,7,Walter,printed,Walter
+IV,8,John Gould,drew,J. Gould
+IV,8,John Gould,lithographed,J. Gould
+IV,8,Henry Constantine Richter,drew,H. C. Richter
+IV,8,Henry Constantine Richter,lithographed,H. C. Richter
+IV,8,Walter,printed,Walter
+IV,9,John Gould,drew,J. Gould
+IV,9,John Gould,lithographed,J. Gould
+IV,9,Henry Constantine Richter,drew,H. C. Richter
+IV,9,Henry Constantine Richter,lithographed,H. C. Richter
+IV,9,Walter & Cohn,printed,Walter & Cohn
+IV,10,John Gould,drew,J. Gould
+IV,10,John Gould,lithographed,J. Gould
+IV,10,Henry Constantine Richter,drew,H. C. Richter
+IV,10,Henry Constantine Richter,lithographed,H. C. Richter
+IV,10,Walter,printed,Walter
+IV,11,John Gould,drew,J. Gould
+IV,11,John Gould,lithographed,J. Gould
+IV,11,Henry Constantine Richter,drew,H. C. Richter
+IV,11,Henry Constantine Richter,lithographed,H. C. Richter
+IV,11,Walter & Cohn,printed,Walter & Cohn
+IV,12,John Gould,drew,J. Gould
+IV,12,John Gould,lithographed,J. Gould
+IV,12,Henry Constantine Richter,drew,H. C. Richter
+IV,12,Henry Constantine Richter,lithographed,H. C. Richter
+IV,12,Walter & Cohn,printed,Walter & Cohn
+IV,13,John Gould,drew,J. Gould
+IV,13,John Gould,lithographed,J. Gould
+IV,13,Henry Constantine Richter,drew,H. C. Richter
+IV,13,Henry Constantine Richter,lithographed,H. C. Richter
+IV,13,Walter & Cohn,printed,Walter & Cohn
+IV,14,John Gould,drew,J. Gould
+IV,14,John Gould,lithographed,J. Gould
+IV,14,Henry Constantine Richter,drew,H. C. Richter
+IV,14,Henry Constantine Richter,lithographed,H. C. Richter
+IV,14,Walter & Cohn,printed,Walter & Cohn
+IV,15,John Gould,drew,J. Gould
+IV,15,John Gould,lithographed,J. Gould
+IV,15,Henry Constantine Richter,drew,H. C. Richter
+IV,15,Henry Constantine Richter,lithographed,H. C. Richter
+IV,15,Hullmandel & Walton,printed,Hullmandel & Walton
+IV,16,John Gould,drew,J. Gould
+IV,16,John Gould,lithographed,J. Gould
+IV,16,Henry Constantine Richter,drew,H. C. Richter
+IV,16,Henry Constantine Richter,lithographed,H. C. Richter
+IV,16,Walter & Cohn,printed,Walter & Cohn
+IV,17,William Matthew Hart,drew,W. Hart
+IV,17,William Matthew Hart,lithographed,W. Hart
+IV,17,Walter,printed,Walter
+IV,18,John Gould,drew,J. Gould
+IV,18,John Gould,lithographed,J. Gould
+IV,18,Henry Constantine Richter,drew,H. C. Richter
+IV,18,Henry Constantine Richter,lithographed,H. C. Richter
+IV,18,Walter & Cohn,printed,Walter & Cohn
+IV,19,John Gould,drew,J. Gould
+IV,19,John Gould,lithographed,J. Gould
+IV,19,Henry Constantine Richter,drew,H. C. Richter
+IV,19,Henry Constantine Richter,lithographed,H. C. Richter
+IV,19,Walter & Cohn,printed,Walter & Cohn
+IV,20,John Gould,drew,J. Gould
+IV,20,John Gould,lithographed,J. Gould
+IV,20,Henry Constantine Richter,drew,H. C. Richter
+IV,20,Henry Constantine Richter,lithographed,H. C. Richter
+IV,20,Hullmandel & Walton,printed,Hullmandel & Walton
+IV,21,John Gould,drew,J. Gould
+IV,21,John Gould,lithographed,J. Gould
+IV,21,Henry Constantine Richter,drew,H. C. Richter
+IV,21,Henry Constantine Richter,lithographed,H. C. Richter
+IV,21,Hullmandel & Walton,printed,Hullmandel & Walton
+IV,22,John Gould,drew,J. Gould
+IV,22,John Gould,lithographed,J. Gould
+IV,22,Henry Constantine Richter,drew,H. C. Richter
+IV,22,Henry Constantine Richter,lithographed,H. C. Richter
+IV,22,Hullmandel & Walton,printed,Hullmandel & Walton
+IV,23,John Gould,drew,J. Gould
+IV,23,John Gould,lithographed,J. Gould
+IV,23,Henry Constantine Richter,drew,H. C. Richter
+IV,23,Henry Constantine Richter,lithographed,H. C. Richter
+IV,23,Hullmandel & Walton,printed,Hullmandel & Walton
+IV,24,John Gould,drew,J. Gould
+IV,24,John Gould,lithographed,J. Gould
+IV,24,Henry Constantine Richter,drew,H. C. Richter
+IV,24,Henry Constantine Richter,lithographed,H. C. Richter
+IV,24,Hullmandel & Walton,printed,Hullmandel & Walton
+IV,25,John Gould,drew,J. Gould
+IV,25,John Gould,lithographed,J. Gould
+IV,25,Henry Constantine Richter,drew,H. C. Richter
+IV,25,Henry Constantine Richter,lithographed,H. C. Richter
+IV,25,Hullmandel & Walton,printed,Hullmandel & Walton
+IV,26,Henry Constantine Richter,drew,"H. Gould, and H. C. Richter"
+IV,26,Henry Constantine Richter,lithographed,"H. Gould, and H. C. Richter"
+IV,26,Walter,printed,Walter
+IV,27,John Gould,drew,J. Gould
+IV,27,John Gould,lithographed,J. Gould
+IV,27,Henry Constantine Richter,drew,H. C. Richter
+IV,27,Henry Constantine Richter,lithographed,H. C. Richter
+IV,27,Walter,printed,Walter
+IV,28,John Gould,drew,J. Gould
+IV,28,John Gould,lithographed,J. Gould
+IV,28,Henry Constantine Richter,drew,H. C. Richter
+IV,28,Henry Constantine Richter,lithographed,H. C. Richter
+IV,28,Walter,printed,Walter
+IV,29,John Gould,drew,J. Gould
+IV,29,John Gould,lithographed,J. Gould
+IV,29,Henry Constantine Richter,drew,H. C. Richter
+IV,29,Henry Constantine Richter,lithographed,H. C. Richter
+IV,29,Walter,printed,Walter
+IV,30,John Gould,drew,J. Gould
+IV,30,John Gould,lithographed,J. Gould
+IV,30,Henry Constantine Richter,drew,H. C. Richter
+IV,30,Henry Constantine Richter,lithographed,H. C. Richter
+IV,30,Walter,printed,Walter
+IV,31,John Gould,drew,J. Gould
+IV,31,John Gould,lithographed,J. Gould
+IV,31,Henry Constantine Richter,drew,H. C. Richter
+IV,31,Henry Constantine Richter,lithographed,H. C. Richter
+IV,31,Walter,printed,Walter
+IV,32,John Gould,drew,J. Gould
+IV,32,John Gould,lithographed,J. Gould
+IV,32,Henry Constantine Richter,drew,H. C. Richter
+IV,32,Henry Constantine Richter,lithographed,H. C. Richter
+IV,33,John Gould,drew,J. Gould
+IV,33,John Gould,lithographed,J. Gould
+IV,33,Henry Constantine Richter,drew,H. C. Richter
+IV,33,Henry Constantine Richter,lithographed,H. C. Richter
+IV,33,Walter,printed,Walter
+IV,34,John Gould,drew,J. Gould
+IV,34,John Gould,lithographed,J. Gould
+IV,34,Henry Constantine Richter,drew,H. C. Richter
+IV,34,Henry Constantine Richter,lithographed,H. C. Richter
+IV,34,Walter & Cohn,printed,Walter & Cohn
+IV,35,John Gould,drew,J. Gould
+IV,35,John Gould,lithographed,J. Gould
+IV,35,Henry Constantine Richter,drew,H. C. Richter
+IV,35,Henry Constantine Richter,lithographed,H. C. Richter
+IV,35,Walter & Cohn,printed,Walter & Cohn
+IV,36,John Gould,drew,J. Gould
+IV,36,John Gould,lithographed,J. Gould
+IV,36,Henry Constantine Richter,drew,H. C. Richter
+IV,36,Henry Constantine Richter,lithographed,H. C. Richter
+IV,36,Hullmandel & Walton,printed,Hullmandel & Walton
+IV,37,John Gould,drew,J. Gould
+IV,37,John Gould,lithographed,J. Gould
+IV,37,Henry Constantine Richter,drew,H. C. Richter
+IV,37,Henry Constantine Richter,lithographed,H. C. Richter
+IV,37,Hullmandel & Walton,printed,Hullmandel & Walton
+IV,38,John Gould,drew,J. Gould
+IV,38,John Gould,lithographed,J. Gould
+IV,38,William Matthew Hart,drew,W. Hart
+IV,38,William Matthew Hart,lithographed,W. Hart
+IV,38,Walter,printed,Walter
+IV,39,John Gould,drew,J. Gould
+IV,39,John Gould,lithographed,J. Gould
+IV,39,William Matthew Hart,drew,W. Hart
+IV,39,William Matthew Hart,lithographed,W. Hart
+IV,39,Walter,printed,Walter
+IV,40,John Gould,drew,J. Gould
+IV,40,John Gould,lithographed,J. Gould
+IV,40,William Matthew Hart,drew,W. Hart
+IV,40,William Matthew Hart,lithographed,W. Hart
+IV,40,Walter,printed,Walter
+IV,41,John Gould,drew,J. Gould
+IV,41,John Gould,lithographed,J. Gould
+IV,41,Henry Constantine Richter,drew,H. C. Richter
+IV,41,Henry Constantine Richter,lithographed,H. C. Richter
+IV,41,Walter,printed,Walter
+IV,42,John Gould,drew,J. Gould
+IV,42,John Gould,lithographed,J. Gould
+IV,42,Henry Constantine Richter,drew,H. C. Richter
+IV,42,Henry Constantine Richter,lithographed,H. C. Richter
+IV,42,Walter,printed,Walter
+IV,43,John Gould,drew,J. Gould
+IV,43,John Gould,lithographed,J. Gould
+IV,43,Henry Constantine Richter,drew,H. C. Richter
+IV,43,Henry Constantine Richter,lithographed,H. C. Richter
+IV,43,Walter,printed,Walter
+IV,44,John Gould,drew,J. Gould
+IV,44,John Gould,lithographed,J. Gould
+IV,44,Henry Constantine Richter,drew,H. C. Richter
+IV,44,Henry Constantine Richter,lithographed,H. C. Richter
+IV,44,Hullmandel & Walton,printed,Hullmandel & Walton
+IV,45,John Gould,drew,J. Gould
+IV,45,John Gould,lithographed,J. Gould
+IV,45,Henry Constantine Richter,drew,H. C. Richter
+IV,45,Henry Constantine Richter,lithographed,H. C. Richter
+IV,45,Hullmandel & Walton,printed,Hullmandel & Walton
+IV,46,John Gould,drew,J. Gould
+IV,46,John Gould,lithographed,J. Gould
+IV,46,Henry Constantine Richter,drew,H. C. Richter
+IV,46,Henry Constantine Richter,lithographed,H. C. Richter
+IV,46,Hullmandel & Walton,printed,Hullmandel & Walton
+IV,47,John Gould,drew,J. Gould
+IV,47,John Gould,lithographed,J. Gould
+IV,47,Henry Constantine Richter,drew,H. C. Richter
+IV,47,Henry Constantine Richter,lithographed,H. C. Richter
+IV,47,Hullmandel & Walton,printed,Hullmandel & Walton
+IV,48,John Gould,drew,J. Gould
+IV,48,John Gould,lithographed,J. Gould
+IV,48,Henry Constantine Richter,drew,H. C. Richter
+IV,48,Henry Constantine Richter,lithographed,H. C. Richter
+IV,48,Hullmandel & Walton,printed,Hullmandel & Walton
+IV,49,John Gould,drew,J. Gould
+IV,49,John Gould,lithographed,J. Gould
+IV,49,Henry Constantine Richter,drew,H. C. Richter
+IV,49,Henry Constantine Richter,lithographed,H. C. Richter
+IV,49,Hullmandel & Walton,printed,Hullmandel & Walton
+IV,50,John Gould,drew,J. Gould
+IV,50,John Gould,lithographed,J. Gould
+IV,50,Henry Constantine Richter,drew,H. C. Richter
+IV,50,Henry Constantine Richter,lithographed,H. C. Richter
+IV,50,Walter,printed,Walter
+IV,51,John Gould,drew,J. Gould
+IV,51,John Gould,lithographed,J. Gould
+IV,51,Henry Constantine Richter,drew,H. C. Richter
+IV,51,Henry Constantine Richter,lithographed,H. C. Richter
+IV,51,Hullmandel & Walton,printed,Hullmandel & Walton
+IV,52,William Matthew Hart,drew,W. Hart
+IV,52,William Matthew Hart,lithographed,W. Hart
+IV,52,Walter,printed,Walter
+IV,53,John Gould,drew,J. Gould
+IV,53,John Gould,lithographed,J. Gould
+IV,53,William Matthew Hart,drew,W. Hart
+IV,53,William Matthew Hart,lithographed,W. Hart
+IV,53,Walter,printed,Walter
+IV,54,John Gould,drew,J. Gould
+IV,54,John Gould,lithographed,J. Gould
+IV,54,William Matthew Hart,drew,W. Hart
+IV,54,William Matthew Hart,lithographed,W. Hart
+IV,54,Walter,printed,Walter
+IV,55,John Gould,drew,J. Gould
+IV,55,John Gould,lithographed,J. Gould
+IV,55,William Matthew Hart,drew,W. Hart
+IV,55,William Matthew Hart,lithographed,W. Hart
+IV,55,Walter,printed,Walter
+IV,56,John Gould,drew,J. Gould
+IV,56,John Gould,lithographed,J. Gould
+IV,56,Henry Constantine Richter,drew,H. C. Richter
+IV,56,Henry Constantine Richter,lithographed,H. C. Richter
+IV,56,Walter,printed,Walter
+IV,57,John Gould,drew,J. Gould
+IV,57,John Gould,lithographed,J. Gould
+IV,57,Henry Constantine Richter,drew,H. C. Richter
+IV,57,Henry Constantine Richter,lithographed,H. C. Richter
+IV,57,Hullmandel & Walton,printed,Hullmandel & Walton
+IV,58,John Gould,drew,J. Gould
+IV,58,John Gould,lithographed,J. Gould
+IV,58,Henry Constantine Richter,drew,H. C. Richter
+IV,58,Henry Constantine Richter,lithographed,H. C. Richter
+IV,58,Hullmandel & Walton,printed,Hullmandel & Walton
+IV,59,John Gould,drew,J. Gould
+IV,59,John Gould,lithographed,J. Gould
+IV,59,Henry Constantine Richter,drew,H. C. Richter
+IV,59,Henry Constantine Richter,lithographed,H. C. Richter
+IV,59,Walter,printed,Walter
+IV,60,John Gould,drew,J. Gould
+IV,60,John Gould,lithographed,J. Gould
+IV,60,Henry Constantine Richter,drew,H. C. Richter
+IV,60,Henry Constantine Richter,lithographed,H. C. Richter
+IV,60,Walter,printed,Walter
+IV,61,John Gould,drew,J. Gould
+IV,61,John Gould,lithographed,J. Gould
+IV,61,Henry Constantine Richter,drew,H. C. Richter
+IV,61,Henry Constantine Richter,lithographed,H. C. Richter
+IV,61,Hullmandel & Walton,printed,Hullmandel & Walton
+IV,62,John Gould,drew,J. Gould
+IV,62,John Gould,lithographed,J. Gould
+IV,62,Henry Constantine Richter,drew,H. C. Richter
+IV,62,Henry Constantine Richter,lithographed,H. C. Richter
+IV,62,Hullmandel & Walton,printed,Hullmandel & Walton
+IV,63,John Gould,drew,J. Gould
+IV,63,John Gould,lithographed,J. Gould
+IV,63,Henry Constantine Richter,drew,H. C. Richter
+IV,63,Henry Constantine Richter,lithographed,H. C. Richter
+IV,63,Hullmandel & Walton,printed,Hullmandel & Walton
+IV,64,John Gould,drew,J. Gould
+IV,64,John Gould,lithographed,J. Gould
+IV,64,Henry Constantine Richter,drew,H. C. Richter
+IV,64,Henry Constantine Richter,lithographed,H. C. Richter
+IV,64,Walter,printed,Walter
+IV,65,John Gould,drew,J. Gould
+IV,65,John Gould,lithographed,J. Gould
+IV,65,Henry Constantine Richter,drew,H. C. Richter
+IV,65,Henry Constantine Richter,lithographed,H. C. Richter
+IV,65,Walter,printed,Walter
+IV,66,John Gould,drew,J. Gould
+IV,66,John Gould,lithographed,J. Gould
+IV,66,Henry Constantine Richter,drew,H. C. Richter
+IV,66,Henry Constantine Richter,lithographed,H. C. Richter
+IV,66,Walter,printed,Walter
+IV,67,John Gould,drew,J. Gould
+IV,67,John Gould,lithographed,J. Gould
+IV,67,Henry Constantine Richter,drew,H. C. Richter
+IV,67,Henry Constantine Richter,lithographed,H. C. Richter
+IV,67,Walter & Cohn,printed,Walter & Cohn
+IV,68,John Gould,drew,J. Gould
+IV,68,John Gould,lithographed,J. Gould
+IV,68,Henry Constantine Richter,drew,H. C. Richter
+IV,68,Henry Constantine Richter,lithographed,H. C. Richter
+IV,68,Walter,printed,Walter
+IV,69,John Gould,drew,J. Gould
+IV,69,John Gould,lithographed,J. Gould
+IV,69,Henry Constantine Richter,drew,H. C. Richter
+IV,69,Henry Constantine Richter,lithographed,H. C. Richter
+IV,69,Walter,printed,Walter
+IV,70,John Gould,drew,J. Gould
+IV,70,John Gould,lithographed,J. Gould
+IV,70,Henry Constantine Richter,drew,H. C. Richter
+IV,70,Henry Constantine Richter,lithographed,H. C. Richter
+IV,70,Walter,printed,Walter
+IV,71,John Gould,drew,J. Gould
+IV,71,John Gould,lithographed,J. Gould
+IV,71,Henry Constantine Richter,drew,H. C. Richter
+IV,71,Henry Constantine Richter,lithographed,H. C. Richter
+IV,71,Walter,printed,Walter
+IV,72,John Gould,drew,J. Gould
+IV,72,John Gould,lithographed,J. Gould
+IV,72,Henry Constantine Richter,drew,H. C. Richter
+IV,72,Henry Constantine Richter,lithographed,H. C. Richter
+IV,72,Walter,printed,Walter
+V,1,John Gould,drew,J. Gould
+V,1,John Gould,lithographed,J. Gould
+V,1,Henry Constantine Richter,drew,H. C. Richter
+V,1,Henry Constantine Richter,lithographed,H. C. Richter
+V,1,Walter,printed,Walter
+V,2,John Gould,drew,J. Gould
+V,2,John Gould,lithographed,J. Gould
+V,2,Henry Constantine Richter,drew,H. C. Richter
+V,2,Henry Constantine Richter,lithographed,H. C. Richter
+V,2,Hullmandel & Walton,printed,Hullmandel & Walton
+V,3,John Gould,drew,J. Gould
+V,3,John Gould,lithographed,J. Gould
+V,3,Henry Constantine Richter,drew,H. C. Richter
+V,3,Henry Constantine Richter,lithographed,H. C. Richter
+V,3,Hullmandel & Walton,printed,Hullmandel & Walton
+V,4,John Gould,drew,J. Gould
+V,4,John Gould,lithographed,J. Gould
+V,4,Henry Constantine Richter,drew,H. C. Richter
+V,4,Henry Constantine Richter,lithographed,H. C. Richter
+V,4,Hullmandel & Walton,printed,Hullmandel & Walton
+V,5,John Gould,drew,J. Gould
+V,5,John Gould,lithographed,J. Gould
+V,5,William Matthew Hart,drew,W. Hart
+V,5,William Matthew Hart,lithographed,W. Hart
+V,5,Walter,printed,Walter
+V,6,John Gould,drew,J. Gould
+V,6,John Gould,lithographed,J. Gould
+V,6,Henry Constantine Richter,drew,H. C. Richter
+V,6,Henry Constantine Richter,lithographed,H. C. Richter
+V,6,Hullmandel & Walton,printed,Hullmandel & Walton
+V,7,John Gould,drew,J. Gould
+V,7,John Gould,lithographed,J. Gould
+V,7,Henry Constantine Richter,drew,H. C. Richter
+V,7,Henry Constantine Richter,lithographed,H. C. Richter
+V,7,Walter,printed,Walter
+V,8,John Gould,drew,J. Gould
+V,8,John Gould,lithographed,J. Gould
+V,8,Henry Constantine Richter,drew,H. C. Richter
+V,8,Henry Constantine Richter,lithographed,H. C. Richter
+V,8,Walter,printed,Walter
+V,9,John Gould,drew,J. Gould
+V,9,John Gould,lithographed,J. Gould
+V,9,Henry Constantine Richter,drew,H. C. Richter
+V,9,Henry Constantine Richter,lithographed,H. C. Richter
+V,9,Walter,printed,Walter
+V,10,John Gould,drew,J. Gould
+V,10,John Gould,lithographed,J. Gould
+V,10,Henry Constantine Richter,drew,H. C. Richter
+V,10,Henry Constantine Richter,lithographed,H. C. Richter
+V,10,Walter,printed,Walter
+V,11,John Gould,drew,J. Gould
+V,11,John Gould,lithographed,J. Gould
+V,11,Henry Constantine Richter,drew,H. C. Richter
+V,11,Henry Constantine Richter,lithographed,H. C. Richter
+V,11,Walter,printed,Walter
+V,12,John Gould,drew,J. Gould
+V,12,John Gould,lithographed,J. Gould
+V,12,William Matthew Hart,drew,W. Hart
+V,12,William Matthew Hart,lithographed,W. Hart
+V,12,Walter,printed,Walter
+V,13,John Gould,drew,J. Gould
+V,13,John Gould,lithographed,J. Gould
+V,13,Henry Constantine Richter,drew,H. C. Richter
+V,13,Henry Constantine Richter,lithographed,H. C. Richter
+V,13,Walter,printed,Walter
+V,14,John Gould,drew,J. Gould
+V,14,John Gould,lithographed,J. Gould
+V,14,Henry Constantine Richter,drew,H. C. Richter
+V,14,Henry Constantine Richter,lithographed,H. C. Richter
+V,14,Walter,printed,Walter
+V,15,John Gould,drew,J. Gould
+V,15,John Gould,lithographed,J. Gould
+V,15,Henry Constantine Richter,drew,H. C. Richter
+V,15,Henry Constantine Richter,lithographed,H. C. Richter
+V,15,Walter,printed,Walter
+V,16,John Gould,drew,J. Gould
+V,16,John Gould,lithographed,J. Gould
+V,16,Henry Constantine Richter,drew,H. C. Richter
+V,16,Henry Constantine Richter,lithographed,H. C. Richter
+V,16,Hullmandel & Walton,printed,Hullmandel & Walton
+V,17,John Gould,drew,J. Gould
+V,17,John Gould,lithographed,J. Gould
+V,17,William Matthew Hart,drew,W. Hart
+V,17,William Matthew Hart,lithographed,W. Hart
+V,17,Walter,printed,Walter
+V,18,John Gould,drew,J. Gould
+V,18,John Gould,lithographed,J. Gould
+V,18,Henry Constantine Richter,drew,H. C. Richter
+V,18,Henry Constantine Richter,lithographed,H. C. Richter
+V,18,Hullmandel & Walton,printed,Hullmandel & Walton
+V,19,John Gould,drew,J. Gould
+V,19,John Gould,lithographed,J. Gould
+V,19,Henry Constantine Richter,drew,H. C. Richter
+V,19,Henry Constantine Richter,lithographed,H. C. Richter
+V,19,Hullmandel & Walton,printed,Hullmandel & Walton
+V,20,John Gould,drew,J. Gould
+V,20,John Gould,lithographed,J. Gould
+V,20,Henry Constantine Richter,drew,H. C. Richter
+V,20,Henry Constantine Richter,lithographed,H. C. Richter
+V,20,Hullmandel & Walton,printed,Hullmandel & Walton
+V,21,John Gould,drew,J. Gould
+V,21,John Gould,lithographed,J. Gould
+V,21,Henry Constantine Richter,drew,H. C. Richter
+V,21,Henry Constantine Richter,lithographed,H. C. Richter
+V,21,Hullmandel & Walton,printed,Hullmandel & Walton
+V,22,John Gould,drew,J. Gould
+V,22,John Gould,lithographed,J. Gould
+V,22,Henry Constantine Richter,drew,H. C. Richter
+V,22,Henry Constantine Richter,lithographed,H. C. Richter
+V,22,Hullmandel & Walton,printed,Hullmandel & Walton
+V,23,John Gould,drew,J. Gould
+V,23,John Gould,lithographed,J. Gould
+V,23,Henry Constantine Richter,drew,H. C. Richter
+V,23,Henry Constantine Richter,lithographed,H. C. Richter
+V,23,Walter,printed,Walter
+V,24,John Gould,drew,J. Gould
+V,24,John Gould,lithographed,J. Gould
+V,24,Henry Constantine Richter,drew,H. C. Richter
+V,24,Henry Constantine Richter,lithographed,H. C. Richter
+V,24,Hullmandel & Walton,printed,Hullmandel & Walton
+V,25,John Gould,drew,J. Gould
+V,25,John Gould,lithographed,J. Gould
+V,25,Henry Constantine Richter,drew,H. C. Richter
+V,25,Henry Constantine Richter,lithographed,H. C. Richter
+V,25,Hullmandel & Walton,printed,Hullmandel & Walton
+V,26,John Gould,drew,J. Gould
+V,26,John Gould,lithographed,J. Gould
+V,26,Henry Constantine Richter,drew,H. C. Richter
+V,26,Henry Constantine Richter,lithographed,H. C. Richter
+V,26,Hullmandel & Walton,printed,Hullmandel & Walton
+V,27,William Matthew Hart,drew,W. Hart
+V,27,William Matthew Hart,lithographed,W. Hart
+V,27,Walter,printed,Walter
+V,28,John Gould,drew,J. Gould
+V,28,John Gould,lithographed,J. Gould
+V,28,William Matthew Hart,drew,W. Hart
+V,28,William Matthew Hart,lithographed,W. Hart
+V,28,Walter,printed,Walter
+V,29,John Gould,drew,J. Gould
+V,29,John Gould,lithographed,J. Gould
+V,29,William Matthew Hart,drew,W. Hart
+V,29,William Matthew Hart,lithographed,W. Hart
+V,29,Walter,printed,Walter
+V,30,John Gould,drew,J. Gould
+V,30,John Gould,lithographed,J. Gould
+V,30,William Matthew Hart,drew,W. Hart
+V,30,William Matthew Hart,lithographed,W. Hart
+V,30,Walter,printed,Walter
+V,31,John Gould,drew,J. Gould
+V,31,John Gould,lithographed,J. Gould
+V,31,William Matthew Hart,drew,W. Hart
+V,31,William Matthew Hart,lithographed,W. Hart
+V,31,Walter,printed,Walter
+V,32,John Gould,drew,J. Gould
+V,32,John Gould,lithographed,J. Gould
+V,32,William Matthew Hart,drew,W. Hart
+V,32,William Matthew Hart,lithographed,W. Hart
+V,32,Walter,printed,Walter
+V,33,John Gould,drew,J. Gould
+V,33,John Gould,lithographed,J. Gould
+V,33,William Matthew Hart,drew,W. Hart
+V,33,William Matthew Hart,lithographed,W. Hart
+V,33,Walter,printed,Walter
+V,34,John Gould,drew,J. Gould
+V,34,John Gould,lithographed,J. Gould
+V,34,Henry Constantine Richter,drew,H. C. Richter
+V,34,Henry Constantine Richter,lithographed,H. C. Richter
+V,34,Hullmandel & Walton,printed,Hullmandel & Walton
+V,35,John Gould,drew,J. Gould
+V,35,John Gould,lithographed,J. Gould
+V,35,Henry Constantine Richter,drew,H. C. Richter
+V,35,Henry Constantine Richter,lithographed,H. C. Richter
+V,35,Hullmandel & Walton,printed,Hullmandel & Walton
+V,36,John Gould,drew,J. Gould
+V,36,John Gould,lithographed,J. Gould
+V,36,Henry Constantine Richter,drew,H. C. Richter
+V,36,Henry Constantine Richter,lithographed,H. C. Richter
+V,36,Hullmandel & Walton,printed,Hullmandel & Walton
+V,37,John Gould,drew,J. Gould
+V,37,John Gould,lithographed,J. Gould
+V,37,Henry Constantine Richter,drew,H. C. Richter
+V,37,Henry Constantine Richter,lithographed,H. C. Richter
+V,37,Hullmandel & Walton,printed,Hullmandel & Walton
+V,38,John Gould,drew,J. Gould
+V,38,John Gould,lithographed,J. Gould
+V,38,William Matthew Hart,drew,W. Hart
+V,38,William Matthew Hart,lithographed,W. Hart
+V,38,Walter,printed,Walter
+V,39,John Gould,drew,J. Gould
+V,39,John Gould,lithographed,J. Gould
+V,39,William Matthew Hart,drew,W. Hart
+V,39,William Matthew Hart,lithographed,W. Hart
+V,39,Walter,printed,Walter
+V,40,John Gould,drew,J. Gould
+V,40,John Gould,lithographed,J. Gould
+V,40,William Matthew Hart,drew,W. Hart
+V,40,William Matthew Hart,lithographed,W. Hart
+V,40,Walter,printed,Walter
+V,41,John Gould,drew,J. Gould
+V,41,John Gould,lithographed,J. Gould
+V,41,Henry Constantine Richter,drew,H. C. Richter
+V,41,Henry Constantine Richter,lithographed,H. C. Richter
+V,41,Hullmandel & Walton,printed,Hullmandel & Walton
+V,42,John Gould,drew,J. Gould
+V,42,John Gould,lithographed,J. Gould
+V,42,William Matthew Hart,drew,W. Hart
+V,42,William Matthew Hart,lithographed,W. Hart
+V,42,Walter,printed,Walter
+V,43,John Gould,drew,J. Gould
+V,43,John Gould,lithographed,J. Gould
+V,43,William Matthew Hart,drew,W. Hart
+V,43,William Matthew Hart,lithographed,W. Hart
+V,43,Walter,printed,Walter
+V,44,John Gould,drew,J. Gould
+V,44,John Gould,lithographed,J. Gould
+V,44,Henry Constantine Richter,drew,H. C. Richter
+V,44,Henry Constantine Richter,lithographed,H. C. Richter
+V,44,Walter,printed,Walter
+V,45,John Gould,drew,J. Gould
+V,45,John Gould,lithographed,J. Gould
+V,45,Henry Constantine Richter,drew,H. C. Richter
+V,45,Henry Constantine Richter,lithographed,H. C. Richter
+V,45,Hullmandel & Walton,printed,Hullmandel & Walton
+V,46,John Gould,drew,J. Gould
+V,46,John Gould,lithographed,J. Gould
+V,46,Henry Constantine Richter,drew,H. C. Richter
+V,46,Henry Constantine Richter,lithographed,H. C. Richter
+V,46,Walter & Cohn,printed,Walter & Cohn
+V,47,John Gould,drew,J. Gould
+V,47,John Gould,lithographed,J. Gould
+V,47,Henry Constantine Richter,drew,H. C. Richter
+V,47,Henry Constantine Richter,lithographed,H. C. Richter
+V,47,Hullmandel & Walton,printed,Hullmandel & Walton
+V,48,John Gould,drew,J. Gould
+V,48,John Gould,lithographed,J. Gould
+V,48,Henry Constantine Richter,drew,H. C. Richter
+V,48,Henry Constantine Richter,lithographed,H. C. Richter
+V,48,Hullmandel & Walton,printed,Hullmandel & Walton
+V,49,John Gould,drew,J. Gould
+V,49,John Gould,lithographed,J. Gould
+V,49,Henry Constantine Richter,drew,H. C. Richter
+V,49,Henry Constantine Richter,lithographed,H. C. Richter
+V,49,Hullmandel & Walton,printed,Hullmandel & Walton
+V,50,John Gould,drew,J. Gould
+V,50,John Gould,lithographed,J. Gould
+V,50,Henry Constantine Richter,drew,H. C. Richter
+V,50,Henry Constantine Richter,lithographed,H. C. Richter
+V,50,Hullmandel & Walton,printed,Hullmandel & Walton
+V,51,John Gould,drew,J. Gould
+V,51,John Gould,lithographed,J. Gould
+V,51,Henry Constantine Richter,drew,H. C. Richter
+V,51,Henry Constantine Richter,lithographed,H. C. Richter
+V,51,Hullmandel & Walton,printed,Hullmandel & Walton
+V,52,John Gould,drew,J. Gould
+V,52,John Gould,lithographed,J. Gould
+V,52,Henry Constantine Richter,drew,H. C. Richter
+V,52,Henry Constantine Richter,lithographed,H. C. Richter
+V,52,Walter & Cohn,printed,Walter & Cohn
+V,53,John Gould,drew,J. Gould
+V,53,John Gould,lithographed,J. Gould
+V,53,Henry Constantine Richter,drew,H. C. Richter
+V,53,Henry Constantine Richter,lithographed,H. C. Richter
+V,53,Hullmandel & Walton,printed,Hullmandel & Walton
+V,54,John Gould,drew,J. Gould
+V,54,John Gould,lithographed,J. Gould
+V,54,Henry Constantine Richter,drew,H. C. Richter
+V,54,Henry Constantine Richter,lithographed,H. C. Richter
+V,54,Hullmandel & Walton,printed,Hullmandel & Walton
+V,55,John Gould,drew,J. Gould
+V,55,John Gould,lithographed,J. Gould
+V,55,Henry Constantine Richter,drew,H. C. Richter
+V,55,Henry Constantine Richter,lithographed,H. C. Richter
+V,55,Walter & Cohn,printed,Walter & Cohn
+V,56,John Gould,drew,J. Gould
+V,56,John Gould,lithographed,J. Gould
+V,56,Henry Constantine Richter,drew,H. C. Richter
+V,56,Henry Constantine Richter,lithographed,H. C. Richter
+V,56,Walter & Cohn,printed,Walter & Cohn
+V,57,John Gould,drew,J. Gould
+V,57,John Gould,lithographed,J. Gould
+V,57,Henry Constantine Richter,drew,H. C. Richter
+V,57,Henry Constantine Richter,lithographed,H. C. Richter
+V,57,Walter & Cohn,printed,Walter & Cohn
+V,58,John Gould,drew,J. Gould
+V,58,John Gould,lithographed,J. Gould
+V,58,Henry Constantine Richter,drew,H. C. Richter
+V,58,Henry Constantine Richter,lithographed,H. C. Richter
+V,58,Walter & Cohn,printed,Walter & Cohn
+V,59,John Gould,drew,J. Gould
+V,59,John Gould,lithographed,J. Gould
+V,59,Henry Constantine Richter,drew,H. C. Richter
+V,59,Henry Constantine Richter,lithographed,H. C. Richter
+V,59,Hullmandel & Walton,printed,Hullmandel & Walton
+V,60,John Gould,drew,J. Gould
+V,60,John Gould,lithographed,J. Gould
+V,60,William Matthew Hart,drew,W. Hart
+V,60,William Matthew Hart,lithographed,W. Hart
+V,60,Walter,printed,Walter
+V,61,John Gould,drew,J. Gould
+V,61,John Gould,lithographed,J. Gould
+V,61,William Matthew Hart,drew,W. Hart
+V,61,William Matthew Hart,lithographed,W. Hart
+V,61,Walter,printed,Walter
+V,62,John Gould,drew,J. Gould
+V,62,John Gould,lithographed,J. Gould
+V,62,William Matthew Hart,drew,W. Hart
+V,62,William Matthew Hart,lithographed,W. Hart
+V,62,Walter,printed,Walter
+V,63,John Gould,drew,J. Gould
+V,63,John Gould,lithographed,J. Gould
+V,63,William Matthew Hart,drew,W. Hart
+V,63,William Matthew Hart,lithographed,W. Hart
+V,63,Walter,printed,Walter
+V,64,John Gould,drew,J. Gould
+V,64,John Gould,lithographed,J. Gould
+V,64,Henry Constantine Richter,drew,H. C. Richter
+V,64,Henry Constantine Richter,lithographed,H. C. Richter
+V,64,Walter,printed,Walter
+V,65,John Gould,drew,J. Gould
+V,65,John Gould,lithographed,J. Gould
+V,65,Henry Constantine Richter,drew,H. C. Richter
+V,65,Henry Constantine Richter,lithographed,H. C. Richter
+V,65,Walter,printed,Walter
+V,66,John Gould,drew,J. Gould
+V,66,John Gould,lithographed,J. Gould
+V,66,William Matthew Hart,drew,W. Hart
+V,66,William Matthew Hart,lithographed,W. Hart
+V,66,Walter,printed,Walter
+V,67,John Gould,drew,J. Gould
+V,67,John Gould,lithographed,J. Gould
+V,67,William Matthew Hart,drew,W. Hart
+V,67,William Matthew Hart,lithographed,W. Hart
+V,67,Walter,printed,Walter
+V,68,John Gould,drew,J. Gould
+V,68,John Gould,lithographed,J. Gould
+V,68,William Matthew Hart,drew,W. Hart
+V,68,William Matthew Hart,lithographed,W. Hart
+V,68,Walter,printed,Walter
+V,69,John Gould,drew,J. Gould
+V,69,John Gould,lithographed,J. Gould
+V,69,Henry Constantine Richter,drew,H. C. Richter
+V,69,Henry Constantine Richter,lithographed,H. C. Richter
+V,69,Walter,printed,Walter
+V,70,John Gould,drew,J. Gould
+V,70,John Gould,lithographed,J. Gould
+V,70,Henry Constantine Richter,drew,H. C. Richter
+V,70,Henry Constantine Richter,lithographed,H. C. Richter
+V,70,Walter,printed,Walter
+V,71,John Gould,drew,J. Gould
+V,71,John Gould,lithographed,J. Gould
+V,71,William Matthew Hart,drew,W. Hart
+V,71,William Matthew Hart,lithographed,W. Hart
+V,71,Walter,printed,Walter
+V,72,John Gould,drew,J. Gould
+V,72,John Gould,lithographed,J. Gould
+V,72,William Matthew Hart,drew,W. Hart
+V,72,William Matthew Hart,lithographed,W. Hart
+V,72,Walter,printed,Walter
+V,73,John Gould,drew,J. Gould
+V,73,John Gould,lithographed,J. Gould
+V,73,William Matthew Hart,drew,W. Hart
+V,73,William Matthew Hart,lithographed,W. Hart
+V,73,Walter,printed,Walter
+V,74,John Gould,drew,J. Gould
+V,74,John Gould,lithographed,J. Gould
+V,74,William Matthew Hart,drew,W. Hart
+V,74,William Matthew Hart,lithographed,W. Hart
+V,74,Walter,printed,Walter
+V,75,John Gould,drew,J. Gould
+V,75,John Gould,lithographed,J. Gould
+V,75,William Matthew Hart,drew,W. Hart
+V,75,William Matthew Hart,lithographed,W. Hart
+V,75,Walter,printed,Walter
+V,76,John Gould,drew,J. Gould
+V,76,John Gould,lithographed,J. Gould
+V,76,Henry Constantine Richter,drew,H. C. Richter
+V,76,Henry Constantine Richter,lithographed,H. C. Richter
+V,76,Hullmandel & Walton,printed,Hullmandel & Walton
+V,77,John Gould,drew,J. Gould
+V,77,John Gould,lithographed,J. Gould
+V,77,Henry Constantine Richter,drew,H. C. Richter
+V,77,Henry Constantine Richter,lithographed,H. C. Richter
+V,77,Walter & Cohn,printed,Walter & Cohn
+V,78,John Gould,drew,J. Gould
+V,78,John Gould,lithographed,J. Gould
+V,78,Henry Constantine Richter,drew,H. C. Richter
+V,78,Henry Constantine Richter,lithographed,H. C. Richter
+V,78,Walter & Cohn,printed,Walter & Cohn
+V,79,John Gould,drew,J. Gould
+V,79,John Gould,lithographed,J. Gould
+V,79,Henry Constantine Richter,drew,H. C. Richter
+V,79,Henry Constantine Richter,lithographed,H. C. Richter
+V,79,Hullmandel & Walton,printed,Hullmandel & Walton
+V,80,John Gould,drew,J. Gould
+V,80,John Gould,lithographed,J. Gould
+V,80,Henry Constantine Richter,drew,H. C. Richter
+V,80,Henry Constantine Richter,lithographed,H. C. Richter
+V,80,Hullmandel & Walton,printed,Hullmandel & Walton
+V,81,John Gould,drew,J. Gould
+V,81,John Gould,lithographed,J. Gould
+V,81,William Matthew Hart,drew,W. Hart
+V,81,William Matthew Hart,lithographed,W. Hart
+V,81,Walter,printed,Walter
+V,82,John Gould,drew,J. Gould
+V,82,John Gould,lithographed,J. Gould
+V,82,William Matthew Hart,drew,W. Hart
+V,82,William Matthew Hart,lithographed,W. Hart
+V,82,Walter,printed,Walter
+V,83,John Gould,drew,J. Gould
+V,83,John Gould,lithographed,J. Gould
+V,83,William Matthew Hart,drew,W. Hart
+V,83,William Matthew Hart,lithographed,W. Hart
+V,83,Walter,printed,Walter
+VI,1,John Gould,drew,J. Gould
+VI,1,John Gould,lithographed,J. Gould
+VI,1,William Matthew Hart,drew,W. Hart
+VI,1,William Matthew Hart,lithographed,W. Hart
+VI,1,Walter,printed,Walter
+VI,2,John Gould,drew,J. Gould
+VI,2,John Gould,lithographed,J. Gould
+VI,2,Henry Constantine Richter,drew,H. C. Richter
+VI,2,Henry Constantine Richter,lithographed,H. C. Richter
+VI,2,Walter,printed,Walter
+VI,3,John Gould,drew,J. Gould
+VI,3,John Gould,lithographed,J. Gould
+VI,3,Henry Constantine Richter,drew,H. C. Richter
+VI,3,Henry Constantine Richter,lithographed,H. C. Richter
+VI,3,Walter,printed,Walter
+VI,4,John Gould,drew,J. Gould
+VI,4,John Gould,lithographed,J. Gould
+VI,4,Henry Constantine Richter,drew,H. C. Richter
+VI,4,Henry Constantine Richter,lithographed,H. C. Richter
+VI,4,Hullmandel & Walton,printed,Hullmandel & Walton
+VI,5,John Gould,drew,J. Gould
+VI,5,John Gould,lithographed,J. Gould
+VI,5,Henry Constantine Richter,drew,H. C. Richter
+VI,5,Henry Constantine Richter,lithographed,H. C. Richter
+VI,5,Hullmandel & Walton,printed,Hullmandel & Walton
+VI,6,John Gould,drew,J. Gould
+VI,6,John Gould,lithographed,J. Gould
+VI,6,Henry Constantine Richter,drew,H. C. Richter
+VI,6,Henry Constantine Richter,lithographed,H. C. Richter
+VI,6,Hullmandel & Walton,printed,Hullmandel & Walton
+VI,7,John Gould,drew,J. Gould
+VI,7,John Gould,lithographed,J. Gould
+VI,7,Henry Constantine Richter,drew,H. C. Richter
+VI,7,Henry Constantine Richter,lithographed,H. C. Richter
+VI,7,Hullmandel & Walton,printed,Hullmandel & Walton
+VI,8,John Gould,drew,J. Gould
+VI,8,John Gould,lithographed,J. Gould
+VI,8,Henry Constantine Richter,drew,H. C. Richter
+VI,8,Henry Constantine Richter,lithographed,H. C. Richter
+VI,8,Hullmandel & Walton,printed,Hullmandel & Walton
+VI,9,John Gould,drew,J. Gould
+VI,9,John Gould,lithographed,J. Gould
+VI,9,Henry Constantine Richter,drew,H. C. Richter
+VI,9,Henry Constantine Richter,lithographed,H. C. Richter
+VI,9,Hullmandel & Walton,printed,Hullmandel & Walton
+VI,10,John Gould,drew,J. Gould
+VI,10,John Gould,lithographed,J. Gould
+VI,10,Henry Constantine Richter,drew,H. C. Richter
+VI,10,Henry Constantine Richter,lithographed,H. C. Richter
+VI,10,Hullmandel & Walton,printed,Hullmandel & Walton
+VI,11,John Gould,drew,J. Gould
+VI,11,John Gould,lithographed,J. Gould
+VI,11,Henry Constantine Richter,drew,H. C. Richter
+VI,11,Henry Constantine Richter,lithographed,H. C. Richter
+VI,11,Hullmandel & Walton,printed,Hullmandel & Walton
+VI,12,John Gould,drew,J. Gould
+VI,12,John Gould,lithographed,J. Gould
+VI,12,Henry Constantine Richter,drew,H. C. Richter
+VI,12,Henry Constantine Richter,lithographed,H. C. Richter
+VI,12,Walter & Cohn,printed,Walter & Cohn
+VI,13,John Gould,drew,J. Gould
+VI,13,John Gould,lithographed,J. Gould
+VI,13,Henry Constantine Richter,drew,H. C. Richter
+VI,13,Henry Constantine Richter,lithographed,H. C. Richter
+VI,13,Walter & Cohn,printed,Walter & Cohn
+VI,14,John Gould,drew,J. Gould
+VI,14,John Gould,lithographed,J. Gould
+VI,14,Henry Constantine Richter,drew,H. C. Richter
+VI,14,Henry Constantine Richter,lithographed,H. C. Richter
+VI,14,Walter & Cohn,printed,Walter & Cohn
+VI,15,John Gould,drew,J. Gould
+VI,15,John Gould,lithographed,J. Gould
+VI,15,Henry Constantine Richter,drew,H. C. Richter
+VI,15,Henry Constantine Richter,lithographed,H. C. Richter
+VI,15,Walter & Cohn,printed,Walter & Cohn
+VI,16,John Gould,drew,J. Gould
+VI,16,John Gould,lithographed,J. Gould
+VI,16,Henry Constantine Richter,drew,H. C. Richter
+VI,16,Henry Constantine Richter,lithographed,H. C. Richter
+VI,16,Walter & Cohn,printed,Walter & Cohn
+VI,17,John Gould,drew,J. Gould
+VI,17,John Gould,lithographed,J. Gould
+VI,17,Henry Constantine Richter,drew,H. C. Richter
+VI,17,Henry Constantine Richter,lithographed,H. C. Richter
+VI,17,Hullmandel & Walton,printed,Hullmandel & Walton
+VI,18,John Gould,drew,J. Gould
+VI,18,John Gould,lithographed,J. Gould
+VI,18,William Matthew Hart,drew,W. Hart
+VI,18,William Matthew Hart,lithographed,W. Hart
+VI,18,Walter,printed,Walter
+VI,19,John Gould,drew,J. Gould
+VI,19,John Gould,lithographed,J. Gould
+VI,19,William Matthew Hart,drew,W. Hart
+VI,19,William Matthew Hart,lithographed,W. Hart
+VI,19,Walter,printed,Walter
+VI,20,John Gould,drew,J. Gould
+VI,20,John Gould,lithographed,J. Gould
+VI,20,William Matthew Hart,drew,W. Hart
+VI,20,William Matthew Hart,lithographed,W. Hart
+VI,20,Walter,printed,Walter
+VI,21,John Gould,drew,J. Gould
+VI,21,John Gould,lithographed,J. Gould
+VI,21,William Matthew Hart,drew,W. Hart
+VI,21,William Matthew Hart,lithographed,W. Hart
+VI,21,Walter,printed,Walter
+VI,22,John Gould,drew,J. Gould
+VI,22,John Gould,lithographed,J. Gould
+VI,22,William Matthew Hart,drew,W. Hart
+VI,22,William Matthew Hart,lithographed,W. Hart
+VI,22,Walter,printed,Walter
+VI,23,John Gould,drew,J. Gould
+VI,23,John Gould,lithographed,J. Gould
+VI,23,William Matthew Hart,drew,W. Hart
+VI,23,William Matthew Hart,lithographed,W. Hart
+VI,23,Walter,printed,Walter
+VI,24,John Gould,drew,J. Gould
+VI,24,John Gould,lithographed,J. Gould
+VI,24,William Matthew Hart,drew,W. Hart
+VI,24,William Matthew Hart,lithographed,W. Hart
+VI,24,Walter,printed,Walter
+VI,25,John Gould,drew,J. Gould
+VI,25,John Gould,lithographed,J. Gould
+VI,25,William Matthew Hart,drew,W. Hart
+VI,25,William Matthew Hart,lithographed,W. Hart
+VI,25,Walter,printed,Walter
+VI,26,John Gould,drew,J. Gould
+VI,26,John Gould,lithographed,J. Gould
+VI,26,William Matthew Hart,drew,W. Hart
+VI,26,William Matthew Hart,lithographed,W. Hart
+VI,26,Walter,printed,Walter
+VI,27,William Matthew Hart,drew,W. Hart
+VI,27,William Matthew Hart,lithographed,W. Hart
+VI,27,Walter,printed,Walter
+VI,28,William Matthew Hart,drew,W. Hart
+VI,28,William Matthew Hart,lithographed,W. Hart
+VI,28,Walter,printed,Walter
+VI,29,William Matthew Hart,drew,W. Hart
+VI,29,William Matthew Hart,lithographed,W. Hart
+VI,29,Walter,printed,Walter
+VI,30,William Matthew Hart,drew,W. Hart
+VI,30,William Matthew Hart,lithographed,W. Hart
+VI,30,Walter,printed,Walter
+VI,31,William Matthew Hart,drew,W. Hart
+VI,31,William Matthew Hart,lithographed,W. Hart
+VI,31,Walter,printed,Walter
+VI,32,William Matthew Hart,drew,W. Hart
+VI,32,William Matthew Hart,lithographed,W. Hart
+VI,32,Walter,printed,Walter
+VI,33,John Gould,drew,J. Gould
+VI,33,John Gould,lithographed,J. Gould
+VI,33,William Matthew Hart,drew,W. Hart
+VI,33,William Matthew Hart,lithographed,W. Hart
+VI,33,Walter,printed,Walter
+VI,34,William Matthew Hart,drew,W. Hart
+VI,34,William Matthew Hart,lithographed,W. Hart
+VI,34,Walter,printed,Walter
+VI,35,John Gould,drew,J. Gould
+VI,35,John Gould,lithographed,J. Gould
+VI,35,Henry Constantine Richter,drew,H. C. Richter
+VI,35,Henry Constantine Richter,lithographed,H. C. Richter
+VI,35,Walter & Cohn,printed,Walter & Cohn
+VI,36,John Gould,drew,J. Gould
+VI,36,John Gould,lithographed,J. Gould
+VI,36,Henry Constantine Richter,drew,H. C. Richter
+VI,36,Henry Constantine Richter,lithographed,H. C. Richter
+VI,36,Hullmandel & Walton,printed,Hullmandel & Walton
+VI,37,John Gould,drew,J. Gould
+VI,37,John Gould,lithographed,J. Gould
+VI,37,William Matthew Hart,drew,W. Hart
+VI,37,William Matthew Hart,lithographed,W. Hart
+VI,37,Walter,printed,Walter
+VI,38,John Gould,drew,J. Gould
+VI,38,John Gould,lithographed,J. Gould
+VI,38,Henry Constantine Richter,drew,H. C. Richter
+VI,38,Henry Constantine Richter,lithographed,H. C. Richter
+VI,38,Hullmandel & Walton,printed,Hullmandel & Walton
+VI,39,John Gould,drew,J. Gould
+VI,39,John Gould,lithographed,J. Gould
+VI,39,Henry Constantine Richter,drew,H. C. Richter
+VI,39,Henry Constantine Richter,lithographed,H. C. Richter
+VI,39,Walter,printed,Walter
+VI,40,John Gould,drew,J. Gould
+VI,40,John Gould,lithographed,J. Gould
+VI,40,Henry Constantine Richter,drew,H. C. Richter
+VI,40,Henry Constantine Richter,lithographed,H. C. Richter
+VI,40,Walter,printed,Walter
+VI,41,John Gould,drew,J. Gould
+VI,41,John Gould,lithographed,J. Gould
+VI,41,Henry Constantine Richter,drew,H. C. Richter
+VI,41,Henry Constantine Richter,lithographed,H. C. Richter
+VI,41,Walter,printed,Walter
+VI,42,John Gould,drew,J. Gould
+VI,42,John Gould,lithographed,J. Gould
+VI,42,Henry Constantine Richter,drew,H. C. Richter
+VI,42,Henry Constantine Richter,lithographed,H. C. Richter
+VI,42,Hullmandel & Walton,printed,Hullmandel & Walton
+VI,43,John Gould,drew,J. Gould
+VI,43,John Gould,lithographed,J. Gould
+VI,43,Henry Constantine Richter,drew,H. C. Richter
+VI,43,Henry Constantine Richter,lithographed,H. C. Richter
+VI,43,Hullmandel & Walton,printed,Hullmandel & Walton
+VI,44,John Gould,drew,J. Gould
+VI,44,John Gould,lithographed,J. Gould
+VI,44,William Matthew Hart,drew,W. Hart
+VI,44,William Matthew Hart,lithographed,W. Hart
+VI,44,Walter,printed,Walter
+VI,45,John Gould,drew,J. Gould
+VI,45,John Gould,lithographed,J. Gould
+VI,45,William Matthew Hart,drew,W. Hart
+VI,45,William Matthew Hart,lithographed,W. Hart
+VI,45,Walter,printed,Walter
+VI,46,John Gould,drew,J. Gould
+VI,46,John Gould,lithographed,J. Gould
+VI,46,William Matthew Hart,drew,W. Hart
+VI,46,William Matthew Hart,lithographed,W. Hart
+VI,46,Walter,printed,Walter
+VI,47,John Gould,drew,J. Gould
+VI,47,John Gould,lithographed,J. Gould
+VI,47,William Matthew Hart,drew,W. Hart
+VI,47,William Matthew Hart,lithographed,W. Hart
+VI,47,Walter,printed,Walter
+VI,48,William Matthew Hart,drew,W. Hart
+VI,48,William Matthew Hart,lithographed,W. Hart
+VI,48,Walter,printed,Walter
+VI,49,John Gould,drew,J. Gould
+VI,49,John Gould,lithographed,J. Gould
+VI,49,Henry Constantine Richter,drew,H. C. Richter
+VI,49,Henry Constantine Richter,lithographed,H. C. Richter
+VI,49,Walter & Cohn,printed,Walter & Cohn
+VI,50,John Gould,drew,J. Gould
+VI,50,John Gould,lithographed,J. Gould
+VI,50,Henry Constantine Richter,drew,H. C. Richter
+VI,50,Henry Constantine Richter,lithographed,H. C. Richter
+VI,50,Walter,printed,Walter
+VI,51,John Gould,drew,J. Gould
+VI,51,John Gould,lithographed,J. Gould
+VI,51,Henry Constantine Richter,drew,H. C. Richter
+VI,51,Henry Constantine Richter,lithographed,H. C. Richter
+VI,51,Walter,printed,Walter
+VI,52,John Gould,drew,J. Gould
+VI,52,John Gould,lithographed,J. Gould
+VI,52,Henry Constantine Richter,drew,H. C. Richter
+VI,52,Henry Constantine Richter,lithographed,H. C. Richter
+VI,52,Walter,printed,Walter
+VI,53,John Gould,drew,J. Gould
+VI,53,John Gould,lithographed,J. Gould
+VI,53,Henry Constantine Richter,drew,H. C. Richter
+VI,53,Henry Constantine Richter,lithographed,H. C. Richter
+VI,53,Walter,printed,Walter
+VI,54,John Gould,drew,J. Gould
+VI,54,John Gould,lithographed,J. Gould
+VI,54,William Matthew Hart,drew,W. Hart
+VI,54,William Matthew Hart,lithographed,W. Hart
+VI,54,Walter,printed,Walter
+VI,55,John Gould,drew,J. Gould
+VI,55,John Gould,lithographed,J. Gould
+VI,55,Henry Constantine Richter,drew,H. C. Richter
+VI,55,Henry Constantine Richter,lithographed,H. C. Richter
+VI,55,Walter,printed,Walter
+VI,56,John Gould,drew,J. Gould
+VI,56,John Gould,lithographed,J. Gould
+VI,56,William Matthew Hart,drew,W. Hart
+VI,56,William Matthew Hart,lithographed,W. Hart
+VI,56,Walter,printed,Walter
+VI,57,John Gould,drew,J. Gould
+VI,57,John Gould,lithographed,J. Gould
+VI,57,Henry Constantine Richter,drew,H. C. Richter
+VI,57,Henry Constantine Richter,lithographed,H. C. Richter
+VI,57,Hullmandel & Walton,printed,Hullmandel & Walton
+VI,58,John Gould,drew,J. Gould
+VI,58,John Gould,lithographed,J. Gould
+VI,58,Henry Constantine Richter,drew,H. C. Richter
+VI,58,Henry Constantine Richter,lithographed,H. C. Richter
+VI,58,Hullmandel & Walton,printed,Hullmandel & Walton
+VI,59,John Gould,drew,J. Gould
+VI,59,John Gould,lithographed,J. Gould
+VI,59,Henry Constantine Richter,drew,H. C. Richter
+VI,59,Henry Constantine Richter,lithographed,H. C. Richter
+VI,59,Walter,printed,Walter
+VI,60,John Gould,drew,J. Gould
+VI,60,John Gould,lithographed,J. Gould
+VI,60,Henry Constantine Richter,drew,H. C. Richter
+VI,60,Henry Constantine Richter,lithographed,H. C. Richter
+VI,60,Walter,printed,Walter
+VI,61,John Gould,drew,J. Gould
+VI,61,John Gould,lithographed,J. Gould
+VI,61,Henry Constantine Richter,drew,H. C. Richter
+VI,61,Henry Constantine Richter,lithographed,H. C. Richter
+VI,61,Hullmandel & Walton,printed,Hullmandel & Walton
+VI,62,John Gould,drew,J. Gould
+VI,62,John Gould,lithographed,J. Gould
+VI,62,Henry Constantine Richter,drew,H. C. Richter
+VI,62,Henry Constantine Richter,lithographed,H. C. Richter
+VI,62,Hullmandel & Walton,printed,Hullmandel & Walton
+VI,63,John Gould,drew,J. Gould
+VI,63,John Gould,lithographed,J. Gould
+VI,63,Henry Constantine Richter,drew,H. C. Richter
+VI,63,Henry Constantine Richter,lithographed,H. C. Richter
+VI,63,Hullmandel & Walton,printed,Hullmandel & Walton
+VI,64,John Gould,drew,J. Gould
+VI,64,John Gould,lithographed,J. Gould
+VI,64,Henry Constantine Richter,drew,H. C. Richter
+VI,64,Henry Constantine Richter,lithographed,H. C. Richter
+VI,64,Hullmandel & Walton,printed,Hullmandel & Walton
+VI,65,John Gould,drew,J. Gould
+VI,65,John Gould,lithographed,J. Gould
+VI,65,Henry Constantine Richter,drew,H. C. Richter
+VI,65,Henry Constantine Richter,lithographed,H. C. Richter
+VI,65,Hullmandel & Walton,printed,Hullmandel & Walton
+VI,66,John Gould,drew,J. Gould
+VI,66,John Gould,lithographed,J. Gould
+VI,66,William Matthew Hart,drew,W. Hart
+VI,66,William Matthew Hart,lithographed,W. Hart
+VI,66,Walter,printed,Walter
+VI,67,John Gould,drew,J. Gould
+VI,67,John Gould,lithographed,J. Gould
+VI,67,Henry Constantine Richter,drew,H. C. Richter
+VI,67,Henry Constantine Richter,lithographed,H. C. Richter
+VI,67,Hullmandel & Walton,printed,Hullmandel & Walton
+VI,68,John Gould,drew,J. Gould
+VI,68,John Gould,lithographed,J. Gould
+VI,68,Henry Constantine Richter,drew,H. C. Richter
+VI,68,Henry Constantine Richter,lithographed,H. C. Richter
+VI,68,Hullmandel & Walton,printed,Hullmandel & Walton
+VI,69,John Gould,drew,J. Gould
+VI,69,John Gould,lithographed,J. Gould
+VI,69,Henry Constantine Richter,drew,H. C. Richter
+VI,69,Henry Constantine Richter,lithographed,H. C. Richter
+VI,69,Hullmandel & Walton,printed,Hullmandel & Walton
+VI,70,John Gould,drew,J. Gould
+VI,70,John Gould,lithographed,J. Gould
+VI,70,William Matthew Hart,drew,W. Hart
+VI,70,William Matthew Hart,lithographed,W. Hart
+VI,70,Walter,printed,Walter
+VI,71,John Gould,drew,J. Gould
+VI,71,John Gould,lithographed,J. Gould
+VI,71,William Matthew Hart,drew,W. Hart
+VI,71,William Matthew Hart,lithographed,W. Hart
+VI,71,Walter,printed,Walter
+VI,72,John Gould,drew,J. Gould. H. C. Richter
+VI,72,John Gould,lithographed,J. Gould. H. C. Richter
+VI,72,Henry Constantine Richter,drew,J. Gould. H. C. Richter
+VI,72,Henry Constantine Richter,lithographed,J. Gould. H. C. Richter
+VI,72,Walter & Cohn,printed,Walter & Cohn
+VI,73,John Gould,drew,J. Gould
+VI,73,John Gould,lithographed,J. Gould
+VI,73,Henry Constantine Richter,drew,H. C. Richter
+VI,73,Henry Constantine Richter,lithographed,H. C. Richter
+VI,73,Walter,printed,Walter
+VI,74,Joseph Wolf,drew,Wolf and H. C. Richter
+VI,74,Joseph Wolf,lithographed,Wolf and H. C. Richter
+VI,74,Henry Constantine Richter,drew,Wolf and H. C. Richter
+VI,74,Henry Constantine Richter,lithographed,Wolf and H. C. Richter
+VI,74,Hullmandel & Walton,printed,Hullmandel & Walton
+VI,75,John Gould,drew,J. Gould
+VI,75,John Gould,lithographed,J. Gould
+VI,75,Henry Constantine Richter,drew,H. C. Richter
+VI,75,Henry Constantine Richter,lithographed,H. C. Richter
+VI,75,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,1,John Gould,drew,J. Gould
+VII,1,John Gould,lithographed,J. Gould
+VII,1,Henry Constantine Richter,drew,H. C. Richter
+VII,1,Henry Constantine Richter,lithographed,H. C. Richter
+VII,1,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,2,John Gould,drew,J. Gould
+VII,2,John Gould,lithographed,J. Gould
+VII,2,Henry Constantine Richter,drew,H. C. Richter
+VII,2,Henry Constantine Richter,lithographed,H. C. Richter
+VII,2,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,3,John Gould,drew,J. Gould
+VII,3,John Gould,lithographed,J. Gould
+VII,3,Henry Constantine Richter,drew,H. C. Richter
+VII,3,Henry Constantine Richter,lithographed,H. C. Richter
+VII,3,Walter & Cohn,printed,Walter & Cohn
+VII,4,John Gould,drew,J. Gould
+VII,4,John Gould,lithographed,J. Gould
+VII,4,Henry Constantine Richter,drew,H. C. Richter
+VII,4,Henry Constantine Richter,lithographed,H. C. Richter
+VII,4,Walter & Cohn,printed,Walter & Cohn
+VII,5,John Gould,drew,J. Gould
+VII,5,John Gould,lithographed,J. Gould
+VII,5,Henry Constantine Richter,drew,H. C. Richter
+VII,5,Henry Constantine Richter,lithographed,H. C. Richter
+VII,5,Walter & Cohn,printed,Walter & Cohn
+VII,6,John Gould,drew,J. Gould
+VII,6,John Gould,lithographed,J. Gould
+VII,6,Henry Constantine Richter,drew,H. C. Richter
+VII,6,Henry Constantine Richter,lithographed,H. C. Richter
+VII,6,Walter,printed,Walter
+VII,7,John Gould,drew,J. Gould
+VII,7,John Gould,lithographed,J. Gould
+VII,7,Henry Constantine Richter,drew,H. C. Richter
+VII,7,Henry Constantine Richter,lithographed,H. C. Richter
+VII,7,Walter,printed,Walter
+VII,8,John Gould,drew,J. Gould
+VII,8,John Gould,lithographed,J. Gould
+VII,8,Henry Constantine Richter,drew,H. C. Richter
+VII,8,Henry Constantine Richter,lithographed,H. C. Richter
+VII,8,Walter,printed,Walter
+VII,9,John Gould,drew,J. Gould
+VII,9,John Gould,lithographed,J. Gould
+VII,9,Henry Constantine Richter,drew,H. C. Richter
+VII,9,Henry Constantine Richter,lithographed,H. C. Richter
+VII,9,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,10,John Gould,drew,J. Gould
+VII,10,John Gould,lithographed,J. Gould
+VII,10,Henry Constantine Richter,drew,H. C. Richter
+VII,10,Henry Constantine Richter,lithographed,H. C. Richter
+VII,10,Walter,printed,Walter
+VII,11,John Gould,drew,J. Gould
+VII,11,John Gould,lithographed,J. Gould
+VII,11,Henry Constantine Richter,drew,H. C. Richter
+VII,11,Henry Constantine Richter,lithographed,H. C. Richter
+VII,11,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,12,John Gould,drew,J. Gould
+VII,12,John Gould,lithographed,J. Gould
+VII,12,William Matthew Hart,drew,W. Hart
+VII,12,William Matthew Hart,lithographed,W. Hart
+VII,12,Walter,printed,Walter
+VII,13,Joseph Wolf,drew,J. Wolf and Hart
+VII,13,Joseph Wolf,lithographed,J. Wolf and Hart
+VII,13,William Matthew Hart,drew,J. Wolf and Hart
+VII,13,William Matthew Hart,lithographed,J. Wolf and Hart
+VII,13,Walter,printed,Walter
+VII,14,John Gould,drew,J. Gould
+VII,14,John Gould,lithographed,J. Gould
+VII,14,William Matthew Hart,drew,W. Hart
+VII,14,William Matthew Hart,lithographed,W. Hart
+VII,14,Walter,printed,Walter
+VII,15,Joseph Wolf,drew,J. Wolf
+VII,15,Joseph Wolf,lithographed,J. Wolf
+VII,15,Henry Constantine Richter,drew,H. C. Richter
+VII,15,Henry Constantine Richter,lithographed,H. C. Richter
+VII,15,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,16,John Gould,drew,J. Gould
+VII,16,John Gould,lithographed,J. Gould
+VII,16,Henry Constantine Richter,drew,H. C. Richter
+VII,16,Henry Constantine Richter,lithographed,H. C. Richter
+VII,16,Walter & Cohn,printed,Walter & Cohn
+VII,17,John Gould,drew,J. Gould
+VII,17,John Gould,lithographed,J. Gould
+VII,17,Henry Constantine Richter,drew,H. C. Richter
+VII,17,Henry Constantine Richter,lithographed,H. C. Richter
+VII,17,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,18,Joseph Wolf,drew,J. Wolf
+VII,18,Joseph Wolf,lithographed,J. Wolf
+VII,18,Henry Constantine Richter,drew,H. C. Richter
+VII,18,Henry Constantine Richter,lithographed,H. C. Richter
+VII,18,Walter,printed,Walter
+VII,19,John Gould,drew,J. Gould
+VII,19,John Gould,lithographed,J. Gould
+VII,19,Henry Constantine Richter,drew,H. C. Richter
+VII,19,Henry Constantine Richter,lithographed,H. C. Richter
+VII,19,Walter,printed,Walter
+VII,20,John Gould,drew,J. Gould
+VII,20,John Gould,lithographed,J. Gould
+VII,20,Henry Constantine Richter,drew,H. C. Richter
+VII,20,Henry Constantine Richter,lithographed,H. C. Richter
+VII,20,Walter,printed,Walter
+VII,21,John Gould,drew,J. Gould
+VII,21,John Gould,lithographed,J. Gould
+VII,21,Henry Constantine Richter,drew,H. C. Richter
+VII,21,Henry Constantine Richter,lithographed,H. C. Richter
+VII,21,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,22,John Gould,drew,J. Gould
+VII,22,John Gould,lithographed,J. Gould
+VII,22,Henry Constantine Richter,drew,H. C. Richter
+VII,22,Henry Constantine Richter,lithographed,H. C. Richter
+VII,22,Walter,printed,Walter
+VII,23,John Gould,drew,J. Gould
+VII,23,John Gould,lithographed,J. Gould
+VII,23,Henry Constantine Richter,drew,H. C. Richter
+VII,23,Henry Constantine Richter,lithographed,H. C. Richter
+VII,23,Walter,printed,Walter
+VII,24,John Gould,drew,J. Gould
+VII,24,John Gould,lithographed,J. Gould
+VII,24,Henry Constantine Richter,drew,H. C. Richter
+VII,24,Henry Constantine Richter,lithographed,H. C. Richter
+VII,24,Walter,printed,Walter
+VII,25,John Gould,drew,J. Gould
+VII,25,John Gould,lithographed,J. Gould
+VII,25,William Matthew Hart,drew,W. Hart
+VII,25,William Matthew Hart,lithographed,W. Hart
+VII,25,Walter,printed,Walter
+VII,26,John Gould,drew,J. Gould
+VII,26,John Gould,lithographed,J. Gould
+VII,26,Henry Constantine Richter,drew,H. C. Richter
+VII,26,Henry Constantine Richter,lithographed,H. C. Richter
+VII,26,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,27,John Gould,drew,J. Gould
+VII,27,John Gould,lithographed,J. Gould
+VII,27,Henry Constantine Richter,drew,H. C. Richter
+VII,27,Henry Constantine Richter,lithographed,H. C. Richter
+VII,27,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,28,John Gould,drew,J. Gould
+VII,28,John Gould,lithographed,J. Gould
+VII,28,Henry Constantine Richter,drew,H. C. Richter
+VII,28,Henry Constantine Richter,lithographed,H. C. Richter
+VII,28,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,29,Joseph Wolf,drew,J. Wolf
+VII,29,Joseph Wolf,lithographed,J. Wolf
+VII,29,Henry Constantine Richter,drew,H. C. Richter
+VII,29,Henry Constantine Richter,lithographed,H. C. Richter
+VII,29,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,31,Joseph Wolf,drew,J. Wolf
+VII,31,Joseph Wolf,lithographed,J. Wolf
+VII,31,Henry Constantine Richter,drew,H. C. Richter
+VII,31,Henry Constantine Richter,lithographed,H. C. Richter
+VII,31,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,32,Joseph Wolf,drew,J. Wolf
+VII,32,Joseph Wolf,lithographed,J. Wolf
+VII,32,Henry Constantine Richter,drew,H. C. Richter
+VII,32,Henry Constantine Richter,lithographed,H. C. Richter
+VII,32,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,33,John Gould,drew,J. Gould
+VII,33,John Gould,lithographed,J. Gould
+VII,33,Henry Constantine Richter,drew,H. C. Richter
+VII,33,Henry Constantine Richter,lithographed,H. C. Richter
+VII,33,Walter,printed,Walter
+VII,34,Joseph Wolf,drew,J. Wolf
+VII,34,Joseph Wolf,lithographed,J. Wolf
+VII,34,Henry Constantine Richter,drew,H. C. Richter
+VII,34,Henry Constantine Richter,lithographed,H. C. Richter
+VII,34,Walter,printed,Walter
+VII,35,John Gould,drew,J. Gould
+VII,35,John Gould,lithographed,J. Gould
+VII,35,William Matthew Hart,drew,W. Hart
+VII,35,William Matthew Hart,lithographed,W. Hart
+VII,35,Walter,printed,Walter
+VII,36,John Gould,drew,J. Gould
+VII,36,John Gould,lithographed,J. Gould
+VII,36,William Matthew Hart,drew,W. Hart
+VII,36,William Matthew Hart,lithographed,W. Hart
+VII,36,Walter,printed,Walter
+VII,37,Joseph Wolf,drew,J. Wolf
+VII,37,Joseph Wolf,lithographed,J. Wolf
+VII,37,Henry Constantine Richter,drew,H. C. Richter
+VII,37,Henry Constantine Richter,lithographed,H. C. Richter
+VII,37,Walter,printed,Walter
+VII,38,Joseph Wolf,drew,J. Wolf
+VII,38,Joseph Wolf,lithographed,J. Wolf
+VII,38,Henry Constantine Richter,drew,H. C. Richter
+VII,38,Henry Constantine Richter,lithographed,H. C. Richter
+VII,38,Walter,printed,Walter
+VII,39,Joseph Wolf,drew,J. Wolf
+VII,39,Henry Constantine Richter,lithographed,H. C. Richter
+VII,39,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,40,Joseph Wolf,drew,Wolf and H. C. Richter
+VII,40,Joseph Wolf,lithographed,Wolf and H. C. Richter
+VII,40,Henry Constantine Richter,drew,Wolf and H. C. Richter
+VII,40,Henry Constantine Richter,lithographed,Wolf and H. C. Richter
+VII,40,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,41,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,42,John Gould,drew,J. Gould
+VII,42,John Gould,lithographed,J. Gould
+VII,42,Henry Constantine Richter,drew,H. C. Richter
+VII,42,Henry Constantine Richter,lithographed,H. C. Richter
+VII,42,Walter,printed,Walter
+VII,43,John Gould,drew,J. Gould
+VII,43,John Gould,lithographed,J. Gould
+VII,43,Henry Constantine Richter,drew,H. C. Richter
+VII,43,Henry Constantine Richter,lithographed,H. C. Richter
+VII,43,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,44,John Gould,drew,J. Gould
+VII,44,John Gould,lithographed,J. Gould
+VII,44,William Matthew Hart,drew,W. Hart
+VII,44,William Matthew Hart,lithographed,W. Hart
+VII,44,Walter,printed,Walter
+VII,45,John Gould,drew,J. Gould
+VII,45,John Gould,lithographed,J. Gould
+VII,45,Henry Constantine Richter,drew,H. C. Richter
+VII,45,Henry Constantine Richter,lithographed,H. C. Richter
+VII,45,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,46,John Gould,drew,J. Gould
+VII,46,John Gould,lithographed,J. Gould
+VII,46,Henry Constantine Richter,drew,H. C. Richter
+VII,46,Henry Constantine Richter,lithographed,H. C. Richter
+VII,46,Walter,printed,Walter
+VII,47,Joseph Wolf,drew,J. Wolf
+VII,47,Joseph Wolf,lithographed,J. Wolf
+VII,47,Henry Constantine Richter,drew,H. C. Richter
+VII,47,Henry Constantine Richter,lithographed,H. C. Richter
+VII,47,Walter,printed,Walter
+VII,48,John Gould,drew,J. Gould
+VII,48,John Gould,lithographed,J. Gould
+VII,48,Henry Constantine Richter,drew,H. C. Richter
+VII,48,Henry Constantine Richter,lithographed,H. C. Richter
+VII,48,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,49,John Gould,drew,J. Gould
+VII,49,John Gould,lithographed,J. Gould
+VII,49,Henry Constantine Richter,drew,H. C. Richter
+VII,49,Henry Constantine Richter,lithographed,H. C. Richter
+VII,49,Walter,printed,Walter
+VII,50,John Gould,drew,J. Gould
+VII,50,John Gould,lithographed,J. Gould
+VII,50,Henry Constantine Richter,drew,H. C. Richter
+VII,50,Henry Constantine Richter,lithographed,H. C. Richter
+VII,50,Walter,printed,Walter
+VII,51,John Gould,drew,J. Gould
+VII,51,John Gould,lithographed,J. Gould
+VII,51,Henry Constantine Richter,drew,H. C. Richter
+VII,51,Henry Constantine Richter,lithographed,H. C. Richter
+VII,51,Walter,printed,Walter
+VII,52,William Matthew Hart,drew,W. Hart
+VII,52,William Matthew Hart,lithographed,W. Hart
+VII,52,Walter,printed,Walter
+VII,53,John Gould,drew,J. Gould
+VII,53,John Gould,lithographed,J. Gould
+VII,53,Henry Constantine Richter,drew,H. C. Richter
+VII,53,Henry Constantine Richter,lithographed,H. C. Richter
+VII,53,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,54,John Gould,drew,J. Gould
+VII,54,John Gould,lithographed,J. Gould
+VII,54,William Matthew Hart,drew,W. Hart
+VII,54,William Matthew Hart,lithographed,W. Hart
+VII,54,Walter,printed,Walter
+VII,55,John Gould,drew,J. Gould
+VII,55,John Gould,lithographed,J. Gould
+VII,55,William Matthew Hart,drew,W. Hart
+VII,55,William Matthew Hart,lithographed,W. Hart
+VII,55,Walter,printed,Walter
+VII,56,John Gould,drew,J. Gould
+VII,56,John Gould,lithographed,J. Gould
+VII,56,William Matthew Hart,drew,W. Hart
+VII,56,William Matthew Hart,lithographed,W. Hart
+VII,56,Walter,printed,Walter
+VII,57,John Gould,drew,J. Gould
+VII,57,John Gould,lithographed,J. Gould
+VII,57,Henry Constantine Richter,drew,H. C. Richter
+VII,57,Henry Constantine Richter,lithographed,H. C. Richter
+VII,57,Walter,printed,Walter
+VII,58,John Gould,drew,J. Gould
+VII,58,John Gould,lithographed,J. Gould
+VII,58,Henry Constantine Richter,drew,H. C. Richter
+VII,58,Henry Constantine Richter,lithographed,H. C. Richter
+VII,58,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,59,John Gould,drew,J. Gould
+VII,59,John Gould,lithographed,J. Gould
+VII,59,Henry Constantine Richter,drew,H. C. Richter
+VII,59,Henry Constantine Richter,lithographed,H. C. Richter
+VII,59,Walter & Cohn,printed,Walter & Cohn
+VII,60,John Gould,drew,J. Gould
+VII,60,John Gould,lithographed,J. Gould
+VII,60,Henry Constantine Richter,drew,H. C. Richter
+VII,60,Henry Constantine Richter,lithographed,H. C. Richter
+VII,60,Walter & Cohn,printed,Walter & Cohn
+VII,61,John Gould,drew,J. Gould
+VII,61,John Gould,lithographed,J. Gould
+VII,61,Henry Constantine Richter,drew,H. C. Richter
+VII,61,Henry Constantine Richter,lithographed,H. C. Richter
+VII,61,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,62,Joseph Wolf,drew,J. Wolf
+VII,62,Joseph Wolf,lithographed,J. Wolf
+VII,62,Henry Constantine Richter,drew,H. C. Richter
+VII,62,Henry Constantine Richter,lithographed,H. C. Richter
+VII,62,Walter,printed,Walter
+VII,63,John Gould,drew,J. Gould
+VII,63,John Gould,lithographed,J. Gould
+VII,63,Henry Constantine Richter,drew,H. C. Richter
+VII,63,Henry Constantine Richter,lithographed,H. C. Richter
+VII,63,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,64,John Gould,drew,J. Gould
+VII,64,John Gould,lithographed,J. Gould
+VII,64,Henry Constantine Richter,drew,H. C. Richter
+VII,64,Henry Constantine Richter,lithographed,H. C. Richter
+VII,64,Walter,printed,Walter
+VII,65,John Gould,drew,J. Gould
+VII,65,John Gould,lithographed,J. Gould
+VII,65,Henry Constantine Richter,drew,H. C. Richter
+VII,65,Henry Constantine Richter,lithographed,H. C. Richter
+VII,65,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,66,John Gould,drew,J. Gould
+VII,66,John Gould,lithographed,J. Gould
+VII,66,Henry Constantine Richter,drew,H. C. Richter
+VII,66,Henry Constantine Richter,lithographed,H. C. Richter
+VII,66,Walter,printed,Walter
+VII,67,John Gould,drew,J. Gould
+VII,67,John Gould,lithographed,J. Gould
+VII,67,Henry Constantine Richter,drew,H. C. Richter
+VII,67,Henry Constantine Richter,lithographed,H. C. Richter
+VII,67,Walter,printed,Walter
+VII,68,John Gould,drew,J. Gould
+VII,68,John Gould,lithographed,J. Gould
+VII,68,Henry Constantine Richter,drew,H. C. Richter
+VII,68,Henry Constantine Richter,lithographed,H. C. Richter
+VII,68,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,69,Joseph Wolf,drew,J. Wolf
+VII,69,Joseph Wolf,lithographed,J. Wolf
+VII,69,Henry Constantine Richter,drew,H. C. Richter
+VII,69,Henry Constantine Richter,lithographed,H. C. Richter
+VII,69,Hullmandel & Walton,printed,Hullmandel & Walton
+VII,70,John Gould,drew,J. Gould
+VII,70,John Gould,lithographed,J. Gould
+VII,70,Henry Constantine Richter,drew,H. C. Richter
+VII,70,Henry Constantine Richter,lithographed,H. C. Richter
+VII,70,Walter,printed,Walter
+VII,71,John Gould,drew,J. Gould
+VII,71,John Gould,lithographed,J. Gould
+VII,71,Henry Constantine Richter,drew,H. C. Richter
+VII,71,Henry Constantine Richter,lithographed,H. C. Richter
+VII,71,Hullmandel & Walton,printed,Hullmandel & Walton

@@ -1,7 +1,7 @@
 {
   "name": "historical-bird-plates",
   "title": "Historical bird plates: modern identifications",
-  "description": "Plate-by-plate modern identifications of historical bird folios, with eBird, Wikidata, GBIF, Avibase and BirdNET identifiers.",
+  "description": "Plate-by-plate modern identifications of historical bird folios, with eBird, Wikidata, GBIF, Avibase and BirdNET identifiers, and each plate's engraved credit line.",
   "homepage": "https://github.com/wr/historical-bird-plates",
   "licenses": [
     {
@@ -40,6 +40,11 @@
             "name": "legend",
             "type": "string",
             "description": "The legend lines engraved under the title (figure key, plant), separated by ' | '."
+          },
+          {
+            "name": "imprint",
+            "type": "string",
+            "description": "The plate's credit lines, as engraved, with spacing, initials and the mark after an abbreviation written by one convention (see the README): the left corner, then the centre, then the right corner, each top to bottom, joined with \" | \". They name who drew, lithographed or engraved the plate and who printed it. Empty where none can be read, with the reason in notes."
           },
           {
             "name": "image_url",
@@ -186,6 +191,69 @@
       }
     },
     {
+      "name": "havell-credits",
+      "path": "havell/credits.csv",
+      "title": "Audubon, The Birds of America (Havell edition): plate credits",
+      "description": "One row per plate, name and role, generated from plates.csv's imprint by tools/credits.py.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "plate",
+            "type": "integer",
+            "description": "Havell plate number, 1–435."
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "description": "Who the credit line names, as in artists.csv."
+          },
+          {
+            "name": "role",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "drew",
+                "lithographed",
+                "engraved",
+                "retouched",
+                "printed",
+                "coloured"
+              ]
+            },
+            "description": "What the credit line says they did: drew (del., Drawn from Nature), lithographed (lith., on Stone), engraved, retouched, printed (Imp., Printed by) or coloured. A joint credit gives every name every role."
+          },
+          {
+            "name": "as_printed",
+            "type": "string",
+            "description": "The name as the plate gives it; both rows from \"J. & E. Gould\" carry J. & E. Gould."
+          }
+        ],
+        "foreignKeys": [
+          {
+            "fields": "name",
+            "reference": {
+              "resource": "artists",
+              "fields": "name"
+            }
+          },
+          {
+            "fields": [
+              "plate"
+            ],
+            "reference": {
+              "resource": "havell-plates",
+              "fields": [
+                "plate"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
       "name": "gould-europe-plates",
       "path": "gould-europe/plates.csv",
       "title": "Gould, The Birds of Europe: plates",
@@ -218,6 +286,11 @@
             "name": "caption_latin",
             "type": "string",
             "description": "Latin name engraved on the plate."
+          },
+          {
+            "name": "imprint",
+            "type": "string",
+            "description": "The plate's credit lines, as engraved, with spacing, initials and the mark after an abbreviation written by one convention (see the README): the left corner, then the centre, then the right corner, each top to bottom, joined with \" | \". They name who drew, lithographed or engraved the plate and who printed it. Empty where none can be read, with the reason in notes."
           },
           {
             "name": "volume",
@@ -456,6 +529,69 @@
       }
     },
     {
+      "name": "gould-europe-credits",
+      "path": "gould-europe/credits.csv",
+      "title": "Gould, The Birds of Europe: plate credits",
+      "description": "One row per plate, name and role, generated from plates.csv's imprint by tools/credits.py.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "plate",
+            "type": "integer",
+            "description": "Gould's number from the General List of Plates in volume I (the plates were issued unnumbered)."
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "description": "Who the credit line names, as in artists.csv."
+          },
+          {
+            "name": "role",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "drew",
+                "lithographed",
+                "engraved",
+                "retouched",
+                "printed",
+                "coloured"
+              ]
+            },
+            "description": "What the credit line says they did: drew (del., Drawn from Nature), lithographed (lith., on Stone), engraved, retouched, printed (Imp., Printed by) or coloured. A joint credit gives every name every role."
+          },
+          {
+            "name": "as_printed",
+            "type": "string",
+            "description": "The name as the plate gives it; both rows from \"J. & E. Gould\" carry J. & E. Gould."
+          }
+        ],
+        "foreignKeys": [
+          {
+            "fields": "name",
+            "reference": {
+              "resource": "artists",
+              "fields": "name"
+            }
+          },
+          {
+            "fields": [
+              "plate"
+            ],
+            "reference": {
+              "resource": "gould-europe-plates",
+              "fields": [
+                "plate"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
       "name": "gould-australia-plates",
       "path": "gould-australia/plates.csv",
       "title": "Gould, The Birds of Australia: plates",
@@ -488,6 +624,11 @@
             "name": "caption_latin",
             "type": "string",
             "description": "Latin name engraved on the plate, as read from the scan (empty where it was not read)."
+          },
+          {
+            "name": "imprint",
+            "type": "string",
+            "description": "The plate's credit lines, as engraved, with spacing, initials and the mark after an abbreviation written by one convention (see the README): the left corner, then the centre, then the right corner, each top to bottom, joined with \" | \". They name who drew, lithographed or engraved the plate and who printed it. Empty where none can be read, with the reason in notes."
           },
           {
             "name": "bhl_barcode",
@@ -731,6 +872,76 @@
       }
     },
     {
+      "name": "gould-australia-credits",
+      "path": "gould-australia/credits.csv",
+      "title": "Gould, The Birds of Australia: plate credits",
+      "description": "One row per plate, name and role, generated from plates.csv's imprint by tools/credits.py.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "volume",
+            "type": "string",
+            "description": "Gould's volume, I–VII, or Supp for the Supplement; the plates are numbered per volume."
+          },
+          {
+            "name": "plate",
+            "type": "integer",
+            "description": "The plate's number in its volume's List of Plates (the sheets carry no number)."
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "description": "Who the credit line names, as in artists.csv."
+          },
+          {
+            "name": "role",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "drew",
+                "lithographed",
+                "engraved",
+                "retouched",
+                "printed",
+                "coloured"
+              ]
+            },
+            "description": "What the credit line says they did: drew (del., Drawn from Nature), lithographed (lith., on Stone), engraved, retouched, printed (Imp., Printed by) or coloured. A joint credit gives every name every role."
+          },
+          {
+            "name": "as_printed",
+            "type": "string",
+            "description": "The name as the plate gives it; both rows from \"J. & E. Gould\" carry J. & E. Gould."
+          }
+        ],
+        "foreignKeys": [
+          {
+            "fields": "name",
+            "reference": {
+              "resource": "artists",
+              "fields": "name"
+            }
+          },
+          {
+            "fields": [
+              "volume",
+              "plate"
+            ],
+            "reference": {
+              "resource": "gould-australia-plates",
+              "fields": [
+                "volume",
+                "plate"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
       "name": "gould-britain-plates",
       "path": "gould-britain/plates.csv",
       "title": "Gould, The Birds of Great Britain: plates",
@@ -763,6 +974,11 @@
             "name": "caption_latin",
             "type": "string",
             "description": "Latin name engraved on the plate, as read from the scan (empty where it was not read)."
+          },
+          {
+            "name": "imprint",
+            "type": "string",
+            "description": "The plate's credit lines, as engraved, with spacing, initials and the mark after an abbreviation written by one convention (see the README): the left corner, then the centre, then the right corner, each top to bottom, joined with \" | \". They name who drew, lithographed or engraved the plate and who printed it. Empty where none can be read, with the reason in notes."
           },
           {
             "name": "bhl_barcode",
@@ -1006,6 +1222,76 @@
       }
     },
     {
+      "name": "gould-britain-credits",
+      "path": "gould-britain/credits.csv",
+      "title": "Gould, The Birds of Great Britain: plate credits",
+      "description": "One row per plate, name and role, generated from plates.csv's imprint by tools/credits.py.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "volume",
+            "type": "string",
+            "description": "Gould's volume, I–V; the plates are numbered per volume."
+          },
+          {
+            "name": "plate",
+            "type": "integer",
+            "description": "The plate's number in its volume's List of Plates (the sheets carry no number)."
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "description": "Who the credit line names, as in artists.csv."
+          },
+          {
+            "name": "role",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "drew",
+                "lithographed",
+                "engraved",
+                "retouched",
+                "printed",
+                "coloured"
+              ]
+            },
+            "description": "What the credit line says they did: drew (del., Drawn from Nature), lithographed (lith., on Stone), engraved, retouched, printed (Imp., Printed by) or coloured. A joint credit gives every name every role."
+          },
+          {
+            "name": "as_printed",
+            "type": "string",
+            "description": "The name as the plate gives it; both rows from \"J. & E. Gould\" carry J. & E. Gould."
+          }
+        ],
+        "foreignKeys": [
+          {
+            "fields": "name",
+            "reference": {
+              "resource": "artists",
+              "fields": "name"
+            }
+          },
+          {
+            "fields": [
+              "volume",
+              "plate"
+            ],
+            "reference": {
+              "resource": "gould-britain-plates",
+              "fields": [
+                "volume",
+                "plate"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
       "name": "gould-asia-plates",
       "path": "gould-asia/plates.csv",
       "title": "Gould, The Birds of Asia: plates",
@@ -1038,6 +1324,11 @@
             "name": "caption_latin",
             "type": "string",
             "description": "Latin name engraved on the plate, as read from the scan (OCR, checked against the List; see the README)."
+          },
+          {
+            "name": "imprint",
+            "type": "string",
+            "description": "The plate's credit lines, as engraved, with spacing, initials and the mark after an abbreviation written by one convention (see the README): the left corner, then the centre, then the right corner, each top to bottom, joined with \" | \". They name who drew, lithographed or engraved the plate and who printed it. Empty where none can be read, with the reason in notes."
           },
           {
             "name": "bhl_barcode",
@@ -1281,6 +1572,116 @@
             "type": "string",
             "description": "What the disagreement is."
           }
+        ]
+      }
+    },
+    {
+      "name": "gould-asia-credits",
+      "path": "gould-asia/credits.csv",
+      "title": "Gould, The Birds of Asia: plate credits",
+      "description": "One row per plate, name and role, generated from plates.csv's imprint by tools/credits.py.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "volume",
+            "type": "string",
+            "description": "The volume (I–VII): Birds of Asia numbers its plates within each volume."
+          },
+          {
+            "name": "plate",
+            "type": "integer",
+            "description": "The plate's number in its volume's List of Plates (the book cites a plate as \"Asia, iv. pl. 49\")."
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "description": "Who the credit line names, as in artists.csv."
+          },
+          {
+            "name": "role",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "drew",
+                "lithographed",
+                "engraved",
+                "retouched",
+                "printed",
+                "coloured"
+              ]
+            },
+            "description": "What the credit line says they did: drew (del., Drawn from Nature), lithographed (lith., on Stone), engraved, retouched, printed (Imp., Printed by) or coloured. A joint credit gives every name every role."
+          },
+          {
+            "name": "as_printed",
+            "type": "string",
+            "description": "The name as the plate gives it; both rows from \"J. & E. Gould\" carry J. & E. Gould."
+          }
+        ],
+        "foreignKeys": [
+          {
+            "fields": "name",
+            "reference": {
+              "resource": "artists",
+              "fields": "name"
+            }
+          },
+          {
+            "fields": [
+              "volume",
+              "plate"
+            ],
+            "reference": {
+              "resource": "gould-asia-plates",
+              "fields": [
+                "volume",
+                "plate"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "artists",
+      "path": "artists.csv",
+      "title": "People and firms named on the plates' credit lines",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "name",
+            "type": "string",
+            "description": "Full name, as credits.csv uses it."
+          },
+          {
+            "name": "kind",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "person",
+                "firm"
+              ]
+            }
+          },
+          {
+            "name": "wikidata",
+            "type": "string",
+            "description": "Wikidata item; blank if Wikidata has none."
+          },
+          {
+            "name": "note",
+            "type": "string",
+            "description": "Who they were, in a line."
+          }
+        ],
+        "primaryKey": [
+          "name"
         ]
       }
     }

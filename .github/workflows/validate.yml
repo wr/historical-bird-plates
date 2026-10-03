@@ -12,6 +12,9 @@ jobs:
           python-version: "3.12"
       - run: python3 tools/validate.py
       - run: python3 tools/test_identify.py
+      - run: python3 tools/test_credits.py
+      - run: python3 tools/test_imprints.py
+      - run: python3 tools/test_quickstatements.py
       - run: python3 tools/test_site.py
   site:
     runs-on: ubuntu-latest

@@ -11,6 +11,12 @@ Checks, per folio folder (any folder holding a species.csv):
   - every ebird_code is a species or group code in the eBird taxonomy named in `taxonomy`
   - every birdnet_label is, verbatim, a line of BirdNET GLOBAL 6K V2.4's labels
   - wikidata / gbif / avibase ids are well formed
+  - credits.csv has the declared columns and is what tools/credits.py writes from plates.csv's imprint;
+    every name in it is in artists.csv, every role a known role
+  - an empty imprint has a note with the words "credit line"
+  - an imprint is written by the README's conventions (spacing, initials, the mark after an abbreviation):
+    tools/imprints.py's `normalise` would not change it
+  - artists.csv has the declared columns, one row per name, kind person or firm, a well-formed wikidata id
 
 The eBird taxonomy and the BirdNET labels are downloaded into .cache/, never
 committed: the labels file is CC BY-NC-SA, and this repo only names species.
@@ -25,6 +31,10 @@ import sys
 import urllib.request
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import credits  # noqa: E402
+import imprints  # noqa: E402  (needs no Pillow: the image tools import it when they run)
+
 ROOT = Path(__file__).resolve().parents[1]
 CACHE = ROOT / ".cache"
 EBIRD_URL = "https://api.ebird.org/v2/ref/taxonomy/ebird?fmt=csv&version={version}"
@@ -35,6 +45,7 @@ UA = {"User-Agent": "historical-bird-plates validate (+https://github.com/wr/his
 CONFIDENCE = {"high", "judged", "medium", "low", "none"}
 FORM = {"", "subspecies", "variant", "pre-split"}
 CAPTION_CHECKED = {"", "yes", "no"}
+KIND = {"person", "firm"}
 ID_PATTERNS = {"wikidata": r"Q\d+", "gbif": r"\d+", "avibase": r"[0-9A-F]{8}(?:[0-9A-F]{8})?"}
 
 
@@ -61,6 +72,19 @@ def schema_fields() -> dict[str, list[str]]:
 def validate(offline: bool) -> list[str]:
     errors: list[str] = []
     fields = schema_fields()
+    artist_cols, artists = read(ROOT / "artists.csv")
+    if "artists.csv" not in fields:
+        errors.append("artists.csv: not declared in datapackage.json")
+    elif artist_cols != fields["artists.csv"]:
+        errors.append(f"artists.csv: columns {artist_cols} != datapackage.json {fields['artists.csv']}")
+    artist_names = [a["name"] for a in artists]
+    if len(artist_names) != len(set(artist_names)):
+        errors.append("artists.csv: a name appears twice")
+    for i, a in enumerate(artists, start=2):
+        if a["kind"] not in KIND:
+            errors.append(f"artists.csv:{i}: kind {a['kind']!r} not one of {sorted(KIND)}")
+        if a["wikidata"] and not re.fullmatch(ID_PATTERNS["wikidata"], a["wikidata"]):
+            errors.append(f"artists.csv:{i}: malformed wikidata {a['wikidata']!r}")
     ebird: dict[str, set] = {}
     labels: set = set()
     if not offline:
@@ -69,10 +93,13 @@ def validate(offline: bool) -> list[str]:
     folders = sorted(p.parent for p in ROOT.glob("*/species.csv"))
     for folder in folders:
         name = folder.name
-        for table in ("plates.csv", "species.csv"):
+        for table in ("plates.csv", "species.csv", "credits.csv"):
             rel = f"{name}/{table}"
             if rel not in fields:
                 errors.append(f"{rel}: not declared in datapackage.json")
+                continue
+            if not (folder / table).exists():
+                errors.append(f"{rel}: missing; run python3 tools/credits.py")
                 continue
             cols, _ = read(folder / table)
             if cols != fields[rel]:
@@ -81,6 +108,15 @@ def validate(offline: bool) -> list[str]:
         species_cols, species = read(folder / "species.csv")
         # A folio numbered per volume keys a plate by its volume and number.
         per_volume = "volume" in species_cols
+        for p in plates:
+            plate = ".".join(x for x in (p.get("volume", "") if per_volume else "", p["plate"]) if x)
+            if not p.get("imprint") and "credit line" not in p.get("notes", ""):
+                errors.append(f"{name}/plates.csv: plate {plate} has no imprint and no note saying why "
+                              "(a note with the words 'credit line')")
+            written = imprints.normalise(p.get("imprint", ""))
+            if written != p.get("imprint", ""):
+                errors.append(f"{name}/plates.csv: plate {plate}: imprint {p['imprint']!r} is not written by the README's "
+                              f"credit-line conventions; tools/imprints.py's normalise gives {written!r}")
         keys = [(r.get("volume", ""), r["plate"], r.get("leaf", "")) for r in plates]
         if len(keys) != len(set(keys)):
             errors.append(f"{name}/plates.csv: a plate and leaf appear twice")
@@ -120,6 +156,18 @@ def validate(offline: bool) -> list[str]:
                 elif sci != r["scientific"]:
                     errors.append(f"{where}: ebird_code {r['ebird_code']} is {sci} in eBird {version}, "
                                   f"not {r['scientific']}")
+        if (folder / "credits.csv").exists():
+            try:
+                if (folder / "credits.csv").read_text(encoding="utf-8") != credits.render(folder):
+                    errors.append(f"{name}/credits.csv: out of date with plates.csv's imprint; "
+                                  "run python3 tools/credits.py")
+            except credits.UnknownCredit as e:
+                errors.append(f"{name}/plates.csv: {e}")
+            for i, c in enumerate(read(folder / "credits.csv")[1], start=2):
+                if c["name"] not in artist_names:
+                    errors.append(f"{name}/credits.csv:{i}: {c['name']!r} is not in artists.csv")
+                if c["role"] not in credits.ROLES:
+                    errors.append(f"{name}/credits.csv:{i}: role {c['role']!r} not one of {list(credits.ROLES)}")
         print(f"{name}: {len(plates)} plate rows, {sum(1 for r in species if r['scientific'])} identifications")
     if not folders:
         errors.append("no folio folders found")

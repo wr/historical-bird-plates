@@ -1,0 +1,531 @@
+volume,plate,leaf,left_box,right_box,ocr,read,note
+I,1,28,700 5759 1234 5825,2725 5767 3225 5877,"J Wolf and H.C.Fichter, del. et lth. | Hullmandel & Walton, Imp.",scan,no stop visible after J; left crop ends at lith and a stop may be cut off; no stop visible after Imp
+I,2,32,764 5584 1440 5654,3415 5618 3931 5688,"I. Gould and H.C.Richter del et tith. | Hallmande & Walton Inp,",eye,
+I,3,36,486 5722 1164 5784,3555 5711 4059 5799,J.Goald and E.C.Pidtter de a lith. | Eulmandel & Wolton Dap.,scan,left line faint
+I,4,40,829 5813 1377 5893,3161 5832 3539 5924,"J.Wolf & HC. Richter, del et lith. | Walter, Irnp.",eye,
+I,5,44,484 5774 1038 5866,3476 5833 3756 5929,"J. Wolf &. H.CRickter, del et lith. | Walter: Imp.",eye,comma after Walter could be a stop or semicolon
+I,6,48,929 5821 1515 5917,3326 5881 3600 5983,"J.Wolf & H.C.Richter, del et lith. | Walter, Imp.",eye,
+I,7,52,850 5775 1284 5841,3361 5821 3823 5887,J.Welf del. H.C. Richter lith. | Hullmandel & Walton Fup.,eye,"two credits in the line: Wolf del., Richter lith."
+I,8,56,811 5891 1251 5965,3367 5909 3607 5997,"J.Gould &W Hart, del et lith. | Walter, Imp.",eye,
+I,9,60,800 5818 1350 5880,2173 5649 3762 6049,"J. Wol: and H.C.Richter, del et lith. | FIPECTUS, Gould",scan,"f of Wolf faint; right crop is mostly the caption and the printer's line below it is badly broken; printer's line is small and broken, 'imp' read in lower case; locator: no line found in the right corner"
+I,10,64,992 5813 1460 5879,3248 5839 3662 5935,"J.Wolf and H.CRichter, del. et lith. | Walter & Cohn, Irp.",eye,
+I,11,68,544 5808 1180 5878,3436 5817 3960 5891,"J.Wolf und H C.Richter, del et lith. | Hullmandel & Walton, Imp.",eye,
+I,12,72,817 5809 1335 5883,3028 5807 3540 5903,"J.Gould and HC Richter, del. et lith. | Hullmandel & Walton, Imp.",eye,
+I,13,76,993 5805 1579 5879,3020 5817 3300 5913,"J.Could &HCRichter, del et lith. | Walter, Imp.",eye,
+I,14,80,774 5863 1410 5951,3518 5877 3814 5973,"J.Gould & HCRichter, del et lith. | Walter, Imp.",eye,
+I,15,84,896 5814 1494 5906,2952 5871 3252 5973,"T.rould &H.CBichia, del a litv. | Waltor, Brq.",eye,
+I,16,88,737 5903 1359 5983,3410 5903 3702 5999,"I.Gould &.H.C Richter, del et lith. | Walter, Imp.",eye,mark after Walter could be a stop
+I,17,92,1119 5793 1611 5873,3331 5844 3527 5906,"IGould &HCKichter, del et lith | Walter.Im:",scan,right crop cuts off the end of Imp; mark after Richter could be a stop
+I,18,96,983 5835 1553 5909,3514 5849 3772 5923,"J Gould & HCRichter, del et lith. | Walter, Im.",eye,stop after J faint
+I,19,100,787 5745 1431 5803,3397 5778 3883 5840,FGould ond HO Richterdd etlith. | Hullmundd & Walion l.,eye,
+I,20,104,962 5856 1454 5926,3617 5906 3835 5976,"J.Gould & HCRichter, del et lith. | Walter; Imp.",eye,comma after Walter looks like a semicolon
+I,21,108,864 5801 1416 5867,3029 5787 3525 5875,"I.Could and HCRichter, del. d lith. | Hillmandel & Wallon, Imp",eye,"mark after Richter could be a comma; a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+I,22,112,835 5809 1467 5883,3037 5823 3581 5911,"J. Gould and H. C.Richter, del et tith. | Hultmandel & Watton, Imp.",eye,
+I,23,116,1082 5816 1684 5878,3230 5807 3736 5887,"I.Gould and H.C.Richter, del et lith. | Hultmandet & Walton, Imp.",eye,
+I,24,120,866 5706 1454 5776,3063 5704 3565 5788,"IGould and H.C.Pichter, del à lith. | Hullmandel & Walton, Imp.",eye,"mark after Richter could be a comma; no stop visible after del; a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+I,25,124,1047 5869 1627 5927,3199 5876 3705 5946,"ICoula, and, H.C Fuchtor, del et linh | Hullmandel & Walton, Imp.",eye,
+I,26,128,991 5899 1581 5979,3705 5867 3997 5955,"J. Gould and H.CKichter, del, et lith, | Walter, Imp.",eye,mark after Gould could be a stop; mark after Richter could be a semicolon
+I,27,132,777 5829 1375 5909,3858 5807 4128 5903,"I. Could & H.CRichter, del et lith | Walter: Imp.",eye,del et faint; no stop visible after lith
+I,28,136,1009 5824 1573 5898,3326 5835 3586 5919,"J.Gould & HCRachter, del et lith | Walter, Imp.",eye,no stop visible after lith
+I,29,140,1103 5850 1683 5924,2988 5851 3392 5957,"I.Grould &.H.CRichter del et Tith. | Walter, Imp.",eye,J faint
+I,30,144,1066 5785 1612 5869,3520 5799 3792 5891,"J.Gould & H.CRichter, del et lith. | Walter Imp.",eye,no comma after Walter
+I,31,148,1163 5822 1781 5902,3382 5825 3688 5917,"I Gould & H.C.Richter, dei et lith. | Walicr, Imp.",eye,stop after J not visible
+I,32,152,1046 5855 1634 5939,3589 5848 3871 5944,"J. Gould & HCRichter, del et lithv. | Walter, Imp.",eye,stop after Imp could be a comma
+I,33,156,980 5863 1588 5947,3468 5899 3746 5991,"J. Gould' & H.CRichter, del et lith. | Walter, Ip",eye,
+I,34,160,976 5856 1480 5922,3595 5832 4029 5912,"JGould and H.CRichter, del et Tith. | Fullmandel & Walton, Iip",eye,
+I,35,164,932 5747 1564 5831,3034 5777 3558 5883,"I.Gould and H.C.Richter, del. et lith. | Hullmiandel & Walton, Imp.",eye,gap before the comma after Richter
+I,36,168,1214 5762 1842 5846,3352 5757 3844 5853,"J. Goutd and H.C. Pichter, del et lith. | Hultmandet &Walton, Imp.",eye,
+I,37,172,989 5792 1557 5844,3612 5771 4116 5863,"T, Gorld and, HC Hichter del erlith. | Hallmandel &Walton In",scan,left line faint
+I,38,176,954 5770 1466 5814,3543 5772 3931 5824,7 Goula and HCRichter ài a lah. | Balnundd & Walton Irp.,eye,both lines faint; no comma visible after Richter or Walton
+I,39,180,1086 5817 1654 5909,3298 5841 3566 5933,"IGould & HCRichter, del et lith. | Walter, Imp.",eye,
+I,40,184,932 5753 1470 5837,3429 5800 3673 5874,"J. Gould & W.Hurt, del et lith. | Walter Imp.",eye,
+I,41,188,972 5844 1462 5910,3445 5842 3705 5916,J. Gould & W. Hart del et lith. | Walter Imp.,eye,
+I,42,192,766 5825 1304 5895,3289 5850 3563 5930,J.Gould & W.Hart del ei lith. | Walter Imp.,eye,
+I,43,196,1230 5923 1716 5993,3314 5924 3764 6012,"I. Could and H.C. Pichter, del. et lith. | Hullmardel & Walton, Imp.",eye,
+I,44,200,1253 5908 1761 5982,3388 5894 3848 5982,"J. Gould and H. C.Richtor, del. et lith. | Hultmandel & Walton, Imp.",eye,
+I,45,204,1176 5823 1714 5893,3320 5839 3826 5931,"IGould and H.C Fichter, del et lith | Hullmandel & Walton, Imp.",eye,mark after Richter could be a semicolon
+I,46,208,1240 5929 1762 5999,3474 5897 3934 5989,"J.Gould and H.C. Richter, del et lith. | Hullmandal & Walton, 1mp.",eye,
+I,47,212,1020 5915 1582 5977,3182 5913 3686 6005,"IGculd and HCPichter, dil et lith. | Hullmandel & Walton Imp.",eye,
+I,48,216,840 5959 1298 6021,3769 5950 4007 6030,JOruld &W Hart del et tith. | Wulter Iфp.,eye,left line faint at Gould
+I,49,220,1037 5908 1533 5982,3722 5892 3954 5980,"JGoutd & W.Hart, del et lith. | Walter Iap.",eye,
+I,50,224,885 5936 1367 6010,3565 5910 3797 5984,"J.Gould &W. Hart, del et bith | Walter; Imp.",eye,no stop visible after lith
+I,51,228,1168 5799 1750 5869,3359 5768 3867 5864,"IGould and H.C.Richter, del. et lith. | Hulimandel & Wation, Imp",eye,
+I,52,232,1160 5857 1758 5941,3244 5843 3522 5935,"J.trould & H.C.Richter, del et Lith. | Walter Imp.",eye,
+I,53,236,963 5886 1503 5966,3641 5880 4061 5976,"SGould and H.CRichter, del. et lith. | Walter & Cohn, Imp.",eye,
+I,54,240,848 5824 1464 5912,3545 5830 3805 5904,"MGruld &.H.CRichter, del et lith. | Walter Inp.",eye,J faint; mark after Walter could be a stop
+I,55,244,999 5836 1603 5916,3664 5828 3948 5916,"J.Gould & HCRichter del et lith. | Walter, Imp.",eye,mark after Richter could be a stop
+I,56,248,823 5812 1459 5886,3728 5799 4004 5891,"J.Gould & H.C.Richter, del et lith. | Walter Imp.",eye,no comma after Walter
+I,57,252,1346 5813 1912 5875,3474 5781 3970 5873,"Iould andHPhechler iel ef With | Hullmeredel a Halten, Imp",eye,no stop visible after lith or Imp
+I,58,256,990 5806 1616 5872,3110 5792 3666 5880,"Itrould and il CHrohter, del et lith | Hullmandel ä Walten, Imp",eye,no stop visible after Imp
+I,59,260,1285 5710 1847 5768,3402 5707 3882 5791,J. Gculd and HC Ruchter del et lith. | Hultenundel & Walter Imp,eye,
+I,60,264,1078 5782 1726 5848,3210 5796 3802 5884,Iould andI C Richter; del et lith. | Huttmandel å Walten Inp,eye,"mark after Richter could be a comma; a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+I,61,268,1001 5914 1603 5972,3125 5908 3629 5988,"J.Gculd and H.CTachter, del. et lith | Autimentel A Walten Iup",scan,both lines faint; no stop visible after lith or Imp
+I,62,272,830 5704 1396 5770,2889 5728 3443 5824,"Thende ae El Pachter del et ltte | Mullmandel &Wattere, Irp",scan,left line faint; stops not legible; no stop visible after Imp
+I,63,276,958 5760 1558 5826,3098 5783 3610 5867,"Mould ued ME Hechter, del et Veth. | Brllmundld WaltenImp",eye,"semicolon after Richter could be a colon; no stop visible after Imp; a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+I,64,280,968 5764 1580 5830,3068 5766 3636 5854,Hn uldand HCRachter de e lith | Hullmandel &Walton Imp,scan,left line broken and faint; stop after Richter could be a comma; no stop visible after lith
+I,65,284,783 5790 1317 5870,3247 5828 3503 5902,"J. Gould & W. Hart del et biüth. | Welter, Imp.",eye,
+I,66,288,994 6037 1466 6107,3862 6015 4102 6099,"I. Gould & W Hart, del et lith. | Wilter briz",eye,right line faint
+I,67,292,1090 5875 1586 5937,3402 5862 3798 5928,"I.Gould und H.C Fichter, del. et Iith | Huttmandel & Walien Imp.",eye,"mark after Richter could be a comma; a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+I,68,296,975 5862 1501 5920,3091 5844 3551 5924,"J. Gould and H.C. Pichter, del et lith. | Hullmandel & Walton, Imp.",eye,
+I,69,300,662 5943 1148 6013,3380 5912 3714 6000,"I.Gould andHCRichter, del. et lith. | I. Walter, Imp.",eye,
+I,70,304,755 5900 1273 5980,3739 5888 4051 5968,"J.Gould and H.C.Richter, del. et lith | I. Walter, Imjo.",eye,no stop visible after lith
+I,71,308,814 5928 1296 5994,3474 5919 3780 6003,"J.Gould und HCRichter, del et. lith. | T. Walter, Imp.",eye,a stop after et as well as after del
+I,72,312,653 5920 1181 6000,3612 5908 3914 5996,"IGould und H.CRichter, del. et lith. | T.Walter, Imp",eye,stop after T faint; no clear gap before Walter
+I,73,316,615 5930 1235 6004,3627 5926 3969 6022,"JGould and H.C.Richter, del.et Tith.. | I. Walter, Imp.",eye,a second stop-like mark after lith
+I,74,320,1096 5758 1666 5824,3306 5738 3744 5804,"J. Gould und. H.C. Richter, del et lith. | Hulmnandel & Halian, Lp.",scan,right line faint
+I,75,324,1218 5884 1830 5950,3360 5861 3832 5945,"I.Gould and H.C.Richter, del. et lith. | Hullmandel & Walton Imp.",eye,
+I,76,328,774 5939 1348 6001,3368 5923 3808 6015,"I. Gould and H.C.Richier, del ei kith. | Walter & Cohn Imp.",scan,left line faint after Richter; comma after Cohn faint
+II,1,12,880 5816 1450 5864,3293 5824 3723 5886,F. Gould and H.C.Richter del et lith. | Hallmundel & Walton Erp.,eye,
+II,2,16,811 5735 1395 5787,3403 5746 3843 5816,J. Gould and HC.Richter del t lith. | Hultmandel & Walton Imp.,eye,
+II,3,20,624 5820 1206 5882,3515 5808 3945 5900,"IGould andH.CPichter, del. et ath. | Walter & Cohr, Imp.",eye,
+II,4,24,587 5737 1109 5789,3147 5756 3385 5826,"1Ocata & BCTichter, del/ei lth. | Walter, Imp.",eye,comma after Richter could be a semicolon
+II,5,28,819 5787 1389 5839,3385 5804 3867 5874,LGould and HCHichterdA etlith | HallmandA X Walten Imp.,scan,left line faint; no stop visible after lith
+II,6,32,990 5855 1592 5921,3488 5853 3938 5933,"JCould and HCFichter Ad A lith. | Htullmandd X Walten Imp,",scan,left line faint and broken; comma after Imp could be a stop
+II,7,36,635 5813 1233 5893,3245 5820 3733 5912,"J.Gould and. HC Fichter, del et lith. | Hultmanded & 1ix/ten, Imp",eye,
+II,8,40,797 5847 1411 5921,3427 5834 3931 5926,"J. Govld und H.C. Richter, det. et lith | Huldmanded & Walton, Imp.",eye,
+II,9,44,902 5776 1476 5846,3490 5775 3970 5877,"IConld wnd HC Hichter del a lith | Hullmanddl &Walten, Imp.",eye,comma after Richter could be a stop; no stop visible after lith
+II,10,48,858 5866 1436 5936,3487 5863 3951 5951,I.Gruld and HCRichter del ot Tith. | Hultmandel & Walion Imp.,eye,
+II,11,52,769 5802 1357 5876,3402 5807 3862 5899,"J.Gould and HC.Richter, del. et lith. | Hullmandel & Walton, Imp.",eye,
+II,12,56,758 5863 1106 5933,3519 5834 3779 5914,"W.Hart. del et lith. | Walter, Imp",eye,
+II,13,60,1007 5600 1433 5658,3758 5613 3980 5675,"I. Gould & W.Hart del, et lith. | Walter imp.",eye,comma after del could be a stop
+II,14,64,803 5873 1367 5931,2952 5871 3424 5945,"J.Gould and H.C.Pichter, del et lith. | Hullmandel & Walton Imp.",eye,
+II,15,68,905 5761 1419 5835,3094 5735 3520 5809,"I.Gould and H.C. Richter del et lith. | Hullmandel & Watton, Imp.",eye,
+II,16,72,1091 5741 1623 5799,3187 5764 3653 5848,"J.Gould and H.CRichter, del et lith. | Hultmandel & Walion, Imp.",eye,
+II,17,76,1141 5741 1667 5799,3302 5761 3716 5819,"IGrulà and H CRichter, del et iith. | Hullmandel & Walton, inp",scan,right crop ends at Imp; a stop may be cut off
+II,18,80,755 5869 1421 5949,3373 5851 3901 5939,"J. Goutd and H-CRichter, del et lith. | Hullmandel & Walton, Imp.",eye,"mark after Richter could be a comma; a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+II,19,84,809 5861 1513 5957,3467 5805 4025 5915,"J. Gould and H-CRichter; del et lith. | Hullmandel & Walton, Imp.",eye,"mark after Richter could be a comma; stop after Walton could be a comma; a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+II,20,88,986 5876 1576 5938,3581 5830 4063 5922,V Goulä and HCRichter del et Tith. | Aullinandet & Walton Imp,eye,
+II,21,92,1138 5933 1818 6021,3482 5893 3952 5973,I. Gruld and HC Richter del et lith. | Hullemaedel & Waltoiap,scan,right line fades out at the end
+II,22,96,1182 5802 1610 5850,3509 5788 3973 5858,rsrald aned He Hechterdd | Ealloandel I Waltore Ig,scan,"the J before Gould is faint; the left crop stopped after del, and on the scan 'et lith' follows, very faint but legible; right line faint"
+II,23,100,574 5927 1380 6015,3493 5909 3801 5997,"J. Gould & H.C.Richter, del el lith. | Walter; Imp.",eye,comma after Walter could be a semicolon
+II,24,104,588 5891 1362 5979,3603 5870 3903 5962,"J. Gould & H.C. Fichter, del et tith. | Walter Imp.",eye,no comma after Walter
+II,25,108,866 5876 1668 5968,3579 5896 3921 6002,"J. Crould & H.C. Richter, del et lith. | Walter, Imp.",eye,
+II,26,112,708 5862 1476 5946,3763 5866 4059 5958,"J. Gould & H. C. Richter, del et lith. | Walter, Imp.",eye,
+II,27,116,593 5845 1347 5919,3723 5842 4029 5934,"J. Goutd & H.C.Richler, del et lith. | Walter, Imp.",eye,
+II,28,120,791 5851 1343 5909,3368 5837 3814 5895,I.Coald and HCHinrdd A-ith. | Ddmandd & Walten ip,eye,middle of left line faint
+II,29,124,989 5657 1555 5715,3469 5642 3917 5712,T. Goll and HC-Richter dd &lah. | Hullmandel & Walten Frp.,eye,left line faint
+II,30,128,1121 5841 1681 5899,3974 5779 4360 5875,2. Could and fC-Richter del it lith. | Bullmandel & Walten Ing.,scan,left line faint; right line on a dark gradient
+II,31,132,1077 5849 1721 5923,3393 5816 3903 5900,J.Gould and H•C Richter del etlith. | Hullmandel & Walten Imp.,eye,
+II,32,136,1093 5791 1635 5849,3228 5791 3686 5871,"IGould nhd H.CFichter, det et lith | Hullmandel & Walton, Imp.",eye,
+II,33,140,1037 5843 1609 5923,3180 5829 3630 5909,"I.Gould and HC.Richter, del it lith. | Hullmandel & Walten Imp.",eye,
+II,34,144,1202 5806 1780 5894,3476 5812 3736 5900,"J. Gould & H. C.Richter, del et lith: | Walter, Imp.",eye,mark after lith looks like a colon
+II,35,148,1000 5867 1570 5959,3625 5882 3907 5978,"J.Gould & HCkichter, del et lith. | Walter Ip.",eye,no comma after Walter
+II,36,152,870 5908 1284 5974,2646 5741 4442 6141,"J.Gould & W. Hart del et tith | DCINCTUM, Gould. | Watter, Imp.",eye,no stop visible after lith; right crop is wide and takes in the caption; locator: no line found in the right corner
+II,37,156,803 5862 1345 5936,3612 5827 3882 5911,"J. Gould & W. Hart del et lith. | Watter, Imp.",eye,
+II,38,160,1181 5794 1769 5874,3375 5782 3813 5862,"J.Gould and H.C.Richter, del. et lith. | Hullmandel & Walton, Imp.",eye,gap before the comma after Walton
+II,39,164,1073 5829 1467 5903,3637 5814 3925 5898,"W.Hart del. et lith. | Walter, imp.",eye,
+II,40,168,1080 5775 1732 5863,3269 5759 3733 5847,"J. Gould and H.C.Richter, del. et bih. | Hullmandel & Walton, Imp.",eye,
+II,41,172,793 5929 1273 6009,3542 5937 3758 6011,"J. Gould &W Hart, dei et lith. | Walier, Imp.",eye,
+II,42,176,1089 5927 1545 6007,3781 5918 3985 5988,J.Gould & WAlrt del et lith. | Walter; Imp.,eye,no stop visible after lith; stop after W faint
+II,43,180,792 5848 1406 5910,3716 5811 4198 5913,T. Gould and HC Richter del et tith. | Hullmandel & Walton Imp.,eye,
+II,44,184,1035 5835 1651 5887,3566 5833 4022 5907,J Coudd and HCRichter del et lith. | Hullmandel & Walton Fmp.,eye,no stop visible after J
+II,45,188,892 5783 1556 5849,3720 5747 4238 5849,I. Gould and HC Richter del et lith. | Hullmandel & Walton Imp.,eye,
+II,46,192,825 5745 1481 5803,3467 5737 4013 5825,J Gould and H-C Richter del et lith. | Hullmandel & Walton Imp.,eye,no stop visible after J
+II,47,196,1017 5756 1595 5814,3741 5726 4259 5822,I. Gould and HCHichter del alith. | Hullmandel & Walton Imp.,eye,
+II,48,200,1086 5855 1754 5939,3586 5835 3874 5927,"J.Gould: &FC Richter del et Tith | Waler, imp.",eye,a colon-like mark after Gould; no stop visible after lith
+II,49,204,830 5945 1376 6037,3831 5900 4211 6002,"J.Gould and HC.Richter, del. et lith. | Watter & Cohn, Imp.",eye,
+II,50,208,792 5699 1354 5761,3573 5708 3859 5788,"J. Gould & W. Hart del et lith. | Walter, Irip.",eye,
+II,51,212,673 5796 1267 5870,3395 5802 3683 5904,"Toculd & H.CRichter, del et lith. | Walter, Imp.",eye,
+II,52,216,856 5881 1426 5973,3457 5914 3899 5988,"J. Gould nd H.C. Richter, dei et lith. | Hullmandel &, Walton, Irip",scan,right crop ends at Imp; a stop may be cut off
+II,53,220,833 5847 1467 5921,3447 5843 3925 5931,"J. Gould and H.C.Richter, del et lith. | Hullmandel & Walton, Imp",eye,"mark after Richter could be a comma; a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+II,54,224,790 5898 1388 5968,3384 5889 3882 5969,Moald an HC Hichter de 4 hth | Hulhruandel & Walten Irp.,scan,left line faint; stops after del and lith unclear; no comma visible after Walton
+II,55,228,1107 5857 1699 5937,3177 5835 3671 5923,"J. Gould and H.CRichter, del et lith. | Hullmandel & Walton, Imp.",eye,
+II,56,232,1301 5889 1925 5963,3442 5917 3914 5991,"J. Gould and H. C.Friehter, del et lith. | Hrilmandel & Halton, Imp.",eye,gap before the comma after Richter
+II,57,236,1179 5721 1689 5779,3263 5736 3739 5820,"I. Goulá and H C. Bichter del et lith. | Huilmandel & Nalton, Imp.",scan,left line faint; comma after Richter could be a stop
+II,58,240,899 5829 1513 5903,3105 5812 3595 5904,"I.Gould and H.C. Richter, del et tith. | Hullmanded & Walton, 1mp",eye,
+II,59,244,1098 5858 1678 5920,3220 5851 3712 5931,"Iould and H.C.Fichler, del. ot lith. | Hullmandel & Walton, Imp.",eye,
+II,60,248,837 5849 1371 5907,3070 5877 3556 5957,"J. Gouid and H.C.Richter, del. et tith. | Kuttmandel & Walton, Imp.",eye,
+II,61,252,999 5855 1575 5929,3192 5821 3672 5901,"I. Could and H.CFichter, del, et lith. | Huttmardel & Watton, Imp.",eye,
+II,62,256,781 5747 1227 5805,3529 5742 3759 5812,J. Gould & W.Hart del.et lith. | Walter imp.,eye,
+II,63,260,1058 5582 1656 5674,3150 5569 3680 5671,"I.Gould and HC.Richter, del et lith | Hullmandel & Walton, Imp.",eye,
+II,64,264,931 5646 1529 5704,2983 5646 3513 5742,"Jbould and HCBichter ddl ct lith. | Hrltmsindel & Walton, Imp.",scan,left line faint and broken
+II,65,268,1035 5636 1683 5710,3135 5628 3661 5724,"I.Gould and H.C Richter det it lith. | Hullmandel & Walton, Imp.",eye,stop after Richter could be a comma
+II,66,272,1218 5811 1842 5903,3292 5808 3792 5896,"I.Gould and HI. C.Fichter, del et tith. | Hullmandel & Waltow, Imp.",eye,
+II,67,276,878 5718 1442 5784,2942 5724 3430 5812,"J. Goutdl and H.C.Richter, del et lith. | Hullmandel & Walton, Imp.",eye,
+II,68,280,920 5710 1508 5776,3020 5717 3476 5801,"J. Gould and H.C Richter, dei. et lith. | Hullmandel & Walton, Imp.",eye,
+II,69,284,955 5694 1513 5768,3130 5708 3606 5796,"Should and HCKichter, del et lith | Hullmandel & Walton, Imp.",eye,
+II,70,288,759 5814 1203 5866,3346 5816 3574 5882,"T.ttould & W.Hart del et lith. | Walter, Irp.",eye,
+II,71,292,604 5813 1098 5875,3377 5808 3641 5882,"J. Gould & WHart del et Tith. | Walter, Imp.",eye,
+II,72,296,626 5869 1156 5935,3520 5873 3788 5947,"J. Gould & W.Hart del et lith. | Walter, Imp",eye,stop after Imp faint; no separate stop after Imp visible (a faint speck at mid-height)
+II,73,300,834 5814 1286 5884,2311 5649 4005 6049,"Tömelal & W. Hart, del at lith | ODERIPI, Bonap. | Walter Imp.",scan,"wide crop shows the caption (ODERIPI, Bonap.), left out; Walter Imp. sits mid-crop with no comma visible after Walter; locator: no line found in the right corner"
+II,74,304,844 5861 1416 5945,3252 5851 3522 5943,"J.Gould & H.C.Richter, del et lith. | Walter, Imp.",eye,
+II,75,308,758 5852 1336 5940,3590 5862 3852 5950,"J.Gould & H. C.Richter, del et lith. | Walter imp.",eye,"faint marks between del and et, possibly a stop"
+III,1,12,683 5831 1341 5905,3312 5827 3908 5907,"J. Bould and H-CRichter, del et lith.. | Hullmandel & Watton, Imp.",eye,"a second dot after lith, likely a stray mark"
+III,2,16,853 5783 1393 5841,3253 5786 3735 5856,1euld and H( Richter del a lith | Hullmandel & Walten Imp.,scan,left line faint and Gould barely legible; no stop visible after lith
+III,3,20,720 5854 1312 5946,2828 5887 3122 5989,"I.Gould & HC Richter, del et lith. | Walter, Inp.",eye,
+III,4,24,1108 5786 1622 5848,2929 5790 3409 5882,JGould und HCHichter del e lith | Hulmandel & Walton Imp,eye,"the printer's credit line reads Hulmandel with one l, credited to Hullmandel & Walton; no stops visible after J or H or C or lith or Imp; Hulmandel with one l, as engraved (scan at 2x)"
+III,5,28,823 5889 1419 5947,3025 5915 3533 5981,"I. Gould and H. CRichter, det. et lith. | Hultmandet & Walton, Imp.",eye,"mark after Richter could be a comma; a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+III,6,32,926 5808 1458 5870,3156 5815 3600 5895,"J. Gould and, H.C. Hichter, del. et lith | Hulimandel & Walton: Imp.",eye,no stop visible after lith
+III,7,36,796 5920 1398 5986,2995 5934 3511 6014,"J. Gould and H.C. Richter, del et tith | Hrellmandel & Watton, Imp.",eye,
+III,8,40,803 5862 1295 5942,3168 5875 3538 5959,"J. Gouldand HCRichter, del et lith | Walter & Cohn, Imp.",eye,stop after lith faint
+III,9,44,660 5833 1252 5917,3517 5826 3815 5922,I.Gonll ad H.CRichter.del et lith. | WaTter: Iip.,eye,"marks after Gould, Richter and del could be stops; mark after Walter could be a stop"
+III,10,48,565 5826 1141 5906,3677 5810 4023 5890,"I.Goald, and H.CRichter, del, et,lith, | Walter Imp.",eye,"semicolon after Richter could be a colon or comma; a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+III,11,52,892 5834 1452 5900,3300 5845 3564 5929,"IGould & HC Richter del et lith. | Walter, Imp.",eye,no comma after Richter; stop after J not visible
+III,12,56,596 5896 1164 5984,3500 5884 3864 5972,"J.Gould and H C.Richter, del et lith. | Walter & Cohn, Imp",scan,Imp. faint
+III,13,60,845 5944 1417 6024,3022 5937 3518 6021,"J.CGould and. H.C.Richter, del et lith. | Hullmandel & Walton, Imp.",eye,
+III,14,64,925 5926 1507 6006,3050 5923 3572 6015,I.Gould and H.C. Bichter del et lith. | Mn ma vấel ở Walton Imp.,scan,Hullmandel faint; comma after Richter could be a stop
+III,15,68,1015 5816 1483 5874,3195 5832 3635 5912,"S Gould and HC Richter, del et lith. | Hullmandel &: Wallon, Imp.",eye,
+III,16,72,950 5801 1468 5871,3086 5806 3574 5894,"JGould and II.C. Fiihter, del et lih | Hullmandel & Walton, Imp.",scan,left line faint toward the end; no separate stop after lith visible
+III,17,76,914 5853 1466 5923,3076 5868 3572 5956,J. Gould and H.C.Richter del et lith. | Hulimandel & Weltm Imp.,eye,
+III,18,80,995 5907 1539 5981,3289 5920 3725 5982,"Mould and H.CRüchter, del. it lith. | Hullmande & Nalton lon",scan,right line faint at the end
+III,19,84,936 5960 1414 6044,3312 5927 3538 6007,"JGould & W. Hart, del et lith. | Watter Imp.",eye,
+III,20,88,1130 5960 1590 6030,3312 5955 3546 6035,"J.Gould & W.Hart, del et lith. | Walter, Imp.",eye,
+III,21,92,558 5950 1078 6034,3388 5923 3630 6003,"J. Gould & W. Elurt, del et lith. | Walter, Imp.",eye,
+III,22,96,746 5953 1308 6041,3471 5929 3771 6017,"J.Gould & W. Hart, del et lith. | Waller, Imp.",scan,"the printer's credit line reads Waller, an engraving slip for Walter; on the scan at 4x both tall strokes reach the full height of an l and neither has a crossbar, unlike the t of III.21 and III.23"
+III,23,100,748 5860 1296 5952,3659 5822 3907 5914,"J. Gould &WHart, del et lith. | Walter, Ip.",eye,
+III,24,104,818 5784 1310 5854,3204 5787 3588 5883,"S. Gould and H.C.Richter, del. et lith. | Walter & Cohn, Imp.",eye,
+III,25,108,739 5869 1239 5949,3173 5870 3549 5962,"J. Gould and HC. Richter, del. et lith | Walter & Cohn, Imp",eye,stop after lith faint
+III,26,112,945 5855 1437 5929,3335 5859 3721 5947,"Iould and HCRichter, del et lith. | Walter & Cohn, 1mp",eye,
+III,27,116,926 5803 1428 5869,3695 5834 3917 5904,J.Gould & W.Hart del. et lith. | Walter imp.,eye,
+III,28,120,562 5872 1104 5960,3581 5852 3967 5948,"IGouldand H.CRichter, del.et lith. | Watter & Cohn, Imp",eye,no stop visible after Imp
+III,29,124,852 5869 1426 5953,3454 5879 3722 5971,"J.Gould & H.CRichter, del et lith. | Walter, Imp.",eye,
+III,30,128,917 5806 1305 5886,3491 5794 3747 5874,W.Hart del. et lith. | Walter imp.,eye,
+III,31,132,1059 5764 1673 5838,3225 5772 3721 5852,"Mouldunel MC Hichter, delei lith | Meltmandel& Walten kmup",eye,no stop visible after lith or Imp; comma after Walton faint
+III,32,136,1012 5780 1390 5864,3374 5771 3614 5845,"W.Hart, del: et lith. | Wilter; Imp.",eye,"stop after del could be a colon; a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+III,33,140,769 5893 1303 5973,3731 5849 4135 5959,"JGould and HC Richter, del. et lith. | Watter & Cohn. Imp.",eye,comma after Richter could be a semicolon
+III,34,144,829 5833 1421 5913,3461 5837 3933 5925,"Houlả and HC Füchter, del et lith. | Hullmandel & Walton, Imp",eye,
+III,35,148,723 5859 1329 5939,3594 5845 3832 5919,I.Gould &HC Richter; del et lith. | Walter; Imp.,eye,
+III,36,152,845 5841 1373 5915,3490 5841 3730 5915,"J.Gould &.HCBichter, del et lith. | Walter, Imp.",eye,
+III,37,156,870 5827 1366 5893,3642 5847 3888 5921,J. Gould & W.Hart del et lith. | Walter imp.,eye,
+III,38,160,906 5819 1330 5885,3583 5826 3795 5896,IGould & W.Hart del et lith. | Walter Imap,eye,
+III,39,164,722 5858 1148 5920,2221 5689 3942 6089,"I. Gould & W. Hurt del et tith | TERON CINERACEUM, Godwin-Austen.",scan,"right crop shows the caption, not the printer's line; the printer's line is small, right of the caption: read from the scan; locator: no line found in the right corner"
+III,40,168,747 5907 1155 5959,2466 5863 3278 5899,"J.frrld &-W. Hart del et lith. | ДДCAВя CA, VаUтио.",scan,"right crop shows the caption, not the printer's line; the printer's line is small, right of the caption: read from the scan; left line small and faint"
+III,41,172,814 5809 1344 5875,3439 5808 3673 5870,I.Gruld &HCRichter det et lith. | Walter Imp.,eye,no comma after Richter or Walter
+III,42,176,1033 5883 1585 5979,3629 5877 3889 5965,"JGould & HCRichter, del et lith. | Walter: Imp.",eye,
+III,43,180,692 5784 1212 5868,3533 5750 3795 5834,"J. Gouild & W. Hart, del et lith. | Waltar, Imp",eye,
+III,44,184,830 5821 1380 5909,3428 5827 3690 5923,"JGould & IIC.Richter, del et tith! | Walter, Imap.",eye,no stop visible after lith
+III,45,188,796 5823 1400 5911,3400 5809 3682 5911,"IGould & HCRichter, del et lith. | Walter: Imp.",eye,
+III,46,192,985 5809 1559 5911,3907 5749 4147 5837,"IGoutd &HC Richter, del et lith. | Walter Imp.",eye,no comma after Walter
+III,47,196,958 5826 1554 5918,3381 5838 3669 5930,"J.Gould & HCRichter, dá et lith. | Walter, Imp.",eye,
+III,48,200,572 5848 1286 5932,3661 5847 3947 5935,"J. Gould & H.C.Richter, del, et ith. | Walter, Imp.",eye,comma after del
+III,49,204,783 5857 1469 5937,3683 5850 3969 5942,"I.Gould & II.C.Richter, del. et lith. | Walter, Imp.",eye,left line faint; stop after lith faint
+III,50,208,824 5827 1402 5915,3770 5783 4188 5885,"JGould and H.C.Richter, del et lith. | Walter & Cohn, Imp.",eye,
+III,51,212,579 5851 1169 5947,3532 5801 3968 5903,"J Gould and HC.Richter, del et lith | Walter & Cohn, 1mp.",eye,
+III,52,216,735 5839 1151 5919,2670 5679 4489 6079,"J.tould & W.Hart, del et lith. | BANUS, Godwin-Austen. | Valter Imp",eye,right crop is wide and takes in the caption; printer's line small; locator: no line found in the right corner
+III,53,220,942 5809 1408 5875,3273 5795 3499 5861,"Linaiid & W Hart del et tith. | Walter, Imp.",scan,left line faint at J.Gould
+III,54,224,1098 5895 1684 5983,3358 5873 3632 5969,"J.Gould & HCRichter, del et lith. | Walter, Imp.",eye,
+III,55,228,844 5818 1520 5910,3508 5817 3810 5913,"T.Grould & H.CRichter, del et lith. | Walter, Imp.",eye,
+III,56,232,863 5839 1467 5919,3689 5824 3947 5916,J. Gould and HC Richter del etlith. | Walter: Imp.,eye,"semicolon after Richter could be a colon; semicolon after Walter could be a comma; a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+III,57,236,820 5814 1408 5906,3853 5773 4119 5861,"I. Could, & HCRichter, del et lith | Walter, Imp.",eye,comma after Gould; mark after Richter could be a stop; no stop visible after lith
+III,58,240,895 5855 1341 5929,2616 5692 4489 6092,"J.Gould & W.Hart del et lith. | LDENI, Goduin - Austen. | Walter, Imp.",eye,right crop is wide and takes in the caption; locator: no line found in the right corner
+III,59,244,701 5813 1269 5887,3458 5801 3720 5881,"I Gould & W. Fart det et lith. | Walter, Imp.",eye,
+III,60,248,942 5822 1556 5906,3377 5844 3667 5936,"J.Gould &H.C.Richter, deb et lith. | Walter: Trp.",eye,
+III,61,252,830 5810 1456 5902,3605 5800 3897 5892,"J.Gould & HCRichter, del et lith. | Walter. Imp.",eye,stop after Walter could be a comma
+III,62,256,994 5776 1490 5860,3347 5742 3613 5826,I.Gould & W.Hart del et tith. | Walter; Imop.,eye,
+III,63,260,844 5840 1352 5924,3456 5807 3668 5881,"Jünuld & IICRúchter, đel et lith | Watter, Imp.",eye,
+III,64,264,1069 5853 1519 5933,2448 5693 4051 6093,"IGould & HC Richter, del et lith! | DEMATA, J. Ver. | atter, Imp.",eye,"right crop is wide and also shows a caption (DEMATA, J. Verr.), not a line; Walter, Imp. sits below it; locator: no line found in the right corner"
+III,65,268,957 5817 1459 5897,3300 5805 3532 5885,"IGoutd & H.C.Richter, del et lith | Walter, Intp.",eye,a speck or stop after &
+III,66,272,857 5901 1477 5997,3716 5857 4170 5959,"JGould and H.C.Richter del et lith | Walter & Cohn, Imp.",eye,
+III,67,276,953 5721 1561 5801,3112 5701 3608 5781,"J.Gould and H C.Fichter, del et lith | Hullmandel & Walton, Imp.",eye,
+III,68,280,726 5798 1214 5860,3500 5807 3748 5887,J.Gould & W.Hart del. et lith. | Walter imp.,eye,
+III,69,284,832 5885 1298 5951,3579 5850 3815 5920,J.Gould & W.Hart del.et lith. | Walter imp.,eye,
+III,70,288,979 5757 1557 5815,3399 5761 3887 5827,J.Gould and H.C.Richter del et lith | Hullmandel &Wulton Imp.,eye,no separate stop after lith visible (a speck 30 px away at mid-height)
+III,71,292,871 5835 1447 5893,3365 5855 3873 5921,S.Gould und. H-C.Richter del et lith | Hulmandel & Walton Imp.,eye,
+III,72,296,1017 5803 1595 5861,3455 5818 3957 5888,J. Gould and HCRichter del et lith | Fulmondel & Walton Imp.,eye,
+III,73,300,866 5806 1342 5868,3238 5837 3482 5911,"Timid &WHart del et tith. | Walter, Imp.",eye,
+III,74,304,628 5846 1070 5908,3203 5885 3423 5951,"T.Gould & W. Hart del et lith. | Watter, Emp",eye,no stop visible after Imp
+III,75,308,991 5781 1563 5855,3164 5789 3604 5869,"J. Gould and H.C.Richter, del et lith | Hullmandel & Walion, Imp",eye,
+III,76,312,885 5755 1451 5813,3064 5767 3506 5841,1 Geutá mnd. HC.Rachter dá et lith | Hidtmandet & Walton Imp,eye,"stops after J and H barely visible; marks after Richter and Walton could be stops, not commas; no stop after Imp"
+III,77,316,876 5719 1486 5785,2973 5742 3601 5834,"I.Gould and H.C.Hichter del et tith | Hultmandel & Walton, Imp:",eye,
+III,78,320,972 5754 1540 5816,3096 5765 3540 5845,"J. Grould and H.C Richter, del ot lith. | Hullmandel & Walton, Imp.",eye,
+IV,1,12,930 6897 1676 7003,3529 6938 4147 7056,"J. Gould and H.C. Richter, del. et lith. | Hullmandel & Walton, Imp.",eye,
+IV,2,16,1139 7036 1823 7116,3710 7074 4248 7140,"Joindd and H.C.Richter, del et lith | HiUnardel & Wulton Ii",scan,Gould faint in the left crop
+IV,3,20,958 7030 1772 7158,4164 7105 4526 7229,"J.Gould & H.C Richter, del et tith. | Watter Imp.",eye,no comma after Walter
+IV,4,24,1145 6809 1809 6889,3636 6847 4202 6943,"I. Gowd and H.C Fachter uel. et lith. | Hulmandel & Walton, Imp.",eye,
+IV,5,28,1241 7049 1817 7123,3936 7087 4492 7189,"Mould andCHRechter, del o bitte | Huillmandel & Walton, Imp",scan,"the artist's credit line reads C. H. Richter, the initials reversed, credited to Henry Constantine Richter; left line faint; initials read C.H., not H.C., on the scan, recorded as engraved; stop after del uncertain; no stop visible after Imp"
+IV,6,32,1171 7067 1841 7169,3733 7134 4327 7248,"J.Gould and H.C.Richter, del. et lith. | Hultmandel á Wation, Imp",eye,no stop visible after Imp
+IV,7,36,842 7036 1532 7150,3821 7102 4143 7216,"J.Gould & H.C Richter, det et lith. | Walier, Imp.",eye,
+IV,8,40,1081 6999 1797 7117,3843 7019 4169 7129,"J.Gould & H.C.Bichter, del et lith. | Walter, Imp.",eye,
+IV,9,44,871 7093 1473 7173,3844 7103 4312 7227,"J.Gould and H.CRichier, del et lith | Walter & Cohn, Imp.",eye,
+IV,10,48,1201 7107 1871 7203,4058 7123 4386 7247,"J. Gould & H1 CRichter, del et Tith. | Walter Imp.",eye,
+IV,11,52,970 6928 1604 7012,3911 6958 4399 7072,"J. Gould and H.C.Richter, del et lith. | Wulter & Cohn, Imp. .",eye,
+IV,12,56,812 7050 1432 7142,4049 7114 4537 7228,"I.Gould and H.C.Richto, del. et lith. | Walter & Cohn, Imp.",eye,
+IV,13,60,853 7121 1537 7223,4134 7153 4652 7271,"JGould and HCRichter, det. et lith. | Walter & Cohn, Imp.",eye,
+IV,14,64,898 7027 1536 7115,3865 7046 4323 7160,"1. Gould and. H. C.Richter, del. et lith. | Walter & Cohin, Imp.",eye,
+IV,15,68,984 7032 1720 7102,4141 7026 4745 7140,J. Could and H.C.Richter del Alith. | Hullmande & Walten Imp.,eye,stop after lith could be a comma
+IV,16,72,879 7087 1555 7183,4080 7153 4614 7255,"J. Gould and HCRichter, del. et lith. | Walter & Cohn, Ip..",eye,
+IV,17,76,984 7074 1436 7158,4052 7075 4388 7177,W.Hart del. et lith. | Walter imp.,eye,
+IV,18,80,914 7062 1516 7146,4199 7121 4665 7231,"J. Gould and H.C.Pichter, del et lith. | Waiter & Cohn, imp.",eye,
+IV,19,84,904 7122 1550 7214,4141 7177 4643 7287,"J.Gorbd and H.C.Richter, del et lith. | Walter & Cohn, Irp.",eye,
+IV,20,88,1162 6934 1836 7018,3686 6939 4238 7041,"I. Gould and HC. Fichter, del et lith. | Hullmandel &Walton, Imp.",eye,
+IV,21,92,1358 4863 1990 4925,5291 4836 5877 4910,"J.Gould and H. C.Richter, del et lith. | Hullmandel & Wallon, Imp.",eye,comma after Richter could be a semicolon
+IV,22,96,1441 4948 2047 5000,5476 4910 6028 4976,"J Could and H.C.Richter, del. et lith. | Hullmandel & Walton, Imp.",eye,stop after J faint
+IV,23,100,1030 7005 1744 7093,3789 7042 4405 7156,"J. Could and H.C.Pichter, del et lith. | Hullmande & Walton, Imp.",eye,
+IV,24,104,766 4711 2666 5111,5000 4711 6900 5111,"J. Gould and H.C.Richter, del. et lith. | Hillmandel & Walton, Iyr.",eye,locator: no line found in the left corner; no line found in the right corner
+IV,25,108,114 5075 542 5159,5286 4886 5896 4974,"Hullmandel & Walton, Imp.",scan,"the left crop showed the picture's edge, not the line; both lines are on the scan"
+IV,26,112,129 5082 541 5140,5528 4785 5838 4869,Walter Imp.,scan,"the left crop showed the plate's edge, not the line; both lines are on the scan; the initial before Gould is an H, not J, at 3x, recorded as engraved; the artist's credit line reads H. Gould, and no Gould with that initial is known as an artist of this work, so only Richter is credited"
+IV,27,116,831 7143 1537 7239,4339 7153 4683 7263,"J. Gorld, and H. CRichter, del et lith. | Walter, Imp.",eye,
+IV,28,120,736 7135 1476 7245,4651 7132 4953 7238,J. Gould and HCRichter del et lith | Walter. Imp,scan,"marks after Gould, Richter and Walter could be stops; no stop visible after lith; right crop's edge is grey and a stop after Imp is not visible"
+IV,29,124,772 7072 1496 7178,4239 7118 4569 7232,"S.Could and H.C. Richter, del et lith. | Walter.Imp.",eye,
+IV,30,128,666 7126 1454 7232,4383 7074 4749 7210,"I Gould, and H CRichter, del et lith. | Walter Imp.",eye,comma after Walter could be a stop
+IV,31,132,93 5088 1387 5199,5509 4906 5835 5002,Walter Imp.,scan,"the left crop showed the plate's edge, not the line; both lines are on the scan; the last mark of the left line may be a comma or a stop"
+IV,32,136,748 7056 1498 7170,3299 6913 5199 7313,"J. Gould, and HC.Richter, del, et lith, | OLEUCA, Jerd. | Walter, Ir.",scan,"printer's credit line: 'Walter, Im' fades out and the rest is not legible on the scan, so its wording is left out; locator: no line found in the right corner"
+IV,33,140,1031 7035 1703 7131,4173 7078 4487 7184,"). Gould &H.C.Richter, del, et lith, | Walter Ip.",eye,"left line faint; mark after Gould could be a comma; comma after del; stop after lith could be a comma; mark after Walter looks like a colon, read as a comma"
+IV,34,144,930 7100 1514 7184,3873 7102 4325 7208,"J.Gould and.H.C.Richter, del. et lith. | Walter & Cohr, 1mp.",eye,
+IV,35,148,738 7149 1500 7237,3868 7157 4438 7281,"IGruld and HCRichter, del et lith. | Walter & Cohn, 1mp.",eye,
+IV,36,152,1348 6996 2050 7066,4065 6972 4607 7056,I. Koulsand E.C. Kichter dd at tith. | Hullmandel & Watten Fnje,eye,
+IV,37,156,977 6944 1641 7046,4143 6970 4703 7066,"I.Gould and H.C.Richter, del et lith. | Hultmandet & Watton, Imp.",eye,
+IV,38,160,1142 7070 1662 7158,3232 6914 5132 7314,"J.Goald & W Hart del et lith | TKENSIS. | Walter, Irp.",eye,no stop visible after lith; right crop is wide and takes in the caption; locator: no line found in the right corner
+IV,39,164,1091 7034 1639 7130,4506 7033 4776 7125,"I.Goald &W. Hart, del et lith. | Walter, Imrp.",eye,
+IV,40,168,1161 7062 1695 7158,4292 7111 4560 7203,"J.Gould & W Hart, del et lith. | Walter, Fip.",eye,
+IV,41,172,1300 7119 2044 7225,4100 7118 4432 7228,"J.Gould & H.CRichter, del et lith. | Walter, Imp.",eye,
+IV,42,176,931 7136 1677 7238,4425 7098 4775 7222,"J.Goulà & HCFichter, del et lith. | Walter, brip.",eye,
+IV,43,180,1037 7172 1697 7268,4134 7149 4454 7263,"TGould & HCRichter del et tith. | Walter, trip.",eye,
+IV,44,184,1446 6843 2214 6935,3987 6826 4599 6922,IGould and Hl Richter det et lith. | Hullmondel & Wolton Inr.,scan,Imp. faint; stop after del uncertain; no separate stop after del visible (the l's exit stroke only)
+IV,45,188,1295 6930 2039 7032,3828 6927 4434 7033,"IGould and HCFichter, del et lith. | Huttmandet & Walton Imp.",eye,comma after Richter could be a semicolon
+IV,46,192,1232 6903 1940 6995,3784 6887 4430 7001,"Ieuld und HC. Richter, del et tith. | Hullmandet & Halton, Imp.",eye,stop after lith faint
+IV,47,196,1377 6914 2115 7016,3892 6902 4516 7012,"J.Grould and H.C Richter, del et lith. | Hulmundel & Nalton, Imp:",eye,comma after Richter could be a semicolon; stop after Imp could be a colon
+IV,48,200,1495 7168 2155 7270,3882 7213 4438 7319,JGould and HCRichter del et lith | Hullmandel & Wallon Inp,scan,"stops faint or absent: none visible after J, H, C, del, lith or Imp; a dot may follow Gould"
+IV,49,204,1531 6994 2089 7068,3906 6996 4456 7106,IGould und HCBichter del et lith | Hullmandel & Walton Imp,scan,"no stops visible after J, H, C, lith or Imp; they may be too faint to show"
+IV,50,208,1244 7033 1936 7139,3979 7080 4285 7176,"J.Gould & HlPachter, det et lith. | Walter, Imp.",eye,no stop visible after lith
+IV,51,212,698 6977 1490 7069,4244 6981 4876 7087,"J.Gould and HCRichter, del et lith. | Hullmandel & Walton, Imp.",eye,stops after H and C sit raised; no stop visible after del
+IV,52,216,952 7022 1420 7110,4029 7044 4377 7146,W.Hart del. et lith. | Walter imp.,eye,
+IV,53,220,1278 6917 1848 7009,4146 6905 4428 6997,"F.Gould & W Hurt, del et lith. | Walter, Imp.",eye,
+IV,54,224,1322 7011 1866 7095,2640 6853 4222 7253,"I Gould &W Hort, del et tith. | OCICHLA ROBERTI, Godwin Austen & Walden.",scan,"right crop shows the caption, not the printer's line; the printer's line is small, right of the caption: read from the scan; locator: no line found in the right corner"
+IV,55,228,941 7068 1487 7148,4478 7050 4768 7138,Ioald & W Hart del et bith. | Walter Ie.,eye,
+IV,56,232,1036 7013 1726 7119,4192 7012 4498 7122,"I.Gould & H.C.Richter, del et lith | Walter; Imp.",eye,no stop visible after lith
+IV,57,236,1335 7018 2045 7092,4056 6971 4676 7063,I. Gould and HCRichter de etlith. | Halmande & Walton Imp,eye,stops after H and C sit raised
+IV,58,240,1156 6953 1934 7037,4260 6917 4886 7023,I. Could and HC Huchler del a leth. | Ihultmonuded & Walton Imp.,eye,stops after H and C sit raised
+IV,59,244,808 7124 1520 7234,4457 7072 4807 7196,J. Gouldand HC Richter; del et lith | Walter Imp.,eye,"no stop visible after lith; no mark visible after Walter; a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+IV,60,248,1144 7105 1868 7197,4518 7090 4852 7200,"J.Gould &HCRichter, del et lith | Walter: Imp.",eye,comma after Richter could be a semicolon
+IV,61,252,1052 7036 1744 7106,4009 7018 4519 7102,Hould und I C fichter; del et lith. | Melmundel & Hatton Inep,scan,right line faint; no stop visible after Imp; comma after Richter could be a semicolon
+IV,62,256,1225 7075 1859 7171,3803 7069 4405 7179,"J. Gould and II. C.Richter, del et lith. | Hullmandel & Walton, Imp.",eye,
+IV,63,260,1373 7145 1999 7241,4070 7111 4592 7213,"J. Gould and H.C.Richter, del. et lith. | Hultmandel & Walton, Imp.",eye,
+IV,64,264,1302 4946 2110 5034,5805 4962 6161 5064,"J. Goaild, and H.C.Richter, del et lith, | Walter; Imp.",eye,"semicolons after Richter and Walter could be commas; a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+IV,65,268,762 7238 1550 7344,4469 7210 4835 7338,"J. Gould, and H.C.Richter, del et lith. | Walter, Imp.",eye,"semicolon after Richter could be a comma; a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+IV,66,272,1681 5018 2469 5098,5065 5010 5417 5106,J.Gould & HCRichter del et lith. | Walter Imp.,eye,no comma after Richter or Walter
+IV,67,276,1853 5016 2465 5096,5206 4979 5680 5071,"J. Gould and H.CRichter, del et lith. | Walter & Cohn, Imp.",eye,
+IV,68,280,849 7233 1619 7335,4489 7171 4823 7281,"J. Gould, and H. CRichter, del et lith, | Walter, Imp.",eye,"semicolon after Walter could be a comma; a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+IV,69,284,888 7199 1674 7309,4041 7171 4413 7281,"J. Gould, and. H.C.Richter, del et lith, | Walter: Imp.",eye,marks after del and et could be stops; mark after Walter could be a stop or colon
+IV,70,288,839 7119 1615 7221,4308 7131 4658 7249,"J. Gould, and H. CRichter, del, et,lith, | Walter.Imp.",eye,
+IV,71,292,880 7211 1694 7321,4359 7170 4745 7276,"J. Gould, and H.C.Richter del, et lith, | Walter, Imp.",eye,"semicolon after Richter could be a comma; a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+IV,72,296,1253 4998 2117 5078,5696 4994 6058 5104,J. Gould & H.C.Richter del. et lith. | Walter; Imp.,eye,no comma after Richter
+V,1,12,651 6699 1399 6779,4116 6713 4420 6815,J. Gould & H.C.Richter del et lith. | Walter; Imp,eye,no comma after Richter; no stop visible after Imp
+V,2,16,930 6599 1562 6665,3700 6641 4190 6721,J. Goala and HC Richter del etlith. | Hallmandd & Walten Inp.,eye,stops after H and C sit raised
+V,3,20,669 6606 1421 6680,3566 6630 4110 6696,F.Could and H.C.Richter del et lith | Hdmandel & Walton Imp.,eye,
+V,4,24,993 6576 1687 6656,3888 6582 4442 6670,"J. Gould and H CRichter, del et lith. | Hullmandel & Walton, Imp.",eye,stops after H and C sit raised
+V,5,28,932 6693 1396 6777,2415 6535 4139 6935,Itould & W Hart del et lith | ILLA RUFICOLLIS; WI.Blanford,scan,"right crop shows the caption, not the printer's line; the printer's line is small, right of the caption: read from the scan; no stop visible after lith; locator: no line found in the right corner"
+V,6,32,1108 6552 1778 6640,3517 6592 4055 6688,"J. Gould and H.C.Prichter, del.et lith. | Hullmandel & Walton, Ip.",eye,comma after Richter could be a semicolon
+V,7,36,671 6582 1453 6684,3866 6613 4208 6719,"J. Gould & H.C.Richter, del et lith. | Walter; Imp.",eye,
+V,8,40,880 6777 1574 6869,3740 6809 4078 6915,"J.Gould & H.C.Richter, del et lith. | Walter Irip.",eye,no comma after Walter
+V,9,44,998 6683 1664 6775,3554 6689 3884 6795,I.Gould & HCRichter del et lith. | Walter Imp.,eye,no comma after Richter or Walter
+V,10,48,980 6745 1662 6837,3592 6789 3910 6873,"I.Gould & HCRichter, del et lith | Walter Imo.",eye,no stop visible after lith
+V,11,52,1086 6741 1830 6847,3838 6754 4180 6864,"I. Gould & HCRichter, del et lith. | Walter, Imp.",eye,
+V,12,56,1064 6779 1632 6871,4124 6762 4436 6850,"J.Gould & W. Hart, del et lith. | Walter, Imp.",eye,
+V,13,60,814 6785 1534 6877,3762 6794 4096 6904,"J.Crould & HCRichter, del et lith. | Walter, Imp.",eye,
+V,14,64,966 6728 1678 6834,3381 6769 3731 6879,"I.Gould & H.CRichter, del et lith. | Walter, Imp.",eye,
+V,15,68,996 6710 1556 6794,4062 6695 4306 6775,T.Gould & HCRichter; del et lith. | Walter Imp.,eye,mark after Walter could be a stop
+V,16,72,1012 6698 1712 6768,4001 6704 4577 6810,I. Gould and HCRichter del etlith. | Hullmandel & Walton Imp.,eye,raised stop after Richter could be a comma; stops after H and C sit raised; no separate stop after Richter visible (the dot is the r's ball at x-height)
+V,17,76,901 6649 1599 6729,3862 6671 4202 6767,"J. Gould & W. Hart del et tith. | Walter, Irp.",eye,
+V,18,80,991 6585 1635 6643,3934 6607 4418 6687,J.Gould and H.C. Richter Ael st lah. | Hullmandd & Walton Iny,scan,both lines faint; a mark after Richter may be a stop; no separate stop after Imp visible
+V,19,84,1039 6736 1687 6788,3784 6735 4286 6805,I. Could anã H.C. Richter AA d bth. | Adbmende & Walten Enp.,eye,right line faint
+V,20,88,658 6423 1338 6489,4318 6379 4820 6503,J. Could and H.C. Richter de et lith. | Killmandel & Watton Iimp.,eye,
+V,21,92,1085 6241 2889 6641,3868 6393 4448 6489,"MYCEROBAS | 7,Gond ană HCkíchea de d llh | Hullmandel & Wallon Imp.",scan,"one wide crop shows the caption (MYCEROBAS), left out; both lines speckled; locator: no line found in the left corner"
+V,22,96,1030 6765 1650 6827,4075 6734 4585 6830,"I.Gould and HC Richter del etlith. | Krillenandel & Walton Imp,",eye,stops after H and C sit raised; no separate stop after Imp visible (the p's exit stroke only)
+V,23,100,1100 6767 1768 6859,3616 6771 3912 6863,"J.Gould &H.CRichtor, del et lith. | Watier, Imp.",eye,
+V,24,104,1328 6739 2002 6809,4093 6684 4675 6808,J Gould and H CRichter del et lith | Fullmandel & Walten Imp.,eye,no stop visible after J or lith; stops after H and C sit raised
+V,25,108,1309 6754 2001 6828,2500 6631 3878 6759,J.Gould und H-C.Richter delet lith. | CARPODACUS RUBICILLA.,scan,"right crop shows the caption, not the printer's line; the printer's line is small, right of the caption: read from the scan; stops after H and C are raised"
+V,26,112,1252 6758 1936 6824,4196 6733 4726 6861,J. Gould and H-C Richter del et lith. | Hullmandel &Walton Imp.,eye,stop after C faint; no separate stop after del visible
+V,27,116,1338 6765 1764 6849,4405 6766 4697 6862,"W.Hart del.et lith. | Walter, Imp.",eye,"semicolon after Walter could be a comma; a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+V,28,120,1209 6734 1793 6808,4081 6748 4349 6822,J.Goald & W.Hart del. et lith. | Walter imp.,eye,
+V,29,124,880 6637 1478 6729,3668 6639 3972 6731,J.Gould & W.Hart del et lith. | Watxer imp.,eye,
+V,30,128,1096 6681 1666 6765,3998 6689 4266 6773,J.Gould & W.Hort del et lith. | Walter imp.,eye,
+V,31,132,1226 6692 1770 6780,4274 6675 4542 6759,"J.Gould & W.Hart, del et lith. | Walter Iip.",eye,
+V,32,136,965 6852 1419 6932,2485 6692 4253 7092,": IGould &M Hart del et tith, | OCYNCHRAMUS PYLZOWI, Prer",scan,"right crop shows the caption, not the printer's line; the printer's line is small, right of the caption: read from the scan; stop after Hart could be a comma; stop after lith could be a comma; locator: no line found in the right corner; separate marks on the scan: a comma after lith and a stop after Imp"
+V,33,140,1184 6759 1718 6847,4149 6790 4405 6874,"IGorld &W. Hart, del et lith. | Walter, Imp.",eye,
+V,34,144,1518 6700 2266 6806,4016 6723 4594 6825,"J.Gould and H. C. Richter, del. et lith. | Hullmandel & Walton, Imp.",eye,
+V,35,148,1268 6732 1924 6794,4088 6727 4584 6823,Btould uni li Ckichtor dd &hth | Hullmamdel& Watton Imp.,eye,comma after Richter could be a stop; no stop visible after lith; & touches Hullmandel
+V,36,152,1434 6754 2112 6838,4262 6689 4750 6813,"Lbentd and HO Luhter, de dlith | Hullmanddel & Walton, Imp",scan,"left line faint; no stops visible after del, lith or Imp"
+V,37,156,1174 6771 1786 6837,3982 6779 4476 6875,! Gould and I CFuchter: del et lith. | Hullimundel &Walten Ip,scan,left line faint; comma after Walton faint; no stop visible after Imp
+V,38,160,1138 6852 1668 6944,4256 6819 4530 6915,"JGould & W Hart, del et Lith. | Walter, Inp.",eye,
+V,39,164,1031 6813 1539 6887,4296 6813 4530 6893,"JGoia & W. Hart, del et tith. | Walter, Ihip",scan,right line faint at Imp; no stop visible after Imp
+V,40,168,1133 6745 1615 6825,3825 6747 4069 6835,"I.Gould & W.Hart, del et lith. | Watter, Imp.",eye,
+V,41,172,1207 6677 1879 6773,3655 6683 4267 6793,"I. Gould and H.C. Richter, del ot lith. | Hullmandel & Walton, Imp.",eye,
+V,42,176,963 6775 1613 6855,4115 6779 4431 6867,I. Gould & W.Hart del.et lith. | Walter imp.,eye,
+V,43,180,1000 6709 1576 6797,3838 6743 4164 6839,"J. Gould & W.Hart, del et lith | Walter, Imp.",eye,
+V,44,184,1070 6807 1802 6917,3995 6832 4319 6938,"J.Gould & H.C.Richter, del et lith. | Walter, Imp.",eye,
+V,45,188,1306 6778 1972 6862,3804 6797 4354 6893,"I.Gould and H.CKichter del et lith. | Hultmandel & Malton, Imp.",eye,
+V,46,192,924 6809 1610 6919,4265 6780 4755 6908,"IGould and H.CRichter, del ot lith. | Watter & Cohn, Imp.",eye,
+V,47,196,1434 6750 2030 6834,3905 6749 4435 6837,"J.suld and HCRichter, del othith. | Hullinundel& Walton, Imp.",scan,Gould and Hullmandel faint
+V,48,200,1197 6773 1793 6847,3697 6788 4261 6872,IGoudd and H.C.Richter del et lith | Hullmandel &Vialten Inn,eye,a faint mark after Richter could be a stop
+V,49,204,1159 6813 1747 6893,3624 6815 4204 6911,"J.Gould and H.C. Richter, del. et lith. | Hullmandel & Wolton, Imp.",eye,
+V,50,208,1266 6843 1978 6953,3781 6876 4379 6968,"J. Gould and H.C.Richter, del. et lith. | Huttmandet & Walton, Inpp.",eye,
+V,51,212,1503 6825 2123 6899,3991 6800 4537 6906,"I.Gould nd HC.Richter, del ợ läth. | Frullmandel &Maltor, bp.",scan,and and Hullmandel faint
+V,52,216,1173 6842 1705 6916,3947 6830 4367 6926,"JGould und.HCRichter, del.et lith. | Walter & Cohn, Imp",eye,
+V,53,220,1219 6634 1905 6708,4339 6620 4839 6722,JGould and HCFichter del et lith. | Hullmande & Walton Imp.,eye,
+V,54,224,898 6779 1684 6885,3952 6769 4570 6883,"J Could and H.C Richter, del et lith. | Billmundei &. Walion Imp.",eye,
+V,55,228,758 6887 1460 6993,3825 6880 4339 6998,"J. Gould and H.C.Richter, del et lith. | Walter & Cohn, 1mp.",eye,
+V,56,232,1174 6756 1752 6844,3944 6753 4386 6867,"J.Gould ant HCRichter, del. et lith. | Walter & Cohn, Imp.",eye,
+V,57,236,889 6790 1469 6870,3725 6798 4149 6900,"Itould and H.CRichter, del et lith | Walter & Cohn, Imp.",eye,
+V,58,240,618 6778 1332 6866,4028 6767 4526 6873,"I.Gould ond H.C.Richter, del. et lith. | Walter & Cohn, Imp.",eye,
+V,59,244,965 6720 1669 6800,4277 6722 4815 6824,I. Gould and H.C. Richter del etlith. | Hullmandel & Walton Ip.,eye,
+V,60,248,1192 6660 1716 6744,4197 6676 4461 6768,"IGould & W Hart del et lith. | Walter, Imp.",eye,
+V,61,252,930 6789 1466 6877,3937 6826 4217 6918,"I.Gould & W Hirt del et lith | Watter, Imp.",eye,no stop visible after lith
+V,62,256,1063 6797 1589 6877,3865 6823 4137 6911,J.Gould & W. Hurt del a lith | Walter; Imp.,eye,no stop visible after lith
+V,63,260,991 6785 1467 6859,4193 6742 4447 6834,"I.Gould & MHart del a lith. | Walter, hnp.",eye,
+V,64,264,1015 6765 1763 6867,3447 6779 3795 6889,"J.Gouild & HCRichter, del: et lith. | Walter, Irrqp.",eye,
+V,65,268,1184 6696 1866 6788,3944 6705 4258 6807,J.Gould & HC.Richter del et lith. | Walter; Imp.,eye,no comma after Richter
+V,66,272,858 6818 1378 6902,4397 6792 4653 6876,"I Gonld & W Hart del et Tith. | Nalter, Imp.",eye,no stop visible after Imp
+V,67,276,1392 6786 1944 6870,4208 6779 4472 6875,"IGoald & W. Hart, del et lith. | Watter, Imp.",eye,
+V,68,280,1326 6801 1868 6889,3958 6803 4250 6899,"J.Gould & W. Hart, del et lith. | Watier, Imp",eye,
+V,69,284,1216 6654 1772 6738,4013 6664 4273 6748,"IGould &ICRichter, del et tith. | Walter Imp.",eye,mark after Walter could be a stop
+V,70,288,1146 6739 1806 6827,3761 6725 4065 6813,"T.Gould & H.C Richter, del et lith. | Walter, Imp:",eye,
+V,71,292,1142 4966 1644 5028,5161 4954 5401 5024,"I.Gould & W Hart, del et tith. | Walter, Imp.",eye,
+V,72,296,1085 6921 1663 6995,4293 6904 4563 6988,J. Gould & W.Hart del. et lith. | Walter imp.,eye,
+V,73,300,1152 6725 1740 6809,4348 6751 4626 6835,J. Gould & W.Hart del. et lith. | Walter imp.,eye,
+V,74,304,1176 6792 1790 6880,4357 6842 4639 6922,J. Gould & W.Hart del. et lith. | Walter imp.,eye,a mark after Hart could be a colon
+V,75,308,845 6774 1513 6848,4060 6770 4374 6858,"J. Gould &W.Hart del. et lith, | Walter imp.",eye,
+V,76,312,787 6799 1555 6895,4023 6794 4607 6886,"J. Gould and H'CRichter, del et lith. | Hullmandel & Walton, Imp.",eye,comma after Richter could be a semicolon; stops after H and C sit raised
+V,77,316,1064 6824 1584 6894,3810 6823 4216 6925,"IGould and.H.CRichler, del et lüh | Walter & Cohn, Imp.",eye,stop after J faint; no stop visible after lith
+V,78,320,891 6857 1429 6931,3706 6853 4124 6949,"SGouldand HCRichter, del et lith. | Walter & Cohn, Imp.",eye,
+V,79,324,1120 6781 1844 6869,3991 6826 4567 6918,LGould and HCRichter Ad alith | Halimandel & Walton Frp,eye,stops after H and C sit raised
+V,80,328,894 6708 1564 6770,4277 6688 4837 6780,LCoudd and HCRichter d e lith. | Huttmandel & Walten Imp.,eye,stops after H and C sit raised
+V,81,332,1432 4918 2096 4988,4959 4952 5285 5036,"J. Gould & W.Hart del et tith. | Walter, Frnp.",eye,
+V,82,336,1133 6745 1741 6825,4217 6734 4511 6818,"J.Gould &W.Hart, del et lith. | Wulter Imp.",eye,
+V,83,340,1109 6805 1805 6929,3811 6852 4153 6958,"J.Gouild & W. Hart, del et lith! | Walter Imp.",eye,comma after Hart could be a semicolon
+VI,1,12,420 6548 942 6610,3281 6556 3537 6625,"JGmild/& WHart del o tith/ | Waiter, hrep",eye,stop after lith is a slanted stroke; stop after Imp faint
+VI,2,16,610 6630 1162 6696,2835 6647 3091 6717,I. Goutd & HÜ Fichter; det et tith. | Waller Imp.,eye,no comma after Walter
+VI,3,20,686 6611 1244 6673,3246 6624 3488 6698,L'trould & ECBichter del et lith. | Wultei Imp.,eye,J faint; no comma after Richter or Walter; stop after del faint
+VI,4,24,609 6654 1285 6750,3529 6657 4119 6763,"I.Gould and H.C.Pechter, del et tith. | Hullmandel &, Walton, Im",eye,stops after lith and Imp faint
+VI,5,28,447 6626 1139 6706,3405 6592 4055 6724,"Jboudd and H.l. Rachter, deb dilith. | Hullmandel & Walton, Imp",eye,left line faint
+VI,6,32,465 6670 1115 6772,3459 6663 3999 6769,"J.Gould and H. C. Richter, del et lith. | Hullmandel, & Welton, Ip",eye,
+VI,7,36,715 6507 1327 6580,3133 6505 3675 6592,"J. Gould and H.C.Richter, del et lith. | Hultmandel & Walton, Imp",eye,
+VI,8,40,742 6518 1462 6601,3244 6516 3856 6618,"J. Gould and H. C. Riohter, del. et lith. | Hullmande1 & Walton, Imp.",eye,
+VI,9,44,832 6550 1518 6638,3297 6559 3809 6651,"J.Goald K H.C. Richter, del et lithr. | Hullinandel & Wallon, Imp",eye,no stop visible after Imp
+VI,10,48,738 6547 1348 6631,3174 6532 3710 6634,"J. Goald &.H.C.Richter, del et lith. | Hullmandel & Walton, Imp.",eye,u in Gould is closed and looks like an a
+VI,11,52,706 6561 1302 6631,3187 6549 3727 6641,"J. Gould and H.C.Fichter, del. et lith. | Hullmandel & Walton, Imp.",eye,
+VI,12,56,324 6707 954 6799,3429 6702 3935 6812,"I.Gould and H.CRichter, dei et lith. | Walter & Cohn, Imp.",eye,
+VI,13,60,401 6670 1035 6766,3519 6654 4005 6764,"J. Goula and HC.Riichter, dei et lith. | Walter & Cohn, Imp.",eye,
+VI,14,64,401 6686 1059 6782,3573 6661 4063 6775,"JCould and HC Richter, del et lith. | Walter & Cohn, Imp.",eye,
+VI,15,68,356 6679 988 6771,3525 6671 4005 6785,"J. Gould and H.C. Richter, del. et lith. | Walter & Cohn, Imp.",eye,
+VI,16,72,295 6606 927 6702,3691 6606 4143 6716,"JGould and H.CPüchter, del et lith. | Walter & Cohn, Imp.",eye,
+VI,17,76,497 6654 1199 6750,3516 6628 4094 6752,"J.Gould and H.C. Richter, del. et lith. | Hullmandd &Wattm: hup.",eye,
+VI,18,80,641 6678 1177 6752,3863 6656 4099 6722,J. Gould & W.Hart del.et lith. | Walter imp.,eye,
+VI,19,84,616 6639 1172 6709,3835 6640 4073 6706,J. Gould & W.Hart del. et lith. | Walter imp.,eye,
+VI,20,88,622 6529 1172 6599,3837 6510 4073 6576,J. Gould & W.Hart del. et lith. | Walter imp.,eye,
+VI,21,92,305 6572 779 6646,2349 6409 4249 6809,"J. Goutd & W Haro, del et lith. | CINTILLICEPS. | Walter, Imp.",eye,right crop is wide and takes in the caption; printer's line small; locator: no line found in the right corner
+VI,22,96,482 6515 1004 6585,3563 6513 3793 6583,"IGould & W.Hurt, del et lith. | Walter, Imp.",eye,
+VI,23,100,282 6490 876 6578,3377 6478 3671 6574,"I. Gorldl. & W. Hart, del et tith. | Walter,Imp.",eye,a mark after Gould could be a stop
+VI,24,104,213 6528 703 6602,3683 6544 3913 6624,"I.Goulat & W.Hart, del et lith. | Watter,Imp.",eye,
+VI,25,108,545 6540 1033 6614,3542 6530 3794 6610,"I.toutd & W. Hart del et lith. | Watter, brp.",eye,
+VI,26,112,420 6535 916 6619,2379 6377 4279 6777,I. Gruld & W Hort del et lith. | IICORONATUS. | Watter Inp.,eye,stop after Hart could be a comma; right crop is wide and takes in the caption; locator: no line found in the right corner
+VI,27,116,606 6507 1038 6599,3651 6504 3941 6592,"W.Hart del. et lith. | Walter, imp.",eye,
+VI,28,120,558 6565 1010 6657,3585 6551 3917 6657,"W. Hart del. et lith. | Walter, Imp.",eye,
+VI,29,124,508 6552 956 6640,3580 6560 3886 6662,"W.Hart del. et lith. | Walter, Imp.",eye,
+VI,30,128,538 6565 964 6657,3573 6563 3869 6647,"W. Hart det. et lith. | Walter, ump.",eye,
+VI,31,132,751 6586 1207 6682,3789 6551 4067 6635,"W.Hart, del. et lith. | Walter; imp.",eye,comma after Walter could be a semicolon
+VI,32,136,498 6600 906 6688,3600 6586 3870 6666,"W.Hart del. et lith. | Walter, ump.",eye,
+VI,33,140,680 6531 1250 6615,3786 6530 4050 6610,"J. Gould & W.Hart del. et lith. | Walter, imp.",eye,
+VI,34,144,596 6491 1032 6583,3591 6471 3877 6555,W.Hart del. et lith. | Walter imp.,eye,
+VI,35,148,220 6735 916 6841,3633 6699 4111 6835,"IGould urd HCRichter, del et lith | Walter & Cohn, Imp.",eye,no stop visible after lith
+VI,36,152,543 6608 1257 6682,2140 6445 3951 6845,I. Gvald and HC-Richter del et tith. | LEGMA FLAVINUCHA:Gould.,scan,"right crop shows the caption, not the printer's line; the printer's line is small, right of the caption: read from the scan; locator: no line found in the right corner"
+VI,37,156,194 6556 768 6644,2165 6463 3699 6599,"IGould & W.Hart, del et lith. | XANTHOCEPHALUS, Walden.",scan,"right crop shows the caption, not the printer's line; the printer's line is small, right of the caption: read from the scan"
+VI,38,160,576 6654 1316 6720,3497 6640 4035 6750,RAY P PAHNT PУ PHОg T | IhaMmande & Walten bp.,eye,comma after Walton faint
+VI,39,164,622 6725 1342 6831,3073 6726 3407 6836,"J.Gould & HCRichter; del et Tith. | Walter, Tira.",eye,comma after Richter looks like a semicolon
+VI,40,168,523 6634 1251 6736,3187 6647 3539 6761,"I.Gould & H.C.Richter, del et lith. | Walter, Imp.",eye,
+VI,41,172,814 6695 1500 6787,3193 6723 3527 6837,J.Grould &HRichter Ael et Tith | Walter Imp.,eye,C and the stops around it faint; no comma after Walter
+VI,42,176,650 6577 1278 6661,3542 6533 4122 6661,"1 Coua aud HChichter, del d lith | Hullmandel à Wallon, Imp.",eye,no stop visible after lith
+VI,43,180,344 6529 992 6617,3362 6527 3908 6623,"J Gould and HCRichter del et lith | Hultrandel, & Walton, Imp.",eye,
+VI,44,184,389 6651 971 6730,3602 6671 3886 6750,"J.Gould & W.Hart del, et lith. | Walter imp.",eye,
+VI,45,188,423 6571 1075 6673,3649 6575 3937 6663,"J. Gould & W. Hart del, et lith. | Walter imp.",eye,
+VI,46,192,492 6594 1088 6686,3915 6578 4205 6670,"J.Goulil & W.Hurt, del et Lith. | Walter; Imp.",eye,"mark after Walter could be a comma; a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+VI,47,196,429 6611 1007 6707,3833 6572 4121 6664,"J. Gorld & W. Hart del et lith. | Walter, Imp:",eye,
+VI,48,200,686 6601 1136 6689,3660 6597 3972 6693,W. Hart del. et lith. | Walter imp.,eye,
+VI,49,204,204 6683 806 6775,3658 6697 4120 6803,"JGould und HCRichter, del. et Tith. | Walter & Cohn, Imp.",eye,
+VI,50,208,490 6706 1186 6816,3183 6707 3505 6813,"Mrould & H.CRichter.del et lith. | Walter, Imp.",eye,mark after Richter could be a stop
+VI,51,212,1590 4235 2280 4323,4967 4253 5271 4341,"J. Gould, and H. C.Richter; del, etlith, | Walter: Imp.",eye,"colon after Walter could be a semicolon; a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+VI,52,216,1391 4224 2101 4304,4836 4225 5158 4317,"I. Gould, and H.C.Richter, del, et lith, | Walter, Imp.",eye,"semicolon after Walter could be a comma; a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+VI,53,220,1696 4264 2370 4352,4634 4269 4926 4361,"J.Gould &.H.C.Richter, del et lith. | Walter, Imp.",eye,
+VI,54,224,598 6589 1138 6677,2978 6597 3276 6699,Tiid &W Hart del et lith | Walter Imp.,eye,left line faint; little or no gap between & and W
+VI,55,228,778 6652 1300 6721,3195 6652 3461 6735,Sthrild &EC Richter del ot Lith. | Walter Erp.,eye,start of left line (J.) faint; no mark visible after Walter
+VI,56,232,357 6619 989 6715,3464 6613 3784 6709,"Jiould & W Hart, del et lith. | Watter, Imp",eye,
+VI,57,236,725 6589 1433 6685,3175 6594 3745 6700,"J. Gould and H.C Richter, del et lith. | Hullmandel & Walton, Imp",eye,
+VI,58,240,872 6619 1514 6707,3341 6636 3837 6720,"J.Gould and H.C. Richter, del et lith. | Hullmandel & Walton, Imp.",eye,
+VI,59,244,523 6665 1335 6783,3512 6657 3888 6775,"IGould & HC Richter, del et lith. | Walter, Imp.",eye,stop after J not visible
+VI,60,248,1061 4350 1901 4430,5123 4352 5457 4448,"J. Gould & II.C.Richter, del. et lith. | Walter, Imp.",eye,
+VI,61,252,1253 4412 1999 4470,4949 4412 5481 4470,IGorld and GCRichkr del elith. | Тallmandnl & Willon Iup,scan,right crop ends at the p of Imp; a stop may be cut off
+VI,62,256,1083 4310 1869 4384,5336 4337 5934 4407,J. Gould and HC.Richter Jel et tith. | Hellmandd & Walton Imp.,eye,stops after H and C sit raised
+VI,63,260,1067 4396 1761 4448,5350 4409 5874 4471,J. Gould and HC Pichter del et Vith. | Hallmandd & Watien Tmp.,eye,stops after H and C sit raised
+VI,64,264,1605 4368 2309 4420,5089 4372 5669 4452,T.GontA anA HC Richter det tlith. | Hullmandel & Walton Iup.,eye,
+VI,65,268,1071 4396 1721 4448,5538 4380 6052 4446,I. Gould and H.C.Richus del 1 lith. | Bullmandei & Walton bup,eye,
+VI,66,272,518 6720 1064 6804,3313 6742 3575 6834,"J. Gould &W. Hart dei et Tith | Walter, Imp.",scan,left line faint and broken toward the end
+VI,67,276,2110 4448 2746 4514,4601 4448 5111 4528,"J. Gould and HC. Pichter, del.et lith. | Huttmandet & Walton, Imp.",eye,
+VI,68,280,1962 4580 2640 4646,4446 4567 4970 4637,"J.Gould and II. C.Richter, del. et lith. | Hullmandel & Walton, 1mp",eye,no stop visible after Imp
+VI,69,284,2236 4446 2842 4508,4701 4440 5201 4524,"I.Gould und H.C Richter del et ith. | Hullmundel & Walton, Imp",eye,comma after Richter faint; no stop visible after Imp
+VI,70,288,1215 4431 1723 4505,5126 4435 5380 4515,"J.Gould & W. Hart, del et lith. | Walter.Imp.",eye,
+VI,71,292,1296 4456 1814 4526,5659 4470 5903 4540,"I.Gould & W. Hart, del et lith. | Walier Imx",scan,right line faint; no mark visible after Walter
+VI,72,296,1378 4260 1990 4352,4911 4265 5419 4375,"J.Gould H.CRichter, del. et lith. | Walter & Cohr, Imp.",eye,no & between the names; a stop after Gould
+VI,73,300,1469 4215 2143 4295,5294 4223 5612 4325,I.Gould & H.C Richter: del et lith. | Walter: Imp.,eye,"mark after Richter looks like a colon, read as a comma"
+VI,74,304,1320 4418 1972 4502,5342 4423 5890 4525,"Wolf and H.C.Richter det et lith. | Huttmanded & Watton, Imp.",scan,"the artist's credit line reads Wolf with no initial, credited to Joseph Wolf, the only Wolf among Gould's artists; no initial is engraved, the paper to its left is blank; comma after Richter: a faint dot with its tail below it, detached by a gap, read as a comma at 7x"
+VI,75,308,2067 4321 2773 4423,4511 4330 5117 4422,"I Gould and H.C. Richter, del et lith. | Hultiandel & Walton, Imp.",eye,
+VII,1,12,1318 4026 2064 4092,5067 4038 5613 4112,I. Gould and B.C. Richter del et lith. | Hullmandel & Walion Imp.,eye,
+VII,2,16,1088 4168 1848 4230,5273 4189 5843 4255,J. Gould and HCKichter del ei Tith. | Hallmandel & Walton Iup.,eye,stops after H and C sit raised
+VII,3,20,1648 4211 2244 4277,4864 4211 5308 4291,"I.Gould and H.C.Richter, del et lith. | Walter & Cohn, Imp.",eye,
+VII,4,24,1750 4278 2292 4348,4545 4277 4939 4365,"J.Gould and H.CRichter, del. et lith. | Walter & Cohn, Imp.",eye,
+VII,5,28,1770 4242 2264 4304,4643 4230 5013 4314,"J.Gould and H.CRichter, del et lith. | Walter & Cohn, Imp.",eye,
+VII,6,32,936 4177 1746 4261,5170 4181 5484 4273,I.Gould & H.C.Richter del et tith. | Walter; Imp,eye,no comma after Richter; no stop visible after Imp
+VII,7,36,1507 4232 2213 4312,4916 4239 5246 4331,"J.Gould & H.C. Richter, del et lith. | Walter, Imp.",eye,
+VII,8,40,1119 4212 1821 4286,5200 4209 5504 4293,"J. Gould & H.CRichter, del et lith. | Walter, Imp.",eye,
+VII,9,44,2030 4277 2624 4339,4478 4282 4932 4348,"I. Gould and H.C.Richter, del ci lith | Frcllmande & Walion. Imp",eye,no stop visible after lith or Imp; comma after Walton could be a stop
+VII,10,48,1384 4248 2128 4336,4902 4248 5208 4336,J.Gould & HCRichter; del et lith. | Walta: Imp.,eye,"mark after Walter looks like a colon, read as a comma"
+VII,11,52,1715 4182 2295 4262,4674 4165 5240 4257,"J. Goutå and. H. C. Bichter, del et lith. | Hullmandel & Walton, Imp.",eye,
+VII,12,56,1072 4469 1616 4509,5535 4442 5793 4494,1. Gould & W. Hart del et liltv. | Walter- Imp.,eye,
+VII,13,60,305 6710 779 6784,3630 6687 3880 6771,"J. Wolf and Hart del it lith. | Wulter, Irp.",eye,"stop after lith is a slanted stroke; the artist's credit line reads Hart with no initial, credited to William Matthew Hart, the only Hart among Gould's artists"
+VII,14,64,1068 4476 1518 4520,4698 4483 4920 4531,J.Gonuld & W Hart del et lith | Nalter: Imp.,scan,both crops small and blurred
+VII,15,68,1096 4481 1820 4543,5435 4470 5975 4528,J.Wolf and H.C.Richter; del et lith. | Nultmandel & Walton. Imp.,eye,"the mark after Walton is a faint dot with no tail at 7x, read as a stop; a semicolon-like mark after Richter read as a comma (the r's or n's terminal over it), as in Great Britain"
+VII,16,72,200 6642 834 6734,3549 6639 4043 6749,"HGould and H.CRichter, del et lith | Walter & Cohn, Imp.",eye,
+VII,17,76,646 6580 1476 6668,3271 6628 3873 6730,"I. Gould and H.C. Richter, del et lith. | Hultmandet & Walton, Imp.",eye,
+VII,18,80,1571 4353 2175 4411,5446 4351 5680 4409,"J.Wölf, and H.CRichter: del et lith. | Walter Imp.",eye,"semicolon after Richter could be a colon; no mark visible after Walter; a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+VII,19,84,1485 4341 2201 4415,4587 4333 4911 4421,"J.Gould, and H.C.Richter, del et lith, | Nalter; Emp.",eye,"a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+VII,20,88,1444 4381 2150 4447,4862 4383 5158 4457,"J.Gould, and H.C.Richter, del et,tith, | Nalter, Imp.",eye,"semicolon after Richter could be a colon; a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+VII,21,92,942 4278 1546 4348,4780 4299 5318 4373,"J.Could and H.C.Richter, del et lith | Hattmndet & Nalten Iny",eye,mark after Richter could be a semicolon; right line thin and no stop visible after Imp
+VII,22,96,457 6686 1203 6810,3212 6728 3556 6846,"Ifrould & H.C.Richter, del et lith. | Walter, 1mp.",eye,
+VII,23,100,1622 4360 2146 4408,4641 4369 4863 4413,Jould & HCtichter del et lith. | Walter Imp.,scan,both crops small and blurred; no comma visible after Richter or Walter; stops uncertain
+VII,24,104,1220 4339 1890 4405,5059 4349 5325 4415,"I.Gould: & H.C Richter, del et lith. | Walter: Imp.",eye,"mark after Walter faint, could be a stop; no separate comma after Walter visible (only the r's ball, scan blurred)"
+VII,25,108,1149 4336 1605 4388,4604 4340 4830 4406,"J.Gould & W.Hart del et lith. | Walter, Imp",eye,no stop visible after Imp
+VII,26,112,1758 4373 2494 4443,4298 4389 4860 4459,"J. Gould and H.C.Richter, del. et lith. | Hullmandet & Walton, Imp.",eye,
+VII,27,116,1466 4478 2124 4522,3899 4466 4477 4524,"J.Gould and H.C.Richter, del et lith. | Hullmandet å Watton, Imp.",eye,
+VII,28,120,1707 4466 2399 4518,4202 4471 4770 4533,"I.Goutd and H.C Richter del et lth. | Hullmandel A Walton, Imp.",eye,stop after lith faint; no separate stop after del visible
+VII,29,124,1586 4567 2214 4607,4030 4571 4556 4633,IWelkandHChichter: dda wth | Hultemandel & Walten.Inp,scan,left crop clips the line and it is faint; stops uncertain; no stop visible after Imp
+VII,30,128,2179 4552 2855 4582,4911 4560 5429 4582,a watr wd uc. tudtor.ddt. ct tdc,none,credit lines cut off at the sheet's foot: only the tops of their letters show; the lines are cut through the x-height at the sheet's foot and the lower-case letters between the tall strokes are blobs on the scan
+VII,31,132,1912 4476 2544 4507,4414 4469 4956 4507,Hulfealels Wudin. Im,scan,"left crop clips the tops of the letters, right crop the descenders; stops uncertain; no separate comma after Richter visible (the dot is mid-height, the r's ball); scan small"
+VII,32,136,1862 4445 2568 4493,4470 4454 5062 4515,"SWolt and HClechter, del oi lich | Hedendl.. bidien lop",scan,both lines blurred and heavy; stops not legible
+VII,33,140,1098 4408 1780 4474,5293 4408 5579 4482,"J. Gould & H.C.Richter, del et tith. | Walter: Imp.",eye,"mark after Walter looks like a colon, read as a comma"
+VII,34,144,1132 4446 1794 4512,5250 4439 5536 4509,J. Wolf.: & H.C.Richter; del et Lith. | Walter: Imp,eye,"a stray mark after Wolf (stop or colon) left out; no stop visible after Imp; a stray mark after Wolf (stop or colon) is not recorded; a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+VII,35,148,1126 4352 1698 4418,5823 4324 6111 4404,"J. Gould & W.Hart del, et lith. | Walter imp.",eye,
+VII,36,152,1349 4416 1901 4468,6028 4408 6290 4474,J. Gould & W.Hart del. et lith. | Walter imp.,eye,
+VII,37,156,632 4543 1338 4591,5460 4553 5712 4601,"J. Wef & H.C.Rachter, deb. et lath. | Wale: Imp",scan,both crops faint and blurred; comma after Walter could be a stop; no stop visible after Imp
+VII,38,160,842 4497 1606 4563,5384 4527 5658 4585,J. Woll' & 11.C.Richer del. et-lith. | Walter. Imp,eye,a dash-like mark before lith left out; comma after Walter could be a stop; no stop visible after Imp
+VII,39,164,2062 4550 2648 4616,4512 4563 5014 4611,"J. Wolf; det. ""c hichta .mi | Hultmande & Watten, Imp",scan,"left line blurred and faint; marks after Wolf and Richter could be semicolons; no stop visible after Imp; two credits in the line: Wolf del., Richter lith."
+VII,40,168,1636 4583 2242 4631,5542 4566 6100 4632,"Wolt and H.C.Bichter, delet lith | Hulimandet, & Walton. Imp.",scan,"the artist's credit line reads Wolf with no initial, credited to Joseph Wolf, the only Wolf among Gould's artists; no initial is engraved, the paper to its left is blank; left crop cuts the tops of the letters; no stop visible after lith; the mark after Walton is a round dot with no tail at 7x, read as a stop"
+VII,41,172,983 4198 2883 4598,5134 4523 5666 4581,"Mdemardel я Malton, Inp",scan,left credit line not visible: the sheet's foot is in the binding's fold; printer's line read from the scan; locator: no line found in the left corner; no separate stop after Imp visible (only a pale smudge)
+VII,42,176,1151 4437 1679 4525,3687 4401 5193 4511,"J.Gould & HCKichter, del et lith. | Walter, Imp. | ITAGINIS GEOFFROYI, J Ver.",scan,right crop shows the caption not a line; the printer's line is under the artists' line in the left crop
+VII,43,180,832 4447 1454 4491,4489 4126 6389 4526,Covla ana H.L Michter del a ltt,scan,"left crop clips the J at its edge; right line very faint, low in a wide crop; locator: no line found in the right corner"
+VII,44,184,1791 4319 2315 4371,5104 4325 5390 4405,"J.Goutd & N.Hart del et lith. | Walter, Imp.",eye,"mark after Walter could be a comma; a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+VII,45,188,2069 4493 2711 4567,4547 4496 5023 4580,"I. Goudd and H.C.Richter, del et lith. | Hullmandel & Walion, Imp.",eye,
+VII,46,192,1105 4481 1787 4539,4866 4473 5150 4547,I.Gould & H.C.Richter: del et lith. | Walter; Imp.,eye,
+VII,47,196,2016 4392 2528 4454,4387 4378 4627 4440,J.Wolf & HC Richter; del et lith. | Walter; Irrp.,eye,"a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+VII,48,200,1572 4501 2212 4545,5477 4518 6031 4580,"J. Gould and H.C. Bichter, del. et. Uith. | Hulimandel & Walton, Irp",eye,
+VII,49,204,516 4433 1280 4495,5699 4442 6031 4507,"J. Gould & H.C.Richter, del et lith. | Walter: Imp.",eye,"mark after Walter looks like a colon, read as a comma"
+VII,50,208,1850 4475 2454 4537,4920 4461 5176 4523,"J.Gould & H.CRichter; del et lith. | Walter, Imp.",eye,
+VII,51,212,1438 4426 2174 4492,5129 4408 5449 4488,"IGould & U.C.Richter, del et lith. | Walter, Ip.",eye,
+VII,52,216,989 4452 1391 4510,5589 4460 5895 4534,W. Hart del.et lith. | Walter Imp.,eye,
+VII,53,220,1280 4504 1894 4548,5264 4497 5820 4559,Toveld aul k hinhesen del elethe | Hullmandel & Walken Imp.,scan,left line blurred and cut at the top
+VII,54,224,1342 4487 1926 4549,4843 4490 5115 4564,"J. Gould & W.Hart, del et lith. | Walter; Iip.",eye,"mark after Walter could be a comma; a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+VII,55,228,1425 4494 1957 4552,4914 4485 5172 4553,J. Could & W. Hart del et lith. | Walter Imp,eye,no stop visible after Imp
+VII,56,232,970 4485 1668 4547,5089 4484 5353 4542,T. Gould & N. Hart đel e tah. | Walter. Imp.,eye,
+VII,57,236,397 6679 1177 6781,3441 6678 3799 6784,"J. Gould, and H.C Richter, del et lith, | Walter, Imp.",eye,"comma after del could be a stop; a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+VII,58,240,826 4499 1482 4539,5895 4484 6435 4536,1. Gould aná H.CRicher del n tith. | Hullmandd & Walton Irg,scan,right line faint at the ampersand and Imp; no stop visible after Imp
+VII,59,244,1557 4632 2257 4706,4850 4628 5324 4716,"I.ould and H.CRichter, del et lith. | Watter & Cohn, Imp.",eye,stop after Imp faint
+VII,60,248,1450 4293 2126 4377,4963 4288 5459 4390,"J.Gould and H.C. Richter, del et lith. | Walter & Gohn, Imp.",eye,
+VII,61,252,928 4385 1562 4455,4886 4365 5418 4457,"J. Gould and H.C.Richter, del et Vith. | Hullmandel & Walton, Imp.",eye,
+VII,62,256,1368 4411 2044 4503,5150 4385 5460 4469,"J.Wolf and H.C.Richter, del et lith, | Walter Imp.",eye,"no mark visible after Walter; a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+VII,63,260,1573 4362 2243 4420,5368 4363 5902 4425,F. Could and He Kihter del Alilh. | Ballmandel & WaltoImp,eye,stops after H and C sit raised
+VII,64,264,1506 4383 2210 4467,5227 4370 5549 4472,"J.Gould & H.C.Richter, del et lith. | Walter, Imp.",eye,
+VII,65,268,1209 4416 1849 4468,5094 4409 5612 4471,"J Geuld aná He Kinter, aet d lith | Hulimandei & Walten Iug.",eye,left line faint
+VII,66,272,1523 4268 2137 4348,5008 4261 5290 4345,"J.Gould & HCRichter, del et lith. | Walter, Imp.",eye,comma after Richter could be a semicolon
+VII,67,276,1654 4310 2222 4398,4829 4312 5085 4392,"I.Gould & H.CRichter; del et lith. | Walter, Imp.",eye,comma after Richter could be a semicolon
+VII,68,280,2007 4416 2725 4496,4558 4400 5144 4488,"J.Gouli and I.C Richter del et lith. | Hullmnndel & Walion, Imp.",eye,comma after Richter sits high like an apostrophe; no separate comma after Richter visible (only the r's ball)
+VII,69,284,1011 4486 1753 4560,5302 4475 5930 4559,"I.Wolf and H-C:Richter, del et lith. | Hullmandet & Walion Imp.",eye,"a semicolon-like mark read as a comma (the r's or n's terminal over it), as in Great Britain"
+VII,70,288,290 6731 1066 6823,3599 6730 3923 6832,I.Gould & I.C.Richter del et lith. | Walter: Imp.,eye,
+VII,71,292,1414 4447 2138 4517,5060 4437 5644 4521,J Gould and HC.Richter del etlith. | Hullmandel & Wallon Imp.,eye,no stop visible after J; stops after H and C sit raised
