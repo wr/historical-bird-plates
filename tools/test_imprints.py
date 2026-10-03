@@ -366,6 +366,19 @@ class Normalise(unittest.TestCase):
         self.assertEqual(imprints.normalise("Drawn on StonebyE. Lear"), "Drawn on Stone by E. Lear")
         self.assertEqual(imprints.normalise("Printed by C.Hullmandel"), "Printed by C. Hullmandel")
 
+    def test_a_name_run_into_the_abbreviation_after_it_takes_a_space(self):
+        for line, spaced in (("Engraved by R. HavellJunr. Printed & Coloured, by R. Havell, Senr. London. 1828.",
+                              "Engraved by R. Havell Junr. Printed & Coloured, by R. Havell, Senr. London. 1828."),
+                             ("Engraved by W. H. LizarsEdinr.", "Engraved by W. H. Lizars Edinr."),
+                             ("Printed & Coloured by R. HavellSenr, London", "Printed & Coloured by R. Havell Senr. London"),
+                             ("Coloured by R. HavellSen.", "Coloured by R. Havell Sen.")):
+            with self.subTest(line=line):
+                self.assertEqual(imprints.normalise(line), spaced)
+        # only those abbreviations, and only after a name of the tables
+        for line in ("R. HavellSenior", "Printed by WalterImp.", "Printed by C. HullmandelImp."):
+            with self.subTest(line=line):
+                self.assertEqual(imprints.normalise(line), line)
+
     def test_only_words_of_a_wording_are_split(self):
         self.assertEqual(imprints.wording_pairs(["Drawn on Stone by", "del. et lith."]),
                          {("drawn", "on"), ("on", "stone"), ("stone", "by"), ("del", "et"), ("et", "lith")})

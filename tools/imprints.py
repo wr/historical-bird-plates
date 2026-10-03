@@ -52,7 +52,8 @@ or AFTER) that run together take one space between them ("Drawnfrom" is "Drawn
 from", "onStone" "on Stone", "delet lith" "del et lith"), and so does "by" run into
 a capital ("byJ. Gould"). So "J.Gould &H.C.Richter,del" is written "J. Gould &
 H. C. Richter, del". Other letters that run together with no mark between
-("Hullmandel") are left as they are. Initials are written by convention too: every
+("Hullmandel") are left as they are, except a name of the tables run into Junr, Senr,
+Sen or Edinr ("HavellJunr." is "Havell Junr.", "LizarsEdinr." "Lizars Edinr."). Initials are written by convention too: every
 capital standing as an initial, before a name, another initial, & or and, or glued
 to a name, is written with a stop and a space ("J Wolf & HCRichter" is "J. Wolf &
 H. C. Richter", "J & E Gould" "J. & E. Gould"), because the stops after initials
@@ -602,6 +603,9 @@ def run_apart(run: str, pairs: set[tuple[str, str]] = PAIRS) -> str:
 # a single capital glued to the end of one, "AudubonF,", is the initial after it.
 NAME_WORDS = {w for form in [*credits.NAMES, *(k for table in credits.FOLIO_NAMES.values() for k in table)]
               for w in re.findall(r"[A-Z][a-z]{3,}", form)}
+# A name of those run into the abbreviation after it ("HavellJunr.", "LizarsEdinr."): the abbreviation is a word of its own.
+NAME_ABBREVIATED = re.compile(r"(?<![A-Za-z])(" + "|".join(sorted(NAME_WORDS, key=len, reverse=True))
+                              + r")(Junr|Senr|Sen|Edinr)(?![a-z])")
 
 # The abbreviations of a credit line: the mark after one is written as a stop (normalise_line).
 ABBREVIATIONS = ("del", "delt", "lith", "lithog", "Imp", "Impt", "Edwd", "Edinr", "Junr", "Senr", "Sen")
@@ -614,6 +618,7 @@ def normalise_line(line: str) -> str:
     """One credit line spaced by the convention in the module's docstring."""
     s = " ".join(line.split())
     s = re.sub(r"[A-Za-z]+", lambda m: run_apart(m.group()), s)
+    s = NAME_ABBREVIATED.sub(r"\1 \2", s)
     s = re.sub(r"\s*&(c(?![A-Za-z]))?\s*", lambda m: " &c " if m.group(1) else " & ", s)   # "&c." is one word
     s = re.sub(r"\s+(?=[.,;:])", "", s)
     s = re.sub(r"([.,;:])(?=[^\s.,;:])", r"\1 ", s)
