@@ -96,6 +96,27 @@ class Parse(unittest.TestCase):
         # without an abbreviation, the stop before the place is the line's and goes with the place
         self.assertEqual([c.as_printed for c in parse("Engraved, Printed & Coloured by R. Havell. London. 1833.", "havell")], ["R. Havell"] * 3)
 
+    def test_as_printed_leaves_out_the_line_s_final_stop(self):
+        # the spec's example: the name as the plate gives it is "J. & E. Gould", not the line's stop with it
+        self.assertEqual([c.as_printed for c in parse("Drawn from Nature & on Stone by J. & E. Gould. | Printed by C. Hullmandel.")],
+                         ["J. & E. Gould"] * 4 + ["C. Hullmandel"])
+        self.assertEqual([c.as_printed for c in parse("Drawn from Nature by Lucy Audubon.", "havell")], ["Lucy Audubon"])
+        self.assertEqual([c.as_printed for c in parse("Engraved, Printed & Coloured by R. Havell & Son.", "havell")], ["R. Havell & Son"] * 3)
+        # a stop inside the line is the engraver's, and stays
+        self.assertEqual([c.as_printed for c in parse("J. Gould. and H. C. Richter, del. et lith. | Walter, Imp.")],
+                         ["J. Gould.", "J. Gould.", "H. C. Richter", "H. C. Richter", "Walter"])
+
+    def test_as_printed_keeps_a_final_stop_that_belongs_to_the_name(self):
+        for line, printed in (("Engraved by W. H. Lizars Edinr.", "W. H. Lizars Edinr."),
+                              ("Engraved by W. H. Lizars Edinr. London 1827.", "W. H. Lizars Edinr."),
+                              ("Retouched by R. Havell Junr.", "R. Havell Junr."),
+                              ("Drawn from Nature by J. J. Audubon F. R. S. F. L. S.", "J. J. Audubon F. R. S. F. L. S."),
+                              ("Drawn from Nature by J. J. Audubon F. R. S. F. L. S,.", "J. J. Audubon F. R. S. F. L. S,."),
+                              ("Drawn from Nature by John J. Audubon F. R. S's. L. & E. F. L. S. &c.",
+                               "John J. Audubon F. R. S's. L. & E. F. L. S. &c.")):
+            with self.subTest(line=line):
+                self.assertEqual(parse(line, "havell")[0].as_printed, printed)
+
     def test_one_line_gives_several_roles(self):
         self.assertEqual(names_roles(parse("Engraved, Printed & Coloured by R. Havell Junr.")), [
             ("Robert Havell Jr.", "engraved"), ("Robert Havell Jr.", "printed"), ("Robert Havell Jr.", "coloured")])

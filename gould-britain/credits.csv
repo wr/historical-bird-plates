@@ -43,7 +43,7 @@ I,9,Joseph Wolf,drew,J. Wolf
 I,9,Joseph Wolf,lithographed,J. Wolf
 I,9,Henry Constantine Richter,drew,H. C. Richter
 I,9,Henry Constantine Richter,lithographed,H. C. Richter
-I,9,Walter,printed,Walter.
+I,9,Walter,printed,Walter
 I,10,Joseph Wolf,drew,J. Wolf
 I,10,Joseph Wolf,lithographed,J. Wolf
 I,10,Henry Constantine Richter,drew,H. C. Richter
@@ -88,7 +88,7 @@ I,18,Joseph Wolf,drew,J. Wolf
 I,18,Joseph Wolf,lithographed,J. Wolf
 I,18,Henry Constantine Richter,drew,H. C. Richter
 I,18,Henry Constantine Richter,lithographed,H. C. Richter
-I,18,Walter,printed,Walter.
+I,18,Walter,printed,Walter
 I,19,Joseph Wolf,drew,J. Wolf
 I,19,Joseph Wolf,lithographed,J. Wolf
 I,19,Henry Constantine Richter,drew,H. C. Richter
@@ -237,7 +237,7 @@ II,14,John Gould,drew,J. Gould
 II,14,John Gould,lithographed,J. Gould
 II,14,Henry Constantine Richter,drew,H. C. Richter
 II,14,Henry Constantine Richter,lithographed,H. C. Richter
-II,14,Walter,printed,Walter.
+II,14,Walter,printed,Walter
 II,15,John Gould,drew,J. Gould
 II,15,John Gould,lithographed,J. Gould
 II,15,Henry Constantine Richter,drew,H. C. Richter
@@ -327,7 +327,7 @@ II,32,John Gould,drew,J. Gould
 II,32,John Gould,lithographed,J. Gould
 II,32,Henry Constantine Richter,drew,H. C. Richter
 II,32,Henry Constantine Richter,lithographed,H. C. Richter
-II,32,Walter,printed,Walter.
+II,32,Walter,printed,Walter
 II,33,John Gould,drew,J. Gould
 II,33,John Gould,lithographed,J. Gould
 II,33,Henry Constantine Richter,drew,H. C. Richter
@@ -347,7 +347,7 @@ II,36,John Gould,drew,J. Gould
 II,36,John Gould,lithographed,J. Gould
 II,36,Henry Constantine Richter,drew,H. C. Richter
 II,36,Henry Constantine Richter,lithographed,H. C. Richter
-II,36,Walter,printed,Walter.
+II,36,Walter,printed,Walter
 II,37,John Gould,drew,J. Gould
 II,37,John Gould,lithographed,J. Gould
 II,37,Henry Constantine Richter,drew,H. C. Richter
@@ -357,7 +357,7 @@ II,38,John Gould,drew,J. Gould
 II,38,John Gould,lithographed,J. Gould
 II,38,Henry Constantine Richter,drew,H. C. Richter
 II,38,Henry Constantine Richter,lithographed,H. C. Richter
-II,38,Walter,printed,Walter.
+II,38,Walter,printed,Walter
 II,39,John Gould,drew,J. Gould
 II,39,John Gould,lithographed,J. Gould
 II,39,Henry Constantine Richter,drew,H. C. Richter
@@ -417,7 +417,7 @@ II,50,John Gould,drew,J. Gould
 II,50,John Gould,lithographed,J. Gould
 II,50,William Matthew Hart,drew,W. Hart
 II,50,William Matthew Hart,lithographed,W. Hart
-II,50,Walter,printed,Walter.
+II,50,Walter,printed,Walter
 II,51,John Gould,drew,J. Gould
 II,51,John Gould,lithographed,J. Gould
 II,51,Henry Constantine Richter,drew,H. C. Richter
@@ -485,8 +485,8 @@ II,63,Henry Constantine Richter,lithographed,H. C. Richter
 II,63,Walter & Cohn,printed,Walter & Cohn
 II,64,John Gould,drew,J. Gould
 II,64,John Gould,lithographed,J. Gould
-II,64,Henry Constantine Richter,drew,H. C. Richter.
-II,64,Henry Constantine Richter,lithographed,H. C. Richter.
+II,64,Henry Constantine Richter,drew,H. C. Richter
+II,64,Henry Constantine Richter,lithographed,H. C. Richter
 II,64,Walter,printed,Walter
 II,65,John Gould,drew,J. Gould
 II,65,John Gould,lithographed,J. Gould
@@ -522,7 +522,7 @@ II,71,John Gould,drew,J. Gould
 II,71,John Gould,lithographed,J. Gould
 II,71,Henry Constantine Richter,drew,H. C. Richter
 II,71,Henry Constantine Richter,lithographed,H. C. Richter
-II,71,Walter,printed,Walter.
+II,71,Walter,printed,Walter
 II,72,John Gould,drew,J. Gould
 II,72,John Gould,lithographed,J. Gould
 II,72,Henry Constantine Richter,drew,H. C. Richter
@@ -552,7 +552,7 @@ II,77,John Gould,drew,J. Gould
 II,77,John Gould,lithographed,J. Gould
 II,77,Henry Constantine Richter,drew,H. C. Richter
 II,77,Henry Constantine Richter,lithographed,H. C. Richter
-II,77,Walter,printed,Walter.
+II,77,Walter,printed,Walter
 II,78,John Gould,drew,J. Gould
 II,78,John Gould,lithographed,J. Gould
 II,78,Henry Constantine Richter,drew,H. C. Richter
@@ -635,9 +635,9 @@ III,15,Henry Constantine Richter,lithographed,H. C. Richter
 III,15,Walter,printed,Walter
 III,16,John Gould,drew,J. Gould
 III,16,John Gould,lithographed,J. Gould
-III,16,Henry Constantine Richter,drew,H. C. Richter.
-III,16,Henry Constantine Richter,lithographed,H. C. Richter.
-III,16,Walter,printed,Walter.
+III,16,Henry Constantine Richter,drew,H. C. Richter
+III,16,Henry Constantine Richter,lithographed,H. C. Richter
+III,16,Walter,printed,Walter
 III,17,John Gould,drew,J. Gould
 III,17,John Gould,lithographed,J. Gould
 III,17,Henry Constantine Richter,drew,H. C. Richter
@@ -677,7 +677,7 @@ III,24,John Gould,drew,J. Gould
 III,24,John Gould,lithographed,J. Gould
 III,24,Henry Constantine Richter,drew,H. C. Richter
 III,24,Henry Constantine Richter,lithographed,H. C. Richter
-III,24,Walter,printed,Walter.
+III,24,Walter,printed,Walter
 III,25,John Gould,drew,J. Gould
 III,25,John Gould,lithographed,J. Gould
 III,25,Henry Constantine Richter,drew,H. C. Richter
@@ -1209,7 +1209,7 @@ IV,69,John Gould,drew,J. Gould
 IV,69,John Gould,lithographed,J. Gould
 IV,69,Henry Constantine Richter,drew,H. C. Richter
 IV,69,Henry Constantine Richter,lithographed,H. C. Richter
-IV,69,Walter,printed,Walter.
+IV,69,Walter,printed,Walter
 IV,70,John Gould,drew,J. Gould
 IV,70,John Gould,lithographed,J. Gould
 IV,70,Henry Constantine Richter,drew,H. C. Richter
@@ -1252,8 +1252,8 @@ IV,77,Henry Constantine Richter,lithographed,H. C. Richter
 IV,77,Walter,printed,Walter
 IV,78,John Gould,drew,J. Gould
 IV,78,John Gould,lithographed,J. Gould
-IV,78,Henry Constantine Richter,drew,H. C. Richter.
-IV,78,Henry Constantine Richter,lithographed,H. C. Richter.
+IV,78,Henry Constantine Richter,drew,H. C. Richter
+IV,78,Henry Constantine Richter,lithographed,H. C. Richter
 IV,78,Walter & Cohn,printed,Walter & Cohn
 IV,79,John Gould,drew,J. Gould
 IV,79,John Gould,lithographed,J. Gould
@@ -1379,7 +1379,7 @@ V,14,Joseph Wolf,drew,J. Wolf
 V,14,Joseph Wolf,lithographed,J. Wolf
 V,14,Henry Constantine Richter,drew,H. C. Richter
 V,14,Henry Constantine Richter,lithographed,H. C. Richter
-V,14,Walter,printed,Walter.
+V,14,Walter,printed,Walter
 V,15,Joseph Wolf,drew,J. Wolf
 V,15,Joseph Wolf,lithographed,J. Wolf
 V,15,Henry Constantine Richter,drew,H. C. Richter
@@ -1394,7 +1394,7 @@ V,17,John Gould,drew,J. Gould
 V,17,John Gould,lithographed,J. Gould
 V,17,Henry Constantine Richter,drew,H. C. Richter
 V,17,Henry Constantine Richter,lithographed,H. C. Richter
-V,17,Walter,printed,Walter.
+V,17,Walter,printed,Walter
 V,18,John Gould,drew,J. Gould
 V,18,John Gould,lithographed,J. Gould
 V,18,Henry Constantine Richter,drew,H. C. Richter
@@ -1675,11 +1675,11 @@ V,78,John Gould,drew,J. Gould
 V,78,John Gould,lithographed,J. Gould
 V,78,Henry Constantine Richter,drew,H. C. Richter
 V,78,Henry Constantine Richter,lithographed,H. C. Richter
-V,78,Walter,printed,Walter.
+V,78,Walter,printed,Walter
 V,79,Joseph Wolf,drew,J. Wolf.
 V,79,Joseph Wolf,lithographed,J. Wolf.
-V,79,Henry Constantine Richter,drew,H. C. Richter.
-V,79,Henry Constantine Richter,lithographed,H. C. Richter.
+V,79,Henry Constantine Richter,drew,H. C. Richter
+V,79,Henry Constantine Richter,lithographed,H. C. Richter
 V,79,Walter,printed,Walter
 V,80,John Gould,drew,J. Gould
 V,80,John Gould,lithographed,J. Gould

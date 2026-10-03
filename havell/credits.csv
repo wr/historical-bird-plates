@@ -37,13 +37,13 @@ plate,name,role,as_printed
 10,Robert Havell Sr.,printed,R. Havell Senr
 10,Robert Havell Sr.,coloured,R. Havell Senr
 11,John James Audubon,drew,J. J. Audubon F. R. S. F. L. S.
-11,Robert Havell Jr.,engraved,R. Havell.
-11,Robert Havell Jr.,printed,R. Havell.
-11,Robert Havell Jr.,coloured,R. Havell.
+11,Robert Havell Jr.,engraved,R. Havell
+11,Robert Havell Jr.,printed,R. Havell
+11,Robert Havell Jr.,coloured,R. Havell
 12,John James Audubon,drew,"J. J. Audubon, F. R. S. F. L. S."
-12,Robert Havell Jr.,engraved,R. Havell.
-12,Robert Havell Jr.,printed,R. Havell.
-12,Robert Havell Jr.,coloured,R. Havell.
+12,Robert Havell Jr.,engraved,R. Havell
+12,Robert Havell Jr.,printed,R. Havell
+12,Robert Havell Jr.,coloured,R. Havell
 13,John James Audubon,drew,"John J. Audubon, F. R. S. E. M. W. S."
 13,Robert Havell Jr.,engraved,"R. Havell, Junr."
 13,Robert Havell Sr.,printed,"R. Havell, Senr."
@@ -57,9 +57,9 @@ plate,name,role,as_printed
 15,Robert Havell Sr.,printed,R. Havell. Senr.
 15,Robert Havell Sr.,coloured,R. Havell. Senr.
 16,John James Audubon,drew,John J. Audubon. F. R. S. F. L. S.
-16,Robert Havell Jr.,engraved,R. Havell.
-16,Robert Havell Jr.,printed,R. Havell.
-16,Robert Havell Jr.,coloured,R. Havell.
+16,Robert Havell Jr.,engraved,R. Havell
+16,Robert Havell Jr.,printed,R. Havell
+16,Robert Havell Jr.,coloured,R. Havell
 17,John James Audubon,drew,"John J. Audubon, F. R. S. E. M. W. S."
 17,Robert Havell & Son,engraved,R. Havell & Son
 17,Robert Havell & Son,printed,R. Havell & Son
@@ -77,9 +77,9 @@ plate,name,role,as_printed
 20,Robert Havell Sr.,printed,R. Havell Senr
 20,Robert Havell Sr.,coloured,R. Havell Senr
 21,John James Audubon,drew,"John J. Audubon, F. R. S. F. L. S."
-21,Robert Havell Jr.,engraved,R. Havell.
-21,Robert Havell Jr.,printed,R. Havell.
-21,Robert Havell Jr.,coloured,R. Havell.
+21,Robert Havell Jr.,engraved,R. Havell
+21,Robert Havell Jr.,printed,R. Havell
+21,Robert Havell Jr.,coloured,R. Havell
 22,John James Audubon,drew,"John J. Audubon, F. R. S. E. M. W. S."
 22,Robert Havell & Son,engraved,R. Havell & Son
 22,Robert Havell & Son,printed,R. Havell & Son
@@ -89,9 +89,9 @@ plate,name,role,as_printed
 23,Robert Havell Jr.,printed,R. Havell
 23,Robert Havell Jr.,coloured,R. Havell
 24,John James Audubon,drew,"John J. Audubon, F. R. S. E. M. W. S."
-24,Robert Havell & Son,engraved,R. Havell and Son.
-24,Robert Havell & Son,printed,R. Havell and Son.
-24,Robert Havell & Son,coloured,R. Havell and Son.
+24,Robert Havell & Son,engraved,R. Havell and Son
+24,Robert Havell & Son,printed,R. Havell and Son
+24,Robert Havell & Son,coloured,R. Havell and Son
 25,John James Audubon,drew,John J. Audubon. F. R. S. E. M. W. S.
 25,Robert Havell & Son,engraved,R. Havell & Son
 25,Robert Havell & Son,printed,R. Havell & Son
@@ -197,205 +197,205 @@ plate,name,role,as_printed
 50,Robert Havell Sr.,printed,R. Havell Senr.
 50,Robert Havell Sr.,coloured,R. Havell Senr.
 51,John James Audubon,drew,John J. Audnbon. F. R. S. F. L. S.
-51,Robert Havell Jr.,engraved,R. Havell.
-51,Robert Havell Jr.,printed,R. Havell.
-51,Robert Havell Jr.,coloured,R. Havell.
+51,Robert Havell Jr.,engraved,R. Havell
+51,Robert Havell Jr.,printed,R. Havell
+51,Robert Havell Jr.,coloured,R. Havell
 52,John James Audubon,drew,John J. Audubon. F. R. S. F. L. S.
-52,Robert Havell Jr.,engraved,R. Havell.
-52,Robert Havell Jr.,printed,R. Havell.
-52,Robert Havell Jr.,coloured,R. Havell.
+52,Robert Havell Jr.,engraved,R. Havell
+52,Robert Havell Jr.,printed,R. Havell
+52,Robert Havell Jr.,coloured,R. Havell
 53,John James Audubon,drew,John J. Audubon. F. R. S. F. L. S.
-53,Robert Havell Jr.,engraved,R. Havell.
-53,Robert Havell Jr.,printed,R. Havell.
-53,Robert Havell Jr.,coloured,R. Havell.
+53,Robert Havell Jr.,engraved,R. Havell
+53,Robert Havell Jr.,printed,R. Havell
+53,Robert Havell Jr.,coloured,R. Havell
 54,John James Audubon,drew,"John J. Audubon, F. R. S. F. L. S."
-54,Robert Havell Jr.,engraved,R. Havell.
-54,Robert Havell Jr.,printed,R. Havell.
-54,Robert Havell Jr.,coloured,R. Havell.
+54,Robert Havell Jr.,engraved,R. Havell
+54,Robert Havell Jr.,printed,R. Havell
+54,Robert Havell Jr.,coloured,R. Havell
 55,John James Audubon,drew,John J. Audubon. F. R. S. F. L. S.
-55,Robert Havell Jr.,engraved,R. Havell.
-55,Robert Havell Jr.,printed,R. Havell.
-55,Robert Havell Jr.,coloured,R. Havell.
+55,Robert Havell Jr.,engraved,R. Havell
+55,Robert Havell Jr.,printed,R. Havell
+55,Robert Havell Jr.,coloured,R. Havell
 56,John James Audubon,drew,"John J. Audubon, F. R. S. F. L. S."
-56,Robert Havell Jr.,engraved,R. Havell.
-56,Robert Havell Jr.,printed,R. Havell.
-56,Robert Havell Jr.,coloured,R. Havell.
+56,Robert Havell Jr.,engraved,R. Havell
+56,Robert Havell Jr.,printed,R. Havell
+56,Robert Havell Jr.,coloured,R. Havell
 57,John James Audubon,drew,"John J. Audubon. F. R. S., F. L. S."
 57,Robert Havell Jr.,engraved,R. Havell
 57,Robert Havell Jr.,printed,R. Havell
 57,Robert Havell Jr.,coloured,R. Havell
 58,John James Audubon,drew,John J. Audubon. F. R. S. F. L. S.
-58,Robert Havell Jr.,engraved,R. Havell.
-58,Robert Havell Jr.,printed,R. Havell.
-58,Robert Havell Jr.,coloured,R. Havell.
+58,Robert Havell Jr.,engraved,R. Havell
+58,Robert Havell Jr.,printed,R. Havell
+58,Robert Havell Jr.,coloured,R. Havell
 59,John James Audubon,drew,"John J. Audubon, F. R. S. F. L. S."
-59,Robert Havell Jr.,engraved,R. Havell.
-59,Robert Havell Jr.,printed,R. Havell.
-59,Robert Havell Jr.,coloured,R. Havell.
+59,Robert Havell Jr.,engraved,R. Havell
+59,Robert Havell Jr.,printed,R. Havell
+59,Robert Havell Jr.,coloured,R. Havell
 60,John James Audubon,drew,"John J. Audubon, F. R. S. E. L. S."
-60,Robert Havell Jr.,engraved,R. Havell.
-60,Robert Havell Jr.,printed,R. Havell.
-60,Robert Havell Jr.,coloured,R. Havell.
+60,Robert Havell Jr.,engraved,R. Havell
+60,Robert Havell Jr.,printed,R. Havell
+60,Robert Havell Jr.,coloured,R. Havell
 61,John James Audubon,drew,John J. Audubon. F. R. S. F. L. S.
-61,Robert Havell Jr.,engraved,R. Havell.
-61,Robert Havell Jr.,printed,R. Havell.
-61,Robert Havell Jr.,coloured,R. Havell.
+61,Robert Havell Jr.,engraved,R. Havell
+61,Robert Havell Jr.,printed,R. Havell
+61,Robert Havell Jr.,coloured,R. Havell
 62,John James Audubon,drew,John J. Audubon. F. R. S. F. L. S.
-62,Robert Havell Jr.,engraved,R. Havell.
-62,Robert Havell Jr.,printed,R. Havell.
-62,Robert Havell Jr.,coloured,R. Havell.
+62,Robert Havell Jr.,engraved,R. Havell
+62,Robert Havell Jr.,printed,R. Havell
+62,Robert Havell Jr.,coloured,R. Havell
 63,John James Audubon,drew,John J. Audubon. F. R. S. F. L. S.
-63,Robert Havell Jr.,engraved,R. Havell.
-63,Robert Havell Jr.,printed,R. Havell.
-63,Robert Havell Jr.,coloured,R. Havell.
-64,Lucy Audubon,drew,Lucy Audubon.
+63,Robert Havell Jr.,engraved,R. Havell
+63,Robert Havell Jr.,printed,R. Havell
+63,Robert Havell Jr.,coloured,R. Havell
+64,Lucy Audubon,drew,Lucy Audubon
 64,Robert Havell Jr.,engraved,R. Havell
 64,Robert Havell Jr.,printed,R. Havell
 64,Robert Havell Jr.,coloured,R. Havell
 65,John James Audubon,drew,"John J. Audubon, F. R. S. F. L. S."
-65,Robert Havell Jr.,engraved,R. Havell.
-65,Robert Havell Jr.,printed,R. Havell.
-65,Robert Havell Jr.,coloured,R. Havell.
+65,Robert Havell Jr.,engraved,R. Havell
+65,Robert Havell Jr.,printed,R. Havell
+65,Robert Havell Jr.,coloured,R. Havell
 66,John James Audubon,drew,John J. Audubon F. R. S. F. L. S.
-66,Robert Havell Jr.,engraved,R. Havell.
-66,Robert Havell Jr.,printed,R. Havell.
-66,Robert Havell Jr.,coloured,R. Havell.
+66,Robert Havell Jr.,engraved,R. Havell
+66,Robert Havell Jr.,printed,R. Havell
+66,Robert Havell Jr.,coloured,R. Havell
 67,John James Audubon,drew,John J. Audubon. F. R. S. F. L. S.
-67,Robert Havell Jr.,engraved,R. Havell.
-67,Robert Havell Jr.,printed,R. Havell.
-67,Robert Havell Jr.,coloured,R. Havell.
+67,Robert Havell Jr.,engraved,R. Havell
+67,Robert Havell Jr.,printed,R. Havell
+67,Robert Havell Jr.,coloured,R. Havell
 68,John James Audubon,drew,John J. Audubon. F. R. S. F. L. S.
-68,Robert Havell Jr.,engraved,R. Havell.
-68,Robert Havell Jr.,printed,R. Havell.
-68,Robert Havell Jr.,coloured,R. Havell.
+68,Robert Havell Jr.,engraved,R. Havell
+68,Robert Havell Jr.,printed,R. Havell
+68,Robert Havell Jr.,coloured,R. Havell
 69,John James Audubon,drew,"John J. Audubon, F. R. S. F. L. S."
-69,Robert Havell Jr.,engraved,R. Havell.
-69,Robert Havell Jr.,printed,R. Havell.
-69,Robert Havell Jr.,coloured,R. Havell.
+69,Robert Havell Jr.,engraved,R. Havell
+69,Robert Havell Jr.,printed,R. Havell
+69,Robert Havell Jr.,coloured,R. Havell
 70,John James Audubon,drew,John J. Audubon. F. R. S. F. L. S.
-70,Robert Havell Jr.,engraved,R. Havell.
-70,Robert Havell Jr.,printed,R. Havell.
-70,Robert Havell Jr.,coloured,R. Havell.
+70,Robert Havell Jr.,engraved,R. Havell
+70,Robert Havell Jr.,printed,R. Havell
+70,Robert Havell Jr.,coloured,R. Havell
 71,John James Audubon,drew,John J. Audubon. F. R. S. F. L. S.
-71,Robert Havell Jr.,engraved,R. Havell.
-71,Robert Havell Jr.,printed,R. Havell.
-71,Robert Havell Jr.,coloured,R. Havell.
+71,Robert Havell Jr.,engraved,R. Havell
+71,Robert Havell Jr.,printed,R. Havell
+71,Robert Havell Jr.,coloured,R. Havell
 72,John James Audubon,drew,John J. Audubon. F. R. S. F. L. S.
-72,Robert Havell Jr.,engraved,R. Havell.
-72,Robert Havell Jr.,printed,R. Havell.
-72,Robert Havell Jr.,coloured,R. Havell.
+72,Robert Havell Jr.,engraved,R. Havell
+72,Robert Havell Jr.,printed,R. Havell
+72,Robert Havell Jr.,coloured,R. Havell
 73,John James Audubon,drew,John J. Audubon. F. R. S. F. L. S.
-73,Robert Havell Jr.,engraved,R. Havell.
-73,Robert Havell Jr.,printed,R. Havell.
-73,Robert Havell Jr.,coloured,R. Havell.
+73,Robert Havell Jr.,engraved,R. Havell
+73,Robert Havell Jr.,printed,R. Havell
+73,Robert Havell Jr.,coloured,R. Havell
 74,John James Audubon,drew,"John J. Audubon, F. R. S. F. L. S."
-74,Robert Havell Jr.,engraved,R. Havell.
-74,Robert Havell Jr.,printed,R. Havell.
-74,Robert Havell Jr.,coloured,R. Havell.
+74,Robert Havell Jr.,engraved,R. Havell
+74,Robert Havell Jr.,printed,R. Havell
+74,Robert Havell Jr.,coloured,R. Havell
 75,John James Audubon,drew,"John J. Audubon, F. R. S. F. L. S."
-75,Robert Havell Jr.,engraved,R. Havell.
-75,Robert Havell Jr.,printed,R. Havell.
-75,Robert Havell Jr.,coloured,R. Havell.
+75,Robert Havell Jr.,engraved,R. Havell
+75,Robert Havell Jr.,printed,R. Havell
+75,Robert Havell Jr.,coloured,R. Havell
 76,John James Audubon,drew,"John J. Audubon, F. R. S. F. L. S."
-76,Robert Havell Jr.,engraved,R. Havell.
-76,Robert Havell Jr.,printed,R. Havell.
-76,Robert Havell Jr.,coloured,R. Havell.
+76,Robert Havell Jr.,engraved,R. Havell
+76,Robert Havell Jr.,printed,R. Havell
+76,Robert Havell Jr.,coloured,R. Havell
 77,John James Audubon,drew,John J. Audubon. F. R. S. F. L. S.
-77,Robert Havell Jr.,engraved,R. Havell.
-77,Robert Havell Jr.,printed,R. Havell.
-77,Robert Havell Jr.,coloured,R. Havell.
+77,Robert Havell Jr.,engraved,R. Havell
+77,Robert Havell Jr.,printed,R. Havell
+77,Robert Havell Jr.,coloured,R. Havell
 78,John James Audubon,drew,John J. Audubon. F. R. S. F. L. S.
-78,Robert Havell Jr.,engraved,R. Havell.
-78,Robert Havell Jr.,printed,R. Havell.
-78,Robert Havell Jr.,coloured,R. Havell.
+78,Robert Havell Jr.,engraved,R. Havell
+78,Robert Havell Jr.,printed,R. Havell
+78,Robert Havell Jr.,coloured,R. Havell
 79,John James Audubon,drew,John J. Audubon. F. R. S. F. L. S.
-79,Robert Havell Jr.,engraved,R. Havell.
-79,Robert Havell Jr.,printed,R. Havell.
-79,Robert Havell Jr.,coloured,R. Havell.
+79,Robert Havell Jr.,engraved,R. Havell
+79,Robert Havell Jr.,printed,R. Havell
+79,Robert Havell Jr.,coloured,R. Havell
 80,John James Audubon,drew,John J. Audubon. F. R. S. F. L. S.
-80,Robert Havell Jr.,engraved,R. Havell.
-80,Robert Havell Jr.,printed,R. Havell.
-80,Robert Havell Jr.,coloured,R. Havell.
+80,Robert Havell Jr.,engraved,R. Havell
+80,Robert Havell Jr.,printed,R. Havell
+80,Robert Havell Jr.,coloured,R. Havell
 81,John James Audubon,drew,John J. Audubon. F. R. S. F. L. S.
-81,Robert Havell Jr.,engraved,R. Havell.
-81,Robert Havell Jr.,printed,R. Havell.
-81,Robert Havell Jr.,coloured,R. Havell.
+81,Robert Havell Jr.,engraved,R. Havell
+81,Robert Havell Jr.,printed,R. Havell
+81,Robert Havell Jr.,coloured,R. Havell
 82,John James Audubon,drew,"John J. Audubon, F. R. S. F. L. S."
-82,Robert Havell Jr.,engraved,R. Havell.
-82,Robert Havell Jr.,printed,R. Havell.
-82,Robert Havell Jr.,coloured,R. Havell.
+82,Robert Havell Jr.,engraved,R. Havell
+82,Robert Havell Jr.,printed,R. Havell
+82,Robert Havell Jr.,coloured,R. Havell
 83,John James Audubon,drew,"John J. Audubon, F. R. S. F. L. S."
-83,Robert Havell Jr.,engraved,R. Havell.
-83,Robert Havell Jr.,printed,R. Havell.
-83,Robert Havell Jr.,coloured,R. Havell.
+83,Robert Havell Jr.,engraved,R. Havell
+83,Robert Havell Jr.,printed,R. Havell
+83,Robert Havell Jr.,coloured,R. Havell
 84,John James Audubon,drew,John J. Audubon F. R. S. F. L. S
-84,Robert Havell Jr.,engraved,R. Havell.
-84,Robert Havell Jr.,printed,R. Havell.
-84,Robert Havell Jr.,coloured,R. Havell.
+84,Robert Havell Jr.,engraved,R. Havell
+84,Robert Havell Jr.,printed,R. Havell
+84,Robert Havell Jr.,coloured,R. Havell
 85,John James Audubon,drew,John J. Audubon. F. R. S. F. L. S.
-85,Robert Havell Jr.,engraved,R. Havell.
-85,Robert Havell Jr.,printed,R. Havell.
-85,Robert Havell Jr.,coloured,R. Havell.
+85,Robert Havell Jr.,engraved,R. Havell
+85,Robert Havell Jr.,printed,R. Havell
+85,Robert Havell Jr.,coloured,R. Havell
 86,John James Audubon,drew,"John J. Audubon, F. R. S. F. L. S."
-86,Robert Havell Jr.,engraved,R. Havell.
-86,Robert Havell Jr.,printed,R. Havell.
-86,Robert Havell Jr.,coloured,R. Havell.
+86,Robert Havell Jr.,engraved,R. Havell
+86,Robert Havell Jr.,printed,R. Havell
+86,Robert Havell Jr.,coloured,R. Havell
 87,John James Audubon,drew,"John J. Audubon, F. R. S. F. L. S"
-87,Robert Havell Jr.,engraved,R. Havell.
-87,Robert Havell Jr.,printed,R. Havell.
-87,Robert Havell Jr.,coloured,R. Havell.
+87,Robert Havell Jr.,engraved,R. Havell
+87,Robert Havell Jr.,printed,R. Havell
+87,Robert Havell Jr.,coloured,R. Havell
 88,John James Audubon,drew,John J. Audubon. F. R. S. P. L. S.
-88,Robert Havell Jr.,engraved,R. Havell.
-88,Robert Havell Jr.,printed,R. Havell.
-88,Robert Havell Jr.,coloured,R. Havell.
+88,Robert Havell Jr.,engraved,R. Havell
+88,Robert Havell Jr.,printed,R. Havell
+88,Robert Havell Jr.,coloured,R. Havell
 89,John James Audubon,drew,John J. Audubon. F. R. S. F. L. S.
-89,Robert Havell Jr.,engraved,R. Havell.
-89,Robert Havell Jr.,printed,R. Havell.
-89,Robert Havell Jr.,coloured,R. Havell.
+89,Robert Havell Jr.,engraved,R. Havell
+89,Robert Havell Jr.,printed,R. Havell
+89,Robert Havell Jr.,coloured,R. Havell
 90,John James Audubon,drew,John J. Audubon F. R. S. F. L. S.
-90,Robert Havell Jr.,engraved,R. Havell.
-90,Robert Havell Jr.,printed,R. Havell.
-90,Robert Havell Jr.,coloured,R. Havell.
+90,Robert Havell Jr.,engraved,R. Havell
+90,Robert Havell Jr.,printed,R. Havell
+90,Robert Havell Jr.,coloured,R. Havell
 91,John James Audubon,drew,John J. Audubon. F. R. S. F. L. S.
-91,Robert Havell Jr.,engraved,R. Havell.
-91,Robert Havell Jr.,printed,R. Havell.
-91,Robert Havell Jr.,coloured,R. Havell.
+91,Robert Havell Jr.,engraved,R. Havell
+91,Robert Havell Jr.,printed,R. Havell
+91,Robert Havell Jr.,coloured,R. Havell
 92,John James Audubon,drew,"John J. Audubon, F. R. S. F. L. S."
-92,Robert Havell Jr.,engraved,R. Havell.
-92,Robert Havell Jr.,printed,R. Havell.
-92,Robert Havell Jr.,coloured,R. Havell.
+92,Robert Havell Jr.,engraved,R. Havell
+92,Robert Havell Jr.,printed,R. Havell
+92,Robert Havell Jr.,coloured,R. Havell
 93,John James Audubon,drew,"John J. Audubon, F. R. S. F. L. S."
-93,Robert Havell Jr.,engraved,R. Havell.
-93,Robert Havell Jr.,printed,R. Havell.
-93,Robert Havell Jr.,coloured,R. Havell.
+93,Robert Havell Jr.,engraved,R. Havell
+93,Robert Havell Jr.,printed,R. Havell
+93,Robert Havell Jr.,coloured,R. Havell
 94,John James Audubon,drew,"John J. Audubon, F. R. S. F. L. S."
-94,Robert Havell Jr.,engraved,R. Havell.
-94,Robert Havell Jr.,printed,R. Havell.
-94,Robert Havell Jr.,coloured,R. Havell.
+94,Robert Havell Jr.,engraved,R. Havell
+94,Robert Havell Jr.,printed,R. Havell
+94,Robert Havell Jr.,coloured,R. Havell
 95,John James Audubon,drew,John J. Audubon F. R. S's. L. & E. F. L. S. &c.
 95,Robert Havell Jr.,engraved,R. Havell Junr.
 95,Robert Havell Jr.,printed,R. Havell Junr.
 95,Robert Havell Jr.,coloured,R. Havell Junr.
 96,John James Audubon,drew,"John J. Audubon, F. R. S. F. L. S."
-96,Robert Havell Jr.,engraved,R. Havell.
-96,Robert Havell Jr.,printed,R. Havell.
-96,Robert Havell Jr.,coloured,R. Havell.
+96,Robert Havell Jr.,engraved,R. Havell
+96,Robert Havell Jr.,printed,R. Havell
+96,Robert Havell Jr.,coloured,R. Havell
 97,John James Audubon,drew,John J. Audubon F. R. S. F. L. S.
-97,Robert Havell Jr.,engraved,R. Havell.
-97,Robert Havell Jr.,printed,R. Havell.
-97,Robert Havell Jr.,coloured,R. Havell.
+97,Robert Havell Jr.,engraved,R. Havell
+97,Robert Havell Jr.,printed,R. Havell
+97,Robert Havell Jr.,coloured,R. Havell
 98,John James Audubon,drew,"John J. Audubon, F. R. S. F. L. S."
-98,Robert Havell Jr.,engraved,R. Havell.
-98,Robert Havell Jr.,printed,R. Havell.
-98,Robert Havell Jr.,coloured,R. Havell.
+98,Robert Havell Jr.,engraved,R. Havell
+98,Robert Havell Jr.,printed,R. Havell
+98,Robert Havell Jr.,coloured,R. Havell
 99,John James Audubon,drew,"John J. Audubon, F. R. S. F. L. S."
-99,Robert Havell Jr.,engraved,R. Havell.
-99,Robert Havell Jr.,printed,R. Havell.
-99,Robert Havell Jr.,coloured,R. Havell.
+99,Robert Havell Jr.,engraved,R. Havell
+99,Robert Havell Jr.,printed,R. Havell
+99,Robert Havell Jr.,coloured,R. Havell
 100,John James Audubon,drew,"John J. Audubon, F. R. S. F. L. S."
-100,Robert Havell Jr.,engraved,R. Havell.
-100,Robert Havell Jr.,printed,R. Havell.
-100,Robert Havell Jr.,coloured,R. Havell.
+100,Robert Havell Jr.,engraved,R. Havell
+100,Robert Havell Jr.,printed,R. Havell
+100,Robert Havell Jr.,coloured,R. Havell
 101,John James Audubon,drew,J. J. Audubon F. R. S. F. L. S.
 101,Robert Havell Jr.,engraved,R. Havell
 101,Robert Havell Jr.,printed,R. Havell
@@ -437,9 +437,9 @@ plate,name,role,as_printed
 110,Robert Havell Jr.,printed,R. Havell Junr.
 110,Robert Havell Jr.,coloured,R. Havell Junr.
 111,John James Audubon,drew,"J. J. Audubon, F. R. S. F. L. S."
-111,Robert Havell Jr.,engraved,R. Havell.
-111,Robert Havell Jr.,printed,R. Havell.
-111,Robert Havell Jr.,coloured,R. Havell.
+111,Robert Havell Jr.,engraved,R. Havell
+111,Robert Havell Jr.,printed,R. Havell
+111,Robert Havell Jr.,coloured,R. Havell
 112,John James Audubon,drew,J. J. Audubon. F. R. S. F. L. S.
 112,Robert Havell Jr.,engraved,R. Havell
 112,Robert Havell Jr.,printed,R. Havell
@@ -461,21 +461,21 @@ plate,name,role,as_printed
 116,Robert Havell Jr.,printed,R. Havell
 116,Robert Havell Jr.,coloured,R. Havell
 117,John James Audubon,drew,J. J. Audubon F. R. S. F. L. S.
-117,Robert Havell Jr.,engraved,R. Havell.
-117,Robert Havell Jr.,printed,R. Havell.
-117,Robert Havell Jr.,coloured,R. Havell.
+117,Robert Havell Jr.,engraved,R. Havell
+117,Robert Havell Jr.,printed,R. Havell
+117,Robert Havell Jr.,coloured,R. Havell
 118,John James Audubon,drew,"J. J. Audubon, F. R. S. F. L. S."
-118,Robert Havell Jr.,engraved,R. Havell.
-118,Robert Havell Jr.,printed,R. Havell.
-118,Robert Havell Jr.,coloured,R. Havell.
+118,Robert Havell Jr.,engraved,R. Havell
+118,Robert Havell Jr.,printed,R. Havell
+118,Robert Havell Jr.,coloured,R. Havell
 119,John James Audubon,drew,J. J. Audubon. F. R. S. F. L. S.
 119,Robert Havell Jr.,engraved,R. Havell
 119,Robert Havell Jr.,printed,R. Havell
 119,Robert Havell Jr.,coloured,R. Havell
 120,John James Audubon,drew,"J. J. Audubon, F. R. S. F. L. S."
-120,Robert Havell Jr.,engraved,R. Havell.
-120,Robert Havell Jr.,printed,R. Havell.
-120,Robert Havell Jr.,coloured,R. Havell.
+120,Robert Havell Jr.,engraved,R. Havell
+120,Robert Havell Jr.,printed,R. Havell
+120,Robert Havell Jr.,coloured,R. Havell
 121,John James Audubon,drew,J. J. Audubon. F. R. S. F. L. S.
 121,Robert Havell Jr.,engraved,R. Havell
 121,Robert Havell Jr.,printed,R. Havell
@@ -705,9 +705,9 @@ plate,name,role,as_printed
 177,Robert Havell Jr.,printed,R. Havell
 177,Robert Havell Jr.,coloured,R. Havell
 178,John James Audubon,drew,J. J. Audubon F. R. S. F. L. S.
-178,Robert Havell Jr.,engraved,R. Havell.
-178,Robert Havell Jr.,printed,R. Havell.
-178,Robert Havell Jr.,coloured,R. Havell.
+178,Robert Havell Jr.,engraved,R. Havell
+178,Robert Havell Jr.,printed,R. Havell
+178,Robert Havell Jr.,coloured,R. Havell
 179,John James Audubon,drew,"J. J. Audubon, F. R. S. F. L. S."
 179,Robert Havell Jr.,engraved,R. Havell
 179,Robert Havell Jr.,printed,R. Havell
@@ -725,9 +725,9 @@ plate,name,role,as_printed
 182,Robert Havell Jr.,printed,R. Havell
 182,Robert Havell Jr.,coloured,R. Havell
 183,John James Audubon,drew,"J. J. Audubon, F. R. S. F. L. S."
-183,Robert Havell Jr.,engraved,R. Havell.
-183,Robert Havell Jr.,printed,R. Havell.
-183,Robert Havell Jr.,coloured,R. Havell.
+183,Robert Havell Jr.,engraved,R. Havell
+183,Robert Havell Jr.,printed,R. Havell
+183,Robert Havell Jr.,coloured,R. Havell
 184,John James Audubon,drew,J. J. Audubon. F. R. S. F. L. S
 184,Robert Havell Jr.,engraved,R. Havell
 184,Robert Havell Jr.,printed,R. Havell
@@ -773,9 +773,9 @@ plate,name,role,as_printed
 194,Robert Havell Jr.,printed,R. Havell
 194,Robert Havell Jr.,coloured,R. Havell
 195,John James Audubon,drew,J. J. Audubon F. R. S. F. L. S.
-195,Robert Havell Jr.,engraved,R. Havell.
-195,Robert Havell Jr.,printed,R. Havell.
-195,Robert Havell Jr.,coloured,R. Havell.
+195,Robert Havell Jr.,engraved,R. Havell
+195,Robert Havell Jr.,printed,R. Havell
+195,Robert Havell Jr.,coloured,R. Havell
 196,John James Audubon,drew,"J. J. Audubon, F. R. S. F. L. S."
 196,Robert Havell Jr.,engraved,R. Havell
 196,Robert Havell Jr.,printed,R. Havell
@@ -785,17 +785,17 @@ plate,name,role,as_printed
 197,Robert Havell Jr.,printed,R. Havell
 197,Robert Havell Jr.,coloured,R. Havell
 198,John James Audubon,drew,"J. J. Audubon, F. R. S. F. L. S."
-198,Robert Havell Jr.,engraved,R. Havell.
-198,Robert Havell Jr.,printed,R. Havell.
-198,Robert Havell Jr.,coloured,R. Havell.
+198,Robert Havell Jr.,engraved,R. Havell
+198,Robert Havell Jr.,printed,R. Havell
+198,Robert Havell Jr.,coloured,R. Havell
 199,John James Audubon,drew,J. J. Audubon F. R. S. F. L. S.
 199,Robert Havell Jr.,engraved,R. Havell
 199,Robert Havell Jr.,printed,R. Havell
 199,Robert Havell Jr.,coloured,R. Havell
 200,John James Audubon,drew,J. J. Audubon F. R. S. F. L. S.
-200,Robert Havell Jr.,engraved,R. Havell.
-200,Robert Havell Jr.,printed,R. Havell.
-200,Robert Havell Jr.,coloured,R. Havell.
+200,Robert Havell Jr.,engraved,R. Havell
+200,Robert Havell Jr.,printed,R. Havell
+200,Robert Havell Jr.,coloured,R. Havell
 201,John James Audubon,drew,"J. J. Audubon, F. R. S. F. L. S."
 201,Robert Havell Jr.,engraved,R. Havell
 201,Robert Havell Jr.,printed,R. Havell

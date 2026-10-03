@@ -250,7 +250,11 @@ _PLACE_DATE = re.compile(r"[\s.,:_]*(?:(?<![A-Za-z])London(?![A-Za-z])[\s.,:_]*)
 
 # The stop that belongs to an abbreviation ending the names ("R. Havell, Senr. London. 1828.")
 # stays with it when the place and date are taken off.
-_ABBREVIATED_END = re.compile(r"(?<![A-Za-z])(?:Junr|Senr|Sen)$")
+_ABBREVIATED_END = re.compile(r"(?<![A-Za-z])(?:Junr|Senr|Sen|Edinr|Edwd)$")
+# A stop ending a line's names is the line's own, not part of the name as printed ("J. & E. Gould."
+# is "J. & E. Gould"), unless the names end in an abbreviation ("R. Havell Junr."), an initial or
+# the honours' last letter, with whatever comma follows it ("F. L. S.", "F. L. S,."), or "&c.".
+_OWN_STOP_ENDS = re.compile(r"(?:(?<![A-Za-z])(?:Junr|Senr|Sen|Edinr|Edwd)|(?<![A-Za-z])[A-Z],*|&c)\.$")
 
 
 def credit_parts(line: str) -> list[str]:
@@ -273,7 +277,8 @@ def credit_parts(line: str) -> list[str]:
 
 def split_line(line: str) -> tuple[tuple[str, ...], str]:
     """A credit line's roles and the names they belong to, as printed, without a place and
-    date after them ("R.Havell, London 1831." gives "R.Havell")."""
+    date after them ("R.Havell, London 1831." gives "R.Havell") or the line's own final stop
+    ("J. & E. Gould." gives "J. & E. Gould")."""
     for pattern, roles in _BEFORE + _AFTER:
         m = pattern.match(line)
         if m:
@@ -282,6 +287,8 @@ def split_line(line: str) -> tuple[tuple[str, ...], str]:
             if tail and re.search(r"[A-Za-z0-9]", tail.group()):
                 stop = tail.group().lstrip().startswith(".") and _ABBREVIATED_END.search(names[:tail.start()])
                 names = names[:tail.start()] + ("." if stop else "")
+            if names.endswith(".") and not _OWN_STOP_ENDS.search(names):
+                names = names[:-1].rstrip()
             return roles, names
     raise UnknownCredit(f"no known wording in {line!r}")
 
