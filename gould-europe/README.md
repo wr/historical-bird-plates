@@ -65,7 +65,7 @@ Every plate as its art crop, by General List number. The full-size images are in
 
 ## Who made the plates
 
-Every plate is credited on its face, in small engraved lines below the art: on the left who drew it and put it on stone, on the right who printed it. `imprint` in `plates.csv` gives them as engraved, with spacing, initials and the mark after an abbreviation written by one convention (see [Credit lines](../README.md#credit-lines)). `credits.csv` gives one row per plate, name and role, read from them by `tools/credits.py`.
+A plate is credited in small engraved lines below the art: on the left who drew it and put it on stone, on the right who printed it. `imprint` in `plates.csv` gives them as engraved, with spacing, initials and the mark after an abbreviation written by one convention (see [Credit lines](../README.md#credit-lines)). `credits.csv` gives one row per plate, name and role, read from them by `tools/credits.py`.
 
 Lines that differ only in capitals, stops or commas are counted together, under their commonest form.
 
@@ -105,7 +105,7 @@ Sources:
 - KU Libraries. "Edward Lear", in *John Gould: Bird Illustration in the Age of Darwin* (online exhibit). [exhibits.lib.ku.edu](https://exhibits.lib.ku.edu/exhibits/show/gould/art/edward_lear). It cites Jackson, C. E. 1975, *Bird Illustrators: Some Artists in Early Lithography* (Witherby), and Lambourne, M. 1987, *John Gould – Bird Man* (Osburton), not seen here.
 - Ashworth, W. B. 2023. "Edward Lear". Linda Hall Library. [lindahall.org](https://www.lindahall.org/about/news/scientist-of-the-day/edward-lear-2/)
 - Sotheby's 2022. John Gould, *The Birds of Europe*, 1832–1837, 5 volumes; the library of Henry Rogers Broughton, 2nd Baron Fairhaven. [sothebys.com](https://www.sothebys.com/en/buy/auction/2022/the-library-of-henry-rogers-broughton-2nd-baron-fairhaven/john-gould-the-birds-of-europe-1832-1837-5-volumes)
-- Museums Victoria. *The Birds of Europe*, vol. 1, item 1599244. [collections.museumsvictoria.com.au](https://collections.museumsvictoria.com.au/items/1599244)
+- Museums Victoria. *The Birds of Europe*, vol. 1, item 1599244. [collections.museumsvictoria.com.au](https://collections.museumsvictoria.com.au/items/1599244). Seen only in a search snippet; the page itself could not be opened.
 
 ## How the plates were identified
 
