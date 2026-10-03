@@ -2,7 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import Filters from "../../components/Filters.astro";
 import Wall from "../../components/Wall.astro";
-import { absolute, folios, imageSrc, plates } from "../../lib/data";
+import { absolute, artistHref, artists, folios, imageSrc, plates } from "../../lib/data";
 import { REPO } from "../../lib/links";
 import { clip } from "../../lib/seo";
 import type { Folio } from "../../lib/types";
@@ -16,6 +16,12 @@ interface Props {
 }
 const { f } = Astro.props;
 const cover = plates.find((p) => p.folio === f.id && p.image);
+const mine = plates.filter((p) => p.folio === f.id);
+// In artists.csv's order: the artists before the printers.
+const named = artists
+  .map((a) => ({ a, n: mine.filter((p) => p.credits.some((c) => c.slug === a.slug)).length }))
+  .filter((x) => x.n);
+const unread = mine.filter((p) => !p.imprint).length;
 ---
 <Layout
   title={`${f.cite} (${f.years}) · Historical bird plates`}
@@ -27,9 +33,11 @@ const cover = plates.find((p) => p.folio === f.id && p.image);
     <h1><i>{f.title}</i></h1>
     <p class="years">{f.years} · {f.plates} plates</p>
     <p>{f.intro}</p>
+    <p class="small">Credit lines name {named.map(({ a, n }, i) => <>{i > 0 && (i === named.length - 1 ? " and " : ", ")}<a href={artistHref(a)}>{a.name}</a> ({n.toLocaleString("en")})</>)}{unread > 0 && `; on ${unread} ${unread === 1 ? "plate" : "plates"} none could be read`}.</p>
     <p class="small">Scans: {f.credit}</p>
     <ul class="outlinks">
       <li><a href={f.readme}>How the plates were identified</a></li>
+      <li><a href={f.makers}>Who made the plates</a></li>
       <li><a href={`${REPO}/tree/main/${f.id}`}>Tables</a></li>
       <li><a href={f.images}>Full-size images</a></li>
     </ul>

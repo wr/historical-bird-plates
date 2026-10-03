@@ -114,6 +114,54 @@ class Data(unittest.TestCase):
         self.assertEqual(PLATE["havell/121"]["credit"], "")
         self.assertLessEqual({f"{folio}/{key}" for folio, key in site_data.CREDITS}, set(PLATE))
 
+    def test_every_plate_credits_what_credits_csv_says(self) -> None:
+        table = {f["id"]: site_data.read(site_data.ROOT / f["id"] / "credits.csv") for f in site_data.FOLIOS}
+        for folio, row, _, slug in site_data.plate_rows():
+            p = PLATE[f"{folio['id']}/{slug}"]
+            want = {(r["name"], r["role"]) for r in table[folio["id"]]
+                    if r["plate"] == row["plate"] and r.get("volume", row.get("volume")) == row.get("volume")}
+            got = {(c["name"], role) for c in p["credits"] for role in c["roles"]}
+            self.assertEqual(got, want, p["id"])
+            self.assertEqual(p["imprint"], row["imprint"], p["id"])
+            self.assertEqual(bool(p["imprint_note"]), not row["imprint"], p["id"])
+
+    def test_a_plate_drawn_by_lear(self) -> None:
+        p = PLATE["gould-europe/3"]
+        self.assertEqual(p["imprint"], "E. Lear del et lithog. | Printed by C. Hullmandel.")
+        self.assertEqual(p["credits"], [
+            {"name": "Edward Lear", "slug": "edward-lear", "roles": ["drew", "lithographed"]},
+            {"name": "Charles Joseph Hullmandel", "slug": "charles-joseph-hullmandel", "roles": ["printed"]},
+        ])
+        self.assertEqual(p["imprint_note"], "")
+
+    def test_roles_in_credits_py_order(self) -> None:
+        self.assertEqual([(c["name"], c["roles"]) for c in PLATE["havell/1"]["credits"]], [
+            ("John James Audubon", ["drew"]), ("William Home Lizars", ["engraved"]), ("Robert Havell Jr.", ["retouched"]),
+        ])
+
+    def test_a_plate_with_no_credit_line_says_why(self) -> None:
+        p = PLATE["gould-europe/247"]
+        self.assertEqual((p["imprint"], p["credits"]), ("", []))
+        self.assertEqual(p["imprint_note"], "credit lines cut off: the sheet ends in the caption")
+
+    def test_every_artist_once_with_their_plates(self) -> None:
+        listed = [r["name"] for r in site_data.read(site_data.ROOT / "artists.csv")]
+        self.assertEqual([a["name"] for a in DATA["artists"]], listed)
+        slugs = [a["slug"] for a in DATA["artists"]]
+        self.assertEqual(len(slugs), len(set(slugs)))
+        for a in DATA["artists"]:
+            self.assertTrue(a["plates"], a["name"])
+            self.assertEqual(a["plates"], [p["id"] for p in DATA["plates"] if any(c["name"] == a["name"] for c in p["credits"])])
+            self.assertEqual(a["folios"], list(dict.fromkeys(PLATE[pid]["folio"] for pid in a["plates"])))
+
+    def test_an_artist(self) -> None:
+        lear = next(a for a in DATA["artists"] if a["name"] == "Edward Lear")
+        self.assertEqual((lear["slug"], lear["kind"], lear["wikidata"]), ("edward-lear", "person", "Q309759"))
+        self.assertEqual(lear["roles"], {"drew": 54, "lithographed": 52})
+        self.assertEqual(lear["folios"], ["gould-europe", "gould-australia"])
+        firm = next(a for a in DATA["artists"] if a["name"] == "Hullmandel & Walton")
+        self.assertEqual((firm["slug"], firm["kind"]), ("hullmandel-walton", "firm"))
+
 
 @unittest.skipUnless(Image, "needs Pillow")
 class Images(unittest.TestCase):

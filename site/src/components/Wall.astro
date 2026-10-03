@@ -2,14 +2,18 @@
 import Tile from "./Tile.astro";
 import { entries, folios, href, plateById } from "../lib/data";
 import { arrange, plural } from "../scripts/wall-core";
-import type { Folio } from "../lib/types";
+import type { Folio, Plate } from "../lib/types";
 
 interface Props {
+  /** One folio's plates, grouped by volume. */
   folio?: Folio;
+  /** Only these plates, grouped by folio. */
+  only?: Plate[];
 }
-const { folio } = Astro.props;
+const { folio, only } = Astro.props;
 const titles = Object.fromEntries(folios.map((f) => [f.id, f.cite]));
-const mine = folio ? entries.filter((e) => e.f === folio.id) : entries;
+const keep = only && new Set(only.map((p) => p.id));
+const mine = entries.filter((e) => (!folio || e.f === folio.id) && (!keep || keep.has(e.id)));
 const groups = arrange(mine, "folio", titles, folio?.id ?? null);
 ---
 <div class="wall" data-wall data-index={href("wall.json")} data-titles={JSON.stringify(titles)} data-folio={folio?.id ?? ""}>

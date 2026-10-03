@@ -13,6 +13,8 @@ export interface Folio {
   credit: string;
   plates: number;
   readme: string;
+  /** The README's "Who made the plates". */
+  makers: string;
   images: string;
 }
 
@@ -44,6 +46,13 @@ export interface PlateImage {
   light: number;
 }
 
+/** One name in a plate's credit line, with every role the line gives it. */
+export interface Credit {
+  name: string;
+  slug: string;
+  roles: string[];
+}
+
 export interface Plate {
   id: string;
   folio: string;
@@ -61,6 +70,11 @@ export interface Plate {
   multi: boolean;
   taxon: { order: number; family: string; family_common: string; bird_order: string } | null;
   image: PlateImage | null;
+  /** The credit lines as engraved, joined with " | "; empty when none could be read. */
+  imprint: string;
+  credits: Credit[];
+  /** Why no credit line was read; empty when one was. */
+  imprint_note: string;
   /** The scan's credit when it isn't the folio's; empty otherwise. */
   credit: string;
   scan: string;
@@ -85,8 +99,22 @@ export interface Species {
   printed_as: string[];
 }
 
+/** A person or firm named in the credit lines, from artists.csv. */
+export interface Artist {
+  name: string;
+  slug: string;
+  kind: "person" | "firm";
+  wikidata: string;
+  note: string;
+  plates: string[];
+  folios: string[];
+  /** Plates per role, in credits.py's order of roles. */
+  roles: Record<string, number>;
+}
+
 export interface Data {
   folios: Folio[];
   plates: Plate[];
   species: Species[];
+  artists: Artist[];
 }

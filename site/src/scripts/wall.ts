@@ -160,7 +160,7 @@ function start(wall: HTMLElement, form: HTMLFormElement): void {
     })
     .then(
       (all) => {
-        entries = scope ? all.filter((e) => e.f === scope) : all;
+        entries = all.filter((e) => tiles.has(e.id)); // the plates this page's wall holds
         if (asked || !isDefault(state)) render();
       },
       () => {

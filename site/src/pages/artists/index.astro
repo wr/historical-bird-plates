@@ -1,0 +1,36 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { artistHref, artists, folioById } from "../../lib/data";
+import { sentence } from "../../lib/credits";
+import type { Artist } from "../../lib/types";
+
+// By the folios' author: everyone is named in Gould's folios or in Audubon's, never both.
+const groups: { author: string; list: Artist[] }[] = [];
+for (const a of artists) {
+  const author = folioById.get(a.folios[0])!.author;
+  const g = groups.find((x) => x.author === author);
+  if (g) g.list.push(a);
+  else groups.push({ author, list: [a] });
+}
+const titles = (author: string): string[] => [...folioById.values()].filter((f) => f.author === author).map((f) => f.title);
+---
+<Layout title="Artists · Historical bird plates" description={`The ${artists.length} artists, lithographers, engravers and printers named in the credit lines of Audubon's and Gould's plates, with the plates that name each.`}>
+  <header class="intro">
+    <h1>Artists</h1>
+    <p class="lede">The artists, lithographers, engravers and printers named in the plates' credit lines, the small engraved lines below the picture. The number is how many plates name each.</p>
+  </header>
+  {groups.map((g) => (
+    <section class="artists">
+      <h2>{g.author.split(" ").pop()}, {titles(g.author).map((t, i) => <>{i > 0 && ", "}<i>{t}</i></>)}</h2>
+      <ul>
+        {g.list.map((a) => (
+          <li>
+            <a href={artistHref(a)}>{a.name}</a>
+            <span class="n">{a.plates.length.toLocaleString("en")}<span class="sr-only"> {a.plates.length === 1 ? "plate" : "plates"}</span></span>
+            <p class="small">{sentence(a.note)}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</Layout>

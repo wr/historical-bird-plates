@@ -1,7 +1,10 @@
 import { ebird, wikidata } from "./links.ts";
-import type { Folio, Identification, Plate, Species } from "./types";
+import { plural } from "../scripts/wall-core.ts";
+import type { Artist, Credit, Folio, Identification, Plate, Species } from "./types";
 
 const DESCRIPTION = 158;
+/** The roles that make the picture; printing and colouring make a contribution. */
+const MAKING = new Set(["drew", "lithographed", "engraved", "retouched"]);
 const PDM = "https://creativecommons.org/publicdomain/mark/1.0/";
 
 /** Letters only, lower case, grey as gray: how misnamed.py compares a printed name with eBird's. */
@@ -12,6 +15,12 @@ export function norm(s: string): string {
 /** "A", "A and B", "A, B and C". */
 export function joinNames(names: string[]): string {
   return names.length <= 2 ? names.join(" and ") : `${names.slice(0, -1).join(", ")} and ${names[names.length - 1]}`;
+}
+
+/** "Drew 54 plates and lithographed 52": plates per role, in the order given. */
+export function tally(roles: Record<string, number>): string {
+  return joinNames(Object.entries(roles).map(([role, n], i) =>
+    i ? `${role} ${n.toLocaleString("en")}` : `${role.charAt(0).toUpperCase()}${role.slice(1)} ${plural(n, "plate")}`));
 }
 
 /** The plate's identified species, once each, in figure order. */
@@ -76,7 +85,16 @@ function taxon(s: { scientific: string; common: string; code: string; wikidata: 
   };
 }
 
-export function plateJsonLd(p: Plate, f: Folio, url: string, image?: string): object {
+function agent(c: Credit, artists: Map<string, Artist>): object {
+  const a = artists.get(c.slug);
+  return { "@type": a?.kind === "firm" ? "Organization" : "Person", name: c.name, ...(a?.wikidata ? { sameAs: wikidata(a.wikidata) } : {}) };
+}
+
+/** Who made the plate, from its credit line, by slug in artists; none when no line was read. */
+export function plateJsonLd(p: Plate, f: Folio, url: string, image: string | undefined, artists: Map<string, Artist>): object {
+  const making = (c: Credit): boolean => c.roles.some((r) => MAKING.has(r));
+  const creator = p.credits.filter(making).map((c) => agent(c, artists));
+  const contributor = p.credits.filter((c) => !making(c)).map((c) => agent(c, artists));
   return {
     "@context": "https://schema.org",
     "@type": "VisualArtwork",
@@ -85,7 +103,8 @@ export function plateJsonLd(p: Plate, f: Folio, url: string, image?: string): ob
     ...(image ? { image } : {}),
     artform: "Print",
     artMedium: f.medium,
-    creator: { "@type": "Person", name: f.author },
+    ...(creator.length ? { creator } : {}),
+    ...(contributor.length ? { contributor } : {}),
     dateCreated: `${f.start}/${f.end}`,
     isPartOf: { "@type": "Book", name: f.title, author: { "@type": "Person", name: f.author } },
     position: p.key,
@@ -111,5 +130,24 @@ export function speciesJsonLd(s: Species, url: string, image?: string): object {
     url,
     ...(image ? { image } : {}),
     parentTaxon: { "@type": "Taxon", name: s.family, taxonRank: "family" },
+  };
+}
+
+export function artistTitle(a: Artist): string {
+  return `Plates credited to ${a.name} · Historical bird plates`;
+}
+
+export function artistDescription(a: Artist, folios: Folio[]): string {
+  return clip(`${a.name} ${lowerFirst(tally(a.roles))} of ${joinNames(folios.map(possessive))}, by their credit lines.`);
+}
+
+export function artistJsonLd(a: Artist, url: string): object {
+  return {
+    "@context": "https://schema.org",
+    "@type": a.kind === "firm" ? "Organization" : "Person",
+    name: a.name,
+    description: a.note,
+    url,
+    ...(a.wikidata ? { sameAs: wikidata(a.wikidata) } : {}),
   };
 }
