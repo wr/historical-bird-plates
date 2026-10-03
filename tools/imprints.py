@@ -45,8 +45,9 @@ An imprint's spacing follows one convention, not the engraver's gaps, which run
 from touching to wide with nothing between to tell them apart (`normalise`, which
 `apply` runs). In each line: whitespace collapsed; no space before a stop,
 comma, semicolon or colon, and one after it unless the line ends there or another
-of them follows; one space each side of &; and "and" run into a capital split off
-("GouldandH." is "Gould and H."). Words of a known wording (any in credits.BEFORE
+of them follows; one space each side of & ("&c." is a word, not an & and a c, and is
+left whole); and "and" run into a capital split off ("GouldandH." is "Gould and H.").
+Words of a known wording (any in credits.BEFORE
 or AFTER) that run together take one space between them ("Drawnfrom" is "Drawn
 from", "onStone" "on Stone", "delet lith" "del et lith"), and so does "by" run into
 a capital ("byJ. Gould"). So "J.Gould &H.C.Richter,del" is written "J. Gould &
@@ -59,7 +60,7 @@ are fused with the letters' serifs at the scans' resolution and cannot be read.
 A comma or colon directly after an initial is such a stop, misread ("J, Gould" is
 "J. Gould", "C: Hullmandel" "C. Hullmandel"); one after a name ("Richter, del.")
 is not. The mark after an abbreviation (del, delt, lith, lithog, Imp, Impt, Edwd,
-Edinr, Junr) is written as a stop too: "delt," is "delt.", "Imp:" "Imp.", "del: et
+Edinr, Junr, Senr) is written as a stop too: "delt," is "delt.", "Imp:" "Imp.", "del: et
 lith:" "del. et lith."; the engraver's variants of that mark do not converge, and a
 mark that is not there stays absent ("del et lith" is unchanged). Every other stop,
 and commas, colons, capitals, & or and, and spelling are as engraved.
@@ -598,7 +599,7 @@ def run_apart(run: str, pairs: set[tuple[str, str]] = PAIRS) -> str:
 
 
 # The abbreviations of a credit line: the mark after one is written as a stop (normalise_line).
-ABBREVIATIONS = ("del", "delt", "lith", "lithog", "Imp", "Impt", "Edwd", "Edinr", "Junr")
+ABBREVIATIONS = ("del", "delt", "lith", "lithog", "Imp", "Impt", "Edwd", "Edinr", "Junr", "Senr")
 ABBREVIATED_WORDS = {a.casefold() for a in ABBREVIATIONS}   # "DEL." and "IMP." are not initials
 ABBREVIATED = re.compile(r"(?<![A-Za-z])(" + "|".join(sorted(ABBREVIATIONS, key=len, reverse=True))
                          + r")[,:;](?![.,;:])", re.I)
@@ -608,7 +609,7 @@ def normalise_line(line: str) -> str:
     """One credit line spaced by the convention in the module's docstring."""
     s = " ".join(line.split())
     s = re.sub(r"[A-Za-z]+", lambda m: run_apart(m.group()), s)
-    s = re.sub(r"\s*&\s*", " & ", s)
+    s = re.sub(r"\s*&(c(?![A-Za-z]))?\s*", lambda m: " &c " if m.group(1) else " & ", s)   # "&c." is one word
     s = re.sub(r"\s+(?=[.,;:])", "", s)
     s = re.sub(r"([.,;:])(?=[^\s.,;:])", r"\1 ", s)
     s = re.sub(r"(?<=[a-z])and(?=[A-Z])", " and ", s)

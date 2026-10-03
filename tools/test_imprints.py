@@ -425,7 +425,21 @@ class Normalise(unittest.TestCase):
                               ("Drawn on Stone by I & E. Gould from a Drawing by Edwd, Lear.",
                                "Drawn on Stone by I. & E. Gould from a Drawing by Edwd. Lear."),
                               ("W.H.Lizars Edinr, | Retouched by R. Havell Junr:", "W. H. Lizars Edinr. | Retouched by R. Havell Junr."),
+                              ("Printed & Coloured by R. Havell Senr, London", "Printed & Coloured by R. Havell Senr. London"),
+                              ("Coloured by R. Havell Senr:", "Coloured by R. Havell Senr."),
                               ("del :et lith ;", "del. et lith.")):
+            with self.subTest(line=line):
+                self.assertEqual(imprints.normalise(line), written)
+
+    def test_ampersand_c_is_a_word_and_is_not_split(self):
+        for line in ("Audubon F. R. S. &c. | Engraved by R. Havell", "London &c. 1830", "J. Gould &c.", "&c."):
+            with self.subTest(line=line):
+                self.assertEqual(imprints.normalise(line), line)
+        for line, written in (("London&c. 1830", "London &c. 1830"), ("F.L.S.&c.", "F. L. S. &c."),
+                              ("London &c .1830", "London &c. 1830"), ("London &c.1830", "London &c. 1830"),
+                              ("J.Gould&H.C.Richter", "J. Gould & H. C. Richter"),
+                              ("J. Gould & c. Richter", "J. Gould & c. Richter"),   # a spaced "& c." is left as engraved
+                              ("J. Gould &Co. Richter", "J. Gould & Co. Richter")):
             with self.subTest(line=line):
                 self.assertEqual(imprints.normalise(line), written)
 
@@ -433,7 +447,8 @@ class Normalise(unittest.TestCase):
         for line in ("del et lith", "J. Gould and H. C. Richter del | C. Hullmandel Imp",
                      "J. Gould and H. C. Richter, del et lith.", "H. C. Richter, del.", "Walter, Imp.",
                      "J. Gould and H. C. Richter del., et lith.", "J. Gould and H. C. Richter del. et lith.",
-                     "Imperial", "Delta, Junrock", "J. Gould, and H. C. Richter"):   # only whole abbreviations count
+                     "Imperial", "Delta, Junrock", "J. Gould, and H. C. Richter", "R. Havell Senr", "Senrock, Imp",
+                     "Printed & Coloured by R. Havell Senr. London"):   # only whole abbreviations count
             with self.subTest(line=line):
                 self.assertEqual(imprints.normalise(line), line)
 
