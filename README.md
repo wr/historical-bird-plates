@@ -6,7 +6,9 @@
 
 Every plate of five great nineteenth-century bird folios, identified to modern species. Each identification carries the IDs other tools join on: eBird, Wikidata, GBIF, Avibase and BirdNET. The plate images are cleaned and cut two ways.
 
-Old plates name their birds the way their authors did, and many of those names now belong to other species. Gould's "Black-headed Gull" is today's Mediterranean Gull. This dataset matches each plate to the bird it actually shows, gives the reasoning, and is released CC0. [64 plates](#names-that-now-mean-another-bird) carry a printed name that eBird now gives to a different species.
+Old plates name their birds the way their authors did, and many of those names now belong to other species. Gould's "Black-headed Gull" is today's Mediterranean Gull. This dataset matches each plate to the bird it actually shows, gives the reasoning, and is released CC0. [65 plates](#names-that-now-mean-another-bird) carry a printed name that eBird now gives to a different species.
+
+**Browse the plates:** [wr.github.io/historical-bird-plates](https://wr.github.io/historical-bird-plates/), every plate with its identification and reasoning, searchable by printed or modern name.
 
 The plates also carry credit lines: the small engraved lines under the art that say who drew a plate, who put it on stone or engraved it, and who printed or coloured it. Where this copy shows them, they are read off the plate, given as engraved, and parsed into who they name and for what; 1,940 of the 2,027 Gould plates and 434 of the 435 Havell plates have at least one line read. By their credit lines, Gould's plates were drawn and put on stone by Elizabeth Gould (433 plates), Edward Lear (57), H. C. Richter (1,278), Joseph Wolf (78) and William Hart (153) as well as by Gould himself (1,768). Audubon's lines credit him with the drawing on 433 plates, and name as engravers Robert Havell Jr. (410), the firm R. Havell & Son (16) and W. H. Lizars (7); Robert Havell Sr. coloured 22 and printed 21.
 
@@ -16,7 +18,7 @@ The plates also carry credit lines: the small engraved lines under the art that 
 
 [![Wild Turkey, American Flamingo, Carolina Parakeet, Snowy Owl, Roseate Spoonbill](img/preview-havell.jpg)](havell/#the-plates)
 
-435 plates · 429 identified · [browse all plates](havell/#the-plates) · [tables](havell/) · [images](https://github.com/wr/historical-bird-plates/releases/tag/havell-v1)
+435 plates · 429 identified · [browse all plates](havell/#the-plates) · [tables](havell/) · [images](https://github.com/wr/historical-bird-plates/releases/tag/havell-v2)
 
 [Credit lines](havell/#who-made-the-plates): John James Audubon 433 · Robert Havell Jr. 414 · Robert Havell Sr. 22
 
@@ -24,7 +26,7 @@ The plates also carry credit lines: the small engraved lines under the art that 
 
 [![Osprey, Hoopoe, European Roller, Atlantic Puffin, Snowy Owl](img/preview-gould-europe.jpg)](gould-europe/#the-plates)
 
-449 plates · 447 identified, 392 checked against the engraved caption · [browse all plates](gould-europe/#the-plates) · [tables](gould-europe/) · [images](https://github.com/wr/historical-bird-plates/releases/tag/gould-europe-v1)
+449 plates · 447 identified, 392 checked against the engraved caption · [browse all plates](gould-europe/#the-plates) · [tables](gould-europe/) · [images](https://github.com/wr/historical-bird-plates/releases/tag/gould-europe-v2)
 
 [Credit lines](gould-europe/#who-made-the-plates): John and Elizabeth Gould 356 · Edward Lear 56
 
@@ -58,7 +60,7 @@ The plates also carry credit lines: the small engraved lines under the art that 
 - **Images:** each folio has a release of cleaned full sheets and art crops, with a sha256 manifest. For example:
 
   ```sh
-  gh release download gould-europe-v1 -R wr/historical-bird-plates -p 'crop-*'
+  gh release download gould-europe-v2 -R wr/historical-bird-plates -p 'crop-*'
   ```
 
 - **Cite:** Riley, W. *Historical bird plates: modern identifications*. Zenodo. [doi:10.5281/zenodo.22964828](https://doi.org/10.5281/zenodo.22964828). See [`CITATION.cff`](CITATION.cff).
@@ -84,11 +86,12 @@ The 18 [open rows](#open-questions) (`medium`, `low` and `none`) are the questio
 These plates are printed with an English name that eBird/Clements 2025 now gives to a different species. Look one up by its printed name and you get the wrong bird. `python3 tools/misnamed.py` regenerates the list.
 
 <details>
-<summary>64 plates</summary>
+<summary>65 plates</summary>
 
 **Audubon, *The Birds of America***
 
 - 23: "Yellow-breasted Warbler" → Common Yellowthroat
+- 50: "Swainson's Warbler" → Magnolia Warbler
 - 199: "Little Owl" → Northern Saw-whet Owl
 - 223: "Pied oyster-catcher" → American Oystercatcher
 - 256: "Purple Heron" → Reddish Egret
@@ -211,7 +214,7 @@ Every folio folder has `plates.csv`, `species.csv` and `credits.csv`, and the ro
 
 ### Images
 
-Each Gould release has two cuts of every plate leaf. `havell-v1` has audubon.org's plates as published, plus crops with the lettering removed.
+Each Gould release has two cuts of every plate leaf. `havell-v2` has audubon.org's plates as published (165 excepted), plus crops with the lettering removed.
 
 - **`sheet-…`:** the full sheet, stood upright, with the paper evened and cleared to white and the caption kept.
 - **`crop-…`:** the art alone, with the caption and pencilled number cut away and a white margin added. *Australia* and *Asia* ship their crops as `crops.zip`.
@@ -243,6 +246,18 @@ The validator runs on every push. It checks:
 - that every ID is well formed.
 
 `tools/quickstatements.py FOLIO` writes a [QuickStatements](https://quickstatements.toolforge.org/) batch that creates one Wikidata item per plate: instance of; part of the work, with its plate number; creators and printer from the credit line, each referenced to the plate's BHL page (for Havell, its release sheet) and quoting the line; title; BHL page ID; and `depicts`, referenced to this dataset. A plate with no credit line read gets no creator, and a name with no Wikidata item gets no statement: the printers Walter, T. Walter and Walter & Cohn have none, so the plates they print (all of *Great Britain*'s that name a printer, most of *Asia*'s and 32 of the *Australia* Supplement's) get no `printed by`; nor has the firm R. Havell & Son, so the 16 Havell plates it engraved, printed and coloured get no statement for it. It skips plates Wikidata already has. `--fix-creators` writes a batch that corrects the plate items this dataset already made, those the maintainer's Wikidata account created: it adds each artist and the printer the credit line names, and removes an unreferenced `creator: John Gould` (or Audubon) that the line doesn't name. Items whose plate has no artist's line read are left as they are, and so are items someone else made. Each edit to an existing item counts on its own, so split this batch with `--chunk 25`.
+
+### The site
+
+[`site/`](site/) is the [Astro](https://astro.build) site at [wr.github.io/historical-bird-plates](https://wr.github.io/historical-bird-plates/). GitHub Actions rebuilds and deploys it on every push to `main` that touches the tables or the site.
+
+```sh
+python3 tools/site_data.py               # the tables and the eBird taxonomy, joined into site/src/data/plates.json
+python3 tools/site_images.py fetch       # the published WebP images, into site/public/img/
+cd site && npm ci && npm run dev         # serve it at localhost:4321/historical-bird-plates/
+```
+
+`python3 tools/site_images.py build` remakes the images and `site/src/data/images.json` from the folio releases; it needs [Pillow](https://pypi.org/project/pillow/), which `fetch` doesn't. A new set is published as a new `site-images-vN` release.
 
 ### Contributing
 

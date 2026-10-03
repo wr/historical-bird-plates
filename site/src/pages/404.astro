@@ -1,0 +1,10 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { href } from "../lib/data";
+---
+<Layout title="Not found · Historical bird plates" description="There is no page at this address.">
+  <article class="prose">
+    <h1>No plate here</h1>
+    <p>There is no page at this address. <a href={href()}>Browse every plate</a>, or <a href={href("species/")}>look a bird up by name</a>.</p>
+  </article>
+</Layout>

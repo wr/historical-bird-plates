@@ -1,0 +1,34 @@
+---
+import { speciesByCode, speciesHref } from "../lib/data";
+import { outlinks } from "../lib/links";
+import type { Identification } from "../lib/types";
+
+interface Props {
+  s: Identification;
+  several: boolean;
+}
+const { s, several } = Astro.props;
+const sp = s.code ? speciesByCode.get(s.code) : undefined;
+const CONFIDENCE: Record<string, string> = {
+  high: "Certain", judged: "Judged", medium: "Open, leaning", low: "Open, uncertain", none: "Not identified",
+};
+const FORM: Record<string, string> = {
+  subspecies: "Shown as a subspecies", variant: "A variant", "pre-split": "Drawn before a split",
+};
+---
+<div class="ident">
+  {several && s.figure && <p class="eyebrow">Figure {s.figure}</p>}
+  {several && s.printed_name && <p class="small">Printed “{s.printed_name}”</p>}
+  <p class="ident-name">{sp ? <a href={speciesHref(sp)}>{s.common}</a> : "Not identified"}</p>
+  {s.scientific && <p class="sci">{s.scientific}</p>}
+  <ul class="facts">
+    {s.code && CONFIDENCE[s.confidence] && <li>{CONFIDENCE[s.confidence]}</li>}
+    {s.form && <li>{FORM[s.form] ?? s.form}</li>}
+    {s.caption_checked === "yes" && <li>Checked against the engraved caption</li>}
+    {sp && <li>{sp.family_common} · <i>{sp.family}</i></li>}
+    {sp?.extinct && <li>Extinct</li>}
+  </ul>
+  {s.reason && <><h3>Why</h3><p>{s.reason}</p></>}
+  {s.sources && <><h3>Sources</h3><p class="small">{s.sources}</p></>}
+  {sp && <ul class="outlinks">{outlinks(s).map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>}
+</div>

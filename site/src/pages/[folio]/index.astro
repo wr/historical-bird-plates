@@ -1,0 +1,39 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Filters from "../../components/Filters.astro";
+import Wall from "../../components/Wall.astro";
+import { absolute, folios, imageSrc, plates } from "../../lib/data";
+import { REPO } from "../../lib/links";
+import { clip } from "../../lib/seo";
+import type { Folio } from "../../lib/types";
+
+export function getStaticPaths() {
+  return folios.map((f) => ({ params: { folio: f.id }, props: { f } }));
+}
+
+interface Props {
+  f: Folio;
+}
+const { f } = Astro.props;
+const cover = plates.find((p) => p.folio === f.id && p.image);
+---
+<Layout
+  title={`${f.cite} (${f.years}) · Historical bird plates`}
+  description={clip(`${f.plates} plates of ${f.author}'s ${f.title} (${f.years}), each identified to modern species. ${f.intro}`)}
+  image={cover && absolute(imageSrc(cover, "crop"))}
+>
+  <header class="folio-head">
+    <p class="eyebrow">{f.author}</p>
+    <h1><i>{f.title}</i></h1>
+    <p class="years">{f.years} · {f.plates} plates</p>
+    <p>{f.intro}</p>
+    <p class="small">Scans: {f.credit}</p>
+    <ul class="outlinks">
+      <li><a href={f.readme}>How the plates were identified</a></li>
+      <li><a href={`${REPO}/tree/main/${f.id}`}>Tables</a></li>
+      <li><a href={f.images}>Full-size images</a></li>
+    </ul>
+  </header>
+  <Filters folios={folios} count={f.plates} showFolios={false} />
+  <Wall folio={f} />
+</Layout>

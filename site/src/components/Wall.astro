@@ -1,0 +1,25 @@
+---
+import Tile from "./Tile.astro";
+import { entries, folios, href, plateById } from "../lib/data";
+import { arrange, plural } from "../scripts/wall-core";
+import type { Folio } from "../lib/types";
+
+interface Props {
+  folio?: Folio;
+}
+const { folio } = Astro.props;
+const titles = Object.fromEntries(folios.map((f) => [f.id, f.cite]));
+const mine = folio ? entries.filter((e) => e.f === folio.id) : entries;
+const groups = arrange(mine, "folio", titles, folio?.id ?? null);
+---
+<div class="wall" data-wall data-index={href("wall.json")} data-titles={JSON.stringify(titles)} data-folio={folio?.id ?? ""}>
+  {groups.map((g) => (
+    <section class="group">
+      <h2 class="group-title">{g.title} <span class="group-count">{plural(g.ids.length, "plate")}</span></h2>
+      <div class="rows">{g.ids.map((id) => <Tile plate={plateById.get(id)!} />)}</div>
+    </section>
+  ))}
+</div>
+<script>
+  import "../scripts/wall";
+</script>

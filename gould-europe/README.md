@@ -6,7 +6,7 @@ Five volumes and 449 plates: 448 in this copy, as one was never found. Drawn and
 
 ## The plates
 
-Every plate as its art crop, by General List number. The full-size images are in the [`gould-europe-v1`](https://github.com/wr/historical-bird-plates/releases/tag/gould-europe-v1) release.
+Every plate as its art crop, by General List number. The full-size images are in the [`gould-europe-v2`](https://github.com/wr/historical-bird-plates/releases/tag/gould-europe-v2) release.
 
 **Plates 1–50**
 
@@ -16,33 +16,33 @@ Every plate as its art crop, by General List number. The full-size images are in
 
 ![Plates 51–100](img/plates-051-100.jpg)
 
-**Plates 101–151**
+**Plates 101–150**
 
-![Plates 101–151](img/plates-101-151.jpg)
+![Plates 101–150](img/plates-101-150.jpg)
 
-**Plates 152–201**
+**Plates 151–200**
 
-![Plates 152–201](img/plates-152-201.jpg)
+![Plates 151–200](img/plates-151-200.jpg)
 
-**Plates 202–251**
+**Plates 201–250**
 
-![Plates 202–251](img/plates-202-251.jpg)
+![Plates 201–250](img/plates-201-250.jpg)
 
-**Plates 252–301**
+**Plates 251–300**
 
-![Plates 252–301](img/plates-252-301.jpg)
+![Plates 251–300](img/plates-251-300.jpg)
 
-**Plates 302–351**
+**Plates 301–350**
 
-![Plates 302–351](img/plates-302-351.jpg)
+![Plates 301–350](img/plates-301-350.jpg)
 
-**Plates 352–401**
+**Plates 351–400**
 
-![Plates 352–401](img/plates-352-401.jpg)
+![Plates 351–400](img/plates-351-400.jpg)
 
-**Plates 402–449**
+**Plates 401–449**
 
-![Plates 402–449](img/plates-402-449.jpg)
+![Plates 401–449](img/plates-401-449.jpg)
 
 ## Files
 
@@ -166,9 +166,9 @@ Of the 410 caption-checked species, 409 match a KU plate. `ku-disagreements.csv`
 
 That is 23 misidentified plates out of about 445, roughly one in 19. On the brace plates, KU's record names only one figure.
 
-## The images: release `gould-europe-v1`
+## The images: release `gould-europe-v2`
 
-Two images per plate leaf, 448 leaves. `manifest.json` and `SHA256SUMS` give each file's sha256.
+Two images per plate leaf, 448 leaves. `manifest.json` and `SHA256SUMS` give each file's sha256. v2 adds plate 132's leaf, which `gould-europe-v1` lacked, and recuts 119's crop; every other file is unchanged.
 
 - **`sheet-<barcode>-<leaf>.jpg`, the cleaned full sheet:**
   - The JPEG 2000 master, stood upright: 90° clockwise for a landscape plate, so its caption runs along the bottom.
@@ -180,6 +180,7 @@ Two images per plate leaf, 448 leaves. `manifest.json` and `SHA256SUMS` give eac
   - A plate with several birds keeps every one.
   - This is Featherframe's cut for e-paper, and more opinionated than the sheet.
   - The Ivory Gull (436) is white on white paper, so its crop is cut from the whole sheet instead.
+  - 119's two figures sit far apart, and the art's box found only the upper one, so its crop is placed by hand.
 
 Clearing the paper is a choice. For the sheet as it is, with its paper and its age, follow the row's `scan_url` to BHL's original.
 

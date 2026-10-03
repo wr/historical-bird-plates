@@ -1,0 +1,22 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  jsonld?: object;
+}
+const { title, description, image, jsonld } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ld = jsonld ? JSON.stringify(jsonld).replace(/</g, "\\u003c") : "";
+---
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Historical bird plates" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+{image && <meta property="og:image" content={image} />}
+<meta name="twitter:card" content="summary_large_image" />
+{ld && <script type="application/ld+json" set:html={ld} />}
