@@ -598,6 +598,11 @@ def run_apart(run: str, pairs: set[tuple[str, str]] = PAIRS) -> str:
     return " ".join(run[a:b] for a, b in zip(bounds, bounds[1:]))
 
 
+# The capitalised words of the name forms in credits.NAMES and FOLIO_NAMES ("Audubon", "Havell", "Lizars"):
+# a single capital glued to the end of one, "AudubonF,", is the initial after it.
+NAME_WORDS = {w for form in [*credits.NAMES, *(k for table in credits.FOLIO_NAMES.values() for k in table)]
+              for w in re.findall(r"[A-Z][a-z]{3,}", form)}
+
 # The abbreviations of a credit line: the mark after one is written as a stop (normalise_line).
 ABBREVIATIONS = ("del", "delt", "lith", "lithog", "Imp", "Impt", "Edwd", "Edinr", "Junr", "Senr", "Sen")
 ABBREVIATED_WORDS = {a.casefold() for a in ABBREVIATIONS}   # "DEL." and "IMP." are not initials
@@ -625,8 +630,11 @@ def initials(line: str) -> str:
     ("J, Gould" is "J. Gould", "C: Hullmandel" "C. Hullmandel"; a comma after a name,
     "Richter, del.", is left); and two or three capitals run together ("HC Richter",
     "HCRichter", "HC. Richter", "JGould", "FRS." are "H. C. Richter", "J. Gould",
-    "F. R. S."), except a Roman numeral with no stop before a name; a longer run is an
-    all-capitals word ("LONDON Published"), left as it is. Words
+    "F. R. S."), also before another initial ("FRS F. L. S." is "F. R. S. F. L. S."),
+    except a Roman numeral with no stop before a name; a longer run is an
+    all-capitals word ("LONDON Published"), left as it is. A single capital glued to the
+    end of a name of credits.NAMES or FOLIO_NAMES is split off ("AudubonF, R." is
+    "Audubon F. R."). Words
     that begin with a capital ("Drawn", "Imp.") and lowercase abbreviations are left as
     they are, and so are a Roman numeral with a stop that ends the line or comes before
     a lowercase word ("Plate IV."), and the article A before a word of a wording
@@ -637,14 +645,17 @@ def initials(line: str) -> str:
     for i, tok in enumerate(raw):
         after = raw[i + 1] if i + 1 < len(raw) else ""
         glued = re.fullmatch(r"([A-Z]{1,3})([A-Z][a-z]\S*)", tok)
-        if glued:
+        ended = re.fullmatch(r"([A-Z][a-z]{3,})([A-Z][.,:;]?)", tok)
+        if ended and ended.group(1) in NAME_WORDS:
+            tokens += [ended.group(1), ended.group(2)]
+        elif glued:
             tokens += list(glued.group(1)) + [glued.group(2)]
         elif re.fullmatch(r"[IVXLC]{2,}\.", tok) and not re.match(r"[A-Z&]|and$", after):
             tokens.append(tok)
         elif re.fullmatch(r"[A-Z]{2,3}\.", tok) and tok[:-1].casefold() not in ABBREVIATED_WORDS:
             tokens += list(tok[:-2]) + [tok[-2:]]
         elif re.fullmatch(r"[A-Z]{2,3}", tok) and not re.fullmatch(r"[IVXLCDM]+", tok) \
-                and tok.casefold() not in ABBREVIATED_WORDS and re.match(r"[A-Z][a-z]|&$|and$", after):
+                and tok.casefold() not in ABBREVIATED_WORDS and re.match(r"[A-Z][a-z]|&$|and$|[A-Z][.,:]?$", after):
             tokens += list(tok)
         else:
             tokens.append(tok)

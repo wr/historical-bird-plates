@@ -485,6 +485,21 @@ class Normalise(unittest.TestCase):
             with self.subTest(line=line):
                 self.assertEqual(imprints.normalise(line), line)
 
+    def test_capitals_run_together_before_another_initial_and_a_capital_glued_to_a_name_are_initials(self):
+        for line, written in (("J.J. Audubon FRS F. L. S.", "J. J. Audubon F. R. S. F. L. S."),
+                              ("by J. J. Aududon. F. RS F. L. S", "by J. J. Aududon. F. R. S. F. L. S"),
+                              ("J. J. AudubonF, R. S. F. L. S.", "J. J. Audubon F. R. S. F. L. S."),
+                              ("J. J. AudubonF. R. S.", "J. J. Audubon F. R. S."),
+                              ("J. J. Audubon,F. R. S.", "J. J. Audubon, F. R. S."),
+                              ("W. H. LizarsE. Edinr.", "W. H. Lizars E. Edinr."),
+                              ("HC J. Smith", "H. C. J. Smith")):
+            with self.subTest(line=line):
+                self.assertEqual(imprints.normalise(line), written)
+        for line in ("Plate XII F. Smith", "Plate IV A.", "CC Hullmandel Imp.", "J. J. ScrimshawF, R. S.",   # numerals; not a name of the tables
+                     "J. J. Audubon F. R. S.", "J. J. Audubon FRS"):   # an initial run at the end of a line has no initial after it
+            with self.subTest(line=line):
+                self.assertEqual(imprints.normalise(line), line)
+
     def test_a_roman_numeral_and_the_article_a_are_not_initials(self):
         for line in ("Plate IV.", "Plate IV. fig. 2", "Plate XII. del", "from A Drawing by E. Lear", "A Drawing"):
             with self.subTest(line=line):
