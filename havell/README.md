@@ -1,6 +1,6 @@
 # John James Audubon, *The Birds of America*, Havell edition (1827–38)
 
-435 plates, engraved, printed and hand-coloured from Audubon's watercolours. Their credit lines name W. H. Lizars of Edinburgh as the engraver of 7 of the first ten, Robert Havell Jr. in London as the engraver of 410, and the firm R. Havell & Son of 16; Havell's father, Robert Havell Sr., coloured 22 and printed 21 (see [Who made the plates](#who-made-the-plates)). Numbered 1–435 on the plates themselves.
+435 plates, engraved, printed and hand-coloured from Audubon's watercolours. Their credit lines name W. H. Lizars of Edinburgh as the engraver of 7 of the first ten, Robert Havell Jr. in London as the engraver of 411, and the firm R. Havell & Son of 16; Havell's father, Robert Havell Sr., coloured 22 and printed 21 (see [Who made the plates](#who-made-the-plates)). Numbered 1–435 on the plates themselves.
 
 ## Images
 
@@ -68,7 +68,7 @@ Every plate with its lettering trimmed, by Havell number.
 
 ## Who made the plates
 
-A plate is credited in small engraved lines below the art: on the left who drew it, on the right who engraved, printed and coloured it. `imprint` in `plates.csv` gives them as engraved, with spacing, initials and the mark after an abbreviation written by one convention (see [Credit lines](../README.md#credit-lines)). `credits.csv` gives one row per plate, name and role, read from them by `tools/credits.py`. 434 of the 435 plates have a line read; 165 has none (see below).
+A plate is credited in small engraved lines below the art: on the left who drew it, on the right who engraved, printed and coloured it. `imprint` in `plates.csv` gives them as engraved, with spacing, initials and the mark after an abbreviation written by one convention (see [Credit lines](../README.md#credit-lines)). `credits.csv` gives one row per plate, name and role, read from them by `tools/credits.py`. All 435 plates have a line read; 165's is read from the University of Pittsburgh's scan (see below).
 
 Lines that differ only in capitals, spacing, stops, commas or colons are counted together, under their commonest form.
 
@@ -76,7 +76,7 @@ The artist's line, on the left:
 
 | Credit line | Credits | Plates |
 |---|---|---:|
-| Drawn from Nature by J. J. Audubon, F. R. S. F. L. S. | John James Audubon: drew | 335 |
+| Drawn from Nature by J. J. Audubon, F. R. S. F. L. S. | John James Audubon: drew | 336 |
 | Drawn from Nature and Published by John J. Audubon, F. R. S. F. L. S. | John James Audubon: drew | 38 |
 | Drawn from Nature and Published by John J. Audubon, F. R. S. E. F. L. S. M. W. S. | John James Audubon: drew | 16 |
 | Drawn from Nature & Published by John J. Audubon. F. R. S. F. L. S. | John James Audubon: drew | 11 |
@@ -87,13 +87,13 @@ The artist's line, on the left:
 
 The last row is 27 and 26, which reads "Drawn From". One plate each: "Drawn by J. J. Audubon. F. R. S. E." (2), "Drawn from Nature by John J. Audubon. F. R. S. E. F. L. S. M. W. S." (6), "Drawn from Nature by John J. Audubon. F. R. S. M. W. S." (14), "Drawn by J. J. Audubon. F. R. S. E. M. W. S." (15), and "Drawn from Nature by Lucy Audubon." (64), which credits Audubon's wife with the drawing. Eleven more name Audubon in the forms `FOLIO_NAMES` lists, below.
 
-"Published" is not one of the roles in `credits.csv`, so "Drawn from Nature and Published by" (or "&"), on 81 plates (16, 17, 21–63 and 65–100), credits Audubon with the drawing only. "Drawn by" is on 2 and 15 alone. That makes John James Audubon the artist on 433 plates, and Lucy Audubon on one.
+"Published" is not one of the roles in `credits.csv`, so "Drawn from Nature and Published by" (or "&"), on 81 plates (16, 17, 21–63 and 65–100), credits Audubon with the drawing only. "Drawn by" is on 2 and 15 alone. That makes John James Audubon the artist on 434 plates, and Lucy Audubon on one.
 
 The engraver's and printer's lines, on the right. Most go on to the place and year, as "London, 1832.", which the table leaves out: lines that differ only in them are counted together. The years run from 1828 (plates 32–50) to 1838 (from 401).
 
 | Credit line | Credits | Plates |
 |---|---|---:|
-| Engraved, Printed, & Coloured, by R. Havell | Robert Havell Jr.: engraved, printed, coloured | 268 |
+| Engraved, Printed, & Coloured, by R. Havell | Robert Havell Jr.: engraved, printed, coloured | 269 |
 | Engraved. Printed and Coloured by R. Havell | Robert Havell Jr.: engraved, printed, coloured | 81 |
 | Engraved. Printed and Coloured by Robt. Havell | Robert Havell Jr.: engraved, printed, coloured | 34 |
 | Engraved, Printed & Coloured by R. Havell & Son | R. Havell & Son: engraved, printed, coloured | 13 |
@@ -110,7 +110,7 @@ One plate each: "Coloured by R. Havell. Senr." (6), "Printed & Coloured by R. Ha
 
 On ten plates (6, 8–10, 13–15, 18–20) the father's line is a separate small line at the foot of the right corner. A year is recorded only where every digit shows: on 192, 195, 197, 272 and 422 it is too faint to read, and the line is given without it. A low dash between London and the year (33, 45, 110, 112, 113, 115) is written `_`, and 114's year reads 1881, as it shows, its 3 closed like an 8. 237 has no right line read: it is too faint, with only specks and traces of a date (`notes`).
 
-That makes Robert Havell Jr. the engraver of 410 plates, the printer and colourist of 392, and the retoucher of 4 (1, 2, 6, 7): 414 in all. The firm R. Havell & Son engraved, printed and coloured 16: 17, 22, 24–30, 32–36, 38 and 39. Robert Havell Sr. printed 21 and coloured 22: 6 (colouring only), 8–10, 13–15, 18–20, 37 and 40–50, each engraved by Lizars or by his son. W. H. Lizars engraved 7: 1, 2 and 6–10.
+That makes Robert Havell Jr. the engraver of 411 plates, the printer and colourist of 393, and the retoucher of 4 (1, 2, 6, 7): 415 in all. The firm R. Havell & Son engraved, printed and coloured 16: 17, 22, 24–30, 32–36, 38 and 39. Robert Havell Sr. printed 21 and coloured 22: 6 (colouring only), 8–10, 13–15, 18–20, 37 and 40–50, each engraved by Lizars or by his son. W. H. Lizars engraved 7: 1, 2 and 6–10.
 
 A line gives a name and a role, and no more. The sources say more.
 
@@ -137,7 +137,7 @@ Maria Martin's plates, as the sources count them:
 
 Two kinds of reading rest on this folio's own pattern, and `FOLIO_NAMES` in `tools/credits.py` gives the reason for each.
 
-A bare "R. Havell" (350 plates) or "Robt. Havell" (34: 401–405 and 407–435), with no "Junr.", is credited to Robert Havell Jr. These 384 plates have no note on this reading; `as_printed` in `credits.csv` gives each one's form. Wherever a line names the father or the firm, it says "Senr." ("Sen." on 9) or "& Son" ("and Son" on 24); the partnership was dissolved in 1828 (Williams 1916, p. 242); and from his father's death the son signed himself Robert Havell (Williams 1916, p. 243). 58 of the plates come before 106, the first dated 1831: 11, 12, 16, 21, 23, 31, 51–94, 96–102 and 105, none of them dated. The father may still have been alive, so for these the reading rests on the dissolution of the partnership alone, not on the plate's wording. Williams has plates 108–111 signed "Junior" and the later ones a bare "R. Havell" (Williams 1916, p. 243). In this copy the two forms stand side by side in 1831: "Junr." on 108 and 110, the bare form on 106, 107, 109, 112, 113 and 115. "Junr." is last on 110.
+A bare "R. Havell" (351 plates) or "Robt. Havell" (34: 401–405 and 407–435), with no "Junr.", is credited to Robert Havell Jr. These 385 plates have no note on this reading; `as_printed` in `credits.csv` gives each one's form. Wherever a line names the father or the firm, it says "Senr." ("Sen." on 9) or "& Son" ("and Son" on 24); the partnership was dissolved in 1828 (Williams 1916, p. 242); and from his father's death the son signed himself Robert Havell (Williams 1916, p. 243). 58 of the plates come before 106, the first dated 1831: 11, 12, 16, 21, 23, 31, 51–94, 96–102 and 105, none of them dated. The father may still have been alive, so for these the reading rests on the dissolution of the partnership alone, not on the plate's wording. Williams has plates 108–111 signed "Junior" and the later ones a bare "R. Havell" (Williams 1916, p. 243). In this copy the two forms stand side by side in 1831: "Junr." on 108 and 110, the bare form on 106, 107, 109, 112, 113 and 115. "Junr." is last on 110.
 
 Eleven plates spell Audubon's name or honours in ways the rest of the folio doesn't. Each is credited to him, and each has a note:
 - 10: "E. R. S. E." for F. R. S. E.;
@@ -151,7 +151,7 @@ Eleven plates spell Audubon's name or honours in ways the rest of the folio does
 - 286: "F. R. S. F. L", with no final S;
 - 291: "J. J. Audubon", with no honours.
 
-Plate 165 has no credit line read. The image on file for it, the release's `sheet-165.jpg`, is a lithograph lettered by J. T. Bowen of Philadelphia, not Havell's engraving (`notes`).
+Plate 165's lines are read from the release's `sheet-165.jpg`, the University of Pittsburgh's scan of the Havell plate: "Drawn from Nature by J. J. Audubon, F. R. S. F. L. S." and "Engraved, Printed & Coloured by R. Havell, London 1833.". audubon.org's file for it is the octavo edition's lithograph, lettered by J. T. Bowen of Philadelphia, which `havell-v1` carried; no lines were read from that. The capitals on the sheet are 23 and 24 px tall, so the mark after Audubon was measured like the others: a comma, with a tail. No stop can be seen after London, only the foot serif of its n (`notes` and the record note in `sources/imprints.csv`).
 
 Sources:
 - Low, S. M. 2002. *A Guide to Audubon's Birds of America*. William Reese Co. & Donald A. Heald. Introduction, pp. 1–22. [audubongalleries.com](https://www.audubongalleries.com/pdf/low_audubon_book_intro_only.pdf)

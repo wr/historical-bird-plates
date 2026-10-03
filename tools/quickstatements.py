@@ -13,7 +13,7 @@ credit line (credits.csv), each referenced to the plate's scan and quoting the
 credit line; title; BHL page ID where the folio is scanned on BHL; and
 `depicts` for every species identified with confidence high or judged,
 referenced to this dataset. "The scan" is the BHL page for a Gould plate and,
-for Havell, the plate's sheet in the havell-v1 release. A plate with no imprint
+for Havell, the plate's sheet in the havell-v2 release. A plate with no imprint
 recorded gets no creator statement: no credit line, no claim.
 
 A plate is eligible when it is identified and that identification was checked
@@ -273,7 +273,7 @@ def scan_url(folder: str, p: dict) -> str:
     """Where a plate's credit line can be seen, for a reference: a Gould plate's BHL page,
     a Havell plate's sheet in the release. Blank when the row has none."""
     if folder == "havell":
-        return f"{REPO}/releases/download/havell-v1/{p['sheet_asset']}" if p.get("sheet_asset") else ""
+        return f"{REPO}/releases/download/havell-v2/{p['sheet_asset']}" if p.get("sheet_asset") else ""
     return p.get("page_url") or ""
 
 

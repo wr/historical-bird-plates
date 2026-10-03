@@ -130,7 +130,7 @@ plate,leaf,left_box,right_box,ocr,read,note
 129,328,753 4854 1369 4906,2484 4862 2876 4906,itravr froa Natare & un Stane oy J & E Galá. | Finted by Chtillmandel,eye,
 130,332,800 5008 1244 5052,2587 5022 2875 5058,Prewn from Iate d enStene by JIcE. Goutd. | Eented by C Erlmandei,scan,read from the scan; both lines faint; no separate stop after Hullmandel visible at 8x
 131,336,706 4873 1396 4935,2708 4885 3116 4947,Tam from Fite and on Stone Jy.I &.F. Gould. | Printed ou C.Fullmandel.,eye,no stop visible after J; the E after & lacks its lower stroke and looks like an F
-132,344,,,,scan,read from the scan (no sheet in the release)
+132,344,1000 4737 1642 4807,2494 4745 2860 4807,Praun from Nature &on Stone by I &E. Goutd. | Printed by CHultmandet.,scan,"first read from the BHL scan, as gould-europe-v1 had no sheet for it; checked once on gould-europe-v2's sheet-birdsEuropeIIGoul-0344.jpg at 6x to 10x, and the words and marks stand as read: ""Drawn from Nature & on Stone by J. & E. Gould."" and ""Printed by C. Hullmandel.""; a small separate stop shows after the E and after Gould, and after the C and after Hullmandel; none shows after the J, which is written ""J."" by convention (Ruling 23); no change to the imprint"
 133,340,807 4820 1497 4894,2576 4836 2960 4902,Dranfrom Nature & on stone by I & E. Goutd. | Printed by C.Euttmandel.,eye,
 134,348,920 4778 1594 4844,2484 4786 2848 4830,Dixor Ton Diture sm tene by J & E. Guutd. | Fanies is Cilutmunua,scan,read from the scan; both lines faint in parts
 135,352,793 4266 1413 4340,2463 4262 2833 4336,Drawn firm Nature & on Stone by J &.E. Gould. | Printed by CHtatimandet.,eye,

@@ -58,7 +58,7 @@ class ScanUrl(unittest.TestCase):
 
     def test_a_havell_plate_cites_its_sheet_in_the_release(self):
         self.assertEqual(qs.scan_url("havell", self.PLATE),
-                         "https://github.com/wr/historical-bird-plates/releases/download/havell-v1/sheet-037.jpg")
+                         "https://github.com/wr/historical-bird-plates/releases/download/havell-v2/sheet-037.jpg")
 
     def test_a_gould_plate_cites_its_bhl_page(self):
         self.assertEqual(qs.scan_url("gould-europe", self.PLATE), URL)
@@ -106,7 +106,7 @@ class Credited(Fixture):
 
 class Batch(Fixture):
     """batch() on a two-plate Havell folio: one credited, one with no credit line."""
-    SHEET = "https://github.com/wr/historical-bird-plates/releases/download/havell-v1/sheet-001.jpg"
+    SHEET = "https://github.com/wr/historical-bird-plates/releases/download/havell-v2/sheet-001.jpg"
 
     def setUp(self):
         super().setUp()
@@ -361,7 +361,7 @@ class FixHavell(Fixture):
         with mock.patch.object(qs, "entities", return_value=ents), mock.patch.object(qs, "created", return_value={"Q31"}):
             blocks, _ = qs.fix("havell", None, None)
         self.assertEqual(len(blocks), 1)
-        sheet = '"https://github.com/wr/historical-bird-plates/releases/download/havell-v1/sheet-001.jpg"'
+        sheet = '"https://github.com/wr/historical-bird-plates/releases/download/havell-v2/sheet-001.jpg"'
         self.assertTrue(all(x.split("\t")[-3] == sheet for x in blocks[0]))
         self.assertFalse(any(x.startswith("-") for x in blocks[0]))   # Audubon is named
 

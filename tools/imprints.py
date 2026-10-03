@@ -88,7 +88,7 @@ import credits  # noqa: E402
 ROOT = credits.ROOT
 CACHE = ROOT / ".cache"
 ASSETS = Path.home() / "Projects" / "historical-bird-plates-assets"
-RELEASE = {"havell": "havell-v1", "gould-europe": "gould-europe-v1", "gould-australia": "gould-australia-v1",
+RELEASE = {"havell": "havell-v2", "gould-europe": "gould-europe-v2", "gould-australia": "gould-australia-v1",
            "gould-britain": "gould-britain-v2", "gould-asia": "gould-asia-v1"}
 UA = {"User-Agent": "historical-bird-plates imprints (+https://github.com/wr/historical-bird-plates)"}
 BAND = 0.35             # scan: the bottom of the scan shown for a hard case
