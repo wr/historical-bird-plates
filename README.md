@@ -8,7 +8,7 @@ Every plate of five great nineteenth-century bird folios, identified to modern s
 
 Old plates name their birds the way their authors did, and many of those names now belong to other species. Gould's "Black-headed Gull" is today's Mediterranean Gull. This dataset matches each plate to the bird it actually shows, gives the reasoning, and is released CC0. [65 plates](#names-that-now-mean-another-bird) carry a printed name that eBird now gives to a different species.
 
-**Browse the plates:** [wr.github.io/historical-bird-plates](https://wr.github.io/historical-bird-plates/), every plate with its identification and reasoning, searchable by printed or modern name.
+**Browse the plates:** [historical-bird-plates.wells.ee](https://historical-bird-plates.wells.ee/), every plate with its identification and reasoning, searchable by printed or modern name.
 
 The plates also carry credit lines: the small engraved lines under the art that say who drew a plate, who put it on stone or engraved it, and who printed or coloured it. Where this copy shows them, they are read off the plate, given as engraved, and parsed into who they name and for what; 1,940 of the 2,027 Gould plates and all 435 Havell plates have at least one line read. By their credit lines, Gould's plates were drawn and put on stone by Elizabeth Gould (433 plates), Edward Lear (57), H. C. Richter (1,278), Joseph Wolf (78) and William Hart (153) as well as by Gould himself (1,768). Audubon's lines credit him with the drawing on 434 plates, and name as engravers Robert Havell Jr. (411), the firm R. Havell & Son (16) and W. H. Lizars (7); Robert Havell Sr. coloured 22 and printed 21.
 
@@ -250,7 +250,7 @@ The validator runs on every push. It checks:
 
 ### The site
 
-[`site/`](site/) is the [Astro](https://astro.build) site at [wr.github.io/historical-bird-plates](https://wr.github.io/historical-bird-plates/). GitHub Actions rebuilds and deploys it on every push to `main` that touches the tables or the site.
+[`site/`](site/) is the [Astro](https://astro.build) site at [historical-bird-plates.wells.ee](https://historical-bird-plates.wells.ee/). GitHub Actions rebuilds and deploys it on every push to `main` that touches the tables or the site.
 
 ```sh
 python3 tools/site_data.py               # the tables and the eBird taxonomy, joined into site/src/data/plates.json

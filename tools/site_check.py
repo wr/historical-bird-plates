@@ -18,8 +18,8 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
-ORIGIN = "https://wr.github.io"
-BASE = "/historical-bird-plates/"
+ORIGIN = "https://historical-bird-plates.wells.ee"
+BASE = "/"
 SITEMAP = "{http://www.sitemaps.org/schemas/sitemap/0.9}loc"
 
 
@@ -78,7 +78,8 @@ def target(dist: Path, page: Path, ref: str) -> Path | None:
     if not path.startswith("/"):
         folder = page.parent.relative_to(dist).as_posix()
         here = BASE if folder == "." else f"{BASE}{folder}/"
-        path = posixpath.normpath(posixpath.join(here, path)) + ("/" if path.endswith("/") else "")
+        joined = posixpath.normpath(posixpath.join(here, path))
+        path = joined + ("/" if path.endswith("/") and not joined.endswith("/") else "")  # "../../" to the root is "/"
     if not path.startswith(BASE):
         return dist / "_outside_base" / path.lstrip("/")  # never exists, so it is reported
     file = dist / path[len(BASE):]

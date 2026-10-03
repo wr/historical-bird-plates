@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wr.github.io/historical-bird-plates/sitemap-index.xml
+Sitemap: https://historical-bird-plates.wells.ee/sitemap-index.xml
