@@ -141,6 +141,9 @@ main { padding: 0 var(--gutter) 4rem; }
 .plate-text section > h2.eyebrow { margin-bottom: 0.6rem; }
 .printed { font-family: var(--serif); font-size: 1.4rem; margin: 0; }
 .printed-latin { font-family: var(--serif); font-style: italic; margin: 0 0 0.5rem; }
+.imprint { display: grid; gap: 0.1rem; margin: 0 0 0.6rem; font-family: var(--serif); font-style: italic; }
+.credits { list-style: none; padding: 0; margin: 0 0 0.6rem; }
+.credits a { font-family: var(--serif); font-size: 1.1rem; }
 .note { border-left: 3px solid var(--accent); padding: 0.4rem 0 0.4rem 1rem; margin: 1.25rem 0; }
 .ident { margin-bottom: 1rem; }
 .ident + .ident { border-top: 1px solid var(--rule); padding-top: 1rem; }
@@ -168,6 +171,14 @@ main { padding: 0 var(--gutter) 4rem; }
 .family ul { list-style: none; padding: 0; margin: 0; font-size: 0.9rem; }
 .family li { display: flex; justify-content: space-between; gap: 0.75rem; }
 .family .n { color: var(--ink-2); font-variant-numeric: tabular-nums; }
+
+.artists { max-width: 44rem; }
+.artists h2 { font-size: 1.2rem; }
+.artists ul { list-style: none; padding: 0; margin: 0; }
+.artists li { display: grid; grid-template-columns: 1fr auto; column-gap: 1rem; padding: 0.6rem 0; border-top: 1px solid var(--rule); }
+.artists li > a { font-family: var(--serif); font-size: 1.15rem; }
+.artists .n { color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.artists .small { grid-column: 1 / -1; margin: 0; }
 
 .prose { max-width: var(--measure); padding-top: 2rem; }
 .prose p:not(.lede), .prose li { font-size: 1.05rem; }

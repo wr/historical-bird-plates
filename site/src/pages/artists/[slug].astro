@@ -1,0 +1,45 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Filters from "../../components/Filters.astro";
+import Wall from "../../components/Wall.astro";
+import { absolute, artistHref, artists, folioById, folioHref, href, imageSrc, plateById } from "../../lib/data";
+import { sentence } from "../../lib/credits";
+import { wikidata } from "../../lib/links";
+import { artistDescription, artistJsonLd, artistTitle, tally } from "../../lib/seo";
+import { plural } from "../../scripts/wall-core";
+import type { Artist, Folio } from "../../lib/types";
+
+export function getStaticPaths() {
+  return artists.map((a) => ({ params: { slug: a.slug }, props: { a } }));
+}
+
+interface Props {
+  a: Artist;
+}
+const { a } = Astro.props;
+const mine = a.plates.map((id) => plateById.get(id)!);
+const inFolios = a.folios.map((id) => folioById.get(id)!);
+const cover = mine.find((p) => p.image);
+const image = cover ? absolute(imageSrc(cover, "crop")) : undefined;
+const perFolio = (f: Folio): string => mine.filter((p) => p.folio === f.id).length.toLocaleString("en");
+---
+<Layout title={artistTitle(a)} description={artistDescription(a, inFolios)} image={image} jsonld={artistJsonLd(a, absolute(artistHref(a)))}>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <span><a href={href()}>Plates</a> / <a href={href("artists/")}>Artists</a> / <span aria-current="page">{a.name}</span></span>
+  </nav>
+  <header class="folio-head">
+    <h1>{a.name}</h1>
+    <p class="years">{tally(a.roles)}</p>
+    <p>{sentence(a.note)}</p>
+    <p>Named on {plural(mine.length, "plate")}{inFolios.length === 1
+      ? <> of <a href={folioHref(inFolios[0])}><i>{inFolios[0].title}</i></a>.</>
+      : <>: {inFolios.map((f, i) => <>{i > 0 && (i === inFolios.length - 1 ? " and " : ", ")}{perFolio(f)} in <a href={folioHref(f)}><i>{f.title}</i></a></>)}.</>}</p>
+    <p class="small">Counted from the credit lines as engraved: a line naming two people credits both with every role it gives.</p>
+    <ul class="outlinks">
+      {a.wikidata && <li><a href={wikidata(a.wikidata)}>Wikidata</a></li>}
+      {inFolios.map((f) => <li><a href={f.makers}>Who made the plates of <i>{f.title}</i></a></li>)}
+    </ul>
+  </header>
+  <Filters folios={inFolios} count={mine.length} showFolios={inFolios.length > 1} />
+  <Wall only={mine} />
+</Layout>

@@ -3,9 +3,10 @@
     python3 tools/site_data.py           # write site/src/data/plates.json
     python3 tools/site_data.py --stats   # print the counts, write nothing
 
-One record per folio, plate and species, joined from every folio's plates.csv and species.csv, the
-eBird 2025 taxonomy (downloaded once into .cache/, as validate.py does) and the image sizes and
-colours in site/src/data/images.json (written by site_images.py). Standard library only.
+One record per folio, plate, species and artist, joined from every folio's plates.csv, species.csv,
+credits.csv and sources/imprints.csv, the root artists.csv, the eBird 2025 taxonomy (downloaded once
+into .cache/, as validate.py does) and the image sizes and colours in site/src/data/images.json
+(written by site_images.py). Standard library only.
 """
 from __future__ import annotations
 
@@ -19,6 +20,7 @@ from collections.abc import Iterator
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import credits  # noqa: E402
 import misnamed  # noqa: E402
 import validate  # noqa: E402
 
@@ -32,8 +34,9 @@ FOLIOS = [
     {"id": "havell", "author": "John James Audubon", "title": "The Birds of America", "years": "1827–38",
      "start": 1827, "end": 1838, "cite": "Audubon, The Birds of America", "short": "Audubon",
      "medium": "Hand-coloured engraving and aquatint", "release": "havell-v2", "by_volume": False,
-     "intro": "435 plates, engraved, printed and hand-coloured by Robert Havell Jr. in London from Audubon's "
-              "watercolours, and numbered 1–435 on the plates themselves.",
+     "intro": "435 plates from Audubon's watercolours, numbered 1–435 on the plates themselves. W. H. Lizars "
+              "engraved the first in Edinburgh; Robert Havell Jr. engraved, printed and hand-coloured the rest in "
+              "London, his father printing and colouring with him on the early ones.",
      "credit": "Courtesy of the John James Audubon Center at Mill Grove, Montgomery County Audubon Collection, "
                "and Zebra Publishing."},
     {**GOULD, "id": "gould-europe", "title": "The Birds of Europe", "years": "1832–37", "start": 1832, "end": 1837,
@@ -101,6 +104,34 @@ def taxonomy() -> dict[str, dict]:
         return {r["SPECIES_CODE"]: r for r in csv.DictReader(f)}
 
 
+def plate_credits(folio: dict) -> dict[tuple[str, str], list[dict]]:
+    """credits.csv by (volume, plate): each name once, in the credit line's order, with its roles in credits.py's."""
+    names: dict[tuple[str, str], dict[str, list[str]]] = defaultdict(dict)
+    for r in read(ROOT / folio["id"] / "credits.csv"):
+        names[(r.get("volume", ""), r["plate"])].setdefault(r["name"], []).append(r["role"])
+    return {k: [{"name": n, "slug": slugify(n), "roles": sorted(roles, key=credits.ROLES.index)}
+                for n, roles in v.items()] for k, v in names.items()}
+
+
+def unread(folio: dict) -> dict[tuple[str, str], str]:
+    """Why no credit line was read, by (volume, plate), from sources/imprints.csv."""
+    return {(r.get("volume", ""), r["plate"]): r["note"]
+            for r in read(ROOT / folio["id"] / "sources" / "imprints.csv") if r["read"] == "none"}
+
+
+def artist_records(plates: list[dict]) -> list[dict]:
+    """artists.csv, in its order, each with the plates that credit them, their folios and plates per role."""
+    out = []
+    for a in read(ROOT / "artists.csv"):
+        mine = [(p, c) for p in plates for c in p["credits"] if c["name"] == a["name"]]
+        roles = {role: sum(1 for _, c in mine if role in c["roles"]) for role in credits.ROLES}
+        out.append({"name": a["name"], "slug": slugify(a["name"]), "kind": a["kind"], "wikidata": a["wikidata"],
+                    "note": a["note"], "plates": [p["id"] for p, _ in mine],
+                    "folios": list(dict.fromkeys(p["folio"] for p, _ in mine)),
+                    "roles": {role: n for role, n in roles.items() if n}})
+    return out
+
+
 def identification(row: dict, tax: dict[str, dict]) -> dict:
     code = row["ebird_code"]
     return {"figure": row["figure"], "printed_name": row["printed_name"], "printed_latin": row["printed_latin"],
@@ -130,13 +161,16 @@ def build(images: dict[str, dict]) -> dict:
     for folio in FOLIOS:
         for r in read(ROOT / folio["id"] / "species.csv"):
             rows[(folio["id"], r.get("volume", ""), r["plate"])].append(r)
+    credited = {f["id"]: plate_credits(f) for f in FOLIOS}
+    notes = {f["id"]: unread(f) for f in FOLIOS}
 
     plates: list[dict] = []
     species: dict[str, dict] = {}
     printed: dict[str, list[str]] = defaultdict(list)
     for folio, r, key, slug in plate_rows():
         volume = r.get("volume", "")
-        found = rows[(folio["id"], volume if folio["by_volume"] else "", r["plate"])]
+        at = (volume if folio["by_volume"] else "", r["plate"])
+        found = rows[(folio["id"], *at)]
         codes = list(dict.fromkeys(s["ebird_code"] for s in found if s["ebird_code"]))
         first = tax[codes[0]] if codes else None
         pid = f"{folio['id']}/{slug}"
@@ -155,6 +189,9 @@ def build(images: dict[str, dict]) -> dict:
             "taxon": {"order": float(first["TAXON_ORDER"]), "family": first["FAMILY_SCI_NAME"],
                       "family_common": first["FAMILY_COM_NAME"], "bird_order": first["ORDER"]} if first else None,
             "image": images.get(pid),
+            "imprint": r["imprint"],
+            "credits": credited[folio["id"]].get(at, []),
+            "imprint_note": "" if r["imprint"] else notes[folio["id"]][at],
             "credit": CREDITS.get((folio["id"], key), ""),
             "scan": r.get("page_url") or r.get("image_url", ""),
             "original": f"{REPO}/releases/download/{folio['release']}/{r['sheet_asset']}" if r["sheet_asset"] else "",
@@ -171,9 +208,11 @@ def build(images: dict[str, dict]) -> dict:
     folios = [{k: f[k] for k in ("id", "author", "title", "years", "start", "end", "cite", "short", "medium",
                                  "release", "intro", "credit")}
               | {"plates": sum(1 for p in plates if p["folio"] == f["id"]),
-                 "readme": f"{REPO}/tree/main/{f['id']}#readme", "images": f"{REPO}/releases/tag/{f['release']}"}
+                 "readme": f"{REPO}/tree/main/{f['id']}#readme", "makers": f"{REPO}/tree/main/{f['id']}#who-made-the-plates",
+                 "images": f"{REPO}/releases/tag/{f['release']}"}
               for f in FOLIOS]
-    return {"folios": folios, "plates": plates, "species": sorted(species.values(), key=lambda s: s["taxon_order"])}
+    return {"folios": folios, "plates": plates, "species": sorted(species.values(), key=lambda s: s["taxon_order"]),
+            "artists": artist_records(plates)}
 
 
 def load_images() -> dict[str, dict]:
@@ -186,18 +225,19 @@ def main() -> int:
     data = build(load_images())
     plates = data["plates"]
     if "--stats" in sys.argv:
-        for label, n in (("plates", len(plates)), ("species", len(data["species"])),
+        for label, n in (("plates", len(plates)), ("species", len(data["species"])), ("artists", len(data["artists"])),
                          ("families", len({s["family"] for s in data["species"]})),
                          ("misnamed", sum(1 for p in plates if p["misnamed"])),
                          ("open", sum(1 for p in plates if p["open"])),
                          ("several species", sum(1 for p in plates if p["multi"])),
                          ("extinct", sum(1 for p in plates if p["extinct"])),
+                         ("without a credit line", sum(1 for p in plates if not p["imprint"])),
                          ("without images", sum(1 for p in plates if not p["image"]))):
             print(f"{label}: {n}")
         return 0
     DATA.mkdir(parents=True, exist_ok=True)
     (DATA / "plates.json").write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    print(f"site/src/data/plates.json: {len(plates)} plates, {len(data['species'])} species")
+    print(f"site/src/data/plates.json: {len(plates)} plates, {len(data['species'])} species, {len(data['artists'])} artists")
     return 0
 
 
