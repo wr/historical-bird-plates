@@ -288,7 +288,7 @@ class Fetch(unittest.TestCase):
 
 class Check(unittest.TestCase):
     SM = "http://www.sitemaps.org/schemas/sitemap/0.9"
-    URL = "https://wr.github.io/historical-bird-plates/"
+    URL = "https://historical-bird-plates.wells.ee/"
 
     def setUp(self) -> None:
         self.dist = Path(tempfile.mkdtemp())
@@ -310,8 +310,8 @@ class Check(unittest.TestCase):
 
     def test_a_good_site_passes(self) -> None:
         self.page("index.html",
-                  '<a href="/historical-bird-plates/havell/1/">1</a><a href="#main">skip</a>'
-                  '<img src="img/havell/1-thumb.webp" srcset="/historical-bird-plates/img/havell/1-thumb.webp 360w">'
+                  '<a href="/havell/1/">1</a><a href="#main">skip</a>'
+                  '<img src="img/havell/1-thumb.webp" srcset="/img/havell/1-thumb.webp 360w">'
                   '<a href="https://ebird.org/species/snoowl1">eBird</a>',
                   '<script type="application/ld+json">{"@type": "WebSite"}</script>')
         self.page("havell/1/index.html", '<a href="../../">home</a>')
@@ -319,13 +319,13 @@ class Check(unittest.TestCase):
 
     def test_problems_are_named(self) -> None:
         self.page("index.html",
-                  '<a href="/historical-bird-plates/havell/2/">2</a><a href="/elsewhere/">x</a>'
+                  '<a href="/havell/2/">2</a><a href="/elsewhere/">x</a>'
                   '<img src="img/havell/9-thumb.webp">',
                   '<script type="application/ld+json">{not json}</script>')
         (self.dist / "havell" / "1").mkdir(parents=True)
         (self.dist / "havell" / "1" / "index.html").write_text("<html><head></head><body></body></html>")
         errors = site_check.check(self.dist)
-        for expected in ("index.html: broken link /historical-bird-plates/havell/2/",
+        for expected in ("index.html: broken link /havell/2/",
                          "index.html: broken link /elsewhere/",
                          "index.html: broken link img/havell/9-thumb.webp",
                          "havell/1/index.html: no <title>", "havell/1/index.html: no description",
@@ -355,7 +355,7 @@ class Check(unittest.TestCase):
                          [f"havell/1/index.html: canonical {self.URL} is not this page's URL"])
 
     def test_an_off_site_og_image_or_canonical_is_reported(self) -> None:
-        local = "http://localhost:4321/historical-bird-plates/"
+        local = "http://localhost:4321/"
         self.bare("index.html", local, f"{self.URL}img/havell/1-thumb.webp")
         self.bare("havell/1/index.html", f"{self.URL}havell/1/", "https://example.com/x.png")
         self.assertEqual(site_check.check(self.dist),

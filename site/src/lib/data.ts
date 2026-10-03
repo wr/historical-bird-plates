@@ -11,10 +11,10 @@ export const speciesByCode = new Map(species.map((s) => [s.code, s]));
 export const artistBySlug = new Map(artists.map((a) => [a.slug, a]));
 export const entries = plates.map(entryOf);
 
-export const SITE = "https://wr.github.io";
-const base = import.meta.env.BASE_URL; // "/historical-bird-plates/"
+export const SITE = "https://historical-bird-plates.wells.ee";
+const base = import.meta.env.BASE_URL; // "/"
 
-/** A path inside the site, with the base: href("species/") is "/historical-bird-plates/species/". */
+/** A path inside the site, with the base: href("species/") is "/species/". */
 export const href = (path = ""): string => base + path.replace(/^\/+/, "");
 export const plateHref = (p: Plate): string => href(`${p.folio}/${p.slug}/`);
 export const speciesHref = (s: { slug: string }): string => href(`species/${s.slug}/`);

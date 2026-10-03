@@ -2,8 +2,7 @@ import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://wr.github.io",
-  base: "/historical-bird-plates",
+  site: "https://historical-bird-plates.wells.ee",
   trailingSlash: "always",
-  integrations: [sitemap({ filter: (page) => page !== "https://wr.github.io/historical-bird-plates/404/" })],
+  integrations: [sitemap({ filter: (page) => page !== "https://historical-bird-plates.wells.ee/404/" })],
 });
