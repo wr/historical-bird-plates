@@ -599,7 +599,7 @@ def run_apart(run: str, pairs: set[tuple[str, str]] = PAIRS) -> str:
 
 
 # The abbreviations of a credit line: the mark after one is written as a stop (normalise_line).
-ABBREVIATIONS = ("del", "delt", "lith", "lithog", "Imp", "Impt", "Edwd", "Edinr", "Junr", "Senr")
+ABBREVIATIONS = ("del", "delt", "lith", "lithog", "Imp", "Impt", "Edwd", "Edinr", "Junr", "Senr", "Sen")
 ABBREVIATED_WORDS = {a.casefold() for a in ABBREVIATIONS}   # "DEL." and "IMP." are not initials
 ABBREVIATED = re.compile(r"(?<![A-Za-z])(" + "|".join(sorted(ABBREVIATIONS, key=len, reverse=True))
                          + r")[,:;](?![.,;:])", re.I)
@@ -620,7 +620,8 @@ def normalise_line(line: str) -> str:
 
 def initials(line: str) -> str:
     """Every initial written "X. ": a lone capital, with a stop, a comma, a colon or
-    nothing after it, followed by another initial, & or and, or a capitalised word
+    nothing after it, followed by another initial, & or and, "&c." (a word, but one that
+    follows initials as & does: "F.L.S &c." is "F. L. S. &c."), or a capitalised word
     ("J, Gould" is "J. Gould", "C: Hullmandel" "C. Hullmandel"; a comma after a name,
     "Richter, del.", is left); and two or three capitals run together ("HC Richter",
     "HCRichter", "HC. Richter", "JGould", "FRS." are "H. C. Richter", "J. Gould",
@@ -648,7 +649,7 @@ def initials(line: str) -> str:
         else:
             tokens.append(tok)
     lone = lambda t: re.fullmatch(r"[A-Z][.,:]?", t)
-    nxt = lambda t: lone(t) or t in ("&", "and") or re.match(r"[A-Z][a-z]", t)
+    nxt = lambda t: lone(t) or t in ("&", "and") or re.fullmatch(r"&c\.?", t) or re.match(r"[A-Z][a-z]", t)
     article = lambda t, n: t == "A" and re.sub(r"[^A-Za-z]", "", n).casefold() in words
     out = []
     for i, tok in enumerate(tokens):

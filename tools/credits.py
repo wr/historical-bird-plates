@@ -248,6 +248,11 @@ _PLACE_DATE = re.compile(r"[\s.,:_]*(?:(?<![A-Za-z])London(?![A-Za-z])[\s.,:_]*)
                          r"(?:(?<![0-9])1[89][0-9]{2}(?![0-9]))?[\s.,:_]*$", re.I)
 
 
+# The stop that belongs to an abbreviation ending the names ("R. Havell, Senr. London. 1828.")
+# stays with it when the place and date are taken off.
+_ABBREVIATED_END = re.compile(r"(?<![A-Za-z])(?:Junr|Senr|Sen)$")
+
+
 def credit_parts(line: str) -> list[str]:
     """The credits a line holds, as separate strings: split before a wording in WITHIN, and
     after a wording written after names when more names follow."""
@@ -275,7 +280,8 @@ def split_line(line: str) -> tuple[tuple[str, ...], str]:
             names = m.group("names").strip()
             tail = _PLACE_DATE.search(names)
             if tail and re.search(r"[A-Za-z0-9]", tail.group()):
-                names = names[:tail.start()]
+                stop = tail.group().lstrip().startswith(".") and _ABBREVIATED_END.search(names[:tail.start()])
+                names = names[:tail.start()] + ("." if stop else "")
             return roles, names
     raise UnknownCredit(f"no known wording in {line!r}")
 

@@ -427,6 +427,8 @@ class Normalise(unittest.TestCase):
                               ("W.H.Lizars Edinr, | Retouched by R. Havell Junr:", "W. H. Lizars Edinr. | Retouched by R. Havell Junr."),
                               ("Printed & Coloured by R. Havell Senr, London", "Printed & Coloured by R. Havell Senr. London"),
                               ("Coloured by R. Havell Senr:", "Coloured by R. Havell Senr."),
+                              ("Printed & Coloured by R. Havell Sen, London", "Printed & Coloured by R. Havell Sen. London"),
+                              ("Coloured by R. Havell Sen:", "Coloured by R. Havell Sen."),
                               ("del :et lith ;", "del. et lith.")):
             with self.subTest(line=line):
                 self.assertEqual(imprints.normalise(line), written)
@@ -436,6 +438,8 @@ class Normalise(unittest.TestCase):
             with self.subTest(line=line):
                 self.assertEqual(imprints.normalise(line), line)
         for line, written in (("London&c. 1830", "London &c. 1830"), ("F.L.S.&c.", "F. L. S. &c."),
+                              ("F.L.S &c.", "F. L. S. &c."), ("F. R. S's. L. & E. F. L. S &c.", "F. R. S's. L. & E. F. L. S. &c."),
+                              ("F.L.S &c", "F. L. S. &c"),
                               ("London &c .1830", "London &c. 1830"), ("London &c.1830", "London &c. 1830"),
                               ("J.Gould&H.C.Richter", "J. Gould & H. C. Richter"),
                               ("J. Gould & c. Richter", "J. Gould & c. Richter"),   # a spaced "& c." is left as engraved
@@ -447,7 +451,7 @@ class Normalise(unittest.TestCase):
         for line in ("del et lith", "J. Gould and H. C. Richter del | C. Hullmandel Imp",
                      "J. Gould and H. C. Richter, del et lith.", "H. C. Richter, del.", "Walter, Imp.",
                      "J. Gould and H. C. Richter del., et lith.", "J. Gould and H. C. Richter del. et lith.",
-                     "Imperial", "Delta, Junrock", "J. Gould, and H. C. Richter", "R. Havell Senr", "Senrock, Imp",
+                     "Imperial", "Delta, Junrock", "J. Gould, and H. C. Richter", "R. Havell Senr", "R. Havell Sen", "Senrock, Imp", "Senora, Imp",
                      "Printed & Coloured by R. Havell Senr. London"):   # only whole abbreviations count
             with self.subTest(line=line):
                 self.assertEqual(imprints.normalise(line), line)

@@ -87,6 +87,15 @@ class Parse(unittest.TestCase):
             Credit("William Home Lizars", "engraved", "W.H. Lizars Edinr."),
             Credit("Robert Havell Jr.", "retouched", "R. Havell Junr.")])
 
+    def test_an_abbreviation_keeps_its_stop_when_a_place_and_date_follow(self):
+        self.assertEqual(parse("Retouched by R. Havell. Junr. London 1829. | Coloured by R. Havell, Senr. London. 1828.", "havell")[:1], [
+            Credit("Robert Havell Jr.", "retouched", "R. Havell. Junr.")])
+        self.assertEqual([c.as_printed for c in parse("Engraved by Robt. Havell, Junr. Printed & Coloured by R. Havell, Senr. London. 1828.", "havell")],
+                         ["Robt. Havell, Junr.", "R. Havell, Senr.", "R. Havell, Senr."])
+        self.assertEqual([c.as_printed for c in parse("Printed & Coloured by R. Havell Sen. London_1828.", "havell")], ["R. Havell Sen.", "R. Havell Sen."])
+        # without an abbreviation, the stop before the place is the line's and goes with the place
+        self.assertEqual([c.as_printed for c in parse("Engraved, Printed & Coloured by R. Havell. London. 1833.", "havell")], ["R. Havell"] * 3)
+
     def test_one_line_gives_several_roles(self):
         self.assertEqual(names_roles(parse("Engraved, Printed & Coloured by R. Havell Junr.")), [
             ("Robert Havell Jr.", "engraved"), ("Robert Havell Jr.", "printed"), ("Robert Havell Jr.", "coloured")])
@@ -278,8 +287,8 @@ class Parse(unittest.TestCase):
         # two credits in one line: the engraver, then the father's printing and colouring
         self.assertEqual(parse("Engraved by R.Havell.Junr. Printed & Coloured by R.Havell. Senr. London. 1828.", "havell"), [
             Credit("Robert Havell Jr.", "engraved", "R.Havell.Junr."),
-            Credit("Robert Havell Sr.", "printed", "R.Havell. Senr"),
-            Credit("Robert Havell Sr.", "coloured", "R.Havell. Senr")])
+            Credit("Robert Havell Sr.", "printed", "R.Havell. Senr."),
+            Credit("Robert Havell Sr.", "coloured", "R.Havell. Senr.")])
         self.assertEqual(credits.credit_parts("Engraved by R.Havell.Junr. Printed & Coloured by R.Havell. Senr. London. 1828."),
                          ["Engraved by R.Havell.Junr.", "Printed & Coloured by R.Havell. Senr. London. 1828."])
         # "Engraved, Printed & Coloured by" is one wording, and is not split before "Printed & Coloured by"
