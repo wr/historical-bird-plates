@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { folios, href, plates } from "../lib/data";
-import { REPO } from "../lib/links";
+import { FEATHERFRAME, REPO } from "../lib/links";
 
 const misnamed = plates.filter((p) => p.misnamed.length).length;
 const open = plates.filter((p) => p.open).length;
@@ -31,6 +31,9 @@ const withLine = plates.filter((p) => p.imprint).length;
 
     <h2>Get the data</h2>
     <p>The tables are CSV files on <a href={REPO}>GitHub</a>, described by a Frictionless <code>datapackage.json</code> and archived on <a href="https://doi.org/10.5281/zenodo.22964828">Zenodo</a>: each folio's plates and species, its credits (one row per plate, name and role) and the people and firms they name. The cleaned images, full sheets and art crops, are in each folio's GitHub release.</p>
+
+    <h2>Featherframe</h2>
+    <p>This dataset was made for <a href={FEATHERFRAME}>Featherframe</a>, a framed e-paper display that shows each bird a <a href="https://birdnet.cornell.edu/">BirdNET</a> station hears as its plate from these folios. Featherframe picks its plates by the identifications kept here.</p>
 
     <h2>Cite</h2>
     <p>Riley, W. <i>Historical bird plates: modern identifications</i>. Zenodo. <a href="https://doi.org/10.5281/zenodo.22964828">doi:10.5281/zenodo.22964828</a>.</p>
