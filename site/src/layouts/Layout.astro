@@ -4,7 +4,7 @@ import "@fontsource-variable/newsreader/opsz-italic.css";
 import "../styles/global.css";
 import Seo from "../components/Seo.astro";
 import { absolute, folioHref, folios, href, imageSrc, plates } from "../lib/data";
-import { REPO } from "../lib/links";
+import { FEATHERFRAME, REPO } from "../lib/links";
 
 interface Props {
   title: string;
@@ -50,6 +50,7 @@ const ogImage = image ?? (cover ? absolute(imageSrc(cover, "crop")) : undefined)
     <footer class="site-foot">
       <p>Every plate of five nineteenth-century bird folios, identified to modern species. The tables are CC0; the plates are in the public domain.</p>
       <p>Gould scans: Smithsonian Libraries and Archives, via the Biodiversity Heritage Library. Havell scans: courtesy of the John James Audubon Center at Mill Grove, Montgomery County Audubon Collection, and Zebra Publishing.</p>
+      <p>Made for <a href={FEATHERFRAME}>Featherframe</a>, a framed e-paper display that shows the birds a BirdNET station hears as plates from these folios.</p>
       <p>Cite: Riley, W. <i>Historical bird plates: modern identifications</i>. Zenodo. <a href="https://doi.org/10.5281/zenodo.22964828">doi:10.5281/zenodo.22964828</a></p>
     </footer>
   </body>

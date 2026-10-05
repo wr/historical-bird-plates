@@ -1,4 +1,5 @@
 export const REPO = "https://github.com/wr/historical-bird-plates";
+export const FEATHERFRAME = "https://shop.wells.ee/products/featherframe/";
 
 export const ebird = (code: string): string => `https://ebird.org/species/${code}`;
 export const wikidata = (q: string): string => `https://www.wikidata.org/wiki/${q}`;
