@@ -1186,7 +1186,7 @@
           {
             "name": "kind",
             "type": "string",
-            "description": "old name, subspecies, pre-split, lumped, printed name, error or open."
+            "description": "old name, subspecies, pre-split, lumped, printed name, typo, error or open."
           },
           {
             "name": "ku_id",
