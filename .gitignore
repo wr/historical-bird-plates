@@ -6,3 +6,6 @@ site/dist/
 site/.astro/
 site/public/img/
 site/src/data/plates.json
+
+# Plans and specs live in a private notes repo, not here
+docs/superpowers/
